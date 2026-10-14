@@ -150,7 +150,7 @@ data/
 ## `verified` 與草稿卡（T14）
 
 - 卡片的 `verified` 欄位（布林）標記資料是否已完整核對過官方頁；缺少視為 `false`（草稿卡）。
-- `src/engine/data-loader.mjs` 的 `loadAllData()` 與 `src/engine/recommend.mjs` 的 `recommend()`，預設（`includeUnverified` 不傳或為 `false`）只會回傳／使用 `verified === true` 的卡；草稿卡不會出現在推薦清單中，但仍完整保留在 `data/banks/*.json` 與 `loadAllData()` 讀到的原始資料裡。
+- `src/engine/data-loader.mjs` 的 `loadAllData()` 與 `src/engine/recommend.mjs` 的 `recommend()`，預設（`includeUnverified` 不傳或為 `false`）只會回傳／使用 `verified === true` 的卡；草稿卡不會出現在推薦清單中，但仍完整保留在 `data/banks/*.json` 檔案裡（`loadAllData()` 的回傳值不含被濾掉的草稿卡，只有檔案裡還留著）。
 - 若預覽頁或測試需要看到草稿卡（例如核對尚未 `verified` 的資料），呼叫時明確傳入 `includeUnverified: true`：
   ```js
   const data = await loadAllData({ baseUrl: "data/", includeUnverified: true });

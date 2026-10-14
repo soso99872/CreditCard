@@ -568,6 +568,20 @@ describe("scripts/coverage.mjs", () => {
     );
     assert.match(stdout, /收錄卡片數（included）：1/);
     assert.match(stdout, /未收錄卡片數（excluded）：1/);
+    assert.match(stdout, /已核對卡片數（verified，AC-08 要求 50 張以上）：\d+/);
+  });
+
+  test("verifiedCardCount 只算 verified === true 的卡（T16，AC-08）", async (t) => {
+    const dir = await makeMutatedFixture((bank) => {
+      bank.cards[0].verified = false;
+      bank.cards.push({ ...bank.cards[0], id: "testbank-card-2", verified: true });
+    });
+    t.after(() => rm(dir, { recursive: true, force: true }));
+
+    const summary = await getCoverageSummary(dir);
+    assert.equal(summary.verifiedCardCount, 1);
+    assert.equal(summary.byBank[0].verifiedCount, 1);
+    assert.equal(summary.byBank[0].cardCount, 2);
   });
 });
 

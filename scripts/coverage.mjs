@@ -12,8 +12,9 @@ import { loadJsonIfExists, loadBankFiles } from "./lib.mjs";
  * {
  *   issuerCount, bankFileCount,
  *   includedCount, excludedCount,
+ *   verifiedCardCount, // AC-08：verified === true 的卡數，要求達 50 張以上
  *   excluded: [{ bankId, cardName, reason }],
- *   byBank: [{ bankId, included, excluded, cardCount }]
+ *   byBank: [{ bankId, included, excluded, cardCount, verifiedCount }]
  * }
  */
 export async function getCoverageSummary(dataDir) {
@@ -22,6 +23,7 @@ export async function getCoverageSummary(dataDir) {
 
   let includedCount = 0;
   let excludedCount = 0;
+  let verifiedCardCount = 0;
   const excluded = [];
   const byBank = [];
 
@@ -39,11 +41,15 @@ export async function getCoverageSummary(dataDir) {
         excluded.push({ bankId, cardName: item.cardName, reason: item.reason });
       }
     }
+    const cards = Array.isArray(data.cards) ? data.cards : [];
+    const bankVerified = cards.filter((c) => c.verified === true).length;
+    verifiedCardCount += bankVerified;
     byBank.push({
       bankId,
       included: bankIncluded,
       excluded: bankExcluded,
-      cardCount: Array.isArray(data.cards) ? data.cards.length : 0,
+      cardCount: cards.length,
+      verifiedCount: bankVerified,
     });
   }
 
@@ -52,6 +58,7 @@ export async function getCoverageSummary(dataDir) {
     bankFileCount: bankFiles.length,
     includedCount,
     excludedCount,
+    verifiedCardCount,
     excluded,
     byBank,
   };
@@ -66,10 +73,11 @@ async function main() {
   console.log(`已整理資料的銀行檔數：${summary.bankFileCount}`);
   console.log(`收錄卡片數（included）：${summary.includedCount}`);
   console.log(`未收錄卡片數（excluded）：${summary.excludedCount}`);
+  console.log(`已核對卡片數（verified，AC-08 要求 50 張以上）：${summary.verifiedCardCount}`);
 
   console.log(`\n各銀行明細：`);
   for (const b of summary.byBank) {
-    console.log(`  - ${b.bankId}：收錄 ${b.included} 張（cards.json 內 ${b.cardCount} 張），未收錄 ${b.excluded} 張`);
+    console.log(`  - ${b.bankId}：收錄 ${b.included} 張（cards.json 內 ${b.cardCount} 張，已核對 ${b.verifiedCount} 張），未收錄 ${b.excluded} 張`);
   }
 
   console.log(`\n未收錄卡片與原因：`);

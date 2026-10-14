@@ -78,3 +78,18 @@ test("基本累點寫法以外，真正的滿額加碼條件仍要抓出來（T1
   ]));
   assert.match(r.issues.join(), /滿額門檻/);
 });
+
+test("每滿NT$30累積活利積分1點（累積動詞與點數間夾點數名稱）不算滿額門檻（T16）", () => {
+  const r = precheckBank(bank([{ ...general, rawReward: "每滿NT$30累積活利積分1點" }]));
+  assert.doesNotMatch(r.issues.join(), /滿額門檻/);
+});
+
+test("一般消費每滿NT$1,000送100點，「送」不是基本累點動詞，仍要報滿額門檻（T16）", () => {
+  const r = precheckBank(bank([{ ...general, rawReward: "一般消費每滿NT$1,000送100點" }]));
+  assert.match(r.issues.join(), /滿額門檻/);
+});
+
+test("活動期間每滿 3,000 元可享 300 點加碼，「可享」不是基本累點動詞，仍要報滿額門檻（T16）", () => {
+  const r = precheckBank(bank([{ ...general, rawReward: "活動期間每滿 3,000 元可享 300 點加碼" }]));
+  assert.match(r.issues.join(), /滿額門檻/);
+});

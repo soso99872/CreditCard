@@ -31,7 +31,7 @@ const { match, recommendations } = recommend({
 
 卡片的 `verified` 欄位（布林，缺少視為 `false`）標記資料是否已完整核對過官方頁，詳見 `data/SCHEMA.md`「`verified` 與草稿卡」一節。
 
-`loadAllData()` 與 `recommend()` 預設都只使用 `verified === true` 的卡；草稿卡不會出現在推薦清單裡，但仍完整保留在資料與 `loadAllData()` 讀到的原始卡片裡。兩個函式都接受 `includeUnverified: true` 選項，**兩處都要傳**才能讓草稿卡出現在最終結果中：
+`loadAllData()` 與 `recommend()` 預設都只使用 `verified === true` 的卡；草稿卡不會出現在推薦清單裡，但仍完整保留在 `data/banks/*.json` 檔案裡（`loadAllData()` 的回傳值不含被濾掉的草稿卡，只有檔案裡還留著）。兩個函式都接受 `includeUnverified: true` 選項，**兩處都要傳**才能讓草稿卡出現在最終結果中：
 
 ```js
 const data = await loadAllData({ baseUrl: "data/", includeUnverified: true });
