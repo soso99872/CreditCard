@@ -14,5 +14,11 @@
   { "id": "overseas", "name": "海外" },
   { "id": "mobile-payment", "name": "行動支付" },
   { "id": "japan", "name": "日本" },
+  { "id": "cinema", "name": "電影院" },
+  { "id": "korea", "name": "韓國" },
+  { "id": "thailand", "name": "泰國" },
+  { "id": "singapore", "name": "新加坡" },
+  { "id": "americas", "name": "美洲" },
+  { "id": "europe", "name": "歐洲" },
   { "id": "general", "name": "一般消費" }
 ]

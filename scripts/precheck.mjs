@@ -21,6 +21,18 @@ const CONDITION_HINTS = [
 
 const DATE_IN_TEXT = /20\d{2}\s*[\/年.-]\s*\d{1,2}\s*[\/月.-]\s*\d{1,2}/;
 
+// 基本累點寫法（例如「每滿 NT$30 累積 1 點」「每消費滿 100 元可得 1 點」），只是回饋率的
+// 原始換算方式，不是需要另外標 conditions 的滿額門檻，比對「滿額門檻」疑點前先排除這段文字
+// （2026-10-14 主管回報：此前的版本會誤報，見 review-log.md「T11」）。
+// 「累積」「可得」等動詞與點數之間，常夾著點數名稱（例如「活利積分」），用有限長度的
+// 排除數字／標點的萬用比對吃掉這段名稱，避免漏判。
+const BASIC_POINT_ACCRUAL_RE =
+  /每\s*(?:消費)?\s*滿\s*(?:NT\$|新臺幣|新台幣)?\s*[\d,]+\s*元?\s*(?:即可|可)?\s*(?:累積|可得|可享|送|兌換?)[^\d,，。；]{0,10}[\d,]+\s*點/g;
+
+function stripBasicPointAccrual(text) {
+  return String(text).replace(BASIC_POINT_ACCRUAL_RE, "");
+}
+
 // 主管追加疑點 1：rawReward 或卡名含「點」「幣」「Point」，但沒有 pointValue（可能漏填點數換算）
 const POINT_WORD_RE = /點|幣|Point/i;
 
@@ -76,7 +88,9 @@ export function precheckBank(bank) {
       const scope = r.scope || {};
 
       for (const h of CONDITION_HINTS) {
-        if (h.raw.test(raw) && !h.cond.test(conds)) {
+        // 「滿額門檻」要先排除基本累點寫法（例如「每滿 NT$30 累積 1 點」），避免誤報
+        const textForHint = h.label === "滿額門檻" ? stripBasicPointAccrual(raw) : raw;
+        if (h.raw.test(textForHint) && !h.cond.test(conds)) {
           issues.push(`${where(r)}：rawReward 提到「${h.label}」，conditions 沒有對應標籤`);
         }
       }
@@ -87,6 +101,11 @@ export function precheckBank(bank) {
       }
       if (scope.type === "category" && /指定|名單|特約|合作/.test(raw)) {
         issues.push(`${where(r)}：category 規則的原文提到指定或特約商家，官方若是商家名單應改用 merchant`);
+      }
+      // category 規則沒寫 basis（2026-10-14 主管要求加回，與上面的關鍵字檢查並存：
+      // 2026-10-13 有人把這項結構檢查換成純關鍵字比對，造成漏報，見 review-log.md「T11」）
+      if (scope.type === "category" && !scope.basis) {
+        issues.push(`${where(r)}：scope.type 為 category 但沒有 scope.basis，確認官方是否以 MCC／行業別判定（請補 basis: "mcc"），若其實是商家名單應改用 merchant`);
       }
 
       // 檢查清單第 4 項：期間照官方

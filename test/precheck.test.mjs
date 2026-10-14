@@ -9,7 +9,7 @@ function bank(rules, cardExtra = {}) {
 const general = { id: "g", scope: { type: "general" }, rate: 0.5, rawReward: "一般消費 0.5%", cap: null, conditions: [], validTo: null };
 
 test("乾淨的規則沒有疑點", () => {
-  const r = precheckBank(bank([general, { ...general, id: "o", scope: { type: "category", categories: ["overseas"] }, rate: 2, rawReward: "海外 2%，無上限" }]));
+  const r = precheckBank(bank([general, { ...general, id: "o", scope: { type: "category", categories: ["overseas"], basis: "mcc" }, rate: 2, rawReward: "海外 2%，無上限" }]));
   assert.deepEqual(r.issues, []);
   assert.deepEqual(r.hints, []);
 });
@@ -54,4 +54,27 @@ test("點數卡不做 rate 與原文數字比對", () => {
 test("merchant 規則沒有商家", () => {
   const r = precheckBank(bank([general, { ...general, id: "x", scope: { type: "merchant", merchants: [] }, rate: 3, rawReward: "3%" }]));
   assert.match(r.issues.join(), /沒有列出商家/);
+});
+
+test("category 規則沒寫 basis（T14 加回的檢查）", () => {
+  const r = precheckBank(bank([general, { ...general, id: "x", scope: { type: "category", categories: ["dining"] }, rate: 3, rawReward: "餐飲 3%" }]));
+  assert.match(r.issues.join(), /scope\.basis/);
+});
+
+test("category 規則有寫 basis 時不算疑點（T14）", () => {
+  const r = precheckBank(bank([general, { ...general, id: "x", scope: { type: "category", categories: ["dining"], basis: "mcc" }, rate: 3, rawReward: "餐飲 3%" }]));
+  assert.doesNotMatch(r.issues.join(), /scope\.basis/);
+});
+
+test("每滿 NT$X 累積 1 點的基本累點寫法不算滿額門檻（T14 排除誤報）", () => {
+  const r = precheckBank(bank([{ ...general, rawReward: "每滿 NT$30 累積 1 點" }]));
+  assert.doesNotMatch(r.issues.join(), /滿額門檻/);
+});
+
+test("基本累點寫法以外，真正的滿額加碼條件仍要抓出來（T14）", () => {
+  const r = precheckBank(bank([
+    general,
+    { ...general, id: "x", scope: { type: "category", categories: ["dining"], basis: "mcc" }, rate: 3, rawReward: "每滿 NT$30 累積 1 點，單筆消費滿 1000 元加碼 3%" },
+  ]));
+  assert.match(r.issues.join(), /滿額門檻/);
 });

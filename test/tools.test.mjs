@@ -361,6 +361,42 @@ describe("scripts/validate.mjs — T11 新規則", () => {
   });
 });
 
+describe("scripts/validate.mjs — T14 新規則（verified）", () => {
+  test("沒有 verified 欄位時視為合法（草稿卡，不是錯誤）", async (t) => {
+    const dir = await makeMutatedFixture((bank) => {
+      delete bank.cards[0].verified;
+    });
+    t.after(() => rm(dir, { recursive: true, force: true }));
+
+    const errors = await validate(dir);
+    assert.deepEqual(errors, []);
+  });
+
+  test("verified 為 true 或 false 時視為合法", async (t) => {
+    const dirTrue = await makeMutatedFixture((bank) => {
+      bank.cards[0].verified = true;
+    });
+    const dirFalse = await makeMutatedFixture((bank) => {
+      bank.cards[0].verified = false;
+    });
+    t.after(() => rm(dirTrue, { recursive: true, force: true }));
+    t.after(() => rm(dirFalse, { recursive: true, force: true }));
+
+    assert.deepEqual(await validate(dirTrue), []);
+    assert.deepEqual(await validate(dirFalse), []);
+  });
+
+  test("verified 不是布林值時回報問題", async (t) => {
+    const dir = await makeMutatedFixture((bank) => {
+      bank.cards[0].verified = "yes";
+    });
+    t.after(() => rm(dir, { recursive: true, force: true }));
+
+    const errors = await validate(dir);
+    assert.ok(errors.some((e) => e.includes("testbank-card") && e.includes("verified")));
+  });
+});
+
 describe("scripts/validate.mjs — issuers.json 結構檢查", () => {
   test("資料齊全時通過（只有 issuers.json、沒有 data/banks/ 也要能驗證）", async (t) => {
     const dir = await makeIssuersOnlyFixture([BASE_ISSUER]);

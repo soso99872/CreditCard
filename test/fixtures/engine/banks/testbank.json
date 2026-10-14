@@ -5,12 +5,14 @@
   "coverage": [
     { "cardName": "一般卡", "status": "included", "cardId": "testbank-general" },
     { "cardName": "量販卡", "status": "included", "cardId": "testbank-super" },
-    { "cardName": "未選卡", "status": "included", "cardId": "testbank-mycard-excluded" }
+    { "cardName": "未選卡", "status": "included", "cardId": "testbank-mycard-excluded" },
+    { "cardName": "草稿卡", "status": "included", "cardId": "testbank-draft" }
   ],
   "cards": [
     {
       "id": "testbank-general",
       "name": "一般卡",
+      "verified": true,
       "sourceUrl": "https://testbank.example.com/cards/general",
       "rules": [
         {
@@ -44,6 +46,7 @@
     {
       "id": "testbank-super",
       "name": "量販卡",
+      "verified": true,
       "sourceUrl": "https://testbank.example.com/cards/super",
       "pointValue": {
         "unit": "點",
@@ -135,6 +138,7 @@
     {
       "id": "testbank-mycard-excluded",
       "name": "未選卡",
+      "verified": true,
       "sourceUrl": "https://testbank.example.com/cards/excluded",
       "rules": [
         {
@@ -148,6 +152,26 @@
           "validFrom": "2026-01-01",
           "validTo": null,
           "sourceUrl": "https://testbank.example.com/cards/excluded",
+          "checkedAt": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": "testbank-draft",
+      "name": "草稿卡",
+      "sourceUrl": "https://testbank.example.com/cards/draft",
+      "rules": [
+        {
+          "id": "testbank-draft-g",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 50,
+          "rawReward": "50%（尚未核對，不應出現在推薦裡）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/draft",
           "checkedAt": "2026-09-01"
         }
       ]

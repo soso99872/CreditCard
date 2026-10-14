@@ -23,9 +23,9 @@ data/
 [{ "id": "convenience-store", "name": "超商" }]
 ```
 
-固定包含以下 16 個類別：超商（`convenience-store`）、量販超市（`supermarket`）、咖啡（`coffee`）、餐飲（`dining`）、外送（`delivery`）、網購（`online-shopping`）、交通（`transport`）、加油（`gas`）、百貨（`department-store`）、旅遊住宿（`travel`）、娛樂影音（`entertainment`）、藥妝（`pharmacy`）、海外（`overseas`）、行動支付（`mobile-payment`）、日本（`japan`）、一般消費（`general`）。
+固定包含以下 22 個類別：超商（`convenience-store`）、量販超市（`supermarket`）、咖啡（`coffee`）、餐飲（`dining`）、外送（`delivery`）、網購（`online-shopping`）、交通（`transport`）、加油（`gas`）、百貨（`department-store`）、旅遊住宿（`travel`）、娛樂影音（`entertainment`）、藥妝（`pharmacy`）、海外（`overseas`）、行動支付（`mobile-payment`）、日本（`japan`）、電影院（`cinema`）、韓國（`korea`）、泰國（`thailand`）、新加坡（`singapore`）、美洲（`americas`）、歐洲（`europe`）、一般消費（`general`）。
 
-`japan`（日本）用於卡片針對日本消費（例如日本當地加碼、日系通路）的專屬規則；官方規則若寫明「日本消費」而非泛稱「海外」，應使用 `japan` 而非 `overseas`，不可用 `overseas` 代替。
+`japan`（日本）用於卡片針對日本消費（例如日本當地加碼、日系通路）的專屬規則；官方規則若寫明「日本消費」而非泛稱「海外」，應使用 `japan` 而非 `overseas`，不可用 `overseas` 代替。`korea`（韓國）、`thailand`（泰國）、`singapore`（新加坡）、`americas`（美洲）、`europe`（歐洲）比照 `japan` 的用法：官方規則寫明針對該國家或地區（而非泛稱「海外」）時使用，不可用 `overseas` 代替。`cinema`（電影院）用於卡片針對電影院（含指定影城連鎖，若官方是指定特定影城名單則應改用 `merchant`）的專屬規則。
 
 `general` 是特殊類別 id，代表「卡片的一般消費回饋」，不透過類別關鍵字比對，只用於規則的 `scope.type: "general"`。
 
@@ -64,6 +64,7 @@ data/
     {
       "id": "cathay-cube",
       "name": "CUBE 卡",
+      "verified": true,
       "sourceUrl": "卡片官方介紹頁",
       "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "...", "checkedAt": "2026-10-10" },
       "rules": [
@@ -108,6 +109,7 @@ data/
   - `cardId`：`included` 時必填，對應 `cards[].id`。
   - `reason`：`excluded` 時必填，中文說明（例如「哩程卡，本期不收錄」「純聯名權益卡」「已停發」「頁面為 PDF，無法確認回饋規則」）。
 - `cards[].id`：全站唯一（跨銀行也不可重複），建議 `<銀行 id>-<卡片代稱>`。
+- `cards[].verified`：布林，標記這張卡的資料是否已完整核對過官方頁（主管通過 T15 第二步後設為 `true`）。**沒有這個欄位視為 `false`**（草稿卡，尚未逐項核對）；有填時必須是布林值。推薦引擎（`recommend()`）與 `loadAllData()` **預設只使用 `verified === true` 的卡**，草稿卡仍保留在檔案中、會通過 `validate`，但不會出現在推薦清單裡。需要讓預覽頁或測試看到草稿卡時，呼叫端要明確加上 `includeUnverified: true` 選項（見下方「字串正規化規則」前的「`verified` 與草稿卡」一節），不會自動顯示。
 - `cards[].sourceUrl`：卡片官方介紹頁，網域必須在該銀行 `officialDomains` 內。
 - `cards[].pointValue`：若回饋為點數，填點數換算新台幣的規則；現金回饋可省略此欄位。
 - `cards[].rules`：每張卡至少一條 `scope.type === "general"` 的規則。
@@ -115,7 +117,7 @@ data/
   - `plan`：方案或等級名稱，單一方案的卡可填空字串 `""`。
   - `scope.type`：
     - `general`：一般消費，無需其他欄位。
-    - `category`：`scope.categories` 為 `categories.json` 中的 id 陣列。
+    - `category`：`scope.categories` 為 `categories.json` 中的 id 陣列。只有在官方是以行業別或 MCC 判定時才能用 `category`；官方若是列出具體商家名單，不可用 `category` 放大範圍，應改用 `merchant`。建議填 `scope.basis: "mcc"` 註明判定依據；`precheck` 會把沒有 `basis` 的 `category` 規則列為疑點（不是 `validate` 的硬性錯誤，因為既有資料尚未全部補上）。
     - `merchant`：`scope.merchants` 為官方公告上的商家名稱陣列（照官方寫法，比對時經由 `merchants.json` 別名表解析）；`scope.basis` 為 `mcc` 或 `merchant-list`。
   - `rate`：換算成新台幣後的回饋百分比數字（`3` 代表 3%）。點數回饋需先用 `pointValue.twdPerPoint` 換算成等值 % 再填入；`rawReward` 保留官方原文寫法（例如「3% 小樹點」），供人工核對。
   - `cap`：`null` 代表無上限；否則為 `{ amount, unit, period }`：
@@ -144,6 +146,17 @@ data/
 ```
 
 - 鍵為 `categories.json` 的 id（`general` 除外），值為關鍵字陣列，每個類別至少 3 個關鍵字。
+
+## `verified` 與草稿卡（T14）
+
+- 卡片的 `verified` 欄位（布林）標記資料是否已完整核對過官方頁；缺少視為 `false`（草稿卡）。
+- `src/engine/data-loader.mjs` 的 `loadAllData()` 與 `src/engine/recommend.mjs` 的 `recommend()`，預設（`includeUnverified` 不傳或為 `false`）只會回傳／使用 `verified === true` 的卡；草稿卡不會出現在推薦清單中，但仍完整保留在 `data/banks/*.json` 與 `loadAllData()` 讀到的原始資料裡。
+- 若預覽頁或測試需要看到草稿卡（例如核對尚未 `verified` 的資料），呼叫時明確傳入 `includeUnverified: true`：
+  ```js
+  const data = await loadAllData({ baseUrl: "data/", includeUnverified: true });
+  const { recommendations } = recommend({ ..., cards: data.cards, includeUnverified: true });
+  ```
+  兩處都要傳才能讓草稿卡出現在結果中（`loadAllData` 控制資料是否攤平進 `cards`，`recommend` 再控制計算時是否納入）。
 
 ## 字串正規化規則（T02 實作，供資料整理時參考命名一致性）
 

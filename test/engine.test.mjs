@@ -514,6 +514,7 @@ describe("src/engine/recommend.mjs", () => {
         id: "b-card",
         name: "B 卡",
         bankId: "x",
+        verified: true,
         rules: [
           {
             id: "b-g",
@@ -533,6 +534,7 @@ describe("src/engine/recommend.mjs", () => {
         id: "a-card",
         name: "A 卡",
         bankId: "x",
+        verified: true,
         rules: [
           {
             id: "a-g",
@@ -560,6 +562,51 @@ describe("src/engine/recommend.mjs", () => {
     });
     assert.deepEqual(recommendations.map((r) => r.cardId), ["a-card", "b-card"]);
   });
+
+  test("預設只使用 verified 的卡，草稿卡（verified 缺少或不是 true）不出現在推薦裡（T14）", () => {
+    const { recommendations } = recommend({
+      query: "xyz",
+      selectedCategoryId: "dining",
+      cards,
+      merchants,
+      categoryKeywords,
+      categories,
+      today: TODAY,
+    });
+    assert.ok(!recommendations.some((r) => r.cardId === "testbank-draft"));
+  });
+
+  test("includeUnverified: true 時，草稿卡也納入推薦（T14）", () => {
+    const { recommendations } = recommend({
+      query: "xyz",
+      selectedCategoryId: "dining",
+      cards,
+      merchants,
+      categoryKeywords,
+      categories,
+      today: TODAY,
+      includeUnverified: true,
+    });
+    const draftEntry = recommendations.find((r) => r.cardId === "testbank-draft");
+    assert.ok(draftEntry);
+    assert.equal(draftEntry.rate, 50);
+    // 草稿卡回饋率最高，有 includeUnverified 時應排在第一名
+    assert.equal(recommendations[0].cardId, "testbank-draft");
+  });
+
+  test("「我的卡片」篩選與 verified 過濾同時生效：即使指定了草稿卡的 id，預設仍不會出現（T14）", () => {
+    const { recommendations } = recommend({
+      query: "xyz",
+      selectedCategoryId: "dining",
+      cards,
+      merchants,
+      categoryKeywords,
+      categories,
+      cardIds: ["testbank-draft", "testbank-general"],
+      today: TODAY,
+    });
+    assert.deepEqual(recommendations.map((r) => r.cardId), ["testbank-general"]);
+  });
 });
 
 describe("src/engine/data-loader.mjs", () => {
@@ -584,6 +631,22 @@ describe("src/engine/data-loader.mjs", () => {
       throw new Error("載入失敗");
     };
     await assert.rejects(() => loadAllData({ baseUrl: "", fetchJson: failing }));
+  });
+
+  test("預設只回傳 verified 的卡，草稿卡不出現在 cards 裡（T14）", async () => {
+    const data = await loadAllData({ baseUrl: "", fetchJson: fetchJsonFromFixtures });
+    assert.equal(data.cards.length, 3);
+    assert.ok(!data.cards.some((c) => c.id === "testbank-draft"));
+  });
+
+  test("includeUnverified: true 時，草稿卡也會出現在 cards 裡（T14）", async () => {
+    const data = await loadAllData({
+      baseUrl: "",
+      fetchJson: fetchJsonFromFixtures,
+      includeUnverified: true,
+    });
+    assert.equal(data.cards.length, 4);
+    assert.ok(data.cards.some((c) => c.id === "testbank-draft"));
   });
 });
 

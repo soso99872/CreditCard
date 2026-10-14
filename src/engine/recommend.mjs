@@ -38,6 +38,9 @@ import { formatRate, formatCap, formatReason, estimateReward } from "./format.mj
  *   cardIds?: string[] | null, // 只計算這些卡片 id（「我的卡片」），null／undefined 代表全部卡別
  *   today: string, // YYYY-MM-DD，用於排除過期規則
  *   amount?: number, // 選填，提供時會附上每張卡的金額試算
+ *   includeUnverified?: boolean, // T14：預設 false，只計算 verified === true 的卡；
+ *                                 // 草稿卡（verified 不是 true）須明確傳 true 才會納入計算，
+ *                                 // 供預覽或測試查看未核對的資料
  * }} params
  * @returns {{
  *   match:
@@ -59,6 +62,7 @@ export function recommend({
   cardIds = null,
   today,
   amount,
+  includeUnverified = false,
 }) {
   const merchantIndex = buildMerchantIndex(merchants);
   const categoryNameById = new Map((categories || []).map((c) => [c.id, c.name]));
@@ -112,7 +116,12 @@ export function recommend({
     };
   }
 
-  const pool = cardIds ? cards.filter((card) => cardIds.includes(card.id)) : cards;
+  // T14：預設只使用 verified === true 的卡；草稿卡（verified 不是 true）要明確傳
+  // includeUnverified: true 才會納入計算，不出現在一般的推薦清單裡。
+  const verifiedPool = includeUnverified
+    ? cards
+    : cards.filter((card) => card.verified === true);
+  const pool = cardIds ? verifiedPool.filter((card) => cardIds.includes(card.id)) : verifiedPool;
 
   const recommendations = [];
   for (const card of pool) {

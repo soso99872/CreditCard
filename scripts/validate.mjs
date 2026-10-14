@@ -209,6 +209,10 @@ export async function validate(dataDir) {
         errors.push(`${cardLoc}：缺少 name`);
       }
 
+      if (card.verified !== undefined && typeof card.verified !== "boolean") {
+        errors.push(`${cardLoc}：verified 必須是布林值（沒有這個欄位則視為 false，草稿卡）`);
+      }
+
       if (!card.sourceUrl) {
         errors.push(`${cardLoc}：缺少 sourceUrl`);
       } else if (issuer && !domainInWhitelist(card.sourceUrl, issuer.officialDomains)) {

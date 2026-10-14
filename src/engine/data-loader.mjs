@@ -21,6 +21,9 @@ async function defaultFetchJson(url) {
  *   baseUrl?: string, // data/ 目錄的基底路徑或網址，需以斜線結尾，預設 "data/"
  *   fetchJson?: (url: string) => Promise<any>, // 讀取並解析 JSON，預設用全域 fetch；
  *                                               // 測試或非瀏覽器環境可注入自訂實作（例如直接讀檔）
+ *   includeUnverified?: boolean, // T14：預設 false，cards 只包含 verified === true 的卡；
+ *                                 // 草稿卡（verified 不是 true）仍保留在檔案中，
+ *                                 // 但要明確傳 true 才會出現在回傳的 cards 裡（供預覽或測試使用）
  * }} [options]
  * @returns {Promise<{
  *   categories: Array,
@@ -30,7 +33,11 @@ async function defaultFetchJson(url) {
  *   cards: Array, // 所有銀行的卡片攤平成一個陣列，每張卡多了 bankId 欄位
  * }>}
  */
-export async function loadAllData({ baseUrl = "data/", fetchJson = defaultFetchJson } = {}) {
+export async function loadAllData({
+  baseUrl = "data/",
+  fetchJson = defaultFetchJson,
+  includeUnverified = false,
+} = {}) {
   const [categories, issuers, merchants, categoryKeywords, index] = await Promise.all([
     fetchJson(`${baseUrl}categories.json`),
     fetchJson(`${baseUrl}issuers.json`),
@@ -43,9 +50,13 @@ export async function loadAllData({ baseUrl = "data/", fetchJson = defaultFetchJ
     (index.banks || []).map((file) => fetchJson(`${baseUrl}banks/${file}`))
   );
 
-  const cards = bankFiles.flatMap((bank) =>
+  const allCards = bankFiles.flatMap((bank) =>
     (bank.cards || []).map((card) => ({ ...card, bankId: bank.bankId }))
   );
+
+  // T14：預設只回傳 verified === true 的卡；草稿卡保留在檔案與 bankFiles 裡，
+  // 只有明確傳 includeUnverified: true 時才會出現在這裡回傳的 cards。
+  const cards = includeUnverified ? allCards : allCards.filter((card) => card.verified === true);
 
   return { categories, issuers, merchants, categoryKeywords, cards };
 }
