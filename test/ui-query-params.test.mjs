@@ -45,3 +45,42 @@ describe("src/ui/query-params.mjs — resolveDataBaseUrl 只接受站內相對�
     assert.equal(resolveDataBaseUrl("?data=preview"), "preview/");
   });
 });
+
+describe("src/ui/query-params.mjs — resolveDataBaseUrl 擋反斜線，避免跨網域 fetch（主管退回 T12-1 重做）", () => {
+  // 瀏覽器解析 http(s) 網址時會把 `\` 當成 `/`，所以 `?data=` 裡只要出現反斜線，
+  // 就可能讓 baseUrl 變成 protocol-relative URL（例如 `\\evil.com/` 等同 `//evil.com/`），
+  // 導致 fetch 讀到站外網域的 JSON。以下案例全部要退回預設的 data/。
+
+  test("值含兩個反斜線（等同 //evil.com 的 protocol-relative URL），退回 data/", () => {
+    // 實際字元：?data=\\evil.com（兩個反斜線）
+    assert.equal(resolveDataBaseUrl("?data=\\\\evil.com"), "data/");
+  });
+
+  test("值以 / 開頭、接一個反斜線，退回 data/", () => {
+    // 實際字元：?data=/\evil.com
+    assert.equal(resolveDataBaseUrl("?data=/\\evil.com"), "data/");
+  });
+
+  test("值以反斜線開頭、接 /，退回 data/", () => {
+    // 實際字元：?data=\/evil.com
+    assert.equal(resolveDataBaseUrl("?data=\\/evil.com"), "data/");
+  });
+
+  test("URL 編碼後的 ../ 路徑片段（.%2e/x，解碼後變成 ../x）退回 data/", () => {
+    assert.equal(resolveDataBaseUrl("?data=.%2e/x"), "data/");
+  });
+
+  test("值以 / 開頭（/data）即使字元合法仍退回 data/", () => {
+    assert.equal(resolveDataBaseUrl("?data=/data"), "data/");
+  });
+
+  test("URL 編碼後的反斜線（%5C%5Cevil.com，URLSearchParams 解碼後變成兩個反斜線）退回 data/", () => {
+    assert.equal(resolveDataBaseUrl("?data=%5C%5Cevil.com"), "data/");
+  });
+
+  test("既有用法 preview、preview/、test/fixtures/engine 仍可正常指定", () => {
+    assert.equal(resolveDataBaseUrl("?data=preview"), "preview/");
+    assert.equal(resolveDataBaseUrl("?data=preview/"), "preview/");
+    assert.equal(resolveDataBaseUrl("?data=test/fixtures/engine"), "test/fixtures/engine/");
+  });
+});

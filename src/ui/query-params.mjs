@@ -4,17 +4,21 @@
 
 /**
  * `?data=` 只接受站內相對路徑，擋掉可能被用來跳出站內資料目錄、
- * 或指到其他網域的值（PRD v2.2、T12-1）：
- *   - 含 `//`：可能是 protocol-relative URL（例如 `//evil.example/data`）
- *   - 含 `:`：可能帶 scheme（例如 `http://evil.example`）
- *   - 含 `..` 路徑片段：可能跳出站內目錄
+ * 或指到其他網域的值（PRD v2.2、T12-1）。
+ *
+ * 瀏覽器解析 http(s) 網址時會把 `\` 當成 `/`，所以不能只擋 `//`、`:`：
+ * 像 `\\evil.com` 這種值也能讓 baseUrl 變成跨網域的網址。改用白名單：
+ *   - 只允許 `[A-Za-z0-9_\-./]`（不含 `\`、`:`、`%` 等字元，
+ *     因此 URL 編碼過的值，例如 `%2e%2e`、`%5C%5C`，一律因為含 `%` 被擋下）
+ *   - 不能以 `/` 開頭（避免變成網站根目錄或 protocol-relative URL 的一部分）
+ *   - 路徑片段不能是 `..`（避免跳出站內資料目錄）
  * @param {string} value 已 trim 過的 `data` 參數值
  * @returns {boolean}
  */
 function isSafeRelativeDataPath(value) {
   if (!value) return false;
-  if (value.includes("//")) return false;
-  if (value.includes(":")) return false;
+  if (!/^[A-Za-z0-9_\-./]+$/.test(value)) return false;
+  if (value.startsWith("/")) return false;
   if (value.split("/").some((segment) => segment === "..")) return false;
   return true;
 }
