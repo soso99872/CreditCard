@@ -6,7 +6,7 @@
 import { normalize, loadAllData, recommend } from "../engine/index.mjs";
 import { localToday } from "./date.mjs";
 import { getSafeLocalStorage, loadMyCardIds, addMyCardId, removeMyCardId } from "./storage.mjs";
-import { resolveDataBaseUrl } from "./query-params.mjs";
+import { resolveDataBaseUrl, isDraftMode } from "./query-params.mjs";
 import {
   SCOPE,
   defaultScope,
@@ -16,6 +16,7 @@ import {
   parseAmount,
   GENERAL_CATEGORY_ID,
   resolveSelectedCategoryId,
+  visibleMyCardIds,
 } from "./view-state.mjs";
 import { latestCheckedAt } from "./footer.mjs";
 import { findMerchantSuggestions } from "./suggest.mjs";
@@ -31,14 +32,27 @@ const state = {
   amount: undefined,
   scope: defaultScope(),
   showAll: false,
+  // 「我的卡片」存在 storage 的完整清單，含目前看不到的 id（例如未開 ?draft=1 時的
+  // 草稿卡）；畫面顯示與查詢範圍一律用 currentVisibleMyCardIds() 篩出的子集，
+  // 新增或移除時才操作這個完整清單，避免看不到的 id 被覆寫掉（tasks.md T17）。
   myCardIds: [],
   cardSearch: "",
   match: null,
   recommendations: [],
+  draftMode: false, // ?draft=1 時為 true：loadAllData／recommend 都帶 includeUnverified（tasks.md T17）
 };
+
+/**
+ * 目前資料中看得到的「我的卡片」id，見 state.myCardIds 的註解。
+ * @returns {string[]}
+ */
+function currentVisibleMyCardIds() {
+  return visibleMyCardIds(state.myCardIds, state.data?.cards);
+}
 
 function cacheEls() {
   els.loadError = document.getElementById("load-error");
+  els.draftBanner = document.getElementById("draft-banner");
   els.querySection = document.getElementById("query-section");
   els.queryForm = document.getElementById("query-form");
   els.queryInput = document.getElementById("query-input");
@@ -258,12 +272,13 @@ function renderCardSearchResults() {
 }
 
 function renderMyCards() {
-  els.myCardsCount.textContent = String(state.myCardIds.length);
+  const visibleIds = currentVisibleMyCardIds();
+  els.myCardsCount.textContent = String(visibleIds.length);
   els.myCardsList.replaceChildren();
 
-  for (const cardId of state.myCardIds) {
+  for (const cardId of visibleIds) {
     const card = state.data.cards.find((c) => c.id === cardId);
-    if (!card) continue; // 資料更新後，舊的 id 可能已經不存在，忽略即可
+    if (!card) continue; // 理論上不會發生（visibleIds 已篩過 data.cards），防呆用
 
     const li = document.createElement("li");
     li.className = "chip";
@@ -325,7 +340,7 @@ function render() {
 
   // 「我的卡片」是空的時候，查詢已經自動改用全部卡別計算（見 recompute()），這裡只負責
   // 顯示／隱藏上方那一行加卡提示，不影響下面推薦清單的顯示（PRD v2.2、AC-11b）。
-  els.emptyMyCards.hidden = !shouldPromptEmptyMyCards(state.scope, state.myCardIds);
+  els.emptyMyCards.hidden = !shouldPromptEmptyMyCards(state.scope, currentVisibleMyCardIds());
   renderMatchAndResults();
 
   renderFooter();
@@ -336,7 +351,10 @@ function recompute() {
 
   // 「我的卡片」是空的時候，自動改用全部卡別計算，不用使用者自己手動切換範圍
   // （PRD v2.2、AC-11b）；一旦加入至少 1 張卡，就照使用者選的範圍走（預設「我的卡片」，AC-11a）。
-  const useScope = effectiveScope(state.scope, state.myCardIds);
+  // 這裡只看目前看得到的卡（currentVisibleMyCardIds()），存在 storage 裡但看不到的
+  // 草稿卡 id 不計入「有沒有加卡」的判斷，也不會被拿去篩推薦清單（tasks.md T17）。
+  const visibleIds = currentVisibleMyCardIds();
+  const useScope = effectiveScope(state.scope, visibleIds);
 
   const result = recommend({
     query: state.query,
@@ -348,9 +366,10 @@ function recompute() {
     merchants: state.data.merchants,
     categoryKeywords: state.data.categoryKeywords,
     categories: state.data.categories,
-    cardIds: useScope === SCOPE.MY ? state.myCardIds : null,
+    cardIds: useScope === SCOPE.MY ? visibleIds : null,
     today: localToday(),
     amount: state.amount,
+    includeUnverified: state.draftMode, // ?draft=1 時納入草稿卡（tasks.md T17）
   });
 
   state.match = result.match;
@@ -446,7 +465,7 @@ function wireEvents() {
 async function loadData() {
   const baseUrl = resolveDataBaseUrl(window.location.search);
   try {
-    const data = await loadAllData({ baseUrl });
+    const data = await loadAllData({ baseUrl, includeUnverified: state.draftMode });
     if (!data.cards || data.cards.length === 0) {
       state.loadError =
         "目前資料庫沒有任何卡片資料。請確認資料目錄是否正確，或加上網址參數載入測試資料，" +
@@ -456,8 +475,9 @@ async function loadData() {
     }
     state.data = data;
     state.storage = getSafeLocalStorage();
-    const savedIds = loadMyCardIds(state.storage);
-    state.myCardIds = savedIds.filter((id) => data.cards.some((card) => card.id === id));
+    // 讀出完整清單即可，不在這裡篩掉看不到的 id——篩選交給 currentVisibleMyCardIds()，
+    // 否則新增或移除卡片時會把看不到的 id 一起覆寫掉，永久從 storage 消失（tasks.md T17）。
+    state.myCardIds = loadMyCardIds(state.storage);
   } catch (err) {
     state.loadError =
       `資料載入失敗：${err.message}。請確認資料目錄「${baseUrl}」是否正確，` +
@@ -468,6 +488,10 @@ async function loadData() {
 
 function bootstrap() {
   cacheEls();
+  // 是否開啟草稿資料預覽模式（?draft=1），在最前面就決定好，loadData() 載入資料與
+  // 之後每次 recompute() 都要用同一個值（tasks.md T17）。
+  state.draftMode = isDraftMode(window.location.search);
+  els.draftBanner.hidden = !state.draftMode;
   wireEvents();
   loadData();
 }

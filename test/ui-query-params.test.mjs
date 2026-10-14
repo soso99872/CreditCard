@@ -1,7 +1,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
-import { resolveDataBaseUrl } from "../src/ui/query-params.mjs";
+import { resolveDataBaseUrl, isDraftMode } from "../src/ui/query-params.mjs";
 
 describe("src/ui/query-params.mjs — resolveDataBaseUrl（?data=<目錄>）", () => {
   test("沒有查詢字串時預設 data/", () => {
@@ -82,5 +82,30 @@ describe("src/ui/query-params.mjs — resolveDataBaseUrl 擋反斜線，避免�
     assert.equal(resolveDataBaseUrl("?data=preview"), "preview/");
     assert.equal(resolveDataBaseUrl("?data=preview/"), "preview/");
     assert.equal(resolveDataBaseUrl("?data=test/fixtures/engine"), "test/fixtures/engine/");
+  });
+});
+
+describe("src/ui/query-params.mjs — isDraftMode（?draft=1 開啟草稿資料預覽，T17）", () => {
+  test("draft=1 時開啟", () => {
+    assert.equal(isDraftMode("?draft=1"), true);
+  });
+
+  test("draft=0 時不開啟", () => {
+    assert.equal(isDraftMode("?draft=0"), false);
+  });
+
+  test("draft=true 時不開啟（只接受字串 1）", () => {
+    assert.equal(isDraftMode("?draft=true"), false);
+  });
+
+  test("沒有 draft 參數時不開啟", () => {
+    assert.equal(isDraftMode(""), false);
+    assert.equal(isDraftMode(undefined), false);
+    assert.equal(isDraftMode("?data=preview"), false);
+  });
+
+  test("搭配其他參數時不受影響", () => {
+    assert.equal(isDraftMode("?data=preview&draft=1"), true);
+    assert.equal(isDraftMode("?data=preview&draft=0"), false);
   });
 });

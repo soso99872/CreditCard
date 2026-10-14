@@ -85,3 +85,17 @@ export const GENERAL_CATEGORY_ID = "general";
 export function resolveSelectedCategoryId(selectedCategoryId) {
   return selectedCategoryId || GENERAL_CATEGORY_ID;
 }
+
+/**
+ * 從「我的卡片」完整清單中，挑出目前資料裡看得到的 id（例如草稿卡在沒開
+ * `?draft=1` 時看不到）。畫面顯示與查詢範圍判斷都只看這批；寫回 storage 時
+ * 仍要用完整清單，避免看不到的 id 被覆寫掉而永久消失（tasks.md T17）。
+ * @param {string[] | null | undefined} myCardIds 完整清單（含目前看不到的 id）
+ * @param {Array<{id: string}> | null | undefined} cards 目前資料中看得到的卡片清單
+ * @returns {string[]}
+ */
+export function visibleMyCardIds(myCardIds, cards) {
+  const ids = myCardIds || [];
+  const visibleIdSet = new Set((cards || []).map((card) => card.id));
+  return ids.filter((id) => visibleIdSet.has(id));
+}

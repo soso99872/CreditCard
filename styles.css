@@ -180,6 +180,14 @@ select {
   border: 1px solid #f4c7c3;
 }
 
+/* 草稿資料預覽提示（?draft=1，tasks.md T17）：提醒目前看到的是尚未核對過的草稿卡。 */
+.banner-draft {
+  background: #fff7e6;
+  color: #7a4b00;
+  border: 1px solid #f0d7a0;
+  font-size: 0.9rem;
+}
+
 /* 「我的卡片」是空的時候查詢，一行加卡提示＋加卡入口（PRD v2.2、AC-11b）：
    推薦清單這時已經自動改用全部卡別直接顯示，這裡不佔版面、不取代清單。 */
 #empty-my-cards.banner-inline {

@@ -37,3 +37,15 @@ export function resolveDataBaseUrl(search) {
   const dir = isSafeRelativeDataPath(trimmed) ? trimmed : "data";
   return `${dir.replace(/\/+$/, "")}/`;
 }
+
+/**
+ * 是否開啟草稿資料預覽模式（`?draft=1`）：開啟時 `loadAllData`／`recommend` 都要帶
+ * `includeUnverified: true`，讓尚未核對過的草稿卡也出現在結果中，供預覽（tasks.md T17）。
+ * 只有字串 `"1"` 才算開啟；`draft=0`、`draft=true`、沒有這個參數都視為關閉，避免意外打開。
+ * @param {string} search 如 window.location.search
+ * @returns {boolean}
+ */
+export function isDraftMode(search) {
+  const params = new URLSearchParams(search || "");
+  return params.get("draft") === "1";
+}

@@ -10,6 +10,7 @@ import {
   parseAmount,
   GENERAL_CATEGORY_ID,
   resolveSelectedCategoryId,
+  visibleMyCardIds,
 } from "../src/ui/view-state.mjs";
 
 describe("src/ui/view-state.mjs — defaultScope（AC-11a：第一次開啟預設查我的卡片）", () => {
@@ -118,5 +119,34 @@ describe("src/ui/view-state.mjs — resolveSelectedCategoryId（AC-04：查無�
 
   test("使用者已點類別快選鈕時，回傳該類別 id", () => {
     assert.equal(resolveSelectedCategoryId("dining"), "dining");
+  });
+});
+
+describe("src/ui/view-state.mjs — visibleMyCardIds（T17：保留看不到的我的卡片 id，只在畫面上濾掉）", () => {
+  const cards = [{ id: "card-a" }, { id: "card-b" }];
+
+  test("只保留目前資料中存在的 id，看不到的（例如草稿卡）被濾掉", () => {
+    assert.deepEqual(visibleMyCardIds(["card-a", "card-draft", "card-b"], cards), [
+      "card-a",
+      "card-b",
+    ]);
+  });
+
+  test("保留原本的順序", () => {
+    assert.deepEqual(visibleMyCardIds(["card-b", "card-draft", "card-a"], cards), [
+      "card-b",
+      "card-a",
+    ]);
+  });
+
+  test("myCardIds 或 cards 為 undefined／null 時不丟錯，回傳空陣列", () => {
+    assert.deepEqual(visibleMyCardIds(undefined, cards), []);
+    assert.deepEqual(visibleMyCardIds(null, cards), []);
+    assert.deepEqual(visibleMyCardIds(["card-a"], undefined), []);
+    assert.deepEqual(visibleMyCardIds(["card-a"], null), []);
+  });
+
+  test("全部都看得到時原樣回傳（不影響既有行為）", () => {
+    assert.deepEqual(visibleMyCardIds(["card-a", "card-b"], cards), ["card-a", "card-b"]);
   });
 });
