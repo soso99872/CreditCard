@@ -1,0 +1,54 @@
+{
+  "bankId": "cotabank",
+  "cardListUrl": "https://www.cotabank.com.tw/card/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "一般晶片卡(白金卡、普卡)", "status": "included", "cardId": "cotabank-general" },
+    { "cardName": "樂活卡(白金卡、普卡)", "status": "included", "cardId": "cotabank-lohas" },
+    { "cardName": "台中火車站建站百年紀念卡", "status": "excluded", "reason": "經查官方現金回饋公告PDF，已載明該卡已不受理申辦，屬已停發卡片" },
+    { "cardName": "樂活造型普卡、金卡", "status": "excluded", "reason": "經查官方現金回饋公告PDF，已載明該卡已不受理申辦，屬已停發卡片" },
+    { "cardName": "北京奧運白金卡", "status": "excluded", "reason": "經查官方現金回饋公告PDF，已載明該卡已不受理申辦，屬已停發卡片" }
+  ],
+  "cards": [
+    {
+      "id": "cotabank-general",
+      "name": "一般晶片卡",
+      "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
+      "rules": [
+        {
+          "id": "cotabank-general-general",
+          "plan": "白金卡/普卡",
+          "scope": { "type": "general" },
+          "rate": 0.7,
+          "rawReward": "當期對帳單一般消費累計金額NT$1,001以上享0.7%現金回饋（NT$1,000以下不回饋）",
+          "cap": null,
+          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.2%（為0.5%）", "當期對帳單一般消費累計金額需達NT$1,001以上，未達NT$1,000不回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "cotabank-lohas",
+      "name": "樂活卡",
+      "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
+      "rules": [
+        {
+          "id": "cotabank-lohas-general",
+          "plan": "白金卡/普卡",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "當期對帳單一般消費累計金額NT$1元以上享1%現金回饋",
+          "cap": null,
+          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.1%（為0.9%）"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "bankId": "bot",
+  "cardListUrl": "https://www.bot.com.tw/tw/personal-banking/credit-card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "綠行卡", "status": "included", "cardId": "bot-greengo" },
+    { "cardName": "一卡通鈦金商旅卡", "status": "included", "cardId": "bot-ikatong" },
+    { "cardName": "一卡通導盲犬認同卡", "status": "excluded", "reason": "公益認同卡，核心權益為捐款支持導盲犬相關公益機構，非以現金或點數回饋為主" },
+    { "cardName": "Combo地球儀白金卡", "status": "excluded", "reason": "官方讀不到：官方頁面將回饋細節統一導向「現金紅利回饋」專頁，但該專頁實際內容未揭露具體卡別對應之回饋數字，暫不收錄" },
+    { "cardName": "金采卡", "status": "excluded", "reason": "經查官方頁面，回饋採依月消費金額分級之「黃金點數」制度（另加碼8.88%），須兌換為黃金存摺而非現金，換算為台幣回饋率的公允值不易確認，回饋率有疑慮，暫不收錄" },
+    { "cardName": "祝福認同卡", "status": "excluded", "reason": "認同卡，核心權益通常為捐款支持特定機構，非以現金或點數回饋為主" },
+    { "cardName": "Visa達人金融卡", "status": "excluded", "reason": "金融卡（簽帳金融卡），非信用卡，本期僅收錄信用卡" },
+    { "cardName": "行動信用卡", "status": "excluded", "reason": "為行動支付／數位卡片服務頁面，非獨立信用卡產品" },
+    { "cardName": "金鑽商旅白金卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "VISA白金卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "桐花認同白金卡", "status": "excluded", "reason": "認同卡，核心權益通常為支持客家桐花祭相關活動，非以現金或點數回饋為主" },
+    { "cardName": "大紀元認同白金卡", "status": "excluded", "reason": "媒體機構認同卡，非以現金或點數回饋為主" },
+    { "cardName": "北科大鈦金商旅卡", "status": "excluded", "reason": "校友認同卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "中師院愛校認同白金卡", "status": "excluded", "reason": "校友認同卡，核心權益通常為支持母校事務，非以現金或點數回饋為主" },
+    { "cardName": "新北市認同白金卡", "status": "excluded", "reason": "市政認同卡，核心權益通常為支持市政建設，非以現金或點數回饋為主" },
+    { "cardName": "彰化縣認同白金卡", "status": "excluded", "reason": "縣政認同卡，核心權益通常為支持縣政建設，非以現金或點數回饋為主" },
+    { "cardName": "台東縣認同白金卡", "status": "excluded", "reason": "縣政認同卡，核心權益通常為支持縣政建設，非以現金或點數回饋為主" },
+    { "cardName": "國璽聯名白金卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，此卡性質未查核，暫不收錄" }
+  ],
+  "cards": [
+    {
+      "id": "bot-greengo",
+      "name": "綠行卡",
+      "sourceUrl": "https://wwwap.bot.com.tw/greengocard/",
+      "rules": [
+        {
+          "id": "bot-greengo-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費最高1%現金回饋（需申辦電子帳單+臺銀帳戶自動授扣，否則僅0.5%），無上限",
+          "cap": null,
+          "conditions": ["需申辦電子帳單並約定臺銀帳戶自動授扣，否則僅0.5%"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://wwwap.bot.com.tw/greengocard/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "bot-greengo-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.2,
+          "rawReward": "海外一般消費一律2.2%回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://wwwap.bot.com.tw/greengocard/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "bot-greengo-green-merchants",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["成真咖啡", "八百金", "鮮乳坊", "里仁", "聖德科斯", "棉花田", "House of Story Wear", "點點善", "印花樂", "FYNE", "綠藤生機", "愛皂事", "歐萊德", "煙波大飯店", "雲品溫泉酒店", "捷絲旅", "晶泉丰旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "綠色通路消費加碼5%（基本1%+加碼5%=6%）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": [
+            "需同時申辦電子帳單、臺銀帳戶自動授扣並綁定台灣Pay",
+            "綠色通路／低碳出行／行動支付三者採擇優計算，不可累加",
+            "月回饋上限新戶NT$500、舊戶NT$300"
+          ],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://wwwap.bot.com.tw/greengocard/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "bot-greengo-low-carbon-transport",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["transport"] },
+          "rate": 6,
+          "rawReward": "低碳出行（Gogoro、iRent、GoShare、WeMo）消費加碼5%（基本1%+加碼5%=6%）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": [
+            "需同時申辦電子帳單、臺銀帳戶自動授扣並綁定台灣Pay",
+            "綠色通路／低碳出行／行動支付三者採擇優計算，不可累加",
+            "月回饋上限新戶NT$500、舊戶NT$300"
+          ],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://wwwap.bot.com.tw/greengocard/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "bot-ikatong",
+      "name": "一卡通鈦金商旅卡",
+      "sourceUrl": "https://ecard.bot.com.tw/Pages/Cards/P10.html",
+      "rules": [
+        {
+          "id": "bot-ikatong-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1.2,
+          "rawReward": "國內一般消費最高1.2%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["單筆NT$500以下不列入回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://ecard.bot.com.tw/Pages/Cards/P10.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "bot-ikatong-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.2,
+          "rawReward": "國外消費一律2.2%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["單筆NT$500以下不列入回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://ecard.bot.com.tw/Pages/Cards/P10.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

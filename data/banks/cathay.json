@@ -1,0 +1,273 @@
+{
+  "bankId": "cathay",
+  "cardListUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "CUBE信用卡", "status": "included", "cardId": "cathay-cube" },
+    { "cardName": "現金回饋御璽卡", "status": "included", "cardId": "cathay-cash-rebate-signature" },
+    { "cardName": "蝦皮購物聯名卡", "status": "included", "cardId": "cathay-shopee" },
+    { "cardName": "世界卡", "status": "included", "cardId": "cathay-world" },
+    { "cardName": "雙幣卡", "status": "included", "cardId": "cathay-dual-currency" },
+    { "cardName": "亞洲萬里通聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "長榮航空聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "商務卡", "status": "excluded", "reason": "主要權益為差旅彈性報帳、道路救援與旅遊保險，官網查無標準一般消費現金或點數回饋率" },
+    { "cardName": "CUBE簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡（debit card），非信用卡" },
+    { "cardName": "台塑聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "KOKO COMBO icash聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "KOKO(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "KOKO icash聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "國泰人壽聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "金卡/普卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "享購鈦金卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "白金卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "尊榮御璽(COMBO)卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "鈦金商務卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "Costco聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "eTag聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "COMBO財富卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "NFC行動信用卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "Taiwan Money 卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "國民旅遊卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "聯合報優秀卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "W@card", "status": "excluded", "reason": "已停發" },
+    { "cardName": "遠東SOGO(悠遊)聯名卡", "status": "excluded", "reason": "已停發" },
+    { "cardName": "太平洋百貨聯名卡", "status": "excluded", "reason": "已停發" }
+  ],
+  "cards": [
+    {
+      "id": "cathay-cube",
+      "name": "CUBE信用卡",
+      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "cathay-cube-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費 0.3% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-digital-l1",
+          "plan": "玩數位方案 Level 1",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 2,
+          "rawReward": "玩數位方案指定線上消費 2% 小樹點(信用卡)（Level 1）",
+          "cap": null,
+          "conditions": ["需切換至玩數位方案"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-dining-l1",
+          "plan": "樂饗購方案 Level 1",
+          "scope": { "type": "category", "categories": ["dining", "department-store"] },
+          "rate": 2,
+          "rawReward": "樂饗購方案指定美食/購物消費 2% 小樹點(信用卡)（Level 1）",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-travel-l1",
+          "plan": "趣旅行方案 Level 1",
+          "scope": { "type": "category", "categories": ["travel"] },
+          "rate": 2,
+          "rawReward": "趣旅行方案指定旅遊消費 2% 小樹點(信用卡)（Level 1）",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-select",
+          "plan": "集精選方案",
+          "scope": { "type": "category", "categories": ["convenience-store"] },
+          "rate": 2,
+          "rawReward": "集精選方案指定品牌/生活消費 2% 小樹點(信用卡)（不分等級）",
+          "cap": null,
+          "conditions": ["需切換至集精選方案"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-fixed-general",
+          "plan": "固定回饋方案",
+          "scope": { "type": "general" },
+          "rate": 1.2,
+          "rawReward": "固定回饋方案一般消費(不含保費) 1.2% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至固定回饋方案"],
+          "validFrom": "2026-08-03",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cube-fixed-overseas",
+          "plan": "固定回饋方案",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.5,
+          "rawReward": "固定回饋方案海外實體消費 2.5% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至固定回饋方案"],
+          "validFrom": "2026-08-03",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "cathay-cash-rebate-signature",
+      "name": "現金回饋御璽卡",
+      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+      "rules": [
+        {
+          "id": "cathay-cash-rebate-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內消費 0.5% 現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-cash-rebate-signature-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外消費 2% 現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "cathay-shopee",
+      "name": "蝦皮購物聯名卡",
+      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee",
+      "pointValue": { "unit": "蝦幣", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "cathay-shopee-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費 0.5% 蝦幣回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "cathay-world",
+      "name": "世界卡",
+      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world",
+      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "cathay-world-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.6,
+          "rawReward": "國內消費 0.6% 小樹點(信用卡)回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-world-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 0.9,
+          "rawReward": "海外消費單筆滿NT$500享 0.9% 小樹點(信用卡)回饋",
+          "cap": null,
+          "conditions": ["單筆消費達NT$500"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "cathay-dual-currency",
+      "name": "雙幣卡",
+      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
+      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "cathay-dual-currency-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "國內消費 0.3% 小樹點(信用卡)回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-dual-currency-overseas-platinum",
+          "plan": "雙幣白金卡",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 0.9,
+          "rawReward": "雙幣白金卡海外消費 0.9% 小樹點(信用卡)回饋",
+          "cap": null,
+          "conditions": ["海外單筆消費達US$20以上"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "cathay-dual-currency-overseas-titanium-biz",
+          "plan": "雙幣鈦金商務卡",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "雙幣鈦金商務卡海外消費 1.5% 小樹點(信用卡)回饋",
+          "cap": null,
+          "conditions": ["海外單筆消費達US$20以上"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

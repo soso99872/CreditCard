@@ -1,0 +1,400 @@
+{
+  "bankId": "dbs",
+  "cardListUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/default.page",
+  "checkedAt": "2026-10-14",
+  "coverage": [
+    { "cardName": "星展傳說對決聯名卡", "status": "included", "cardId": "dbs-aov" },
+    { "cardName": "星展eco永續卡", "status": "included", "cardId": "dbs-eco" },
+    { "cardName": "星展飛行世界商務卡", "status": "excluded", "reason": "哩程卡（飛行積金兌換航空哩程計畫為主），本期不收錄" },
+    { "cardName": "星展飛行世界之極卡", "status": "excluded", "reason": "哩程卡（與飛行世界商務卡同系列），本期不收錄" },
+    { "cardName": "星展everyday威士御璽卡", "status": "included", "cardId": "dbs-everyday-signature" },
+    { "cardName": "星展極耀無限卡", "status": "included", "cardId": "dbs-insignia" },
+    { "cardName": "星展晶耀無限卡", "status": "included", "cardId": "dbs-vantage" },
+    { "cardName": "星展饗樂生活卡", "status": "included", "cardId": "dbs-funlife" },
+    { "cardName": "星展PChome Prime聯名卡", "status": "included", "cardId": "dbs-pchomeprime" },
+    { "cardName": "星展HAPPY GO聯名卡", "status": "excluded", "reason": "HAPPY GO點數回饋為主（一般消費每NT$100積1點），已查星展官網的HAPPY GO聯名卡頁（dbs-happygo）與「回饋獎勵計畫」兌換刷卡金頁（bonus_redeem_creditcard_cash_back，列出飛行積金、活利積分、現金積點/現金紅利、PChome聯名紅利點數的兌換比例），均未提供HAPPY GO點數兌換新台幣或刷卡金的比例；依指示本案不得採用HAPPY GO官網（happygocard.com.tw，非星展官方網域）的換算資料，故維持排除" },
+    { "cardName": "星展喜憨兒認同卡", "status": "included", "cardId": "dbs-cru" },
+    { "cardName": "星展飛行鈦金卡", "status": "excluded", "reason": "哩程卡（與飛行世界系列同屬性），本期不收錄" },
+    { "cardName": "星展炫晶商務御璽卡", "status": "excluded", "reason": "與星展炫晶御璽卡同系列，官網未確認兩者回饋內容是否一致，為避免回饋率誤植，本期僅收錄炫晶御璽卡作為代表" },
+    { "cardName": "星展eco永續極簡卡", "status": "excluded", "reason": "與星展eco永續卡同系列，官網未逐一列出各等級回饋明細，為避免誤植，本期僅收錄eco永續卡作為代表" },
+    { "cardName": "星展eco永續優選卡", "status": "excluded", "reason": "與星展eco永續卡同系列，理由同eco永續極簡卡" },
+    { "cardName": "星展eco永續優選PLUS卡", "status": "excluded", "reason": "與星展eco永續卡同系列，理由同eco永續極簡卡" },
+    { "cardName": "星展eco永續世界商務卡", "status": "excluded", "reason": "與星展eco永續卡同系列，理由同eco永續極簡卡" },
+    { "cardName": "星展everyday威士白金卡", "status": "included", "cardId": "dbs-everyday-platinum" },
+    { "cardName": "星展商務eco卡", "status": "excluded", "reason": "與星展eco永續卡同系列，理由同eco永續極簡卡" },
+    { "cardName": "星展優仕商務卡", "status": "included", "cardId": "dbs-yours-signature-business" },
+    { "cardName": "星展炫晶御璽卡", "status": "included", "cardId": "dbs-livefresh" },
+    { "cardName": "星展金卡/普卡", "status": "excluded", "reason": "官網信用卡介紹頁查無具體回饋率、上限或活動期間等資訊，無法確認回饋內容" },
+    { "cardName": "星展豐盛御璽卡", "status": "excluded", "reason": "官網標示「目前不提供新卡申請」，視為已停發，且查無完整回饋明細" },
+    { "cardName": "星展豐盛無限卡", "status": "excluded", "reason": "官網頁面標註「已停止申辦」" },
+    { "cardName": "星展everyday鈦金卡", "status": "included", "cardId": "dbs-everyday-titanium" },
+    { "cardName": "星展炫晶鈦金卡", "status": "excluded", "reason": "與星展炫晶御璽卡同系列，官網未確認兩者回饋內容是否一致，為避免回饋率誤植，本期僅收錄炫晶御璽卡作為代表" }
+  ],
+  "cards": [
+    {
+      "id": "dbs-aov",
+      "name": "星展傳說對決聯名卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-aov/index.html",
+      "rules": [
+        {
+          "id": "dbs-aov-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "國內/國外一般消費0.2%現金積點回饋（含基本回饋）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-aov/index.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "dbs-eco",
+      "name": "星展eco永續卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+      "pointValue": { "unit": "現金積點", "twdPerPoint": 1, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-eco-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內／外一般消費最高1%現金積點回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "dbs-eco-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 5,
+          "rawReward": "日韓泰/新美歐地區實體消費5%現金積點回饋，每期上限600點",
+          "cap": { "amount": 600, "unit": "point", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "dbs-eco-dining",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["dining"] },
+          "rate": 12,
+          "rawReward": "聚餐用星刷：2026/9/1～12/31月月以星展信用卡任刷國內餐飲並完成登錄，當月合格餐飲消費含3筆且每筆達NT$888（含）以上，筆筆享最高12%回饋；依當月合格餐飲消費總金額由高至低排序核發，每人每月回饋上限NT$350，每月限量3,600名",
+          "cap": { "amount": 350, "unit": "TWD", "period": "month" },
+          "conditions": ["需登錄", "當月消費含3筆且每筆達NT$888（含）以上", "每月限量3,600名"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/offers/2026q4dining/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "dbs-eco-travel",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["國內飯店住宿", "高鐵", "立榮航空", "華信航空", "和運租車", "iRent", "格上租車", "中油直營站", "全國加油站", "台塑加油站", "台亞加油站", "六福村", "麗寶樂園", "九族文化村", "劍湖山世界", "義大遊樂世界", "小人國", "遠雄海洋公園", "Xpark", "國立海生館", "Klook", "KKday"], "basis": "merchant-list" },
+          "rate": 5,
+          "rawReward": "指定國旅三大通路（國內住宿、國內交通、國內遊樂）2026/9/1～12/31刷星展信用卡並完成登錄，當月累積消費滿NT$20,000（含）以上，最高享5%回饋，當月最高回饋NT$1,000刷卡金，活動期間最高NT$4,000；每月限量500名。國內住宿依交易地點（台灣）與住宿類MCC碼（3500~3999、7011、7012、7032、7033）認列，國內交通／國內遊樂則依帳單顯示之官方指定商家名稱認列（如高鐵、立榮航空、華信航空、和運租車、iRent、格上租車、中油直營站、全國加油站、台塑加油站、台亞加油站、六福村、麗寶樂園、九族文化村、劍湖山世界、義大遊樂世界、小人國、遠雄海洋公園、Xpark、國立海生館、Klook、KKday）",
+          "cap": { "amount": 1000, "unit": "TWD", "period": "month" },
+          "conditions": ["需登錄", "每月累積消費滿NT$20,000（含）以上", "每月限量500名"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/offers/domestictravel/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-pchomeprime",
+      "name": "星展PChome Prime聯名卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+      "rules": [
+        {
+          "id": "dbs-pchomeprime-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內、國外一般消費0.5%（PChome聯名點數）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "dbs-pchomeprime-pchome",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["PChome", "PChome24h購物"], "basis": "merchant-list" },
+          "rate": 4,
+          "rawReward": "PChome站內消費2%聯名點數＋2% P幣，合計4%，每帳單週期合計最高回饋2,000（聯名點數1,000點＋P幣1,000）",
+          "cap": { "amount": 2000, "unit": "point", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "dbs-yours-signature-business",
+      "name": "星展優仕商務卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/yours_signature_business_card",
+      "rules": [
+        {
+          "id": "dbs-yours-signature-business-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1.2,
+          "rawReward": "國內消費1.2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/yours_signature_business_card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "dbs-yours-signature-business-overseas",
+          "plan": "每月消費未達NT$20,000",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.55,
+          "rawReward": "每月消費<NT$20,000，國外消費享現金回饋2.55%（基本回饋1.2%加碼1.125倍）",
+          "cap": null,
+          "conditions": ["每月消費未達NT$20,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/yours_signature_business_card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "dbs-yours-signature-business-overseas-tier2",
+          "plan": "每月消費達NT$20,000以上",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 3.0,
+          "rawReward": "每月消費>=NT$20,000，國外消費享現金回饋3.0%",
+          "cap": null,
+          "conditions": ["每月累積消費達NT$20,000（含）以上"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/yours_signature_business_card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-livefresh",
+      "name": "星展炫晶御璽卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/livefresh",
+      "rules": [
+        {
+          "id": "dbs-livefresh-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.8,
+          "rawReward": "國內消費0.8%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/livefresh",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "dbs-livefresh-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.7,
+          "rawReward": "海外消費0.8%×212.5%，實際為1.7%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/livefresh",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "dbs-everyday-signature",
+      "name": "星展everyday威士御璽卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-everyday-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.16,
+          "rawReward": "一般消費每NT$25累積1點活利積分；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.16%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "dbs-everyday-signature-streaming",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["Netflix", "Disney+", "YouTube", "Spotify", "iTunes"], "basis": "merchant-list" },
+          "rate": 1.6,
+          "rawReward": "指定海外串流影音平台（Netflix、Disney+、YouTube、Spotify、iTunes）消費享10倍活利積分（含原消費所提供之1倍回饋），換算約1.6%現金回饋；須信用卡帳單明細明確顯示該商店名稱始享回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-everyday-platinum",
+      "name": "星展everyday威士白金卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday_2023/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-everyday-platinum-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.16,
+          "rawReward": "一般消費每NT$25累積1點活利積分；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.16%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday_2023/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-everyday-titanium",
+      "name": "星展everyday鈦金卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/everyday_titanium",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-everyday-titanium-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.16,
+          "rawReward": "一般消費每NT$25累積1點活利積分；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.16%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/everyday_titanium",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-insignia",
+      "name": "星展極耀無限卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Insignia/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-insignia-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費每NT$8累積1點活利積分；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Insignia/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-vantage",
+      "name": "星展晶耀無限卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Vantage/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-vantage-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.13,
+          "rawReward": "一般消費每滿NT$30累積活利積分1點；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.13%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Vantage/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-funlife",
+      "name": "星展饗樂生活卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-funlife-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.13,
+          "rawReward": "一般消費每滿NT$30可累積星展活利積分1點；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.13%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "dbs-funlife-dining-cinema",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["王品牛排", "TASTy西堤牛排", "陶板屋和風洋食", "原燒 日式燒肉", "聚日式鍋物", "藝奇 日式料理", "品田牧場", "夏慕尼新香榭鉄板燒", "PUTIEN 莆田", "青花驕 麻辣鍋", "XIANG DUCK 享鴨", "和牛涮 日式鍋物放題", "丰禾 台味風格料理", "肉次方燒肉放題", "尬鍋台式潮鍋", "威秀影城", "MUVIE CINEMAS"], "basis": "merchant-list" },
+          "rate": 0.27,
+          "rawReward": "於王品集團指定品牌餐廳（百貨、商場分店不適用）、威秀影城/MUVIE CINEMAS刷卡消費，享「雙倍活利積分」2倍（含原1倍），每滿NT$30累積2點，換算約0.27%現金回饋",
+          "cap": null,
+          "conditions": ["須出示卡片並告知為星展饗樂生活卡付款", "百貨、商場分店不適用"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "dbs-cru",
+      "name": "星展喜憨兒認同卡",
+      "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-cru/index.html",
+      "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "dbs-cru-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.13,
+          "rawReward": "一般消費每滿NT$30可累積星展活利積分1點；依「回饋獎勵計畫」兌換刷卡金頁，活利積分每1,000點可兌換刷卡金NT$40，換算約0.13%現金回饋（另有刷卡消費0.275%由銀行捐助喜憨兒社會福利基金會，非持卡人回饋，不計入本規則）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-cru/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    }
+  ]
+}

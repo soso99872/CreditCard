@@ -1,0 +1,33 @@
+{
+  "bankId": "rakuten-card",
+  "cardListUrl": "https://www.card.rakuten.com.tw/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "樂天樂翔卡", "status": "excluded", "reason": "哩程卡（樂翔積分主要兌換航空哩程），本期不收錄" },
+    { "cardName": "樂天Panda J卡", "status": "included", "cardId": "rakuten-panda-j" },
+    { "cardName": "樂天玫瑰金卡", "status": "excluded", "reason": "官網查無該卡的回饋率、上限或活動期間等資訊，無法確認回饋內容" },
+    { "cardName": "樂天桃猿卡", "status": "excluded", "reason": "官網僅提供精選通路（台灣樂天市場/桃猿指定實體店面/Rakuten Kobo/Rakuten Travel）加碼回饋，查無一般消費的基礎回饋率，不符合每卡需有一般消費規則的收錄要求" },
+    { "cardName": "樂天公司卡", "status": "excluded", "reason": "官網信用卡介紹頁僅說明年費與申請流程，查無現金回饋、點數回饋或刷卡金等百分比資訊" },
+    { "cardName": "樂虎卡", "status": "included", "cardId": "rakuten-tiger" }
+  ],
+  "cards": [
+    {
+      "id": "rakuten-panda-j",
+      "name": "樂天Panda J卡",
+      "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml",
+      "rules": [
+        { "id": "rakuten-panda-j-general", "plan": "", "scope": { "type": "general" }, "rate": 0.5, "rawReward": "國內消費0.5%現金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-07-01", "validTo": "2026-12-31", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml", "checkedAt": "2026-10-10" },
+        { "id": "rakuten-panda-j-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 1.5, "rawReward": "海外消費1.5%現金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-07-01", "validTo": "2026-12-31", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml", "checkedAt": "2026-10-10" }
+      ]
+    },
+    {
+      "id": "rakuten-tiger",
+      "name": "樂虎卡",
+      "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml",
+      "rules": [
+        { "id": "rakuten-tiger-general", "plan": "", "scope": { "type": "general" }, "rate": 0.5, "rawReward": "國內消費0.5%刷卡金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "checkedAt": "2026-10-10" },
+        { "id": "rakuten-tiger-overseas-jk", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 2, "rawReward": "海外（日本、韓國實體交易）2.0%刷卡金回饋，無上限", "cap": null, "conditions": ["限日本、韓國實體交易"], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "checkedAt": "2026-10-10" }
+      ]
+    }
+  ]
+}

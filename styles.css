@@ -1,0 +1,330 @@
+/* 刷哪張：單欄排版，手機寬度優先，桌機置中並限制最大寬度。見 tasks.md T03。 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+  background: #f5f6f8;
+  color: #1f2430;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.app-header .tagline {
+  margin: 4px 0 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.card-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.card-section h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 1px solid #ccd0d8;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.scope-toggle {
+  display: flex;
+  gap: 16px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scope-toggle legend {
+  font-size: 0.9rem;
+  color: #333;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+.scope-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+}
+
+.hint {
+  margin: 8px 0 0;
+  color: #0a6ebd;
+  font-size: 0.9rem;
+}
+
+/* 商家即時建議（AC-17）：輸入框下方的下拉清單，點選就直接查詢。 */
+.suggest-field {
+  position: relative;
+}
+
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 4px 0 0;
+  padding: 4px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #ccd0d8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  max-height: 260px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.suggestion-item {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #1f2430;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus-visible {
+  background: #eef2f7;
+}
+
+/* 類別快選鈕（AC-04）：查無商家、也推測不出類別時，顯示在一般消費排行上方。 */
+.category-quick-picker {
+  margin-top: 8px;
+}
+
+.category-quick-picker p {
+  margin: 0 0 6px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.category-quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-quick-btn {
+  background: #fff;
+  color: #0a6ebd;
+  border: 1px solid #0a6ebd;
+  border-radius: 999px;
+  padding: 8px 14px;
+  min-height: 44px;
+  font-size: 0.85rem;
+}
+
+.category-quick-btn.is-active {
+  background: #0a6ebd;
+  color: #fff;
+}
+
+.banner {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.banner-error {
+  background: #fdecea;
+  color: #8a1f11;
+  border: 1px solid #f4c7c3;
+}
+
+/* 「我的卡片」是空的時候查詢，一行加卡提示＋加卡入口（PRD v2.2、AC-11b）：
+   推薦清單這時已經自動改用全部卡別直接顯示，這裡不佔版面、不取代清單。 */
+#empty-my-cards.banner-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 12px 16px;
+}
+
+#empty-my-cards.banner-inline p {
+  margin: 0;
+  /* flex-basis 0（而不是 auto）：auto 會先用文字的內容寬度去搶版面，
+     害旁邊的按鈕被擠到下一行；basis 0 讓瀏覽器照剩餘空間分配，文字才會在
+     自己分到的寬度內換行，跟按鈕維持同一行（寬度夠的話）。 */
+  flex: 1 1 0;
+  min-width: 160px;
+}
+
+/* 自訂的 display 一定會贏過瀏覽器內建的 [hidden] { display: none }（作者樣式表優先於
+   使用者代理樣式表，跟選擇器優先度無關），所以 JS 設定 .hidden = true 時這個區塊不會真的
+   被藏起來，切到「全部卡別」後舊的加卡提示會留在畫面上（T12-1 修正）。 */
+#empty-my-cards[hidden] {
+  display: none;
+}
+
+button {
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #0a6ebd;
+  background: #0a6ebd;
+  color: #fff;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button.link-button {
+  background: transparent;
+  color: #0a6ebd;
+  border: none;
+  padding: 8px 0;
+  text-decoration: underline;
+}
+
+.results-list,
+.chip-list,
+.search-results,
+.tag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rec-card {
+  border: 1px solid #e3e5ea;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.rec-title {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.rec-rate {
+  margin: 0 0 4px;
+  font-weight: bold;
+  color: #0a6ebd;
+}
+
+.rec-reason {
+  margin: 0 0 6px;
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.rec-estimate {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+  color: #1f7a1f;
+}
+
+.tag-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 6px;
+}
+
+.tag {
+  background: #eef2f7;
+  color: #333;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.rec-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 8px 0 0;
+}
+
+.rec-meta a {
+  color: #0a6ebd;
+}
+
+.chip,
+.card-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border: 1px solid #e3e5ea;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.chip button,
+.card-search-item button {
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.empty-hint {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.app-footer {
+  font-size: 0.8rem;
+  color: #666;
+  padding: 8px 4px 24px;
+}
+
+.app-footer .disclaimer {
+  margin-top: 8px;
+}
+
+@media (min-width: 480px) {
+  .app {
+    padding: 24px;
+  }
+}

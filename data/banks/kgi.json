@@ -1,0 +1,401 @@
+{
+  "bankId": "kgi",
+  "cardListUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list",
+  "checkedAt": "2026-10-14",
+  "coverage": [
+    { "cardName": "凱基銀行無限卡", "status": "included", "cardId": "kgi-visa-infinite" },
+    { "cardName": "幣享悠遊鈦金卡", "status": "included", "cardId": "kgi-crypto" },
+    { "cardName": "誠品悠遊御璽卡", "status": "included", "cardId": "kgi-eslite" },
+    { "cardName": "魔BUY卡", "status": "included", "cardId": "kgi-more-buy" },
+    { "cardName": "雙幣哩程卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "現金回饋卡", "status": "included", "cardId": "kgi-cash-back" },
+    { "cardName": "凱基人壽無限卡", "status": "included", "cardId": "kgi-life-infinite" },
+    { "cardName": "凱基人壽御璽卡", "status": "included", "cardId": "kgi-life-signature" },
+    { "cardName": "魔FUN悠遊御璽卡", "status": "included", "cardId": "kgi-more-fun" },
+    { "cardName": "丁丁藥局悠遊鈦金卡", "status": "excluded", "reason": "紅利積點回饋為主（每NT$30積1點），官網查無積點兌換新台幣的比例（與現金點/幣享點不同，未見1點=1元之官方聲明），無法確認回饋率" },
+    { "cardName": "丁丁藥局金卡", "status": "excluded", "reason": "與丁丁藥局悠遊鈦金卡同為紅利積點回饋，官網查無積點兌換新台幣的比例，無法確認回饋率" },
+    { "cardName": "魔利悠遊御璽卡", "status": "included", "cardId": "kgi-morerich" },
+    { "cardName": "悠遊聯名白金卡", "status": "excluded", "reason": "紅利積點回饋為主（每NT$30積1點），官網查無積點兌換新台幣的比例，無法確認回饋率" }
+  ],
+  "cards": [
+    {
+      "id": "kgi-visa-infinite",
+      "name": "凱基銀行無限卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/visa-infinite-card",
+      "rules": [
+        {
+          "id": "kgi-visa-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.6,
+          "rawReward": "未達財管會員資格者比照KGI Gold金采個人會員：國內單月消費未達5萬元回饋0.6%，達5萬元以上回饋1%",
+          "cap": null,
+          "conditions": ["當月消費達5萬元以上回饋提升至1%"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/visa-infinite-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-visa-infinite-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "KGI Gold金采個人會員等級國外消費1.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/visa-infinite-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-crypto",
+      "name": "幣享悠遊鈦金卡",
+      "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+      "pointValue": {
+        "unit": "幣享點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+        "checkedAt": "2026-10-14"
+      },
+      "rules": [
+        {
+          "id": "kgi-crypto-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%幣享點（官網明文：1幣享點=1元，效期2年），回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-crypto-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "海外一般消費3.5%優惠(2%幣享點+免1.5%海外交易手續費，優惠期間至115/12/31)，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-crypto-dining-gas",
+          "plan": "指定消費加碼",
+          "scope": { "type": "category", "categories": ["dining", "gas"], "basis": "mcc" },
+          "rate": 3,
+          "rawReward": "國內餐廳/加油站指定消費3%幣享點（基本回饋1%+指定通路加碼2%合計）。加油站限MCC 5541/5542/5983；餐廳限MCC 5811/5812/5814，位於百貨公司內之餐廳消費不適用。指定通路加碼每期帳單上限300點，與指定遊戲平台加碼分開計算，兩者合計每期帳單上限500點",
+          "cap": { "amount": 300, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["百貨公司內餐廳不適用", "與指定遊戲平台加碼合計每期帳單上限500點"],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-crypto-game-platform",
+          "plan": "指定消費加碼",
+          "scope": { "type": "merchant", "merchants": ["Nintendo", "PlayStation", "Steam"], "basis": "merchant-list" },
+          "rate": 3,
+          "rawReward": "指定遊戲平台(Nintendo、PlayStation、Steam)消費3%幣享點（基本回饋1%+指定通路加碼2%合計）。指定通路加碼每期帳單上限200點，與國內餐廳/加油站加碼分開計算，兩者合計每期帳單上限500點",
+          "cap": { "amount": 200, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["與國內餐廳/加油站加碼合計每期帳單上限500點"],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-eslite",
+      "name": "誠品悠遊御璽卡",
+      "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+      "pointValue": {
+        "unit": "現金點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+        "checkedAt": "2026-10-14"
+      },
+      "rules": [
+        {
+          "id": "kgi-eslite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "國、內外一般消費享0.3%現金點回饋且正、附卡合併計算，回饋無上限（官網明文：現金點1點=新臺幣1元，兌換刷卡金以每500元為一個兌換基數）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-eslite-autodebit",
+          "plan": "凱基銀行帳戶自動扣繳卡費",
+          "scope": { "type": "general" },
+          "rate": 2.3,
+          "rawReward": "凱基銀行帳戶自動扣繳卡費加碼2%現金點回饋（加碼消費僅限一般消費且不含保費），合計一般消費0.3%共2.3%現金點，正、附卡合併計算，每一帳單週期加碼回饋上限400點",
+          "cap": { "amount": 400, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["需以凱基銀行帳戶綁定自動扣繳信用卡費", "不含保費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-eslite-store-black",
+          "plan": "誠品會員黑卡",
+          "scope": { "type": "merchant", "merchants": ["誠品"], "basis": "merchant-list" },
+          "rate": 5,
+          "rawReward": "誠品店內消費加碼4.7%現金點（誠品會員黑卡，依正卡人消費入帳當月月底之誠品會員等級計算），合計一般消費0.3%共5%現金點，每月加碼回饋上限4,200點，限一般消費且不含分期交易",
+          "cap": { "amount": 4200, "unit": "point", "period": "month" },
+          "conditions": ["限誠品會員黑卡", "需於結帳時出示誠品會員卡、誠品APP行動會員卡或提供手機號碼累計消費", "不含分期交易", "限實體卡或Apple Pay、Google Pay、LINE Pay、街口支付、悠遊付、iPASS MONEY支付（部分門市第三方支付不適用）"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-eslite-store-gold",
+          "plan": "誠品會員金卡",
+          "scope": { "type": "merchant", "merchants": ["誠品"], "basis": "merchant-list" },
+          "rate": 4,
+          "rawReward": "誠品店內消費加碼3.7%現金點（誠品會員金卡，依正卡人消費入帳當月月底之誠品會員等級計算），合計一般消費0.3%共4%現金點，每月加碼回饋上限1,400點，限一般消費且不含分期交易",
+          "cap": { "amount": 1400, "unit": "point", "period": "month" },
+          "conditions": ["限誠品會員金卡", "需於結帳時出示誠品會員卡、誠品APP行動會員卡或提供手機號碼累計消費", "不含分期交易", "限實體卡或Apple Pay、Google Pay、LINE Pay、街口支付、悠遊付、iPASS MONEY支付（部分門市第三方支付不適用）"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-more-buy",
+      "name": "魔BUY卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+      "pointValue": {
+        "unit": "現金點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+        "checkedAt": "2026-10-14"
+      },
+      "rules": [
+        {
+          "id": "kgi-more-buy-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.7,
+          "rawReward": "國內一般消費0.7%現金點，每年回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-more-buy-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外消費(含國外網站購物)2%現金點，每年回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-more-buy-mobile-payment",
+          "plan": "行動支付加碼",
+          "scope": { "type": "category", "categories": ["mobile-payment"] },
+          "rate": 4,
+          "rawReward": "12大行動支付（Apple Pay、Google Pay、LINE Pay、街口、Pi拍錢包、悠遊付、OPEN錢包、橘子支付、icash Pay、歐付寶、全盈+PAY、全支付）國內一般消費最高4%現金點回饋（含國內基本回饋0.7%+行動支付加碼3.3%合計），需每月登錄活動，每戶每月行動支付國內一般消費累積滿3,000元享回饋資格，行動支付加碼3.3%每月上限300點",
+          "cap": { "amount": 300, "unit": "point", "period": "month" },
+          "conditions": ["需每月登錄", "行動支付月消費滿3,000元"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-cash-back",
+      "name": "現金回饋卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+      "rules": [
+        {
+          "id": "kgi-cash-back-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.7,
+          "rawReward": "國內一般消費0.7%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-cash-back-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-life-infinite",
+      "name": "凱基人壽無限卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-infinite-card",
+      "rules": [
+        {
+          "id": "kgi-life-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內、國外一般消費均享1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-infinite-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-life-signature",
+      "name": "凱基人壽御璽卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-signature-card",
+      "rules": [
+        {
+          "id": "kgi-life-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費、國外消費（含網購）均享1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-signature-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-more-fun",
+      "name": "魔FUN悠遊御璽卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
+      "pointValue": {
+        "unit": "現金點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
+        "checkedAt": "2026-10-14"
+      },
+      "rules": [
+        {
+          "id": "kgi-more-fun-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內/國外消費回饋0.5%現金點，現金點每年回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-more-fun-cinema",
+          "plan": "影城加碼",
+          "scope": { "type": "category", "categories": ["entertainment"] },
+          "rate": 50,
+          "rawReward": "連鎖影城（具有二家分店以上之同名影城，需為不同地點，回饋判斷依影城請款名稱認定）看電影享信用卡優惠50%現金點回饋，當期結帳新增一般消費須達3,000元(含)以上方享優惠，當日回饋上限250點，當期帳單回饋上限500點（回饋上限為魔FUN卡與MB御璽卡合併計算）",
+          "cap": { "amount": 500, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["限二家分店以上同名連鎖影城", "當期一般消費須達3,000元以上", "當日回饋上限250點", "使用行動支付結帳不適用", "回饋上限與MB御璽卡合併計算"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-more-fun-streaming",
+          "plan": "線上影音加碼",
+          "scope": { "type": "merchant", "merchants": ["Netflix", "Spotify", "Youtube", "KKBOX", "KKTV", "Disney+"], "basis": "merchant-list" },
+          "rate": 50,
+          "rawReward": "指定線上影音平台(Netflix、Spotify、Youtube、KKBOX、KKTV、Disney+)消費享信用卡優惠50%現金點回饋，當期結帳新增一般消費須達3,000元(含)以上方享優惠，每期帳單最高回饋150點（回饋上限為魔FUN卡與MB御璽卡合併計算），限於原平台消費始符合回饋資格，透過Apple、Google、Paypal、Hinet等其他平台代扣繳不回饋",
+          "cap": { "amount": 150, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["當期一般消費須達3,000元以上", "限原平台扣款，透過Apple／Google／Paypal／Hinet等代扣不適用", "回饋上限與MB御璽卡合併計算"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "kgi-morerich",
+      "name": "魔利悠遊御璽卡",
+      "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card",
+      "pointValue": {
+        "unit": "現金點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card",
+        "checkedAt": "2026-10-14"
+      },
+      "rules": [
+        {
+          "id": "kgi-morerich-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金點，無上限（現金點1點=1元）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "kgi-morerich-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外消費1.5%現金點，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    }
+  ]
+}

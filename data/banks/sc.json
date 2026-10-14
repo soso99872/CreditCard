@@ -1,0 +1,161 @@
+{
+  "bankId": "sc",
+  "cardListUrl": "https://www.sc.com/tw/credit-cards/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "渣打 Beyond 世界之極卡", "status": "included", "cardId": "sc-beyond" },
+    { "cardName": "渣打LINE Bank聯名卡", "status": "included", "cardId": "sc-linebank" },
+    { "cardName": "渣打現金回饋御璽卡", "status": "included", "cardId": "sc-signature" },
+    { "cardName": "渣打優先理財無限卡", "status": "included", "cardId": "sc-visa-infinite" },
+    { "cardName": "昇利卡(現金回饋)", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "昇利卡(紅利積點)", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "渣打銀行世界卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "中華郵政遨郵卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "渣打Combo信用卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "渣打H信用卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "渣打信用卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "Rewards省息卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
+    { "cardName": "餘額代償卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦；且性質為餘額代償卡，非消費回饋卡" },
+    { "cardName": "Rewards 分期卡", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" }
+  ],
+  "cards": [
+    {
+      "id": "sc-beyond",
+      "name": "渣打 Beyond 世界之極卡",
+      "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
+      "rules": [
+        {
+          "id": "sc-beyond-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內、國外一般消費均享1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-08-17",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sc-beyond-dining",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["dining"] },
+          "rate": 5,
+          "rawReward": "國內餐飲消費額外加碼4%，加計基本1%合計5%現金回饋",
+          "cap": { "amount": 10000, "unit": "TWD", "period": "quarter" },
+          "conditions": [],
+          "validFrom": "2026-08-17",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sc-beyond-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 3,
+          "rawReward": "國外一般消費（不含餐飲）額外加碼2%，加計基本1%合計3%現金回饋",
+          "cap": { "amount": 10000, "unit": "TWD", "period": "quarter" },
+          "conditions": [],
+          "validFrom": "2026-08-17",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sc-linebank",
+      "name": "渣打LINE Bank聯名卡",
+      "sourceUrl": "https://www.sc.com/tw/credit-cards/linebank-coband-card/",
+      "rules": [
+        {
+          "id": "sc-linebank-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內消費1%、國外消費1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-08-01",
+          "validTo": "2027-07-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/linebank-coband-card/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sc-signature",
+      "name": "渣打現金回饋御璽卡",
+      "sourceUrl": "https://www.sc.com/tw/credit-cards/signature-card/",
+      "rules": [
+        {
+          "id": "sc-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "基本1%現金回饋（不含保險費、學費、循環利息、預借現金等排除項目，以信用額度內消費為限）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/signature-card/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sc-visa-infinite",
+      "name": "渣打優先理財無限卡",
+      "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
+      "pointValue": {
+        "unit": "紅利積點",
+        "twdPerPoint": 0.025,
+        "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
+        "checkedAt": "2026-10-10"
+      },
+      "rules": [
+        {
+          "id": "sc-visa-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.25,
+          "rawReward": "每新增刷卡消費NT$10享1點紅利積點，2,000點可轉換現金回饋NT$50（約0.25%）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sc-visa-infinite-lifestyle",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["department-store", "dining", "travel"] },
+          "rate": 0.75,
+          "rawReward": "百貨公司、餐廳、飯店消費天天享紅利3倍回饋（約0.75%）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sc-visa-infinite-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "海外消費享紅利6倍回饋（約1.5%）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

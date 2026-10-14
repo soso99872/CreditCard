@@ -1,0 +1,9 @@
+{
+  "bankId": "obank",
+  "cardListUrl": "https://www.o-bank.com/zh-tw/retail/credit-card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "（查無信用卡產品）", "status": "excluded", "reason": "查證官網（www.o-bank.com/zh-tw/retail 及其下各頁面）後確認王道商業銀行目前僅發行「簽帳金融卡」（Debit卡，如 /zh-tw/retail/debit/cardmain_new 列出的100+款主題簽帳金融卡、聯名卡、校園認同卡、VIP卡等），查無任何信用卡（Credit Card）產品頁面或入口；data/issuers.json 中原填入的 cardListUrl（/zh-tw/retail/credit-card）實際為錯誤頁（回應 301，內容為錯誤頁樣板，title 為空）。簽帳金融卡屬直接扣帳工具而非信用卡，依本期範圍不收錄，故本行本期無可收錄之信用卡。" }
+  ],
+  "cards": []
+}

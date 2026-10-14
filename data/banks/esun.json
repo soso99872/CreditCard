@@ -1,0 +1,395 @@
+{
+  "bankId": "esun",
+  "cardListUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "玉山Unicard", "status": "included", "cardId": "esun-unicard" },
+    { "cardName": "玉山ＵBear信用卡", "status": "included", "cardId": "esun-ubear" },
+    { "cardName": "玉山熊本熊卡", "status": "included", "cardId": "esun-kumamon" },
+    { "cardName": "玉山Pi 拍錢包信用卡", "status": "included", "cardId": "esun-pi-wallet" },
+    { "cardName": "玉山雙幣信用卡", "status": "included", "cardId": "esun-dualcurrency" },
+    { "cardName": "玉山數位e卡", "status": "included", "cardId": "esun-ecard" },
+    { "cardName": "玉山icash聯名卡", "status": "included", "cardId": "esun-icash" },
+    { "cardName": "玉山易遊卡", "status": "included", "cardId": "esun-eztravel" },
+    { "cardName": "玉山世界卡", "status": "included", "cardId": "esun-world" },
+    { "cardName": "玉山無限卡", "status": "included", "cardId": "esun-infinite" },
+    { "cardName": "玉山星宇航空聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "玉山簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡" },
+    { "cardName": "玉山悠遊簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡" },
+    { "cardName": "玉山Pi拍兔簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡" },
+    { "cardName": "全球企業卡(實體版)", "status": "excluded", "reason": "企業卡，非個人卡" },
+    { "cardName": "全球企業卡(數位版)", "status": "excluded", "reason": "企業卡，非個人卡" },
+    { "cardName": "公務人員國民旅遊卡", "status": "excluded", "reason": "政府公務用途卡，非一般個人消費回饋卡" },
+    { "cardName": "政府網路採購卡", "status": "excluded", "reason": "政府採購用途卡，非一般個人消費回饋卡" },
+    { "cardName": "民間版國民旅遊卡", "status": "excluded", "reason": "國民旅遊卡，非以現金或點數回饋為主" },
+    { "cardName": "玉山Only卡", "status": "excluded", "reason": "已停發（2026/1/1起停止申辦）" },
+    { "cardName": "玉山御璽卡", "status": "excluded", "reason": "已停發（2026/7/1起停止申辦）" },
+    { "cardName": "玉山JCB晶緻悠遊卡", "status": "excluded", "reason": "已停發（2025/10/15起停止申辦）" },
+    { "cardName": "玉山悠遊聯名卡", "status": "excluded", "reason": "已停發（2025/10/15起停止申辦）" },
+    { "cardName": "玉山商務御璽卡", "status": "excluded", "reason": "已停發（2025/10/15起停止申辦）" },
+    { "cardName": "玉山台灣黑熊認同卡", "status": "excluded", "reason": "已停發（2026/7/1起停止申辦）" },
+    { "cardName": "雙北市牙醫師公會會員卡", "status": "excluded", "reason": "已停發（2026/11/2起停止申辦）" },
+    { "cardName": "家樂福悠遊聯名卡", "status": "excluded", "reason": "已停發（2025/8/30不續約）" },
+    { "cardName": "家樂福icash聯名卡", "status": "excluded", "reason": "已停發（2025/8/30不續約）" },
+    { "cardName": "玉山家樂福悠遊簽帳金融卡", "status": "excluded", "reason": "已停發（2025/8/30不續約），且屬簽帳金融卡" },
+    { "cardName": "玉山幸運鈦金卡", "status": "excluded", "reason": "聯名/基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山幸運PLUS鈦金卡", "status": "excluded", "reason": "聯名/基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山教師(鈦金/御璽)卡", "status": "excluded", "reason": "聯名/基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山數位保險卡", "status": "excluded", "reason": "以保險相關回饋為主，非一般消費現金或點數回饋為主" },
+    { "cardName": "寶雅悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山藥師御璽卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "大江聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "中友百貨悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山宏匯廣場聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山漢神巨蛋聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "麗寶聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山蘭城新月聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "南山人壽悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "NISSAN悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "LUXGEN亮點聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "山隆優油鈦金卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "清華認同卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "耐斯廣場NP聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "賀寶芙悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "啄木鳥悠遊聯名卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "玉山愛心卡", "status": "excluded", "reason": "聯名/認同卡眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" }
+  ],
+  "cards": [
+    {
+      "id": "esun-unicard",
+      "name": "玉山Unicard",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+      "pointValue": { "unit": "玉山e point", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-unicard-general-ebill",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費0.3%玉山e point（僅申辦帳單e化）",
+          "cap": null,
+          "conditions": ["需申請帳單e化"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-unicard-general-full",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費1%玉山e point（帳單e化+臺幣帳戶自動扣繳）",
+          "cap": null,
+          "conditions": ["需申請帳單e化", "需設定臺幣帳戶自動扣繳"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-ubear",
+      "name": "玉山ＵBear信用卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/u-bear",
+      "rules": [
+        {
+          "id": "esun-ubear-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費0.5%現金回饋（僅綁定帳單e化或自動扣繳其中一項）",
+          "cap": null,
+          "conditions": ["需申請帳單e化或設定自動扣繳（任一）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/u-bear",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-ubear-general-full",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費1%現金回饋（帳單e化+自動扣繳同時設定）",
+          "cap": null,
+          "conditions": ["需申請帳單e化", "需設定自動扣繳"],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/u-bear",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-ubear-online",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 3,
+          "rawReward": "網路消費合計最高3%現金回饋（基本1%+加碼2%）",
+          "cap": { "amount": 150, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["需申請帳單e化", "需設定自動扣繳"],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/u-bear",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-kumamon",
+      "name": "玉山熊本熊卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+      "rules": [
+        {
+          "id": "esun-kumamon-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內一般消費0.5%現金回饋",
+          "cap": null,
+          "conditions": ["需綁定帳單e化", "需設定自動扣繳"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-kumamon-japan",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.5,
+          "rawReward": "日本一般消費2.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["限日本消費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-pi-wallet",
+      "name": "玉山Pi 拍錢包信用卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+      "pointValue": { "unit": "P幣", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-pi-wallet-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費0.3%P幣（未申辦帳單e化）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-pi-wallet-general-ebill",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費1%P幣（需申請帳單e化）",
+          "cap": null,
+          "conditions": ["需申請帳單e化"],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-dualcurrency",
+      "name": "玉山雙幣信用卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/dualcurrency-card",
+      "rules": [
+        {
+          "id": "esun-dualcurrency-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "國內消費0.2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/dualcurrency-card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-dualcurrency-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外消費基本回饋1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/dualcurrency-card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-ecard",
+      "name": "玉山數位e卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/e-card",
+      "pointValue": { "unit": "玉山e point", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/e-card", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-ecard-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費0.5%玉山e point（需帳單e化+臺幣帳戶自動扣繳）",
+          "cap": null,
+          "conditions": ["需申請帳單e化", "需設定臺幣帳戶自動扣繳"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/e-card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-icash",
+      "name": "玉山icash聯名卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card",
+      "pointValue": { "unit": "OPENPOINT", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-icash-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "一般消費0.2%OPENPOINT，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-icash-general-bind",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "icash Pay綁卡消費1%OPENPOINT，無上限",
+          "cap": null,
+          "conditions": ["需綁定icash Pay"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-icash-711",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["7-ELEVEN"], "basis": "merchant-list" },
+          "rate": 6,
+          "rawReward": "7-ELEVEN消費加碼回饋6%OPENPOINT",
+          "cap": { "amount": 200, "unit": "point", "period": "month" },
+          "conditions": ["需綁定icash Pay"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-eztravel",
+      "name": "玉山易遊卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel",
+      "pointValue": { "unit": "eMoney", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-eztravel-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費0.5% eMoney，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-06-30",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-eztravel-online",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["易遊網"], "basis": "merchant-list" },
+          "rate": 2,
+          "rawReward": "易遊網線上消費2% eMoney，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-06-30",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-world",
+      "name": "玉山世界卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD",
+      "pointValue": { "unit": "玉山e point", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "esun-world-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "國內消費0.2%玉山e point，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "esun-world-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1,
+          "rawReward": "國外消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "esun-infinite",
+      "name": "玉山無限卡",
+      "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/infinite-card",
+      "rules": [
+        {
+          "id": "esun-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/infinite-card",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "bankId": "megabank",
+  "cardListUrl": "https://www.megabank.com.tw/personal/credit-card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "宇宙明星BT21信用卡", "status": "included", "cardId": "megabank-bt21" },
+    { "cardName": "Mega One一卡通聯名卡", "status": "included", "cardId": "megabank-mega-one" },
+    { "cardName": "兆豐無限卡", "status": "excluded", "reason": "國內一般消費採紅利積點（每25元1點），官網查無積點兌換新台幣比例的說明，僅國外消費與保費有明確現金回饋率，無法確認一般消費回饋率" },
+    { "cardName": "兆豐世界卡", "status": "excluded", "reason": "與兆豐無限卡相同，國內一般消費採紅利積點（每25元1點），官網查無積點兌換新台幣比例，無法確認一般消費回饋率" },
+    { "cardName": "e秒刷悠遊/一卡通聯名卡", "status": "included", "cardId": "megabank-young" },
+    { "cardName": "利多御璽卡", "status": "included", "cardId": "megabank-cash-rebate-biz" },
+    { "cardName": "將來銀行聯名卡", "status": "included", "cardId": "megabank-next-bank" },
+    { "cardName": "e秒Happy悠遊聯名卡", "status": "included", "cardId": "megabank-happy" },
+    { "cardName": "統一7-ELEVEN獅聯名卡", "status": "excluded", "reason": "國內一般消費採紅利積點（每25元1點），官網查無積點兌換新台幣比例；僅國外消費有明確1.5%現金回饋，不符合每卡需有一般消費規則的收錄要求" },
+    { "cardName": "雙幣鈦金商旅卡", "status": "included", "cardId": "megabank-dual-currency" }
+  ],
+  "cards": [
+    {
+      "id": "megabank-bt21",
+      "name": "宇宙明星BT21信用卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/bt21creditcard",
+      "rules": [
+        {
+          "id": "megabank-bt21-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "國內、國外一般消費均享0.3%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/bt21creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-mega-one",
+      "name": "Mega One一卡通聯名卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/mega-one",
+      "rules": [
+        {
+          "id": "megabank-mega-one-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內消費0.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/mega-one",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-mega-one-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/mega-one",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-young",
+      "name": "e秒刷悠遊/一卡通聯名卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
+      "rules": [
+        {
+          "id": "megabank-young-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "非網路一般消費0.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-young-online-shopping",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 2.5,
+          "rawReward": "網路購物不限金額享2.5%現金回饋，每期最高回饋NT$200",
+          "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-cash-rebate-biz",
+      "name": "利多御璽卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/cash-rebate-biz",
+      "rules": [
+        {
+          "id": "megabank-cash-rebate-biz-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.6,
+          "rawReward": "國內非網購消費0.6%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/cash-rebate-biz",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-cash-rebate-biz-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/cash-rebate-biz",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-cash-rebate-biz-online-shopping",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 1,
+          "rawReward": "國內網路購物1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/cash-rebate-biz",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-next-bank",
+      "name": "將來銀行聯名卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/next-bank",
+      "rules": [
+        {
+          "id": "megabank-next-bank-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/next-bank",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-happy",
+      "name": "e秒Happy悠遊聯名卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+      "rules": [
+        {
+          "id": "megabank-happy-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.4,
+          "rawReward": "非網購國內消費0.4%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-happy-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "非網購國外消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-happy-online-shopping",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 2.5,
+          "rawReward": "網路購物不限金額享2.5%現金回饋，每期最高回饋NT$200",
+          "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "megabank-dual-currency",
+      "name": "雙幣鈦金商旅卡",
+      "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/dual-currency",
+      "rules": [
+        {
+          "id": "megabank-dual-currency-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內消費0.5%回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/dual-currency",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "megabank-dual-currency-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外消費1.5%回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/dual-currency",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

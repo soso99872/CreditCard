@@ -1,0 +1,517 @@
+{
+  "bankId": "ubot",
+  "cardListUrl": "https://card.ubot.com.tw/Card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "聯邦無限卡", "status": "included", "cardId": "ubot-infinite" },
+    { "cardName": "農金無限卡", "status": "included", "cardId": "ubot-agribank-infinite" },
+    { "cardName": "聯邦旅遊卡", "status": "included", "cardId": "ubot-travel" },
+    { "cardName": "聯邦經典御璽卡", "status": "included", "cardId": "ubot-classic-signature" },
+    { "cardName": "F1加油卡", "status": "included", "cardId": "ubot-f1-gas" },
+    { "cardName": "個人商務白金卡", "status": "included", "cardId": "ubot-personal-business-platinum" },
+    { "cardName": "聯邦Mini卡", "status": "included", "cardId": "ubot-mini" },
+    { "cardName": "理財型白金卡", "status": "included", "cardId": "ubot-wealth-platinum" },
+    { "cardName": "幸福御守卡", "status": "included", "cardId": "ubot-happiness-guard" },
+    { "cardName": "國民旅遊卡(一般民眾)", "status": "included", "cardId": "ubot-national-travel" },
+    { "cardName": "樂活御璽卡", "status": "included", "cardId": "ubot-lohas-signature" },
+    { "cardName": "LINE Bank聯名卡", "status": "included", "cardId": "ubot-linebank" },
+    { "cardName": "農金聯名卡", "status": "included", "cardId": "ubot-agribank-cobrand" },
+    { "cardName": "安麗精英聯名卡", "status": "included", "cardId": "ubot-amway" },
+    { "cardName": "淡水信用合作社聯名卡", "status": "included", "cardId": "ubot-tamsui-credit" },
+    { "cardName": "順發聯名卡", "status": "included", "cardId": "ubot-sunfar" },
+    { "cardName": "桃園市市民卡", "status": "included", "cardId": "ubot-taoyuan-citizen" },
+    { "cardName": "大立無限卡", "status": "excluded", "reason": "邀請制，非一般大眾可自由申辦" },
+    { "cardName": "臻富金鑽無限卡", "status": "excluded", "reason": "財富管理貴賓專屬邀請制，非一般大眾可自由申辦" },
+    { "cardName": "珍鑽無限卡", "status": "excluded", "reason": "財富管理貴賓專屬，非一般大眾可自由申辦" },
+    { "cardName": "聯邦M世界卡", "status": "excluded", "reason": "官網摘要僅列出指定場景與海外加碼回饋，未明確揭露一般消費回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "理財型無限卡", "status": "excluded", "reason": "回饋與帳戶資產/理財方案相關，官網摘要未能明確解析為單一一般消費回饋率，本期時間有限未進一步查證" },
+    { "cardName": "聯邦賴點卡", "status": "excluded", "reason": "官網摘要僅列出LINE Pay與海外加碼回饋，未明確揭露一般消費回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "聯邦吉鶴卡", "status": "excluded", "reason": "官網摘要僅列出指定場景加碼回饋，未明確揭露一般消費回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "聯邦Ｍ卡", "status": "excluded", "reason": "官網摘要僅列出指定場景與海外加碼回饋，未明確揭露一般消費回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "聯邦綠卡", "status": "excluded", "reason": "官網摘要僅列出綠色消費與代扣繳加碼回饋，未明確揭露一般消費回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "樂活鈦金卡", "status": "excluded", "reason": "官網摘要僅列出「最高增值40%」及類別加碼回饋，未明確揭露一般消費基礎回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "全國加油聯名卡", "status": "excluded", "reason": "回饋為降價或集點二選一，官網摘要未明確揭露固定百分比，本期時間有限未進一步查證" },
+    { "cardName": "聯邦MaiCoin聯名卡", "status": "excluded", "reason": "回饋為加密貨幣U幣且依等級加碼，官網摘要未明確揭露一般消費基礎回饋百分比，本期時間有限未進一步查證" },
+    { "cardName": "聯邦紅利卡", "status": "excluded", "reason": "回饋以紅利點數倍數呈現，未明確換算固定百分比，本期時間有限未進一步查證" },
+    { "cardName": "天外天有線電視聯名卡", "status": "excluded", "reason": "主要提供分期0利率與紅利折抵權益，未明確揭露一般消費回饋百分比" },
+    { "cardName": "微風黑鑽無限卡", "status": "excluded", "reason": "微風系列卡，以館內停車與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "微風晶鑽無限卡", "status": "excluded", "reason": "微風系列卡，以館內停車與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "微風無限卡", "status": "excluded", "reason": "微風系列卡，以館內停車與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "微風聯名卡", "status": "excluded", "reason": "微風系列卡，以館內停車與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "微風廣場 Mini卡", "status": "excluded", "reason": "微風系列卡，以館內停車與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "大立百貨聯名卡", "status": "excluded", "reason": "百貨聯名卡，以停車與折扣購物權益為主，非以現金或點數回饋為主" },
+    { "cardName": "Tiger City悠遊聯名卡", "status": "excluded", "reason": "百貨聯名卡，以停車與來店禮權益為主，非以現金或點數回饋為主" },
+    { "cardName": "大統百貨聯名卡", "status": "excluded", "reason": "百貨聯名卡，以停車與集團優惠權益為主，非以現金或點數回饋為主" },
+    { "cardName": "美華泰聯名卡", "status": "excluded", "reason": "百貨聯名卡，回饋為會員點數非現金或固定百分比回饋" },
+    { "cardName": "美華泰 Mini卡", "status": "excluded", "reason": "百貨聯名卡，回饋為會員點數非現金或固定百分比回饋" },
+    { "cardName": "Tiger City聯名卡", "status": "excluded", "reason": "百貨聯名卡，以來店禮與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "Tiger City MINI卡", "status": "excluded", "reason": "百貨聯名卡，以來店禮與專櫃折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "大樂聯名卡", "status": "excluded", "reason": "百貨聯名卡，以來店禮與折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "凱撒飯店聯名卡", "status": "excluded", "reason": "飯店聯名卡，以住宿與餐飲折扣權益為主，非以現金或點數回饋為主" },
+    { "cardName": "分期便利卡", "status": "excluded", "reason": "以分期付款權益為主，非一般消費現金或點數回饋為主" },
+    { "cardName": "守護天使認同卡", "status": "excluded", "reason": "公益認同卡，回饋為提撥捐款予公益團體，非持卡人消費回饋" },
+    { "cardName": "平安認同卡", "status": "excluded", "reason": "公益認同卡，回饋為提撥捐款予公益團體，非持卡人消費回饋" },
+    { "cardName": "八福公益認同卡", "status": "excluded", "reason": "公益認同卡，回饋為提撥公益捐助金，非持卡人消費回饋" },
+    { "cardName": "商務差旅卡", "status": "excluded", "reason": "企業商務卡，非個人一般消費回饋卡" },
+    { "cardName": "聯邦世界卡", "status": "excluded", "reason": "回饋以紅利積點及倍數呈現，未明確換算固定百分比，本期時間有限未進一步查證" }
+  ],
+  "cards": [
+    {
+      "id": "ubot-infinite",
+      "name": "聯邦無限卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail101",
+      "rules": [
+        {
+          "id": "ubot-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.8,
+          "rawReward": "國內0.8%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail101",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-infinite-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "海外2%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail101",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-agribank-infinite",
+      "name": "農金無限卡",
+      "sourceUrl": "https://card.ubot.com.tw/eCard/Requisition/agribank/login.aspx",
+      "rules": [
+        {
+          "id": "ubot-agribank-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內最高享1%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/eCard/Requisition/agribank/login.aspx",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-agribank-infinite-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外2%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/eCard/Requisition/agribank/login.aspx",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-travel",
+      "name": "聯邦旅遊卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail210",
+      "rules": [
+        {
+          "id": "ubot-travel-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費最高0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail210",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-travel-category",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["travel"] },
+          "rate": 1,
+          "rawReward": "旅遊消費不限金額加倍回饋（1%）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail210",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-classic-signature",
+      "name": "聯邦經典御璽卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail212",
+      "rules": [
+        {
+          "id": "ubot-classic-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費最高1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail212",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-f1-gas",
+      "name": "F1加油卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail214",
+      "rules": [
+        {
+          "id": "ubot-f1-gas-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內外一般消費最高0.5%回饋，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail214",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-personal-business-platinum",
+      "name": "個人商務白金卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail215",
+      "rules": [
+        {
+          "id": "ubot-personal-business-platinum-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內消費0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail215",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-personal-business-platinum-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1,
+          "rawReward": "外幣消費1%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail215",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-mini",
+      "name": "聯邦Mini卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail216",
+      "rules": [
+        {
+          "id": "ubot-mini-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費最高0.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail216",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-wealth-platinum",
+      "name": "理財型白金卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail205",
+      "rules": [
+        {
+          "id": "ubot-wealth-platinum-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.7,
+          "rawReward": "國內外享0.7%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail205",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-happiness-guard",
+      "name": "幸福御守卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail206",
+      "rules": [
+        {
+          "id": "ubot-happiness-guard-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內一般消費最高0.5%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail206",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-happiness-guard-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外一般消費最高1.5%回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail206",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-national-travel",
+      "name": "國民旅遊卡(一般民眾)",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail207",
+      "rules": [
+        {
+          "id": "ubot-national-travel-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費最高0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail207",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-national-travel-category",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["travel"] },
+          "rate": 1,
+          "rawReward": "旅遊消費不限金額加倍回饋（1%）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail207",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-lohas-signature",
+      "name": "樂活御璽卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail208",
+      "rules": [
+        {
+          "id": "ubot-lohas-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費均享0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail208",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-lohas-signature-supermarket",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["supermarket"] },
+          "rate": 0.7,
+          "rawReward": "指定量販最高0.7%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail208",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-linebank",
+      "name": "LINE Bank聯名卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
+      "rules": [
+        {
+          "id": "ubot-linebank-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內1%無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-12-20",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-linebank-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.5,
+          "rawReward": "國外2.5%無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2022-12-20",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-agribank-cobrand",
+      "name": "農金聯名卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail402",
+      "rules": [
+        {
+          "id": "ubot-agribank-cobrand-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費享0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail402",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-amway",
+      "name": "安麗精英聯名卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail403",
+      "rules": [
+        {
+          "id": "ubot-amway-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費最高享0.3%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail403",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-tamsui-credit",
+      "name": "淡水信用合作社聯名卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail405",
+      "rules": [
+        {
+          "id": "ubot-tamsui-credit-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費最高享0.5%回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail405",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-sunfar",
+      "name": "順發聯名卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail407",
+      "rules": [
+        {
+          "id": "ubot-sunfar-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "店外0.3%銀行點回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail407",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "ubot-sunfar-instore",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["順發3C"], "basis": "merchant-list" },
+          "rate": 0.6,
+          "rawReward": "店內0.6%銀行點回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail407",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "ubot-taoyuan-citizen",
+      "name": "桃園市市民卡",
+      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail504",
+      "rules": [
+        {
+          "id": "ubot-taoyuan-citizen-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費現金回饋1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2023-08-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail504",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

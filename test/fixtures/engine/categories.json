@@ -1,0 +1,7 @@
+[
+  { "id": "convenience-store", "name": "超商" },
+  { "id": "supermarket", "name": "量販超市" },
+  { "id": "coffee", "name": "咖啡" },
+  { "id": "dining", "name": "餐飲" },
+  { "id": "general", "name": "一般消費" }
+]

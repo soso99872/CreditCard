@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pxmart",
+    "name": "全聯",
+    "aliases": ["全聯福利中心", "PX Mart"],
+    "category": "supermarket"
+  },
+  {
+    "id": "seven",
+    "name": "統一超商",
+    "aliases": ["7-11", "7-ELEVEN", "７－１１", "seven", "711"],
+    "category": "convenience-store"
+  }
+]

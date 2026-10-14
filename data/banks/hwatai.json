@@ -1,0 +1,63 @@
+{
+  "bankId": "hwatai",
+  "cardListUrl": "https://www.hwataibank.com.tw/personal/card01-01-01/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "VISA金卡", "status": "included", "cardId": "hwatai-visa-gold" },
+    { "cardName": "JCB晶緻卡", "status": "included", "cardId": "hwatai-jcb" }
+  ],
+  "cards": [
+    {
+      "id": "hwatai-visa-gold",
+      "name": "VISA金卡",
+      "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-02-01/",
+      "pointValue": {
+        "unit": "紅利點數",
+        "twdPerPoint": 0.1,
+        "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+        "checkedAt": "2026-10-10"
+      },
+      "rules": [
+        {
+          "id": "hwatai-visa-gold-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "當期新增消費每20元累積1點紅利點數，每1,000點可享現金回饋100元（限抵用消費款，不得兌換現金）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "hwatai-jcb",
+      "name": "JCB晶緻卡",
+      "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-02-01/",
+      "pointValue": {
+        "unit": "紅利點數",
+        "twdPerPoint": 0.1,
+        "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+        "checkedAt": "2026-10-10"
+      },
+      "rules": [
+        {
+          "id": "hwatai-jcb-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "當期新增消費每20元累積1點紅利點數，每1,000點可享現金回饋100元（限抵用消費款，不得兌換現金）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

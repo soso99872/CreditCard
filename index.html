@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>刷哪張｜信用卡回饋推薦</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>刷哪張</h1>
+        <p class="tagline">輸入消費商家或類別，依全台發卡銀行官方公布的規則推薦信用卡</p>
+      </header>
+
+      <p id="load-error" class="banner banner-error" role="alert" hidden></p>
+
+      <section id="query-section" class="card-section" hidden>
+        <form id="query-form">
+          <div class="field suggest-field">
+            <label for="query-input">消費商家</label>
+            <input
+              id="query-input"
+              type="text"
+              placeholder="例如：全聯、7-11、阿明咖啡"
+              autocomplete="off"
+              aria-autocomplete="list"
+              aria-controls="merchant-suggestions"
+              aria-expanded="false"
+            />
+            <ul id="merchant-suggestions" class="suggestion-list" hidden></ul>
+          </div>
+
+          <div class="field">
+            <label for="amount-input">消費金額（選填，用來試算回饋金額）</label>
+            <input id="amount-input" type="number" min="0" inputmode="numeric" placeholder="例如：1000" />
+          </div>
+
+          <fieldset class="scope-toggle">
+            <legend>查詢範圍</legend>
+            <label><input type="radio" name="scope" value="my" checked /> 我的卡片</label>
+            <label><input type="radio" name="scope" value="all" /> 全部卡別</label>
+          </fieldset>
+        </form>
+
+        <p id="match-hint" class="hint" hidden></p>
+
+        <div id="category-quick-picker" class="category-quick-picker" hidden>
+          <p id="category-quick-picker-label">找不到符合的商家，可以快選類別：</p>
+          <div id="category-quick-list" class="category-quick-list" role="group" aria-labelledby="category-quick-picker-label"></div>
+        </div>
+      </section>
+
+      <section id="empty-my-cards" class="banner banner-inline" hidden aria-live="polite">
+        <p>「我的卡片」還沒有加入任何卡片，目前顯示全部卡別的回饋結果。</p>
+        <button id="add-card-shortcut-btn" type="button">加入我的卡片</button>
+      </section>
+
+      <section id="results-section" class="card-section" hidden>
+        <h2>推薦清單</h2>
+        <ul id="results-list" class="results-list"></ul>
+        <button id="show-all-btn" type="button" class="link-button" hidden>顯示全部</button>
+      </section>
+
+      <section id="my-cards-section" class="card-section" hidden>
+        <h2>我的卡片管理</h2>
+        <p>目前已加入 <strong id="my-cards-count">0</strong> 張。</p>
+        <ul id="my-cards-list" class="chip-list"></ul>
+
+        <div class="field">
+          <label for="card-search-input">搜尋銀行或卡名加入</label>
+          <input id="card-search-input" type="text" placeholder="例如：國泰、CUBE" autocomplete="off" />
+        </div>
+        <ul id="card-search-results" class="search-results"></ul>
+      </section>
+
+      <footer class="app-footer">
+        <p id="footer-checked-at"></p>
+        <p>排序規則：推薦清單只依這筆消費可得的回饋率由高到低排序，不收業配、不影響排序。</p>
+        <p class="disclaimer">
+          本站資料僅供參考，實際回饋規則、活動期間與上限請以各銀行官方公告為準；
+          如有疑義，請點擊各張卡片的「官方來源」連結核對原文。
+        </p>
+      </footer>
+    </main>
+
+    <script type="module" src="src/ui/app.mjs"></script>
+  </body>
+</html>

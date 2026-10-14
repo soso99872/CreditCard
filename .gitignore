@@ -1,0 +1,5 @@
+node_modules/
+# 臨時預覽資料（正式商家庫完成前使用，不上傳）
+preview/
+.playwright-cli/
+*.log

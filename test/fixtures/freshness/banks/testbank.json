@@ -1,0 +1,121 @@
+{
+  "bankId": "testbank",
+  "cardListUrl": "https://testbank.example.com/credit-cards",
+  "checkedAt": "2026-10-01",
+  "coverage": [
+    { "cardName": "測試卡", "status": "included", "cardId": "testbank-fresh" }
+  ],
+  "cards": [
+    {
+      "id": "testbank-fresh",
+      "name": "測試卡",
+      "sourceUrl": "https://testbank.example.com/cards/fresh",
+      "rules": [
+        {
+          "id": "rule-stale-old",
+          "plan": "很久沒檢核",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2025-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2025-01-01"
+        },
+        {
+          "id": "rule-stale-91",
+          "plan": "91 天前檢核",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-07-11"
+        },
+        {
+          "id": "rule-not-stale-90",
+          "plan": "90 天前檢核（邊界，不算過期）",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-07-12"
+        },
+        {
+          "id": "rule-expiring-10",
+          "plan": "10 天後到期",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-10-20",
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "rule-expiring-14",
+          "plan": "14 天後到期（邊界，算即將到期）",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-10-24",
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "rule-not-expiring-15",
+          "plan": "15 天後到期（邊界，不算即將到期）",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-10-25",
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "rule-already-expired",
+          "plan": "已過期（不算即將到期）",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-10-01",
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "rule-no-expiry",
+          "plan": "無到期日，近期檢核",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "1%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/fresh",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

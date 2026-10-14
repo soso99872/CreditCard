@@ -1,0 +1,63 @@
+{
+  "bankId": "testbank",
+  "cardListUrl": "https://testbank.example.com/credit-cards",
+  "checkedAt": "2026-09-01",
+  "coverage": [
+    { "cardName": "測試卡", "status": "included", "cardId": "testbank-card" },
+    { "cardName": "測試哩程卡", "status": "excluded", "reason": "哩程卡，本期不收錄" }
+  ],
+  "cards": [
+    {
+      "id": "testbank-card",
+      "name": "測試卡",
+      "sourceUrl": "https://testbank.example.com/cards/test",
+      "pointValue": {
+        "unit": "測試點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://testbank.example.com/points",
+        "checkedAt": "2026-09-01"
+      },
+      "rules": [
+        {
+          "id": "testbank-card-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "0.5%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/test",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-card-supermarket",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["supermarket"] },
+          "rate": 2,
+          "rawReward": "2%",
+          "cap": { "amount": 500, "unit": "TWD", "period": "month" },
+          "conditions": ["需登錄"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://testbank.example.com/cards/test",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-card-pxmart",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["全聯"], "basis": "merchant-list" },
+          "rate": 3,
+          "rawReward": "3%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2099-12-31",
+          "sourceUrl": "https://testbank.example.com/cards/test",
+          "checkedAt": "2026-09-01"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "bankId": "taishin",
+  "cardListUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "台新Richart卡", "status": "included", "cardId": "taishin-richart" },
+    { "cardName": "大全聯信用卡", "status": "included", "cardId": "taishin-pxmart" },
+    { "cardName": "街口聯名卡", "status": "included", "cardId": "taishin-jkopay" },
+    { "cardName": "昇恆昌御璽/白金/普卡", "status": "included", "cardId": "taishin-dutyfree" },
+    { "cardName": "新光三越御璽/鈦金/白金卡", "status": "included", "cardId": "taishin-skm" },
+    { "cardName": "新光三越無限/世界卡", "status": "included", "cardId": "taishin-skm-infinite" },
+    { "cardName": "遠傳friDay聯名卡", "status": "included", "cardId": "taishin-friday" },
+    { "cardName": "Gogoro Rewards 聯名卡", "status": "included", "cardId": "taishin-gogoro" },
+    { "cardName": "台新雙幣卡", "status": "included", "cardId": "taishin-dual-currency" },
+    { "cardName": "燦坤聯名卡", "status": "included", "cardId": "taishin-tsf" },
+    { "cardName": "玫瑰卡", "status": "included", "cardId": "taishin-rose" },
+    { "cardName": "太陽卡", "status": "included", "cardId": "taishin-sun" },
+    { "cardName": "國泰航空翱翔鈦金卡/鈦金卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "卓富無限卡", "status": "excluded", "reason": "官網頁面未明確揭露一般消費現金或點數回饋百分比，無法確認標準回饋率" },
+    { "cardName": "義大世界聯名卡", "status": "excluded", "reason": "官網標示即將推出（coming soon），尚未發行" },
+    { "cardName": "美麗華聯名卡", "status": "excluded", "reason": "官網標示即將推出（coming soon），尚未發行" }
+  ],
+  "cards": [
+    {
+      "id": "taishin-richart",
+      "name": "台新Richart卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+      "rules": [
+        {
+          "id": "taishin-richart-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費享0.3% 台新Point(信用卡)，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-richart-chill",
+          "plan": "Chill刷方案",
+          "scope": { "type": "category", "categories": ["dining", "entertainment"] },
+          "rate": 10,
+          "rawReward": "Chill刷方案飲食娛樂類最高10% 台新Point(信用卡)",
+          "cap": null,
+          "conditions": ["需設定台新帳戶自動扣繳信用卡帳款", "需切換至Chill刷方案"],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-richart-daily",
+          "plan": "天天刷方案",
+          "scope": { "type": "category", "categories": ["convenience-store", "transport", "gas", "pharmacy"] },
+          "rate": 3.3,
+          "rawReward": "天天刷方案超商/交通/加油/藥妝 3.3% 台新Point(信用卡)",
+          "cap": null,
+          "conditions": ["需設定台新帳戶自動扣繳信用卡帳款", "需切換至天天刷方案"],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-pxmart",
+      "name": "大全聯信用卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/",
+      "pointValue": { "unit": "福利點", "twdPerPoint": 0.1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "taishin-pxmart-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "店外一般消費（未設定台新帳戶扣繳）每消費100元給3點福利點，約0.3%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-pxmart-general-autodebit",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.8,
+          "rawReward": "店外一般消費（已設定台新帳戶扣繳）每消費100元給8點福利點，約0.8%",
+          "cap": null,
+          "conditions": ["需設定台新帳戶自動扣繳信用卡帳款"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-pxmart-store",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["全聯", "大全聯量販店"], "basis": "merchant-list" },
+          "rate": 1.2,
+          "rawReward": "大全聯店內消費每消費100元給12點福利點（基本0.8%+加碼0.4%），約1.2%",
+          "cap": { "amount": 15000, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["需綁定PX Pay"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-jkopay",
+      "name": "街口聯名卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
+      "pointValue": { "unit": "街口幣", "twdPerPoint": 1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "taishin-jkopay-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費享1%街口幣，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-dutyfree",
+      "name": "昇恆昌御璽/白金/普卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg009/card001/",
+      "rules": [
+        {
+          "id": "taishin-dutyfree-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費 0.5% 現金回饋",
+          "cap": { "amount": 2500, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-02-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg009/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-dutyfree-travel",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["travel"] },
+          "rate": 2,
+          "rawReward": "昇恆昌指定市區店/航空公司/國內旅行社消費 2% 現金回饋",
+          "cap": { "amount": 2500, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-02-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg009/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-dutyfree-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "海外消費 1.5% 現金回饋",
+          "cap": { "amount": 2500, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-02-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg009/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-skm",
+      "name": "新光三越御璽/鈦金/白金卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg008/card001/",
+      "rules": [
+        {
+          "id": "taishin-skm-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費 0.3% 台新Point(信用卡)",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg008/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-skm-weekend",
+          "plan": "御璽/鈦金卡",
+          "scope": { "type": "merchant", "merchants": ["新光三越"], "basis": "merchant-list" },
+          "rate": 1,
+          "rawReward": "新光三越週五至週日消費，御璽/鈦金卡加碼0.7%，合計最高1% 台新Point(信用卡)",
+          "cap": { "amount": 1000, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["限週五至週日"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg008/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-skm-infinite",
+      "name": "新光三越無限/世界卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg014/card0001/",
+      "rules": [
+        {
+          "id": "taishin-skm-infinite-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費 0.3% 台新Point(信用卡)，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg014/card0001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-friday",
+      "name": "遠傳friDay聯名卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/",
+      "pointValue": { "unit": "遠傳幣", "twdPerPoint": 1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "taishin-friday-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "一般消費享基本回饋0.5%遠傳幣",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-06-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-friday-telecom",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["遠傳電信"], "basis": "mcc" },
+          "rate": 1,
+          "rawReward": "遠傳電信電信帳單基本回饋1%遠傳幣",
+          "cap": { "amount": 300, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["需指定本卡自動代扣繳遠傳電信帳單"],
+          "validFrom": "2026-06-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-gogoro",
+      "name": "Gogoro Rewards 聯名卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg042/card001/",
+      "rules": [
+        {
+          "id": "taishin-gogoro-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費基本回饋0.3% Gogoro Smart Points，無上限",
+          "cap": null,
+          "conditions": ["需於Gogoro Wallet綁定本卡"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg042/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-dual-currency",
+      "name": "台新雙幣卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg039/card001/",
+      "rules": [
+        {
+          "id": "taishin-dual-currency-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費享1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg039/card001/",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "taishin-dual-currency-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.5,
+          "rawReward": "國外消費享2.5%外幣回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg039/card001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-tsf",
+      "name": "燦坤聯名卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg023/card002/",
+      "rules": [
+        {
+          "id": "taishin-tsf-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "一般消費：0.3%無上限（台新K幣）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2025-02-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg023/card002/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-rose",
+      "name": "玫瑰卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+      "rules": [
+        {
+          "id": "taishin-rose-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "一般消費未達指定門檻時回饋0.2% 台新Point(信用卡)",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-02-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "taishin-sun",
+      "name": "太陽卡",
+      "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg012/card0001/",
+      "rules": [
+        {
+          "id": "taishin-sun-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "一般消費（指定套餐方案）0.2% 台新Point(信用卡)",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-02-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg012/card0001/",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

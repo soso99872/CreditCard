@@ -1,0 +1,92 @@
+{
+  "bankId": "entiebank",
+  "cardListUrl": "https://www.entiebank.com.tw/entie/1_3_1_2",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "VISA御璽卡", "status": "included", "cardId": "entie-visa" },
+    { "cardName": "VISA分期白金卡", "status": "included", "cardId": "entie-visa-installment-platinum" },
+    { "cardName": "悠遊鈦金卡", "status": "included", "cardId": "entie-easycard-titanium" },
+    { "cardName": "Mastercard世界卡(邀請制)", "status": "excluded", "reason": "官方讀不到：官方介紹頁僅含導覽標題與圖片元素，未載明具體回饋數字（且為邀請制，非一般申請管道）" },
+    { "cardName": "MasterCard鈦金卡", "status": "excluded", "reason": "官方讀不到：官方介紹頁僅含導覽標題與圖片元素，未載明具體回饋數字" },
+    { "cardName": "Mastercard分期卡", "status": "excluded", "reason": "官方讀不到：與MasterCard鈦金卡同頁之分頁，頁面僅含導覽標題與圖片元素，未載明具體回饋數字" },
+    { "cardName": "JCB晶緻卡", "status": "excluded", "reason": "官方讀不到：官網未見此卡獨立回饋介紹頁" },
+    { "cardName": "悠遊分期卡", "status": "excluded", "reason": "官方讀不到：官方頁面（悠遊聯名卡介紹頁）未列出該卡消費回饋規則" },
+    { "cardName": "MasterCard/VISA/JCB白金卡", "status": "excluded", "reason": "官方讀不到：官網未見此卡獨立回饋介紹頁" },
+    { "cardName": "Mastercard/VISA/JCB普卡", "status": "excluded", "reason": "官方讀不到：官網未見此卡獨立回饋介紹頁，且依費用公告屬免年費入門卡別，推測無額外加碼回饋" }
+  ],
+  "cards": [
+    {
+      "id": "entie-visa",
+      "name": "VISA御璽卡",
+      "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+      "rules": [
+        {
+          "id": "entie-visa-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內消費現金回饋1%",
+          "cap": null,
+          "conditions": ["限指定搭配電子帳單始享現金回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "entie-visa-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外實體通路消費現金回饋1.5%",
+          "cap": null,
+          "conditions": ["限指定搭配電子帳單始享現金回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "entie-visa-installment-platinum",
+      "name": "VISA分期白金卡",
+      "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+      "rules": [
+        {
+          "id": "entie-visa-installment-platinum-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "綁定Google Pay消費享0.3%現金回饋",
+          "cap": null,
+          "conditions": ["需綁定Google Pay消費", "限指定搭配電子帳單始享現金回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "entie-easycard-titanium",
+      "name": "悠遊鈦金卡",
+      "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
+      "rules": [
+        {
+          "id": "entie-easycard-titanium-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.25,
+          "rawReward": "依當期帳單累積消費金額分級回饋：NT$5,000~49,999享0.25%；NT$50,000~99,999享0.35%；NT$100,000~299,999享0.65%；NT$300,000~599,999享1.00%；NT$600,000以上享1.20%（本系統保守採最低級距0.25%）",
+          "cap": null,
+          "conditions": ["回饋率依當期帳單累積消費金額級距計算（0.25%~1.20%），不分國內外消費"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

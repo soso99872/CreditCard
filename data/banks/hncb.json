@@ -1,0 +1,224 @@
+{
+  "bankId": "hncb",
+  "cardListUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "熊Q卡", "status": "included", "cardId": "hncb-bearq" },
+    { "cardName": "Rich+富家卡", "status": "included", "cardId": "hncb-rich-plus" },
+    { "cardName": "超鑽現金回饋卡", "status": "included", "cardId": "hncb-diamond" },
+    { "cardName": "I網購生活卡", "status": "included", "cardId": "hncb-ishopping" },
+    { "cardName": "美饌紅利卡（美饌遨遊世界卡）", "status": "included", "cardId": "hncb-gourmet" },
+    { "cardName": "Love系列卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "SnY信用卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "領航極致尊榮卡", "status": "excluded", "reason": "頂級卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "領航尊榮卡", "status": "excluded", "reason": "頂級卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "The ONE尊榮卡", "status": "excluded", "reason": "頂級卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "嘟嘟房聯名卡", "status": "excluded", "reason": "聯名卡，核心權益為嘟嘟房停車優惠，非以現金或點數回饋為主，本期時間有限未逐一查核，暫不收錄" },
+    { "cardName": "大甲媽祖認同卡", "status": "excluded", "reason": "宗教認同卡，核心權益通常為捐款支持廟方事務，非以現金或點數回饋為主" },
+    { "cardName": "台灣大學卡", "status": "excluded", "reason": "校友認同卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "中國醫藥大學暨附設醫院晶緻認同卡", "status": "excluded", "reason": "機構認同卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "信望愛認同卡", "status": "excluded", "reason": "公益認同卡，核心權益為捐款支持公益機構，非以現金或點數回饋為主" },
+    { "cardName": "COMBO卡", "status": "excluded", "reason": "結合金融卡與信用卡功能之特殊卡種，本期時間有限，回饋細節未查核，暫不收錄" },
+    { "cardName": "Debit卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" },
+    { "cardName": "企業商務卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" }
+  ],
+  "cards": [
+    {
+      "id": "hncb-bearq",
+      "name": "熊Q卡",
+      "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026",
+      "rules": [
+        {
+          "id": "hncb-bearq-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費國內基礎回饋0.8%+符合1項資格條件加碼0.2%=最高1%現金點數回饋（1點折抵1元），無上限",
+          "cap": null,
+          "conditions": ["需符合1項資格條件才享加碼0.2%，否則僅基礎0.8%"],
+          "validFrom": "2026-07-27",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-bearq-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費基礎回饋1.6%+符合1項資格條件加碼0.4%=最高2%現金點數回饋（JCB晶緻卡日韓消費2%回饋），無上限",
+          "cap": null,
+          "conditions": ["需符合1項資格條件才享加碼0.4%，否則僅基礎1.6%"],
+          "validFrom": "2026-07-27",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "hncb-rich-plus",
+      "name": "Rich+富家卡",
+      "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_rich_plus",
+      "rules": [
+        {
+          "id": "hncb-rich-plus-general",
+          "plan": "鈦金卡",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費國內現金回饋1%，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_rich_plus",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-rich-plus-overseas",
+          "plan": "鈦金卡",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "海外消費現金回饋2%，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_rich_plus",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "hncb-diamond",
+      "name": "超鑽現金回饋卡",
+      "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_diamond_cash_back",
+      "rules": [
+        {
+          "id": "hncb-diamond-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_diamond_cash_back",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-diamond-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_diamond_cash_back",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "hncb-ishopping",
+      "name": "I網購生活卡",
+      "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping",
+      "pointValue": {
+        "unit": "紅利點數",
+        "twdPerPoint": 0.05,
+        "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+        "checkedAt": "2026-10-10"
+      },
+      "rules": [
+        {
+          "id": "hncb-ishopping-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.4,
+          "rawReward": "一般消費（不含網路消費）2倍紅利點數回饋（含原1倍，每25元1點，1點值NT$0.05）",
+          "cap": { "amount": 3000, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["當期帳單新增一般消費（不含網路消費）需達NT$1,000以上才享2倍"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-ishopping-online",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 2,
+          "rawReward": "當期帳單網路消費單筆達NT$300以上，每筆最高享2%現金回饋，當期帳單現金回饋上限200元",
+          "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [
+            "需申請信用卡電子帳單並綁定華南銀行LINE官方帳號個人化通知服務",
+            "單筆網購消費需達NT$300以上",
+            "超過當期帳單現金回饋上限後之網購消費改按每25元1點紅利點數計算"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "hncb-gourmet",
+      "name": "美饌紅利卡",
+      "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+      "pointValue": {
+        "unit": "紅利點數",
+        "twdPerPoint": 0.05,
+        "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+        "checkedAt": "2026-10-10"
+      },
+      "rules": [
+        {
+          "id": "hncb-gourmet-general",
+          "plan": "美饌遨遊世界卡",
+          "scope": { "type": "general" },
+          "rate": 0.8,
+          "rawReward": "國內消費紅利點數4倍回饋（含原1倍，每25元1點，1點值NT$0.05）",
+          "cap": { "amount": 10000, "unit": "point", "period": "billing-cycle" },
+          "conditions": ["限已全額繳納美饌遨遊世界卡年費之持卡人（正卡NT$3,000/附卡NT$1,500）"],
+          "validFrom": "2026-04-01",
+          "validTo": null,
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-gourmet-overseas",
+          "plan": "美饌遨遊世界卡",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1,
+          "rawReward": "國外消費紅利點數5倍回饋（含原1倍），回饋無上限",
+          "cap": null,
+          "conditions": ["限已全額繳納美饌遨遊世界卡年費之持卡人（正卡NT$3,000/附卡NT$1,500）"],
+          "validFrom": "2026-04-01",
+          "validTo": null,
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "hncb-gourmet-dining",
+          "plan": "美饌遨遊世界卡",
+          "scope": { "type": "category", "categories": ["dining"] },
+          "rate": 1,
+          "rawReward": "全台餐廳通路消費額外加碼紅利1倍回饋（國內合計5倍）",
+          "cap": { "amount": 3000, "unit": "point", "period": "year" },
+          "conditions": [
+            "限已全額繳納美饌遨遊世界卡年費之持卡人",
+            "限MCC代碼5811/5812/5814之國內餐廳通路，排除飯店、百貨、量販超市附設餐廳及KTV、酒吧等"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

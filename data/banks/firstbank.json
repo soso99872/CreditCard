@@ -1,0 +1,103 @@
+{
+  "bankId": "firstbank",
+  "cardListUrl": "https://card.firstbank.com.tw/sites/card/CardIndex",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "iLEO信用卡", "status": "included", "cardId": "firstbank-ileo" },
+    { "cardName": "一卡通聯名卡", "status": "included", "cardId": "firstbank-easycard" },
+    { "cardName": "Wonderful星璨卡", "status": "included", "cardId": "firstbank-wonderful" },
+    { "cardName": "鈦金商旅卡", "status": "excluded", "reason": "主打機場貴賓室、旅遊平安險、道路救援等非回饋禮遇，官網查無明確的一般消費現金或點數回饋率數字，無法確認是否以回饋為主" },
+    { "cardName": "御璽商旅卡", "status": "excluded", "reason": "與鈦金商旅卡性質相同，主打機場貴賓室、旅遊平安險等禮遇，官網查無明確的一般消費回饋率數字" },
+    { "cardName": "Living Green綠活卡", "status": "excluded", "reason": "一般消費採紅利點數累積（15元累積1點），但官網查無紅利點數兌換新台幣的比例，無法換算成可信的回饋率" },
+    { "cardName": "義享天地聯名卡", "status": "excluded", "reason": "官網僅列出義享天地館內與精選通路的加碼優惠，查無一般消費的基礎回饋率或點數換算比例" },
+    { "cardName": "桃園市市民卡聯名卡/桃園市認同卡", "status": "excluded", "reason": "官網僅列出加油、美食外送等特定通路滿額回饋，查無一般消費的基礎回饋率數字" }
+  ],
+  "cards": [
+    {
+      "id": "firstbank-ileo",
+      "name": "iLEO信用卡",
+      "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
+      "rules": [
+        {
+          "id": "firstbank-ileo-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "原卡片權益0.5%現金回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "firstbank-ileo-subscription",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["Netflix", "ChatGPT", "Disney+"], "basis": "merchant-list" },
+          "rate": 2,
+          "rawReward": "Netflix、ChatGPT、Disney+筆筆2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "firstbank-easycard",
+      "name": "一卡通聯名卡",
+      "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
+      "rules": [
+        {
+          "id": "firstbank-easycard-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "firstbank-easycard-overseas-jpkr",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 3.5,
+          "rawReward": "日韓海外實體消費3.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["限日本、韓國實體消費"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "firstbank-wonderful",
+      "name": "Wonderful星璨卡",
+      "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690686302",
+      "rules": [
+        {
+          "id": "firstbank-wonderful-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "基本回饋0.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690686302",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

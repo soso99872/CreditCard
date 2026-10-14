@@ -1,0 +1,90 @@
+{
+  "bankId": "bankchb",
+  "cardListUrl": "https://www.bankchb.com/frontend/subarea.jsp?funcId=f1f12f6d15",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "鈦金商旅卡(My購卡)", "status": "included", "cardId": "chb-mygo" },
+    { "cardName": "鈦金商旅卡(My樂現金回饋卡)", "status": "included", "cardId": "chb-myle" },
+    { "cardName": "VISA無限卡", "status": "excluded", "reason": "官方讀不到：已透過mashup.jsp取得頁面，但回饋細節疑似以圖片呈現（非文字），自動化查核工具無法取得文字內容，暫不收錄" },
+    { "cardName": "MasterCard世界卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "商旅御璽Fun心卡(常規版/FIFA世界盃26™主題限定版)", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "鈦金卡/晶緻卡/白金卡", "status": "excluded", "reason": "官方讀不到：已透過mashup.jsp取得頁面，但回饋細節疑似以圖片呈現（非文字），自動化查核工具無法取得文字內容，暫不收錄" },
+    { "cardName": "金卡/普卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "Combo信用卡", "status": "excluded", "reason": "結合金融卡與信用卡功能之特殊卡種，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "悠遊聯名卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "一卡通聯名卡", "status": "excluded", "reason": "本行卡片數量較多，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "馬偕認同卡", "status": "excluded", "reason": "醫療機構認同卡，核心權益通常為捐款支持院方事務，非以現金或點數回饋為主" },
+    { "cardName": "商務御璽卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" },
+    { "cardName": "商務白金卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" },
+    { "cardName": "商務金卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" },
+    { "cardName": "政府採購卡", "status": "excluded", "reason": "政府機關採購專用卡，非個人一般消費回饋卡" }
+  ],
+  "cards": [
+    {
+      "id": "chb-mygo",
+      "name": "鈦金商旅卡(My購卡)",
+      "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+      "rules": [
+        {
+          "id": "chb-mygo-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內、外一般消費每筆享1%現金回饋，回饋金額無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "chb-mygo-online-shopping",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "rate": 2,
+          "rawReward": "網路購物消費加碼1%（基本1%+加碼1%=2%）；週六、日於指定國內電商再加碼2%（最高合計4%）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["加碼回饋（網購加碼1%＋週末指定電商加碼2%）合併每月回饋上限NT$300", "不含綁定第三方支付（街口、LINE Pay、歐付寶、Pi拍錢包、悠遊付等）之交易"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "chb-myle",
+      "name": "鈦金商旅卡(My樂現金回饋卡)",
+      "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+      "rules": [
+        {
+          "id": "chb-myle-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內消費每筆享0.5%現金回饋，回饋金額無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "chb-myle-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1,
+          "rawReward": "國外消費每筆享1%現金回饋，回饋金額無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

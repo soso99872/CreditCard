@@ -1,0 +1,226 @@
+{
+  "bankId": "sinopac",
+  "cardListUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card.html",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "DAWHO現金回饋信用卡", "status": "included", "cardId": "sinopac-dawho" },
+    { "cardName": "現金回饋Green卡", "status": "included", "cardId": "sinopac-green" },
+    { "cardName": "VOGUE卡", "status": "included", "cardId": "sinopac-vogue" },
+    { "cardName": "美樂家生活卡", "status": "included", "cardId": "sinopac-melaleuca" },
+    { "cardName": "MITSUI OUTLET PARK卡", "status": "included", "cardId": "sinopac-mitsui" },
+    { "cardName": "永豐55688聯名卡", "status": "included", "cardId": "sinopac-taxicard" },
+    { "cardName": "幣倍卡", "status": "included", "cardId": "sinopac-dual-currency" },
+    { "cardName": "永豐世界卡", "status": "excluded", "reason": "回饋以紅利點數倍數（如3倍/5倍）呈現，官網未明確揭露換算現金或固定百分比回饋率，無法確認標準回饋率" },
+    { "cardName": "永傳世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "永富世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "永豐現金回饋JCB卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "DAWAY卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "永豐SPORT卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "保倍卡", "status": "excluded", "reason": "以保險相關回饋為主，非一般消費現金或點數回饋為主" },
+    { "cardName": "夢行卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
+    { "cardName": "永豐點字金融信用卡", "status": "excluded", "reason": "視覺障礙者專用特殊版卡，本期時間有限未查證" },
+    { "cardName": "SEA鈦金商務悠遊卡", "status": "excluded", "reason": "限外籍人士申請之商務卡，非一般個人消費回饋卡" },
+    { "cardName": "美安聯名卡", "status": "excluded", "reason": "主要回饋為美安會員業績點數，非一般現金或點數消費回饋" },
+    { "cardName": "東森網連通聯名卡", "status": "excluded", "reason": "主要回饋為東森會員PV點數，非一般現金或點數消費回饋" },
+    { "cardName": "中興大學悠遊認同卡", "status": "excluded", "reason": "校友認同卡，本期時間有限未查證詳細回饋規則" },
+    { "cardName": "永豐現金回饋卡", "status": "excluded", "reason": "已停止申辦" },
+    { "cardName": "Me Card", "status": "excluded", "reason": "已停止申辦" },
+    { "cardName": "鈦豐卡", "status": "excluded", "reason": "已停止申辦" },
+    { "cardName": "永豐財富無限卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" }
+  ],
+  "cards": [
+    {
+      "id": "sinopac-dawho",
+      "name": "DAWHO現金回饋信用卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
+      "rules": [
+        {
+          "id": "sinopac-dawho-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sinopac-dawho-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外（限外幣）消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-green",
+      "name": "現金回饋Green卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
+      "rules": [
+        {
+          "id": "sinopac-green-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sinopac-green-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-vogue",
+      "name": "VOGUE卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/vogue-card.html",
+      "rules": [
+        {
+          "id": "sinopac-vogue-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1.2,
+          "rawReward": "一般消費最高1.2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/vogue-card.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-melaleuca",
+      "name": "美樂家生活卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/melaleuca-card.html",
+      "rules": [
+        {
+          "id": "sinopac-melaleuca-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.4,
+          "rawReward": "一般消費0.4%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/melaleuca-card.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-mitsui",
+      "name": "MITSUI OUTLET PARK卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html",
+      "pointValue": { "unit": "豐點", "twdPerPoint": 1, "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html", "checkedAt": "2026-10-10" },
+      "rules": [
+        {
+          "id": "sinopac-mitsui-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.3,
+          "rawReward": "館外一般消費0.3%豐點",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sinopac-mitsui-instore",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["MITSUI OUTLET PARK"], "basis": "merchant-list" },
+          "rate": 1,
+          "rawReward": "MITSUI OUTLET PARK館內消費最高1%豐點",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-taxicard",
+      "name": "永豐55688聯名卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/taxicard.html",
+      "rules": [
+        {
+          "id": "sinopac-taxicard-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般消費1% T Points，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/taxicard.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "sinopac-dual-currency",
+      "name": "幣倍卡",
+      "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/dual-currency-card.html",
+      "rules": [
+        {
+          "id": "sinopac-dual-currency-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/dual-currency-card.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "sinopac-dual-currency-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/dual-currency-card.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

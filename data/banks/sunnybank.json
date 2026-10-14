@@ -1,0 +1,99 @@
+{
+  "bankId": "sunnybank",
+  "cardListUrl": "https://www.sunnybank.com.tw/net/Main/Page/6",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "MasterCard鈦金卡/感應式鈦金卡", "status": "excluded", "reason": "官網標示「已不再核發新卡」" },
+    { "cardName": "COMBO卡", "status": "excluded", "reason": "官網標示「已不再核發新卡」" },
+    { "cardName": "逢甲人一卡通鈦金認同卡", "status": "included", "cardId": "sunnybank-fcu-ipass" },
+    { "cardName": "彭大家族聯名晶緻卡", "status": "included", "cardId": "sunnybank-pondafamily" },
+    { "cardName": "陽信JCB晶緻卡(原JCB哆啦A夢晶緻卡)", "status": "included", "cardId": "sunnybank-jcb-premium" },
+    { "cardName": "一卡通聯名鈦金卡", "status": "included", "cardId": "sunnybank-ipass-titanium" },
+    { "cardName": "悠遊VISA金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍" },
+    { "cardName": "VISA曜晶卡", "status": "included", "cardId": "sunnybank-visa-yaojing" },
+    { "cardName": "JCB晶緻卡", "status": "excluded", "reason": "官網標示「已不再核發新卡」" },
+    { "cardName": "Sunny Life 賞利點卡(VISA御璽卡)", "status": "included", "cardId": "sunnybank-sunnylife" },
+    { "cardName": "陽信鑫世界商務卡(邀請制)", "status": "included", "cardId": "sunnybank-xworld-business" }
+  ],
+  "cards": [
+    {
+      "id": "sunnybank-fcu-ipass",
+      "name": "逢甲人一卡通鈦金認同卡",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496",
+      "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-14" },
+      "rules": [
+        { "id": "sunnybank-fcu-ipass-general", "plan": "", "scope": { "type": "general" }, "rate": 1.1, "rawReward": "國內一般消費1.1%現金紅利回饋，無上限（基本回饋0.5%+加碼回饋0.6%）", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-fcu-ipass-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 2.2, "rawReward": "國外一般消費2.2%現金紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-fcu-ipass-gas", "plan": "", "scope": { "type": "category", "categories": ["gas"], "basis": "mcc" }, "rate": 5, "rawReward": "七大指定通路享最高5%回饋：當月該卡別新增一般消費滿新臺幣3,000元，當月於指定加油消費享最高5%現金紅利點數回饋（指定加油：限國內實體加油站且行業別代碼須為加油站或自助加油站）。5%回饋=基本回饋0.5%(無上限)+加碼回饋0.6%(無上限)+指定通路消費合計加碼3.9%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["當月新增一般消費需達NT$3,000以上", "限國內實體加油站，行業別代碼須為加油站或自助加油站", "與其他六項指定通路（台灣特斯拉充電、台鐵、高鐵、新光三越、遠東百貨、遠東SOGO百貨）合計，每月歸戶上限300點"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-14" },
+        { "id": "sunnybank-fcu-ipass-lifestyle", "plan": "", "scope": { "type": "merchant", "merchants": ["台灣特斯拉", "台鐵", "高鐵", "新光三越", "遠東百貨", "遠東SOGO百貨"], "basis": "merchant-list" }, "rate": 5, "rawReward": "七大指定通路享最高5%回饋：當月該卡別新增一般消費滿新臺幣3,000元，當月於指定充電站、台鐵/高鐵(限購票)、新光三越/遠東百貨/遠東SOGO百貨消費，享最高5%現金紅利點數回饋（指定充電站：限台灣特斯拉官方網站、官方APP之充電費用；台鐵/高鐵：限於台鐵或高鐵官方網站、APP、臨櫃、自動售票機購買車票，不含補票、自動加值及車上推車消費；指定百貨：限新光三越、遠東百貨、遠東SOGO百貨之消費，係以信用卡帳單明細有顯示該百貨名稱判斷是否為該百貨之交易）。5%回饋=基本回饋0.5%(無上限)+加碼回饋0.6%(無上限)+指定通路消費合計加碼3.9%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["當月新增一般消費需達NT$3,000以上", "充電站限台灣特斯拉官方網站/官方APP之充電費用", "台鐵/高鐵限購票，不含補票、自動加值及車上消費", "百貨消費以信用卡帳單明細顯示之商店名稱認定", "與指定加油類別合計，每月歸戶上限300點"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-14" }
+      ]
+    },
+    {
+      "id": "sunnybank-pondafamily",
+      "name": "彭大家族聯名晶緻卡",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498",
+      "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-14" },
+      "rules": [
+        { "id": "sunnybank-pondafamily-general", "plan": "", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內、外一般消費1%現金紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-pondafamily-overseas-jkt", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 3, "rawReward": "日本、韓國、泰國地區/網站一般消費3%現金紅利回饋，無上限（基本回饋1%+加碼2%）", "cap": null, "conditions": ["限日本、韓國、泰國地區/網站消費"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-pondafamily-daikoku", "plan": "", "scope": { "type": "merchant", "merchants": ["唐吉訶德", "大國藥妝"], "basis": "merchant-list" }, "rate": 10, "rawReward": "日本境內唐吉訶德及大國藥妝實體卡消費並完成登錄，最高10%現金紅利回饋＝基本回饋1%無上限+日本消費2%回饋無上限+日本指定藥妝消費合計加碼7%回饋(正附卡合併計算，活動期間回饋上限200點)", "cap": { "amount": 200, "unit": "point", "period": "campaign" }, "conditions": ["需完成活動登錄", "限實體卡交易，不含網路交易", "消費國別需為日本"], "validFrom": "2026-10-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-14" },
+        { "id": "sunnybank-pondafamily-mobile-delivery", "plan": "", "scope": { "type": "category", "categories": ["mobile-payment", "delivery"] }, "rate": 5, "rawReward": "國內綁定四大行動支付（LINE Pay/街口支付/台灣Pay/悠遊付）一般消費及外送平台（foodpanda、Uber Eats）消費，最高享5%現金紅利點數回饋。5%回饋=基本回饋1%(無上限)+綁定四大行動支付及外送平台消費合計加碼4%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["限消費地為台灣、幣別為新臺幣"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-14" }
+      ]
+    },
+    {
+      "id": "sunnybank-jcb-premium",
+      "name": "陽信JCB晶緻卡(原JCB哆啦A夢晶緻卡)",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500",
+      "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-14" },
+      "rules": [
+        { "id": "sunnybank-jcb-premium-general", "plan": "", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內、外一般消費1%現金紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-jcb-premium-overseas-jkt", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 3, "rawReward": "日本、韓國、泰國地區/網站一般消費3%現金紅利回饋，無上限（基本回饋1%+加碼2%）", "cap": null, "conditions": ["限日本、韓國、泰國地區/網站消費"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-jcb-premium-daikoku", "plan": "", "scope": { "type": "merchant", "merchants": ["唐吉訶德", "大國藥妝"], "basis": "merchant-list" }, "rate": 10, "rawReward": "日本境內唐吉訶德及大國藥妝實體卡消費並完成登錄，最高10%現金紅利回饋＝基本回饋1%無上限+日本消費2%回饋無上限+日本指定藥妝消費合計加碼7%回饋(正附卡合併計算，活動期間回饋上限200點)", "cap": { "amount": 200, "unit": "point", "period": "campaign" }, "conditions": ["需完成活動登錄", "限實體卡交易，不含網路交易", "消費國別需為日本"], "validFrom": "2026-10-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-14" },
+        { "id": "sunnybank-jcb-premium-mobile-delivery", "plan": "", "scope": { "type": "category", "categories": ["mobile-payment", "delivery"] }, "rate": 5, "rawReward": "國內綁定四大行動支付（LINE Pay/街口支付/台灣Pay/悠遊付）一般消費及外送平台（foodpanda、Uber Eats）消費，最高享5%現金紅利點數回饋。5%回饋=基本回饋1%(無上限)+綁定四大行動支付及外送平台消費合計加碼4%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["限消費地為台灣、幣別為新臺幣"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-14" }
+      ]
+    },
+    {
+      "id": "sunnybank-ipass-titanium",
+      "name": "一卡通聯名鈦金卡",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501",
+      "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-14" },
+      "rules": [
+        { "id": "sunnybank-ipass-titanium-general", "plan": "", "scope": { "type": "general" }, "rate": 1.1, "rawReward": "國內一般消費1.1%現金紅利回饋，無上限（基本回饋0.5%+加碼回饋0.6%）", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-ipass-titanium-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 2.2, "rawReward": "國外一般消費2.2%現金紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-ipass-titanium-gas", "plan": "", "scope": { "type": "category", "categories": ["gas"], "basis": "mcc" }, "rate": 5, "rawReward": "七大指定通路輕鬆享最高5%回饋：當月該卡別新增一般消費滿新臺幣3,000元，當月於指定加油消費享最高5%現金紅利點數回饋（指定加油通路：限國內實體加油站且行業別代碼須為加油站或自助加油站）。5%回饋=基本回饋0.5%(無上限)+加碼回饋0.6%(無上限)+指定通路消費合計加碼3.9%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["當月新增一般消費需達NT$3,000以上", "限國內實體加油站，行業別代碼須為加油站或自助加油站", "與其他六項指定通路（台灣特斯拉充電、台鐵、高鐵、新光三越、遠東SOGO百貨、遠東百貨）合計，每月歸戶上限300點"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-14" },
+        { "id": "sunnybank-ipass-titanium-lifestyle", "plan": "", "scope": { "type": "merchant", "merchants": ["台灣特斯拉", "台鐵", "高鐵", "新光三越", "遠東SOGO百貨", "遠東百貨"], "basis": "merchant-list" }, "rate": 5, "rawReward": "七大指定通路輕鬆享最高5%回饋：當月該卡別新增一般消費滿新臺幣3,000元，當月於指定充電站、台鐵/高鐵(限購票)、新光三越/遠東SOGO百貨/遠東百貨消費，享最高5%現金紅利點數回饋（指定充電站：限台灣特斯拉官方網站、官方APP之充電費用；台鐵/高鐵：限於台鐵或高鐵官方網站、APP、臨櫃、自動售票機購買車票，不含補票、自動加值及車上推車消費；指定百貨：限新光三越、遠東SOGO百貨、遠東百貨之消費，係以信用卡帳單明細有顯示該百貨名稱判斷是否為該百貨之交易）。5%回饋=基本回饋0.5%(無上限)+加碼回饋0.6%(無上限)+指定通路消費合計加碼3.9%回饋(正附卡合併計算，每月歸戶上限300點)", "cap": { "amount": 300, "unit": "point", "period": "month" }, "conditions": ["當月新增一般消費需達NT$3,000以上", "充電站限台灣特斯拉官方網站/官方APP之充電費用", "台鐵/高鐵限購票，不含補票、自動加值及車上消費", "百貨消費以信用卡帳單明細顯示之商店名稱認定", "與指定加油類別合計，每月歸戶上限300點"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-14" }
+      ]
+    },
+    {
+      "id": "sunnybank-visa-yaojing",
+      "name": "VISA曜晶卡",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503",
+      "pointValue": { "unit": "曜晶紅利", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" },
+      "rules": [
+        { "id": "sunnybank-visa-yaojing-general", "plan": "", "scope": { "type": "general" }, "rate": 0.6, "rawReward": "國內一般消費基本回饋0.6%曜晶紅利，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-visa-yaojing-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 3.1, "rawReward": "國外一般消費最高3.1%曜晶紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" }
+      ]
+    },
+    {
+      "id": "sunnybank-sunnylife",
+      "name": "Sunny Life 賞利點卡(VISA御璽卡)",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543",
+      "pointValue": { "unit": "賞利點", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/541", "checkedAt": "2026-10-14" },
+      "rules": [
+        { "id": "sunnybank-sunnylife-general", "plan": "", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內一般消費1%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-sunnylife-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 1.5, "rawReward": "國外一般消費1.5%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-sunnylife-mall", "plan": "", "scope": { "type": "merchant", "merchants": ["陽信商店街"], "basis": "merchant-list" }, "rate": 2, "rawReward": "陽信商店街消費合計享2%賞利點回饋（商店街基本回饋1%+國內基本回饋1%），無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" }
+      ]
+    },
+    {
+      "id": "sunnybank-xworld-business",
+      "name": "陽信鑫世界商務卡(邀請制)",
+      "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597",
+      "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597", "checkedAt": "2026-10-10" },
+      "rules": [
+        { "id": "sunnybank-xworld-business-general", "plan": "", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內一般消費1%現金紅利回饋，無上限", "cap": null, "conditions": ["邀請制，須受邀才能申請"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597", "checkedAt": "2026-10-10" },
+        { "id": "sunnybank-xworld-business-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 3, "rawReward": "國外一般消費3%現金紅利回饋，無上限", "cap": null, "conditions": ["邀請制，須受邀才能申請"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597", "checkedAt": "2026-10-10" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "bankId": "coop",
+  "cardListUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "卡娜赫拉的小動物悠遊聯名卡", "status": "included", "cardId": "coop-kanahei" },
+    { "cardName": "無限金鑽卡", "status": "included", "cardId": "coop-infinite-diamond" },
+    { "cardName": "世界卡（頂級卡系列）", "status": "excluded", "reason": "官方讀不到：官方頁面僅列出無限金鑽卡的回饋細節，世界卡細節未提供，暫不收錄" },
+    { "cardName": "無限卡（頂級卡系列）", "status": "excluded", "reason": "官方讀不到：官方頁面僅列出無限金鑽卡的回饋細節，無限卡細節未提供，暫不收錄" },
+    { "cardName": "i運動卡", "status": "included", "cardId": "coop-isport" },
+    { "cardName": "中台世界博物館御璽悠遊認同卡", "status": "included", "cardId": "coop-cooperative18" },
+    { "cardName": "國防醫學院鈦金悠遊認同卡", "status": "included", "cardId": "coop-cooperative19" },
+    { "cardName": "信用合作社聯名卡（其他分社版本）", "status": "excluded", "reason": "與中台世界博物館卡、國防醫學院卡同為信用合作社系列認同卡（不同合作機構各自發卡），本期僅收錄已查核之兩個代表範例，其餘分社版本因時間限制未逐一查核，暫不收錄" },
+    { "cardName": "愛家卡（合庫房貸戶限定）", "status": "included", "cardId": "coop-house-loan" },
+    { "cardName": "合庫利High卡（晶緻卡）", "status": "included", "cardId": "coop-ipass" },
+    { "cardName": "綜合版信用卡", "status": "excluded", "reason": "官方讀不到：官網未見此卡獨立回饋細節頁，暫不收錄" },
+    { "cardName": "雙幣卡（美元/日圓）", "status": "excluded", "reason": "外幣計價卡，本期時間有限未查核回饋明細，暫不收錄" },
+    { "cardName": "漢來美食聯名卡", "status": "excluded", "reason": "官方讀不到：經查官方活動頁，回饋以電子餐飲抵用券形式發放為主，未見明確現金或點數回饋百分比" },
+    { "cardName": "COMBO卡", "status": "excluded", "reason": "官方讀不到：官網未見此卡獨立回饋細節頁，暫不收錄" },
+    { "cardName": "雄獅旺來卡（個人版）", "status": "excluded", "reason": "官網未見此卡獨立回饋細節頁，本期時間有限未查核，暫不收錄" }
+  ],
+  "cards": [
+    {
+      "id": "coop-kanahei",
+      "name": "卡娜赫拉的小動物悠遊聯名卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/kanahei",
+      "rules": [
+        {
+          "id": "coop-kanahei-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內、外一般消費回饋金1%，無最低門檻，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/kanahei",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-kanahei-category-bonus",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["mobile-payment", "transport", "entertainment"] },
+          "rate": 10,
+          "rawReward": "三大通路（行動支付、綠能通路、遊戲影音）加碼10%回饋",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["當期帳單新增一般消費達2,999元以上", "每項通路每月回饋上限100元，三項合計每月最高300元"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/kanahei",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-infinite-diamond",
+      "name": "無限金鑽卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
+      "rules": [
+        {
+          "id": "coop-infinite-diamond-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-infinite-diamond-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.5,
+          "rawReward": "國外一般消費2.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-isport",
+      "name": "i運動卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/i-sport",
+      "rules": [
+        {
+          "id": "coop-isport-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內一般消費現金回饋0.5%，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/i-sport",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-isport-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外（含海外網購）一般消費現金回饋1.5%，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/i-sport",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-isport-category-bonus",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["transport", "entertainment"] },
+          "rate": 5,
+          "rawReward": "三大通路（綠色交通、揮汗健身、運動裝備）加碼5%回饋",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": [
+            "當期帳單新增一般消費達2,999元以上",
+            "每項通路上限100元，三項合計每月最高300元（正附卡合併計算）",
+            "官方另含運動裝備通路，本系統類別清單無完全對應項目"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/i-sport",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-cooperative18",
+      "name": "中台世界博物館御璽悠遊認同卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative18",
+      "rules": [
+        {
+          "id": "coop-cooperative18-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.5,
+          "rawReward": "國內一般消費0.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["官方另依刷卡消費提撥0.25%~0.3%捐予中台文化藝術基金會，不影響持卡人回饋"],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative18",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-cooperative18-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1.5,
+          "rawReward": "國外一般消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative18",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-cooperative19",
+      "name": "國防醫學院鈦金悠遊認同卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative19",
+      "rules": [
+        {
+          "id": "coop-cooperative19-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.8,
+          "rawReward": "國內一般消費0.8%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["官方另依刷卡消費提撥0.2%捐予國防醫學院軍事教育基金，不影響持卡人回饋"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative19",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "coop-cooperative19-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 3,
+          "rawReward": "國外（含海外網購）一般消費3%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/cooperative19",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-house-loan",
+      "name": "愛家卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/house-loan",
+      "rules": [
+        {
+          "id": "coop-house-loan-general",
+          "plan": "VISA御璽愛家卡",
+          "scope": { "type": "general" },
+          "rate": 1.2,
+          "rawReward": "一般消費1%+0.2%現金回饋（房貸戶加碼0.2%）",
+          "cap": null,
+          "conditions": ["限合庫房貸戶"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/house-loan",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "coop-ipass",
+      "name": "合庫利High卡",
+      "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+      "rules": [
+        {
+          "id": "coop-ipass-general",
+          "plan": "晶緻卡",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋；國外一般消費1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-10",
+          "validTo": null,
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

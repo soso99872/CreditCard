@@ -1,0 +1,18 @@
+[
+  { "id": "convenience-store", "name": "超商" },
+  { "id": "supermarket", "name": "量販超市" },
+  { "id": "coffee", "name": "咖啡" },
+  { "id": "dining", "name": "餐飲" },
+  { "id": "delivery", "name": "外送" },
+  { "id": "online-shopping", "name": "網購" },
+  { "id": "transport", "name": "交通" },
+  { "id": "gas", "name": "加油" },
+  { "id": "department-store", "name": "百貨" },
+  { "id": "travel", "name": "旅遊住宿" },
+  { "id": "entertainment", "name": "娛樂影音" },
+  { "id": "pharmacy", "name": "藥妝" },
+  { "id": "overseas", "name": "海外" },
+  { "id": "mobile-payment", "name": "行動支付" },
+  { "id": "japan", "name": "日本" },
+  { "id": "general", "name": "一般消費" }
+]

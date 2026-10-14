@@ -1,0 +1,53 @@
+{
+  "bankId": "bok",
+  "cardListUrl": "https://www.bok.com.tw/credit-card",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "一般卡(金卡)", "status": "included", "cardId": "bok-gold" },
+    { "cardName": "高雄going鈦金卡", "status": "included", "cardId": "bok-titanium" },
+    { "cardName": "高雄市政府認同卡(限高雄市政府員工)", "status": "excluded", "reason": "限高雄市政府員工申請之認同卡，回饋規則與一般卡(金卡)相同，不另重複收錄" },
+    { "cardName": "手機信用卡", "status": "excluded", "reason": "行動虛擬信用卡，權益與鈦金卡相同，暫不重複收錄" }
+  ],
+  "cards": [
+    {
+      "id": "bok-gold",
+      "name": "一般卡(金卡)",
+      "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+      "rules": [
+        {
+          "id": "bok-gold-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.1,
+          "rawReward": "每月刷卡金額未滿1萬元回饋千分之一(0.1%)；達8萬元以上回饋千分之六(0.6%)，依月刷卡金額分級計算",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "bok-titanium",
+      "name": "高雄going鈦金卡",
+      "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+      "rules": [
+        {
+          "id": "bok-titanium-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.1,
+          "rawReward": "單筆刷卡金額1,000元以上未滿3,000元回饋千分之一(0.1%)；達15萬元以上回饋千分之十二(1.2%)，依單筆刷卡金額分級計算",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

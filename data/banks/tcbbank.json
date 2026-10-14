@@ -1,0 +1,13 @@
+{
+  "bankId": "tcbbank",
+  "cardListUrl": "https://www.tcbbank.com.tw/",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    {
+      "cardName": "（無法取得卡片清單）",
+      "status": "excluded",
+      "reason": "官方讀不到：官網連線被重置，無法取得官方資料。本機與 WebFetch 對 www.tcbbank.com.tw 的 TLS 連線皆可建立，但送出 HTTP 請求後連線即被重置（curl 顯示 Recv failure: Connection was reset），與 data/batches.md 第 3 節記載的狀況一致，懷疑為地區或自動化流量限制。嘗試改用 web.archive.org 查詢快照亦因速率限制失敗。依指示不使用第三方網站補資料，故本檔案無法列出實際卡片。"
+    }
+  ],
+  "cards": []
+}

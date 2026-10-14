@@ -1,0 +1,13 @@
+{
+  "bankId": "ctbc",
+  "cardListUrl": "https://www.ctbcbank.com/twrbo/zh_tw/personal/creditcard.html",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    {
+      "cardName": "（無法取得卡片清單）",
+      "status": "excluded",
+      "reason": "官方讀不到：中國信託全站（www.ctbcbank.com）有 Bot 防護機制，對任何路徑、任何 User-Agent（含一般瀏覽器 UA、Googlebot UA）、HTTP/1.0 皆回應 HTTP 202 的驗證挑戰頁（JS 導向頁，非實際內容），WebFetch 亦回報頁面為空白。已嘗試：cardListUrl 原頁與多個其他猜測路徑（/twrbo/zh_tw/personal/creditcard/apply.html、/zh_tw/personal/creditcard.html、/twrbo/en_us/personal/creditcard.html）、robots.txt（亦回應同一驗證頁而非真正的 robots.txt）、其他子網域（card.ctbcbank.com 為「行動帳單」App 非信用卡列表、survey.ctbcbank.com 為舊版問卷頁），均無法取得信用卡列表或任何卡片詳情頁內容。與 data/batches.md 第 3 節記載狀況一致。依指示不使用第三方網站補資料，本檔案無法列出實際卡片；第三方資料補充留待 T10 處理。"
+    }
+  ],
+  "cards": []
+}

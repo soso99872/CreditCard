@@ -1,0 +1,81 @@
+{
+  "bankId": "feib",
+  "cardListUrl": "https://www.feib.com.tw/introduce/cardInfo?type=1",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "遠東樂行卡", "status": "included", "cardId": "feib-hwcard" },
+    { "cardName": "遠東頂級快樂卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域（feib.com.tw）未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "遠東快樂無限卡/快樂世界商務卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "遠東快樂信用卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，一般消費與指定通路加碼均以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "遠東樂家＋卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，未揭露一般消費基礎回饋率數字，加碼活動多為滿額贈禮形式，暫不收錄" },
+    { "cardName": "遠東HAPPY GO頂級卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "世界卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "無限卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "C'est Moi我的卡經典款", "status": "excluded", "reason": "官方讀不到：經查官方頁面，回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "C'est Moi我的卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域未查得明確之1點兌換台幣比例，暫不收錄" },
+    { "cardName": "C'est Moi旅遊悠遊卡", "status": "excluded", "reason": "本卡數量龐大，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "Combo卡", "status": "excluded", "reason": "結合金融卡與信用卡功能之特殊卡種，本期時間有限，尚未查核，暫不收錄" },
+    { "cardName": "NewCentury信用卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，僅揭露指定通路最高5%刷卡金，未見一般消費基礎回饋率，暫不收錄" },
+    { "cardName": "MC2卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，未揭露具體回饋規則數字，暫不收錄" },
+    { "cardName": "遠東雲端iCloud信用卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，僅介紹無實體卡片等特色功能，未揭露回饋規則，暫不收錄" },
+    { "cardName": "遠東頂極商務卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" },
+    { "cardName": "eTag聯名卡", "status": "excluded", "reason": "官方讀不到：經查官方頁面，一般消費為HAPPY GO點數（換算比例未知），僅eTag儲值/停車代扣繳活動明確1點=1元，但該活動不適用於一般消費，暫不收錄" },
+    { "cardName": "伊甸愛心卡", "status": "excluded", "reason": "公益認同卡，核心權益為捐款支持伊甸社會福利基金會，非以現金或點數回饋為主" },
+    { "cardName": "飲食男女卡", "status": "excluded", "reason": "經查官方頁面標示「終止新卡申請」，屬已停發卡片" },
+    { "cardName": "遠東快樂信用卡(原台塑聯名卡)", "status": "excluded", "reason": "經查官方頁面標示「終止新卡申請」，屬已停發卡片" },
+    { "cardName": "C'est Moi我的卡(原南山人壽認同卡)", "status": "excluded", "reason": "認同卡且本期時間有限，回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "Esprit聯名卡", "status": "excluded", "reason": "經查官方頁面標示「終止新卡申請」，屬已停發卡片" },
+    { "cardName": "華信航空聯名卡", "status": "excluded", "reason": "哩程／航空公司聯名卡，本期不收錄" },
+    { "cardName": "遠企尊榮金卡", "status": "excluded", "reason": "本卡數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "校園卡", "status": "excluded", "reason": "校園認同卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" },
+    { "cardName": "工會卡", "status": "excluded", "reason": "工會認同卡，本期時間有限，此卡回饋細節未逐一查核，暫不收錄" }
+  ],
+  "cards": [
+    {
+      "id": "feib-hwcard",
+      "name": "遠東樂行卡",
+      "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+      "rules": [
+        {
+          "id": "feib-hwcard-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費現金回饋1%",
+          "cap": null,
+          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "feib-hwcard-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費現金回饋2%（歐洲實體店除外）",
+          "cap": null,
+          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "feib-hwcard-transport",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["gas", "transport", "travel"] },
+          "rate": 3,
+          "rawReward": "交通/旅遊加碼2%（含原1%，最高3%），涵蓋加油、悠遊卡加值、計程車、電動車充電、共享交通、航空機票、旅遊平台",
+          "cap": { "amount": 300, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["當期帳單一般消費需滿NT$3,000", "需於當月27日前登錄"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "cardpick",
+  "version": "0.1.0",
+  "private": true,
+  "description": "刷哪張（cardpick）——依商家或類別推薦信用卡回饋",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "validate": "node scripts/validate.mjs",
+    "precheck": "node scripts/precheck.mjs",
+    "freshness": "node scripts/freshness.mjs",
+    "coverage": "node scripts/coverage.mjs",
+    "build-index": "node scripts/build-index.mjs",
+    "start": "node scripts/server.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

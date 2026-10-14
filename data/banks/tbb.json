@@ -1,0 +1,739 @@
+{
+  "bankId": "tbb",
+  "cardListUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    {
+      "cardName": "福企無限卡",
+      "status": "included",
+      "cardId": "tbb-visa-infinite"
+    },
+    {
+      "cardName": "銀色之愛(Mastercard鈦金商旅卡、VISA商務御璽卡)",
+      "status": "included",
+      "cardId": "tbb-eldercaring"
+    },
+    {
+      "cardName": "鈦金商旅卡",
+      "status": "included",
+      "cardId": "tbb-titanium"
+    },
+    {
+      "cardName": "永續生活悠遊卡(鈦金卡)",
+      "status": "included",
+      "cardId": "tbb-greenlife-easy"
+    },
+    {
+      "cardName": "永續生活一卡通(普卡、鈦金卡)",
+      "status": "included",
+      "cardId": "tbb-greenlife-ipass"
+    },
+    {
+      "cardName": "藝FUN悠遊御璽卡(御璽卡)",
+      "status": "included",
+      "cardId": "tbb-artfun-easy"
+    },
+    {
+      "cardName": "北港朝天宮認同卡(普卡、鈦金卡)",
+      "status": "included",
+      "cardId": "tbb-chaotiangong"
+    },
+    {
+      "cardName": "宜蘭悠遊認同卡(鈦金卡)",
+      "status": "included",
+      "cardId": "tbb-yilan"
+    },
+    {
+      "cardName": "得利Combo鈦金卡(鈦金卡)",
+      "status": "excluded",
+      "reason": "官方讀不到：官網卡片清單API未提供有效的介紹頁連結，無法查證回饋內容"
+    },
+    {
+      "cardName": "信保基金111關懷商務卡(商務御璽卡)",
+      "status": "included",
+      "cardId": "tbb-smeg-business"
+    },
+    {
+      "cardName": "信保基金111關懷認同卡(鈦金商旅卡)",
+      "status": "included",
+      "cardId": "tbb-smeg"
+    },
+    {
+      "cardName": "宮廟認同卡(鈦金卡)",
+      "status": "included",
+      "cardId": "tbb-temple"
+    },
+    {
+      "cardName": "國際獅子會台灣總會認同卡(鈦金商旅卡)",
+      "status": "included",
+      "cardId": "tbb-lionsclub"
+    },
+    {
+      "cardName": "VISA白金卡(白金卡)",
+      "status": "included",
+      "cardId": "tbb-visa-platinum"
+    },
+    {
+      "cardName": "VISA金融卡",
+      "status": "excluded",
+      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
+    },
+    {
+      "cardName": "悠遊Debit卡",
+      "status": "excluded",
+      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
+    },
+    {
+      "cardName": "起家金悠遊Debit卡",
+      "status": "excluded",
+      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
+    },
+    {
+      "cardName": "商務卡(白金卡)",
+      "status": "excluded",
+      "reason": "官網僅標示「最高0.75%現金回饋，依消費金額級距」，未列出完整級距對照表，無法確認保底回饋率，為避免回饋率誤植不予收錄"
+    },
+    {
+      "cardName": "政府採購卡",
+      "status": "excluded",
+      "reason": "政府機構採購專用卡，非個人消費回饋卡"
+    },
+    {
+      "cardName": "臺灣菸酒採購卡",
+      "status": "excluded",
+      "reason": "機構採購專用卡，非個人消費回饋卡"
+    }
+  ],
+  "cards": [
+    {
+      "id": "tbb-visa-infinite",
+      "name": "福企無限卡",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-infinite-creditcard",
+      "rules": [
+        {
+          "id": "tbb-visa-infinite-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.6,
+          "rawReward": "國內一般消費0.6%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-infinite-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-visa-infinite-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-infinite-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-eldercaring",
+      "name": "銀色之愛(Mastercard鈦金商旅卡、VISA商務御璽卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/eldercaring-creditcard",
+      "rules": [
+        {
+          "id": "tbb-eldercaring-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.4,
+          "rawReward": "國內一般消費0.4%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/eldercaring-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-eldercaring-travel",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "travel"
+            ]
+          },
+          "rate": 0.6,
+          "rawReward": "國內差旅消費0.6%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/eldercaring-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-eldercaring-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/eldercaring-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-titanium",
+      "name": "鈦金商旅卡",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+      "rules": [
+        {
+          "id": "tbb-titanium-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.4,
+          "rawReward": "國內一般消費0.4%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-titanium-travel",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "travel"
+            ]
+          },
+          "rate": 0.6,
+          "rawReward": "國內差旅消費0.6%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-titanium-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外刷卡消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-greenlife-easy",
+      "name": "永續生活悠遊卡(鈦金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+      "rules": [
+        {
+          "id": "tbb-greenlife-easy-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.5,
+          "rawReward": "國內一般消費0.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-greenlife-easy-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 1.5,
+          "rawReward": "國外一般消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-greenlife-ipass",
+      "name": "永續生活一卡通(普卡、鈦金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-ipass-creditcard",
+      "rules": [
+        {
+          "id": "tbb-greenlife-ipass-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.5,
+          "rawReward": "國內一般消費0.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-ipass-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-greenlife-ipass-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 1.5,
+          "rawReward": "國外一般消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-ipass-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-artfun-easy",
+      "name": "藝FUN悠遊御璽卡(御璽卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/artfun-easy-creditcard",
+      "rules": [
+        {
+          "id": "tbb-artfun-easy-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.5,
+          "rawReward": "國內一般消費0.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/artfun-easy-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-artfun-easy-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/artfun-easy-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-chaotiangong",
+      "name": "北港朝天宮認同卡(普卡、鈦金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/chaotiangong-creditcard",
+      "rules": [
+        {
+          "id": "tbb-chaotiangong-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.3,
+          "rawReward": "國內一般消費0.3%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/chaotiangong-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-chaotiangong-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 1.5,
+          "rawReward": "國外消費1.5%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/chaotiangong-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-chaotiangong-lifestyle",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "dining",
+              "pharmacy",
+              "transport"
+            ]
+          },
+          "rate": 5,
+          "rawReward": "餐飲（含外送平台）、保健藥妝、交通最高5%現金回饋（基本回饋0.3%不受上限限制＋加碼部分4.7個百分比，加碼部分每戶每期上限500元）",
+          "cap": {
+            "amount": 500,
+            "unit": "TWD",
+            "period": "billing-cycle"
+          },
+          "conditions": ["回饋上限僅限於加碼部分（超過基本0.3%之4.7個百分比），每戶每期上限500元；基本回饋0.3%不受此上限限制"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/chaotiangong-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-yilan",
+      "name": "宜蘭悠遊認同卡(鈦金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/yilan-creditcard",
+      "rules": [
+        {
+          "id": "tbb-yilan-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.3,
+          "rawReward": "未達3萬元回饋0.3%；當期帳單新增消費達3萬元(含)以上回饋0.5%",
+          "cap": null,
+          "conditions": [
+            "當期帳單新增消費達NT$30,000(含)以上，回饋由0.3%升級至0.5%"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/yilan-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-smeg-business",
+      "name": "信保基金111關懷商務卡(商務御璽卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-business-creditcard",
+      "rules": [
+        {
+          "id": "tbb-smeg-business-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.4,
+          "rawReward": "國內一般消費0.4%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-business-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-smeg-business-travel",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "travel"
+            ]
+          },
+          "rate": 0.6,
+          "rawReward": "國內差旅消費0.6%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-business-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-smeg-business-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-business-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-smeg",
+      "name": "信保基金111關懷認同卡(鈦金商旅卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-creditcard",
+      "rules": [
+        {
+          "id": "tbb-smeg-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.4,
+          "rawReward": "國內一般消費0.4%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-smeg-travel",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "travel"
+            ]
+          },
+          "rate": 0.6,
+          "rawReward": "國內差旅消費0.6%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-smeg-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-temple",
+      "name": "宮廟認同卡(鈦金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/temple-creditcard",
+      "rules": [
+        {
+          "id": "tbb-temple-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.3,
+          "rawReward": "國內一般消費0.3%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/temple-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-temple-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 1.5,
+          "rawReward": "國外消費1.5%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/temple-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-temple-lifestyle",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "dining",
+              "pharmacy",
+              "transport"
+            ]
+          },
+          "rate": 5,
+          "rawReward": "餐飲、保健藥妝、交通最高5%現金回饋（基本回饋0.3%不受上限限制＋加碼部分4.7個百分比，加碼部分每戶每期上限500元）",
+          "cap": {
+            "amount": 500,
+            "unit": "TWD",
+            "period": "billing-cycle"
+          },
+          "conditions": ["回饋上限僅限於加碼部分（超過基本0.3%之4.7個百分比），每戶每期上限500元；基本回饋0.3%不受此上限限制"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/temple-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-lionsclub",
+      "name": "國際獅子會台灣總會認同卡(鈦金商旅卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/lionsclub-creditcard",
+      "rules": [
+        {
+          "id": "tbb-lionsclub-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.4,
+          "rawReward": "國內一般消費0.4%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/lionsclub-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-lionsclub-travel",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "travel"
+            ]
+          },
+          "rate": 0.6,
+          "rawReward": "國內差旅消費0.6%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/lionsclub-creditcard",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "tbb-lionsclub-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/lionsclub-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "tbb-visa-platinum",
+      "name": "VISA白金卡(白金卡)",
+      "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-creditcard",
+      "rules": [
+        {
+          "id": "tbb-visa-platinum-general",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.2,
+          "rawReward": "消費1元~49,999元回饋0.2%，依當期消費金額分級最高0.75%（20萬元以上），每期上限1,500元，全年上限18,000元",
+          "cap": {
+            "amount": 1500,
+            "unit": "TWD",
+            "period": "billing-cycle"
+          },
+          "conditions": [
+            "依當期消費金額分級：未達NT$50,000為0.2%，達NT$50,000以上0.3%，達NT$100,000以上0.4%，達NT$150,000以上0.5%，達NT$200,000以上最高升級至0.75%"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-creditcard",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}

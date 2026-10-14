@@ -1,0 +1,140 @@
+{
+  "bankId": "hsbc",
+  "cardListUrl": "https://www.hsbc.com.tw/credit-cards/",
+  "checkedAt": "2026-10-14",
+  "coverage": [
+    { "cardName": "卓越理財信用卡", "status": "excluded", "reason": "點數回饋為主，紅利點數採消費滿一定金額累積1點（例如每18元或20元1點），官網查無每點兌換現金的比例，無法確認回饋率" },
+    { "cardName": "滙豐旅人無限卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "滙豐旅人御璽卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
+    { "cardName": "滙豐旅人輕旅卡", "status": "excluded", "reason": "哩程卡（旅遊積分主要用於兌換航空哩程/飯店點數），本期不收錄" },
+    { "cardName": "現金回饋御璽卡", "status": "included", "cardId": "hsbc-cashback-signature" },
+    { "cardName": "滙豐匯鑽卡", "status": "included", "cardId": "hsbc-cashback-titanium" },
+    { "cardName": "滙豐Live+現金回饋卡", "status": "included", "cardId": "hsbc-liveplus" }
+  ],
+  "cards": [
+    {
+      "id": "hsbc-cashback-signature",
+      "name": "現金回饋御璽卡",
+      "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/",
+      "rules": [
+        {
+          "id": "hsbc-cashback-signature-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1.22,
+          "rawReward": "國內一般消費1.22%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "hsbc-cashback-signature-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.22,
+          "rawReward": "海外消費2.22%現金回饋（不含歐盟及英國實體通路），無上限",
+          "cap": null,
+          "conditions": ["不含歐盟及英國實體通路"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "hsbc-cashback-titanium",
+      "name": "滙豐匯鑽卡",
+      "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/",
+      "pointValue": { "unit": "現金積點", "twdPerPoint": 1, "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "hsbc-cashback-titanium-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "一般通路消費基本回饋比率1%現金積點，回饋無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-06-30",
+          "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "hsbc-cashback-titanium-selected-channels",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "街口支付", "PAYPAL",
+              "momo購物網", "Uber Eats",
+              "Amazon.com", "ASOS", "HERMES", "SELFRIDGES", "Shopbop.com", "MYTHERESA", "eBay", "Farfetch", "GMARKET", "DOKODEMO",
+              "agoda.com", "Booking.com",
+              "Disney+", "Netflix", "YouTube", "Spotify", "Nintendo"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "超過20家3%指定通路（行動支付、國內網購/外送、國外網購、線上訂房、影音遊戲）消費享現金積點回饋比率3%，每期回饋上限2,000元，超過上限以一般通路1%回饋計",
+          "cap": { "amount": 2000, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [
+            "限直接以本卡結帳，使用街口支付、PAYPAL以外之第三方支付於指定通路結帳僅享1%",
+            "帳單明細顯示之通路名稱需與本行系統所訂名稱相符（含大小寫及全、半形）才享3%",
+            "momo購物網不含富昇旅行社"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-06-30",
+          "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "hsbc-liveplus",
+      "name": "滙豐Live+現金回饋卡",
+      "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/liveplus/",
+      "pointValue": { "unit": "現金積點", "twdPerPoint": 1, "sourceUrl": "https://www.hsbc.com.tw/content/dam/hsbc/tw/docs/credit-cards/live-plus/cashback-cash-points-method.pdf", "checkedAt": "2026-10-14" },
+      "rules": [
+        {
+          "id": "hsbc-liveplus-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.88,
+          "rawReward": "一般通路消費基本回饋比率0.88%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["不含指定歐盟國家及英國實體商店消費"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hsbc.com.tw/content/dam/hsbc/tw/docs/credit-cards/live-plus/cashback-cash-points-method.pdf",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "hsbc-liveplus-triple-channels",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["dining", "department-store", "online-shopping", "entertainment"],
+            "basis": "mcc"
+          },
+          "rate": 3.88,
+          "rawReward": "三大通路消費（餐飲、購物、娛樂）依收單機構MCC碼認定（餐飲5441/5499/5812/5813/5814、購物5311/5944/5948另含蝦皮購物、娛樂7832/7996/7998），加碼回饋比率3%，連同一般通路0.88%合計3.88%，每正卡人每期回饋上限888點",
+          "cap": { "amount": 888, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [
+            "依收單機構MCC代碼認定，商店登錄代碼與實際營業項目不符者不列入",
+            "餐飲類排除外送平台消費（如foodpanda、Uber Eats）",
+            "限直接以本卡結帳",
+            "不含指定歐盟國家及英國實體商店消費"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.hsbc.com.tw/content/dam/hsbc/tw/docs/credit-cards/live-plus/cashback-cash-points-method.pdf",
+          "checkedAt": "2026-10-14"
+        }
+      ]
+    }
+  ]
+}

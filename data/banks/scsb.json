@@ -1,0 +1,108 @@
+{
+  "bankId": "scsb",
+  "cardListUrl": "https://www.scsb.com.tw/content/card/card03.html",
+  "checkedAt": "2026-10-10",
+  "coverage": [
+    { "cardName": "小小兵回饋卡", "status": "included", "cardId": "scsb-minions" },
+    { "cardName": "VISA簡單卡", "status": "included", "cardId": "scsb-visa-simple" },
+    { "cardName": "小小兵分期卡", "status": "excluded", "reason": "以分期付款權益為主，非一般消費現金或點數回饋為主" },
+    { "cardName": "萬事達簡單卡", "status": "excluded", "reason": "與VISA簡單卡同屬簡單卡系列，本期僅查證VISA版本，Mastercard版本回饋規則是否相同待後續版本確認" },
+    { "cardName": "大戶屋白金、普卡", "status": "excluded", "reason": "聯名/認同卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "國防醫學院校友會聯名卡", "status": "excluded", "reason": "聯名/認同卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "寶吉祥鈦金卡", "status": "excluded", "reason": "聯名/認同卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "鳳凰旅遊金、普卡", "status": "excluded", "reason": "聯名/認同卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "世界商務卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
+    { "cardName": "悠遊ONE卡白金卡、普卡", "status": "excluded", "reason": "基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "悠遊白金卡、普卡", "status": "excluded", "reason": "基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "利倍商務御璽卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
+    { "cardName": "JCB晶緻卡", "status": "excluded", "reason": "基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "MasterCard鈦金卡、VISA白金卡", "status": "excluded", "reason": "基礎卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
+    { "cardName": "個人商務鈦金卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
+    { "cardName": "公司商務鈦金卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
+    { "cardName": "牙醫師全聯會世界悠遊卡", "status": "excluded", "reason": "限特定職業公會會員申請之認同卡，本期時間有限未查證詳細回饋規則" },
+    { "cardName": "牙醫師公會世界商務卡", "status": "excluded", "reason": "限特定職業公會會員申請之商務卡，非一般個人消費回饋卡" },
+    { "cardName": "牙醫師公會鈦金卡", "status": "excluded", "reason": "限特定職業公會會員申請之認同卡，本期時間有限未查證詳細回饋規則" },
+    { "cardName": "會計師、建築師金卡", "status": "excluded", "reason": "限特定職業公會會員申請之認同卡，本期時間有限未查證詳細回饋規則" }
+  ],
+  "cards": [
+    {
+      "id": "scsb-minions",
+      "name": "小小兵回饋卡",
+      "sourceUrl": "https://www.scsb.com.tw/content/card/card_1110222.html",
+      "rules": [
+        {
+          "id": "scsb-minions-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1.234,
+          "rawReward": "國內一般消費1.234%現金回饋",
+          "cap": { "amount": 1000, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.scsb.com.tw/content/card/card_1110222.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "scsb-minions-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2.234,
+          "rawReward": "國外一般消費2.234%現金回饋",
+          "cap": { "amount": 1000, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.scsb.com.tw/content/card/card_1110222.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "scsb-minions-cinema",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["entertainment"] },
+          "rate": 12,
+          "rawReward": "六大國內指定影城消費最高12%現金回饋",
+          "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["限六大國內指定影城"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.scsb.com.tw/content/card/card_1110222.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    },
+    {
+      "id": "scsb-visa-simple",
+      "name": "VISA簡單卡",
+      "sourceUrl": "https://www.scsb.com.tw/content/card/card03_h1.html",
+      "rules": [
+        {
+          "id": "scsb-visa-simple-general",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 1,
+          "rawReward": "國內一般消費1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.scsb.com.tw/content/card/card03_h1.html",
+          "checkedAt": "2026-10-10"
+        },
+        {
+          "id": "scsb-visa-simple-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 2,
+          "rawReward": "國外一般消費2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.scsb.com.tw/content/card/card03_h1.html",
+          "checkedAt": "2026-10-10"
+        }
+      ]
+    }
+  ]
+}
