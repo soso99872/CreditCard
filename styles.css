@@ -1,117 +1,296 @@
-/* 刷哪張：單欄排版，手機寬度優先，桌機置中並限制最大寬度。見 tasks.md T03。 */
+/* 刷哪張：風格提案 D「錢包」（design-proposals/d-wallet.html，組長做的，參考 Apple 錢包，
+   老闆 2026-10-15 選定，取代原本選的 C）。這份檔案把 d-wallet.html 的 CSS 幾乎原樣搬過來，
+   再補上 D 沒有處理的正式功能需要的樣式（商家建議、類別快選、我的卡片管理對話框、
+   各種狀態橫幅），延伸同一套語言：介面本身安靜中性，顏色只留給卡。見 DESIGN.md。 */
+
+:root {
+  /* 介面本身是安靜的中性色，顏色只留給「卡」這個實體（照抄 d-wallet.html） */
+  --bg: #f2f1ee;
+  --surface: #ffffff;
+  --sunken: #e8e6e1;
+  --text: #1b1b1a;
+  --text-2: #57554f;
+  --text-3: #6e6b62;
+  --hairline: rgba(27, 27, 26, 0.08);
+  --focus: #1b1b1a;
+  --gain: #1d7a48;
+
+  /* 卡片顏色依銀行配色（bankColor()，色相表集中在 src/ui/card-color.mjs 的 CARD_HUES，
+     依這次推薦結果裡銀行第一次出現的順序分配，同一家銀行同色；之後要換色或調色盤，
+     只改那一個陣列）。這裡不放 CSS 變數，因為實際用哪個色相要看查詢結果才能決定，
+     不是固定值。 */
+
+  /* 錢包以外唯一需要的語意色：錯誤一定要用紅色才看得出是錯誤；草稿、資料核對中
+     刻意不上色，維持中性灰黑，跟「顏色只留給卡」的原則一致（見 DESIGN.md 第 7 節）。 */
+  --error: #8a1f11;
+  --error-bg: #fdecea;
+  --error-line: rgba(138, 31, 17, 0.28);
+
+  --shadow-surface: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.06),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.08), 0 12px 28px -10px rgba(0, 0, 0, 0.45);
+
+  /* 字級：1.25 比例，16px 基準（照抄 d-wallet.html） */
+  --fs-caption: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-h3: 1.25rem;
+  --fs-h2: 1.5625rem;
+  --fs-display: 3rem;
+
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC",
+    "Microsoft JhengHei", sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  /* 讓 details 展開可以從 0 過渡到 auto 高度（不支援的瀏覽器直接開合） */
+  interpolate-size: allow-keywords;
+}
 
 * {
   box-sizing: border-box;
 }
 
+/* 很多元件自己宣告了 display（.query 的 grid、.controls 的 flex…），跟瀏覽器內建的
+   [hidden]{display:none} 比，作者樣式表永遠贏過使用者代理樣式表，就算選擇器優先度算出來
+   一樣——沒有這條規則，JS 設定 .hidden=true 時那些元件還是會露出來（T12-1 原本只在
+   #empty-my-cards 補了一次，這裡改成全站通用，一次修好同樣的坑）。 */
+[hidden] {
+  display: none !important;
+}
+
+html,
 body {
   margin: 0;
-  font-family: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-  background: #f5f6f8;
-  color: #1f2430;
-  line-height: 1.6;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
 }
 
 .app {
-  max-width: 640px;
+  max-width: 440px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 20px 16px 48px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
+}
+
+/* ---------- 頁首 ---------- */
+.app-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: -4px;
 }
 
 .app-header h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
-.app-header .tagline {
-  margin: 4px 0 0;
-  color: #555;
-  font-size: 0.95rem;
+.app-header p {
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--text-3);
 }
 
-.card-section {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.card-section h2 {
-  margin: 0 0 12px;
-  font-size: 1.1rem;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 12px;
-}
-
-label {
-  font-size: 0.9rem;
-  color: #333;
-}
-
-input[type="text"],
-input[type="number"],
-select {
-  font-size: 1rem;
-  padding: 10px 12px;
-  border: 1px solid #ccd0d8;
-  border-radius: 8px;
-  width: 100%;
-}
-
-.scope-toggle {
-  display: flex;
-  gap: 16px;
-  border: none;
-  padding: 0;
+/* ---------- 查詢 ---------- */
+.query {
+  display: grid;
+  gap: 10px;
   margin: 0;
 }
 
-.scope-toggle legend {
-  font-size: 0.9rem;
-  color: #333;
-  padding: 0;
-  margin-bottom: 6px;
-}
-
-.scope-toggle label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.95rem;
-}
-
-.hint {
-  margin: 8px 0 0;
-  color: #0a6ebd;
-  font-size: 0.9rem;
-}
-
-/* 商家即時建議（AC-17）：輸入框下方的下拉清單，點選就直接查詢。 */
-.suggest-field {
+.search {
   position: relative;
 }
 
-.suggestion-list {
+.search label {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  margin: 4px 0 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.search svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+}
+
+.search input {
+  width: 100%;
+  height: 56px;
+  padding: 0 16px 0 46px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  font: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.segmented {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 3px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--sunken);
+  min-width: 0;
+}
+
+.segmented legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.segmented input {
+  position: absolute;
+  opacity: 0;
+}
+
+.segmented label {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  border-radius: 9px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.segmented input:checked + label {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+}
+
+.segmented input:focus-visible + label {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 128px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+}
+
+.amount span {
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--text-3);
+}
+
+.amount input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+}
+
+input:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.amount input:focus-visible {
+  outline: none;
+}
+
+.amount:focus-within {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* 我的卡片入口（工具列裡的次要按鈕）：surface + 陰影，跟 .amount 同一種「面板」語言，
+   不另外畫邊框（整個頁面只用陰影表達層次，見 DESIGN.md 第 4 節）。 */
+.toolbar-mycards-btn {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.toolbar-mycards-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* 商家即時建議（AC-17）：改成佔用版面空間，在輸入框下方直接把後面的內容往下推，
+   不用絕對定位覆蓋——否則會蓋住下面的查詢範圍、金額欄位（主管 T17 建議）。 */
+.suggestion-list {
+  margin: 0;
   padding: 4px;
   list-style: none;
-  background: #fff;
-  border: 1px solid #ccd0d8;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  background: var(--surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow-surface);
   max-height: 260px;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -121,29 +300,44 @@ select {
   display: block;
   width: 100%;
   min-height: 44px;
-  padding: 10px 12px;
+  padding: 10px 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   background: transparent;
-  color: #1f2430;
+  color: var(--text);
   text-align: left;
-  font-size: 0.95rem;
+  font: inherit;
+  font-size: var(--fs-small);
+  font-weight: 600;
 }
 
 .suggestion-item:hover,
 .suggestion-item:focus-visible {
-  background: #eef2f7;
+  background: var(--sunken);
 }
 
-/* 類別快選鈕（AC-04）：查無商家、也推測不出類別時，顯示在一般消費排行上方。 */
+.suggestion-item:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+.hint {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--text-2);
+}
+
+/* 類別快選鈕（AC-04）：查無商家、也推測不出類別時，顯示在一般消費排行上方。
+   目前共 21 顆，手機先收 6 顆常用，其餘摺進「更多類別」（tasks.md T12-2b）。 */
 .category-quick-picker {
-  margin-top: 8px;
+  display: grid;
+  gap: 8px;
 }
 
 .category-quick-picker p {
-  margin: 0 0 6px;
-  color: #666;
-  font-size: 0.85rem;
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--text-3);
 }
 
 .category-quick-list {
@@ -153,186 +347,781 @@ select {
 }
 
 .category-quick-btn {
-  background: #fff;
-  color: #0a6ebd;
-  border: 1px solid #0a6ebd;
-  border-radius: 999px;
-  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 44px;
-  font-size: 0.85rem;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
 }
 
 .category-quick-btn.is-active {
-  background: #0a6ebd;
-  color: #fff;
+  background: var(--text);
+  color: var(--surface);
+  font-weight: 600;
 }
 
+.category-quick-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767.98px) {
+  /* 收合狀態下才隱藏「更多類別」收納的那些；目前選到的類別即使屬於這批，
+     renderCategoryQuickPicker() 會強制展開，所以這裡的隱藏規則永遠不會蓋住使用中的按鈕。 */
+  .category-quick-list:not(.is-expanded) .category-quick-btn--extra {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  /* 選擇器要比 .link-button 多一層（.category-quick-picker .category-more-btn），
+     不能只寫 .category-more-btn：兩個都是 class 選擇器，優先度打平時，CSS 是看
+     規則在檔案裡出現的先後，.link-button 的 display:inline-flex 定義在後面，
+     沒有多一層的話反而是它贏，桌機會露出「更多類別」。 */
+  .category-quick-picker .category-more-btn {
+    display: none;
+  }
+}
+
+/* ---------- 各種狀態橫幅：錯誤／草稿／資料核對中／加卡提示／空狀態 ---------- */
 .banner {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: var(--fs-small);
+  line-height: 1.5;
 }
 
 .banner-error {
-  background: #fdecea;
-  color: #8a1f11;
-  border: 1px solid #f4c7c3;
+  background: var(--error-bg);
+  color: var(--error);
+  box-shadow: inset 0 0 0 1px var(--error-line);
 }
 
-/* 草稿資料預覽提示（?draft=1，tasks.md T17）：提醒目前看到的是尚未核對過的草稿卡。 */
-.banner-draft {
-  background: #fff7e6;
-  color: #7a4b00;
-  border: 1px solid #f0d7a0;
-  font-size: 0.9rem;
+/* 草稿、資料核對中刻意不上色：整個產品只有「卡」有顏色，這兩種狀態用中性灰黑＋
+   文字本身說清楚就好，不需要再發明第三種品牌色（見 DESIGN.md 第 7 節）。 */
+.banner-neutral {
+  background: var(--sunken);
+  color: var(--text-2);
 }
 
-/* 「我的卡片」是空的時候查詢，一行加卡提示＋加卡入口（PRD v2.2、AC-11b）：
-   推薦清單這時已經自動改用全部卡別直接顯示，這裡不佔版面、不取代清單。 */
-#empty-my-cards.banner-inline {
+.banner-inline {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 16px;
-  padding: 12px 16px;
+  background: var(--sunken);
+  color: var(--text-2);
 }
 
-#empty-my-cards.banner-inline p {
+.banner-inline p {
   margin: 0;
   /* flex-basis 0（而不是 auto）：auto 會先用文字的內容寬度去搶版面，
-     害旁邊的按鈕被擠到下一行；basis 0 讓瀏覽器照剩餘空間分配，文字才會在
-     自己分到的寬度內換行，跟按鈕維持同一行（寬度夠的話）。 */
+     害旁邊的按鈕被擠到下一行；basis 0 讓瀏覽器照剩餘空間分配。 */
   flex: 1 1 0;
   min-width: 160px;
+  color: var(--text);
 }
 
-/* 自訂的 display 一定會贏過瀏覽器內建的 [hidden] { display: none }（作者樣式表優先於
-   使用者代理樣式表，跟選擇器優先度無關），所以 JS 設定 .hidden = true 時這個區塊不會真的
-   被藏起來，切到「全部卡別」後舊的加卡提示會留在畫面上（T12-1 修正）。 */
-#empty-my-cards[hidden] {
-  display: none;
+.empty-hint {
+  margin: 8px 0;
+  color: var(--text-3);
+  font-size: var(--fs-small);
 }
 
-button {
-  font-size: 0.95rem;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid #0a6ebd;
-  background: #0a6ebd;
+/* ---------- 按鈕 ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--surface);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  transition: opacity 150ms var(--ease-out), transform 100ms var(--ease-out);
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.btn-small:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px 2px;
+  border: 0;
+  background: none;
+  color: var(--text-2);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-h3);
+  line-height: 1;
+}
+
+.icon-button:hover {
+  background: var(--hairline);
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---------- 結果 ---------- */
+.result-title {
+  margin: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.result-title strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* 實體卡：信用卡比例，依銀行配色（--c 由 JS 的 bankColor() 設定），只放卡上本來就有的
+   東西，不加漸層光暈（照抄 d-wallet.html）。 */
+.card {
+  --c: #333;
+  position: relative;
+  aspect-ratio: 1.586;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 18px 20px;
+  border-radius: 16px;
+  background-color: var(--c);
+  background-image: linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.16) 0%,
+      rgba(255, 255, 255, 0) 42%
+    ),
+    radial-gradient(120% 90% at 100% 100%, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0) 60%);
   color: #fff;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.card::after {
+  /* 卡面邊緣的一圈微光，讓色塊讀起來像塑膠卡而不是方塊 */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.card-bank {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 0.04em;
+}
+
+.chip {
+  align-self: center;
+  width: 42px;
+  height: 32px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, #e9d9a8, #bfa565);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.chip::before {
+  content: "";
+  position: absolute;
+  inset: 8px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.chip::after {
+  content: "";
+  position: absolute;
+  inset: 0 14px;
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+  border-right: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.card-name {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  text-wrap: balance;
+}
+
+#top-card {
+  position: relative;
+  z-index: 1;
+  margin: 0 8px;
+}
+
+/* 卡片下方的「收據」：回饋率是全頁最大的數字 */
+.receipt {
+  margin-top: -28px;
+  padding: 48px 20px 20px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+}
+
+.receipt-main {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rate {
+  margin: 0;
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.rate small {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+.gain {
+  margin: 0;
+  text-align: right;
+  font-size: var(--fs-caption);
+  color: var(--text-3);
+}
+
+.gain strong {
+  display: block;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--gain);
+}
+
+.facts {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 16px 0 0;
+  border-top: 1px dashed var(--hairline);
+  font-size: var(--fs-small);
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 4.5em 1fr;
+  gap: 12px;
+}
+
+.facts dt {
+  color: var(--text-3);
+}
+
+.facts dd {
+  margin: 0;
+  color: var(--text);
+  min-width: 0;
+}
+
+.facts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.facts li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.facts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.68em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+
+.source {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  font-size: var(--fs-caption);
+  color: var(--text-3);
+}
+
+.source a {
+  display: inline-block;
+  /* 文字本身只有 caption 字級，點擊範圍用 padding 撐大、再用等量負邊距抵消，
+     不影響視覺排版（主管 2026-10-16 退件建議：點擊範圍太小）。 */
+  padding: 14px 8px;
+  margin: -14px -8px;
+  color: var(--text-2);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 其餘名次：錢包裡疊起來的卡 ---------- */
+.rest-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0 0 12px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.rest-title span {
+  font-weight: 400;
+  color: var(--text-3);
+  font-size: var(--fs-caption);
+}
+
+.stack {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack li {
+  --c: #333;
+  position: relative;
+  border-radius: 14px;
+  background-color: var(--c);
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 30px);
+  color: #fff;
+  box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  /* 進場用 translate、滑過用 transform，兩個屬性分開，進場動畫停在終點也不會吃掉 hover */
+  transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out);
+}
+
+.stack li + li {
+  margin-top: -14px;
+}
+
+/* 進場：卡片一張張從錢包裡滑上來，捲到畫面內才發牌 */
+.stack:not(.is-in) li {
+  opacity: 0;
+}
+
+.stack.is-in li {
+  /* 淡入比滑動快：半透明的卡互相疊著顏色會混髒，先變實心再滑到定位 */
+  animation: deal-fade 200ms linear both, deal-slide 560ms var(--ease-out) both;
+  /* 延遲上限 20 張：d-wallet.html 的示範資料只有幾張卡，沒遇過這個問題；正式清單按
+     「顯示全部」可能展開到上百張，延遲不封頂的話，清單後段的卡要等好幾秒才淡入，
+     使用者捲到那裡時只會看到一片空白。封頂後，清單前段（最常被看到的範圍）維持跟
+     d-wallet.html 一樣的逐張效果，後段的卡最晚也在第 20 張的延遲內一起進場。 */
+  animation-delay: calc(min(var(--i, 0), 20) * 55ms);
+}
+
+/* 兜底：時間到就拿掉動畫直接到終點，電腦忙、掉幀時也不會停在半透明或半路 */
+.stack.dealt li {
+  animation: none;
+}
+
+@keyframes deal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes deal-slide {
+  from {
+    translate: 0 28px;
+  }
+}
+
+/* 滑過：往上抽出一點，像要從錢包裡拿出來 */
+@media (hover: hover) {
+  .stack li:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* 展開中的卡：抽出來、影子加深 */
+.stack li:has(details[open]) {
+  transform: translateY(-4px);
+  box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.45), 0 14px 28px -12px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+/* 展開：高度平滑長出來，後面的卡被往下推 */
+.stack details::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition: block-size 340ms var(--ease-out), content-visibility 340ms allow-discrete;
+}
+
+.stack details[open]::details-content {
+  block-size: auto;
+}
+
+.row-body {
+  opacity: 0;
+  translate: 0 -4px;
+  transition: opacity 220ms var(--ease-out), translate 260ms var(--ease-out);
+}
+
+.stack details[open] .row-body {
+  opacity: 1;
+  translate: none;
+  transition-delay: 80ms;
+}
+
+.stack details {
+  padding-bottom: 14px;
+}
+
+.stack li:last-child details {
+  padding-bottom: 0;
+}
+
+.stack summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 10px 18px;
   cursor: pointer;
+  list-style: none;
   touch-action: manipulation;
 }
 
-button.link-button {
-  background: transparent;
-  color: #0a6ebd;
-  border: none;
-  padding: 8px 0;
-  text-decoration: underline;
+.stack summary::-webkit-details-marker {
+  display: none;
 }
 
-.results-list,
-.chip-list,
-.search-results,
-.tag-list {
-  list-style: none;
+.stack summary:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+  border-radius: 12px;
+}
+
+.row-name {
+  min-width: 0;
+}
+
+.row-name b {
+  display: block;
+  font-size: var(--fs-body);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row-name span {
+  display: block;
+  font-size: var(--fs-caption);
+  opacity: 0.75;
+}
+
+.row-rate {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+}
+
+.row-body {
+  display: grid;
+  gap: 6px;
+  padding: 2px 18px 16px;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.row-body p {
   margin: 0;
-  padding: 0;
+}
+
+.row-body a {
+  display: inline-block;
+  /* 同 .source a：撐大點擊範圍、負邊距抵消，不影響排版；這裡空間比收據區窄
+     （.row-body 下方只留 16px padding），padding 取保守值避免被 details 的
+     overflow: clip 裁到（主管 2026-10-16 退件建議：點擊範圍太小）。 */
+  padding: 10px 8px;
+  margin: -10px -8px;
+  color: #fff;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.row-body .muted {
+  font-size: var(--fs-caption);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- 我的卡片管理：對話框（PRD 6.1「改成抽屜或對話框」） ---------- */
+.my-cards-dialog {
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(640px, calc(100vh - 64px));
+  margin: auto;
+  padding: 24px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.my-cards-dialog::backdrop {
+  background: rgba(27, 27, 26, 0.32);
+}
+
+.my-cards-dialog[open] {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
-.rec-card {
-  border: 1px solid #e3e5ea;
-  border-radius: 10px;
-  padding: 12px;
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
-.rec-title {
-  margin: 0 0 4px;
-  font-size: 1rem;
+.dialog-header h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 700;
 }
 
-.rec-rate {
-  margin: 0 0 4px;
-  font-weight: bold;
-  color: #0a6ebd;
+.my-cards-dialog p {
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--text-2);
 }
 
-.rec-reason {
-  margin: 0 0 6px;
-  color: #444;
-  font-size: 0.9rem;
+.field {
+  display: grid;
+  gap: 6px;
 }
 
-.rec-estimate {
-  margin: 0 0 6px;
-  font-size: 0.9rem;
-  color: #1f7a1f;
+.field label {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-2);
 }
 
-.tag-list {
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 0 6px;
+.field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  font: inherit;
+  font-size: var(--fs-body);
+  color: var(--text);
 }
 
-.tag {
-  background: #eef2f7;
-  color: #333;
-  font-size: 0.8rem;
-  padding: 2px 8px;
-  border-radius: 999px;
+.chip-list,
+.search-results {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
-.rec-meta {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 8px 0 0;
-}
-
-.rec-meta a {
-  color: #0a6ebd;
-}
-
-.chip,
+.chip-item,
 .card-search-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  border: 1px solid #e3e5ea;
-  border-radius: 8px;
-  padding: 8px 10px;
+  gap: 10px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 14px;
+  background: var(--sunken);
 }
 
-.chip button,
-.card-search-item button {
-  padding: 4px 10px;
-  font-size: 0.85rem;
+.chip-item span,
+.card-search-item span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--fs-small);
+  font-weight: 600;
 }
 
-.empty-hint {
-  color: #666;
-  font-size: 0.9rem;
-}
-
+/* ---------- 頁尾 ---------- */
 .app-footer {
-  font-size: 0.8rem;
-  color: #666;
-  padding: 8px 4px 24px;
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--text-3);
+  line-height: 1.6;
 }
 
-.app-footer .disclaimer {
-  margin-top: 8px;
+.app-footer p {
+  margin: 0 0 6px;
+  text-wrap: pretty;
 }
 
-@media (min-width: 480px) {
+/* ---------- 桌機：左邊查詢＋第 1 名，右邊卡片疊（照抄 d-wallet.html，
+   用 grid-template-areas 取代固定 grid-row span，這樣不管有幾條橫幅顯示在最上面，
+   右邊的卡片疊都還是跟左邊的查詢面板＋第 1 名對齊，不會因為橫幅多寡而錯位）。 ---------- */
+@media (min-width: 960px) {
   .app {
-    padding: 24px;
+    max-width: 960px;
+    padding: 40px 32px 64px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    grid-template-areas:
+      "header  header"
+      "banners banners"
+      "query   stack"
+      "mid     stack"
+      "empty   stack"
+      "top     stack"
+      "footer  footer";
+    column-gap: 56px;
+    row-gap: 20px;
+    align-items: start;
+  }
+
+  .app-header {
+    grid-area: header;
+  }
+
+  #loading-hint,
+  .banner-error,
+  .banner-neutral {
+    grid-area: banners;
+  }
+
+  .query {
+    grid-area: query;
+  }
+
+  #empty-my-cards {
+    grid-area: mid;
+  }
+
+  #results-empty-hint {
+    grid-area: empty;
+  }
+
+  .top {
+    grid-area: top;
+  }
+
+  /* mid、empty 這兩列即使沒內容顯示，grid-template-areas 仍然會配置成獨立的列，
+     row-gap 一樣會算在列與列之間，兩列都空時查詢區到第 1 名之間就疊出 3 個
+     row-gap（60px）而不是 1 個；用 :has() 偵測實際隱藏狀態，反向抵消多出來的
+     row-gap，讓畫面上永遠只留 1 個間距（主管 2026-10-16 退件第 2 項）。
+     一律用 #results-empty-hint 而不是 .empty-hint：我的卡片對話框裡的搜尋結果也有
+     li.empty-hint，用 class 會把它一起拉上去（主管複檢退件）。兩個提示
+     都顯示時，3 個 row-gap 本來就是想要的（兩列中間要分開），不用抵消。 */
+  .app:has(#empty-my-cards[hidden]):has(#results-empty-hint[hidden]) .top {
+    margin-top: -40px;
+  }
+
+  .app:has(#empty-my-cards:not([hidden])):has(#results-empty-hint[hidden]) .top {
+    margin-top: -20px;
+  }
+
+  .app:has(#empty-my-cards[hidden]):has(#results-empty-hint:not([hidden])) #results-empty-hint {
+    margin-top: -20px;
+  }
+
+  .rest {
+    grid-area: stack;
+  }
+
+  .rest-title {
+    margin-top: 6px;
+  }
+
+  .app-footer {
+    grid-area: footer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::details-content {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .stack:not(.is-in) li {
+    opacity: 1;
   }
 }

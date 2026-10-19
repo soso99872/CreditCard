@@ -58,6 +58,9 @@ export function truncateTop(list, showAll, limit = 10) {
 /**
  * 解析金額輸入框的字串成金額試算用的數字；空白、非數字或負數都視為「未填」（undefined），
  * 這樣就不會把無效輸入當作 0 元傳給引擎，也不會噴錯誤。
+ * 輸入框是 type="text"，所以也要接受使用者自己打的千分位逗號（如「1,500」）與全形數字
+ * （如「１５００」，常見於中文輸入法誤觸全形數字），兩者都先轉成半形純數字字串再解析
+ * （主管 2026-10-16 退件第 1 項）。
  * @param {string} raw
  * @returns {number | undefined}
  */
@@ -65,7 +68,10 @@ export function parseAmount(raw) {
   if (raw === null || raw === undefined) return undefined;
   const trimmed = String(raw).trim();
   if (trimmed === "") return undefined;
-  const n = Number(trimmed);
+  const normalized = trimmed
+    .replace(/[０-９]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
+    .replace(/[,，]/g, "");
+  const n = Number(normalized);
   if (!Number.isFinite(n) || n < 0) return undefined;
   return n;
 }
@@ -98,4 +104,17 @@ export function visibleMyCardIds(myCardIds, cards) {
   const ids = myCardIds || [];
   const visibleIdSet = new Set((cards || []).map((card) => card.id));
   return ids.filter((id) => visibleIdSet.has(id));
+}
+
+/**
+ * 「我的卡片」是空的時候，上方加卡提示的文案要分兩種情況（主管 T17 建議）：
+ * 使用者真的從沒加過卡（完整清單也是空的），或是已經加過卡、只是目前全部看不到
+ * （例如存的是草稿卡 id，但目前沒開 `?draft=1`）。後者不該說「還沒有加入任何卡片」，
+ * 否則跟使用者自己的記憶不一致（他明明加過）。
+ * @param {string[] | null | undefined} fullMyCardIds 完整清單（含目前看不到的 id，見 state.myCardIds）
+ * @param {string[] | null | undefined} visibleMyCardIds 目前看得到的子集（見 visibleMyCardIds()）
+ * @returns {boolean} true 代表「已加過卡，只是目前都看不到」
+ */
+export function hasHiddenMyCards(fullMyCardIds, visibleMyCardIds) {
+  return (fullMyCardIds || []).length > 0 && (visibleMyCardIds || []).length === 0;
 }

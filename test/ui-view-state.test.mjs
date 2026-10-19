@@ -11,6 +11,7 @@ import {
   GENERAL_CATEGORY_ID,
   resolveSelectedCategoryId,
   visibleMyCardIds,
+  hasHiddenMyCards,
 } from "../src/ui/view-state.mjs";
 
 describe("src/ui/view-state.mjs — defaultScope（AC-11a：第一次開啟預設查我的卡片）", () => {
@@ -108,6 +109,24 @@ describe("src/ui/view-state.mjs — parseAmount（AC-10：金額試算輸入解�
   test("負數視為未填", () => {
     assert.equal(parseAmount("-100"), undefined);
   });
+
+  test("接受千分位逗號（主管 2026-10-16 退件第 1 項）", () => {
+    assert.equal(parseAmount("1,500"), 1500);
+    assert.equal(parseAmount("1,234,567"), 1234567);
+  });
+
+  test("接受全形數字（主管 2026-10-16 退件第 1 項）", () => {
+    assert.equal(parseAmount("１５００"), 1500);
+  });
+
+  test("全形數字與千分位逗號混用也能解析", () => {
+    assert.equal(parseAmount("１,５００"), 1500);
+  });
+
+  test("接受全形逗號（中文輸入法全形模式）", () => {
+    assert.equal(parseAmount("1，500"), 1500);
+    assert.equal(parseAmount("１，５００"), 1500);
+  });
 });
 
 describe("src/ui/view-state.mjs — resolveSelectedCategoryId（AC-04：查無商家、也推測不出類別時，直接以一般消費排行為保底）", () => {
@@ -148,5 +167,20 @@ describe("src/ui/view-state.mjs — visibleMyCardIds（T17：保留看不到的�
 
   test("全部都看得到時原樣回傳（不影響既有行為）", () => {
     assert.deepEqual(visibleMyCardIds(["card-a", "card-b"], cards), ["card-a", "card-b"]);
+  });
+});
+
+describe("src/ui/view-state.mjs — hasHiddenMyCards（主管 T17 建議：加卡提示文案要跟使用者記憶一致）", () => {
+  test("完整清單是空的（真的沒加過卡）時回傳 false", () => {
+    assert.equal(hasHiddenMyCards([], []), false);
+    assert.equal(hasHiddenMyCards(undefined, []), false);
+  });
+
+  test("完整清單有卡，但目前全部看不到（例如存的是草稿卡 id）時回傳 true", () => {
+    assert.equal(hasHiddenMyCards(["card-draft"], []), true);
+  });
+
+  test("完整清單有卡、也看得到至少一張時回傳 false（不該顯示加卡提示，由 shouldPromptEmptyMyCards 另外判斷）", () => {
+    assert.equal(hasHiddenMyCards(["card-a"], ["card-a"]), false);
   });
 });
