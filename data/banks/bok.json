@@ -1,7 +1,7 @@
 {
   "bankId": "bok",
   "cardListUrl": "https://www.bok.com.tw/credit-card",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-25",
   "coverage": [
     { "cardName": "一般卡(金卡)", "status": "included", "cardId": "bok-gold" },
     { "cardName": "高雄going鈦金卡", "status": "included", "cardId": "bok-titanium" },
@@ -13,19 +13,35 @@
       "id": "bok-gold",
       "name": "一般卡(金卡)",
       "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+      "verified": true,
       "rules": [
         {
           "id": "bok-gold-general",
           "plan": "",
           "scope": { "type": "general" },
           "rate": 0.1,
-          "rawReward": "每月刷卡金額未滿1萬元回饋千分之一(0.1%)；達8萬元以上回饋千分之六(0.6%)，依月刷卡金額分級計算",
+          "rawReward": "每月刷卡金額未滿1萬元回饋千分之一(0.1%)；1萬至未滿2萬千分之二；2萬至未滿4萬千分之三；4萬至未滿6萬千分之四；6萬至未滿8萬千分之五；達8萬元以上千分之六(0.6%)，依月刷卡金額分級計算（rate 取最低級距）",
           "cap": null,
-          "conditions": [],
+          "conditions": ["依每月刷卡總額分級，最高0.6%（達8萬元）", "不含預借現金、各項稅費、規費、醫療費、學雜費、公共事業費用、分期付款、循環利息及手續費；不含公務卡及採購卡"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "bok-gold-big-ticket",
+          "plan": "",
+          "scope": { "type": "general" },
+          "rate": 0.2,
+          "rawReward": "單筆消費五千元以上再加值回饋該筆刷卡金額千分之二(0.2%)，與月刷卡金額分級回饋併計",
+          "cap": null,
+          "conditions": ["單筆消費滿5,000元", "加碼回饋，另加於月刷卡金額分級回饋之上", "不含預借現金、各項稅費、規費、醫療費、學雜費、公共事業費用、分期付款、循環利息及手續費；不含公務卡及採購卡"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+          "sourceType": "official",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
@@ -33,19 +49,21 @@
       "id": "bok-titanium",
       "name": "高雄going鈦金卡",
       "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
+      "verified": true,
       "rules": [
         {
           "id": "bok-titanium-general",
           "plan": "",
           "scope": { "type": "general" },
           "rate": 0.1,
-          "rawReward": "單筆刷卡金額1,000元以上未滿3,000元回饋千分之一(0.1%)；達15萬元以上回饋千分之十二(1.2%)，依單筆刷卡金額分級計算",
+          "rawReward": "單筆刷卡金額1,000元以上未滿3,000元千分之一(0.1%)；3,000至未滿1萬千分之三；1萬至未滿3萬千分之四；3萬至未滿5萬千分之五；5萬至未滿10萬千分之七；10萬至未滿15萬千分之十；達15萬元以上千分之十二(1.2%)，依單筆刷卡金額分級計算（rate 取最低級距）",
           "cap": null,
-          "conditions": [],
+          "conditions": ["依單筆刷卡金額分級，最高1.2%（單筆達15萬元）", "單筆未滿1,000元不列入回饋", "不含預借現金、各項稅費、規費、醫療費、學雜費、公共事業費用、分期付款、循環利息及手續費；不含公務卡及採購卡"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.bok.com.tw/card-rights-and-benefits-1",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-25"
         }
       ]
     }

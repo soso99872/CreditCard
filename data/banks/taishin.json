@@ -2033,21 +2033,103 @@
     {
       "id": "taishin-jkopay",
       "name": "街口聯名卡",
+      "verified": true,
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
-      "pointValue": { "unit": "街口幣", "twdPerPoint": 1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/", "checkedAt": "2026-10-10" },
       "rules": [
         {
           "id": "taishin-jkopay-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {
+            "type": "general"
+          },
           "rate": 1,
-          "rawReward": "一般消費享1%街口幣，無上限",
+          "rawReward": "基本1%街口幣回饋，無上限，不限店家與金額",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2026-01-01",
+          "conditions": [
+            "TWQR 形式消費僅享一般消費 1%，不適用精選通路加碼"
+          ],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://rich01.com/taishin-jkos-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-06",
+          "secondSourceUrl": "https://creditcards.com.tw/creditcard/taishin-credit-card-recommend/",
+          "secondSourcePublishedAt": "2026-09-20",
+          "sourceNote": "第一來源（市場先生，更新 2026-10-06）寫基本 1% 無上限；第二來源（creditcards.com.tw 台新信用卡推薦，更新 2026-09-20）亦寫街口幣 1%。兩者一致。文章只寫活動至 2026/12/31，未寫起日，validFrom 填 null。",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "taishin-jkopay-select",
+          "plan": "八大精選通路",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "日本PayPay",
+              "韓國",
+              "易遊網",
+              "Agoda",
+              "Airbnb",
+              "Klook",
+              "KKday",
+              "高鐵",
+              "Uber",
+              "台灣快綫",
+              "聯通",
+              "USPACE",
+              "俥亭停車",
+              "新光三越",
+              "遠東百貨",
+              "遠東巨城",
+              "LaLaport",
+              "三井OUTLET PARK",
+              "康是美",
+              "美廉社",
+              "聖德科斯",
+              "Uber Eats",
+              "foodpanda",
+              "Foodomo",
+              "EZTABLE",
+              "85度C",
+              "清心福全",
+              "三商餐飲系列",
+              "威秀影城",
+              "國賓影城",
+              "新光影城",
+              "喜樂時代影城",
+              "秀泰影城",
+              "錢櫃",
+              "好樂迪",
+              "享溫馨",
+              "凱悅KTV",
+              "星聚點"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 3.5,
+          "rawReward": "精選通路最高3.5%街口幣 = 基本1%（無上限）+ 精選通路加碼2.5%（上限1萬元／月，約每月可刷40萬）；活動期間至2026/12/31",
+          "cap": {
+            "amount": 10000,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "上限 10,000 街口幣／月僅計精選通路加碼 2.5%，基本 1% 不計入",
+            "日本PayPay 需透過街口支付綁定才算精選通路（用 PayPay APP 綁定僅算一般消費 1%）",
+            "TWQR 形式消費不適用加碼，僅享一般消費 1%",
+            "Agoda、Airbnb 限訂房網線上刷卡，到店付款僅享 1%",
+            "俥亭停車含俥亭、日月亭、宜舍、九亭、日月商場",
+            "三商餐飲系列百貨／商場店中店不適用",
+            "實體卡、線上輸入卡號、綁定街口支付／LINE Pay／Apple Pay 皆適用"
+          ],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://rich01.com/taishin-jkos-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-06",
+          "secondSourceUrl": "https://creditcards.com.tw/creditcard/taishin-credit-card-recommend/",
+          "secondSourcePublishedAt": "2026-09-20",
+          "sourceNote": "第一來源列 8 大類 38 項通路；商家名單以第一來源為準，另對照 creditcards.com.tw 街口卡專文（更新 2026-05-29，超過 90 天，未列為來源）名單一致，三商餐飲子品牌合併為「三商餐飲系列」。第二來源（2026-09-20）確認 3.5%、加碼 2.5% 每月上限 10,000 街口幣、至 2026/12/31；該文另有一段稱「3.5% 無上限」與同篇上限說法自相矛盾，取較具體的 10,000 街口幣／月。",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
@@ -2261,19 +2343,66 @@
       "id": "taishin-rose",
       "name": "玫瑰卡",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+      "verified": true,
       "rules": [
         {
           "id": "taishin-rose-general",
-          "plan": "",
+          "plan": "指定套餐",
           "scope": { "type": "general" },
           "rate": 0.2,
-          "rawReward": "一般消費未達指定門檻時回饋0.2% 台新Point(信用卡)",
-          "cap": null,
-          "conditions": [],
+          "rawReward": "一般消費回饋率0.2% 台新Point(信用卡)；指定加碼類別與一般消費每期回饋上限1,500點，並以指定加碼類別優先回饋",
+          "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "conditions": [
+            "與指定加碼類別共用每期回饋上限1,500點",
+            "適用卡號前8碼4147-6366、4380-4566的指定套餐方案（自由選方案不在此列）",
+            "活動期間以2026/2/1~2027/1/31結帳帳單計",
+            "保險費不列於一般消費回饋"
+          ],
           "validFrom": "2026-02-01",
           "validTo": "2027-01-31",
           "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-25",
+          "sourceType": "official"
+        },
+        {
+          "id": "taishin-rose-dept",
+          "plan": "指定套餐",
+          "scope": { "type": "category", "categories": ["department-store"], "basis": "mcc" },
+          "rate": 1.2,
+          "rawReward": "指定加碼類別（百貨公司：全臺百貨公司之消費）當期帳單該卡新增指定加碼類別消費NT$30,000(含)以上，回饋1.2% 台新Point(信用卡)；NT$1~29,999為0.2%",
+          "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "conditions": [
+            "單期帳單指定加碼類別消費滿NT$30,000才享1.2%，未達為0.2%（引擎無法判斷是否達標，以最高回饋顯示）",
+            "與一般消費、其他指定加碼類別共用每期回饋上限1,500點，並以指定加碼類別優先回饋",
+            "依MCC／類型判定：限臺灣地區刷卡且以新臺幣計價，以特店代號分類",
+            "適用卡號前8碼4147-6366、4380-4566的指定套餐方案（自由選方案不在此列）",
+            "排除項目詳官方注意事項"
+          ],
+          "validFrom": "2026-02-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+          "checkedAt": "2026-10-25",
+          "sourceType": "official"
+        },
+        {
+          "id": "taishin-rose-dining",
+          "plan": "指定套餐",
+          "scope": { "type": "category", "categories": ["dining"], "basis": "mcc" },
+          "rate": 1.2,
+          "rawReward": "指定加碼類別（餐廳：全臺一般餐廳之消費）當期帳單該卡新增指定加碼類別消費NT$30,000(含)以上，回饋1.2% 台新Point(信用卡)；NT$1~29,999為0.2%",
+          "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "conditions": [
+            "單期帳單指定加碼類別消費滿NT$30,000才享1.2%，未達為0.2%（引擎無法判斷是否達標，以最高回饋顯示）",
+            "與一般消費、其他指定加碼類別共用每期回饋上限1,500點，並以指定加碼類別優先回饋",
+            "依MCC／類型判定：限臺灣地區刷卡且以新臺幣計價，以特店代號分類",
+            "適用卡號前8碼4147-6366、4380-4566的指定套餐方案（自由選方案不在此列）",
+            "排除項目詳官方注意事項"
+          ],
+          "validFrom": "2026-02-01",
+          "validTo": "2027-01-31",
+          "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+          "checkedAt": "2026-10-25",
+          "sourceType": "official"
         }
       ]
     },

@@ -1,32 +1,32 @@
 {
   "bankId": "sinopac",
   "cardListUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card.html",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-25",
   "coverage": [
-    { "cardName": "DAWHO現金回饋信用卡", "status": "included", "cardId": "sinopac-dawho" },
-    { "cardName": "現金回饋Green卡", "status": "included", "cardId": "sinopac-green" },
-    { "cardName": "VOGUE卡", "status": "included", "cardId": "sinopac-vogue" },
-    { "cardName": "美樂家生活卡", "status": "included", "cardId": "sinopac-melaleuca" },
-    { "cardName": "MITSUI OUTLET PARK卡", "status": "included", "cardId": "sinopac-mitsui" },
-    { "cardName": "永豐55688聯名卡", "status": "included", "cardId": "sinopac-taxicard" },
-    { "cardName": "幣倍卡", "status": "included", "cardId": "sinopac-dual-currency" },
-    { "cardName": "永豐世界卡", "status": "excluded", "reason": "回饋以紅利點數倍數（如3倍/5倍）呈現，官網未明確揭露換算現金或固定百分比回饋率，無法確認標準回饋率" },
-    { "cardName": "永傳世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
-    { "cardName": "永富世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
-    { "cardName": "永豐現金回饋JCB卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
-    { "cardName": "DAWAY卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
-    { "cardName": "永豐SPORT卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" },
-    { "cardName": "保倍卡", "status": "excluded", "reason": "以保險相關回饋為主，非一般消費現金或點數回饋為主" },
-    { "cardName": "夢行卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡" },
-    { "cardName": "永豐點字金融信用卡", "status": "excluded", "reason": "視覺障礙者專用特殊版卡，本期時間有限未查證" },
-    { "cardName": "SEA鈦金商務悠遊卡", "status": "excluded", "reason": "限外籍人士申請之商務卡，非一般個人消費回饋卡" },
-    { "cardName": "美安聯名卡", "status": "excluded", "reason": "主要回饋為美安會員業績點數，非一般現金或點數消費回饋" },
-    { "cardName": "東森網連通聯名卡", "status": "excluded", "reason": "主要回饋為東森會員PV點數，非一般現金或點數消費回饋" },
-    { "cardName": "中興大學悠遊認同卡", "status": "excluded", "reason": "校友認同卡，本期時間有限未查證詳細回饋規則" },
-    { "cardName": "永豐現金回饋卡", "status": "excluded", "reason": "已停止申辦" },
-    { "cardName": "Me Card", "status": "excluded", "reason": "已停止申辦" },
-    { "cardName": "鈦豐卡", "status": "excluded", "reason": "已停止申辦" },
-    { "cardName": "永豐財富無限卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充" }
+    {"cardName": "DAWHO現金回饋信用卡", "status": "included", "cardId": "sinopac-dawho"},
+    {"cardName": "現金回饋Green卡", "status": "included", "cardId": "sinopac-green"},
+    {"cardName": "VOGUE卡", "status": "included", "cardId": "sinopac-vogue"},
+    {"cardName": "美樂家生活卡", "status": "included", "cardId": "sinopac-melaleuca"},
+    {"cardName": "MITSUI OUTLET PARK卡", "status": "included", "cardId": "sinopac-mitsui"},
+    {"cardName": "永豐55688聯名卡", "status": "included", "cardId": "sinopac-taxicard"},
+    {"cardName": "幣倍卡", "status": "included", "cardId": "sinopac-dual-currency"},
+    {"cardName": "永豐世界卡", "status": "excluded", "reason": "回饋以紅利點數倍數（如3倍/5倍）呈現，官網未明確揭露換算現金或固定百分比回饋率，無法確認標準回饋率"},
+    {"cardName": "永傳世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"},
+    {"cardName": "永富世界卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"},
+    {"cardName": "永豐現金回饋JCB卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"},
+    {"cardName": "DAWAY卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"},
+    {"cardName": "永豐SPORT卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"},
+    {"cardName": "保倍卡", "status": "excluded", "reason": "以保險相關回饋為主，非一般消費現金或點數回饋為主"},
+    {"cardName": "夢行卡", "status": "excluded", "reason": "商務卡，非個人一般消費回饋卡"},
+    {"cardName": "永豐點字金融信用卡", "status": "excluded", "reason": "視覺障礙者專用特殊版卡，本期時間有限未查證"},
+    {"cardName": "SEA鈦金商務悠遊卡", "status": "excluded", "reason": "限外籍人士申請之商務卡，非一般個人消費回饋卡"},
+    {"cardName": "美安聯名卡", "status": "excluded", "reason": "主要回饋為美安會員業績點數，非一般現金或點數消費回饋"},
+    {"cardName": "東森網連通聯名卡", "status": "excluded", "reason": "主要回饋為東森會員PV點數，非一般現金或點數消費回饋"},
+    {"cardName": "中興大學悠遊認同卡", "status": "excluded", "reason": "校友認同卡，本期時間有限未查證詳細回饋規則"},
+    {"cardName": "永豐現金回饋卡", "status": "excluded", "reason": "已停止申辦"},
+    {"cardName": "Me Card", "status": "excluded", "reason": "已停止申辦"},
+    {"cardName": "鈦豐卡", "status": "excluded", "reason": "已停止申辦"},
+    {"cardName": "永豐財富無限卡", "status": "excluded", "reason": "基礎/主題卡別眾多，本期時間有限未逐一查證詳細回饋規則，待後續版本補充"}
   ],
   "cards": [
     {
@@ -35,32 +35,161 @@
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
       "rules": [
         {
-          "id": "sinopac-dawho-general",
-          "plan": "",
-          "scope": { "type": "general" },
+          "id": "sinopac-dawho-base-domestic",
+          "plan": "大大（基本）",
+          "scope": {"type": "general"},
           "rate": 1,
-          "rawReward": "國內一般消費1%現金回饋，無上限",
+          "rawReward": "大大等級：國內一般消費1%現金回饋，無上限",
           "cap": null,
           "conditions": [],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
         },
         {
-          "id": "sinopac-dawho-overseas",
-          "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "id": "sinopac-dawho-base-overseas",
+          "plan": "大大（基本）",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 2,
-          "rawReward": "國外（限外幣）消費2%現金回饋，無上限",
+          "rawReward": "大大等級：國外一般消費2%現金回饋，無上限",
           "cap": null,
           "conditions": [],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-dahu-domestic",
+          "plan": "大戶",
+          "scope": {"type": "general"},
+          "rate": 3.5,
+          "rawReward": "大戶等級：國內一般消費3.5%（基本1%＋額外2.5%），額外2.5%每月最高NT$400（可刷上限NT$16,000）",
+          "cap": {"amount": 400, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶等級：當月平均資產30萬、當月單筆換匯5,000或DAWHO為永豐信貸授權扣款帳戶，三擇一", "上限只計額外2.5%加碼部分", "國內外合併計算，共用每月上限NT$400"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-dahu-overseas",
+          "plan": "大戶",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
+          "rate": 4.5,
+          "rawReward": "大戶等級：國外一般消費4.5%（基本2%＋額外2.5%），額外2.5%每月最高NT$400（可刷上限NT$16,000）",
+          "cap": {"amount": 400, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶等級：當月平均資產30萬、當月單筆換匯5,000或DAWHO為永豐信貸授權扣款帳戶，三擇一", "上限只計額外2.5%加碼部分", "國內外合併計算，共用每月上限NT$400"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-plus-domestic",
+          "plan": "大戶PLUS",
+          "scope": {"type": "general"},
+          "rate": 5,
+          "rawReward": "大戶PLUS等級：國內一般消費5%（基本1%＋額外4%），額外4%每月最高NT$1,000（可刷上限NT$25,000）",
+          "cap": {"amount": 1000, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶PLUS等級：當月平均資產100萬，且當月單筆換匯5,000或綁定證券交割戶並當月成交一筆台股現貨", "上限只計額外4%加碼部分", "國內外合併計算，共用每月上限NT$1,000"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-plus-overseas",
+          "plan": "大戶PLUS",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
+          "rate": 6,
+          "rawReward": "大戶PLUS等級：國外一般消費6%（基本2%＋額外4%），額外4%每月最高NT$1,000（可刷上限NT$25,000）",
+          "cap": {"amount": 1000, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶PLUS等級：當月平均資產100萬，且當月單筆換匯5,000或綁定證券交割戶並當月成交一筆台股現貨", "上限只計額外4%加碼部分", "國內外合併計算，共用每月上限NT$1,000"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "sourceNote": "creditcards.com.tw 表格另有「國外基礎2.5%」字樣與內文國外總回饋6%不一致；rich01 亦寫6%，取6%。",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-dahu-easycard",
+          "plan": "大戶",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["悠遊卡自動加值"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "大戶等級：悠遊卡自動加值3%，每月最高NT$100（自動加值上限NT$3,333）",
+          "cap": {"amount": 100, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶等級", "限悠遊卡自動加值"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-dawho-plus-easycard",
+          "plan": "大戶PLUS",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["悠遊卡自動加值"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "大戶PLUS等級：悠遊卡自動加值5%，每月最高NT$500（自動加值上限NT$10,000）",
+          "cap": {"amount": 500, "unit": "TWD", "period": "month"},
+          "conditions": ["需申請電子帳單", "需綁定DAWHO數位帳戶自動扣繳信用卡款", "需達大戶PLUS等級", "限悠遊卡自動加值"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://rich01.com/sinopac-dawho-credit-card/",
+          "secondSourcePublishedAt": "2026-09-04",
+          "checkedAt": "2026-10-25"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "sinopac-green",
@@ -70,30 +199,108 @@
         {
           "id": "sinopac-green-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
           "rawReward": "國內一般消費1%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["分期交易不適用"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+          "secondSourcePublishedAt": "2026-10-15",
+          "checkedAt": "2026-10-25"
         },
         {
           "id": "sinopac-green-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 2,
           "rawReward": "國外一般消費2%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["分期交易不適用"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+          "secondSourcePublishedAt": "2026-10-15",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-green-green-channels",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["星巴克", "路易莎咖啡", "藏壽司", "摩斯漢堡", "築間幸福鍋物", "義美食品", "馬可先生麵包坊", "寬心園", "miacucina", "小小樹食", "陽明春天", "屋馬餐廳", "熱浪島南洋蔬食茶堂", "草蔬宴義式蔬食", "原素食府", "三個傻瓜印度蔬食餐廳", "東風新意餐廳", "養心茶樓", "山海樓", "農人餐桌", "一之軒", "捷絲旅", "台北晶華酒店", "北投晶泉丰旅", "礁溪晶泉丰旅", "蘭城晶英酒店", "台南晶英酒店", "太魯閣晶英酒店", "承億酒店", "承億文旅", "煙波大飯店", "翰品酒店", "希爾頓酒店", "國賓大飯店", "福容大飯店", "新驛旅店", "兆品酒店", "圓山大飯店", "城市商旅", "遠雄悅來大飯店", "凱薩大飯店", "老爺酒店", "威秀影城", "新光影城", "喜樂時代影城", "寬宏售票", "KKTIX", "拓元售票", "年代售票", "ChargeSPOT", "全國電子", "STUDIO A", "Straight A", "萬家福", "樂家康", "愛買", "UNIQLO", "H&M", "ZARA", "GU", "GAP", "NET", "O'right 歐萊德", "AESOP", "10/10 hope", "Green & Safe", "台灣主婦聯盟", "里仁", "棉花田生機園地", "聖德科斯", "義美生機", "統一生機", "綠藤生機", "茶籽堂", "艾瑪絲 AROMASE", "長庚生技", "大研生醫", "營養師輕食", "安永鮮物", "野菜村有機生活館", "無毒的家", "無毒農", "健康食彩", "直接跟農夫買", "iRent", "GoSmart", "GoShare", "Gogoro Network", "Wemo Scooter", "LINE GO", "TESLA 充電費", "宏碁智通", "裕電俥電", "全國特急電", "特爾電力", "華城 EVALUE", "SharkParking 蝦趴", "ZOCHA", "BEGIN", "星舟快充", "EVOASIS 充電費用", "eMoving", "eMoving 電池資費", "台北捷運", "新北捷運", "桃園捷運", "台中捷運", "高雄捷運", "悠遊付", "荒野保護協會", "臺灣寶島淨鄉團", "臺灣海洋保育與漁業永續基金會"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "精選國內綠色通路最高5%（一般消費1%＋加碼4%）；加碼每期帳單回饋上限NT$300",
+          "cap": {"amount": 300, "unit": "TWD", "period": "billing-cycle"},
+          "conditions": ["需申請電子或行動帳單", "需設定永豐或京城帳戶自動扣繳", "上限只計加碼4%部分：綠色通路加碼（含 Q burger、麥味登）與悠遊卡自動加值共用每期帳單回饋上限NT$300（約可刷NT$7,500）", "分期交易不適用", "愛買、萬家福／樂家康僅限賣場內一般消費，美食街、專櫃不算", "Green健身、Green電競類（2026/9/1起新增）商家名單來源未列，未收錄"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+          "secondSourcePublishedAt": "2026-10-15",
+          "sourceNote": "加碼條件與上限寫法兩來源不同：creditcards.com.tw（9/15）寫加碼條件二選一（電子化帳單，或當期一般消費滿NT$3,000並永豐帳戶自動扣繳）、每月加碼上限NT$300；icard.ai（10/15，較新）寫需電子或行動帳單且設定永豐/京城帳戶自動扣繳、每期帳單加碼上限NT$300。取較新的icard.ai。",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-green-green-no-base",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Q burger", "麥味登"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "Q burger、麥味登：僅加碼4%，無一般消費基本1%；加碼每期帳單回饋上限NT$300",
+          "cap": {"amount": 300, "unit": "TWD", "period": "billing-cycle"},
+          "conditions": ["需申請電子或行動帳單", "需設定永豐或京城帳戶自動扣繳", "上限只計加碼4%部分：綠色通路加碼（含 Q burger、麥味登）與悠遊卡自動加值共用每期帳單回饋上限NT$300（約可刷NT$7,500）", "無基本1%，僅4%"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+          "secondSourcePublishedAt": "2026-10-15",
+          "sourceNote": "加碼條件與上限寫法兩來源不同：creditcards.com.tw（9/15）寫加碼條件二選一（電子化帳單，或當期一般消費滿NT$3,000並永豐帳戶自動扣繳）、每月加碼上限NT$300；icard.ai（10/15，較新）寫需電子或行動帳單且設定永豐/京城帳戶自動扣繳、每期帳單加碼上限NT$300。取較新的icard.ai。",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sinopac-green-easycard-autoload",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["悠遊卡自動加值"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "悠遊卡自動加值（新戶）4%，不屬一般消費故無基本1%；與綠色通路加碼共用每期帳單回饋上限NT$300",
+          "cap": {"amount": 300, "unit": "TWD", "period": "billing-cycle"},
+          "conditions": ["需申請電子或行動帳單", "需設定永豐或京城帳戶自動扣繳", "上限只計加碼4%部分：綠色通路加碼（含 Q burger、麥味登）與悠遊卡自動加值共用每期帳單回饋上限NT$300（約可刷NT$7,500）", "限新戶", "無基本1%，僅4%", "與綠色通路加碼共用上限"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-15",
+          "secondSourceUrl": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+          "secondSourcePublishedAt": "2026-10-15",
+          "sourceNote": "加碼條件與上限寫法兩來源不同：creditcards.com.tw（9/15）寫加碼條件二選一（電子化帳單，或當期一般消費滿NT$3,000並永豐帳戶自動扣繳）、每月加碼上限NT$300；icard.ai（10/15，較新）寫需電子或行動帳單且設定永豐/京城帳戶自動扣繳、每期帳單加碼上限NT$300。取較新的icard.ai。",
+          "checkedAt": "2026-10-25"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "sinopac-vogue",
@@ -103,7 +310,7 @@
         {
           "id": "sinopac-vogue-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1.2,
           "rawReward": "一般消費最高1.2%現金回饋",
           "cap": null,
@@ -123,7 +330,7 @@
         {
           "id": "sinopac-melaleuca-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.4,
           "rawReward": "一般消費0.4%現金回饋",
           "cap": null,
@@ -139,12 +346,12 @@
       "id": "sinopac-mitsui",
       "name": "MITSUI OUTLET PARK卡",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html",
-      "pointValue": { "unit": "豐點", "twdPerPoint": 1, "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html", "checkedAt": "2026-10-10" },
+      "pointValue": {"unit": "豐點", "twdPerPoint": 1, "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html", "checkedAt": "2026-10-10"},
       "rules": [
         {
           "id": "sinopac-mitsui-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.3,
           "rawReward": "館外一般消費0.3%豐點",
           "cap": null,
@@ -157,7 +364,11 @@
         {
           "id": "sinopac-mitsui-instore",
           "plan": "",
-          "scope": { "type": "merchant", "merchants": ["MITSUI OUTLET PARK"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["MITSUI OUTLET PARK"],
+            "basis": "merchant-list"
+          },
           "rate": 1,
           "rawReward": "MITSUI OUTLET PARK館內消費最高1%豐點",
           "cap": null,
@@ -177,7 +388,7 @@
         {
           "id": "sinopac-taxicard-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
           "rawReward": "一般消費1% T Points，無上限",
           "cap": null,
@@ -197,7 +408,7 @@
         {
           "id": "sinopac-dual-currency-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
           "rawReward": "國內一般消費1%現金回饋，無上限",
           "cap": null,
@@ -210,7 +421,10 @@
         {
           "id": "sinopac-dual-currency-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 2,
           "rawReward": "國外一般消費2%現金回饋，無上限",
           "cap": null,

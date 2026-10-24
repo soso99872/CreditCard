@@ -3,188 +3,785 @@
   "cardListUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards",
   "checkedAt": "2026-10-10",
   "coverage": [
-    { "cardName": "CUBE信用卡", "status": "included", "cardId": "cathay-cube" },
-    { "cardName": "現金回饋御璽卡", "status": "included", "cardId": "cathay-cash-rebate-signature" },
-    { "cardName": "蝦皮購物聯名卡", "status": "included", "cardId": "cathay-shopee" },
-    { "cardName": "世界卡", "status": "included", "cardId": "cathay-world" },
-    { "cardName": "雙幣卡", "status": "included", "cardId": "cathay-dual-currency" },
-    { "cardName": "亞洲萬里通聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
-    { "cardName": "長榮航空聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
-    { "cardName": "商務卡", "status": "excluded", "reason": "主要權益為差旅彈性報帳、道路救援與旅遊保險，官網查無標準一般消費現金或點數回饋率" },
-    { "cardName": "CUBE簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡（debit card），非信用卡" },
-    { "cardName": "台塑聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "KOKO COMBO icash聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "KOKO(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "KOKO icash聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "國泰人壽聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "金卡/普卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "享購鈦金卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "白金卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "尊榮御璽(COMBO)卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "鈦金商務卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "Costco聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "eTag聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "COMBO財富卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "NFC行動信用卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "Taiwan Money 卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "國民旅遊卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "聯合報優秀卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "W@card", "status": "excluded", "reason": "已停發" },
-    { "cardName": "遠東SOGO(悠遊)聯名卡", "status": "excluded", "reason": "已停發" },
-    { "cardName": "太平洋百貨聯名卡", "status": "excluded", "reason": "已停發" }
+    {"cardName": "CUBE信用卡", "status": "included", "cardId": "cathay-cube"},
+    {"cardName": "現金回饋御璽卡", "status": "included", "cardId": "cathay-cash-rebate-signature"},
+    {"cardName": "蝦皮購物聯名卡", "status": "included", "cardId": "cathay-shopee"},
+    {"cardName": "世界卡", "status": "included", "cardId": "cathay-world"},
+    {"cardName": "雙幣卡", "status": "included", "cardId": "cathay-dual-currency"},
+    {"cardName": "亞洲萬里通聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄"},
+    {"cardName": "長榮航空聯名卡", "status": "excluded", "reason": "哩程卡，本期不收錄"},
+    {"cardName": "商務卡", "status": "excluded", "reason": "主要權益為差旅彈性報帳、道路救援與旅遊保險，官網查無標準一般消費現金或點數回饋率"},
+    {"cardName": "CUBE簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡（debit card），非信用卡"},
+    {"cardName": "台塑聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "KOKO COMBO icash聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "KOKO(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "KOKO icash聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "國泰人壽聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "金卡/普卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "享購鈦金卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "白金卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "尊榮御璽(COMBO)卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "鈦金商務卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "Costco聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "eTag聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "(COMBO)悠遊聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "COMBO財富卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "NFC行動信用卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "Taiwan Money 卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "國民旅遊卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "聯合報優秀卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "W@card", "status": "excluded", "reason": "已停發"},
+    {"cardName": "遠東SOGO(悠遊)聯名卡", "status": "excluded", "reason": "已停發"},
+    {"cardName": "太平洋百貨聯名卡", "status": "excluded", "reason": "已停發"}
   ],
   "cards": [
     {
       "id": "cathay-cube",
       "name": "CUBE信用卡",
-      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube", "checkedAt": "2026-10-10" },
+      "verified": true,
+      "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube/",
       "rules": [
         {
           "id": "cathay-cube-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.3,
-          "rawReward": "一般消費 0.3% 小樹點(信用卡)",
+          "rawReward": "一般消費享0.3%小樹點(信用卡)，回饋無上限；排除信用卡利息費用、預借現金、分期、稅款、學費、公用事業費用、便利超商、全聯福利中心、大全聯、悠遊卡／一卡通／icash 加值、博奕、虛擬貨幣等項目（詳見官方注意事項）",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2026-10-10",
+          "conditions": ["分期付款消費仍只計一般消費回饋"],
+          "validFrom": null,
           "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube/",
+          "checkedAt": "2026-10-14"
         },
         {
           "id": "cathay-cube-digital-l1",
-          "plan": "玩數位方案 Level 1",
-          "scope": { "type": "category", "categories": ["online-shopping"] },
+          "plan": "玩數位 Level 1",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["ChatGPT", "Canva", "Claude", "Cursor", "Duolingo", "Gamma", "Gemini", "Notion", "Perplexity", "Speak", "Apple 媒體服務", "Google Play", "Disney+", "Netflix", "Spotify", "YouTube Premium", "Max", "蝦皮購物", "momo購物網", "PChome 24h購物", "小樹購", "Coupang 酷澎", "淘寶/天貓"],
+            "basis": "merchant-list"
+          },
           "rate": 2,
-          "rawReward": "玩數位方案指定線上消費 2% 小樹點(信用卡)（Level 1）",
+          "rawReward": "玩數位方案指定線上消費 2% 小樹點(信用卡)（Level 1）；PChome 24h購物不含儲值及電子票券，小樹購不含電子票券，蝦皮購物不含 LINE Pay、街口支付及 shopeeads 廣告購買",
           "cap": null,
-          "conditions": ["需切換至玩數位方案"],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "conditions": ["需切換至玩數位方案", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         },
         {
-          "id": "cathay-cube-dining-l1",
-          "plan": "樂饗購方案 Level 1",
-          "scope": { "type": "category", "categories": ["dining", "department-store"] },
-          "rate": 2,
-          "rawReward": "樂饗購方案指定美食/購物消費 2% 小樹點(信用卡)（Level 1）",
+          "id": "cathay-cube-digital-l2",
+          "plan": "玩數位 Level 2",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["ChatGPT", "Canva", "Claude", "Cursor", "Duolingo", "Gamma", "Gemini", "Notion", "Perplexity", "Speak", "Apple 媒體服務", "Google Play", "Disney+", "Netflix", "Spotify", "YouTube Premium", "Max", "蝦皮購物", "momo購物網", "PChome 24h購物", "小樹購", "Coupang 酷澎", "淘寶/天貓"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "玩數位方案指定線上消費 3% 小樹點(信用卡)（Level 2）；PChome 24h購物不含儲值及電子票券，小樹購不含電子票券，蝦皮購物不含 LINE Pay、街口支付及 shopeeads 廣告購買",
           "cap": null,
-          "conditions": ["需切換至樂饗購方案"],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "conditions": ["需切換至玩數位方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         },
         {
-          "id": "cathay-cube-travel-l1",
-          "plan": "趣旅行方案 Level 1",
-          "scope": { "type": "category", "categories": ["travel"] },
-          "rate": 2,
-          "rawReward": "趣旅行方案指定旅遊消費 2% 小樹點(信用卡)（Level 1）",
+          "id": "cathay-cube-digital-l3",
+          "plan": "玩數位 Level 3",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["ChatGPT", "Canva", "Claude", "Cursor", "Duolingo", "Gamma", "Gemini", "Notion", "Perplexity", "Speak", "Apple 媒體服務", "Google Play", "Disney+", "Netflix", "Spotify", "YouTube Premium", "Max", "蝦皮購物", "momo購物網", "PChome 24h購物", "小樹購", "Coupang 酷澎", "淘寶/天貓"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.3,
+          "rawReward": "玩數位方案指定線上消費 3.3% 小樹點(信用卡)（Level 3）；PChome 24h購物不含儲值及電子票券，小樹購不含電子票券，蝦皮購物不含 LINE Pay、街口支付及 shopeeads 廣告購買",
           "cap": null,
-          "conditions": ["需切換至趣旅行方案"],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "conditions": ["需切換至玩數位方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-merchant-l1",
+          "plan": "樂饗購 Level 1",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["遠東SOGO百貨", "遠東Garden City", "新光三越", "遠東百貨", "台北101", "BELLAVITA", "微風廣場", "統一時代台北店", "誠品生活", "ATT 4 FUN", "京站", "美麗華", "NOKE忠泰樂生活", "大葉高島屋", "Mitsui Shopping Park LaLaport(南港、台中)", "宏匯廣場", "台茂購物中心", "大江國際購物中心", "Big City遠東巨城購物中心", "中友百貨", "廣三SOGO", "南紡購物中心", "耐斯廣場", "夢時代", "漢神百貨", "漢神巨蛋", "新月廣場", "CITYLINK", "秀泰生活", "環球購物中心", "太平洋百貨", "華泰名品城", "SKM Park", "MITSUI OUTLET PARK(林口、台中港、台南)", "Uber Eats", "foodpanda", "麥當勞", "康是美", "屈臣氏"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "樂饗購方案指定美食/購物消費 2% 小樹點(信用卡)（Level 1）；指定百貨、外送平台、麥當勞（不適用百貨商場內門市）、康是美、屈臣氏；統一時代台北店不含 DREAM PLAZA；遠東SOGO部分櫃位、禮券、菸類商品不適用",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-category-l1",
+          "plan": "樂饗購 Level 1",
+          "scope": {
+            "type": "category",
+            "categories": ["dining"],
+            "basis": "mcc"
+          },
+          "rate": 2,
+          "rawReward": "樂饗購方案國內餐飲 2% 小樹點(信用卡)（Level 1）；限交易地點為臺灣之餐飲消費，依收單機構設定之 MCC 5811、5812、5814、5462 判定；不適用飯店／酒店／旅館／KTV／酒吧／俱樂部／商場所設餐廳、夜總會、菸酒販賣商，不含購買餐券",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "限臺灣餐飲（依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-merchant-l2",
+          "plan": "樂饗購 Level 2",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["遠東SOGO百貨", "遠東Garden City", "新光三越", "遠東百貨", "台北101", "BELLAVITA", "微風廣場", "統一時代台北店", "誠品生活", "ATT 4 FUN", "京站", "美麗華", "NOKE忠泰樂生活", "大葉高島屋", "Mitsui Shopping Park LaLaport(南港、台中)", "宏匯廣場", "台茂購物中心", "大江國際購物中心", "Big City遠東巨城購物中心", "中友百貨", "廣三SOGO", "南紡購物中心", "耐斯廣場", "夢時代", "漢神百貨", "漢神巨蛋", "新月廣場", "CITYLINK", "秀泰生活", "環球購物中心", "太平洋百貨", "華泰名品城", "SKM Park", "MITSUI OUTLET PARK(林口、台中港、台南)", "Uber Eats", "foodpanda", "麥當勞", "康是美", "屈臣氏"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "樂饗購方案指定美食/購物消費 3% 小樹點(信用卡)（Level 2）；指定百貨、外送平台、麥當勞（不適用百貨商場內門市）、康是美、屈臣氏；統一時代台北店不含 DREAM PLAZA；遠東SOGO部分櫃位、禮券、菸類商品不適用",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-category-l2",
+          "plan": "樂饗購 Level 2",
+          "scope": {
+            "type": "category",
+            "categories": ["dining"],
+            "basis": "mcc"
+          },
+          "rate": 3,
+          "rawReward": "樂饗購方案國內餐飲 3% 小樹點(信用卡)（Level 2）；限交易地點為臺灣之餐飲消費，依收單機構設定之 MCC 5811、5812、5814、5462 判定；不適用飯店／酒店／旅館／KTV／酒吧／俱樂部／商場所設餐廳、夜總會、菸酒販賣商，不含購買餐券",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限臺灣餐飲（依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-merchant-l3",
+          "plan": "樂饗購 Level 3",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["遠東SOGO百貨", "遠東Garden City", "新光三越", "遠東百貨", "台北101", "BELLAVITA", "微風廣場", "統一時代台北店", "誠品生活", "ATT 4 FUN", "京站", "美麗華", "NOKE忠泰樂生活", "大葉高島屋", "Mitsui Shopping Park LaLaport(南港、台中)", "宏匯廣場", "台茂購物中心", "大江國際購物中心", "Big City遠東巨城購物中心", "中友百貨", "廣三SOGO", "南紡購物中心", "耐斯廣場", "夢時代", "漢神百貨", "漢神巨蛋", "新月廣場", "CITYLINK", "秀泰生活", "環球購物中心", "太平洋百貨", "華泰名品城", "SKM Park", "MITSUI OUTLET PARK(林口、台中港、台南)", "Uber Eats", "foodpanda", "麥當勞", "康是美", "屈臣氏"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.3,
+          "rawReward": "樂饗購方案指定美食/購物消費 3.3% 小樹點(信用卡)（Level 3）；指定百貨、外送平台、麥當勞（不適用百貨商場內門市）、康是美、屈臣氏；統一時代台北店不含 DREAM PLAZA；遠東SOGO部分櫃位、禮券、菸類商品不適用",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-dining-category-l3",
+          "plan": "樂饗購 Level 3",
+          "scope": {
+            "type": "category",
+            "categories": ["dining"],
+            "basis": "mcc"
+          },
+          "rate": 3.3,
+          "rawReward": "樂饗購方案國內餐飲 3.3% 小樹點(信用卡)（Level 3）；限交易地點為臺灣之餐飲消費，依收單機構設定之 MCC 5811、5812、5814、5462 判定；不適用飯店／酒店／旅館／KTV／酒吧／俱樂部／商場所設餐廳、夜總會、菸酒販賣商，不含購買餐券",
+          "cap": null,
+          "conditions": ["需切換至樂饗購方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限臺灣餐飲（依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-merchant-l1",
+          "plan": "趣旅行 Level 1",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["東京迪士尼樂園", "東京華納兄弟哈利波特影城", "大阪環球影城(USJ)", "Apple錢包指定交通卡(SUICA、PASMO、ICOCA)", "Uber", "Grab", "台灣高鐵", "yoxi", "台灣大車隊", "iRent", "和運租車", "格上租車", "中華航空", "長榮航空", "星宇航空", "台灣虎航", "國泰航空", "樂桃航空", "阿聯酋航空", "酷航", "捷星航空", "日本航空", "ANA全日空", "亞洲航空", "聯合航空", "新加坡航空", "越捷航空", "大韓航空", "達美航空", "土耳其航空", "卡達航空", "法國航空", "星野集團", "全球迪士尼飯店", "東橫INN", "KKday", "Klook", "Agoda", "Airbnb", "Booking.com", "Trip.com", "ezTravel易遊網", "雄獅旅遊", "可樂旅遊", "東南旅遊", "五福旅遊", "燦星旅遊", "山富旅遊", "長汎假期", "鳳凰旅行社", "Ezfly易飛網", "理想旅遊", "永利旅行社", "三賀旅行社"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "趣旅行方案指定旅遊／交通消費 2% 小樹點(信用卡)（Level 1）；含日本指定遊樂園、指定交通、航空公司、星野集團等指定飯店、旅遊訂房平台、旅行社",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-hotel-l1",
+          "plan": "趣旅行 Level 1",
+          "scope": {
+            "type": "category",
+            "categories": ["travel"],
+            "basis": "mcc"
+          },
+          "rate": 2,
+          "rawReward": "趣旅行方案國內飯店住宿 2% 小樹點(信用卡)（Level 1）；含台、澎、金、馬民宿、青年旅館、連鎖飯店訂房，不含樂園套票、俱樂部、租期30天以上長租公寓、飯店附設餐廳／美食街／精品商店、旅行社訂房；有疑義時依 MCC 3500~3999、7011、7012、7032、7033 判定",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "限國內飯店住宿（依地區與住宿類型，疑義時依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-overseas-l1",
+          "plan": "趣旅行 Level 1",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
+          "rate": 2,
+          "rawReward": "趣旅行方案海外實體消費 2% 小樹點(信用卡)（Level 1）；交易地點非台灣或交易幣別非台幣，使用實體卡過卡或感應（含 Apple Pay／Samsung Pay／Google Pay／Garmin Pay），須面對面交易，儲值不列入；國外餐飲依 MCC 5811、5812、5814 判定；排除醫療、博奕、飛機／郵輪上消費、未經核准境外投資平台",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "限海外實體面對面消費", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-merchant-l2",
+          "plan": "趣旅行 Level 2",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["東京迪士尼樂園", "東京華納兄弟哈利波特影城", "大阪環球影城(USJ)", "Apple錢包指定交通卡(SUICA、PASMO、ICOCA)", "Uber", "Grab", "台灣高鐵", "yoxi", "台灣大車隊", "iRent", "和運租車", "格上租車", "中華航空", "長榮航空", "星宇航空", "台灣虎航", "國泰航空", "樂桃航空", "阿聯酋航空", "酷航", "捷星航空", "日本航空", "ANA全日空", "亞洲航空", "聯合航空", "新加坡航空", "越捷航空", "大韓航空", "達美航空", "土耳其航空", "卡達航空", "法國航空", "星野集團", "全球迪士尼飯店", "東橫INN", "KKday", "Klook", "Agoda", "Airbnb", "Booking.com", "Trip.com", "ezTravel易遊網", "雄獅旅遊", "可樂旅遊", "東南旅遊", "五福旅遊", "燦星旅遊", "山富旅遊", "長汎假期", "鳳凰旅行社", "Ezfly易飛網", "理想旅遊", "永利旅行社", "三賀旅行社"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "趣旅行方案指定旅遊／交通消費 3% 小樹點(信用卡)（Level 2）；含日本指定遊樂園、指定交通、航空公司、星野集團等指定飯店、旅遊訂房平台、旅行社",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-hotel-l2",
+          "plan": "趣旅行 Level 2",
+          "scope": {
+            "type": "category",
+            "categories": ["travel"],
+            "basis": "mcc"
+          },
+          "rate": 3,
+          "rawReward": "趣旅行方案國內飯店住宿 3% 小樹點(信用卡)（Level 2）；含台、澎、金、馬民宿、青年旅館、連鎖飯店訂房，不含樂園套票、俱樂部、租期30天以上長租公寓、飯店附設餐廳／美食街／精品商店、旅行社訂房；有疑義時依 MCC 3500~3999、7011、7012、7032、7033 判定",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限國內飯店住宿（依地區與住宿類型，疑義時依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-overseas-l2",
+          "plan": "趣旅行 Level 2",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
+          "rate": 3,
+          "rawReward": "趣旅行方案海外實體消費 3% 小樹點(信用卡)（Level 2）；交易地點非台灣或交易幣別非台幣，使用實體卡過卡或感應（含 Apple Pay／Samsung Pay／Google Pay／Garmin Pay），須面對面交易，儲值不列入；國外餐飲依 MCC 5811、5812、5814 判定；排除醫療、博奕、飛機／郵輪上消費、未經核准境外投資平台",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 2：本行帳戶自動扣繳或 CUBE App 繳本人本行信用卡費", "限海外實體面對面消費", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-merchant-l3",
+          "plan": "趣旅行 Level 3",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["東京迪士尼樂園", "東京華納兄弟哈利波特影城", "大阪環球影城(USJ)", "Apple錢包指定交通卡(SUICA、PASMO、ICOCA)", "Uber", "Grab", "台灣高鐵", "yoxi", "台灣大車隊", "iRent", "和運租車", "格上租車", "中華航空", "長榮航空", "星宇航空", "台灣虎航", "國泰航空", "樂桃航空", "阿聯酋航空", "酷航", "捷星航空", "日本航空", "ANA全日空", "亞洲航空", "聯合航空", "新加坡航空", "越捷航空", "大韓航空", "達美航空", "土耳其航空", "卡達航空", "法國航空", "星野集團", "全球迪士尼飯店", "東橫INN", "KKday", "Klook", "Agoda", "Airbnb", "Booking.com", "Trip.com", "ezTravel易遊網", "雄獅旅遊", "可樂旅遊", "東南旅遊", "五福旅遊", "燦星旅遊", "山富旅遊", "長汎假期", "鳳凰旅行社", "Ezfly易飛網", "理想旅遊", "永利旅行社", "三賀旅行社"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.3,
+          "rawReward": "趣旅行方案指定旅遊／交通消費 3.3% 小樹點(信用卡)（Level 3）；含日本指定遊樂園、指定交通、航空公司、星野集團等指定飯店、旅遊訂房平台、旅行社",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-hotel-l3",
+          "plan": "趣旅行 Level 3",
+          "scope": {
+            "type": "category",
+            "categories": ["travel"],
+            "basis": "mcc"
+          },
+          "rate": 3.3,
+          "rawReward": "趣旅行方案國內飯店住宿 3.3% 小樹點(信用卡)（Level 3）；含台、澎、金、馬民宿、青年旅館、連鎖飯店訂房，不含樂園套票、俱樂部、租期30天以上長租公寓、飯店附設餐廳／美食街／精品商店、旅行社訂房；有疑義時依 MCC 3500~3999、7011、7012、7032、7033 判定",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限國內飯店住宿（依地區與住宿類型，疑義時依 MCC 判定）", "限實體卡或 Apple Pay／Samsung Pay／Google Pay／Garmin Pay，不含 LINE Pay 等第三方支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-travel-overseas-l3",
+          "plan": "趣旅行 Level 3",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
+          "rate": 3.3,
+          "rawReward": "趣旅行方案海外實體消費 3.3% 小樹點(信用卡)（Level 3）；交易地點非台灣或交易幣別非台幣，使用實體卡過卡或感應（含 Apple Pay／Samsung Pay／Google Pay／Garmin Pay），須面對面交易，儲值不列入；國外餐飲依 MCC 5811、5812、5814 判定；排除醫療、博奕、飛機／郵輪上消費、未經核准境外投資平台",
+          "cap": null,
+          "conditions": ["需切換至趣旅行方案", "Level 3：財富管理貴賓（與本行往來資產平均三個月 NT$300 萬以上）", "限海外實體面對面消費", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         },
         {
           "id": "cathay-cube-select",
-          "plan": "集精選方案",
-          "scope": { "type": "category", "categories": ["convenience-store"] },
+          "plan": "集精選",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["U-POWER", "EVOASIS", "EVALUE", "TAIL", "iCharging", "車麻吉", "uTagGo", "萬家福(樂家康)", "LOPIA台灣", "全聯福利中心", "台灣中油直營站", "7-ELEVEN", "全家便利商店", "IKEA宜家家居"],
+            "basis": "merchant-list"
+          },
           "rate": 2,
-          "rawReward": "集精選方案指定品牌/生活消費 2% 小樹點(信用卡)（不分等級）",
+          "rawReward": "集精選方案指定品牌／生活消費 2% 小樹點(信用卡)（不分 Level）；全聯限實體門市（含 PX Pay，不含全支付綁卡，不含大全聯），超商限實體門市，中油限直營站，車麻吉不含加油充電，uTagGo 不含月租停車；不含高速公路服務區、醫院美食街、企業辦公大樓門市；第三方支付綁卡不適用",
           "cap": null,
-          "conditions": ["需切換至集精選方案"],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "conditions": ["需切換至集精選方案", "限實體門市", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-formosa",
+          "plan": "台塑家",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台塑石油", "台亞", "福懋", "統一速邁樂", "台塑生醫", "長庚生技", "台塑蔬菜", "台塑購物網", "7-ELEVEN", "全家便利商店", "萊爾富"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "台塑家方案指定品牌／生活消費 2% 小樹點(信用卡)（不分 Level）；加油站（統一速邁樂限本島，不適用加氣站）限實體卡或 Apple Pay／Samsung Pay／Google Pay／台塑石油Pay／Garmin Pay；台塑生醫、長庚生技、台塑蔬菜限實體門市，藥品不適用；超商限實體門市；萊爾富僅台塑家方案享有；不含 CUBE 簽帳金融卡",
+          "cap": null,
+          "conditions": ["需切換至台塑家方案", "限實體門市／實體卡或指定行動支付", "分期付款消費不適用", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-06-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         },
         {
           "id": "cathay-cube-fixed-general",
-          "plan": "固定回饋方案",
-          "scope": { "type": "general" },
+          "plan": "固定回饋",
+          "scope": {"type": "general"},
           "rate": 1.2,
-          "rawReward": "固定回饋方案一般消費(不含保費) 1.2% 小樹點(信用卡)",
+          "rawReward": "固定回饋方案一般消費(不含保費) 1.2% 小樹點(信用卡)；排除保費（國泰人壽躉繳／投資型／利率變動型年金保費 0%，其他保費仍適用一般消費 0.3%）、信用卡利息費用、預借現金、分期、稅款、學費、公用事業費用、繳費平台繳納費用等項目；切換後自變更日起至 2026/12/31 不得再切換至其他權益（期間內享一次切換出入權利）",
           "cap": null,
-          "conditions": ["需切換至固定回饋方案"],
+          "conditions": ["需切換至固定回饋方案", "不含保費", "切換後鎖定至2026/12/31", "分期付款消費不適用"],
           "validFrom": "2026-08-03",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         },
         {
           "id": "cathay-cube-fixed-overseas",
-          "plan": "固定回饋方案",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "plan": "固定回饋",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 2.5,
-          "rawReward": "固定回饋方案海外實體消費 2.5% 小樹點(信用卡)",
+          "rawReward": "固定回饋方案海外實體消費 2.5% 小樹點(信用卡)；交易地點非台灣或交易幣別非台幣，使用實體卡過卡或感應（含 Apple Pay／Samsung Pay／Google Pay／Garmin Pay），須面對面交易，交通卡儲值不列入；國外餐飲依 MCC 5811、5812、5814 判定；排除醫療、博奕、飛機／郵輪消費、未經核准境外投資平台、保費；不受 Level 分級影響",
           "cap": null,
-          "conditions": ["需切換至固定回饋方案"],
+          "conditions": ["需切換至固定回饋方案", "限海外實體面對面消費", "切換後鎖定至2026/12/31"],
           "validFrom": "2026-08-03",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-allpay",
+          "plan": "全支付",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["全聯福利中心", "大全聯"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "全支付方案指定通路消費 2% 小樹點(信用卡)（不分 Level）；選定「全支付」方案並以全支付綁定 CUBE 信用卡付款方可獲回饋；排除全支付繳稅、繳費、跨境支付、儲值、公益捐款、乘車碼、菸酒、代收代售、禮券等；本規則僅收官方明列的全聯福利中心與大全聯，「全支付國內合作通路」未列商家名單",
+          "cap": null,
+          "conditions": ["需切換至全支付方案", "限以全支付綁定 CUBE 信用卡付款", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-04-22",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-birthday-10",
+          "plan": "慶生月",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["大腕燒肉", "茶六燒肉堂", "老井極上燒肉", "屋馬燒肉", "鼎王麻辣鍋", "無老鍋", "老四川巴蜀麻辣燙", "詹記麻辣火鍋", "青沐", "所 SUO", "嵩 sung", "JAI 宅", "新東南海鮮餐廳", "龍都酒樓", "吉品海鮮餐廳", "老新台菜", "輕井澤鍋物", "湯棧", "Hābu小餐館", "空盤 KOMBOI", "野驢小餐館", "肉料理福", "台灣壽司郎", "UNCLE SHAWN 燒肉餐酒館", "UNCLE RAY串燒·牛飲·咖喱 台中店", "蜀叔麻辣鍋 台北店", "Pastaio", "Pastaio noodle cafe", "小方舟串燒酒場", "毛丼丼飯專門店", "毛房蔥柚鍋．冷藏肉專門", "毛蔬亞洲蔬食", "法國的秘密甜點", "法朋烘焙甜點坊", "Miss V Bakery", "興波咖啡", "東京迪士尼樂園", "大阪環球影城(USJ)", "PlayStation", "Nintendo", "巴哈姆特動畫瘋", "錢櫃KTV", "好樂迪KTV", "星聚點KTV", "享溫馨KTV"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "慶生月方案指定店家 10% 小樹點(信用卡)：口碑名店聚餐、中西式佳餚火鍋、主廚料理、精選人氣餐廳及甜點咖啡、日本指定遊樂園實體消費、PlayStation／Nintendo／巴哈姆特動畫瘋、指定 KTV；適用商店每季公告，本季 2026/10/1~12/31",
+          "cap": null,
+          "conditions": ["需切換至慶生月方案", "限正卡人生日當月切換", "不含訂票、線上訂位平台消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-birthday-5",
+          "plan": "慶生月",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["FunNow"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "慶生月方案 FunNow 5% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至慶生月方案", "限正卡人生日當月切換", "不含訂票、線上訂位平台消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-birthday-3-5",
+          "plan": "慶生月",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Klook", "新光三越", "Uber Eats"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.5,
+          "rawReward": "慶生月方案 Klook、新光三越（不含 SKM Park Outlets 高雄草衙）、Uber Eats 3.5% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至慶生月方案", "限正卡人生日當月切換", "不含訂票、線上訂位平台消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-kids-school",
+          "plan": "童樂匯",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台北美國學校", "台北歐洲學校", "台北市私立道明外僑學校", "馬禮遜學校", "康乃薾美國學校", "台北私立立人國際國小", "康橋國際學校", "華盛頓小學", "復興實驗高中", "維多利亞雙語中小學", "高雄美國學校"],
+            "basis": "merchant-list"
+          },
+          "rate": 1,
+          "rawReward": "童樂匯方案指定私校學費 1% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至童樂匯方案", "需先解鎖（本行帳戶與未成年子女帳戶＋有效 CUBE 正卡）", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-kids-5",
+          "plan": "童樂匯",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台灣壽司郎", "雞湯大叔", "陶板屋", "YAYOI彌生軒", "大戶屋", "大樹先生的家", "Money Jump 媽妳講親子餐廳", "小島3.5度親子餐廳", "Klook", "東京迪士尼樂園", "大阪環球影城(USJ)", "麗寶樂園", "六福村主題樂園", "九族文化村", "劍湖山世界主題樂園", "義大遊樂世界", "小叮噹科學園區主題樂園", "Xpark", "巧虎夢想樂園", "台北喜來登大飯店", "蘭城晶英酒店", "台南晶英酒店", "礁溪寒沐酒店", "大溪笠復威斯汀度假酒店", "煙波大飯店新竹湖濱館", "麗寶福容大飯店", "雲品溫泉酒店", "和逸飯店", "義大皇家酒店", "高雄萬豪酒店", "墾丁凱撒大飯店", "花蓮遠雄悅來大飯店", "瑞穗天合國際觀光酒店", "六福莊", "宜蘭礁溪鳳凰酒店", "桃園名人堂花園大飯店", "卡多摩嬰童館", "媽咪愛", "樂兒屋", "寶齡婦幼館", "步步樂BuBuLuv", "安琪兒婦嬰百貨", "宜兒樂", "麗兒采家", "Taobaby濤寶日記", "俏媽咪", "媽媽好"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "童樂匯方案親子餐廳、親子育樂、親子飯店、母嬰用品店 5% 小樹點(信用卡)；陶板屋限使用王品瘋Pay結帳，YAYOI彌生軒限街邊店",
+          "cap": null,
+          "conditions": ["需切換至童樂匯方案", "需先解鎖（本行帳戶與未成年子女帳戶＋有效 CUBE 正卡）", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-kids-10",
+          "plan": "童樂匯",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["雲門舞集舞蹈教室", "Yamaha音樂教室", "TutorABC Junior", "Etalking Kids", "iSKI滑雪俱樂部", "汐游寶寶", "風城游汐谷", "10mois", "Mamas&Papas", "古北町", "Little Wonders", "Seahorse Originals"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "童樂匯方案五感體驗課、嬰幼童品牌官網（台灣官網）10% 小樹點(信用卡)",
+          "cap": null,
+          "conditions": ["需切換至童樂匯方案", "需先解鎖（本行帳戶與未成年子女帳戶＋有效 CUBE 正卡）", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-japan",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "category",
+            "categories": ["japan"]
+          },
+          "rate": 3.5,
+          "rawReward": "秋日遊方案 日本實體消費（日本當地消費） 3.5% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-3-5",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["愛電王", "大丸百貨福岡天神店", "MITSUI OUTLET PARK", "台場DiverCity Tokyo Plaza", "BicCamera", "Apple錢包指定交通卡(Suica、PASMO、ICOCA)", "GO Taxi", "國泰航空", "台灣虎航", "Agoda", "KKday", "ezTravel易遊網", "可樂旅遊", "東南旅遊", "Club Med", "遠東SOGO", "日藥本舖", "摩斯漢堡", "台灣壽司郎"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.5,
+          "rawReward": "秋日遊方案 日本必逛＋遊日必備指定通路、海外旅遊規劃（機票、訂房、行程）、國內日系購物與美食 3.5% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-3",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Trip.com", "Klook", "UNIQLO網路商店", "UNIQLO直營店", "GU台灣網路商店", "MITSUI OUTLET PARK(林口、台中港、台南)", "Mitsui Shopping Park LaLaport(南港、台中)"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "秋日遊方案 海外旅遊規劃（Trip.com、Klook）、國內日系購物名店 3% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-4",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["成田機場指定免稅店", "關西機場指定免稅店", "新千歲機場指定免稅店", "福岡機場免稅店"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "秋日遊方案 日本四大機場指定免稅店 4% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-5",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["寶可夢中心", "SANRIO三麗鷗", "KIDDY LAND", "UNIQLO實體門市", "Alpen GROUP", "ABC-MART", "Loft", "3COINS", "Tabelog", "TableCheck", "OMAKASE", "Klook 指定日本商品", "Hotels.com 專屬網頁訂房", "Expedia 專屬網頁訂房", "JR東日本大飯店 台北", "礁溪寒沐酒店", "索拉利亞西鐵飯店台北西門", "台北大倉久和大飯店", "日勝生加賀屋國際溫泉飯店", "明曜百貨", "台灣DON DON DONKI 唐吉訶德", "Xpark", "UNITED ARROWS LTD.官方購物網站", "爭鮮迴轉壽司", "爭鮮PLUS", "錢都日式涮涮鍋", "客美多咖啡", "すき家 SUKIYA", "必勝客"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "秋日遊方案 日本IP專賣店／人氣愛店／餐廳預約平台、Klook 指定日本商品、Hotels.com 與 Expedia 專屬網頁訂房、國內日系質感飯店、國內日系購物與美食 5% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）", "Hotels.com、Expedia 限專屬網頁訂房（不含機票、機加酒、租車、票券、行程類）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
+        },
+        {
+          "id": "cathay-cube-autumn-8",
+          "plan": "秋日遊",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["HANDS 台隆手創館 南港Lalaport店", "橘色涮涮屋", "Extension 1 by橘色", "雞湯桑", "朝炭", "初魚鮨", "初魚 鉄板料亭", "作 天麩羅．割烹", "濟安鮨日本料理", "侍燒肉", "梵燒肉", "元一天婦羅", "鳥苑", "燒鳥すみか", "山崎", "成蔵"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "秋日遊方案 國內日系購物名店（HANDS 台隆手創館 南港Lalaport店）與日系美食饗宴 8% 小樹點(信用卡)；不含領券加碼",
+          "cap": null,
+          "conditions": ["需切換至秋日遊方案", "限面對面交易，不含第三方支付", "排除醫療、販賣機、飯店、電信、租車、交通、賭博、飛機／郵輪上消費", "全卡指定消費月累計上限：以消費日當日信用額度加計新臺幣50萬元為限，超出部分回饋 0.3%（各方案共用）"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-11-30",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+          "checkedAt": "2026-10-14"
         }
       ]
     },
     {
       "id": "cathay-cash-rebate-signature",
       "name": "現金回饋御璽卡",
+      "verified": true,
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
       "rules": [
         {
-          "id": "cathay-cash-rebate-signature-general",
+          "id": "cathay-cash-rebate-signature-domestic",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.5,
-          "rawReward": "國內消費 0.5% 現金回饋",
+          "rawReward": "國內消費享 0.5% 現金回饋，無通路限制、無級距門檻、無回饋上限；現金回饋採當期消費次期回饋計算，僅限扣抵信用卡消費款，不能兌換現金及其他商品；退貨會扣回已回饋金額；不回饋項目：信用卡利息與各項費用、預借現金、帳單分期與單筆消費分期、稅款、學費、公用事業費用、路邊停車費、公務機關費用與繳費平台、各類電子票證加值、便利超商、全聯／大全聯、小額支付平台特約商店、數位貨幣、博奕等（同官方 1-1 一般消費排除）",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2026-10-10",
+          "conditions": ["需上期無逾期未繳款紀錄", "排除帳單分期、單筆消費分期（刷卡樂分期）"],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+          "checkedAt": "2026-10-15"
         },
         {
           "id": "cathay-cash-rebate-signature-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 2,
-          "rawReward": "國外消費 2% 現金回饋",
+          "rawReward": "國外消費享 2% 現金回饋，無通路限制、無級距門檻、無回饋上限；現金回饋採當期消費次期回饋計算，僅限扣抵信用卡消費款，不能兌換現金及其他商品；退貨會扣回已回饋金額；國外消費定義為交易地點非臺灣或交易幣別非台幣之一般交易；不回饋項目：信用卡利息與各項費用、預借現金、帳單分期與單筆消費分期、稅款、學費、公用事業費用、路邊停車費、公務機關費用與繳費平台、各類電子票證加值、便利超商、全聯／大全聯、小額支付平台特約商店、數位貨幣、博奕等（同官方 1-1 一般消費排除）",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2026-10-10",
+          "conditions": ["需上期無逾期未繳款紀錄", "排除帳單分期、單筆消費分期（刷卡樂分期）"],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+          "checkedAt": "2026-10-15"
         }
       ]
     },
     {
       "id": "cathay-shopee",
       "name": "蝦皮購物聯名卡",
-      "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee",
-      "pointValue": { "unit": "蝦幣", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee", "checkedAt": "2026-10-10" },
+      "verified": true,
+      "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
       "rules": [
         {
           "id": "cathay-shopee-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.5,
-          "rawReward": "一般消費 0.5% 蝦幣回饋",
+          "rawReward": "蝦皮站外（非蝦皮購物）一般消費筆筆享0.5%蝦幣回饋；一般消費排除項目同官方注意事項（利息費用、預借現金、分期、稅款、學費、公用事業費用、便利超商、全聯、大全聯等）；海外消費可同享此回饋並免海外交易手續費",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/shopee",
-          "checkedAt": "2026-10-10"
+          "conditions": ["蝦皮購物以外之一般消費", "活動期間至2026/12/31止"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-15"
+        },
+        {
+          "id": "cathay-shopee-shopee-low",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["蝦皮購物"],
+            "basis": "merchant-list"
+          },
+          "rate": 1,
+          "rawReward": "蝦皮購物全站消費，國泰世華提供蝦幣：累積消費NT$2,999以下 1%（含基本回饋0.5%，當期帳單0.5%、次期帳單0.5%）",
+          "cap": null,
+          "conditions": ["蝦皮購物累積消費金額未滿 NT$3,000", "全站加碼回饋次期帳單發放，帳單年度上限20,000蝦幣（超過部分只回饋當期0.5%）", "不含 LINE Pay、街口支付、shopeeads 廣告購買、海外消費（含跨境交易）"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-15"
+        },
+        {
+          "id": "cathay-shopee-shopee-high",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["蝦皮購物"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "蝦皮購物全站消費，國泰世華提供蝦幣：累積消費NT$3,000以上 2%（含基本回饋0.5%，當期帳單0.5%、次期帳單1.5%）",
+          "cap": null,
+          "conditions": ["蝦皮購物累積消費金額達 NT$3,000", "全站加碼回饋次期帳單發放，帳單年度上限20,000蝦幣（超過部分只回饋當期0.5%）", "不含 LINE Pay、街口支付、shopeeads 廣告購買、海外消費（含跨境交易）"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-15"
+        },
+        {
+          "id": "cathay-shopee-shopee-own-all",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["蝦皮購物"],
+            "basis": "merchant-list"
+          },
+          "rate": 1,
+          "rawReward": "蝦皮購物提供蝦幣：全站（商城與非商城）消費1%，由蝦皮直接回饋至持卡人蝦皮帳戶，消費次次月回饋；與國泰世華提供的蝦幣分開計算",
+          "cap": null,
+          "conditions": ["蝦皮直接發放至蝦皮帳戶", "不含 LINE Pay、街口支付、shopeeads 廣告購買、海外消費（含跨境交易）"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-15"
+        },
+        {
+          "id": "cathay-shopee-shopee-own-mall",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["蝦皮商城"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "蝦皮購物提供蝦幣：商城消費 2%（全站1%＋聯名卡友加碼商城1%），由蝦皮直接回饋至持卡人蝦皮帳戶，消費次次月回饋；與國泰世華提供的蝦幣分開計算",
+          "cap": null,
+          "conditions": ["限蝦皮商城", "蝦皮直接發放至蝦皮帳戶", "不含 LINE Pay、街口支付、shopeeads 廣告購買、海外消費（含跨境交易）"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-15"
+        },
+        {
+          "id": "cathay-shopee-shopee-direct-bonus",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["蝦皮購物"],
+            "basis": "merchant-list"
+          },
+          "rate": 1,
+          "rawReward": "2026/10/1~2026/12/31於蝦皮直營刷聯名卡不限消費金額登錄成功，加碼1%蝦幣回饋；無低消門檻、無回饋上限，以完成訂單計算",
+          "cap": null,
+          "conditions": ["需登錄（官方未寫名額限制），登錄當月起才有回饋，登錄前月份不追溯", "限蝦皮直營賣場", "加碼部分，另計於蝦皮全站回饋之外"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
@@ -192,12 +789,12 @@
       "id": "cathay-world",
       "name": "世界卡",
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world",
-      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world", "checkedAt": "2026-10-10" },
+      "pointValue": {"unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world", "checkedAt": "2026-10-10"},
       "rules": [
         {
           "id": "cathay-world-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.6,
           "rawReward": "國內消費 0.6% 小樹點(信用卡)回饋",
           "cap": null,
@@ -210,7 +807,10 @@
         {
           "id": "cathay-world-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 0.9,
           "rawReward": "海外消費單筆滿NT$500享 0.9% 小樹點(信用卡)回饋",
           "cap": null,
@@ -226,12 +826,12 @@
       "id": "cathay-dual-currency",
       "name": "雙幣卡",
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
-      "pointValue": { "unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency", "checkedAt": "2026-10-10" },
+      "pointValue": {"unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency", "checkedAt": "2026-10-10"},
       "rules": [
         {
           "id": "cathay-dual-currency-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.3,
           "rawReward": "國內消費 0.3% 小樹點(信用卡)回饋",
           "cap": null,
@@ -244,7 +844,10 @@
         {
           "id": "cathay-dual-currency-overseas-platinum",
           "plan": "雙幣白金卡",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 0.9,
           "rawReward": "雙幣白金卡海外消費 0.9% 小樹點(信用卡)回饋",
           "cap": null,
@@ -257,7 +860,10 @@
         {
           "id": "cathay-dual-currency-overseas-titanium-biz",
           "plan": "雙幣鈦金商務卡",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"]
+          },
           "rate": 1.5,
           "rawReward": "雙幣鈦金商務卡海外消費 1.5% 小樹點(信用卡)回饋",
           "cap": null,

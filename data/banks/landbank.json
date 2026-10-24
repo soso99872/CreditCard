@@ -1,17 +1,53 @@
 {
   "bankId": "landbank",
   "cardListUrl": "https://www.landbank.com.tw/Category/Items/信用卡專區",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-25",
   "coverage": [
-    { "cardName": "土銀icash2.0聯名鈦金卡", "status": "included", "cardId": "landbank-icash" },
-    { "cardName": "金速Pay-HCE手機信用卡", "status": "excluded", "reason": "行動虛擬信用卡形式，回饋規則與實體卡相同，暫不重複收錄" },
-    { "cardName": "羽麟閃耀卡", "status": "excluded", "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "Do Do運動卡", "status": "excluded", "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "麟洋羽球認同卡#吶喊", "status": "excluded", "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "白沙屯拱天宮媽祖認同卡", "status": "excluded", "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "澎湖縣—澎湖iPASS", "status": "excluded", "reason": "地區聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "亞洲微創手術中心認同卡", "status": "excluded", "reason": "認同卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" },
-    { "cardName": "圓山大飯店JCB一卡通聯名卡", "status": "excluded", "reason": "聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充" }
+    {
+      "cardName": "土銀icash2.0聯名鈦金卡",
+      "status": "included",
+      "cardId": "landbank-icash"
+    },
+    {
+      "cardName": "金速Pay-HCE手機信用卡",
+      "status": "excluded",
+      "reason": "行動虛擬信用卡形式，回饋規則與實體卡相同，暫不重複收錄"
+    },
+    {
+      "cardName": "羽麟閃耀卡",
+      "status": "excluded",
+      "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "Do Do運動卡",
+      "status": "excluded",
+      "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "麟洋羽球認同卡#吶喊",
+      "status": "excluded",
+      "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "白沙屯拱天宮媽祖認同卡",
+      "status": "excluded",
+      "reason": "認同/聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "澎湖縣—澎湖iPASS",
+      "status": "excluded",
+      "reason": "地區聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "亞洲微創手術中心認同卡",
+      "status": "excluded",
+      "reason": "認同卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    },
+    {
+      "cardName": "圓山大飯店JCB一卡通聯名卡",
+      "status": "excluded",
+      "reason": "聯名卡，本期時間有限未查證其回饋規則是否獨立於主卡，待後續版本補充"
+    }
   ],
   "cards": [
     {
@@ -22,17 +58,25 @@
         {
           "id": "landbank-icash-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {
+            "type": "general"
+          },
           "rate": 1,
-          "rawReward": "國內一般消費不限金額可享現金回饋1%，回饋金額無上限",
+          "rawReward": "國內一般消費不限金額可享現金回饋 1%，回饋金額無上限（活動期間115/1/1~116/12/31）",
           "cap": null,
-          "conditions": [],
+          "conditions": [
+            "僅限國內一般消費",
+            "不含預借現金、學費、電子票證自動加值金、公部門及公立醫院刷卡交易、稅費、公用事業費、年費等手續費",
+            "不含透過聯合信用卡處理中心小額支付平台之特約商店消費（如便利超商、連鎖速食店、停車場）"
+          ],
           "validFrom": "2026-01-01",
           "validTo": "2027-12-31",
           "sourceUrl": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-25"
         }
-      ]
+      ],
+      "verified": true
     }
   ]
 }
