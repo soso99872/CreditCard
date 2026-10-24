@@ -4,6 +4,7 @@
 //   資料目錄預設 data；今天日期預設系統當天（可用參數覆寫方便測試）。
 // 列出：
 //   - stale：checkedAt 距今天超過 90 天的規則
+//   - staleArticles：第三方規則的文章日期（sourcePublishedAt、secondSourcePublishedAt）距今天超過 90 天
 //   - expiring：validTo 在今天起 14 天內（含今天、含第 14 天）的規則
 
 import path from "node:path";
@@ -14,12 +15,14 @@ const STALE_DAYS = 90;
 const EXPIRING_DAYS = 14;
 
 /**
- * 回傳 { stale, expiring }，每筆為 { file, cardId, ruleId, checkedAt, validTo }。
+ * 回傳 { stale, expiring, staleArticles }。
+ * staleArticles 每筆為 { file, cardId, ruleId, field, publishedAt, ageDays }。
  */
 export async function freshnessReport(dataDir, today) {
   const bankFiles = await loadBankFiles(path.join(dataDir, "banks"));
   const stale = [];
   const expiring = [];
+  const staleArticles = [];
 
   for (const { file, data } of bankFiles) {
     for (const card of data.cards || []) {
@@ -34,6 +37,21 @@ export async function freshnessReport(dataDir, today) {
               checkedAt: rule.checkedAt,
               ageDays: age,
             });
+          }
+        }
+        if (rule.sourceType === "third-party") {
+          for (const field of ["sourcePublishedAt", "secondSourcePublishedAt"]) {
+            const age = isValidDateString(rule[field]) ? diffDays(rule[field], today) : null;
+            if (age !== null && age > STALE_DAYS) {
+              staleArticles.push({
+                file,
+                cardId: card.id,
+                ruleId: rule.id,
+                field,
+                publishedAt: rule[field],
+                ageDays: age,
+              });
+            }
           }
         }
         if (isValidDateString(rule.validTo)) {
@@ -52,7 +70,7 @@ export async function freshnessReport(dataDir, today) {
     }
   }
 
-  return { stale, expiring };
+  return { stale, expiring, staleArticles };
 }
 
 function parseArgs(argv) {
@@ -79,13 +97,20 @@ async function main() {
     process.exit(1);
   }
 
-  const { stale, expiring } = await freshnessReport(dataDir, today);
+  const { stale, expiring, staleArticles } = await freshnessReport(dataDir, today);
 
   console.log(`保鮮報告（資料目錄：${dataDir}，今天：${today}）`);
   console.log(`\n超過 ${STALE_DAYS} 天未檢核（共 ${stale.length} 條）：`);
   for (const item of stale) {
     console.log(
       `  - [banks/${item.file}] 卡片 ${item.cardId} 規則 ${item.ruleId}：checkedAt=${item.checkedAt}（${item.ageDays} 天前）`
+    );
+  }
+
+  console.log(`\n第三方文章日期超過 ${STALE_DAYS} 天（共 ${staleArticles.length} 條）：`);
+  for (const item of staleArticles) {
+    console.log(
+      `  - [banks/${item.file}] 卡片 ${item.cardId} 規則 ${item.ruleId}：${item.field}=${item.publishedAt}（${item.ageDays} 天前）`
     );
   }
 

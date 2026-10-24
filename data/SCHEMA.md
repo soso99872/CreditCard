@@ -128,6 +128,16 @@ data/
   - `validTo`：`null` 代表官方未載明結束日；否則為 `YYYY-MM-DD`，且不得早於 `validFrom`（`validFrom` 為 `null` 時不檢查此項）。
   - `sourceUrl`：必填，網域必須在該銀行 `officialDomains` 內（含子網域）。
   - `checkedAt`：必填，`YYYY-MM-DD`，實際查閱官方頁面的日期。
+  - `sourceType`（v2.4）：`"official"`（沒寫視為 official）或 `"third-party"`。官方規則照上面 `sourceUrl` 的白名單規則；第三方規則見下。
+  - 第三方規則（`sourceType: "third-party"`）：
+    - `sourceUrl`：必填，必須是 https，**不檢查官方網域白名單**。
+    - `sourcePublishedAt`：必填，`YYYY-MM-DD`，文章發布或更新日；不得晚於 `checkedAt`，且距 `checkedAt` 不超過 90 天。
+    - `secondSourceUrl`、`secondSourcePublishedAt`：選填，但有填就要兩個都填；第二來源必須是 https、網域與 `sourceUrl` 不同，日期規則同上。
+    - `sourceNote`：選填，兩來源數字不一致時的說明。
+    - 期間要涵蓋整理日：`validFrom` 若有值不得晚於 `checkedAt`，`validTo` 若有值不得早於 `checkedAt`。
+    - v2.1 的 `officialUnavailableReason` 與「一定要 2 個來源」不再必填。
+  - 引擎推薦結果會帶出 `sourceType`、`sourcePublishedAt`、`secondSourceUrl`、`secondSourcePublishedAt`（沒有的為 `null`，`sourceType` 預設 `official`）。`npm run freshness` 另列「第三方文章日期超過 90 天」，`npm run coverage` 另印 verified 卡中全官方來源與含第三方規則的張數。
+  - `verified: true` 在 v2.4 的意思是「整理完成、可以推薦」，有沒有核對過官方看規則的 `sourceType`。
 
 ## `merchants.json`（T08 產出）
 

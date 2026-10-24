@@ -13,6 +13,8 @@ import { loadJsonIfExists, loadBankFiles } from "./lib.mjs";
  *   issuerCount, bankFileCount,
  *   includedCount, excludedCount,
  *   verifiedCardCount, // AC-08：verified === true 的卡數，要求達 50 張以上
+ *   verifiedOfficialOnlyCount, // verified 卡中全部規則都是官方來源的張數
+ *   verifiedWithThirdPartyCount, // verified 卡中含第三方來源規則的張數
  *   excluded: [{ bankId, cardName, reason }],
  *   byBank: [{ bankId, included, excluded, cardCount, verifiedCount }]
  * }
@@ -24,6 +26,8 @@ export async function getCoverageSummary(dataDir) {
   let includedCount = 0;
   let excludedCount = 0;
   let verifiedCardCount = 0;
+  let verifiedOfficialOnlyCount = 0;
+  let verifiedWithThirdPartyCount = 0;
   const excluded = [];
   const byBank = [];
 
@@ -44,6 +48,13 @@ export async function getCoverageSummary(dataDir) {
     const cards = Array.isArray(data.cards) ? data.cards : [];
     const bankVerified = cards.filter((c) => c.verified === true).length;
     verifiedCardCount += bankVerified;
+    for (const card of cards.filter((c) => c.verified === true)) {
+      if ((card.rules || []).some((r) => r.sourceType === "third-party")) {
+        verifiedWithThirdPartyCount += 1;
+      } else {
+        verifiedOfficialOnlyCount += 1;
+      }
+    }
     byBank.push({
       bankId,
       included: bankIncluded,
@@ -59,6 +70,8 @@ export async function getCoverageSummary(dataDir) {
     includedCount,
     excludedCount,
     verifiedCardCount,
+    verifiedOfficialOnlyCount,
+    verifiedWithThirdPartyCount,
     excluded,
     byBank,
   };
@@ -74,6 +87,8 @@ async function main() {
   console.log(`收錄卡片數（included）：${summary.includedCount}`);
   console.log(`未收錄卡片數（excluded）：${summary.excludedCount}`);
   console.log(`已核對卡片數（verified，AC-08 要求 50 張以上）：${summary.verifiedCardCount}`);
+  console.log(`  其中全部規則為官方來源：${summary.verifiedOfficialOnlyCount} 張`);
+  console.log(`  其中含第三方來源規則：${summary.verifiedWithThirdPartyCount} 張`);
 
   console.log(`\n各銀行明細：`);
   for (const b of summary.byBank) {

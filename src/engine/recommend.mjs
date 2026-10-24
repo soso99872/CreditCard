@@ -19,6 +19,10 @@ import { formatRate, formatCap, formatReason, estimateReward } from "./format.mj
  *   conditions: string[],
  *   sourceUrl: string,
  *   checkedAt: string,
+ *   sourceType: "official" | "third-party",
+ *   sourcePublishedAt: string | null, // 第三方來源的文章日期
+ *   secondSourceUrl: string | null,
+ *   secondSourcePublishedAt: string | null,
  *   matchLevel: "merchant" | "category" | "general",
  *   reason: string,
  *   estimatedAmount?: number,
@@ -149,6 +153,10 @@ export function recommend({
       conditions: rule.conditions || [],
       sourceUrl: rule.sourceUrl,
       checkedAt: rule.checkedAt,
+      sourceType: rule.sourceType ?? "official",
+      sourcePublishedAt: rule.sourcePublishedAt ?? null,
+      secondSourceUrl: rule.secondSourceUrl ?? null,
+      secondSourcePublishedAt: rule.secondSourcePublishedAt ?? null,
       matchLevel,
       reason,
     };

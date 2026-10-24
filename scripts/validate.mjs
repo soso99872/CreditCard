@@ -10,6 +10,7 @@ import {
   domainInWhitelist,
   loadJsonIfExists,
   loadBankFiles,
+  diffDays,
 } from "./lib.mjs";
 
 const VALID_CAP_UNITS = ["TWD", "point"];
@@ -23,6 +24,8 @@ const VALID_CAP_PERIODS = [
 ];
 const VALID_SCOPE_TYPES = ["general", "category", "merchant"];
 const VALID_BATCHES = [1, 2, 3];
+const VALID_SOURCE_TYPES = ["official", "third-party"];
+const THIRD_PARTY_MAX_AGE_DAYS = 90;
 const ISSUER_ID_RE = /^[a-z0-9-]+$/;
 
 /**
@@ -98,6 +101,77 @@ function validateIssuers(issuers) {
     }
   }
 
+  return errors;
+}
+
+function hostnameOf(url) {
+  try {
+    return new URL(url).hostname.toLowerCase();
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 檢查第三方來源規則（v2.4）的來源欄位，回傳錯誤訊息陣列。
+ * 文章日期必須不晚於 checkedAt，且距 checkedAt 不超過 90 天。
+ */
+function validateThirdPartySource(rule, ruleLoc) {
+  const errors = [];
+  const checkedOk = isValidDateString(rule.checkedAt);
+
+  const checkArticleDate = (field, value) => {
+    if (!isValidDateString(value)) {
+      errors.push(`${ruleLoc}：第三方來源缺少或格式錯誤的 ${field}（文章發布或更新日，YYYY-MM-DD）`);
+      return;
+    }
+    if (!checkedOk) return;
+    const age = diffDays(value, rule.checkedAt);
+    if (age < 0) {
+      errors.push(`${ruleLoc}：${field}（${value}）晚於 checkedAt（${rule.checkedAt}）`);
+    } else if (age > THIRD_PARTY_MAX_AGE_DAYS) {
+      errors.push(`${ruleLoc}：${field}（${value}）距 checkedAt（${rule.checkedAt}）超過 ${THIRD_PARTY_MAX_AGE_DAYS} 天`);
+    }
+  };
+
+  const checkHttps = (field, value) => {
+    if (hostnameOf(value) === null) {
+      errors.push(`${ruleLoc}：${field}（${value}）不是合法 URL`);
+    } else if (new URL(value).protocol !== "https:") {
+      errors.push(`${ruleLoc}：${field}（${value}）必須是 https`);
+    }
+  };
+
+  if (!rule.sourceUrl) {
+    errors.push(`${ruleLoc}：缺少 sourceUrl`);
+  } else {
+    checkHttps("sourceUrl", rule.sourceUrl);
+  }
+  checkArticleDate("sourcePublishedAt", rule.sourcePublishedAt);
+
+  const hasSecondUrl = rule.secondSourceUrl !== undefined && rule.secondSourceUrl !== null;
+  const hasSecondDate = rule.secondSourcePublishedAt !== undefined && rule.secondSourcePublishedAt !== null;
+  if (hasSecondUrl !== hasSecondDate) {
+    errors.push(`${ruleLoc}：secondSourceUrl 與 secondSourcePublishedAt 必須一起填或一起不填`);
+  } else if (hasSecondUrl) {
+    checkHttps("secondSourceUrl", rule.secondSourceUrl);
+    const h1 = hostnameOf(rule.sourceUrl);
+    const h2 = hostnameOf(rule.secondSourceUrl);
+    if (h1 && h2 && h1 === h2) {
+      errors.push(`${ruleLoc}：secondSourceUrl 與 sourceUrl 網域相同（${h1}），第二來源必須是不同網域`);
+    }
+    checkArticleDate("secondSourcePublishedAt", rule.secondSourcePublishedAt);
+  }
+
+  // 權益期間要涵蓋整理日
+  if (checkedOk) {
+    if (isValidDateString(rule.validFrom) && rule.validFrom > rule.checkedAt) {
+      errors.push(`${ruleLoc}：validFrom（${rule.validFrom}）晚於 checkedAt（${rule.checkedAt}），期間未涵蓋整理日`);
+    }
+    if (isValidDateString(rule.validTo) && rule.validTo < rule.checkedAt) {
+      errors.push(`${ruleLoc}：validTo（${rule.validTo}）早於 checkedAt（${rule.checkedAt}），期間未涵蓋整理日`);
+    }
+  }
   return errors;
 }
 
@@ -312,7 +386,12 @@ export async function validate(dataDir) {
           }
         }
 
-        if (!rule.sourceUrl) {
+        const sourceType = rule.sourceType ?? "official";
+        if (!VALID_SOURCE_TYPES.includes(sourceType)) {
+          errors.push(`${ruleLoc}：sourceType 必須是 ${VALID_SOURCE_TYPES.join("/")} 之一（沒寫視為 official）`);
+        } else if (sourceType === "third-party") {
+          errors.push(...validateThirdPartySource(rule, ruleLoc));
+        } else if (!rule.sourceUrl) {
           errors.push(`${ruleLoc}：缺少 sourceUrl`);
         } else if (issuer && !domainInWhitelist(rule.sourceUrl, issuer.officialDomains)) {
           errors.push(`${ruleLoc}：sourceUrl（${rule.sourceUrl}）網域不在 ${bankId} 的官方網域白名單內`);
