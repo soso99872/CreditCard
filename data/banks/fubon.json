@@ -1,79 +1,130 @@
 {
   "bankId": "fubon",
   "cardListUrl": "https://www.fubon.com/banking/personal/credit_card/",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-25",
   "coverage": [
-    { "cardName": "富邦J卡", "status": "included", "cardId": "fubon-jcard" },
-    { "cardName": "富邦IMPERIAL尊御世界卡", "status": "excluded", "reason": "本行卡片數量龐大（36 張），本期時間有限，優先查核主力現金回饋卡，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦數位生活卡", "status": "included", "cardId": "fubon-digitallife" },
-    { "cardName": "富邦鑽保卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦財神卡", "status": "included", "cardId": "fubon-fortune" },
-    { "cardName": "富邦富利生活系列卡", "status": "included", "cardId": "fubon-lifestyle" },
-    { "cardName": "富邦世界卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦無限卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦鈦金卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦銀行卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦商務卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄" },
-    { "cardName": "富邦Costco聯名卡", "status": "included", "cardId": "fubon-costco" },
-    { "cardName": "悍將勇士聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以球隊門票／商品折扣與可兌換商品之紅利點數為主，官方頁明確說明「無固定現金回饋百分比」，不符合主力現金或點數回饋卡範圍" },
-    { "cardName": "momo卡", "status": "included", "cardId": "fubon-momo" },
-    { "cardName": "台灣大哥大Open Possible聯名卡", "status": "included", "cardId": "fubon-op" },
-    { "cardName": "台茂聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以紅利點數（每20元1點，1,000點折抵館內消費NT$30）、消費滿額禮券與分期優惠為主，官方頁未提供明確現金或點數回饋百分比" },
-    { "cardName": "采盟聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以紅利點數倍數、刷卡金活動與折扣券為主，官方頁未提供明確現金或點數回饋百分比" },
-    { "cardName": "福華聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以福華紅利點數（兌換禮券／住宿憑證）為主，官方頁未提供明確現金或點數回饋百分比" },
-    { "cardName": "富邦悍將悠遊聯名卡", "status": "excluded", "reason": "與悍將勇士聯名卡同為球隊聯名系列，推斷回饋性質相近（球隊票務與商品折扣為主），因本行卡片數量龐大、時間有限，未逐一查核，暫不收錄" },
-    { "cardName": "Angel天使公益認同卡", "status": "excluded", "reason": "公益認同卡，核心權益為捐款支持公益機構，非以現金或點數回饋為主" },
-    { "cardName": "法鼓山自在卡", "status": "excluded", "reason": "宗教認同卡，核心權益為捐款支持法鼓山，非以現金或點數回饋為主" },
-    { "cardName": "台北市政府認同卡", "status": "excluded", "reason": "市政認同卡，核心權益為支持市政建設，非以現金或點數回饋為主" },
-    { "cardName": "廣三SOGO聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於114年2月28日起停止與廣三SOGO百貨合作並停止申辦，屬已停發卡片" },
-    { "cardName": "麗嬰房聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於2024年11月30日終止合作並停止申辦，屬已停發卡片" },
-    { "cardName": "DHC聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於2025年9月30日終止合約並停止申辦，持卡人已轉換發為富邦J卡（現金回饋），屬已停發卡片" },
-    { "cardName": "政府採購卡", "status": "excluded", "reason": "政府機關採購專用卡，非個人一般消費回饋卡" },
-    { "cardName": "LINE FRIENDS卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦Ａ money卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充" },
-    { "cardName": "富邦a miles航空卡", "status": "excluded", "reason": "哩程卡，本期不收錄" },
-    { "cardName": "富邦Costco採購卡", "status": "excluded", "reason": "企業採購用途卡，非個人一般消費回饋卡" },
-    { "cardName": "台灣大哥大悠遊聯名卡", "status": "excluded", "reason": "與Open Possible聯名卡同為台灣大哥大系列聯名卡，推斷為較舊／簡化版本，因本行卡片數量龐大、時間有限，未逐一查核獨立回饋百分比，暫不收錄" },
-    { "cardName": "悍將勇士簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" },
-    { "cardName": "勇士簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" },
-    { "cardName": "悍將簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" },
-    { "cardName": "VISA簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" },
-    { "cardName": "momo簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" }
+    {"cardName": "富邦J卡", "status": "included", "cardId": "fubon-jcard"},
+    {"cardName": "富邦IMPERIAL尊御世界卡", "status": "excluded", "reason": "本行卡片數量龐大（36 張），本期時間有限，優先查核主力現金回饋卡，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦數位生活卡", "status": "excluded", "reason": "2025/1/1 起停止受理申請，停辦卡不收錄（老闆 2026-10-25 裁示）"},
+    {"cardName": "富邦鑽保卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦財神卡", "status": "included", "cardId": "fubon-fortune"},
+    {"cardName": "富邦富利生活系列卡", "status": "included", "cardId": "fubon-lifestyle"},
+    {"cardName": "富邦世界卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦無限卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦鈦金卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦銀行卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦商務卡", "status": "excluded", "reason": "企業／商務用途卡，非個人一般消費回饋卡，本期不收錄"},
+    {"cardName": "富邦Costco聯名卡", "status": "included", "cardId": "fubon-costco"},
+    {"cardName": "悍將勇士聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以球隊門票／商品折扣與可兌換商品之紅利點數為主，官方頁明確說明「無固定現金回饋百分比」，不符合主力現金或點數回饋卡範圍"},
+    {"cardName": "momo卡", "status": "included", "cardId": "fubon-momo"},
+    {"cardName": "台灣大哥大Open Possible聯名卡", "status": "included", "cardId": "fubon-op"},
+    {"cardName": "台茂聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以紅利點數（每20元1點，1,000點折抵館內消費NT$30）、消費滿額禮券與分期優惠為主，官方頁未提供明確現金或點數回饋百分比"},
+    {"cardName": "采盟聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以紅利點數倍數、刷卡金活動與折扣券為主，官方頁未提供明確現金或點數回饋百分比"},
+    {"cardName": "福華聯名卡", "status": "excluded", "reason": "經查官方頁面，回饋以福華紅利點數（兌換禮券／住宿憑證）為主，官方頁未提供明確現金或點數回饋百分比"},
+    {"cardName": "富邦悍將悠遊聯名卡", "status": "excluded", "reason": "與悍將勇士聯名卡同為球隊聯名系列，推斷回饋性質相近（球隊票務與商品折扣為主），因本行卡片數量龐大、時間有限，未逐一查核，暫不收錄"},
+    {"cardName": "Angel天使公益認同卡", "status": "excluded", "reason": "公益認同卡，核心權益為捐款支持公益機構，非以現金或點數回饋為主"},
+    {"cardName": "法鼓山自在卡", "status": "excluded", "reason": "宗教認同卡，核心權益為捐款支持法鼓山，非以現金或點數回饋為主"},
+    {"cardName": "台北市政府認同卡", "status": "excluded", "reason": "市政認同卡，核心權益為支持市政建設，非以現金或點數回饋為主"},
+    {"cardName": "廣三SOGO聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於114年2月28日起停止與廣三SOGO百貨合作並停止申辦，屬已停發卡片"},
+    {"cardName": "麗嬰房聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於2024年11月30日終止合作並停止申辦，屬已停發卡片"},
+    {"cardName": "DHC聯名卡", "status": "excluded", "reason": "經查官方頁面，該卡已於2025年9月30日終止合約並停止申辦，持卡人已轉換發為富邦J卡（現金回饋），屬已停發卡片"},
+    {"cardName": "政府採購卡", "status": "excluded", "reason": "政府機關採購專用卡，非個人一般消費回饋卡"},
+    {"cardName": "LINE FRIENDS卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦Ａ money卡", "status": "excluded", "reason": "本行卡片數量龐大，本期時間有限，此卡回饋細節未逐一查核，暫不收錄，待後續資料維護補充"},
+    {"cardName": "富邦a miles航空卡", "status": "excluded", "reason": "哩程卡，本期不收錄"},
+    {"cardName": "富邦Costco採購卡", "status": "excluded", "reason": "企業採購用途卡，非個人一般消費回饋卡"},
+    {"cardName": "台灣大哥大悠遊聯名卡", "status": "excluded", "reason": "與Open Possible聯名卡同為台灣大哥大系列聯名卡，推斷為較舊／簡化版本，因本行卡片數量龐大、時間有限，未逐一查核獨立回饋百分比，暫不收錄"},
+    {"cardName": "悍將勇士簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡"},
+    {"cardName": "勇士簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡"},
+    {"cardName": "悍將簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡"},
+    {"cardName": "VISA簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡"},
+    {"cardName": "momo簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡"}
   ],
   "cards": [
     {
       "id": "fubon-jcard",
       "name": "富邦J卡",
+      "verified": true,
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
       "rules": [
         {
           "id": "fubon-jcard-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
-          "rawReward": "國內及其他海外地區一般消費最高1%現金回饋或LINE POINTS",
+          "rawReward": "國內一般消費基本1%回饋（J Cash 現金折抵帳單，或 J Points 為 LINE POINTS），無上限",
           "cap": null,
-          "conditions": ["需設定本行帳戶自動扣繳信用卡費或申請電子帳單（並取消紙本帳單），否則僅0.5%回饋"],
-          "validFrom": "2026-04-01",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
-          "checkedAt": "2026-10-10"
+          "conditions": ["需設定富邦帳戶自動扣繳信用卡費或申請電子帳單，否則僅0.5%回饋"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceUrl": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-14",
+          "secondSourceUrl": "https://rich01.com/fubon-j-card-review/",
+          "secondSourcePublishedAt": "2026-10-01",
+          "checkedAt": "2026-10-25"
         },
         {
           "id": "fubon-jcard-jp-kr-th",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["japan", "korea", "thailand"],
+            "basis": "mcc"
+          },
           "rate": 3,
-          "rawReward": "日本/韓國/泰國一般消費最高3%現金回饋或LINE POINTS",
+          "rawReward": "日本、韓國、泰國一般消費基本3%回饋，無上限",
           "cap": null,
-          "conditions": [
-            "僅限日本/韓國/泰國當地實體消費",
-            "需設定本行帳戶自動扣繳信用卡費或申請電子帳單，否則僅0.5%回饋"
-          ],
-          "validFrom": "2026-04-01",
+          "conditions": ["需設定富邦帳戶自動扣繳信用卡費或申請電子帳單，否則僅0.5%回饋"],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-14",
+          "secondSourceUrl": "https://rich01.com/fubon-j-card-review/",
+          "secondSourcePublishedAt": "2026-10-01",
+          "sourceNote": "Money101 未寫基本3%的期間，期間 2026-12-31 取自 rich01 表格；登錄限量加碼（合計最高6%）不收錄",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "fubon-jcard-overseas-other",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 1,
+          "rawReward": "日韓泰以外的其他海外地區一般消費基本1%回饋",
+          "cap": null,
+          "conditions": ["日韓泰以外的海外地區", "需設定富邦帳戶自動扣繳信用卡費或申請電子帳單，否則僅0.5%回饋"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceUrl": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-14",
+          "secondSourceUrl": "https://rich01.com/fubon-j-card-review/",
+          "secondSourcePublishedAt": "2026-10-01",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "fubon-jcard-ipass",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["一卡通"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "一卡通支付功能搭乘捷運、輕軌、台鐵、公車客運、公共自行車、渡輪回饋2%，無上限，回饋為刷卡金或 LINE POINTS",
+          "cap": null,
+          "conditions": ["限一卡通功能", "每月累積消費滿NT$100", "高鐵沒有回饋"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceUrl": "https://rich01.com/fubon-j-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-01",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
@@ -85,7 +136,7 @@
         {
           "id": "fubon-costco-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
           "rawReward": "店外一般消費1%好多金（無上限）",
           "cap": null,
@@ -98,7 +149,11 @@
         {
           "id": "fubon-costco-store",
           "plan": "",
-          "scope": { "type": "merchant", "merchants": ["好市多"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["好市多"],
+            "basis": "merchant-list"
+          },
           "rate": 2,
           "rawReward": "Costco店內消費2%好多金（無上限）",
           "cap": null,
@@ -111,10 +166,14 @@
         {
           "id": "fubon-costco-gas",
           "plan": "",
-          "scope": { "type": "merchant", "merchants": ["好市多加油站"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["好市多加油站"],
+            "basis": "merchant-list"
+          },
           "rate": 3,
           "rawReward": "Costco自助加油站最高3%好多金（原權益2%+加碼1%）",
-          "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "cap": {"amount": 200, "unit": "TWD", "period": "billing-cycle"},
           "conditions": ["基本2%無上限，加碼1%部分每期帳單上限200元"],
           "validFrom": "2023-08-08",
           "validTo": "2027-12-31",
@@ -126,39 +185,83 @@
     {
       "id": "fubon-momo",
       "name": "富邦momo卡",
+      "verified": true,
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
-      "pointValue": {
-        "unit": "mo幣",
-        "twdPerPoint": 1,
-        "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
-        "checkedAt": "2026-10-10"
-      },
       "rules": [
         {
           "id": "fubon-momo-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
-          "rawReward": "店外一般消費享1%現金回饋（無上限）",
+          "rawReward": "國內店外一般消費基本1%現金回饋，無上限",
           "cap": null,
-          "conditions": ["限折抵列示於次6期帳單上之momo卡店內外一般消費及保費"],
-          "validFrom": "2026-04-01",
+          "conditions": [],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://rich01.com/fubon-momo-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-07",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "fubon-momo-overseas",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 1,
+          "rawReward": "海外消費基本1%現金回饋，無上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://rich01.com/fubon-momo-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-07",
+          "checkedAt": "2026-10-25"
         },
         {
           "id": "fubon-momo-store",
           "plan": "",
-          "scope": { "type": "merchant", "merchants": ["momo購物網"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["momo購物網", "momo電視購物", "momo型錄", "mo店+"],
+            "basis": "merchant-list"
+          },
           "rate": 3,
-          "rawReward": "momo通路消費最高3% mo幣回饋",
-          "cap": { "amount": 1000, "unit": "point", "period": "billing-cycle" },
-          "conditions": ["2026年10月至2027年1月結帳帳單回饋上限調高為2,000 mo幣"],
-          "validFrom": "2026-04-01",
+          "rawReward": "momo通路（購物網、電視購物、型錄、mo店+）消費3% mo幣（1 mo幣=新台幣1元）",
+          "cap": {"amount": 2000, "unit": "point", "period": "billing-cycle"},
+          "conditions": ["3% mo幣每期帳單回饋上限2,000 mo幣（2026年10月至2027年1月帳單期間，原1,000；精選品牌加碼不計入上限）", "需直刷，以 LINE Pay、街口支付等第三方支付僅1%", "可綁 Apple Pay、Google Pay、Samsung Pay"],
+          "validFrom": null,
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://rich01.com/fubon-momo-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-07",
+          "secondSourceUrl": "https://creditcards.com.tw/creditcard/momo-cobranding-credit-card/",
+          "secondSourcePublishedAt": "2026-09-15",
+          "sourceNote": "兩篇數字不一致：creditcards.com.tw（2026-09-15）寫momo站內3%無上限，rich01（2026-10-07）寫上限2,000 mo幣，取較新的 rich01；上限週期 rich01 文中同時出現月上限與每期帳單，依帳單期間填 billing-cycle",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "fubon-momo-ipass",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["一卡通"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "一卡通大眾運輸消費每月滿100元回饋2%，無上限",
+          "cap": null,
+          "conditions": ["限實體卡過卡一卡通功能", "每月累積消費滿NT$100", "網路訂票無回饋"],
+          "validFrom": null,
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://rich01.com/fubon-momo-card-review/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-07",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
@@ -170,7 +273,7 @@
         {
           "id": "fubon-op-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 1,
           "rawReward": "一般消費最高1%現金回饋（無上限）",
           "cap": null,
@@ -183,10 +286,14 @@
         {
           "id": "fubon-op-telecom-5g",
           "plan": "台灣大5G資費",
-          "scope": { "type": "merchant", "merchants": ["台灣大哥大"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台灣大哥大"],
+            "basis": "merchant-list"
+          },
           "rate": 3.5,
           "rawReward": "台灣大5G資費3.5%回饋（1%無上限+2.5%加碼）",
-          "cap": { "amount": 500, "unit": "TWD", "period": "billing-cycle" },
+          "cap": {"amount": 500, "unit": "TWD", "period": "billing-cycle"},
           "conditions": ["限台灣大哥大5G資費", "當月消費滿NT$5,000才享加碼"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
@@ -196,10 +303,14 @@
         {
           "id": "fubon-op-telecom-4g",
           "plan": "台灣大4G資費",
-          "scope": { "type": "merchant", "merchants": ["台灣大哥大"], "basis": "merchant-list" },
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台灣大哥大"],
+            "basis": "merchant-list"
+          },
           "rate": 2,
           "rawReward": "台灣大4G資費2%回饋（1%無上限+1%加碼）",
-          "cap": { "amount": 500, "unit": "TWD", "period": "billing-cycle" },
+          "cap": {"amount": 500, "unit": "TWD", "period": "billing-cycle"},
           "conditions": ["限台灣大哥大4G資費", "當月消費滿NT$5,000才享加碼"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
@@ -209,10 +320,13 @@
         {
           "id": "fubon-op-category-bonus",
           "plan": "",
-          "scope": { "type": "category", "categories": ["convenience-store", "gas", "overseas"] },
+          "scope": {
+            "type": "category",
+            "categories": ["convenience-store", "gas", "overseas"]
+          },
           "rate": 2,
           "rawReward": "超商/加油/海外一般消費及指定AI通路最高2%（1%無上限+1%加碼）",
-          "cap": { "amount": 600, "unit": "TWD", "period": "billing-cycle" },
+          "cap": {"amount": 600, "unit": "TWD", "period": "billing-cycle"},
           "conditions": ["當月消費滿NT$5,000才享加碼", "加碼上限與店內消費加碼合併計算"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
@@ -229,7 +343,7 @@
         {
           "id": "fubon-fortune-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.5,
           "rawReward": "一般消費0.5%現金回饋（無上限）",
           "cap": null,
@@ -242,53 +356,15 @@
       ]
     },
     {
-      "id": "fubon-digitallife",
-      "name": "富邦數位生活卡",
-      "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/digitallife/digitallife.htm",
-      "rules": [
-        {
-          "id": "fubon-digitallife-general",
-          "plan": "",
-          "scope": { "type": "general" },
-          "rate": 0.5,
-          "rawReward": "一般消費0.5%現金回饋（無上限）",
-          "cap": null,
-          "conditions": [],
-          "validFrom": "2026-01-01",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/digitallife/digitallife.htm",
-          "checkedAt": "2026-10-10"
-        },
-        {
-          "id": "fubon-digitallife-digital",
-          "plan": "",
-          "scope": { "type": "category", "categories": ["online-shopping", "mobile-payment", "overseas"] },
-          "rate": 2,
-          "rawReward": "數位通路及海外消費最高2%（0.5%無上限+1.5%加碼，加碼上限每期帳單300元）",
-          "cap": { "amount": 300, "unit": "TWD", "period": "billing-cycle" },
-          "conditions": ["當月消費達NT$5,000才享加碼1.5%"],
-          "validFrom": "2026-01-01",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/digitallife/digitallife.htm",
-          "checkedAt": "2026-10-10"
-        }
-      ]
-    },
-    {
       "id": "fubon-lifestyle",
       "name": "富邦富利生活系列卡",
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/lifestyle/lifestyle.htm",
-      "pointValue": {
-        "unit": "紅利點數",
-        "twdPerPoint": 0.03,
-        "sourceUrl": "https://www.fubon.com/banking/creditcard/jsp/fubo.htm",
-        "checkedAt": "2026-10-10"
-      },
+      "pointValue": {"unit": "紅利點數", "twdPerPoint": 0.03, "sourceUrl": "https://www.fubon.com/banking/creditcard/jsp/fubo.htm", "checkedAt": "2026-10-10"},
       "rules": [
         {
           "id": "fubon-lifestyle-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general"},
           "rate": 0.15,
           "rawReward": "一般消費1倍紅利點數（每NT$20=1點，1點約值NT$0.03）",
           "cap": null,
@@ -301,16 +377,14 @@
         {
           "id": "fubon-lifestyle-category",
           "plan": "",
-          "scope": { "type": "category", "categories": ["department-store", "supermarket", "dining", "gas", "travel"] },
+          "scope": {
+            "type": "category",
+            "categories": ["department-store", "supermarket", "dining", "gas", "travel"]
+          },
           "rate": 0.75,
           "rawReward": "8大通路（百貨公司、量販店、超市、餐廳、加油站、書店、旅行社、航空公司）消費5倍紅利回饋（含原本1倍）",
           "cap": null,
-          "conditions": [
-            "限實體商店刷卡消費（旅行社及航空公司除外）",
-            "除航空公司外，其他通路限國內消費（新臺幣計價）",
-            "當期帳單回饋金額需達NT$3,000以上才享回饋",
-            "官方另含書店通路享5倍，本系統類別清單無對應書店項目"
-          ],
+          "conditions": ["限實體商店刷卡消費（旅行社及航空公司除外）", "除航空公司外，其他通路限國內消費（新臺幣計價）", "當期帳單回饋金額需達NT$3,000以上才享回饋", "官方另含書店通路享5倍，本系統類別清單無對應書店項目"],
           "validFrom": "2026-10-10",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/lifestyle/lifestyle.htm",

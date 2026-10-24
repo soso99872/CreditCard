@@ -1,13 +1,1594 @@
 {
   "bankId": "ctbc",
   "cardListUrl": "https://www.ctbcbank.com/twrbo/zh_tw/personal/creditcard.html",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-19",
   "coverage": [
-    {
-      "cardName": "（無法取得卡片清單）",
-      "status": "excluded",
-      "reason": "官方讀不到：中國信託全站（www.ctbcbank.com）有 Bot 防護機制，對任何路徑、任何 User-Agent（含一般瀏覽器 UA、Googlebot UA）、HTTP/1.0 皆回應 HTTP 202 的驗證挑戰頁（JS 導向頁，非實際內容），WebFetch 亦回報頁面為空白。已嘗試：cardListUrl 原頁與多個其他猜測路徑（/twrbo/zh_tw/personal/creditcard/apply.html、/zh_tw/personal/creditcard.html、/twrbo/en_us/personal/creditcard.html）、robots.txt（亦回應同一驗證頁而非真正的 robots.txt）、其他子網域（card.ctbcbank.com 為「行動帳單」App 非信用卡列表、survey.ctbcbank.com 為舊版問卷頁），均無法取得信用卡列表或任何卡片詳情頁內容。與 data/batches.md 第 3 節記載狀況一致。依指示不使用第三方網站補資料，本檔案無法列出實際卡片；第三方資料補充留待 T10 處理。"
-    }
+    {"cardName": "ALL ME 卡", "status": "included", "cardId": "ctbc-allme"},
+    {"cardName": "uniopen 聯名卡", "status": "included", "cardId": "ctbc-uniopen"},
+    {"cardName": "LINE Pay 卡（Visa）", "status": "included", "cardId": "ctbc-linepay-visa"},
+    {"cardName": "LINE Pay 卡（JCB）", "status": "included", "cardId": "ctbc-linepay-jcb"},
+    {"cardName": "（無法取得卡片清單）", "status": "excluded", "reason": "官方讀不到：中國信託全站（www.ctbcbank.com）有 Bot 防護機制，對任何路徑、任何 User-Agent（含一般瀏覽器 UA、Googlebot UA）、HTTP/1.0 皆回應 HTTP 202 的驗證挑戰頁（JS 導向頁，非實際內容），WebFetch 亦回報頁面為空白。已嘗試：cardListUrl 原頁與多個其他猜測路徑（/twrbo/zh_tw/personal/creditcard/apply.html、/zh_tw/personal/creditcard.html、/twrbo/en_us/personal/creditcard.html）、robots.txt（亦回應同一驗證頁而非真正的 robots.txt）、其他子網域（card.ctbcbank.com 為「行動帳單」App 非信用卡列表、survey.ctbcbank.com 為舊版問卷頁），均無法取得信用卡列表或任何卡片詳情頁內容。與 data/batches.md 第 3 節記載狀況一致。依指示不使用第三方網站補資料，本檔案無法列出實際卡片；第三方資料補充留待 T10 處理。"}
   ],
-  "cards": []
+  "cards": [
+    {
+      "id": "ctbc-allme",
+      "name": "中國信託 ALL ME 卡",
+      "verified": true,
+      "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html",
+      "rules": [
+        {
+          "id": "ctbc-allme-general",
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 1,
+          "rawReward": "國內外一般消費 1% ALL ME 點，無上限（不含本行不回饋交易項目）",
+          "cap": null,
+          "conditions": ["不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋", "消費日須在期間內且廠商請款入帳日於2027-01-15前", "正附卡合併計算，回饋給正卡持卡人"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-allme-overseas-store",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 2.2,
+          "rawReward": "國外實體商店消費最高 2.2% ALL ME 點（國內外一般消費 1% + 國外實體商店加碼 1.2%），無上限",
+          "cap": null,
+          "conditions": ["依交易地區／類型判定：請款時消費地或商店登記國別碼為國外，且須面對面交易（實體卡或Apple Pay、Google Pay、Samsung Pay實體感應）", "網路交易、條碼支付、第三方支付不算國外實體商店", "不含部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-allme-channel-pi-hami",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["7-ELEVEN", "全家便利商店", "萊爾富便利商店", "OK超商", "美廉社", "小北百貨", "心樸市集", "棉花田生機園地", "新東陽", "台灣大車隊", "臺鐵", "縣市路邊停車費", "台北市路外公有停車費", "嘟嘟房", "歐特儀", "正好停", "俥亭", "屈臣氏", "康是美", "POYA寶雅", "松本清", "日藥本舖", "特力屋", "全國電子", "三井3C", "丁丁連鎖藥妝", "京站時尚廣場", "美麗華百樂園", "宏匯廣場", "三創生活園區", "京站森林時光", "中友百貨", "屏東太平洋百貨", "FunNow", "拍享券", "一起寄", "九乘九文具專家", "卡多摩嬰童館", "Wstyle", "寵物公園", "讀墨電子書READMOO", "智冠Mycard", "屋馬燒肉", "85度C", "漢堡王", "鬍鬚張", "勝博殿", "大戶屋", "bb.q CHICKEN", "金色三麥", "赤鬼炙燒牛排", "金韓食", "欣葉", "欣葉小聚", "欣葉日本料理", "欣葉台菜", "欣葉呷哺呷哺", "NAGOMI", "築間集團", "築間幸福鍋物", "本格和牛燒肉放題", "燒肉Smile", "有之和牛鍋物放題", "築間燒肉本命", "芡芳", "築間酸菜魚", "朴庶韓國烤肉公社", "絵馬別邸", "紫木槿韓餐酒館", "雞湯大叔集團", "雞湯大叔", "雞湯桑"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "通路加碼1：Pi 拍錢包／Hami Pay 掃碼指定商店總回饋 3% ALL ME 點（國內外一般消費 1% + 加碼 2%）；四大超商為本行不回饋項目，以加碼 3% 補足計 3%",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["限以Pi拍錢包或Hami Pay掃碼交易", "上限僅計加碼部分：每戶每月300點，與通路加碼2合併、正附卡合併（基本1%無上限）", "四大超商（7-ELEVEN、全家、萊爾富、OK）基本0%＋加碼3%，僅限掃碼", "縣市路邊停車費、台北市路外公有停車費、拍享券、一起寄須以ALL ME卡綁定至Pi拍錢包支付", "臺鐵限火車站臨櫃與自動售票機交易", "百貨等非全門市櫃位適用掃碼付款，以店家現場公告為主", "指定商店認定依本行系統為主"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-allme-channel-telecom-ecommerce",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["中華電信", "神腦國際", "好買市集", "Hami生活小鋪", "神腦生活", "i寶貝", "Hami Video", "Hami書城月讀包", "i聽聽", "FunPark童書夢工廠", "KKBOX", "PCHome 24h購物", "露天市集", "PChome旅遊"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "通路加碼2：中華電信集團、網家集團指定通路總回饋 3% ALL ME 點（國內外一般消費 1% + 加碼 2%）",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["限以ALL ME卡刷卡，或綁定Pi拍錢包、Hami Pay、Apple Pay、Google Pay、Samsung Pay支付", "上限僅計加碼部分：每戶每月300點，與通路加碼1合併、正附卡合併（基本1%無上限）", "分期消費不適用", "中華電信、神腦國際消費不含繳納電信費用", "指定通路取自官方頁圖片文字"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html",
+          "checkedAt": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "id": "ctbc-uniopen",
+      "name": "中國信託 uniopen 聯名卡",
+      "verified": true,
+      "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+      "rules": [
+        {
+          "id": "ctbc-uniopen-general-domestic",
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 1,
+          "rawReward": "國內一般消費 1% OPENPOINT，無上限（不含本行不回饋交易項目）",
+          "cap": null,
+          "conditions": ["限國內一般消費", "須於核卡後連結uniopen會員", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-overseas-general",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 2,
+          "rawReward": "國外一般消費 2% OPENPOINT，無上限（不含本行不回饋交易項目）",
+          "cap": null,
+          "conditions": ["限國外一般刷卡交易", "須於核卡後連結uniopen會員", "不含部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-overseas-store",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 3,
+          "rawReward": "國外實體商店消費 3% OPENPOINT 無上限（國外一般 2% + 國外實體商店 1%）",
+          "cap": null,
+          "conditions": ["依交易地區／類型判定：請款時消費地或商店登記國別碼為國外，且須面對面交易（實體卡或Apple Pay、Google Pay、Samsung Pay實體支付）", "網路交易、條碼支付、第三方支付不算國外實體商店", "須於核卡後連結uniopen會員", "不含部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-overseas-store-bonus",
+          "plan": "國外實體加碼 8%",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 11,
+          "rawReward": "國外實體商店消費加碼 8%（每月回饋上限500點），合計最高 11% OPENPOINT（國外一般 2% + 國外實體 1% + 加碼 8%）；官方標示免領券",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["依交易地區／類型判定：國外面對面實體商店交易，網路交易、條碼支付、第三方支付不算", "上限僅計加碼8%部分：每月500點（每月1日至月底且次月5日前請款）", "須於核卡後連結uniopen會員", "不含部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）；含菸品等法定不得促銷商品整筆不回饋"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-bonus",
+          "plan": "集團加碼 2%",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "統一企業集團指定通路：國內一般消費 1% + 集團加碼 2% = 3% OPENPOINT，加碼每月回饋上限500點（正附卡合併）；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["加碼2%每月上限500點", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-stamp-2",
+          "plan": "踩點任務 2家",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "統一企業集團踩點任務：當月於集團品牌（需為不同品牌）單筆消費滿199元(含)達2家加碼 1% OPENPOINT；合計 4%＝國內一般 1% + 集團加碼 2% + 踩點 1%；踩點每月回饋上限500點；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["當月於集團品牌不同品牌各單筆消費滿NT$199（含）", "需達2家不同品牌", "踩點加碼每月上限500點，與集團加碼2%上限是否合併官方未寫", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-stamp-3",
+          "plan": "踩點任務 3家",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "統一企業集團踩點任務：當月於集團品牌（需為不同品牌）單筆消費滿199元(含)達3家加碼 2% OPENPOINT；合計 5%＝國內一般 1% + 集團加碼 2% + 踩點 2%；踩點每月回饋上限500點；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["當月於集團品牌不同品牌各單筆消費滿NT$199（含）", "需達3家不同品牌", "踩點加碼每月上限500點，與集團加碼2%上限是否合併官方未寫", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-stamp-4",
+          "plan": "踩點任務 4家",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "統一企業集團踩點任務：當月於集團品牌（需為不同品牌）單筆消費滿199元(含)達4家加碼 3% OPENPOINT；合計 6%＝國內一般 1% + 集團加碼 2% + 踩點 3%；踩點每月回饋上限500點；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["當月於集團品牌不同品牌各單筆消費滿NT$199（含）", "需達4家不同品牌", "踩點加碼每月上限500點，與集團加碼2%上限是否合併官方未寫", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-stamp-5",
+          "plan": "踩點任務 5家以上",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "統一企業集團踩點任務：當月於集團品牌（需為不同品牌）單筆消費滿199元(含)達5家以上加碼 4% OPENPOINT；合計 7%＝國內一般 1% + 集團加碼 2% + 踩點 4%；踩點每月回饋上限500點；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["當月於集團品牌不同品牌各單筆消費滿NT$199（含）", "需達5家以上不同品牌", "踩點加碼每月上限500點，與集團加碼2%上限是否合併官方未寫", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-group-icash",
+          "plan": "icash Pay 綁定加碼 4%",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一超商", "康是美", "夢時代購物中心", "統一時代百貨高雄店", "統一時代百貨台北店", "DREAM PLAZA", "UNIKCY", "玲廊滿藝", "BEING spa", "星巴克", "21Plus", "21風味館", "Mister Donut", "COLD STONE酷聖石冰淇淋", "Semeur聖娜", "萬家福", "樂家康", "Mia C'bon", "Yahoo購物", "博客來", "聖德科斯", "統一生機", "統一精工速邁樂加油站", "foodomo", "DUSKIN", "黑貓宅急便", "ibon售票系統", "統一渡假村", "台北W飯店", "台北時代寓所", "統一友友旅行社", "CupiCho", "統一夢公園", "統一超商商場", "統一行動牛奶車", "太子建設指定專案", "太子文旅"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "統一企業集團指定商店以 icash Pay 綁定 uniopen 聯名卡支付，單筆滿199元(含)加碼 4%（每月回饋上限150點，每月總回饋上限300萬點）；合計 7% OPENPOINT＝國內一般 1% + 集團加碼 2% + icash Pay 加碼 4%（再加踩點最高 11%）；注意：共同排除第10條「便利商店消費(含7-11、全家、萊爾富、OK超商之實體門市或線上商城)」不回饋，但活動頁範例把統一超商消費算進國內一般 1% 與集團加碼，兩者矛盾，本規則照活動頁範例計入統一超商",
+          "cap": {"amount": 150, "unit": "point", "period": "month"},
+          "conditions": ["須以icash Pay綁定uniopen聯名卡支付", "單筆消費滿NT$199（含）", "icash Pay加碼4%每月上限150點（每戶），全活動每月總上限300萬點，額滿即停", "僅限一般商品交易，不含自動加值、現金加值、儲值、自助加油（非定額加滿油）、菸類、繳稅費及代收代售、OPENPOINT折抵金額", "消費成功後60天內匯入", "消費須為指定商家名單內，且帳單明細須完整顯示指定商店名稱（設於百貨／商場／車站等內的商店可能無法判別而不回饋）", "須於核卡後連結uniopen會員", "正附卡合併計算", "萬家福不含線上商城；康是美門市限開立康是美發票之門市", "儲值交易不列入加碼（星巴克線上儲值適用至2026-12-31）", "官方說法不一致（待確認）"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-blackcat-freight",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["黑貓宅急便"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "刷卡支付黑貓宅急便運費享 OPENPOINT 5%，單月上限200（官方同時寫「200元」與「200點」），正附卡合併",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["須於中信銀行APP綁定uniopen會員帳號", "單筆全額以uniopen聯名卡實體卡支付運費，限黑貓寄取站或到府集貨服務", "不適用感應式支付（Apple Pay等）、行動錢包、電子票證加值", "上限原文單位「元」與「點」並存"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-uniopen-unisoku-freight",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["統一速達"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "統一速達使用 uniopen 聯名卡支付運費享 OPENPOINT 5% 回饋，單月上限200（官方原文單位寫「元」）",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["頁面未另載期間，依頁首共同活動期間", "上限原文單位寫「元」", "頁面未列注意事項"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+          "checkedAt": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "id": "ctbc-linepay-visa",
+      "name": "中國信託 LINE Pay 卡（Visa）",
+      "verified": true,
+      "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+      "rules": [
+        {
+          "id": "ctbc-linepay-visa-general",
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 1,
+          "rawReward": "國內外一般消費 1% LINE POINTS（信用卡，不含本行不回饋交易項目）",
+          "cap": null,
+          "conditions": ["須以LINE Pay卡綁定臺灣LINE Pay帳號", "分期交易不回饋", "使用LINE POINTS折抵時以折抵後金額計算回饋", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）及依約定條款收取的手續費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-overseas-store",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 2.8,
+          "rawReward": "國外實體商店消費 2.8% LINE POINTS（國內外一般消費 1% + 國外實體商店加碼 1.8%），限信用卡",
+          "cap": null,
+          "conditions": ["限信用卡（簽帳金融卡只有1%）", "依交易地區／類型判定：國外面對面實體商店交易（實體卡或Apple Pay、Google Pay、Samsung Pay實體支付）", "網路交易、條碼支付、第三方支付不算國外實體商店（僅一般1%）", "不含歐盟及部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "須以LINE Pay卡綁定臺灣LINE Pay帳號", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）及依約定條款收取的手續費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-ipass-transit",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["transport"],
+            "basis": "mcc"
+          },
+          "rate": 1,
+          "rawReward": "一卡通儲值金支付全台大眾交通工具（高鐵、計程車除外）1% LINE POINTS，當月累積消費每滿NT$100回饋1點，無上限",
+          "cap": null,
+          "conditions": ["限以已綁定LINE Pay卡之一卡通功能支付，大眾運輸含捷運輕軌、台鐵、公車客運、公共自行車、渡輪", "高鐵、計程車除外", "不含以Hami Pay、Fitbit Pay等感應支付的一卡通交易", "當月累積每滿NT$100回饋1點；正附卡、信用卡與簽帳金融卡分開計算"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-nutrition-light",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["營養師輕食"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "營養師輕食 LINE POINTS 5%（加碼4% + 一般1%）",
+          "cap": {"amount": 200, "unit": "point", "period": "campaign"},
+          "conditions": ["限官方網站", "單筆結帳滿NT$5,000", "加碼每人每帳號最高200點，限量400,000點，贈完為止"],
+          "validFrom": "2026-07-13",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-pinkoi",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["pinkoi"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "pinkoi 每週二／每月20號 LINE POINTS 最高 5%（一般1% + 加碼4%）",
+          "cap": {"amount": 150, "unit": "point", "period": "month"},
+          "conditions": ["限每週二及每月20號於Pinkoi官方網站或官方APP刷卡", "單筆滿NT$2,000", "每人每月上限150點"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-watsons-sunday",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["屈臣氏"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "屈臣氏週日：享屈臣氏寵i點7倍，滿額再享 LINE POINTS 7%",
+          "cap": null,
+          "conditions": ["限週日", "單筆滿NT$888", "限台灣屈臣氏實體門市、官方網站、屈臣氏APP，持中信LINE Pay卡", "單筆含儲值卡／電子禮物卡者整筆不享加碼", "週五寵i點活動為屈臣氏點數，未收錄"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-vacanza",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["VACANZA"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "VACANZA 線上商城最高81折 + LINE POINTS 6%（含一般1%，加碼5%）",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["限VACANZA線上商城", "以中信LINE Pay實體卡刷卡，或LINE Pay成功綁定掃碼支付方得回饋", "Apple Pay、Google Pay、LINE Pay等綁定行動載具支付不適用", "加碼5%每人每月上限300點", "現折優惠（單筆滿2,200折100、滿3,800折180）未收錄"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-perfect-trip",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["完美行"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "完美行滑雪：當月累積結帳金額滿NT$3,000(含)以上享 LINE POINTS 5%（含一般1%），加碼4%每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["僅信用卡（簽帳金融卡不適用）", "於完美行購物刷卡，當月累積結帳滿NT$3,000", "分期交易不回饋", "現折須用優惠代碼，未收錄", "活動至2026-12-31 22:59"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-sisley",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Sisley"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "Sisley LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 1000 點",
+          "cap": {"amount": 1000, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-12",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-estee",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["雅詩蘭黛"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "雅詩蘭黛 LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-lamer",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["LA MER"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "LA MER LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 300 點",
+          "cap": {"amount": 300, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-mid5-150",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Jo Malone", "M‧A‧C", "BOBBI BROWN", "ORIGINS", "CLINIQUE"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "Jo Malone、M‧A‧C、BOBBI BROWN、ORIGINS、CLINIQUE LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 150 點",
+          "cap": {"amount": 150, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-mid6-150",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["資生堂國際櫃", "Sabon", "蘭芝"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "資生堂國際櫃、Sabon、蘭芝 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 150 點",
+          "cap": {"amount": 150, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-fressia",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["肌膚之鑰"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "肌膚之鑰 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 400 點",
+          "cap": {"amount": 400, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-mid6-100",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["IPSA", "NARS", "watashi+"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "IPSA、NARS、watashi+ LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 100 點",
+          "cap": {"amount": 100, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-sulwhasoo",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["雪花秀"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "雪花秀 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 250 點",
+          "cap": {"amount": 250, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-hearth",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["hearth"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "hearth LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 300 點",
+          "cap": {"amount": 300, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-15",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-kafen",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["KAFEN"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "KAFEN LINE POINTS 8%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-beauty-under-armour",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Under Armour"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "Under Armour LINE POINTS 7%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-pet-park",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["寵物公園"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "寵物公園 LINE POINTS 最高 8%（加碼7% + 一般1%），實體門市及官網線上門市（LINE Pay 支付），每人每帳號最高 140 點",
+          "cap": {"amount": 140, "unit": "point", "period": "campaign"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "單筆結帳滿NT$2,000", "加碼每人每帳號最高140點，限量1,200,000點，贈完為止"],
+          "validFrom": "2026-06-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-maohai",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["毛孩時代"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "毛孩時代 LINE POINTS 最高 8%，官方網站（LINE Pay 支付），單筆最高 360 點",
+          "cap": {"amount": 360, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$2,700", "加碼單筆最高360點，限量105,000點，贈完為止"],
+          "validFrom": "2026-06-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-chaoning",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["超凝小姐"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "超凝小姐 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-wangmiao",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["汪喵星球"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "汪喵星球 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 40 點",
+          "cap": {"amount": 40, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$1,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-monster",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["怪獸部落"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "怪獸部落 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$500"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-heromama",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["HeroMama"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "HeroMama LINE POINTS 5%（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "單筆結帳滿NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-pad-cat-litter",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["撥撥貓砂"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "撥撥貓砂 LINE POINTS 10%（含一般1% + 活動加碼9%），每人每月上限300點",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["期間一覽頁寫2026-04-01起，主頁橫幅寫2026-01-01起"],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-fish-in-fish",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["魚中魚"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "魚中魚 LINE POINTS 4%，單筆滿NT$1,500，每人每月上限150點",
+          "cap": {"amount": 150, "unit": "point", "period": "month"},
+          "conditions": ["單筆滿NT$1,500"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-good-dog-life",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["好狗命"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "好狗命 LINE POINTS 5%，單筆滿NT$1,800，每人每月上限180點",
+          "cap": {"amount": 180, "unit": "point", "period": "month"},
+          "conditions": ["單筆滿NT$1,800"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-casetify",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["CASETiFY"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "CASETiFY LINE POINTS 4%，每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["限官方網站／APP"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-kobo-nordic",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["樂天Kobo", "北歐風格咖啡機"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "購精彩（樂天Kobo、北歐風格咖啡機）LINE POINTS 6%（含國內一般1% + 加碼5%），每人每月上限400點",
+          "cap": {"amount": 400, "unit": "point", "period": "month"},
+          "conditions": [],
+          "validFrom": "2026-05-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-studio-a",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["STUDIO A"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "STUDIO A LINE POINTS 2%，每人每月上限1,000點",
+          "cap": {"amount": 1000, "unit": "point", "period": "month"},
+          "conditions": ["限全臺指定門市／官網", "單筆滿NT$12,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-dyson",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["dyson"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "dyson LINE POINTS 6%，每人每月上限700點",
+          "cap": {"amount": 700, "unit": "point", "period": "month"},
+          "conditions": ["限官方線上商城", "單筆滿NT$10,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-xiaobei-thursday",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["小北百貨"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "小北百貨每週四 LINE POINTS 最高 5%，每人每月上限40點",
+          "cap": {"amount": 40, "unit": "point", "period": "month"},
+          "conditions": ["限每週四", "單筆滿NT$399"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-taiwan-driver",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台灣代駕"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "台灣代駕：最高折抵NT$800優惠券 + LINE POINTS 6%（含一般1% + 加碼5%），每人每月上限50點",
+          "cap": {"amount": 50, "unit": "point", "period": "month"},
+          "conditions": ["限中國信託LINE Pay信用卡卡友", "優惠券未收錄"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-uspace-ugo",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["USPACE停車", "USPACE洗車", "UGO"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "USPACE 停車（月領停車金）、USPACE 洗車、UGO LINE POINTS 7%，每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["USPACE停車的月領停車金未收錄"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-npc-gas",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["NPC全國加油站"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "NPC 全國加油站 LINE POINTS 5%（含國內外一般消費1%）",
+          "cap": null,
+          "conditions": ["限自助加油機、限汽油，指定加油站與自助加油島", "單筆交易上限NT$2,250或汽油100公升", "以行動支付綁LINE Pay JCB晶緻卡／極緻卡及全國APP大利PAY不適用"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-tejidian",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["全國特急電"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "全國特急電 LINE POINTS 10%，每人每月上限500點",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["須使用特急PAY綁定LINE Pay信用卡", "單筆滿NT$100", "期間一覽頁寫2026-01-01起，細則寫2026-10-01起，採細則"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-daishu-pharmacy",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["大樹藥局"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "大樹藥局母嬰用品日（每週三、六）：一般1% + 加碼 LINE POINTS 1%（每人每月上限60點），不限金額最高2%；滿額另享金鑽券與固定點數未收錄",
+          "cap": {"amount": 60, "unit": "point", "period": "month"},
+          "conditions": ["僅限LINE Pay Visa卡", "限每週三、六於大樹藥局一般實體門市（便利商店／量販店複合門市、機場店、金門店、榮總店除外）、線上購物、大樹健康購物網", "加碼1%每人每月上限60點"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-visa-kaisou-rental",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["格上租車"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "格上租車：最高折抵NT$650 + LINE POINTS 8%（含一般1% + 加碼7%），加碼7%每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["僅限LINE Pay Visa卡", "格上租車門市或官方線上租車平台；輸入優惠碼可領租車禮包（每人限領一次）", "上限200點為主頁與細則頁寫法，一覽頁寫250點，不一致"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        }
+      ]
+    },
+    {
+      "id": "ctbc-linepay-jcb",
+      "name": "中國信託 LINE Pay 卡（JCB）",
+      "verified": true,
+      "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+      "rules": [
+        {
+          "id": "ctbc-linepay-jcb-general",
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 1,
+          "rawReward": "國內外一般消費 1% LINE POINTS（信用卡，不含本行不回饋交易項目）",
+          "cap": null,
+          "conditions": ["須以LINE Pay卡綁定臺灣LINE Pay帳號", "分期交易不回饋", "使用LINE POINTS折抵時以折抵後金額計算回饋", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）及依約定條款收取的手續費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-overseas-store",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["overseas"],
+            "basis": "mcc"
+          },
+          "rate": 2.8,
+          "rawReward": "國外實體商店消費 2.8% LINE POINTS（國內外一般消費 1% + 國外實體商店加碼 1.8%），限信用卡",
+          "cap": null,
+          "conditions": ["限信用卡（簽帳金融卡只有1%）", "依交易地區／類型判定：國外面對面實體商店交易（實體卡或Apple Pay、Google Pay、Samsung Pay實體支付）", "網路交易、條碼支付、第三方支付不算國外實體商店（僅一般1%）", "不含歐盟及部分歐洲國家實體商店消費（共同排除第12條，本卡不在例外名單）", "須以LINE Pay卡綁定臺灣LINE Pay帳號", "不含本行不回饋交易項目（共同排除14條，含便利商店、電信費、全聯、儲值、繳稅費等）及依約定條款收取的手續費"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-ipass-transit",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": ["transport"],
+            "basis": "mcc"
+          },
+          "rate": 1,
+          "rawReward": "一卡通儲值金支付全台大眾交通工具（高鐵、計程車除外）1% LINE POINTS，當月累積消費每滿NT$100回饋1點，無上限",
+          "cap": null,
+          "conditions": ["限以已綁定LINE Pay卡之一卡通功能支付，大眾運輸含捷運輕軌、台鐵、公車客運、公共自行車、渡輪", "高鐵、計程車除外", "不含以Hami Pay、Fitbit Pay等感應支付的一卡通交易", "當月累積每滿NT$100回饋1點；正附卡、信用卡與簽帳金融卡分開計算", "JCB晶緻卡／極緻卡以行動支付綁定者不適用"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-nutrition-light",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["營養師輕食"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "營養師輕食 LINE POINTS 5%（加碼4% + 一般1%）",
+          "cap": {"amount": 200, "unit": "point", "period": "campaign"},
+          "conditions": ["限官方網站", "單筆結帳滿NT$5,000", "加碼每人每帳號最高200點，限量400,000點，贈完為止"],
+          "validFrom": "2026-07-13",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-pinkoi",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["pinkoi"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "pinkoi 每週二／每月20號 LINE POINTS 最高 5%（一般1% + 加碼4%）",
+          "cap": {"amount": 150, "unit": "point", "period": "month"},
+          "conditions": ["限每週二及每月20號於Pinkoi官方網站或官方APP刷卡", "單筆滿NT$2,000", "每人每月上限150點"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-watsons-sunday",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["屈臣氏"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "屈臣氏週日：享屈臣氏寵i點7倍，滿額再享 LINE POINTS 7%",
+          "cap": null,
+          "conditions": ["限週日", "單筆滿NT$888", "限台灣屈臣氏實體門市、官方網站、屈臣氏APP，持中信LINE Pay卡", "單筆含儲值卡／電子禮物卡者整筆不享加碼", "週五寵i點活動為屈臣氏點數，未收錄"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-vacanza",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["VACANZA"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "VACANZA 線上商城最高81折 + LINE POINTS 6%（含一般1%，加碼5%）",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["限VACANZA線上商城", "以中信LINE Pay實體卡刷卡，或LINE Pay成功綁定掃碼支付方得回饋", "Apple Pay、Google Pay、LINE Pay等綁定行動載具支付不適用", "加碼5%每人每月上限300點", "現折優惠（單筆滿2,200折100、滿3,800折180）未收錄"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-perfect-trip",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["完美行"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "完美行滑雪：當月累積結帳金額滿NT$3,000(含)以上享 LINE POINTS 5%（含一般1%），加碼4%每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["僅信用卡（簽帳金融卡不適用）", "於完美行購物刷卡，當月累積結帳滿NT$3,000", "分期交易不回饋", "現折須用優惠代碼，未收錄", "活動至2026-12-31 22:59"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-sisley",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Sisley"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "Sisley LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 1000 點",
+          "cap": {"amount": 1000, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-12",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-estee",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["雅詩蘭黛"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "雅詩蘭黛 LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-lamer",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["LA MER"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "LA MER LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 300 點",
+          "cap": {"amount": 300, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-mid5-150",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Jo Malone", "M‧A‧C", "BOBBI BROWN", "ORIGINS", "CLINIQUE"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "Jo Malone、M‧A‧C、BOBBI BROWN、ORIGINS、CLINIQUE LINE POINTS 5%（LINE Pay 支付，官方網站），單筆最高 150 點",
+          "cap": {"amount": 150, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-mid6-150",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["資生堂國際櫃", "Sabon", "蘭芝"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "資生堂國際櫃、Sabon、蘭芝 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 150 點",
+          "cap": {"amount": 150, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-fressia",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["肌膚之鑰"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "肌膚之鑰 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 400 點",
+          "cap": {"amount": 400, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-mid6-100",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["IPSA", "NARS", "watashi+"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "IPSA、NARS、watashi+ LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 100 點",
+          "cap": {"amount": 100, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-sulwhasoo",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["雪花秀"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "雪花秀 LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 250 點",
+          "cap": {"amount": 250, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-hearth",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["hearth"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "hearth LINE POINTS 6%（LINE Pay 支付，官方網站），單筆最高 300 點",
+          "cap": {"amount": 300, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-15",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-kafen",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["KAFEN"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "KAFEN LINE POINTS 8%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-beauty-under-armour",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Under Armour"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "Under Armour LINE POINTS 7%（LINE Pay 支付，官方網站），單筆最高 200 點",
+          "cap": {"amount": 200, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "加碼點數限量、贈完為止"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-pet-park",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["寵物公園"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "寵物公園 LINE POINTS 最高 8%（加碼7% + 一般1%），實體門市及官網線上門市（LINE Pay 支付），每人每帳號最高 140 點",
+          "cap": {"amount": 140, "unit": "point", "period": "campaign"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "單筆結帳滿NT$2,000", "加碼每人每帳號最高140點，限量1,200,000點，贈完為止"],
+          "validFrom": "2026-06-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-maohai",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["毛孩時代"],
+            "basis": "merchant-list"
+          },
+          "rate": 8,
+          "rawReward": "毛孩時代 LINE POINTS 最高 8%，官方網站（LINE Pay 支付），單筆最高 360 點",
+          "cap": {"amount": 360, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$2,700", "加碼單筆最高360點，限量105,000點，贈完為止"],
+          "validFrom": "2026-06-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-chaoning",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["超凝小姐"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "超凝小姐 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-wangmiao",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["汪喵星球"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "汪喵星球 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 40 點",
+          "cap": {"amount": 40, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$1,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-monster",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["怪獸部落"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "怪獸部落 LINE POINTS 5%，官方網站（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "限官方網站", "單筆結帳滿NT$500"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-heromama",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["HeroMama"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "HeroMama LINE POINTS 5%（LINE Pay 支付），單筆最高 30 點",
+          "cap": {"amount": 30, "unit": "point", "period": "per-transaction"},
+          "conditions": ["綁定中國信託LINE Pay聯名卡並透過LINE Pay支付功能消費", "單筆結帳滿NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-pad-cat-litter",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["撥撥貓砂"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "撥撥貓砂 LINE POINTS 10%（含一般1% + 活動加碼9%），每人每月上限300點",
+          "cap": {"amount": 300, "unit": "point", "period": "month"},
+          "conditions": ["期間一覽頁寫2026-04-01起，主頁橫幅寫2026-01-01起"],
+          "validFrom": "2026-04-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-fish-in-fish",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["魚中魚"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "魚中魚 LINE POINTS 4%，單筆滿NT$1,500，每人每月上限150點",
+          "cap": {"amount": 150, "unit": "point", "period": "month"},
+          "conditions": ["單筆滿NT$1,500"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-good-dog-life",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["好狗命"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "好狗命 LINE POINTS 5%，單筆滿NT$1,800，每人每月上限180點",
+          "cap": {"amount": 180, "unit": "point", "period": "month"},
+          "conditions": ["單筆滿NT$1,800"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-casetify",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["CASETiFY"],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "CASETiFY LINE POINTS 4%，每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["限官方網站／APP"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-kobo-nordic",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["樂天Kobo", "北歐風格咖啡機"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "購精彩（樂天Kobo、北歐風格咖啡機）LINE POINTS 6%（含國內一般1% + 加碼5%），每人每月上限400點",
+          "cap": {"amount": 400, "unit": "point", "period": "month"},
+          "conditions": [],
+          "validFrom": "2026-05-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-studio-a",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["STUDIO A"],
+            "basis": "merchant-list"
+          },
+          "rate": 2,
+          "rawReward": "STUDIO A LINE POINTS 2%，每人每月上限1,000點",
+          "cap": {"amount": 1000, "unit": "point", "period": "month"},
+          "conditions": ["限全臺指定門市／官網", "單筆滿NT$12,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-dyson",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["dyson"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "dyson LINE POINTS 6%，每人每月上限700點",
+          "cap": {"amount": 700, "unit": "point", "period": "month"},
+          "conditions": ["限官方線上商城", "單筆滿NT$10,000"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-xiaobei-thursday",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["小北百貨"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "小北百貨每週四 LINE POINTS 最高 5%，每人每月上限40點",
+          "cap": {"amount": 40, "unit": "point", "period": "month"},
+          "conditions": ["限每週四", "單筆滿NT$399"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-taiwan-driver",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["台灣代駕"],
+            "basis": "merchant-list"
+          },
+          "rate": 6,
+          "rawReward": "台灣代駕：最高折抵NT$800優惠券 + LINE POINTS 6%（含一般1% + 加碼5%），每人每月上限50點",
+          "cap": {"amount": 50, "unit": "point", "period": "month"},
+          "conditions": ["限中國信託LINE Pay信用卡卡友", "優惠券未收錄"],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-uspace-ugo",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["USPACE停車", "USPACE洗車", "UGO"],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "USPACE 停車（月領停車金）、USPACE 洗車、UGO LINE POINTS 7%，每人每月上限200點",
+          "cap": {"amount": 200, "unit": "point", "period": "month"},
+          "conditions": ["USPACE停車的月領停車金未收錄"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-npc-gas",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["NPC全國加油站"],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "NPC 全國加油站 LINE POINTS 5%（含國內外一般消費1%）",
+          "cap": null,
+          "conditions": ["限自助加油機、限汽油，指定加油站與自助加油島", "單筆交易上限NT$2,250或汽油100公升", "以行動支付綁LINE Pay JCB晶緻卡／極緻卡及全國APP大利PAY不適用"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        },
+        {
+          "id": "ctbc-linepay-jcb-tejidian",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["全國特急電"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "全國特急電 LINE POINTS 10%，每人每月上限500點",
+          "cap": {"amount": 500, "unit": "point", "period": "month"},
+          "conditions": ["須使用特急PAY綁定LINE Pay信用卡", "單筆滿NT$100", "期間一覽頁寫2026-01-01起，細則寫2026-10-01起，採細則"],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+          "checkedAt": "2026-10-19"
+        }
+      ]
+    }
+  ]
 }
