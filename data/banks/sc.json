@@ -1,10 +1,10 @@
 {
   "bankId": "sc",
   "cardListUrl": "https://www.sc.com/tw/credit-cards/",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-25",
   "coverage": [
     { "cardName": "渣打 Beyond 世界之極卡", "status": "included", "cardId": "sc-beyond" },
-    { "cardName": "渣打LINE Bank聯名卡", "status": "included", "cardId": "sc-linebank" },
+    { "cardName": "渣打LINE Bank聯名卡", "status": "excluded", "reason": "停止受理申請，停辦卡不收錄（老闆 2026-10-25 裁示）" },
     { "cardName": "渣打現金回饋御璽卡", "status": "included", "cardId": "sc-signature" },
     { "cardName": "渣打優先理財無限卡", "status": "included", "cardId": "sc-visa-infinite" },
     { "cardName": "昇利卡(現金回饋)", "status": "excluded", "reason": "已停發，官網標示為已停止受理申辦" },
@@ -44,7 +44,7 @@
           "rate": 5,
           "rawReward": "國內餐飲消費額外加碼4%，加計基本1%合計5%現金回饋",
           "cap": { "amount": 10000, "unit": "TWD", "period": "quarter" },
-          "conditions": [],
+          "conditions": ["國內餐飲加碼與國外消費加碼共用，每季加碼回饋合計上限NT$10,000"],
           "validFrom": "2026-08-17",
           "validTo": "2027-12-31",
           "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
@@ -57,30 +57,10 @@
           "rate": 3,
           "rawReward": "國外一般消費（不含餐飲）額外加碼2%，加計基本1%合計3%現金回饋",
           "cap": { "amount": 10000, "unit": "TWD", "period": "quarter" },
-          "conditions": [],
+          "conditions": ["國內餐飲加碼與國外消費加碼共用，每季加碼回饋合計上限NT$10,000"],
           "validFrom": "2026-08-17",
           "validTo": "2027-12-31",
           "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
-          "checkedAt": "2026-10-10"
-        }
-      ]
-    },
-    {
-      "id": "sc-linebank",
-      "name": "渣打LINE Bank聯名卡",
-      "sourceUrl": "https://www.sc.com/tw/credit-cards/linebank-coband-card/",
-      "rules": [
-        {
-          "id": "sc-linebank-general",
-          "plan": "",
-          "scope": { "type": "general" },
-          "rate": 1,
-          "rawReward": "國內消費1%、國外消費1%現金回饋",
-          "cap": null,
-          "conditions": [],
-          "validFrom": "2026-08-01",
-          "validTo": "2027-07-31",
-          "sourceUrl": "https://www.sc.com/tw/credit-cards/linebank-coband-card/",
           "checkedAt": "2026-10-10"
         }
       ]
@@ -95,26 +75,41 @@
           "plan": "",
           "scope": { "type": "general" },
           "rate": 1,
-          "rawReward": "基本1%現金回饋（不含保險費、學費、循環利息、預借現金等排除項目，以信用額度內消費為限）",
+          "rawReward": "國內一般消費1%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["每月以信用額度內淨新增消費計算，主附卡合併", "不含保險費、學費、稅捐、代扣繳費用、循環利息、預借現金、年費、分期本息及各項手續費", "溢繳金額及臨時調高額度後的消費不計入"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.sc.com/tw/credit-cards/signature-card/",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://icard.ai/card/detail/5e15aed55c386d001d389a96",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-15",
+          "sourceNote": "iCard.AI（2026/10/15 更新）寫活動至 2026/12/30 止，官方卡片頁寫 2026/7/1～12/31，期間取官方；其餘一致",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "sc-signature-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"] },
+          "rate": 1,
+          "rawReward": "海外一般消費1%現金回饋，無上限",
+          "cap": null,
+          "conditions": ["每月以信用額度內淨新增消費計算，主附卡合併", "不含保險費、學費、稅捐、代扣繳費用、循環利息、預借現金、年費、分期本息及各項手續費", "溢繳金額及臨時調高額度後的消費不計入"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://icard.ai/card/detail/5e15aed55c386d001d389a96",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-15",
+          "sourceNote": "同 sc-signature-general",
+          "checkedAt": "2026-10-25"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "sc-visa-infinite",
       "name": "渣打優先理財無限卡",
       "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
-      "pointValue": {
-        "unit": "紅利積點",
-        "twdPerPoint": 0.025,
-        "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
-        "checkedAt": "2026-10-10"
-      },
+      "pointValue": { "unit": "紅利積點", "twdPerPoint": 0.025, "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/", "checkedAt": "2026-10-10" },
       "rules": [
         {
           "id": "sc-visa-infinite-general",
