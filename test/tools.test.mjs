@@ -27,6 +27,7 @@ async function makeMutatedFixture(mutateBank) {
   const dir = await mkdtemp(path.join(os.tmpdir(), "cardpick-fixture-"));
   await cp(path.join(VALID_DIR, "categories.json"), path.join(dir, "categories.json"));
   await cp(path.join(VALID_DIR, "issuers.json"), path.join(dir, "issuers.json"));
+  await cp(path.join(VALID_DIR, "merchants.json"), path.join(dir, "merchants.json"));
   await mkdir(path.join(dir, "banks"));
   const bank = JSON.parse(
     await readFile(path.join(VALID_DIR, "banks", "testbank.json"), "utf8")

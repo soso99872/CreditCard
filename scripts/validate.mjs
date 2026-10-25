@@ -5,6 +5,7 @@
 
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { normalize } from "../src/engine/normalize.mjs";
 import {
   isValidDateString,
   domainInWhitelist,
@@ -170,6 +171,45 @@ function validateThirdPartySource(rule, ruleLoc) {
     }
     if (isValidDateString(rule.validTo) && rule.validTo < rule.checkedAt) {
       errors.push(`${ruleLoc}：validTo（${rule.validTo}）早於 checkedAt（${rule.checkedAt}），期間未涵蓋整理日`);
+    }
+  }
+  return errors;
+}
+
+// 商家庫檢查：merchants.json 本身（id 不重複、類別有效、正規化名稱不重複），
+// 以及 verified 卡的 merchant 規則商家名稱都要對得上商家庫。草稿卡不檢查。
+function validateMerchants(merchants, categoryIds, bankFiles) {
+  const errors = [];
+  const keyOwner = new Map(); // 正規化名稱 -> 商家 id
+  const seenIds = new Set();
+  for (const m of merchants || []) {
+    const loc = `[merchants.json] 商家 ${m?.id ?? "(無 id)"}`;
+    if (!m?.id || typeof m.id !== "string") errors.push(`${loc}：缺少 id`);
+    else if (seenIds.has(m.id)) errors.push(`${loc}：id 重複`);
+    else seenIds.add(m.id);
+    if (!m?.name) errors.push(`${loc}：缺少 name`);
+    if (m?.category === "general" || !categoryIds.has(m?.category)) {
+      errors.push(`${loc}：category「${m?.category}」不是有效類別（general 不可用）`);
+    }
+    for (const n of [m?.name, ...(m?.aliases || [])]) {
+      const key = normalize(n);
+      if (!key) continue;
+      const owner = keyOwner.get(key);
+      if (owner && owner !== m.id) errors.push(`${loc}：名稱「${n}」與商家 ${owner} 的名稱／別名相同（正規化後）`);
+      else keyOwner.set(key, m.id);
+    }
+  }
+  for (const { file, data } of bankFiles) {
+    for (const card of data?.cards || []) {
+      if (card.verified !== true) continue;
+      for (const rule of card.rules || []) {
+        if (rule?.scope?.type !== "merchant") continue;
+        for (const name of rule.scope.merchants || []) {
+          if (!keyOwner.has(normalize(name))) {
+            errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：商家「${name}」對不上 merchants.json`);
+          }
+        }
+      }
     }
   }
   return errors;
@@ -406,6 +446,16 @@ export async function validate(dataDir) {
         errors.push(`${cardLoc}：沒有 scope.type 為 general 的一般消費規則`);
       }
     }
+  }
+
+  const merchants = await loadJsonIfExists(path.join(dataDir, "merchants.json"));
+  const usesMerchants = bankFiles.some(({ data }) =>
+    (data?.cards || []).some((c) => c.verified === true && (c.rules || []).some((r) => r?.scope?.type === "merchant"))
+  );
+  if (merchants === null) {
+    if (usesMerchants) errors.push(`[data/merchants.json] 找不到檔案，但 verified 卡有 merchant 規則`);
+  } else {
+    errors.push(...validateMerchants(merchants, categoryIds, bankFiles));
   }
 
   return errors;

@@ -1,3 +1,35 @@
 {
-  "banks": []
+  "banks": [
+    "bankchb.json",
+    "bok.json",
+    "bot.json",
+    "cathay.json",
+    "coop.json",
+    "cotabank.json",
+    "ctbc.json",
+    "dbs.json",
+    "entiebank.json",
+    "esun.json",
+    "feib.json",
+    "firstbank.json",
+    "fubon.json",
+    "hncb.json",
+    "hsbc.json",
+    "hwatai.json",
+    "kgi.json",
+    "landbank.json",
+    "megabank.json",
+    "obank.json",
+    "rakuten-card.json",
+    "sc.json",
+    "scsb.json",
+    "sinopac.json",
+    "skbank.json",
+    "sunnybank.json",
+    "taishin.json",
+    "tbb.json",
+    "tcbbank.json",
+    "ubot.json",
+    "yuanta.json"
+  ]
 }

@@ -1,0 +1,23 @@
+{
+  "cinema": ["電影","影城","戲院","電影院","cinema","movie"],
+  "delivery": ["外送","外賣","訂餐","delivery","food delivery"],
+  "convenience-store": ["超商","便利商店","便利店","convenience store","7-11"],
+  "supermarket": ["超市","量販","賣場","生鮮","supermarket","hypermarket","grocery"],
+  "coffee": ["咖啡","cafe","coffee","咖啡廳","咖啡館","espresso"],
+  "gas": ["加油站","加油","gas station","petrol","中油"],
+  "pharmacy": ["藥局","藥妝","藥房","美妝","保健","pharmacy","drugstore"],
+  "department-store": ["百貨","商場","購物中心","outlet","department store","shopping mall","mall"],
+  "online-shopping": ["網購","購物網","網路購物","電商","線上購物","online shopping","e-shop","eshop"],
+  "mobile-payment": ["行動支付","電子支付","手機支付","mobile pay","e-wallet","wallet"],
+  "transport": ["捷運","台鐵","高鐵","計程車","公車","客運","停車","叫車","租車","充電","taxi","metro","parking"],
+  "travel": ["飯店","旅館","民宿","酒店","訂房","旅行社","旅遊","機票","航空","hotel","airline","flight","resort","travel"],
+  "entertainment": ["串流","影音","音樂","遊戲","ktv","樂園","售票","演唱會","電子書","訂閱","健身","streaming","game","subscription"],
+  "dining": ["餐廳","餐飲","餐","小吃","火鍋","燒肉","拉麵","麵店","便當","早餐","手搖","飲料","茶飲","牛排","壽司","披薩","漢堡","烤肉","restaurant","pizza","burger","bbq"],
+  "japan": ["日本","東京","大阪","京都","北海道","沖繩","japan","tokyo","osaka"],
+  "korea": ["韓國","首爾","釜山","濟州","korea","seoul"],
+  "thailand": ["泰國","曼谷","清邁","普吉","thailand","bangkok"],
+  "singapore": ["新加坡","星加坡","singapore"],
+  "americas": ["美國","加拿大","美洲","紐約","洛杉磯","夏威夷","america","usa","canada"],
+  "europe": ["歐洲","英國","法國","德國","義大利","巴黎","倫敦","europe","paris","london"],
+  "overseas": ["海外","國外","出國","外幣","免稅","overseas","duty free"]
+}

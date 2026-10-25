@@ -147,7 +147,10 @@ data/
 
 - `id`：全站唯一。
 - `aliases`：別名陣列，比對時與 `name` 一起視為相同商家（正規化後比對，見下）。
-- `category`：所屬類別 id，用於「類別」規則比對與推測類別顯示。
+- `category`：所屬類別 id，用於「類別」規則比對與推測類別顯示。必須是 `categories.json` 的 id，且不可為 `general`。
+- `name` 放品牌通稱（例如「星巴克」），英文名、官方全名、常見簡稱放 `aliases`；英文品牌（Starbucks、FamilyMart、Carrefour 等）也要收，供附近商家（OpenStreetMap 店名）比對。
+- 同一家的不同寫法合併成一筆，不要拆成兩個商家；同一個正規化名稱不能同時出現在兩個商家。
+- `npm run validate` 會檢查：id 不重複、category 有效、正規化名稱不重複；並檢查 verified 卡的 `merchant` 規則商家名稱都對得上（名稱或別名）。對不上時列出「銀行檔／卡片／規則 id／商家名」並 exit 1，請在這裡補商家或別名。草稿卡（未 verified）不檢查。
 
 ## `category-keywords.json`（T08 產出）
 
@@ -156,6 +159,7 @@ data/
 ```
 
 - 鍵為 `categories.json` 的 id（`general` 除外），值為關鍵字陣列，每個類別至少 3 個關鍵字。
+- 鍵的順序就是比對優先順序（查詢字串含任一關鍵字即判定該類別，先中先贏），所以較具體的類別排前面、泛用的餐飲排後面。
 
 ## `verified` 與草稿卡（T14）
 
