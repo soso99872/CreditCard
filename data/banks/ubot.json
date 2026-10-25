@@ -9,7 +9,7 @@
     { "cardName": "聯邦經典御璽卡", "status": "included", "cardId": "ubot-classic-signature" },
     { "cardName": "F1加油卡", "status": "included", "cardId": "ubot-f1-gas" },
     { "cardName": "個人商務白金卡", "status": "included", "cardId": "ubot-personal-business-platinum" },
-    { "cardName": "聯邦Mini卡", "status": "included", "cardId": "ubot-mini" },
+    { "cardName": "聯邦Mini卡", "status": "excluded", "reason": "停止受理申請，停辦卡不收錄（老闆 2026-10-25 裁示）；官方卡片頁標示「不再受理申辦」" },
     { "cardName": "理財型白金卡", "status": "included", "cardId": "ubot-wealth-platinum" },
     { "cardName": "幸福御守卡", "status": "included", "cardId": "ubot-happiness-guard" },
     { "cardName": "國民旅遊卡(一般民眾)", "status": "included", "cardId": "ubot-national-travel" },
@@ -229,26 +229,6 @@
       ]
     },
     {
-      "id": "ubot-mini",
-      "name": "聯邦Mini卡",
-      "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail216",
-      "rules": [
-        {
-          "id": "ubot-mini-general",
-          "plan": "",
-          "scope": { "type": "general" },
-          "rate": 0.5,
-          "rawReward": "一般消費最高0.5%現金回饋",
-          "cap": null,
-          "conditions": [],
-          "validFrom": "2023-08-01",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail216",
-          "checkedAt": "2026-10-10"
-        }
-      ]
-    },
-    {
       "id": "ubot-wealth-platinum",
       "name": "理財型白金卡",
       "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail205",
@@ -370,6 +350,7 @@
     {
       "id": "ubot-linebank",
       "name": "LINE Bank聯名卡",
+      "verified": true,
       "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
       "rules": [
         {
@@ -377,26 +358,48 @@
           "plan": "",
           "scope": { "type": "general" },
           "rate": 1,
-          "rawReward": "國內1%無上限",
+          "rawReward": "國內消費1%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2022-12-20",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
-          "checkedAt": "2026-10-10"
+          "conditions": ["限新增一般消費，正附卡合併計算", "回饋為刷卡金，次月15日入帳折抵刷卡消費"],
+          "validFrom": "2026-08-01",
+          "validTo": "2027-07-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-24",
+          "sourceNote": "第三方文章標示活動至2027/07/31、未寫起日；起日2026-08-01取自官方卡片頁（活動期間115/8/1-116/7/31）交叉比對，數字一致",
+          "checkedAt": "2026-10-25"
         },
         {
           "id": "ubot-linebank-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 2.5,
-          "rawReward": "國外2.5%無上限",
+          "rawReward": "國外消費2.5%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
-          "validFrom": "2022-12-20",
-          "validTo": "2026-12-31",
-          "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
-          "checkedAt": "2026-10-10"
+          "conditions": ["國外消費指帳單消費地幣別非新台幣之一般消費", "另收國外交易服務費"],
+          "validFrom": "2026-08-01",
+          "validTo": "2027-07-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-24",
+          "sourceNote": "第三方文章標示活動至2027/07/31、未寫起日；起日取自官方卡片頁交叉比對，數字一致",
+          "checkedAt": "2026-10-25"
+        },
+        {
+          "id": "ubot-linebank-online-bonus",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["MOMO購物網", "PChome線上購物", "淘寶", "蝦皮購物", "Coupang酷澎", "Netflix", "Disney+", "CatchPlay", "Spotify", "LINE TV", "KKTV", "KKBOX", "Steam", "PlayStation", "Nintendo", "Blizzard", "Garena", "MyCard", "tixCraft拓元", "KKTIX"], "basis": "merchant-list" },
+          "rate": 4,
+          "rawReward": "指定網購／影音／遊戲／購票消費國內1%＋加碼3%，加碼歸戶每月上限300元",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["加碼3%歸戶每月上限300元（約月刷10,000元，不含一般消費1%）", "免登錄", "外幣交易另計國外2.5%（第三方稱合計最高5.5%），本條保守以國內1%＋3%計"],
+          "validFrom": "2026-08-01",
+          "validTo": "2027-07-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-24",
+          "sourceNote": "第三方文章通路清單僅列影音（LINE TV、Spotify、KKTV、Netflix、Disney+、CatchPlay、KKBOX）、網購（momo、PChome、淘寶、蝦皮、酷澎）、遊戲（Nintendo、Steam、Blizzard、Garena、PlayStation）；官方卡片頁另列MyCard、tixCraft拓元、KKTIX，通路清單採官方較完整版本，比率與上限一致",
+          "checkedAt": "2026-10-25"
         }
       ]
     },
