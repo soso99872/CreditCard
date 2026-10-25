@@ -11,8 +11,13 @@
   <body>
     <main class="app">
       <header class="app-header">
-        <h1>刷哪張</h1>
-        <p id="checked-at" class="num" hidden></p>
+        <div class="app-title">
+          <h1>刷哪張</h1>
+          <p id="checked-at" class="num" hidden></p>
+        </div>
+        <button id="open-my-cards-btn" type="button" class="toolbar-mycards-btn">
+          我的卡片<span id="toolbar-my-cards-count" class="num">0</span>
+        </button>
       </header>
 
       <p id="loading-hint" class="hint" aria-live="polite">載入中…</p>
@@ -25,10 +30,10 @@
         資料核對中：目前的卡片資料正在逐批核對，核對完成後才會出現在推薦清單裡，請稍後再查詢。
       </p>
 
-      <form id="query-form" class="query" aria-label="查詢條件" hidden>
+      <form id="query-form" class="query" aria-label="搜尋" hidden>
         <div class="search suggest-field">
           <label for="query-input">在哪裡消費</label>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
             <path d="m20 20-3.5-3.5" stroke-linecap="round" />
           </svg>
@@ -36,14 +41,39 @@
             id="query-input"
             type="search"
             autocomplete="off"
+            enterkeyhint="search"
             placeholder="例：全聯、蝦皮、星巴克"
             aria-autocomplete="list"
             aria-controls="merchant-suggestions"
             aria-expanded="false"
           />
+          <button id="query-clear-btn" type="button" class="search-clear" aria-label="清除輸入" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+              <path d="M7 7l10 10M17 7 7 17" stroke-linecap="round" />
+            </svg>
+          </button>
         </div>
 
         <ul id="merchant-suggestions" class="suggestion-list" hidden></ul>
+      </form>
+
+      <section id="query-tools" class="query-tools" aria-label="查詢條件" hidden>
+        <div id="quick-section" class="quick-section">
+          <div id="recent-group" class="quick-group" role="group" aria-labelledby="recent-label" hidden>
+            <div class="quick-head">
+              <p id="recent-label" class="quick-label">最近查詢</p>
+              <button id="recent-clear-btn" type="button" class="link-button">清除</button>
+            </div>
+            <div id="recent-list" class="chip-row"></div>
+          </div>
+          <div class="quick-group" role="group" aria-labelledby="quick-label">
+            <p id="quick-label" class="quick-label">常用</p>
+            <div id="quick-list" class="chip-row">
+              <!-- 「附近商家」入口預留位置：T18b 接上地圖後拿掉 hidden -->
+              <button id="nearby-btn" type="button" class="quick-chip" hidden>附近商家</button>
+            </div>
+          </div>
+        </div>
 
         <div class="controls">
           <fieldset class="segmented">
@@ -67,10 +97,6 @@
           </label>
         </div>
 
-        <button id="open-my-cards-btn" type="button" class="toolbar-mycards-btn">
-          我的卡片<span id="toolbar-my-cards-count" class="num">0</span>
-        </button>
-
         <p id="match-hint" class="hint" hidden aria-live="polite"></p>
 
         <div id="category-quick-picker" class="category-quick-picker" hidden>
@@ -92,7 +118,7 @@
             更多類別
           </button>
         </div>
-      </form>
+      </section>
 
       <section id="empty-my-cards" class="banner banner-inline" hidden aria-live="polite">
         <p id="empty-my-cards-text"></p>

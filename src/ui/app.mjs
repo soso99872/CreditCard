@@ -23,7 +23,10 @@ import {
   hasHiddenMyCards,
 } from "./view-state.mjs";
 import { latestCheckedAt } from "./footer.mjs";
-import { findMerchantSuggestions } from "./suggest.mjs";
+import { findSuggestions } from "./suggest.mjs";
+import { loadRecent, addRecent, clearRecent } from "./recent.mjs";
+import { resolveQuickPicks } from "./quick-picks.mjs";
+import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { shortReasonText } from "./reason-text.mjs";
@@ -31,6 +34,9 @@ import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 /** 常用類別：手機寬度（< 768px）預設只顯示這幾顆，其餘摺進「更多類別」（tasks.md T12-2b）。 */
 const COMMON_CATEGORY_IDS = ["convenience-store", "supermarket", "coffee", "dining", "delivery", "gas"];
+
+/** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
+const CATEGORY_PICK_QUERY = "◎";
 
 const fmtAmount = new Intl.NumberFormat("zh-TW");
 
@@ -42,6 +48,8 @@ const state = {
   storage: null,
   query: "",
   selectedCategoryId: null,
+  pickedCategory: null, // 從快捷、建議或最近查詢直接點類別：{ id, name }；打字會清掉
+  recent: [], // 最近查詢（最多 5 筆，見 recent.mjs）
   amount: undefined,
   scope: defaultScope(),
   showAll: false,
@@ -58,6 +66,8 @@ const state = {
 };
 
 let dealInObserver = null;
+/** 上一次畫面上第 1 名是哪張（含查詢對象）；換了才播「從搜尋列抽出來」的動畫，輸入金額重算時不重播。 */
+let lastTopKey = null;
 
 /**
  * 目前資料中看得到的「我的卡片」id，見 state.myCardIds 的註解。
@@ -68,6 +78,15 @@ function currentVisibleMyCardIds() {
 }
 
 function cacheEls() {
+  els.app = document.querySelector(".app");
+  els.queryTools = document.getElementById("query-tools");
+  els.queryClearBtn = document.getElementById("query-clear-btn");
+  els.quickSection = document.getElementById("quick-section");
+  els.recentGroup = document.getElementById("recent-group");
+  els.recentList = document.getElementById("recent-list");
+  els.recentClearBtn = document.getElementById("recent-clear-btn");
+  els.quickList = document.getElementById("quick-list");
+  els.nearbyBtn = document.getElementById("nearby-btn");
   els.checkedAt = document.getElementById("checked-at");
   els.loadingHint = document.getElementById("loading-hint");
   els.loadError = document.getElementById("load-error");
@@ -114,19 +133,9 @@ function bankNameById(bankId) {
   return issuer ? issuer.name : bankId;
 }
 
-/**
- * 比對結果是不是「查無商家、也推測不出類別」而退回一般消費排行的狀態（AC-04）。
- * 畫面上這個狀態才需要顯示類別快選鈕；使用者點了快選鈕之後，match.categoryId
- * 會換成實際類別，但同一個查詢字串仍然落在這個分支，快選鈕要繼續顯示才能再切換。
- * @param {object | null} match
- * @returns {boolean}
- */
-function isCategoryFallback(match) {
-  return Boolean(match) && match.type === "category-selected";
-}
-
 function matchHintText(match) {
-  if (!match) return "";
+  // 直接點類別（快捷、建議、最近查詢）不是「查不到」，標題已寫明類別，不再多一行提示
+  if (!match || state.pickedCategory) return "";
   switch (match.type) {
     case "category-guess":
       return `依名稱推測為「${match.categoryName}」類別。`;
@@ -176,7 +185,7 @@ function resultTitleParts(match) {
  * 目前共 21 顆：手機寬度先只顯示 6 顆常用類別，其餘摺進「更多類別」（tasks.md T12-2b）。
  */
 function renderCategoryQuickPicker(match) {
-  const show = isCategoryFallback(match);
+  const show = showsCategoryFallback(match, state.pickedCategory);
   els.categoryQuickPicker.hidden = !show;
   els.categoryQuickList.replaceChildren();
   if (!show) return;
@@ -202,6 +211,7 @@ function renderCategoryQuickPicker(match) {
     button.setAttribute("aria-pressed", String(isActive));
     if (isActive) button.classList.add("is-active");
     button.addEventListener("click", () => {
+      state.pickedCategory = null; // 不清掉的話 pickedCategory 優先，按鈕會變死按鈕
       state.selectedCategoryId = category.id;
       state.showAll = false;
       recompute();
@@ -442,6 +452,7 @@ function buildStackItem(rec, rank, color) {
 }
 
 function hideTopAndRest() {
+  lastTopKey = null;
   els.top.hidden = true;
   els.rest.hidden = true;
   els.showAllBtn.hidden = true;
@@ -468,7 +479,9 @@ function renderMatchAndResults() {
   const noQueryYet = !match || match.type === "empty";
   if (noQueryYet || match.type === "need-category") {
     hideTopAndRest();
-    showEmptyHint(noQueryYet ? "輸入商家或選類別，立刻看推薦。" : "請選擇類別查詢。");
+    // 未輸入時有常用快捷就是最好的引導，不再多放一行說明字
+    if (noQueryYet && resolveQuickPicks(state.data).length > 0) hideEmptyHint();
+    else showEmptyHint(noQueryYet ? "輸入商家或選類別，立刻看推薦。" : "請選擇類別查詢。");
     return;
   }
 
@@ -494,7 +507,11 @@ function renderMatchAndResults() {
 
   els.top.hidden = false;
   els.resultTitle.replaceChildren(...resultTitleParts(match));
-  els.topCard.replaceChildren(buildCardFace(top, bankColor(top.bankId, bankOrder)));
+  const face = buildCardFace(top, bankColor(top.bankId, bankOrder));
+  const topKey = [match.type, match.merchantName || match.categoryId, top.bankId, top.cardName].join("|");
+  if (topKey !== lastTopKey) face.classList.add("is-fresh");
+  lastTopKey = topKey;
+  els.topCard.replaceChildren(face);
   els.receipt.replaceChildren(buildReceipt(top, match));
 
   stopDealAnimation();
@@ -622,6 +639,8 @@ function showLoadError(message) {
   els.draftBanner.hidden = true;
   els.checkingBanner.hidden = true;
   els.queryForm.hidden = true;
+  els.queryTools.hidden = true;
+  els.openMyCardsBtn.hidden = true;
   els.emptyMyCards.hidden = true;
   els.categoryQuickPicker.hidden = true;
   hideTopAndRest();
@@ -639,6 +658,8 @@ function render() {
   els.loadingHint.hidden = true;
   els.loadError.hidden = true;
   els.queryForm.hidden = false;
+  els.queryTools.hidden = false;
+  els.openMyCardsBtn.hidden = false;
   els.draftBanner.hidden = !state.draftMode;
 
   // 零張 verified 卡時（例如 preview 資料還在逐批核對），不要顯示開發者用的錯誤文案，
@@ -655,6 +676,10 @@ function render() {
   els.emptyMyCardsText.textContent = emptyMyCardsText();
 
   renderMatchAndResults();
+  renderQuickAndRecent();
+  els.queryClearBtn.hidden = els.queryInput.value === "";
+  // 有結果時手機上搜尋列固定在頂端（styles.css 的 .has-result .query）
+  els.app.classList.toggle("has-result", !els.top.hidden);
   renderCheckedAt();
 }
 
@@ -669,11 +694,11 @@ function recompute() {
   const useScope = effectiveScope(state.scope, visibleIds);
 
   const result = recommend({
-    query: state.query,
+    query: state.pickedCategory ? CATEGORY_PICK_QUERY : state.query,
     // 查無商家、也推測不出類別時，一律帶保底的「一般消費」類別，直接顯示一般消費排行，
     // 不用等使用者先選類別（AC-04）；「merchant」「category-guess」兩種比對結果本來就
     // 不理會這個參數，傳了也沒有影響。
-    selectedCategoryId: resolveSelectedCategoryId(state.selectedCategoryId),
+    selectedCategoryId: resolveSelectedCategoryId(state.pickedCategory?.id ?? state.selectedCategoryId),
     cards: state.data.cards,
     merchants: state.data.merchants,
     categoryKeywords: state.data.categoryKeywords,
@@ -690,32 +715,86 @@ function recompute() {
 }
 
 /**
- * 商家即時建議：輸入時列出名稱或別名相符的前幾筆商家，點選就直接查詢，
- * 不需要按 Enter 或送出鈕（AC-17）。
+ * 一次查詢：商家用名稱查，類別直接查類別。建議、快捷、最近查詢三處共用，
+ * 讓「點一下就出結果」只有一條路徑（T19）。
+ * @param {{kind: "merchant" | "category", id?: string, name: string}} entry
  */
+function runEntry(entry) {
+  state.query = entry.name;
+  state.pickedCategory = entry.kind === "category" ? { id: entry.id, name: entry.name } : null;
+  state.selectedCategoryId = null;
+  state.showAll = false;
+  state.categoryPickerExpanded = false;
+  els.queryInput.value = entry.name;
+  els.queryInput.blur(); // 收起手機鍵盤，結果才看得到
+  hideSuggestions();
+  state.recent = addRecent(state.storage, state.recent, {
+    kind: entry.kind,
+    name: entry.name,
+    ...(entry.kind === "category" ? { id: entry.id } : {}),
+  });
+  recompute();
+  if (window.scrollY > 0) window.scrollTo(0, 0);
+}
+
+/** 打字查詢（按 Enter 或離開輸入框）：把已經比對到商家（或推測出類別）的查詢記進最近查詢。 */
+function rememberTypedQuery() {
+  if (state.pickedCategory) return;
+  const entry = typedQueryEntry(state.match);
+  if (entry) state.recent = addRecent(state.storage, state.recent, entry);
+}
+
+function buildChip(entry, className) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = className;
+  button.textContent = entry.name;
+  button.addEventListener("click", () => runEntry(entry));
+  return button;
+}
+
+/** 未輸入時的「最近查詢」與「常用」；有查詢（或有結果）時整塊收起，把第一屏留給結果。 */
+function renderQuickAndRecent() {
+  const noQueryYet = !state.match || state.match.type === "empty";
+  els.quickSection.hidden = !noQueryYet;
+  if (!noQueryYet) return;
+
+  const categoryIds = new Set((state.data.categories || []).map((c) => c.id));
+  const recent = state.recent.filter((r) => r.kind === "merchant" || categoryIds.has(r.id));
+  els.recentGroup.hidden = recent.length === 0;
+  els.recentList.replaceChildren(...recent.map((r) => buildChip(r, "quick-chip quick-chip--recent")));
+
+  // 「附近商家」按鈕是 T18b 預留的位置（index.html 裡 hidden），保留在列尾
+  els.quickList.replaceChildren(
+    ...resolveQuickPicks(state.data).map((p) => buildChip(p, "quick-chip")),
+    els.nearbyBtn
+  );
+}
+
+/** 輸入時即時建議：商家與類別一起列（類別有「類別」標籤），點選就直接查詢（AC-17）。 */
 function renderSuggestions() {
-  const suggestions = findMerchantSuggestions(state.query, state.data.merchants, 8);
+  const suggestions = findSuggestions(state.query, state.data.merchants, state.data.categories, 8);
   els.merchantSuggestions.replaceChildren();
   const show = suggestions.length > 0;
   els.merchantSuggestions.hidden = !show;
   els.queryInput.setAttribute("aria-expanded", String(show));
   if (!show) return;
 
-  for (const merchant of suggestions) {
+  for (const item of suggestions) {
     const li = document.createElement("li");
     const button = document.createElement("button");
     button.type = "button";
     button.className = "suggestion-item";
-    button.textContent = merchant.name;
-    button.addEventListener("click", () => {
-      state.query = merchant.name;
-      els.queryInput.value = merchant.name;
-      state.selectedCategoryId = null;
-      state.showAll = false;
-      state.categoryPickerExpanded = false;
-      hideSuggestions();
-      recompute();
-    });
+    if (item.kind === "category") {
+      const tag = document.createElement("span");
+      tag.className = "suggestion-kind";
+      tag.textContent = "類別";
+      button.appendChild(tag);
+    }
+    const label = document.createElement("span");
+    label.textContent = item.name;
+    button.appendChild(label);
+    button.addEventListener("click", () => runEntry(item));
     li.appendChild(button);
     els.merchantSuggestions.appendChild(li);
   }
@@ -726,6 +805,7 @@ function wireEvents() {
 
   els.queryInput.addEventListener("input", (event) => {
     state.query = event.target.value;
+    state.pickedCategory = null;
     state.selectedCategoryId = null;
     state.showAll = false;
     state.categoryPickerExpanded = false;
@@ -741,9 +821,51 @@ function wireEvents() {
     hideSuggestions();
   });
 
+  // 沒按 Enter、直接點空白處或按清除離開輸入框，也算一次查詢（T19 主管退件③）
+  els.queryInput.addEventListener("change", rememberTypedQuery);
+
   els.queryInput.addEventListener("keydown", (event) => {
     if (event.key === "Escape") hideSuggestions();
+    if (event.key === "Enter") {
+      rememberTypedQuery();
+      hideSuggestions();
+      els.queryInput.blur();
+      renderQuickAndRecent();
+      if (window.scrollY > 0) window.scrollTo(0, 0);
+    }
   });
+
+  els.queryClearBtn.addEventListener("click", () => {
+    els.queryInput.value = "";
+    state.query = "";
+    state.pickedCategory = null;
+    state.selectedCategoryId = null;
+    state.showAll = false;
+    state.categoryPickerExpanded = false;
+    hideSuggestions();
+    recompute();
+    els.queryInput.focus();
+  });
+
+  els.recentClearBtn.addEventListener("click", () => {
+    state.recent = clearRecent(state.storage);
+    renderQuickAndRecent();
+  });
+
+  // 搜尋列固定在頂端時多一條底線，跟下面捲動的內容分得開；只讀一次捲動位置，用 rAF 節流。
+  let scrollTick = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (scrollTick) return;
+      scrollTick = true;
+      requestAnimationFrame(() => {
+        scrollTick = false;
+        els.queryForm.classList.toggle("is-stuck", window.scrollY > 24);
+      });
+    },
+    { passive: true }
+  );
 
   els.amountInput.addEventListener("input", (event) => {
     state.amount = parseAmount(event.target.value);
@@ -807,6 +929,7 @@ async function loadData() {
     // 讀出完整清單即可，不在這裡篩掉看不到的 id——篩選交給 currentVisibleMyCardIds()，
     // 否則新增或移除卡片時會把看不到的 id 一起覆寫掉，永久從 storage 消失（tasks.md T17）。
     state.myCardIds = loadMyCardIds(state.storage);
+    state.recent = loadRecent(state.storage);
   } catch (err) {
     state.loadError =
       `資料載入失敗：${err.message}。請確認資料目錄「${baseUrl}」是否正確，` +

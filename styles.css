@@ -98,8 +98,9 @@ a {
 /* ---------- 頁首 ---------- */
 .app-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: -4px;
 }
 
@@ -112,6 +113,7 @@ a {
 
 .app-header p {
   margin: 0;
+  line-height: 1.3;
   font-size: var(--fs-caption);
   color: var(--text-3);
 }
@@ -149,7 +151,7 @@ a {
 .search input {
   width: 100%;
   height: 56px;
-  padding: 0 16px 0 46px;
+  padding: 0 52px 0 46px;
   border: 0;
   border-radius: 16px;
   background: var(--surface);
@@ -158,6 +160,13 @@ a {
   font-size: 1.125rem;
   font-weight: 600;
   color: var(--text);
+}
+
+/* 預設字比輸入的字輕一階，才看得出「這是提示、不是已經輸入的內容」 */
+.search input::placeholder,
+.amount input::placeholder {
+  color: var(--text-3);
+  font-weight: 500;
 }
 
 .controls {
@@ -262,7 +271,7 @@ input:focus-visible {
 /* 我的卡片入口（工具列裡的次要按鈕）：surface + 陰影，跟 .amount 同一種「面板」語言，
    不另外畫邊框（整個頁面只用陰影表達層次，見 DESIGN.md 第 4 節）。 */
 .toolbar-mycards-btn {
-  justify-self: start;
+  flex: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -319,6 +328,181 @@ input:focus-visible {
 .suggestion-item:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: -2px;
+}
+
+/* 搜尋框右側的清除鈕：點擊範圍 44×44，圖示 16px，輸入框的原生清除叉叉關掉避免重複。 */
+.search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search-clear {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: var(--text-3);
+  transform: translateY(-50%);
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.search-clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+.search-clear:active {
+  background: var(--sunken);
+  color: var(--text);
+}
+
+.search-clear:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px;
+}
+
+@media (hover: hover) {
+  .search-clear:hover {
+    background: var(--sunken);
+    color: var(--text);
+  }
+}
+
+/* 搜尋列以外的條件（快捷、範圍、金額…）：跟搜尋列拆成兄弟元素，搜尋列才能單獨 sticky。
+   .app 的 gap 是 20px，這裡往上收 10px，維持原本搜尋列與條件之間的 10px。 */
+.query-tools {
+  display: grid;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+/* ---------- 常用快捷與最近查詢（T19）：未輸入時點一下就出結果 ---------- */
+.quick-section {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 6px;
+}
+
+.quick-group {
+  display: grid;
+  gap: 8px;
+}
+
+.quick-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 清除鈕的觸控範圍保持 44px，但負 margin 讓它不把標題列撐高 */
+.quick-head .link-button {
+  margin: -12px -2px;
+}
+
+.quick-label {
+  margin: 0;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-3);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-chip {
+  min-height: 44px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  transition: background-color 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+
+.quick-chip:active {
+  background: var(--sunken);
+  transform: scale(0.97);
+}
+
+.quick-chip:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* 最近查詢：凹下去的底＋時鐘小圖示，跟下面「常用」的浮起白底分得開（瞇眼看也分得出兩排不同） */
+.quick-chip--recent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px 0 12px;
+  background: var(--sunken);
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.quick-chip--recent::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: var(--text-3);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@media (hover: hover) {
+  .quick-chip.quick-chip--recent:hover {
+    background: var(--surface);
+  }
+
+  .quick-chip:hover {
+    background: var(--sunken);
+  }
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.suggestion-kind {
+  flex: none;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+}
+
+/* 有結果時，手機與平板（單欄）的搜尋列固定在頂端，可以直接換查詢；
+   用負 margin 抵消 padding，沒有固定時版面位置跟原本一樣。桌機雙欄第一屏本來就看得到搜尋框，不固定。 */
+@media (max-width: 959.98px) {
+  .has-result .query {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    margin: -8px -16px 0;
+    padding: 8px 16px;
+    background: var(--bg);
+    transition: box-shadow 150ms var(--ease-out);
+  }
+
+  .has-result .query.is-stuck {
+    box-shadow: 0 1px 0 var(--hairline), 0 6px 12px -8px rgba(0, 0, 0, 0.18);
+  }
 }
 
 .hint {
@@ -416,7 +600,8 @@ input:focus-visible {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 16px;
+  gap: 4px 16px;
+  padding: 6px 6px 6px 16px;
   background: var(--sunken);
   color: var(--text-2);
 }
@@ -553,6 +738,19 @@ input:focus-visible {
   color: #fff;
   box-shadow: var(--shadow-card);
   overflow: hidden;
+}
+
+/* 換了查詢（或換了第 1 名）時，卡片從上方搜尋列的方向滑下來停住：說明「結果是從剛剛的查詢來的」。
+   只在第 1 名換人時播，輸入金額重算不會重播；尊重 prefers-reduced-motion（檔尾的全域規則）。 */
+.card.is-fresh {
+  animation: card-draw 320ms var(--ease-out) both;
+}
+
+@keyframes card-draw {
+  from {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.97);
+  }
 }
 
 .card::after {
@@ -1089,13 +1287,14 @@ input:focus-visible {
 @media (min-width: 960px) {
   .app {
     max-width: 960px;
-    padding: 40px 32px 64px;
+    padding: 28px 32px 64px;
     display: grid;
     grid-template-columns: 420px 1fr;
     grid-template-areas:
       "header  header"
       "banners banners"
       "query   stack"
+      "tools   stack"
       "mid     stack"
       "empty   stack"
       "top     stack"
@@ -1117,6 +1316,10 @@ input:focus-visible {
 
   .query {
     grid-area: query;
+  }
+
+  .query-tools {
+    grid-area: tools;
   }
 
   #empty-my-cards {

@@ -30,3 +30,26 @@ export function findMerchantSuggestions(query, merchants, limit = 8) {
   }
   return matches;
 }
+
+/**
+ * 建議清單同時列商家與類別（T19）：類別名稱含輸入字串的排前面（最多 3 筆），再補商家，總共最多 limit 筆。
+ * 「一般消費」是保底狀態，不開放手動選，不列入。
+ * @returns {Array<{kind: "merchant" | "category", id: string, name: string}>}
+ */
+export function findSuggestions(query, merchants, categories, limit = 8) {
+  const trimmed = typeof query === "string" ? query.trim() : "";
+  const target = trimmed === "" ? "" : normalize(trimmed);
+  if (target === "") return [];
+
+  const cats = (categories || [])
+    .filter((c) => c.id !== "general" && normalize(c.name).includes(target))
+    .slice(0, Math.min(3, limit))
+    .map((c) => ({ kind: "category", id: c.id, name: c.name }));
+  const room = limit - cats.length;
+  const merchantHits = (room > 0 ? findMerchantSuggestions(trimmed, merchants, room) : []).map((m) => ({
+    kind: "merchant",
+    id: m.id,
+    name: m.name,
+  }));
+  return [...cats, ...merchantHits];
+}

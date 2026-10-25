@@ -48,3 +48,32 @@ describe("src/ui/suggest.mjs — findMerchantSuggestions（AC-17：輸入時即�
     assert.deepEqual(findMerchantSuggestions("全聯", undefined), []);
   });
 });
+
+import { findSuggestions } from "../src/ui/suggest.mjs";
+
+describe("src/ui/suggest.mjs — findSuggestions（T19：建議清單同時列商家與類別）", () => {
+  const categories = [
+    { id: "coffee", name: "咖啡" },
+    { id: "general", name: "一般消費" },
+    { id: "dining", name: "餐飲" },
+  ];
+  const shops = [
+    { id: "starbucks", name: "星巴克", aliases: [] },
+    { id: "louisa", name: "路易莎咖啡", aliases: [] },
+  ];
+
+  test("輸入「咖啡」：類別「咖啡」排在商家前面", () => {
+    const result = findSuggestions("咖啡", shops, categories);
+    assert.deepEqual(result.map((r) => `${r.kind}:${r.name}`), ["category:咖啡", "merchant:路易莎咖啡"]);
+    assert.equal(result[0].id, "coffee");
+  });
+
+  test("「一般消費」是保底狀態，不列入建議", () => {
+    assert.deepEqual(findSuggestions("一般", shops, categories), []);
+  });
+
+  test("空白輸入回傳空陣列；總數不超過 limit", () => {
+    assert.deepEqual(findSuggestions("  ", shops, categories), []);
+    assert.equal(findSuggestions("咖啡", shops, categories, 1).length, 1);
+  });
+});
