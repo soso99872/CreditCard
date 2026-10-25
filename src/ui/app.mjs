@@ -27,6 +27,7 @@ import { findMerchantSuggestions } from "./suggest.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { shortReasonText } from "./reason-text.mjs";
+import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 /** 常用類別：手機寬度（< 768px）預設只顯示這幾顆，其餘摺進「更多類別」（tasks.md T12-2b）。 */
 const COMMON_CATEGORY_IDS = ["convenience-store", "supermarket", "coffee", "dining", "delivery", "gas"];
@@ -326,19 +327,39 @@ function buildReceipt(rec, match) {
 
   const source = document.createElement("div");
   source.className = "source";
+  const third = thirdPartyInfo(rec);
   const checkedAt = document.createElement("span");
   checkedAt.className = "num";
-  checkedAt.textContent = `核對於 ${rec.checkedAt}`;
-  const link = document.createElement("a");
-  link.href = rec.sourceUrl;
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "看銀行原文";
-  source.append(checkedAt, link);
+  checkedAt.textContent = third ? third.dateText : `核對於 ${rec.checkedAt}`;
+  const links = document.createElement("span");
+  links.className = "source-links";
+  for (const l of third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }]) {
+    links.appendChild(buildSourceLink(l.url, l.text));
+  }
+  source.append(checkedAt, links);
 
   const fragment = document.createDocumentFragment();
-  fragment.append(main, facts, source);
+  if (third) fragment.append(main, buildThirdPartyTag(third.label), facts, source);
+  else fragment.append(main, facts, source);
   return fragment;
+}
+
+/** 來源連結：新分頁開啟。 */
+function buildSourceLink(url, text) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = text;
+  return link;
+}
+
+/** 第三方來源標籤（DESIGN.md「非官方來源標籤」）。 */
+function buildThirdPartyTag(text) {
+  const tag = document.createElement("p");
+  tag.className = "source-tag";
+  tag.textContent = text;
+  return tag;
 }
 
 /**
@@ -361,6 +382,14 @@ function buildStackItem(rec, rank, color) {
   name.textContent = rec.cardName;
   const sub = document.createElement("span");
   sub.textContent = `${rank + 1}．${shortBankName(bankNameById(rec.bankId))}`;
+  const thirdRow = thirdPartyInfo(rec);
+  if (thirdRow) {
+    // 收合狀態就要看得到：短標籤，完整說明在展開內容裡。
+    const flag = document.createElement("em");
+    flag.className = "row-flag";
+    flag.textContent = THIRD_PARTY_SHORT;
+    sub.append(" ", flag);
+  }
   nameWrap.append(name, sub);
   const rate = document.createElement("span");
   rate.className = "row-rate num";
@@ -393,15 +422,17 @@ function buildStackItem(rec, rank, color) {
     body.appendChild(cond);
   }
 
+  const third = thirdPartyInfo(rec);
+  if (third) body.appendChild(buildThirdPartyTag(third.label));
+
   const meta = document.createElement("p");
   meta.className = "muted";
-  meta.append(`核對於 ${rec.checkedAt}・`);
-  const link = document.createElement("a");
-  link.href = rec.sourceUrl;
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = "看銀行原文";
-  meta.appendChild(link);
+  meta.append(third ? `${third.dateText}・` : `核對於 ${rec.checkedAt}・`);
+  const sourceLinks = third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }];
+  sourceLinks.forEach((l, i) => {
+    if (i) meta.append("・");
+    meta.appendChild(buildSourceLink(l.url, l.text));
+  });
   body.appendChild(meta);
 
   const details = document.createElement("details");

@@ -1,0 +1,6 @@
+{
+  "coffee": ["咖啡", "cafe", "coffee"],
+  "convenience-store": ["超商"],
+  "supermarket": ["量販", "超市"],
+  "dining": ["餐廳", "小吃", "麵店"]
+}

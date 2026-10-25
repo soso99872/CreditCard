@@ -710,11 +710,46 @@ input:focus-visible {
 
 .source {
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   justify-content: space-between;
   align-items: center;
   margin-top: 16px;
   font-size: var(--fs-caption);
   color: var(--text-3);
+}
+
+/* 文章日期不斷字：320px 時連結換到下一行 */
+.source .num {
+  white-space: nowrap;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 20px;
+}
+
+/* 第三方來源標籤（DESIGN.md「非官方來源標籤」）：中性膠囊，不另外上色。 */
+.source-tag {
+  display: inline-block;
+  justify-self: start;
+  margin: 12px 0 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.row-body .source-tag {
+  margin: 0;
+  /* 同 .row-flag：淺色相上白色半透明底對比不到 4.5（主管 2026-10-25 第 3 次退件） */
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
 }
 
 .source a {
@@ -880,10 +915,24 @@ input:focus-visible {
   white-space: nowrap;
 }
 
+/* 不用 opacity：會把裡面的 .row-flag 一起打淡（主管 2026-10-25 退件） */
 .row-name span {
   display: block;
   font-size: var(--fs-caption);
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.row-name .row-flag {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  /* 深色底配白字：淺色相（如 178）上白色半透明底對比不到 4.5 */
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .row-rate {

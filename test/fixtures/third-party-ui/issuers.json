@@ -1,0 +1,9 @@
+[
+  {
+    "id": "testbank",
+    "name": "測試銀行",
+    "officialDomains": ["testbank.example.com"],
+    "cardListUrl": "https://testbank.example.com/credit-cards",
+    "batch": 1
+  }
+]

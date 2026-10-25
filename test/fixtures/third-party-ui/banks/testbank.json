@@ -1,0 +1,258 @@
+{
+  "bankId": "testbank",
+  "cardListUrl": "https://testbank.example.com/credit-cards",
+  "checkedAt": "2026-09-01",
+  "coverage": [
+    {
+      "cardName": "一般卡",
+      "status": "included",
+      "cardId": "testbank-general"
+    },
+    {
+      "cardName": "量販卡",
+      "status": "included",
+      "cardId": "testbank-super"
+    },
+    {
+      "cardName": "未選卡",
+      "status": "included",
+      "cardId": "testbank-mycard-excluded"
+    },
+    {
+      "cardName": "草稿卡",
+      "status": "included",
+      "cardId": "testbank-draft"
+    }
+  ],
+  "cards": [
+    {
+      "id": "testbank-general",
+      "name": "一般卡",
+      "verified": true,
+      "sourceUrl": "https://testbank.example.com/cards/general",
+      "rules": [
+        {
+          "id": "testbank-general-g",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.5,
+          "rawReward": "0.5%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/general",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-general-seven",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "統一超商"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 12,
+          "rawReward": "12%",
+          "cap": {
+            "amount": 1000,
+            "unit": "TWD",
+            "period": "month"
+          },
+          "conditions": [
+            "限實體門市"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://blog-a.example.net/post/seven-4-percent",
+          "checkedAt": "2026-09-01",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-10-12",
+          "secondSourceUrl": "https://news-b.example.org/2026/10/seven-card",
+          "secondSourcePublishedAt": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "testbank-super",
+      "name": "量販卡",
+      "verified": true,
+      "sourceUrl": "https://testbank.example.com/cards/super",
+      "pointValue": {
+        "unit": "點",
+        "twdPerPoint": 1,
+        "sourceUrl": "https://testbank.example.com/points",
+        "checkedAt": "2026-09-01"
+      },
+      "rules": [
+        {
+          "id": "testbank-super-g",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.3,
+          "rawReward": "0.3%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://blog-c.example.net/super-card",
+          "checkedAt": "2026-09-01",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-30"
+        },
+        {
+          "id": "testbank-super-category",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "supermarket"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "2%",
+          "cap": {
+            "amount": 500,
+            "unit": "TWD",
+            "period": "month"
+          },
+          "conditions": [
+            "需登錄"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/super",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-super-coffee",
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "coffee"
+            ]
+          },
+          "rate": 1.5,
+          "rawReward": "1.5%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/super",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-super-pxmart",
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "全聯"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "200 點／100 元",
+          "cap": {
+            "amount": 200,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "需設定自動扣繳"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/super",
+          "checkedAt": "2026-09-01"
+        },
+        {
+          "id": "testbank-super-pxmart-expired",
+          "plan": "已結束活動",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "全聯"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "10%（活動已結束）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2025-01-01",
+          "validTo": "2026-01-01",
+          "sourceUrl": "https://testbank.example.com/cards/super",
+          "checkedAt": "2026-01-02"
+        },
+        {
+          "id": "testbank-super-future",
+          "plan": "尚未開始活動",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 99,
+          "rawReward": "99%（尚未開始）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2099-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/super",
+          "checkedAt": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": "testbank-mycard-excluded",
+      "name": "未選卡",
+      "verified": true,
+      "sourceUrl": "https://testbank.example.com/cards/excluded",
+      "rules": [
+        {
+          "id": "testbank-mycard-excluded-g",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 10,
+          "rawReward": "10%",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/excluded",
+          "checkedAt": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": "testbank-draft",
+      "name": "草稿卡",
+      "sourceUrl": "https://testbank.example.com/cards/draft",
+      "rules": [
+        {
+          "id": "testbank-draft-g",
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 50,
+          "rawReward": "50%（尚未核對，不應出現在推薦裡）",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-01-01",
+          "validTo": null,
+          "sourceUrl": "https://testbank.example.com/cards/draft",
+          "checkedAt": "2026-09-01"
+        }
+      ]
+    }
+  ]
+}
