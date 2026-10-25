@@ -1,0 +1,20 @@
+{
+  "amenity": {
+    "cafe": "coffee",
+    "fast_food": "dining",
+    "restaurant": "dining",
+    "fuel": "gas",
+    "pharmacy": "pharmacy",
+    "cinema": "cinema"
+  },
+  "shop": {
+    "convenience": "convenience-store",
+    "supermarket": "supermarket",
+    "department_store": "department-store",
+    "mall": "department-store",
+    "chemist": "pharmacy"
+  },
+  "tourism": {
+    "hotel": "travel"
+  }
+}

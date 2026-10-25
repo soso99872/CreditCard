@@ -1,0 +1,13 @@
+{
+  "elements": [
+    { "type": "node", "id": 1, "lat": 25.0478, "lon": 121.5170, "tags": { "name": "星巴克 台北車站門市", "amenity": "cafe", "brand": "星巴克" } },
+    { "type": "node", "id": 2, "lat": 25.0480, "lon": 121.5172, "tags": { "name": "7-ELEVEN 鑫鑫門市", "shop": "convenience" } },
+    { "type": "way", "id": 3, "center": { "lat": 25.0490, "lon": 121.5180 }, "tags": { "name": "FamilyMart 全家 北車店", "shop": "convenience", "brand:zh": "全家" } },
+    { "type": "node", "id": 4, "lat": 25.0485, "lon": 121.5175, "tags": { "name": "路過咖啡", "amenity": "cafe" } },
+    { "type": "node", "id": 5, "lat": 25.0500, "lon": 121.5190, "tags": { "name": "阿伯的雜貨", "shop": "yes" } },
+    { "type": "node", "id": 6, "lat": 25.0480, "lon": 121.5172, "tags": { "name": "7-ELEVEN 鑫鑫門市", "shop": "convenience" } },
+    { "type": "node", "id": 7, "lat": 25.0479, "lon": 121.5171, "tags": { "name": "某某(台北車站)", "brand": "麥當勞", "amenity": "fast_food" } },
+    { "type": "node", "id": 8, "lat": 25.0481, "lon": 121.5173, "tags": { "amenity": "cafe" } },
+    { "type": "node", "id": 9, "lat": 25.0482, "lon": 121.5174, "tags": { "name": "OK超商", "shop": "convenience" } }
+  ]
+}

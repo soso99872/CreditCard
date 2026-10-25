@@ -7,3 +7,4 @@ export { isRuleActive, selectBestRule } from "./rules.mjs";
 export { formatRate, formatCap, formatReason, estimateReward } from "./format.mjs";
 export { loadAllData } from "./data-loader.mjs";
 export { recommend } from "./recommend.mjs";
+export { buildOverpassQuery, parseNearby } from "./nearby.mjs";

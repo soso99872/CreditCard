@@ -179,3 +179,13 @@ data/
 ## 日期格式
 
 所有日期欄位（`checkedAt`、`validFrom`、`validTo`）皆為 `YYYY-MM-DD`（ISO 8601 日期），必須是合法日期（例如不可為 `2026-02-30`）。
+
+## `osm-categories.json`（T18a）
+
+```json
+{ "amenity": { "cafe": "coffee" }, "shop": { "convenience": "convenience-store" } }
+```
+
+- 第一層是 OpenStreetMap 標籤鍵（`amenity`、`shop`、`tourism`），第二層是標籤值 → `categories.json` 的類別 id。
+- 供 `src/engine/nearby.mjs` 的 `parseNearby` 在店名對不到商家庫時，依 OSM 類型推測類別（`category-guess`，`by: "osm-tag"`）。對不到的店為 `general`。
+- 類別 id 必須存在於 `categories.json`（`test/nearby.test.mjs` 會檢查）。
