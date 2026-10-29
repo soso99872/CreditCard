@@ -6,6 +6,10 @@
 
 - Node.js 24 以上（純用內建模組，不需 `npm install`，沒有任何外部套件依賴）
 
+## 附近商家（地圖）
+
+按「附近商家」才載入本機的 Leaflet（`vendor/leaflet/`）、OpenStreetMap 圖磚與 Overpass API 查附近店家，全部免金鑰；頁面載入時不發任何地圖請求。
+
 ## 資料格式
 
 見 `data/SCHEMA.md`。

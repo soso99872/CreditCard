@@ -2,7 +2,7 @@
 
 import { normalize } from "./normalize.mjs";
 
-const MAX_RESULTS = 30;
+export const MAX_RESULTS = 30;
 
 /**
  * 產生 Overpass QL：半徑內有 name 的 shop、常見 amenity、旅館（節點與 way，way 取 center）。

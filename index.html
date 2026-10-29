@@ -69,8 +69,7 @@
           <div class="quick-group" role="group" aria-labelledby="quick-label">
             <p id="quick-label" class="quick-label">常用</p>
             <div id="quick-list" class="chip-row">
-              <!-- 「附近商家」入口預留位置：T18b 接上地圖後拿掉 hidden -->
-              <button id="nearby-btn" type="button" class="quick-chip" hidden>附近商家</button>
+              <button id="nearby-btn" type="button" class="quick-chip quick-chip--nearby" aria-haspopup="dialog">附近商家</button>
             </div>
           </div>
         </div>
@@ -126,7 +125,7 @@
       </section>
 
       <section id="top" class="top" aria-labelledby="result-title" hidden>
-        <h2 id="result-title" class="result-title"></h2>
+        <h2 id="result-title" class="result-title" tabindex="-1"></h2>
         <div id="top-card"></div>
         <div id="receipt" class="receipt"></div>
       </section>
@@ -162,6 +161,27 @@
           <input id="card-search-input" type="text" autocomplete="off" placeholder="例：國泰、CUBE" />
         </div>
         <ul id="card-search-results" class="search-results"></ul>
+      </dialog>
+
+      <dialog id="nearby-dialog" class="nearby-dialog" aria-labelledby="nearby-title">
+        <header class="nearby-head">
+          <h2 id="nearby-title">附近商家</h2>
+          <button id="nearby-close-btn" type="button" class="nearby-close">關閉</button>
+        </header>
+        <div class="nearby-map-wrap">
+          <div id="nearby-map" class="nearby-map" role="application" aria-label="地圖，可拖動；下方清單是同樣內容的文字版"></div>
+          <span class="nearby-crosshair" aria-hidden="true"></span>
+          <ul class="nearby-legend" aria-hidden="true">
+            <li><i class="nearby-dot nearby-dot--merchant"></i>有回饋資料</li>
+            <li><i class="nearby-dot nearby-dot--category-guess"></i>推測類別</li>
+            <li><i class="nearby-dot nearby-dot--general"></i>查無對應</li>
+          </ul>
+        </div>
+        <div class="nearby-bar">
+          <p id="nearby-status" class="nearby-status" role="status"></p>
+          <button id="nearby-search-btn" type="button" class="btn nearby-search-btn">查這裡</button>
+        </div>
+        <ol id="nearby-list" class="nearby-list" aria-label="附近商家清單"></ol>
       </dialog>
     </main>
 

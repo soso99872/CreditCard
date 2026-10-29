@@ -30,6 +30,7 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { shortReasonText } from "./reason-text.mjs";
+import { createNearbyPanel } from "./nearby-panel.mjs";
 import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 /** 常用類別：手機寬度（< 768px）預設只顯示這幾顆，其餘摺進「更多類別」（tasks.md T12-2b）。 */
@@ -49,6 +50,7 @@ const state = {
   query: "",
   selectedCategoryId: null,
   pickedCategory: null, // 從快捷、建議或最近查詢直接點類別：{ id, name }；打字會清掉
+  via: null, // 從附近商家點進來、類別是系統推測的：{ store, how }（nearby-view.mjs entryForItem）；打字會清掉
   recent: [], // 最近查詢（最多 5 筆，見 recent.mjs）
   amount: undefined,
   scope: defaultScope(),
@@ -66,6 +68,7 @@ const state = {
 };
 
 let dealInObserver = null;
+let nearbyPanel = null;
 /** 上一次畫面上第 1 名是哪張（含查詢對象）；換了才播「從搜尋列抽出來」的動畫，輸入金額重算時不重播。 */
 let lastTopKey = null;
 
@@ -170,6 +173,9 @@ function resultTitleParts(match) {
     case "category-guess":
       return ["依名稱推測的", strong(match.categoryName), "類別，刷這張"];
     case "category-selected":
+      // 從附近商家點進來：類別是依店家類型推測的，不是使用者選的，標題要寫出店名（T18b 主管退件①）
+      if (state.via?.how === "osm-guess") return ["依店家類型推測", strong(state.via.store), "為", strong(match.categoryName), "，刷這張"];
+      if (state.via?.how === "osm-none") return [strong(state.via.store), "對不到商家，以", strong("一般消費"), "排序"];
       return match.categoryId === GENERAL_CATEGORY_ID
         ? ["找不到符合的類別，以", strong("一般消費"), "排序"]
         : ["依你選的", strong(match.categoryName), "類別，刷這張"];
@@ -212,6 +218,7 @@ function renderCategoryQuickPicker(match) {
     if (isActive) button.classList.add("is-active");
     button.addEventListener("click", () => {
       state.pickedCategory = null; // 不清掉的話 pickedCategory 優先，按鈕會變死按鈕
+      state.via = null;
       state.selectedCategoryId = category.id;
       state.showAll = false;
       recompute();
@@ -722,10 +729,11 @@ function recompute() {
 function runEntry(entry) {
   state.query = entry.name;
   state.pickedCategory = entry.kind === "category" ? { id: entry.id, name: entry.name } : null;
+  state.via = entry.via ?? null;
   state.selectedCategoryId = null;
   state.showAll = false;
   state.categoryPickerExpanded = false;
-  els.queryInput.value = entry.name;
+  els.queryInput.value = entry.via?.store ?? entry.name; // 附近商家點進來時輸入框放店名，最近查詢仍記類別
   els.queryInput.blur(); // 收起手機鍵盤，結果才看得到
   hideSuggestions();
   state.recent = addRecent(state.storage, state.recent, {
@@ -764,7 +772,7 @@ function renderQuickAndRecent() {
   els.recentGroup.hidden = recent.length === 0;
   els.recentList.replaceChildren(...recent.map((r) => buildChip(r, "quick-chip quick-chip--recent")));
 
-  // 「附近商家」按鈕是 T18b 預留的位置（index.html 裡 hidden），保留在列尾
+  // 「附近商家」按鈕固定在列尾
   els.quickList.replaceChildren(
     ...resolveQuickPicks(state.data).map((p) => buildChip(p, "quick-chip")),
     els.nearbyBtn
@@ -806,6 +814,7 @@ function wireEvents() {
   els.queryInput.addEventListener("input", (event) => {
     state.query = event.target.value;
     state.pickedCategory = null;
+    state.via = null;
     state.selectedCategoryId = null;
     state.showAll = false;
     state.categoryPickerExpanded = false;
@@ -839,6 +848,7 @@ function wireEvents() {
     els.queryInput.value = "";
     state.query = "";
     state.pickedCategory = null;
+    state.via = null;
     state.selectedCategoryId = null;
     state.showAll = false;
     state.categoryPickerExpanded = false;
@@ -850,7 +860,10 @@ function wireEvents() {
   els.recentClearBtn.addEventListener("click", () => {
     state.recent = clearRecent(state.storage);
     renderQuickAndRecent();
+    els.queryInput.focus(); // 清除鈕隨最近查詢消失，焦點移回輸入框，不要掉到頁面頂端
   });
+
+  els.nearbyBtn.addEventListener("click", () => nearbyPanel.open());
 
   // 搜尋列固定在頂端時多一條底線，跟下面捲動的內容分得開；只讀一次捲動位置，用 rAF 節流。
   let scrollTick = false;
@@ -940,6 +953,15 @@ async function loadData() {
 
 function bootstrap() {
   cacheEls();
+  nearbyPanel = createNearbyPanel({
+    getData: () => state.data,
+    baseUrl: resolveDataBaseUrl(window.location.search),
+    generalId: GENERAL_CATEGORY_ID,
+    onPick: (entry) => {
+      runEntry(entry);
+      els.resultTitle.focus(); // 面板關閉後焦點落在結果標題，螢幕閱讀器直接讀到結果
+    },
+  });
   // 是否開啟草稿資料預覽模式（?draft=1），在最前面就決定好，loadData() 載入資料與
   // 之後每次 recompute() 都要用同一個值（tasks.md T17）。
   state.draftMode = isDraftMode(window.location.search);

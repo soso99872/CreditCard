@@ -1,0 +1,3 @@
+Leaflet 1.9.4（BSD-2-Clause，見 LICENSE）
+來源：https://registry.npmjs.org/leaflet/-/leaflet-1.9.4.tgz 的 dist/（同 https://unpkg.com/leaflet@1.9.4/dist/）
+只放執行需要的檔案：leaflet.js、leaflet.css、images/。圖磚用 OpenStreetMap，見 README。
