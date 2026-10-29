@@ -3,106 +3,26 @@
   "cardListUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview",
   "checkedAt": "2026-10-10",
   "coverage": [
-    {
-      "cardName": "福企無限卡",
-      "status": "included",
-      "cardId": "tbb-visa-infinite"
-    },
-    {
-      "cardName": "銀色之愛(Mastercard鈦金商旅卡、VISA商務御璽卡)",
-      "status": "included",
-      "cardId": "tbb-eldercaring"
-    },
-    {
-      "cardName": "鈦金商旅卡",
-      "status": "included",
-      "cardId": "tbb-titanium"
-    },
-    {
-      "cardName": "永續生活悠遊卡(鈦金卡)",
-      "status": "included",
-      "cardId": "tbb-greenlife-easy"
-    },
-    {
-      "cardName": "永續生活一卡通(普卡、鈦金卡)",
-      "status": "included",
-      "cardId": "tbb-greenlife-ipass"
-    },
-    {
-      "cardName": "藝FUN悠遊御璽卡(御璽卡)",
-      "status": "included",
-      "cardId": "tbb-artfun-easy"
-    },
-    {
-      "cardName": "北港朝天宮認同卡(普卡、鈦金卡)",
-      "status": "included",
-      "cardId": "tbb-chaotiangong"
-    },
-    {
-      "cardName": "宜蘭悠遊認同卡(鈦金卡)",
-      "status": "included",
-      "cardId": "tbb-yilan"
-    },
-    {
-      "cardName": "得利Combo鈦金卡(鈦金卡)",
-      "status": "excluded",
-      "reason": "官方讀不到：官網卡片清單API未提供有效的介紹頁連結，無法查證回饋內容"
-    },
-    {
-      "cardName": "信保基金111關懷商務卡(商務御璽卡)",
-      "status": "included",
-      "cardId": "tbb-smeg-business"
-    },
-    {
-      "cardName": "信保基金111關懷認同卡(鈦金商旅卡)",
-      "status": "included",
-      "cardId": "tbb-smeg"
-    },
-    {
-      "cardName": "宮廟認同卡(鈦金卡)",
-      "status": "included",
-      "cardId": "tbb-temple"
-    },
-    {
-      "cardName": "國際獅子會台灣總會認同卡(鈦金商旅卡)",
-      "status": "included",
-      "cardId": "tbb-lionsclub"
-    },
-    {
-      "cardName": "VISA白金卡(白金卡)",
-      "status": "included",
-      "cardId": "tbb-visa-platinum"
-    },
-    {
-      "cardName": "VISA金融卡",
-      "status": "excluded",
-      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
-    },
-    {
-      "cardName": "悠遊Debit卡",
-      "status": "excluded",
-      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
-    },
-    {
-      "cardName": "起家金悠遊Debit卡",
-      "status": "excluded",
-      "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍"
-    },
-    {
-      "cardName": "商務卡(白金卡)",
-      "status": "excluded",
-      "reason": "官網僅標示「最高0.75%現金回饋，依消費金額級距」，未列出完整級距對照表，無法確認保底回饋率，為避免回饋率誤植不予收錄"
-    },
-    {
-      "cardName": "政府採購卡",
-      "status": "excluded",
-      "reason": "政府機構採購專用卡，非個人消費回饋卡"
-    },
-    {
-      "cardName": "臺灣菸酒採購卡",
-      "status": "excluded",
-      "reason": "機構採購專用卡，非個人消費回饋卡"
-    }
+    { "cardName": "福企無限卡", "status": "included", "cardId": "tbb-visa-infinite" },
+    { "cardName": "銀色之愛(Mastercard鈦金商旅卡、VISA商務御璽卡)", "status": "included", "cardId": "tbb-eldercaring" },
+    { "cardName": "鈦金商旅卡", "status": "included", "cardId": "tbb-titanium" },
+    { "cardName": "永續生活悠遊卡(鈦金卡)", "status": "included", "cardId": "tbb-greenlife-easy" },
+    { "cardName": "永續生活一卡通(普卡、鈦金卡)", "status": "included", "cardId": "tbb-greenlife-ipass" },
+    { "cardName": "藝FUN悠遊御璽卡(御璽卡)", "status": "included", "cardId": "tbb-artfun-easy" },
+    { "cardName": "北港朝天宮認同卡(普卡、鈦金卡)", "status": "included", "cardId": "tbb-chaotiangong" },
+    { "cardName": "宜蘭悠遊認同卡(鈦金卡)", "status": "included", "cardId": "tbb-yilan" },
+    { "cardName": "得利Combo鈦金卡(鈦金卡)", "status": "excluded", "reason": "官方讀不到：官網卡片清單API未提供有效的介紹頁連結，無法查證回饋內容" },
+    { "cardName": "信保基金111關懷商務卡(商務御璽卡)", "status": "included", "cardId": "tbb-smeg-business" },
+    { "cardName": "信保基金111關懷認同卡(鈦金商旅卡)", "status": "included", "cardId": "tbb-smeg" },
+    { "cardName": "宮廟認同卡(鈦金卡)", "status": "included", "cardId": "tbb-temple" },
+    { "cardName": "國際獅子會台灣總會認同卡(鈦金商旅卡)", "status": "included", "cardId": "tbb-lionsclub" },
+    { "cardName": "VISA白金卡(白金卡)", "status": "included", "cardId": "tbb-visa-platinum" },
+    { "cardName": "VISA金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍" },
+    { "cardName": "悠遊Debit卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍" },
+    { "cardName": "起家金悠遊Debit卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，不在本期收錄範圍" },
+    { "cardName": "商務卡(白金卡)", "status": "excluded", "reason": "官網僅標示「最高0.75%現金回饋，依消費金額級距」，未列出完整級距對照表，無法確認保底回饋率，為避免回饋率誤植不予收錄" },
+    { "cardName": "政府採購卡", "status": "excluded", "reason": "政府機構採購專用卡，非個人消費回饋卡" },
+    { "cardName": "臺灣菸酒採購卡", "status": "excluded", "reason": "機構採購專用卡，非個人消費回饋卡" }
   ],
   "cards": [
     {
@@ -113,9 +33,7 @@
         {
           "id": "tbb-visa-infinite-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.6,
           "rawReward": "國內一般消費0.6%現金回饋，無上限",
           "cap": null,
@@ -128,12 +46,7 @@
         {
           "id": "tbb-visa-infinite-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋，無上限",
           "cap": null,
@@ -153,9 +66,7 @@
         {
           "id": "tbb-eldercaring-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.4,
           "rawReward": "國內一般消費0.4%現金回饋，無上限",
           "cap": null,
@@ -168,12 +79,7 @@
         {
           "id": "tbb-eldercaring-travel",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "travel"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["travel"] },
           "rate": 0.6,
           "rawReward": "國內差旅消費0.6%現金回饋",
           "cap": null,
@@ -186,12 +92,7 @@
         {
           "id": "tbb-eldercaring-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋，無上限",
           "cap": null,
@@ -211,55 +112,132 @@
         {
           "id": "tbb-titanium-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.4,
           "rawReward": "國內一般消費0.4%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["一般消費排除項目請見台企銀官網"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
         },
         {
-          "id": "tbb-titanium-travel",
+          "id": "tbb-titanium-travel-base",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "travel"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["travel", "transport", "gas"], "basis": "mcc" },
           "rate": 0.6,
-          "rawReward": "國內差旅消費0.6%現金回饋",
+          "rawReward": "國內差旅消費（加油站、旅行社、飯店住宿、交通運輸、高爾夫球場）0.6%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["差旅通路：加油站、旅行社、飯店住宿、交通運輸、高爾夫球場", "高爾夫球場未對應本站類別，不在此規則內"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
         },
         {
           "id": "tbb-titanium-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 2,
           "rawReward": "國外刷卡消費2%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["國外消費指交易幣別非新臺幣，或於國外以新臺幣交易"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-titanium-department",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["新光三越", "遠東SOGO", "遠東百貨", "微風廣場", "MITSUI OUTLET PARK", "LaLaPort", "誠品生活", "環球購物中心", "101購物中心", "美麗華百樂園", "京站時尚廣場", "統一時代百貨台北", "大葉高島屋", "明曜百貨", "ATT 4 FUN", "台茂購物中心", "大江購物中心", "華泰名品城", "遠東巨城購物中心", "中友百貨", "廣三SOGO", "漢神巨蛋", "漢神百貨", "SKM Park Outlets", "夢時代購物中心", "南紡購物中心", "義享時尚廣場", "義大世界購物廣場", "新月廣場"], "basis": "merchant-list" },
+          "rate": 4,
+          "rawReward": "當期一般消費滿NT$6,000，登錄後於指定百貨最高4%（原0.4%＋活動3.6%）",
+          "cap": { "amount": 500, "unit": "TWD", "period": "month" },
+          "conditions": ["當期使用本卡一般消費滿NT$6,000並登錄", "額外加碼（百貨3.6%、加油3.4%）每戶每月共用上限NT$500，基本0.4%／0.6%不計入此上限", "百貨與加油兩條規則共用同一個NT$500上限", "指定百貨名單為文章列出者；MITSUI OUTLET PARK含林口、台中港、台南，LaLaPort含南港、台中"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-titanium-gas-promo",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["gas"], "basis": "mcc" },
+          "rate": 4,
+          "rawReward": "當期一般消費滿NT$6,000，登錄後於指定加油站最高4%（原0.6%＋活動3.4%）",
+          "cap": { "amount": 500, "unit": "TWD", "period": "month" },
+          "conditions": ["當期使用本卡一般消費滿NT$6,000並登錄", "額外加碼（百貨3.6%、加油3.4%）每戶每月共用上限NT$500，基本0.4%／0.6%不計入此上限", "百貨與加油兩條規則共用同一個NT$500上限", "依收單機構加油分類碼MCC 5541、5542，不含加氣站及油票購買"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-titanium-hsr",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["台灣高鐵"], "basis": "merchant-list" },
+          "rate": 8.5,
+          "rawReward": "當月帳單一般消費滿NT$20,000（正附卡合併），登錄後次月起於台灣高鐵購票享8.5%刷卡金回饋，每戶每月上限NT$300，每月最高可刷NT$3,529",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["須登錄，且前一個月帳單一般消費滿NT$20,000（正附卡合併）", "登錄後次月起購票才適用", "8.5%為文章寫法，官方頁寫「加碼8.5%」，是否另加基本回饋未確認，保守記8.5%", "每戶每月回饋上限NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-titanium-gomaji",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["GOMAJI"], "basis": "merchant-list" },
+          "rate": 3.4,
+          "rawReward": "於GOMAJI消費登錄後額外3%刷卡金回饋（加基本0.4%合計3.4%），每戶最高回饋NT$200，最高可刷NT$6,666",
+          "cap": { "amount": 200, "unit": "TWD", "period": "campaign" },
+          "conditions": ["須登錄", "額外3%部分每戶上限NT$200（活動期間）", "不適用綁LINE Pay等第三方行動支付"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-titanium-taiwanpay",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["台灣Pay"], "basis": "merchant-list" },
+          "rate": 1.9,
+          "rawReward": "使用台灣Pay透過臺企銀行動銀行APP或台灣行動支付APP（限綁定本行信用卡）信用卡掃碼交易，每筆一般消費回饋1.5%刷卡金，每戶每期上限100元；加基本0.4%",
+          "cap": { "amount": 100, "unit": "TWD", "period": "month" },
+          "conditions": ["限台灣Pay綁定本行信用卡掃碼交易", "額外1.5%每戶每期上限NT$100，基本回饋不計入"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-29",
+          "sourceNote": "第三方文章未收，依官方卡片頁；鈦金卡沒有Hokii會員限制"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "tbb-greenlife-easy",
@@ -269,37 +247,146 @@
         {
           "id": "tbb-greenlife-easy-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.5,
           "rawReward": "國內一般消費0.5%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["一般消費排除項目請見台企銀官網", "不含悠遊卡／一卡通自動加值金"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
-          "checkedAt": "2026-10-10"
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
         },
         {
           "id": "tbb-greenlife-easy-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 1.5,
           "rawReward": "國外一般消費1.5%現金回饋，無上限",
           "cap": null,
-          "conditions": [],
+          "conditions": ["國外消費指交易幣別非新臺幣，或於國外以新臺幣交易"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-greenlife-easy-hokii-domestic",
+          "plan": "Hokii數位會員（台外幣數位帳戶自動扣繳）",
+          "cap": { "amount": 350, "unit": "TWD", "period": "month" },
+          "conditions": ["需為Hokii數位會員，以臺幣數位帳戶自動扣繳信用卡帳款且持有外幣數位帳戶", "當期一般消費滿NT$6,000", "加碼1%每戶每月上限NT$350，基本回饋不計入；國內與國外加碼共用此上限", "其他帳戶類型加碼較低：僅臺幣數位帳戶自動扣繳0.3%／上限100、臺幣＋外幣數位帳戶但非自動扣繳0.6%／上限250"],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-12-31",
           "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-29",
+          "sourceNote": "第三方文章寫上限500、另有「額外2%」筆誤，取官方卡片頁的NT$350",
+          "scope": { "type": "general" },
+          "rate": 1.5,
+          "rawReward": "Hokii數位會員國內（含保費）一般消費最高1.5%（基本0.5%＋加碼1%）"
+        },
+        {
+          "id": "tbb-greenlife-easy-hokii-overseas",
+          "plan": "Hokii數位會員（台外幣數位帳戶自動扣繳）",
+          "cap": { "amount": 350, "unit": "TWD", "period": "month" },
+          "conditions": ["需為Hokii數位會員，以臺幣數位帳戶自動扣繳信用卡帳款且持有外幣數位帳戶", "當期一般消費滿NT$6,000", "加碼1%每戶每月上限NT$350，基本回饋不計入；國內與國外加碼共用此上限", "其他帳戶類型加碼較低：僅臺幣數位帳戶自動扣繳0.3%／上限100、臺幣＋外幣數位帳戶但非自動扣繳0.6%／上限250"],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+          "sourceType": "official",
+          "checkedAt": "2026-10-29",
+          "sourceNote": "第三方文章寫上限500、另有「額外2%」筆誤，取官方卡片頁的NT$350",
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "rate": 2.5,
+          "rawReward": "Hokii數位會員國外消費最高2.5%（基本1.5%＋加碼1%）"
+        },
+        {
+          "id": "tbb-greenlife-easy-taiwanpay",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["台灣Pay"], "basis": "merchant-list" },
+          "rate": 2,
+          "rawReward": "透過臺企銀行動銀行APP或台灣行動支付APP，用台灣Pay綁定永續生活悠遊卡掃碼交易，享額外1.5%回饋（每戶每月上限100元），加基本0.5%合計2%",
+          "cap": { "amount": 100, "unit": "TWD", "period": "month" },
+          "conditions": ["限台灣Pay綁定本卡掃碼交易", "額外1.5%每戶每月上限NT$100，基本0.5%不計入"],
+          "validFrom": "2026-07-01",
+          "validTo": "2027-12-31",
+          "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+          "sourceType": "official",
+          "checkedAt": "2026-10-29",
+          "sourceNote": "第三方文章未收，依官方卡片頁"
+        },
+        {
+          "id": "tbb-greenlife-easy-health-outdoor",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["里仁", "台灣主婦聯盟生活消費合作社", "義美食品", "聖德科斯", "棉花田", "馬可先生麵包坊", "無毒的家", "健康食彩", "GREEN & SAFE", "安永鮮物", "無毒農", "天和鮮物", "柑仔店", "台灣好農", "有機緣地", "自然法則", "直接跟農夫買", "台灣迪卡儂", "歐都納", "GO Hiking", "墾趣生活", "百岳登山體育用品", "桃源戶外", "城市綠洲", "鄉野情", "秀山莊", "撒野戶外露營用品", "台北山水戶外休閒用品專門店", "漁拓", "早點名露營"], "basis": "merchant-list" },
+          "rate": 5,
+          "rawReward": "週一～四於指定健康生機、戶外用品通路消費5%（原0.5%＋加碼4.5%）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["當期一般消費滿NT$6,000並登錄", "4.5%與9.5%加碼合計每戶每月共用上限NT$300，基本0.5%不計入此上限", "健康／戶外與綠色餐廳兩條規則共用同一個NT$300上限", "帳單須顯示店名，百貨或商場內店家若未顯示不適用", "僅週一～週四（健康生活日）適用", "純刷此通路每月最高可刷約NT$6,667"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-greenlife-easy-green-restaurant",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["寬心園", "熱浪島南洋蔬食茶堂", "漢來蔬食", "義式屋古拉爵", "加州風洋食館", "藏壽司", "芳珍蔬食", "築間幸福鍋物", "涮乃葉", "祥和蔬食", "養心茶樓", "陽明春天", "新卡莎素食西餐廳", "小小樹食", "上善豆家", "上善蔬食", "禪風茶樓", "蔬軾．創意蔬食料理", "MiaCucina", "三個傻瓜印度蔬食", "草蔬宴義式蔬食", "Mianto", "艾果豐", "THOMAS CHIEN法式餐廳", "LA ONE Café", "LA ONE Kitchen & Bakery"], "basis": "merchant-list" },
+          "rate": 10,
+          "rawReward": "週五～日於指定綠色餐廳消費10%（原0.5%＋加碼9.5%）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["當期一般消費滿NT$6,000並登錄", "4.5%與9.5%加碼合計每戶每月共用上限NT$300，基本0.5%不計入此上限", "健康／戶外與綠色餐廳兩條規則共用同一個NT$300上限", "帳單須顯示店名，百貨或商場內店家若未顯示不適用", "僅週五～週日（綠食減碳日）適用", "純刷此通路每月最高可刷約NT$3,157"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-greenlife-easy-hsr",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["台灣高鐵"], "basis": "merchant-list" },
+          "rate": 8.5,
+          "rawReward": "當月帳單一般消費滿NT$20,000（正附卡合併），登錄後次月起於台灣高鐵購票享8.5%刷卡金回饋，每戶每月上限NT$300，每月最高可刷NT$3,529",
+          "cap": { "amount": 300, "unit": "TWD", "period": "month" },
+          "conditions": ["須登錄，且前一個月帳單一般消費滿NT$20,000（正附卡合併）", "登錄後次月起購票才適用", "8.5%為文章寫法，官方頁寫「加碼8.5%」，是否另加基本回饋未確認，保守記8.5%", "每戶每月回饋上限NT$300"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
+        },
+        {
+          "id": "tbb-greenlife-easy-gomaji",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["GOMAJI"], "basis": "merchant-list" },
+          "rate": 3.5,
+          "rawReward": "於GOMAJI消費登錄後額外3%刷卡金回饋（加基本0.5%合計3.5%），每戶最高回饋NT$200，最高可刷NT$6,666",
+          "cap": { "amount": 200, "unit": "TWD", "period": "campaign" },
+          "conditions": ["須登錄", "額外3%部分每戶上限NT$200（活動期間）", "不適用綁LINE Pay等第三方行動支付"],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+          "sourceType": "third-party",
+          "sourcePublishedAt": "2026-09-10",
+          "sourceNote": "CreditCards.com.tw（2026/09/10 更新）單一來源；數字與台企銀官方卡片頁（2026/1/1~12/31 活動）核對一致，未找到 90 天內第二個獨立第三方來源",
+          "checkedAt": "2026-10-29"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "tbb-greenlife-ipass",
@@ -309,9 +396,7 @@
         {
           "id": "tbb-greenlife-ipass-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.5,
           "rawReward": "國內一般消費0.5%現金回饋，無上限",
           "cap": null,
@@ -324,12 +409,7 @@
         {
           "id": "tbb-greenlife-ipass-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 1.5,
           "rawReward": "國外一般消費1.5%現金回饋，無上限",
           "cap": null,
@@ -349,9 +429,7 @@
         {
           "id": "tbb-artfun-easy-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.5,
           "rawReward": "國內一般消費0.5%現金回饋",
           "cap": null,
@@ -364,12 +442,7 @@
         {
           "id": "tbb-artfun-easy-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋",
           "cap": null,
@@ -389,9 +462,7 @@
         {
           "id": "tbb-chaotiangong-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.3,
           "rawReward": "國內一般消費0.3%現金回饋，無上限",
           "cap": null,
@@ -404,12 +475,7 @@
         {
           "id": "tbb-chaotiangong-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 1.5,
           "rawReward": "國外消費1.5%現金回饋，無上限",
           "cap": null,
@@ -422,21 +488,10 @@
         {
           "id": "tbb-chaotiangong-lifestyle",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "dining",
-              "pharmacy",
-              "transport"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["dining", "pharmacy", "transport"] },
           "rate": 5,
           "rawReward": "餐飲（含外送平台）、保健藥妝、交通最高5%現金回饋（基本回饋0.3%不受上限限制＋加碼部分4.7個百分比，加碼部分每戶每期上限500元）",
-          "cap": {
-            "amount": 500,
-            "unit": "TWD",
-            "period": "billing-cycle"
-          },
+          "cap": { "amount": 500, "unit": "TWD", "period": "billing-cycle" },
           "conditions": ["回饋上限僅限於加碼部分（超過基本0.3%之4.7個百分比），每戶每期上限500元；基本回饋0.3%不受此上限限制"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
@@ -453,15 +508,11 @@
         {
           "id": "tbb-yilan-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.3,
           "rawReward": "未達3萬元回饋0.3%；當期帳單新增消費達3萬元(含)以上回饋0.5%",
           "cap": null,
-          "conditions": [
-            "當期帳單新增消費達NT$30,000(含)以上，回饋由0.3%升級至0.5%"
-          ],
+          "conditions": ["當期帳單新增消費達NT$30,000(含)以上，回饋由0.3%升級至0.5%"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/yilan-creditcard",
@@ -477,9 +528,7 @@
         {
           "id": "tbb-smeg-business-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.4,
           "rawReward": "國內一般消費0.4%現金回饋，無上限",
           "cap": null,
@@ -492,12 +541,7 @@
         {
           "id": "tbb-smeg-business-travel",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "travel"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["travel"] },
           "rate": 0.6,
           "rawReward": "國內差旅消費0.6%現金回饋",
           "cap": null,
@@ -510,12 +554,7 @@
         {
           "id": "tbb-smeg-business-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋，無上限",
           "cap": null,
@@ -535,9 +574,7 @@
         {
           "id": "tbb-smeg-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.4,
           "rawReward": "國內一般消費0.4%現金回饋，無上限",
           "cap": null,
@@ -550,12 +587,7 @@
         {
           "id": "tbb-smeg-travel",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "travel"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["travel"] },
           "rate": 0.6,
           "rawReward": "國內差旅消費0.6%現金回饋",
           "cap": null,
@@ -568,12 +600,7 @@
         {
           "id": "tbb-smeg-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋，無上限",
           "cap": null,
@@ -593,9 +620,7 @@
         {
           "id": "tbb-temple-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.3,
           "rawReward": "國內一般消費0.3%現金回饋，無上限",
           "cap": null,
@@ -608,12 +633,7 @@
         {
           "id": "tbb-temple-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 1.5,
           "rawReward": "國外消費1.5%現金回饋",
           "cap": null,
@@ -626,21 +646,10 @@
         {
           "id": "tbb-temple-lifestyle",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "dining",
-              "pharmacy",
-              "transport"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["dining", "pharmacy", "transport"] },
           "rate": 5,
           "rawReward": "餐飲、保健藥妝、交通最高5%現金回饋（基本回饋0.3%不受上限限制＋加碼部分4.7個百分比，加碼部分每戶每期上限500元）",
-          "cap": {
-            "amount": 500,
-            "unit": "TWD",
-            "period": "billing-cycle"
-          },
+          "cap": { "amount": 500, "unit": "TWD", "period": "billing-cycle" },
           "conditions": ["回饋上限僅限於加碼部分（超過基本0.3%之4.7個百分比），每戶每期上限500元；基本回饋0.3%不受此上限限制"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
@@ -657,9 +666,7 @@
         {
           "id": "tbb-lionsclub-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.4,
           "rawReward": "國內一般消費0.4%現金回饋",
           "cap": null,
@@ -672,12 +679,7 @@
         {
           "id": "tbb-lionsclub-travel",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "travel"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["travel"] },
           "rate": 0.6,
           "rawReward": "國內差旅消費0.6%現金回饋",
           "cap": null,
@@ -690,12 +692,7 @@
         {
           "id": "tbb-lionsclub-overseas",
           "plan": "",
-          "scope": {
-            "type": "category",
-            "categories": [
-              "overseas"
-            ]
-          },
+          "scope": { "type": "category", "categories": ["overseas"] },
           "rate": 2,
           "rawReward": "國外消費2%現金回饋",
           "cap": null,
@@ -715,19 +712,11 @@
         {
           "id": "tbb-visa-platinum-general",
           "plan": "",
-          "scope": {
-            "type": "general"
-          },
+          "scope": { "type": "general" },
           "rate": 0.2,
           "rawReward": "消費1元~49,999元回饋0.2%，依當期消費金額分級最高0.75%（20萬元以上），每期上限1,500元，全年上限18,000元",
-          "cap": {
-            "amount": 1500,
-            "unit": "TWD",
-            "period": "billing-cycle"
-          },
-          "conditions": [
-            "依當期消費金額分級：未達NT$50,000為0.2%，達NT$50,000以上0.3%，達NT$100,000以上0.4%，達NT$150,000以上0.5%，達NT$200,000以上最高升級至0.75%"
-          ],
+          "cap": { "amount": 1500, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["依當期消費金額分級：未達NT$50,000為0.2%，達NT$50,000以上0.3%，達NT$100,000以上0.4%，達NT$150,000以上0.5%，達NT$200,000以上最高升級至0.75%"],
           "validFrom": "2026-01-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-creditcard",
