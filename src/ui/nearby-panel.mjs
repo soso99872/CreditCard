@@ -2,7 +2,7 @@
 // 純邏輯在 nearby-view.mjs、引擎在 engine/nearby.mjs；本檔只處理 DOM 與地圖。
 
 import { buildMerchantIndex, buildOverpassQuery, parseNearby, MAX_RESULTS } from "../engine/index.mjs";
-import { DEFAULT_CENTER, SEARCH_RADIUS_M, distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, dotStyle } from "./nearby-view.mjs";
+import { DEFAULT_CENTER, SEARCH_RADIUS_M, distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, noCoverageNote, dotStyle, BUSY_TEXT, ALL_FAILED_TEXT } from "./nearby-view.mjs";
 
 const LEAFLET_JS = "vendor/leaflet/leaflet.js";
 const LEAFLET_CSS = "vendor/leaflet/leaflet.css";
@@ -35,10 +35,11 @@ function loadLeaflet() {
  *   getData: () => {merchants: object[], categories: object[]},
  *   baseUrl: string, generalId: string,
  *   onPick: (entry: {kind: string, id?: string, name: string}) => void,
+ *   onSearchByName: () => void,
  * }} options
  * @returns {{open: () => void}}
  */
-export function createNearbyPanel({ getData, baseUrl, generalId, onPick }) {
+export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearchByName }) {
   const $ = (id) => document.getElementById(id);
   const dialog = $("nearby-dialog");
   const statusEl = $("nearby-status");
@@ -100,7 +101,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick }) {
   }
 
   // 清單是空的時候（還沒查、查無、失敗）放一張說明卡；手機上改讓地圖長高（is-roomy），桌機留在右欄
-  function renderEmpty(title, body, roomy = true) {
+  function renderEmpty(title, body, roomy = true, withSearchFallback = false) {
     listEl.replaceChildren();
     const li = document.createElement("li");
     li.className = "nearby-empty";
@@ -109,6 +110,17 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick }) {
     const p = document.createElement("span");
     p.textContent = body;
     li.append(strong, p);
+    if (withSearchFallback) {
+      const fallback = document.createElement("button");
+      fallback.type = "button";
+      fallback.className = "btn nearby-fallback-btn";
+      fallback.textContent = "改用店名搜尋";
+      fallback.addEventListener("click", () => {
+        dialog.close();
+        onSearchByName();
+      });
+      li.append(fallback);
+    }
     listEl.appendChild(li);
     if (roomy) setRoomy(true);
   }
@@ -134,28 +146,30 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick }) {
     lastOrigin = origin;
     setRetry(false);
     searchBtn.disabled = true;
-    renderEmpty("查詢中", "向 OpenStreetMap 問這個位置附近有哪些店，通常幾秒內回來。", false);
+    renderEmpty("查詢中", "向 OpenStreetMap 問這個位置附近有哪些店；忙線時會自動換查詢伺服器，可能要多等一下。", false);
     listEl.setAttribute("aria-busy", "true");
     setStatus("查詢附近商家中…");
     try {
       osmCategories ??= await (await fetch(`${baseUrl}osm-categories.json`)).json();
-      const json = await fetchOverpass(buildOverpassQuery(origin.lat, origin.lng, SEARCH_RADIUS_M));
+      const json = await fetchOverpass(buildOverpassQuery(origin.lat, origin.lng, SEARCH_RADIUS_M), {
+        onRetry: () => mine === token && setStatus(BUSY_TEXT),
+      });
       if (mine !== token) return;
       const items = parseNearby(json, origin, { merchantIndex: buildMerchantIndex(getData().merchants), osmCategories });
       drawMarkers(origin, items);
       if (items.length) {
         setRoomy(false);
         renderList(items);
-        setStatus(nearbyStatusText(items.length, MAX_RESULTS));
+        setStatus(`${nearbyStatusText(items.length, MAX_RESULTS)}${noCoverageNote(items)}`);
       } else {
         renderEmpty("這附近查無商家", "換個位置再查：點地圖上別處，或拖動地圖後按「查這裡」。");
         setStatus(`${SEARCH_RADIUS_M} 公尺內查無商家，換個位置再查。`);
       }
     } catch (err) {
       if (mine !== token) return;
-      const why = /^(逾時|HTTP )/.test(err.message) ? `（${err.message}）` : ""; // 瀏覽器的英文錯誤字串不顯示給使用者
-      setStatus(`查詢失敗${why}，請檢查網路後重試。`);
-      renderEmpty("這次沒查到資料", "網路或查詢服務暫時不通，按「重試」再查一次。");
+      setStatus(ALL_FAILED_TEXT);
+      renderEmpty("這次沒查到資料", "查詢服務暫時無法使用，可以按「重試」，或先改用店名搜尋。", false, true);
+      setRoomy(false);
       setRetry(true);
     } finally {
       if (mine === token) {

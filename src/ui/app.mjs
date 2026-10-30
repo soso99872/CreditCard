@@ -772,11 +772,7 @@ function renderQuickAndRecent() {
   els.recentGroup.hidden = recent.length === 0;
   els.recentList.replaceChildren(...recent.map((r) => buildChip(r, "quick-chip quick-chip--recent")));
 
-  // 「附近商家」按鈕固定在列尾
-  els.quickList.replaceChildren(
-    ...resolveQuickPicks(state.data).map((p) => buildChip(p, "quick-chip")),
-    els.nearbyBtn
-  );
+  els.quickList.replaceChildren(...resolveQuickPicks(state.data).map((p) => buildChip(p, "quick-chip")));
 }
 
 /** 輸入時即時建議：商家與類別一起列（類別有「類別」標籤），點選就直接查詢（AC-17）。 */
@@ -961,6 +957,7 @@ function bootstrap() {
       runEntry(entry);
       els.resultTitle.focus(); // 面板關閉後焦點落在結果標題，螢幕閱讀器直接讀到結果
     },
+    onSearchByName: () => els.queryInput.focus(), // 地圖查不到時的退路：回搜尋框
   });
   // 是否開啟草稿資料預覽模式（?draft=1），在最前面就決定好，loadData() 載入資料與
   // 之後每次 recompute() 都要用同一個值（tasks.md T17）。

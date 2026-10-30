@@ -1,7 +1,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
-import { distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, dotStyle } from "../src/ui/nearby-view.mjs";
+import { distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, noCoverageNote, dotStyle, OVERPASS_URLS } from "../src/ui/nearby-view.mjs";
 import { MAX_RESULTS } from "../src/engine/index.mjs";
 
 const names = { coffee: "咖啡", general: "一般消費" };
@@ -57,6 +57,52 @@ describe("src/ui/nearby-view.mjs — 附近商家面板（T18b）", () => {
       new Promise((_, reject) =>
         signal.addEventListener("abort", () => reject(Object.assign(new Error("aborted"), { name: "AbortError" })))
       );
-    await assert.rejects(fetchOverpass("q", { fetchFn: hang, timeoutMs: 20 }), /逾時/);
+    await assert.rejects(fetchOverpass("q", { fetchFn: hang, timeoutMs: 20, lastTimeoutMs: 20 }), /逾時/);
+  });
+
+  test("fetchOverpass：第一台失敗就換第二台，並通知 onRetry", async () => {
+    const calls = [];
+    const fetchFn = async (url) => {
+      calls.push(url);
+      return url === "https://a" ? { ok: false, status: 504 } : { ok: true, json: async () => ({ elements: [{ id: 1 }] }) };
+    };
+    const retried = [];
+    const json = await fetchOverpass("q", { fetchFn, urls: ["https://a", "https://b"], onRetry: (u, why) => retried.push([u, why]) });
+    assert.deepEqual(json, { elements: [{ id: 1 }] });
+    assert.deepEqual(calls, ["https://a", "https://b"]);
+    assert.deepEqual(retried, [["https://a", "HTTP 504"]]);
+  });
+
+  test("fetchOverpass：200 但不是 Overpass 結果也換下一台；逾時換下一台", async () => {
+    const fetchFn = (url, { signal }) => {
+      if (url === "https://a") return Promise.resolve({ ok: true, json: async () => ({ remark: "runtime error" }) });
+      if (url === "https://b")
+        return new Promise((_, reject) => signal.addEventListener("abort", () => reject(Object.assign(new Error("x"), { name: "AbortError" }))));
+      return Promise.resolve({ ok: true, json: async () => ({ elements: [] }) });
+    };
+    assert.deepEqual(await fetchOverpass("q", { fetchFn, urls: ["https://a", "https://b", "https://c"], timeoutMs: 20, lastTimeoutMs: 20 }), { elements: [] });
+  });
+
+  test("fetchOverpass：全部失敗才丟錯，且每台都試過；最後一台失敗不呼叫 onRetry", async () => {
+    const calls = [];
+    const fetchFn = async (url) => { calls.push(url); return { ok: false, status: 503 }; };
+    let retries = 0;
+    await assert.rejects(fetchOverpass("q", { fetchFn, urls: ["https://a", "https://b", "https://c"], onRetry: () => retries++ }), /HTTP 503/);
+    assert.equal(calls.length, 3);
+    assert.equal(retries, 2);
+  });
+
+  test("OVERPASS_URLS：至少 2 台、都是 https 且不重複", () => {
+    assert.ok(OVERPASS_URLS.length >= 2);
+    assert.equal(new Set(OVERPASS_URLS).size, OVERPASS_URLS.length);
+    for (const u of OVERPASS_URLS) assert.match(u, /^https:\/\//);
+  });
+
+  test("noCoverageNote：全是查無對應才提示只收錄台灣", () => {
+    const g = { match: { type: "general" } };
+    const m = { match: { type: "merchant" } };
+    assert.equal(noCoverageNote([g, g]), "目前只收錄台灣的商家。");
+    assert.equal(noCoverageNote([g, m]), "");
+    assert.equal(noCoverageNote([]), "");
   });
 });

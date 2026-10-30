@@ -1377,19 +1377,62 @@ input:focus-visible {
 }
 
 /* ---------- 附近商家：全螢幕面板（T18b） ---------- */
-.quick-chip--nearby {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 18px 0 14px;
+/* 地圖入口在搜尋框旁（搜尋框有沒有字都看得到）；手機寬度不夠時折到搜尋框下一行 */
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.quick-chip--nearby::before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  background: var(--text);
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.800 12 21 12 21z'/%3E%3Ccircle cx='12' cy='9.500' r='2.500'/%3E%3C/svg%3E") center / contain no-repeat;
+.search-row .search {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.map-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.map-btn:active {
+  background: var(--sunken);
+}
+
+.map-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .map-btn:hover {
+    background: var(--sunken);
+  }
+}
+
+@media (max-width: 479px) {
+  .map-btn {
+    flex: 1 1 100%;
+    min-height: 44px;
+  }
+}
+
+.nearby-fallback-btn {
+  justify-self: start;
+  margin-top: 8px;
 }
 
 .nearby-dialog {

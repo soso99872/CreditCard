@@ -31,6 +31,7 @@
       </p>
 
       <form id="query-form" class="query" aria-label="搜尋" hidden>
+        <div class="search-row">
         <div class="search suggest-field">
           <label for="query-input">在哪裡消費</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -53,6 +54,8 @@
             </svg>
           </button>
         </div>
+        <button id="nearby-btn" type="button" class="map-btn" aria-haspopup="dialog"><span aria-hidden="true">🗺</span> 地圖找商家</button>
+        </div>
 
         <ul id="merchant-suggestions" class="suggestion-list" hidden></ul>
       </form>
@@ -69,7 +72,6 @@
           <div class="quick-group" role="group" aria-labelledby="quick-label">
             <p id="quick-label" class="quick-label">常用</p>
             <div id="quick-list" class="chip-row">
-              <button id="nearby-btn" type="button" class="quick-chip quick-chip--nearby" aria-haspopup="dialog">附近商家</button>
             </div>
           </div>
         </div>
@@ -165,7 +167,7 @@
 
       <dialog id="nearby-dialog" class="nearby-dialog" aria-labelledby="nearby-title">
         <header class="nearby-head">
-          <h2 id="nearby-title">附近商家</h2>
+          <h2 id="nearby-title">地圖找商家</h2>
           <button id="nearby-close-btn" type="button" class="nearby-close">關閉</button>
         </header>
         <div class="nearby-map-wrap">

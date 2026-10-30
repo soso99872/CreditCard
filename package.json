@@ -11,6 +11,7 @@
     "freshness": "node scripts/freshness.mjs",
     "coverage": "node scripts/coverage.mjs",
     "build-index": "node scripts/build-index.mjs",
+    "smoke:nearby": "node scripts/smoke-nearby.mjs",
     "start": "node scripts/server.mjs"
   },
   "engines": {
