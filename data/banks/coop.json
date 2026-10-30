@@ -63,28 +63,31 @@
           "plan": "",
           "scope": { "type": "general" },
           "rate": 1,
-          "rawReward": "國內一般消費1%現金回饋",
+          "rawReward": "國內一般消費享1%現金回饋；現金回饋無上限",
           "cap": null,
           "conditions": [],
-          "validFrom": "2026-01-01",
-          "validTo": "2026-12-31",
+          "validFrom": null,
+          "validTo": null,
           "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
         },
         {
           "id": "coop-infinite-diamond-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 2.5,
-          "rawReward": "國外一般消費2.5%現金回饋",
+          "rawReward": "國外一般消費享2.5%現金回饋；現金回饋無上限",
           "cap": null,
           "conditions": [],
-          "validFrom": "2026-01-01",
-          "validTo": "2026-12-31",
+          "validFrom": null,
+          "validTo": null,
           "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "coop-isport",
@@ -124,11 +127,7 @@
           "rate": 5,
           "rawReward": "三大通路（綠色交通、揮汗健身、運動裝備）加碼5%回饋",
           "cap": { "amount": 300, "unit": "TWD", "period": "month" },
-          "conditions": [
-            "當期帳單新增一般消費達2,999元以上",
-            "每項通路上限100元，三項合計每月最高300元（正附卡合併計算）",
-            "官方另含運動裝備通路，本系統類別清單無完全對應項目"
-          ],
+          "conditions": ["當期帳單新增一般消費達2,999元以上", "每項通路上限100元，三項合計每月最高300元（正附卡合併計算）", "官方另含運動裝備通路，本系統類別清單無完全對應項目"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
           "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/i-sport",
@@ -229,18 +228,62 @@
       "rules": [
         {
           "id": "coop-ipass-general",
-          "plan": "晶緻卡",
+          "plan": "",
           "scope": { "type": "general" },
           "rate": 1,
-          "rawReward": "國內一般消費1%現金回饋；國外一般消費1%現金回饋",
+          "rawReward": "國內一般消費享1%現金回饋",
           "cap": null,
           "conditions": [],
-          "validFrom": "2026-10-10",
+          "validFrom": null,
           "validTo": null,
           "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
-          "checkedAt": "2026-10-10"
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "coop-ipass-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "rate": 1,
+          "rawReward": "國外一般消費享1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": null,
+          "validTo": null,
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "coop-ipass-japan",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["japan"], "basis": "mcc" },
+          "rate": 3,
+          "rawReward": "日本享3%回饋：國外一般消費享1%現金回饋；2026/7/1~2026/12/31加碼回饋，日本一般消費享加碼2%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "coop-ipass-overseas-bonus",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "rate": 2,
+          "rawReward": "國外一般消費享1%現金回饋；2026/7/1~2026/12/31加碼回饋，其他國家一般消費享加碼1%現金回饋",
+          "cap": null,
+          "conditions": [],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceUrl": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+          "sourceType": "official",
+          "checkedAt": "2026-10-30"
         }
-      ]
+      ],
+      "verified": true
     }
   ]
 }
