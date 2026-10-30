@@ -1,7 +1,7 @@
 {
   "bankId": "cotabank",
   "cardListUrl": "https://www.cotabank.com.tw/card/",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-30",
   "coverage": [
     { "cardName": "一般晶片卡(白金卡、普卡)", "status": "included", "cardId": "cotabank-general" },
     { "cardName": "樂活卡(白金卡、普卡)", "status": "included", "cardId": "cotabank-lohas" },
@@ -20,15 +20,17 @@
           "plan": "白金卡/普卡",
           "scope": { "type": "general" },
           "rate": 0.7,
-          "rawReward": "當期對帳單一般消費累計金額NT$1,001以上享0.7%現金回饋（NT$1,000以下不回饋）",
+          "rawReward": "一般晶片卡(白金卡、普卡)：當期對帳單一般消費累計金額1,000元以下不回饋、1,001元以上享0.7%現金回饋；未辦理自動轉帳扣款者減碼0.2%。一般消費不含預借現金、水電瓦電信費、賭場賭資、代繳各項公共規費、稅款、交通罰鍰、電子化繳費處理平台、公務機關繳費平台、學雜費、醫療費、長照費、Uny Care APP、小額支付平台、部分有線電視頻道、部分慈善捐款、本行指定特店傳真分期付款及其他本行公告排除之交易",
           "cap": null,
-          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.2%（為0.5%）", "當期對帳單一般消費累計金額需達NT$1,001以上，未達NT$1,000不回饋"],
-          "validFrom": "2026-10-10",
+          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.2%（為0.5%）", "當期對帳單一般消費累計金額需達NT$1,001以上，NT$1,000以下不回饋", "一般消費不含預借現金、水電瓦電信費、稅款、代繳公共規費、學雜費、醫療費等官方列舉排除項目", "現金回饋於次月扣抵消費款，不得退還現金"],
+          "validFrom": null,
           "validTo": null,
           "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30",
+          "sourceType": "official"
         }
-      ]
+      ],
+      "verified": true
     },
     {
       "id": "cotabank-lohas",
@@ -40,15 +42,17 @@
           "plan": "白金卡/普卡",
           "scope": { "type": "general" },
           "rate": 1,
-          "rawReward": "當期對帳單一般消費累計金額NT$1元以上享1%現金回饋",
+          "rawReward": "樂活卡(白金卡、普卡)：當期對帳單一般消費累計金額1元以上享1%現金回饋；未辦理自動轉帳扣款者減碼0.1%。一般消費不含預借現金、水電瓦電信費、賭場賭資、代繳各項公共規費、稅款、交通罰鍰、電子化繳費處理平台、公務機關繳費平台、學雜費、醫療費、長照費、Uny Care APP、小額支付平台、部分有線電視頻道、部分慈善捐款、本行指定特店傳真分期付款及其他本行公告排除之交易",
           "cap": null,
-          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.1%（為0.9%）"],
-          "validFrom": "2026-10-10",
+          "conditions": ["需以任一金融機構辦理自動轉帳扣款，否則減碼0.1%（為0.9%）", "一般消費不含預借現金、水電瓦電信費、稅款、代繳公共規費、學雜費、醫療費等官方列舉排除項目", "現金回饋於次月扣抵消費款，不得退還現金"],
+          "validFrom": null,
           "validTo": null,
           "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30",
+          "sourceType": "official"
         }
-      ]
+      ],
+      "verified": true
     }
   ]
 }
