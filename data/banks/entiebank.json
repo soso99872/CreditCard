@@ -1,7 +1,7 @@
 {
   "bankId": "entiebank",
   "cardListUrl": "https://www.entiebank.com.tw/entie/1_3_1_2",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-30",
   "coverage": [
     { "cardName": "VISA御璽卡", "status": "included", "cardId": "entie-visa" },
     { "cardName": "VISA分期白金卡", "status": "included", "cardId": "entie-visa-installment-platinum" },
@@ -19,6 +19,7 @@
       "id": "entie-visa",
       "name": "VISA御璽卡",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+      "verified": true,
       "rules": [
         {
           "id": "entie-visa-general",
@@ -27,24 +28,26 @@
           "rate": 1,
           "rawReward": "國內消費現金回饋1%",
           "cap": null,
-          "conditions": ["限指定搭配電子帳單始享現金回饋"],
-          "validFrom": "2026-10-10",
+          "conditions": ["限指定搭配電子帳單始享現金回饋", "國內消費"],
+          "validFrom": null,
           "validTo": "2026-12-31",
+          "sourceType": "official",
           "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30"
         },
         {
           "id": "entie-visa-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 1.5,
           "rawReward": "國外實體通路消費現金回饋1.5%",
           "cap": null,
-          "conditions": ["限指定搭配電子帳單始享現金回饋"],
-          "validFrom": "2026-10-10",
+          "conditions": ["限指定搭配電子帳單始享現金回饋", "限國外實體通路消費（不含國外網購）"],
+          "validFrom": null,
           "validTo": "2026-12-31",
+          "sourceType": "official",
           "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30"
         }
       ]
     },
@@ -52,19 +55,35 @@
       "id": "entie-visa-installment-platinum",
       "name": "VISA分期白金卡",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+      "verified": true,
       "rules": [
         {
           "id": "entie-visa-installment-platinum-general",
           "plan": "",
           "scope": { "type": "general" },
+          "rate": 0,
+          "rawReward": "一般消費0%：官方未列一般消費現金回饋（僅綁定Google Pay消費享0.3%）",
+          "cap": null,
+          "conditions": ["非Google Pay消費無現金回饋"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceType": "official",
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "entie-visa-installment-platinum-googlepay",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["Google Pay"], "basis": "merchant-list" },
           "rate": 0.3,
           "rawReward": "綁定Google Pay消費享0.3%現金回饋",
           "cap": null,
-          "conditions": ["需綁定Google Pay消費", "限指定搭配電子帳單始享現金回饋"],
-          "validFrom": "2026-10-10",
-          "validTo": "2026-12-31",
+          "conditions": ["限綁定Google Pay消費"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceType": "official",
           "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30"
         }
       ]
     },
@@ -72,6 +91,7 @@
       "id": "entie-easycard-titanium",
       "name": "悠遊鈦金卡",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
+      "verified": true,
       "rules": [
         {
           "id": "entie-easycard-titanium-general",
@@ -80,11 +100,26 @@
           "rate": 0.25,
           "rawReward": "依當期帳單累積消費金額分級回饋：NT$5,000~49,999享0.25%；NT$50,000~99,999享0.35%；NT$100,000~299,999享0.65%；NT$300,000~599,999享1.00%；NT$600,000以上享1.20%（本系統保守採最低級距0.25%）",
           "cap": null,
-          "conditions": ["回饋率依當期帳單累積消費金額級距計算（0.25%~1.20%），不分國內外消費"],
-          "validFrom": "2026-10-10",
+          "conditions": ["回饋率依當期帳單累積消費金額級距計算（0.25%~1.20%），不分國內外消費", "當期累積消費滿NT$5,000起算，保守採最低級距"],
+          "validFrom": null,
           "validTo": null,
+          "sourceType": "official",
           "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
-          "checkedAt": "2026-10-10"
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "entie-easycard-titanium-overseas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "rate": 0.75,
+          "rawReward": "國外消費再享現金回饋0.5%（各級距皆為0.5%），疊加於當期累積消費級距回饋（最低級距0.25%）；本系統保守合計0.75%",
+          "cap": null,
+          "conditions": ["基本回饋依當期累積消費級距0.25%~1.20%，本系統保守採最低級距合計", "當期累積消費滿NT$5,000起算"],
+          "validFrom": null,
+          "validTo": null,
+          "sourceType": "official",
+          "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
+          "checkedAt": "2026-10-30"
         }
       ]
     }
