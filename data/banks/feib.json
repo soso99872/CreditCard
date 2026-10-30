@@ -1,7 +1,7 @@
 {
   "bankId": "feib",
   "cardListUrl": "https://www.feib.com.tw/introduce/cardInfo?type=1",
-  "checkedAt": "2026-10-10",
+  "checkedAt": "2026-10-30",
   "coverage": [
     { "cardName": "遠東樂行卡", "status": "included", "cardId": "feib-hwcard" },
     { "cardName": "遠東頂級快樂卡", "status": "excluded", "reason": "官方讀不到：回饋以HAPPY GO點數計算，本行官方網域（feib.com.tw）未查得明確之1點兌換台幣比例，暫不收錄" },
@@ -39,43 +39,85 @@
         {
           "id": "feib-hwcard-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": { "type": "general", "excludeMerchants": ["中華電信"] },
           "rate": 1,
-          "rawReward": "國內一般消費現金回饋1%",
+          "rawReward": "當期一般消費滿 NT$3,000，享一般消費國內 1%、國外 2% 刷卡金回饋",
           "cap": null,
-          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋"],
+          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋", "不含悠遊加值金、eTag儲值、公共事業費（含中華電信費用）、稅款、學雜費、小額支付平台（速食、超商）等（官方一般消費定義）"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
-          "checkedAt": "2026-10-10"
+          "sourceType": "third-party",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+          "sourcePublishedAt": "2026-10-27",
+          "sourceNote": "與官方卡片頁（feib.com.tw/upload/creditcard/HWCard/index.html）國內1%、國外2%數字一致",
+          "checkedAt": "2026-10-30"
         },
         {
           "id": "feib-hwcard-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"] },
+          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
           "rate": 2,
-          "rawReward": "國外一般消費現金回饋2%（歐洲實體店除外）",
+          "rawReward": "當期一般消費滿 NT$3,000，享一般消費國內 1%、國外 2% 刷卡金回饋",
           "cap": null,
-          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋"],
+          "conditions": ["當期帳單一般消費需滿NT$3,000才享回饋", "不含歐洲指定國家實體商店交易"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
-          "checkedAt": "2026-10-10"
+          "sourceType": "third-party",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+          "sourcePublishedAt": "2026-10-27",
+          "sourceNote": "歐洲實體店除外為官方卡片頁註2；第三方文章未提，與官方不衝突",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "feib-hwcard-gas",
+          "plan": "",
+          "scope": { "type": "category", "categories": ["gas"], "basis": "mcc" },
+          "rate": 3,
+          "rawReward": "指定交通（國內加油）消費享 3% 回饋，每期每戶加碼回饋上限NT$300（官方原文）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["當期帳單一般消費需滿NT$3,000", "需於當月27日前登錄", "限台幣、一次付清", "不適用LINE Pay、街口支付、台灣Pay等行動支付及第三方支付平台", "加碼2%部分：加油、指定交通、旅遊三條合計共用每期每戶上限NT$300（官方表格上限欄跨交通、旅遊兩類）；基本1%不計入", "限國內加油"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceType": "third-party",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+          "sourcePublishedAt": "2026-10-27",
+          "sourceNote": "官方表格 NT$300 欄 rowspan 涵蓋交通與旅遊，註「每期每戶加碼回饋上限NT$300」，第三方各計說法不採",
+          "checkedAt": "2026-10-30"
         },
         {
           "id": "feib-hwcard-transport",
           "plan": "",
-          "scope": { "type": "category", "categories": ["gas", "transport", "travel"] },
+          "scope": { "type": "merchant", "merchants": ["悠遊卡自動加值", "台灣大車隊", "yoxi", "Uber", "Gogoro", "Tesla", "TAIL", "特爾電力", "EVALUE", "iCharging", "iRent", "WeMo", "GoShare"], "basis": "merchant-list" },
           "rate": 3,
-          "rawReward": "交通/旅遊加碼2%（含原1%，最高3%），涵蓋加油、悠遊卡加值、計程車、電動車充電、共享交通、航空機票、旅遊平台",
+          "rawReward": "指定交通（悠遊卡自動加值；台灣大車隊、yoxi、Uber；Gogoro、Tesla、TAIL特爾電力、EVALUE、iCharging；iRent、WeMo、GoShare）享 3% 回饋，每期每戶加碼回饋上限NT$300（官方原文）",
           "cap": { "amount": 300, "unit": "TWD", "period": "billing-cycle" },
-          "conditions": ["當期帳單一般消費需滿NT$3,000", "需於當月27日前登錄"],
+          "conditions": ["悠遊卡自動加值：官方一般消費定義排除悠遊加值金，而交通加碼表列入且註「3%回饋含原國內一般消費1%」，實際可能僅加碼2%，以銀行認定為準", "當期帳單一般消費需滿NT$3,000", "需於當月27日前登錄", "限台幣、一次付清", "不適用LINE Pay、街口支付、台灣Pay等行動支付及第三方支付平台", "加碼2%部分：加油、指定交通、旅遊三條合計共用每期每戶上限NT$300（官方表格上限欄跨交通、旅遊兩類）；基本1%不計入"],
           "validFrom": "2026-07-01",
           "validTo": "2026-12-31",
-          "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
-          "checkedAt": "2026-10-10"
+          "sourceType": "third-party",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+          "sourcePublishedAt": "2026-10-27",
+          "sourceNote": "官方表格 NT$300 欄 rowspan 涵蓋交通與旅遊，註「每期每戶加碼回饋上限NT$300」，第三方各計說法不採",
+          "checkedAt": "2026-10-30"
+        },
+        {
+          "id": "feib-hwcard-travel",
+          "plan": "",
+          "scope": { "type": "merchant", "merchants": ["中華航空", "長榮航空", "星宇航空", "國泰航空", "樂桃航空", "阿聯酋航空", "捷星航空", "日本航空", "亞洲航空", "聯合航空", "新加坡航空", "越捷航空", "大韓航空", "達美航空", "土耳其航空", "卡達航空", "法國航空", "華信航空", "立榮航空", "KKday", "Klook"], "basis": "merchant-list" },
+          "rate": 3,
+          "rawReward": "旅遊（航空機票、kkday、KLOOK）消費享 3% 回饋，每期每戶加碼回饋上限NT$300（官方原文）",
+          "cap": { "amount": 300, "unit": "TWD", "period": "billing-cycle" },
+          "conditions": ["當期帳單一般消費需滿NT$3,000", "需於當月27日前登錄", "限台幣、一次付清", "不適用LINE Pay、街口支付、台灣Pay等行動支付及第三方支付平台", "加碼2%部分：加油、指定交通、旅遊三條合計共用每期每戶上限NT$300（官方表格上限欄跨交通、旅遊兩類）；基本1%不計入", "航空機票限交易含「航空」或「AIRLINE」，不含旅遊網站／旅行社購買機票；商家名單為本表已收錄之航空公司，其餘航空公司待補"],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "sourceType": "third-party",
+          "sourceUrl": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+          "sourcePublishedAt": "2026-10-27",
+          "sourceNote": "官方表格 NT$300 欄 rowspan 涵蓋交通與旅遊，註「每期每戶加碼回饋上限NT$300」，第三方各計說法不採",
+          "checkedAt": "2026-10-30"
         }
-      ]
+      ],
+      "verified": true
     }
   ]
 }
