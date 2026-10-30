@@ -68,21 +68,23 @@
       "id": "sunnybank-visa-yaojing",
       "name": "VISA曜晶卡",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503",
-      "pointValue": { "unit": "曜晶紅利", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" },
+      "verified": true,
+      "pointValue": { "unit": "曜晶紅利", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-30" },
       "rules": [
-        { "id": "sunnybank-visa-yaojing-general", "plan": "", "scope": { "type": "general" }, "rate": 0.6, "rawReward": "國內一般消費基本回饋0.6%曜晶紅利，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" },
-        { "id": "sunnybank-visa-yaojing-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 3.1, "rawReward": "國外一般消費最高3.1%曜晶紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-10" }
+        { "id": "sunnybank-visa-yaojing-general", "plan": "", "scope": { "type": "general" }, "rate": 0.6, "rawReward": "一般消費享國內 0.6%、國外 3.1% 曜晶紅利回饋無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceType": "third-party", "sourceUrl": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/", "sourcePublishedAt": "2026-09-12", "checkedAt": "2026-10-30" },
+        { "id": "sunnybank-visa-yaojing-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" }, "rate": 3.1, "rawReward": "國外 3.1% 曜晶紅利回饋無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceType": "third-party", "sourceUrl": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/", "sourcePublishedAt": "2026-09-12", "checkedAt": "2026-10-30" }
       ]
     },
     {
       "id": "sunnybank-sunnylife",
       "name": "Sunny Life 賞利點卡(VISA御璽卡)",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543",
+      "verified": true,
       "pointValue": { "unit": "賞利點", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/541", "checkedAt": "2026-10-14" },
       "rules": [
-        { "id": "sunnybank-sunnylife-general", "plan": "", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內一般消費1%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" },
-        { "id": "sunnybank-sunnylife-overseas", "plan": "", "scope": { "type": "category", "categories": ["overseas"] }, "rate": 1.5, "rawReward": "國外一般消費1.5%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" },
-        { "id": "sunnybank-sunnylife-mall", "plan": "", "scope": { "type": "merchant", "merchants": ["陽信商店街"], "basis": "merchant-list" }, "rate": 2, "rawReward": "陽信商店街消費合計享2%賞利點回饋（商店街基本回饋1%+國內基本回饋1%），無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-10" }
+        { "id": "sunnybank-sunnylife-general", "plan": "", "sourceType": "official", "scope": { "type": "general" }, "rate": 1, "rawReward": "國內一般消費1%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-30" },
+        { "id": "sunnybank-sunnylife-overseas", "plan": "", "sourceType": "official", "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" }, "rate": 1.5, "rawReward": "國外一般消費1.5%賞利點回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-30" },
+        { "id": "sunnybank-sunnylife-mall", "plan": "", "sourceType": "official", "scope": { "type": "merchant", "merchants": ["陽信商店街"], "basis": "merchant-list" }, "rate": 2, "rawReward": "陽信商店街消費合計享2%賞利點回饋（商店街基本回饋1%+國內基本回饋1%），無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543", "checkedAt": "2026-10-30" }
       ]
     },
     {

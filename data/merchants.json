@@ -205,6 +205,7 @@
   {"id":"lalamove","name":"Lalamove","aliases":["拉拉快送"],"category":"delivery"},
   {"id":"shopee","name":"蝦皮購物","aliases":["蝦皮","Shopee","蝦皮商城","蝦皮購物商城","shopee蝦皮"],"category":"online-shopping"},
   {"id":"momo","name":"momo購物網","aliases":["momo","富邦momo","momo電視購物","momo型錄","mo店+","momo摩天商城"],"category":"online-shopping"},
+  {"id":"sunny-mall","name":"陽信商店街","aliases":["陽信商店街購物"],"category":"online-shopping"},
   {"id":"pchome-24h","name":"PChome 24h購物","aliases":["PChome24h","PChome","PChome線上購物","24h購物","PChome 24h書店"],"category":"online-shopping"},
   {"id":"pchome","name":"PChome旅遊","aliases":["PChome Travel"],"category":"online-shopping"},
   {"id":"coupang","name":"Coupang 酷澎","aliases":["Coupang","酷澎","酷澎(Coupang)"],"category":"online-shopping"},
