@@ -119,6 +119,7 @@ data/
     - `general`：一般消費，無需其他欄位。
     - `category`：`scope.categories` 為 `categories.json` 中的 id 陣列。只有在官方是以行業別或 MCC 判定時才能用 `category`；官方若是列出具體商家名單，不可用 `category` 放大範圍，應改用 `merchant`。建議填 `scope.basis: "mcc"` 註明判定依據；`precheck` 會把沒有 `basis` 的 `category` 規則列為疑點（不是 `validate` 的硬性錯誤，因為既有資料尚未全部補上）。
     - `merchant`：`scope.merchants` 為官方公告上的商家名稱陣列（照官方寫法，比對時經由 `merchants.json` 別名表解析）；`scope.basis` 為 `mcc` 或 `merchant-list`。
+  - `scope.excludeMerchants`（選填，字串陣列）：只用於 `category` 與 `general` 規則。填官方明列不適用的商家名稱（照官方寫法，經 `merchants.json` 名稱／別名解析）；查詢的商家屬於名單時，該規則不適用，引擎改用同卡其他適用規則（例如 general）。`validate` 要求每個名稱都對得到 `merchants.json`（verified 卡）。例：`"scope": { "type": "category", "categories": ["supermarket"], "basis": "mcc", "excludeMerchants": ["全聯"] }`
   - `rate`：換算成新台幣後的回饋百分比數字（`3` 代表 3%）。點數回饋需先用 `pointValue.twdPerPoint` 換算成等值 % 再填入；`rawReward` 保留官方原文寫法（例如「3% 小樹點」），供人工核對。
   - `cap`：`null` 代表無上限；否則為 `{ amount, unit, period }`：
     - `unit`：`TWD` 或 `point`。

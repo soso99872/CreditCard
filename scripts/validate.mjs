@@ -203,6 +203,20 @@ function validateMerchants(merchants, categoryIds, bankFiles) {
     for (const card of data?.cards || []) {
       if (card.verified !== true) continue;
       for (const rule of card.rules || []) {
+        const ex = rule?.scope?.excludeMerchants;
+        if (ex !== undefined) {
+          if (!Array.isArray(ex) || ex.length === 0) {
+            errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：scope.excludeMerchants 必須是非空陣列`);
+          } else {
+            for (const name of ex) {
+              if (typeof name !== "string" || !name.trim()) {
+                errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：scope.excludeMerchants 含空字串或非字串`);
+              } else if (!keyOwner.has(normalize(name))) {
+                errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：excludeMerchants 商家「${name}」對不上 merchants.json`);
+              }
+            }
+          }
+        }
         if (rule?.scope?.type !== "merchant") continue;
         for (const name of rule.scope.merchants || []) {
           if (!keyOwner.has(normalize(name))) {

@@ -29,6 +29,12 @@ function ruleMerchantIds(rule, merchantIndex) {
     .filter((id) => id !== null);
 }
 
+/** category／general 規則的 scope.excludeMerchants 命中查詢的商家時，該規則不適用。 */
+function isExcluded(rule, merchantId, merchantIndex) {
+  if (!merchantId) return false;
+  return (rule.scope?.excludeMerchants || []).some((name) => resolveMerchantId(name, merchantIndex) === merchantId);
+}
+
 // 具體程度排名，只用來在回饋率相同時決定選哪一條（數字越大越具體）。
 const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
 
@@ -62,14 +68,18 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
 
   if (categoryId) {
     for (const rule of activeRules) {
-      if (rule.scope?.type === "category" && (rule.scope.categories || []).includes(categoryId)) {
+      if (
+        rule.scope?.type === "category" &&
+        (rule.scope.categories || []).includes(categoryId) &&
+        !isExcluded(rule, merchantId, merchantIndex)
+      ) {
         candidates.push({ rule, matchLevel: "category" });
       }
     }
   }
 
   for (const rule of activeRules) {
-    if (rule.scope?.type === "general") {
+    if (rule.scope?.type === "general" && !isExcluded(rule, merchantId, merchantIndex)) {
       candidates.push({ rule, matchLevel: "general" });
     }
   }
