@@ -35,6 +35,17 @@ function isExcluded(rule, merchantId, merchantIndex) {
   return (rule.scope?.excludeMerchants || []).some((name) => resolveMerchantId(name, merchantIndex) === merchantId);
 }
 
+// 地區／國家分類，同時算海外：查這些分類時，只標 overseas 的規則也適用（反過來不成立）。
+export const REGION_CATEGORY_IDS = new Set(["japan", "korea", "thailand", "singapore", "americas", "europe"]);
+
+/** 泛用海外規則套到地區查詢時，檢查規則的 excludeRegions／onlyRegions 是否允許該地區。 */
+function regionApplies(rule, regionId) {
+  const { excludeRegions, onlyRegions } = rule.scope;
+  if (excludeRegions && excludeRegions.includes(regionId)) return false;
+  if (onlyRegions && !onlyRegions.includes(regionId)) return false;
+  return true;
+}
+
 // 具體程度排名，只用來在回饋率相同時決定選哪一條（數字越大越具體）。
 const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
 
@@ -49,7 +60,7 @@ const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
  *   today: string,
  *   merchantIndex: Map<string, object>,
  * }} params
- * @returns {{ rule: object, matchLevel: "merchant" | "category" | "general" } | null}
+ * @returns {{ rule: object, matchLevel: "merchant" | "category" | "general", viaOverseas?: boolean } | null}
  */
 export function selectBestRule(card, { merchantId, categoryId, today, merchantIndex }) {
   const activeRules = (card.rules || []).filter((rule) => isRuleActive(rule, today));
@@ -74,6 +85,15 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
         !isExcluded(rule, merchantId, merchantIndex)
       ) {
         candidates.push({ rule, matchLevel: "category" });
+      } else if (
+        rule.scope?.type === "category" &&
+        REGION_CATEGORY_IDS.has(categoryId) &&
+        !merchantId && // 商家庫的日本／韓國等分類含台灣也有門市的品牌（HANDS、Loft 等），商家查詢不套泛用海外規則
+        (rule.scope.categories || []).includes("overseas") &&
+        regionApplies(rule, categoryId) &&
+        !isExcluded(rule, merchantId, merchantIndex)
+      ) {
+        candidates.push({ rule, matchLevel: "category", viaOverseas: true });
       }
     }
   }
@@ -90,7 +110,9 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
       !best ||
       candidate.rule.rate > best.rule.rate ||
       (candidate.rule.rate === best.rule.rate &&
-        SPECIFICITY_RANK[candidate.matchLevel] > SPECIFICITY_RANK[best.matchLevel])
+        (SPECIFICITY_RANK[candidate.matchLevel] > SPECIFICITY_RANK[best.matchLevel] ||
+          // 同回饋率時，地區專屬規則比泛用海外規則具體
+          (candidate.matchLevel === best.matchLevel && best.viaOverseas && !candidate.viaOverseas)))
     ) {
       best = candidate;
     }

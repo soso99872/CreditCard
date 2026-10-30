@@ -38,7 +38,7 @@
         {
           "id": "hsbc-cashback-signature-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "scope": { "type": "category", "categories": ["overseas"], "excludeRegions": ["europe"], "basis": "mcc" },
           "rate": 2.22,
           "rawReward": "國外2.22%現金回饋，無上限（不含歐盟及英國實體通路）",
           "cap": null,

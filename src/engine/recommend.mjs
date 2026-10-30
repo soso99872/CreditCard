@@ -132,12 +132,13 @@ export function recommend({
     const best = selectBestRule(card, { merchantId, categoryId, today, merchantIndex });
     if (!best) continue;
 
-    const { rule, matchLevel } = best;
+    const { rule, matchLevel, viaOverseas } = best;
     const reason = formatReason({
       matchLevel,
       displayName,
       categoryName,
       rate: rule.rate,
+      viaOverseas,
     });
 
     const entry = {
@@ -158,6 +159,7 @@ export function recommend({
       secondSourceUrl: rule.secondSourceUrl ?? null,
       secondSourcePublishedAt: rule.secondSourcePublishedAt ?? null,
       matchLevel,
+      viaOverseas: Boolean(viaOverseas),
       reason,
     };
 

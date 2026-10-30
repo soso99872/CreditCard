@@ -55,7 +55,7 @@
         {
           "id": "feib-hwcard-overseas",
           "plan": "",
-          "scope": { "type": "category", "categories": ["overseas"], "basis": "mcc" },
+          "scope": { "type": "category", "categories": ["overseas"], "excludeRegions": ["europe"], "basis": "mcc" },
           "rate": 2,
           "rawReward": "當期一般消費滿 NT$3,000，享一般消費國內 1%、國外 2% 刷卡金回饋",
           "cap": null,

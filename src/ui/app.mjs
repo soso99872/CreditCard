@@ -328,7 +328,7 @@ function buildReceipt(rec, match) {
     facts.appendChild(row);
   };
 
-  addFact("為什麼", shortReasonText(rec.matchLevel, match));
+  addFact("為什麼", shortReasonText(rec.matchLevel, match, rec.viaOverseas));
   addFact("上限", rec.capText);
 
   const needs = [...(rec.plan ? [`方案：${rec.plan}`] : []), ...rec.conditions];

@@ -34,7 +34,7 @@
           "plan": "",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 2.2,
@@ -106,7 +106,7 @@
           "plan": "",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 2,
@@ -123,7 +123,7 @@
           "plan": "",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 3,
@@ -140,7 +140,7 @@
           "plan": "國外實體加碼 8%",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 11,
@@ -314,7 +314,7 @@
           "plan": "",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 2.8,
@@ -981,7 +981,7 @@
           "plan": "",
           "scope": {
             "type": "category",
-            "categories": ["overseas"],
+            "categories": ["overseas"], "excludeRegions": ["europe"],
             "basis": "mcc"
           },
           "rate": 2.8,

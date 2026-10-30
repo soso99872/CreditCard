@@ -14,9 +14,11 @@
  * @param {"merchant" | "category" | "general"} matchLevel 該張卡最佳規則的比對層級（rec.matchLevel）
  * @param {{ merchantName?: string, categoryName?: string | null } | null | undefined} match
  *   recommend() 回傳的 match（同一次查詢所有卡共用，商家名／類別名都在這裡）
+ * @param {boolean} [viaOverseas] 地區分類套用了泛用海外規則（rec.viaOverseas）
  * @returns {string}
  */
-export function shortReasonText(matchLevel, match) {
+export function shortReasonText(matchLevel, match, viaOverseas = false) {
+  if (viaOverseas) return "海外消費，套用海外類別回饋";
   if (matchLevel === "merchant") {
     return `${match?.merchantName ?? ""}屬於指定通路`;
   }

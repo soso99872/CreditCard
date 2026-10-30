@@ -53,11 +53,16 @@ export function formatCap(cap) {
  *   displayName: string | null,
  *   categoryName: string | null,
  *   rate: number,
+ *   viaOverseas?: boolean, // 地區分類套用了泛用海外規則
  * }} params
  * @returns {string}
  */
-export function formatReason({ matchLevel, displayName, categoryName, rate }) {
+export function formatReason({ matchLevel, displayName, categoryName, rate, viaOverseas = false }) {
   const rateText = formatRate(rate);
+
+  if (viaOverseas) {
+    return `${displayName || categoryName}屬海外消費，依海外類別回饋${rateText}`;
+  }
 
   if (matchLevel === "merchant") {
     return `${displayName}屬於指定通路，回饋${rateText}`;

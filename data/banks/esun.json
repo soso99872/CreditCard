@@ -115,7 +115,7 @@
         {
           "id": "esun-unicard-easy-overseas",
           "plan": "簡單選（預設）",
-          "scope": {"type": "category", "categories": ["overseas"]},
+          "scope": {"type": "category", "categories": ["overseas"], "onlyRegions": ["japan", "korea", "thailand", "singapore"]},
           "rate": 3,
           "rawReward": "簡單選：國外實體加碼2%，合計最高3%玉山e point；加碼每月上限1,000點",
           "cap": {"amount": 1000, "unit": "point", "period": "month"},
@@ -149,7 +149,7 @@
         {
           "id": "esun-unicard-free-overseas",
           "plan": "任意選",
-          "scope": {"type": "category", "categories": ["overseas"]},
+          "scope": {"type": "category", "categories": ["overseas"], "onlyRegions": ["japan", "korea", "thailand", "singapore"]},
           "rate": 3.5,
           "rawReward": "任意選：自選通路加碼2.5%，合計最高3.5%玉山e point；加碼每月上限1,000點",
           "cap": {"amount": 1000, "unit": "point", "period": "month"},
@@ -183,7 +183,7 @@
         {
           "id": "esun-unicard-up-overseas",
           "plan": "UP選",
-          "scope": {"type": "category", "categories": ["overseas"]},
+          "scope": {"type": "category", "categories": ["overseas"], "onlyRegions": ["japan", "korea", "thailand", "singapore"]},
           "rate": 4.5,
           "rawReward": "UP選：國外實體加碼3.5%，合計最高4.5%玉山e point；加碼每月上限5,000點",
           "cap": {"amount": 5000, "unit": "point", "period": "month"},

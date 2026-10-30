@@ -6,6 +6,7 @@
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { normalize } from "../src/engine/normalize.mjs";
+import { REGION_CATEGORY_IDS } from "../src/engine/rules.mjs";
 import {
   isValidDateString,
   domainInWhitelist,
@@ -215,6 +216,13 @@ function validateMerchants(merchants, categoryIds, bankFiles) {
                 errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：excludeMerchants 商家「${name}」對不上 merchants.json`);
               }
             }
+          }
+        }
+        for (const key of ["excludeRegions", "onlyRegions"]) {
+          const regions = rule?.scope?.[key];
+          if (regions === undefined) continue;
+          if (!Array.isArray(regions) || regions.length === 0 || regions.some((r) => !REGION_CATEGORY_IDS.has(r))) {
+            errors.push(`[banks/${file}] 卡片 ${card.id} 規則 ${rule.id}：scope.${key} 必須是非空陣列，且只能是地區分類 id`);
           }
         }
         if (rule?.scope?.type !== "merchant") continue;
