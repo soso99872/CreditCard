@@ -384,7 +384,7 @@
         {
           "id": "esun-pi-wallet-tier-30k",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 3,
           "rawReward": "每月國內外一般消費累積滿NT$30,000，加碼2% P幣，合計最高3% P幣；每月每歸戶上限3,000 P幣",
           "cap": {"amount": 3000, "unit": "point", "period": "month"},
