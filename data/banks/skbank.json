@@ -4,32 +4,12 @@
   "checkedAt": "2026-10-10",
   "coverage": [
     { "cardName": "寰宇現金回饋卡", "status": "excluded", "reason": "2026/10/30 起停止受理新申請，停辦卡不收錄（老闆 2026-10-25 裁示）" },
-    { "cardName": "OU點點卡", "status": "included", "cardId": "skbank-oudot" },
+    { "cardName": "OU點點卡", "status": "excluded", "reason": "停止受理申請，停辦卡不收錄（老闆 2026-10-25 裁示）；官方卡片頁標題「自2026年10月30日停止申辦及進件」" },
     { "cardName": "悠遊聯名卡", "status": "included", "cardId": "skbank-easycard" },
     { "cardName": "新光三越聯名卡", "status": "excluded", "reason": "官方讀不到：卡片列表頁僅載明「館內享3倍紅利點數回饋」，卡片詳情頁為前端SPA無法取得基礎點數累積率與1點兌換台幣之比例，暫不收錄" },
     { "cardName": "簽帳金融卡", "status": "excluded", "reason": "簽帳金融卡，非信用卡，本期僅收錄信用卡" }
   ],
   "cards": [
-    {
-      "id": "skbank-oudot",
-      "name": "OU點點卡",
-      "sourceUrl": "https://www.skbank.com.tw/credit_card/credit_card/105",
-      "rules": [
-        {
-          "id": "skbank-oudot-general",
-          "plan": "",
-          "scope": { "type": "general" },
-          "rate": 0.3,
-          "rawReward": "一般消費0.3%現金回饋，無上限",
-          "cap": null,
-          "conditions": ["本卡自2026/10/30起停止受理新申請；新光銀行將於2027/1/1與台新銀行合併，相關權益屆時可能調整"],
-          "validFrom": "2026-10-10",
-          "validTo": null,
-          "sourceUrl": "https://www.skbank.com.tw/credit_card/credit_card/105",
-          "checkedAt": "2026-10-10"
-        }
-      ]
-    },
     {
       "id": "skbank-easycard",
       "name": "悠遊聯名卡",
