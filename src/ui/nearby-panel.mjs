@@ -53,6 +53,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
   let osmCategories = null;
   let geoPromise = null; // 商家位置檔；載入失敗就清掉，下次再試
   let lastOrigin = null;
+  let lastViaOverpass = false; // 重試時沿用：按過「查更多」就再問 Overpass
   let retryMode = false;
   let token = 0; // 只接受最新一次查詢的結果
 
@@ -71,7 +72,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
   async function loadGeo() {
     geoPromise ??= fetch(`${baseUrl}merchants-geo.json`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((geo) => ({ date: geo.generated.slice(0, 10), places: decodeGeo(geo) }));
+      .then((geo) => ({ date: (geo.osmBase ?? geo.generated).slice(0, 10), places: decodeGeo(geo) }));
     try {
       return await geoPromise;
     } catch {
@@ -168,6 +169,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
   async function search(origin, { viaOverpass = false } = {}) {
     const mine = ++token;
     lastOrigin = origin;
+    lastViaOverpass = viaOverpass;
     setRetry(false);
     searchBtn.disabled = true;
     renderEmpty("查詢中", "正在查這個位置附近有哪些店；若要向 OpenStreetMap 問，忙線時會自動換查詢伺服器，可能要多等一下。", false);
@@ -263,7 +265,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
 
   searchBtn.addEventListener("click", () => {
     if (!map) return init();
-    if (retryMode) return search(lastOrigin ?? DEFAULT_CENTER);
+    if (retryMode) return search(lastOrigin ?? DEFAULT_CENTER, { viaOverpass: lastViaOverpass });
     const c = map.getCenter();
     search({ lat: c.lat, lng: c.lng });
   });

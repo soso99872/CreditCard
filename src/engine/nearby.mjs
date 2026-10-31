@@ -88,19 +88,21 @@ export function parseNearby(overpassJson, origin, { merchantIndex, osmCategories
 }
 
 // ---- 靜態商家檔（data/merchants-geo.json，npm run build:merchants 產生）----
-// 格式：{generated, osmBase, merchants:[商家 id], places:[latE5 與前一筆的差, lngE5, 商家索引, ...（三個一組，依緯度排序）]}
+// 格式：{generated, osmBase, merchants:[商家 id], names:[OSM 店名], places:[latE5 與前一筆的差, lngE5, 商家索引, 店名索引, ...（四個一組，依緯度排序）]}
+// 店名索引 -1 表示店名與商家庫名稱相同；其餘存 OSM 原始店名，清單才看得出「店名開頭比對」對到哪家（T21 主管退件）。
 
 /** 台灣外框（含澎湖、金門、馬祖）；框內才用靜態檔，其餘退回 Overpass。 */
 const TAIWAN_BOXES = [[21.7, 25.4, 119.3, 122.1], [24.15, 24.6, 118.1, 118.55], [25.9, 26.4, 119.9, 120.6]];
 export const inTaiwan = ({ lat, lng }) => TAIWAN_BOXES.some(([s, n, w, e]) => lat >= s && lat <= n && lng >= w && lng <= e);
 
-/** 把商家檔展開成 [{lat, lng, merchantId}]（座標還原成度）。 */
+/** 把商家檔展開成 [{lat, lng, merchantId, name}]（座標還原成度；name 為 null 表示同商家庫名稱）。 */
 export function decodeGeo(geo) {
   const out = [];
   let latE5 = 0;
-  for (let i = 0; i < geo.places.length; i += 3) {
+  for (let i = 0; i < geo.places.length; i += 4) {
     latE5 += geo.places[i];
-    out.push({ lat: latE5 / 1e5, lng: geo.places[i + 1] / 1e5, merchantId: geo.merchants[geo.places[i + 2]] });
+    const nameIdx = geo.places[i + 3];
+    out.push({ lat: latE5 / 1e5, lng: geo.places[i + 1] / 1e5, merchantId: geo.merchants[geo.places[i + 2]], name: nameIdx < 0 ? null : geo.names[nameIdx] });
   }
   return out;
 }
@@ -121,7 +123,7 @@ export function nearbyFromGeo(places, origin, radiusM, merchantsById) {
     const merchant = merchantsById.get(p.merchantId);
     if (!merchant) continue;
     const distanceM = haversineM(origin.lat, origin.lng, p.lat, p.lng);
-    if (distanceM <= radiusM) results.push({ name: merchant.name, distanceM, lat: p.lat, lng: p.lng, match: { type: "merchant", merchant } });
+    if (distanceM <= radiusM) results.push({ name: p.name ?? merchant.name, distanceM, lat: p.lat, lng: p.lng, match: { type: "merchant", merchant } });
   }
   results.sort((a, b) => a.distanceM - b.distanceM);
   const kept = [];

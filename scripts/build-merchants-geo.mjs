@@ -48,6 +48,8 @@ const osm = await fetchAll();
 
 const ids = [];
 const idxOf = new Map();
+const names = [];
+const nameIdxOf = new Map();
 const counts = new Map();
 const seen = new Set();
 const rows = [];
@@ -65,13 +67,14 @@ for (const el of osm.elements) {
   seen.add(key);
   if (!idxOf.has(merchant.id)) idxOf.set(merchant.id, ids.push(merchant.id) - 1);
   counts.set(merchant.name, (counts.get(merchant.name) || 0) + 1);
-  rows.push([latE5, lngE5, idxOf.get(merchant.id)]);
+  if (tags.name !== merchant.name && !nameIdxOf.has(tags.name)) nameIdxOf.set(tags.name, names.push(tags.name) - 1);
+  rows.push([latE5, lngE5, idxOf.get(merchant.id), tags.name === merchant.name ? -1 : nameIdxOf.get(tags.name)]);
 }
 rows.sort((a, b) => a[0] - b[0]);
 let prev = 0;
-const places = rows.flatMap(([la, ln, i]) => { const r = [la - prev, ln, i]; prev = la; return r; });
+const places = rows.flatMap(([la, ln, i, ni]) => { const r = [la - prev, ln, i, ni]; prev = la; return r; });
 
-const geo = { generated: new Date().toISOString(), osmBase: osm.osm3s?.timestamp_osm_base ?? null, merchants: ids, places };
+const geo = { generated: new Date().toISOString(), osmBase: osm.osm3s?.timestamp_osm_base ?? null, merchants: ids, names, places };
 const text = JSON.stringify(geo);
 await writeFile(OUT, text);
 

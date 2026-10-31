@@ -84,18 +84,18 @@ const byId = new Map(merchants.map((m) => [m.id, m]));
 const m1 = merchants[0].id;
 const m2 = merchants[1].id;
 // 編碼：緯度存與前一筆的差（E5），三個一組
-const geo = { generated: "2026-10-31T00:00:00Z", merchants: [m1, m2], places: [0, 12151700, 0, 100, 12151800, 1, 100, 12151700, 0] };
+const geo = { generated: "2026-10-31T00:00:00Z", merchants: [m1, m2], names: ["分店甲"], places: [0, 12151700, 0, -1, 100, 12151800, 1, 0, 100, 12151700, 0, -1] };
 
 test("decodeGeo：還原緯度差、座標與商家 id", () => {
   assert.deepEqual(decodeGeo(geo), [
-    { lat: 0, lng: 121.517, merchantId: m1 },
-    { lat: 0.001, lng: 121.518, merchantId: m2 },
-    { lat: 0.002, lng: 121.517, merchantId: m1 },
+    { lat: 0, lng: 121.517, merchantId: m1, name: null },
+    { lat: 0.001, lng: 121.518, merchantId: m2, name: "分店甲" },
+    { lat: 0.002, lng: 121.517, merchantId: m1, name: null },
   ]);
 });
 
 test("nearbyFromGeo：依距離排序、match 為 merchant、半徑外不收", () => {
-  const places = decodeGeo({ ...geo, places: [2504780, 12151700, 1, 100, 12151700, 0, 500, 12151700, 0] });
+  const places = decodeGeo({ ...geo, places: [2504780, 12151700, 1, -1, 100, 12151700, 0, -1, 500, 12151700, 0, -1] });
   const list = nearbyFromGeo(places, { lat: 25.0478, lng: 121.517 }, 300, byId);
   assert.equal(list.length, 2);
   assert.deepEqual(list.map((r) => r.distanceM), [0, 111]);
@@ -119,6 +119,12 @@ test("nearbyFromGeo：台灣外或範圍內查無店回 null（需退回 Overpas
   assert.equal(nearbyFromGeo(places, { lat: 25.1, lng: 121.6 }, 300, byId), null);
 });
 
+test("nearbyFromGeo：店名用 OSM 原始店名（看得出店名開頭比對對到哪家），商家照對應", () => {
+  const [item] = nearbyFromGeo([{ lat: 25.0478, lng: 121.517, merchantId: "etmall", name: "東森廣場K區地下街" }], { lat: 25.0478, lng: 121.517 }, 300, byId);
+  assert.equal(item.name, "東森廣場K區地下街");
+  assert.equal(item.match.merchant.id, "etmall");
+});
+
 test("inTaiwan：本島、澎湖、金門、馬祖在內，東京、香港不在", () => {
   for (const p of [[25.05, 121.52], [23.57, 119.57], [24.43, 118.32], [26.16, 119.95]]) assert.ok(inTaiwan({ lat: p[0], lng: p[1] }), String(p));
   for (const p of [[35.68, 139.77], [22.3, 114.17]]) assert.ok(!inTaiwan({ lat: p[0], lng: p[1] }), String(p));
@@ -128,7 +134,8 @@ test("data/merchants-geo.json：格式可解碼，商家 id 都在商家庫，�
   const real = load("../data/merchants-geo.json");
   assert.match(real.generated, /^\d{4}-\d\d-\d\d/);
   assert.ok(real.osmBase);
-  assert.equal(real.places.length % 3, 0);
+  assert.equal(real.places.length % 4, 0);
+  assert.ok(real.places.every((v, i) => i % 4 !== 3 || v === -1 || typeof real.names[v] === "string"));
   assert.ok(real.merchants.every((id) => byId.has(id)));
   const list = nearbyFromGeo(decodeGeo(real), origin, 300, byId);
   assert.ok(list.length > 0 && list.every((r) => r.distanceM <= 300));
