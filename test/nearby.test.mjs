@@ -104,8 +104,13 @@ test("nearbyFromGeo：依距離排序、match 為 merchant、半徑外不收", (
 });
 
 test("nearbyFromGeo：最多 30 筆", () => {
-  const places = Array.from({ length: 50 }, (_, i) => ({ lat: 25.0478 + i * 1e-5, lng: 121.517, merchantId: m1 }));
+  const places = Array.from({ length: 50 }, (_, i) => ({ lat: 25.0478 + i * 1e-5, lng: 121.517, merchantId: merchants[i].id }));
   assert.equal(nearbyFromGeo(places, { lat: 25.0478, lng: 121.517 }, 300, byId).length, MAX_RESULTS);
+});
+
+test("nearbyFromGeo：同商家 50 公尺內只留最近一筆，較遠的同商家照列", () => {
+  const places = [0, 2e-4, 3e-4, 1e-3].map((d) => ({ lat: 25.0478 + d, lng: 121.517, merchantId: m1 }));
+  assert.deepEqual(nearbyFromGeo(places, { lat: 25.0478, lng: 121.517 }, 300, byId).map((r) => r.distanceM), [0, 111]);
 });
 
 test("nearbyFromGeo：台灣外或範圍內查無店回 null（需退回 Overpass）", () => {

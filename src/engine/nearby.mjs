@@ -107,10 +107,13 @@ export function decodeGeo(geo) {
 
 /**
  * 用商家檔查附近：回傳同 parseNearby 格式的清單（match 一律 merchant）；
+ * 同商家 50 公尺內只留最近一筆（OSM 同一站常有多個點，例如台鐵）；
  * 不在台灣外框或半徑內沒有店回 null，呼叫端改走 Overpass。
  * @param {Array<{lat: number, lng: number, merchantId: string}>} places decodeGeo 的結果
  * @param {Map<string, object>} merchantsById
  */
+const SAME_PLACE_M = 50;
+
 export function nearbyFromGeo(places, origin, radiusM, merchantsById) {
   if (!inTaiwan(origin)) return null;
   const results = [];
@@ -120,5 +123,11 @@ export function nearbyFromGeo(places, origin, radiusM, merchantsById) {
     const distanceM = haversineM(origin.lat, origin.lng, p.lat, p.lng);
     if (distanceM <= radiusM) results.push({ name: merchant.name, distanceM, lat: p.lat, lng: p.lng, match: { type: "merchant", merchant } });
   }
-  return results.length ? results.sort((a, b) => a.distanceM - b.distanceM).slice(0, MAX_RESULTS) : null;
+  results.sort((a, b) => a.distanceM - b.distanceM);
+  const kept = [];
+  for (const r of results) {
+    if (kept.length === MAX_RESULTS) break;
+    if (!kept.some((k) => k.match.merchant === r.match.merchant && haversineM(k.lat, k.lng, r.lat, r.lng) < SAME_PLACE_M)) kept.push(r);
+  }
+  return kept.length ? kept : null;
 }

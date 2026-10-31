@@ -2,7 +2,7 @@
 // 台灣境內先讀靜態商家檔（data/merchants-geo.json），沒有結果或在國外才問 Overpass（T21）。
 // 純邏輯在 nearby-view.mjs、引擎在 engine/nearby.mjs；本檔只處理 DOM 與地圖。
 
-import { buildMerchantIndex, buildOverpassQuery, parseNearby, decodeGeo, nearbyFromGeo, MAX_RESULTS } from "../engine/index.mjs";
+import { buildMerchantIndex, buildOverpassQuery, parseNearby, decodeGeo, nearbyFromGeo, inTaiwan, MAX_RESULTS } from "../engine/index.mjs";
 import { DEFAULT_CENTER, SEARCH_RADIUS_M, distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, noCoverageNote, dotStyle, BUSY_TEXT, ALL_FAILED_TEXT } from "./nearby-view.mjs";
 
 const LEAFLET_JS = "vendor/leaflet/leaflet.js";
@@ -174,7 +174,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
     listEl.setAttribute("aria-busy", "true");
     setStatus("查詢附近商家中…");
     try {
-      if (!viaOverpass) {
+      if (!viaOverpass && inTaiwan(origin)) {
         const geo = await loadGeo();
         if (mine !== token) return;
         const fromGeo = geo && nearbyFromGeo(geo.places, origin, SEARCH_RADIUS_M, new Map(getData().merchants.map((m) => [m.id, m])));
