@@ -554,24 +554,6 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-@media (max-width: 767.98px) {
-  /* 收合狀態下才隱藏「更多類別」收納的那些；目前選到的類別即使屬於這批，
-     renderCategoryQuickPicker() 會強制展開，所以這裡的隱藏規則永遠不會蓋住使用中的按鈕。 */
-  .category-quick-list:not(.is-expanded) .category-quick-btn--extra {
-    display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  /* 選擇器要比 .link-button 多一層（.category-quick-picker .category-more-btn），
-     不能只寫 .category-more-btn：兩個都是 class 選擇器，優先度打平時，CSS 是看
-     規則在檔案裡出現的先後，.link-button 的 display:inline-flex 定義在後面，
-     沒有多一層的話反而是它贏，桌機會露出「更多類別」。 */
-  .category-quick-picker .category-more-btn {
-    display: none;
-  }
-}
-
 /* ---------- 各種狀態橫幅：錯誤／草稿／資料核對中／加卡提示／空狀態 ---------- */
 .banner {
   margin: 0;
@@ -1774,5 +1756,20 @@ input:focus-visible {
   .nearby-list {
     grid-area: list;
     padding-top: 8px;
+  }
+}@media (max-width: 767.98px) {
+  /* 手機改單行橫向捲動：全部類別放同一排，第 1 名的率與理由才進得了第一屏（T24）。
+     不再收合，所以手機也不需要「更多類別」鈕。 */
+  .category-quick-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .category-quick-picker {
+    gap: 4px;
+  }
+
+  .category-quick-btn {
+    flex: none;
   }
 }

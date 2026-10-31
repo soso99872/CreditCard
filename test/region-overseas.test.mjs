@@ -6,7 +6,6 @@ import path from "node:path";
 import { buildMerchantIndex } from "../src/engine/merchant-match.mjs";
 import { recommend } from "../src/engine/recommend.mjs";
 import { selectBestRule } from "../src/engine/rules.mjs";
-import { shortReasonText } from "../src/ui/reason-text.mjs";
 import { formatReason } from "../src/engine/format.mjs";
 import { loadAllData } from "../src/engine/data-loader.mjs";
 
@@ -97,10 +96,6 @@ describe("地區分類同時比對 overseas 規則", () => {
     for (const q of ["日本", "美國"]) {
       assert.ok(run(q).recommendations.some((r) => r.cardName.includes("uniopen")), q);
     }
-  });
-
-  test("shortReasonText：viaOverseas 時說明套用海外類別", () => {
-    assert.equal(shortReasonText("category", { categoryName: "日本" }, true), "海外消費，套用海外類別回饋");
   });
 
   test("真實資料：玉山 Unicard 海外加碼只含完整涵蓋的地區，歐洲（只含英法德義）不套用", () => {

@@ -30,7 +30,7 @@
         {
           "id": "taishin-richart-general",
           "plan": "",
-          "scope": { "type": "general" },
+          "scope": {"type": "general", "excludeMerchants": ["7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.3,
           "rawReward": "一般消費享 0.3% 台新Piont(信用卡)回饋無上限，不回饋項目詳注意事項。不回饋項目（官方17條）：媒體服務(YouTube/Spotify/TikTok/Apple媒體服務/Google產品服務)；部分歐洲國家實體商店交易(台新Richart卡為例外，有回饋)；境外投資平台；博奕；分期交易(特約商店分期、單筆消費分期0利率)；儲值卡自動加值、Samsung Pay悠遊卡加值；大全聯、全聯福利中心及便利商店(7-11/全家/萊爾富/OK等)；代扣繳費用(水電瓦斯、電信費、eTag、學費)；指定保費(躉繳、投資型、三商美邦、彈性繳)；臺北醫學大學附設醫院費用；路邊停車費；各繳費平台交易；聯合信用卡處理中心小額支付特約商店(停車場/麥當勞等)；規費罰鍰；預借現金及代償；稅費；違約金、循環利息、基金交易、年費及手續費。例外：於7-11及全家以台新Pay綁定台新Richart卡消費並切換「Pay著刷」或「天天刷」方案仍享有回饋，其他方式不回饋。",
           "cap": null,
@@ -1940,7 +1940,7 @@
         {
           "id": "taishin-richart-holiday-l1",
           "plan": "假日刷 LEVEL 1",
-          "scope": { "type": "general" },
+          "scope": {"type": "general", "excludeMerchants": ["7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 1.3,
           "rawReward": "假日刷 節假日 不限通路(含保費)消費（LEVEL 1 1.3%）",
           "cap": null,
@@ -1962,7 +1962,7 @@
         {
           "id": "taishin-richart-holiday-l2",
           "plan": "假日刷 LEVEL 2",
-          "scope": { "type": "general" },
+          "scope": {"type": "general", "excludeMerchants": ["7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 2,
           "rawReward": "假日刷 2% 節假日 不限通路(含保費)消費享2% (含LINE Pay及全盈+Pay綁定)",
           "cap": null,

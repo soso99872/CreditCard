@@ -64,7 +64,7 @@
         {
           "id": "esun-unicard-general-ebill",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.3,
           "rawReward": "一般消費0.3%玉山e point（僅申請帳單e化）",
           "cap": null,
@@ -81,7 +81,7 @@
         {
           "id": "esun-unicard-general-full",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 1,
           "rawReward": "一般消費最高1%玉山e point，無上限（帳單e化＋玉山臺幣帳戶自動扣繳）",
           "cap": null,
@@ -332,7 +332,7 @@
         {
           "id": "esun-pi-wallet-general-base",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.3,
           "rawReward": "一般消費0.3% P幣，無上限（未申請帳單e化者，正附卡分開計算）",
           "cap": null,
@@ -350,7 +350,7 @@
         {
           "id": "esun-pi-wallet-general-ebill",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 1,
           "rawReward": "一般消費1% P幣，無上限（需申請帳單e化，正附卡分開計算）",
           "cap": null,
@@ -367,7 +367,7 @@
         {
           "id": "esun-pi-wallet-tier-10k",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 1.8,
           "rawReward": "每月國內外一般消費累積滿NT$10,000未滿NT$30,000，加碼0.8% P幣，合計1.8% P幣",
           "cap": null,

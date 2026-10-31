@@ -3,7 +3,7 @@
 // 畫面照風格提案 D「錢包」（design-proposals/d-wallet.html，老闆 2026-10-15 選定）：
 // 第 1 名是信用卡比例的實體卡＋下方收據，其餘名次是錢包裡疊起來的卡（<details>）。
 // 可測的純邏輯已抽到同目錄的 date.mjs、storage.mjs、query-params.mjs、view-state.mjs、footer.mjs、
-// suggest.mjs、card-color.mjs、bank-name.mjs、reason-text.mjs，本檔只處理 DOM，不另外寫測試
+// suggest.mjs、card-color.mjs、bank-name.mjs，本檔只處理 DOM，不另外寫測試
 // （見 tasks.md T03、T12-2b）。
 
 import { normalize, loadAllData, recommend } from "../engine/index.mjs";
@@ -29,12 +29,8 @@ import { resolveQuickPicks } from "./quick-picks.mjs";
 import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
-import { shortReasonText } from "./reason-text.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
 import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
-
-/** 常用類別：手機寬度（< 768px）預設只顯示這幾顆，其餘摺進「更多類別」（tasks.md T12-2b）。 */
-const COMMON_CATEGORY_IDS = ["convenience-store", "supermarket", "coffee", "dining", "delivery", "gas"];
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 const CATEGORY_PICK_QUERY = "◎";
@@ -55,7 +51,6 @@ const state = {
   amount: undefined,
   scope: defaultScope(),
   showAll: false,
-  categoryPickerExpanded: false,
   // 「我的卡片」存在 storage 的完整清單，含目前看不到的 id（例如未開 ?draft=1 時的
   // 草稿卡）；畫面顯示與查詢範圍一律用 currentVisibleMyCardIds() 篩出的子集，
   // 新增或移除時才操作這個完整清單，避免看不到的 id 被覆寫掉（tasks.md T17）。
@@ -106,7 +101,6 @@ function cacheEls() {
   els.matchHint = document.getElementById("match-hint");
   els.categoryQuickPicker = document.getElementById("category-quick-picker");
   els.categoryQuickList = document.getElementById("category-quick-list");
-  els.categoryMoreBtn = document.getElementById("category-more-btn");
 
   els.emptyMyCards = document.getElementById("empty-my-cards");
   els.emptyMyCardsText = document.getElementById("empty-my-cards-text");
@@ -188,7 +182,7 @@ function resultTitleParts(match) {
  * 查無商家、也推測不出類別時，在結果上方顯示類別快選鈕（餐飲、咖啡…），
  * 點了就改依該類別推薦（PRD v2.2、AC-04）。「一般消費」本身不開放手動選擇，
  * 它是比對不到時的保底結果，不應該出現在快選鈕裡。
- * 目前共 21 顆：手機寬度先只顯示 6 顆常用類別，其餘摺進「更多類別」（tasks.md T12-2b）。
+ * 目前共 21 顆：手機寬度排成一列橫向捲動（T24）。
  */
 function renderCategoryQuickPicker(match) {
   const show = showsCategoryFallback(match, state.pickedCategory);
@@ -197,21 +191,11 @@ function renderCategoryQuickPicker(match) {
   if (!show) return;
 
   const categories = (state.data.categories || []).filter((c) => c.id !== GENERAL_CATEGORY_ID);
-  const hasExtra = categories.some((c) => !COMMON_CATEGORY_IDS.includes(c.id));
-  // 目前選到的類別若剛好屬於「更多類別」收起來的那批，不能讓面板收起來後反而看不到
-  // 自己選的是哪個，所以強制展開。「一般消費」是查無類別時的保底狀態，不會畫成快選鈕
-  // （上面已經濾掉），不算在「選到的類別被收起來」這個情況裡，否則一進到保底狀態
-  // 面板就會被強制展開，使用者還沒點「更多類別」就看到全部 21 顆。
-  const activeIsExtra =
-    match.categoryId !== GENERAL_CATEGORY_ID && !COMMON_CATEGORY_IDS.includes(match.categoryId);
-  const expanded = state.categoryPickerExpanded || activeIsExtra;
-  els.categoryQuickList.classList.toggle("is-expanded", expanded);
 
   for (const category of categories) {
-    const isExtra = !COMMON_CATEGORY_IDS.includes(category.id);
     const button = document.createElement("button");
     button.type = "button";
-    button.className = isExtra ? "category-quick-btn category-quick-btn--extra" : "category-quick-btn";
+    button.className = "category-quick-btn";
     button.textContent = category.name;
     const isActive = category.id === match.categoryId;
     button.setAttribute("aria-pressed", String(isActive));
@@ -225,12 +209,8 @@ function renderCategoryQuickPicker(match) {
     });
     els.categoryQuickList.appendChild(button);
   }
-
-  els.categoryMoreBtn.hidden = !hasExtra;
-  if (hasExtra) {
-    els.categoryMoreBtn.textContent = expanded ? "收起類別" : "更多類別";
-    els.categoryMoreBtn.setAttribute("aria-expanded", String(expanded));
-  }
+  // 手機單行橫滑：重畫後捲動位置會歸零，把選中的類別捲回看得到的地方
+  els.categoryQuickList.querySelector(".is-active")?.scrollIntoView({ block: "nearest", inline: "center" });
 }
 
 /** 停掉上一輪的「發牌」IntersectionObserver，避免捲動時觸發到已經不存在的卡堆。 */
@@ -291,7 +271,7 @@ function buildCardFace(rec, color) {
 }
 
 /** 第 1 名：卡面下方的「收據」，回饋率是全頁最大的數字（照抄 d-wallet.html）。 */
-function buildReceipt(rec, match) {
+function buildReceipt(rec) {
   const rate = document.createElement("p");
   rate.className = "rate num";
   const rateLabel = document.createElement("small");
@@ -328,7 +308,7 @@ function buildReceipt(rec, match) {
     facts.appendChild(row);
   };
 
-  addFact("為什麼", shortReasonText(rec.matchLevel, match, rec.viaOverseas));
+  addFact("為什麼", rec.reason);
   addFact("上限", rec.capText);
 
   const needs = [...(rec.plan ? [`方案：${rec.plan}`] : []), ...rec.conditions];
@@ -519,7 +499,7 @@ function renderMatchAndResults() {
   if (topKey !== lastTopKey) face.classList.add("is-fresh");
   lastTopKey = topKey;
   els.topCard.replaceChildren(face);
-  els.receipt.replaceChildren(buildReceipt(top, match));
+  els.receipt.replaceChildren(buildReceipt(top));
 
   stopDealAnimation();
   els.stack.classList.remove("is-in", "dealt");
@@ -732,7 +712,6 @@ function runEntry(entry) {
   state.via = entry.via ?? null;
   state.selectedCategoryId = null;
   state.showAll = false;
-  state.categoryPickerExpanded = false;
   els.queryInput.value = entry.via?.store ?? entry.name; // 附近商家點進來時輸入框放店名，最近查詢仍記類別
   els.queryInput.blur(); // 收起手機鍵盤，結果才看得到
   hideSuggestions();
@@ -813,7 +792,6 @@ function wireEvents() {
     state.via = null;
     state.selectedCategoryId = null;
     state.showAll = false;
-    state.categoryPickerExpanded = false;
     renderSuggestions();
     recompute();
   });
@@ -847,7 +825,6 @@ function wireEvents() {
     state.via = null;
     state.selectedCategoryId = null;
     state.showAll = false;
-    state.categoryPickerExpanded = false;
     hideSuggestions();
     recompute();
     els.queryInput.focus();
@@ -899,11 +876,6 @@ function wireEvents() {
   els.showAllBtn.addEventListener("click", () => {
     state.showAll = true;
     renderMatchAndResults();
-  });
-
-  els.categoryMoreBtn.addEventListener("click", () => {
-    state.categoryPickerExpanded = !state.categoryPickerExpanded;
-    renderCategoryQuickPicker(state.match);
   });
 
   // 加卡入口：查詢範圍已經自動改用全部卡別顯示結果了（見 recompute()），這個按鈕

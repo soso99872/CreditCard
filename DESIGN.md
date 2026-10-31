@@ -9,7 +9,7 @@ T12-2b（2026-10-15）：老闆改選**風格提案 D「錢包」**（`design-pr
 - 主題：只有淺色。暫不做深色模式（PRD 未要求）
 - CSS：`styles.css`，顏色與字體一律用 `:root` 變數（見第 2、3 節），不寫死色碼或字級堆疊在個別規則裡；例外見第 2、3 節末段說明
 - 畫面：`index.html`；動態產生的元素在 `src/ui/app.mjs`（一律 `createElement` + `textContent`，不用 `innerHTML` 塞資料）
-- 可測的純邏輯抽成 `src/ui/` 下的小模組（`card-color.mjs`、`bank-name.mjs`、`reason-text.mjs` 等），各自有對應的 `test/ui-*.test.mjs`
+- 可測的純邏輯抽成 `src/ui/` 下的小模組（`card-color.mjs`、`bank-name.mjs` 等），各自有對應的 `test/ui-*.test.mjs`
 
 ## 1. 風格一句話
 

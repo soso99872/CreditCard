@@ -44,7 +44,7 @@
         {
           "id": "cathay-cube-general",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.3,
           "rawReward": "一般消費享0.3%小樹點(信用卡)，回饋無上限；排除信用卡利息費用、預借現金、分期、稅款、學費、公用事業費用、便利超商、全聯福利中心、大全聯、悠遊卡／一卡通／icash 加值、博奕、虛擬貨幣等項目（詳見官方注意事項）",
           "cap": null,
@@ -651,7 +651,7 @@
         {
           "id": "cathay-cash-rebate-signature-domestic",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.5,
           "rawReward": "國內消費享 0.5% 現金回饋，無通路限制、無級距門檻、無回饋上限；現金回饋採當期消費次期回饋計算，僅限扣抵信用卡消費款，不能兌換現金及其他商品；退貨會扣回已回饋金額；不回饋項目：信用卡利息與各項費用、預借現金、帳單分期與單筆消費分期、稅款、學費、公用事業費用、路邊停車費、公務機關費用與繳費平台、各類電子票證加值、便利超商、全聯／大全聯、小額支付平台特約商店、數位貨幣、博奕等（同官方 1-1 一般消費排除）",
           "cap": null,
@@ -688,7 +688,7 @@
         {
           "id": "cathay-shopee-general",
           "plan": "",
-          "scope": {"type": "general"},
+          "scope": {"type": "general", "excludeMerchants": ["全聯", "7-ELEVEN", "全家", "萊爾富", "OK超商"]},
           "rate": 0.5,
           "rawReward": "蝦皮站外（非蝦皮購物）一般消費筆筆享0.5%蝦幣回饋；一般消費排除項目同官方注意事項（利息費用、預借現金、分期、稅款、學費、公用事業費用、便利超商、全聯、大全聯等）；海外消費可同享此回饋並免海外交易手續費",
           "cap": null,
