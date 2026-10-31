@@ -83,7 +83,7 @@ import { decodeGeo, nearbyFromGeo, inTaiwan, matchByName, MAX_RESULTS } from "..
 const byId = new Map(merchants.map((m) => [m.id, m]));
 const m1 = merchants[0].id;
 const m2 = merchants[1].id;
-// 編碼：緯度存與前一筆的差（E5），三個一組
+// 編碼：緯度存與前一筆的差（E5），四個一組（第 4 個為店名索引，-1 表示同商家庫名稱）
 const geo = { generated: "2026-10-31T00:00:00Z", merchants: [m1, m2], names: ["分店甲"], places: [0, 12151700, 0, -1, 100, 12151800, 1, 0, 100, 12151700, 0, -1] };
 
 test("decodeGeo：還原緯度差、座標與商家 id", () => {

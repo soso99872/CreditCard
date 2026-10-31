@@ -111,7 +111,7 @@ export function decodeGeo(geo) {
  * 用商家檔查附近：回傳同 parseNearby 格式的清單（match 一律 merchant）；
  * 同商家 50 公尺內只留最近一筆（OSM 同一站常有多個點，例如台鐵）；
  * 不在台灣外框或半徑內沒有店回 null，呼叫端改走 Overpass。
- * @param {Array<{lat: number, lng: number, merchantId: string}>} places decodeGeo 的結果
+ * @param {Array<{lat: number, lng: number, merchantId: string, name: string|null}>} places decodeGeo 的結果
  * @param {Map<string, object>} merchantsById
  */
 const SAME_PLACE_M = 50;
