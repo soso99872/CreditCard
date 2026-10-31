@@ -59,10 +59,12 @@ const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
  *   categoryId: string | null,
  *   today: string,
  *   merchantIndex: Map<string, object>,
+ *   parentIds?: string[], // categoryId 的上位類別（近到遠），其 category 規則一併比對，同率時下位專屬優先
+ *   merchantOverseas?: boolean, // 商家標了 overseas：在地區分類下也適用泛用海外規則
  * }} params
  * @returns {{ rule: object, matchLevel: "merchant" | "category" | "general", viaOverseas?: boolean } | null}
  */
-export function selectBestRule(card, { merchantId, categoryId, today, merchantIndex }) {
+export function selectBestRule(card, { merchantId, categoryId, today, merchantIndex, parentIds = [], merchantOverseas = false }) {
   const activeRules = (card.rules || []).filter((rule) => isRuleActive(rule, today));
   const candidates = [];
 
@@ -72,7 +74,7 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
         rule.scope?.type === "merchant" &&
         ruleMerchantIds(rule, merchantIndex).includes(merchantId)
       ) {
-        candidates.push({ rule, matchLevel: "merchant" });
+        candidates.push({ rule, matchLevel: "merchant", via: 0 });
       }
     }
   }
@@ -84,23 +86,29 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
         (rule.scope.categories || []).includes(categoryId) &&
         !isExcluded(rule, merchantId, merchantIndex)
       ) {
-        candidates.push({ rule, matchLevel: "category" });
+        candidates.push({ rule, matchLevel: "category", via: 0 });
+      } else if (
+        rule.scope?.type === "category" &&
+        parentIds.some((id) => (rule.scope.categories || []).includes(id)) &&
+        !isExcluded(rule, merchantId, merchantIndex)
+      ) {
+        candidates.push({ rule, matchLevel: "category", via: 1 });
       } else if (
         rule.scope?.type === "category" &&
         REGION_CATEGORY_IDS.has(categoryId) &&
-        !merchantId && // 商家庫的日本／韓國等分類含台灣也有門市的品牌（HANDS、Loft 等），商家查詢不套泛用海外規則
+        (!merchantId || merchantOverseas) && // 台灣有門市的日韓品牌已改成境內類別；只有標 overseas 的商家才套泛用海外規則
         (rule.scope.categories || []).includes("overseas") &&
         regionApplies(rule, categoryId) &&
         !isExcluded(rule, merchantId, merchantIndex)
       ) {
-        candidates.push({ rule, matchLevel: "category", viaOverseas: true });
+        candidates.push({ rule, matchLevel: "category", viaOverseas: true, via: 2 });
       }
     }
   }
 
   for (const rule of activeRules) {
     if (rule.scope?.type === "general" && !isExcluded(rule, merchantId, merchantIndex)) {
-      candidates.push({ rule, matchLevel: "general" });
+      candidates.push({ rule, matchLevel: "general", via: 0 });
     }
   }
 
@@ -111,8 +119,8 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
       candidate.rule.rate > best.rule.rate ||
       (candidate.rule.rate === best.rule.rate &&
         (SPECIFICITY_RANK[candidate.matchLevel] > SPECIFICITY_RANK[best.matchLevel] ||
-          // 同回饋率時，地區專屬規則比泛用海外規則具體
-          (candidate.matchLevel === best.matchLevel && best.viaOverseas && !candidate.viaOverseas)))
+          // 同回饋率時，下位類別專屬 > 上位類別 > 泛用海外
+          (candidate.matchLevel === best.matchLevel && candidate.via < best.via)))
     ) {
       best = candidate;
     }

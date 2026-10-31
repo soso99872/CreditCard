@@ -27,6 +27,8 @@ data/
 
 `japan`（日本）用於卡片針對日本消費（例如日本當地加碼、日系通路）的專屬規則；官方規則若寫明「日本消費」而非泛稱「海外」，應使用 `japan` 而非 `overseas`，不可用 `overseas` 代替。`korea`（韓國）、`thailand`（泰國）、`singapore`（新加坡）、`americas`（美洲）、`europe`（歐洲）比照 `japan` 的用法：官方規則寫明針對該國家或地區（而非泛稱「海外」）時使用，不可用 `overseas` 代替。`cinema`（電影院）用於卡片針對電影院（含指定影城連鎖，若官方是指定特定影城名單則應改用 `merchant`）的專屬規則。
 
+`parent`（選填）：上位類別 id。目前 `coffee`、`delivery` → `dining`，`cinema` → `entertainment`。查下位類別時，上位類別的 `category` 規則也一併比對（同回饋率時下位專屬優先，規則的 `excludeMerchants` 照樣生效）。`validate` 檢查 parent 指向存在的類別且不成環。
+
 `general` 是特殊類別 id，代表「卡片的一般消費回饋」，不透過類別關鍵字比對，只用於規則的 `scope.type: "general"`。
 
 ## `issuers.json`（T04 產出）
@@ -150,6 +152,7 @@ data/
 - `id`：全站唯一。
 - `aliases`：別名陣列，比對時與 `name` 一起視為相同商家（正規化後比對，見下）。
 - `category`：所屬類別 id，用於「類別」規則比對與推測類別顯示。必須是 `categories.json` 的 id，且不可為 `general`。
+- `overseas`（選填，布林）：`true` 代表真海外商家（台灣沒有門市，例如 Harrods）。未標＝境內。只有標了 `overseas` 且類別是日本／韓國等地區分類的商家，查詢時才會套泛用海外（`overseas` 類別）規則。台灣也有門市的日韓品牌（HANDS、Loft、ABC-MART 等）要改成它在台灣的實際類別，不要留在地區分類。
 - `name` 放品牌通稱（例如「星巴克」），英文名、官方全名、常見簡稱放 `aliases`；英文品牌（Starbucks、FamilyMart、Carrefour 等）也要收，供附近商家（OpenStreetMap 店名）比對。
 - 同一家的不同寫法合併成一筆，不要拆成兩個商家；同一個正規化名稱不能同時出現在兩個商家。
 - `npm run validate` 會檢查：id 不重複、category 有效、正規化名稱不重複；並檢查 verified 卡的 `merchant` 規則商家名稱都對得上（名稱或別名）。對不上時列出「銀行檔／卡片／規則 id／商家名」並 exit 1，請在這裡補商家或別名。草稿卡（未 verified）不檢查。

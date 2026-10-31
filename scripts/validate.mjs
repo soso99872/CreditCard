@@ -189,6 +189,7 @@ function validateMerchants(merchants, categoryIds, bankFiles) {
     else if (seenIds.has(m.id)) errors.push(`${loc}：id 重複`);
     else seenIds.add(m.id);
     if (!m?.name) errors.push(`${loc}：缺少 name`);
+    if (m?.overseas !== undefined && typeof m.overseas !== "boolean") errors.push(`${loc}：overseas 必須是布林值（未標＝境內）`);
     if (m?.category === "general" || !categoryIds.has(m?.category)) {
       errors.push(`${loc}：category「${m?.category}」不是有效類別（general 不可用）`);
     }
@@ -249,6 +250,18 @@ export async function validate(dataDir) {
     errors.push(`[data/categories.json] 找不到檔案，無法驗證類別 id`);
   }
   const categoryIds = new Set((categories || []).map((c) => c.id));
+  for (const c of categories || []) {
+    if (c.parent === undefined) continue;
+    const loc = `[categories.json] 類別 ${c.id}`;
+    if (!categoryIds.has(c.parent)) errors.push(`${loc}：parent「${c.parent}」不是有效類別 id`);
+    else {
+      const seen = new Set([c.id]); // 沿 parent 往上走，遇到走過的 id 就是成環
+      for (let p = c.parent; p; p = categories.find((x) => x.id === p)?.parent) {
+        if (seen.has(p)) { errors.push(`${loc}：parent 成環（${p}）`); break; }
+        seen.add(p);
+      }
+    }
+  }
 
   const issuers = await loadJsonIfExists(path.join(dataDir, "issuers.json"));
   const bankFiles = await loadBankFiles(path.join(dataDir, "banks"));

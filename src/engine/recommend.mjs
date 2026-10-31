@@ -77,7 +77,9 @@ export function recommend({
     return { match: { type: "empty" }, recommendations: [] };
   }
 
+  const parentById = new Map((categories || []).map((c) => [c.id, c.parent]));
   let merchantId = null;
+  let merchantOverseas = false;
   let categoryId = null;
   let displayName = null; // 用於推薦理由中的商家／查詢文字
   let categoryName = null;
@@ -86,6 +88,7 @@ export function recommend({
   if (matchResult.type === "merchant") {
     merchantId = matchResult.merchant.id;
     categoryId = matchResult.merchant.category;
+    merchantOverseas = matchResult.merchant.overseas === true;
     displayName = matchResult.merchant.name;
     categoryName = categoryNameById.get(categoryId) ?? null;
     match = {
@@ -127,9 +130,12 @@ export function recommend({
     : cards.filter((card) => card.verified === true);
   const pool = cardIds ? verifiedPool.filter((card) => cardIds.includes(card.id)) : verifiedPool;
 
+  const parentIds = []; // validate 保證 parent 不成環；加上限只是保險
+  for (let p = parentById.get(categoryId); p && parentIds.length < 5; p = parentById.get(p)) parentIds.push(p);
+
   const recommendations = [];
   for (const card of pool) {
-    const best = selectBestRule(card, { merchantId, categoryId, today, merchantIndex });
+    const best = selectBestRule(card, { merchantId, categoryId, today, merchantIndex, parentIds, merchantOverseas });
     if (!best) continue;
 
     const { rule, matchLevel, viaOverseas } = best;
