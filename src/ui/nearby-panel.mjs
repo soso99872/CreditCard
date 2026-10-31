@@ -1,7 +1,8 @@
-// 「附近商家」全螢幕面板：按下才載入 Leaflet 與 OSM 圖磚，頁面載入時不發任何地圖或 Overpass 請求（T18b）。
+// 「附近商家」全螢幕面板：按下才載入 Leaflet、OSM 圖磚與商家位置檔，頁面載入時不發任何地圖或 Overpass 請求（T18b）。
+// 台灣境內先讀靜態商家檔（data/merchants-geo.json），沒有結果或在國外才問 Overpass（T21）。
 // 純邏輯在 nearby-view.mjs、引擎在 engine/nearby.mjs；本檔只處理 DOM 與地圖。
 
-import { buildMerchantIndex, buildOverpassQuery, parseNearby, MAX_RESULTS } from "../engine/index.mjs";
+import { buildMerchantIndex, buildOverpassQuery, parseNearby, decodeGeo, nearbyFromGeo, MAX_RESULTS } from "../engine/index.mjs";
 import { DEFAULT_CENTER, SEARCH_RADIUS_M, distanceText, matchLabel, entryForItem, fetchOverpass, nearbyStatusText, noCoverageNote, dotStyle, BUSY_TEXT, ALL_FAILED_TEXT } from "./nearby-view.mjs";
 
 const LEAFLET_JS = "vendor/leaflet/leaflet.js";
@@ -50,6 +51,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
   let markers = null; // L.layerGroup：搜尋範圍圈＋各店圓點
   const dots = new Map(); // 店家 → 地圖上的圓點
   let osmCategories = null;
+  let geoPromise = null; // 商家位置檔；載入失敗就清掉，下次再試
   let lastOrigin = null;
   let retryMode = false;
   let token = 0; // 只接受最新一次查詢的結果
@@ -66,7 +68,19 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
     searchBtn.classList.toggle("is-stale", on); // 失敗時「重試」是該按的主要動作
   }
 
-  function renderList(items) {
+  async function loadGeo() {
+    geoPromise ??= fetch(`${baseUrl}merchants-geo.json`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((geo) => ({ date: geo.generated.slice(0, 10), places: decodeGeo(geo) }));
+    try {
+      return await geoPromise;
+    } catch {
+      geoPromise = null;
+      return null;
+    }
+  }
+
+  function renderList(items, onMore) {
     listEl.replaceChildren();
     for (const item of items) {
       const button = document.createElement("button");
@@ -96,6 +110,16 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
       });
       const li = document.createElement("li");
       li.appendChild(button);
+      listEl.appendChild(li);
+    }
+    if (onMore) {
+      const more = document.createElement("button");
+      more.type = "button";
+      more.className = "btn nearby-fallback-btn";
+      more.textContent = "查更多店家（含小店）";
+      more.addEventListener("click", onMore);
+      const li = document.createElement("li");
+      li.appendChild(more);
       listEl.appendChild(li);
     }
   }
@@ -141,15 +165,27 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
     }
   }
 
-  async function search(origin) {
+  async function search(origin, { viaOverpass = false } = {}) {
     const mine = ++token;
     lastOrigin = origin;
     setRetry(false);
     searchBtn.disabled = true;
-    renderEmpty("查詢中", "向 OpenStreetMap 問這個位置附近有哪些店；忙線時會自動換查詢伺服器，可能要多等一下。", false);
+    renderEmpty("查詢中", "正在查這個位置附近有哪些店；若要向 OpenStreetMap 問，忙線時會自動換查詢伺服器，可能要多等一下。", false);
     listEl.setAttribute("aria-busy", "true");
     setStatus("查詢附近商家中…");
     try {
+      if (!viaOverpass) {
+        const geo = await loadGeo();
+        if (mine !== token) return;
+        const fromGeo = geo && nearbyFromGeo(geo.places, origin, SEARCH_RADIUS_M, new Map(getData().merchants.map((m) => [m.id, m])));
+        if (fromGeo) {
+          drawMarkers(origin, fromGeo);
+          setRoomy(false);
+          renderList(fromGeo, () => search(origin, { viaOverpass: true }));
+          setStatus(`${nearbyStatusText(fromGeo.length, MAX_RESULTS)}（店家位置資料 ${geo.date}，只含有回饋資料的商家）`);
+          return;
+        }
+      }
       osmCategories ??= await (await fetch(`${baseUrl}osm-categories.json`)).json();
       const json = await fetchOverpass(buildOverpassQuery(origin.lat, origin.lng, SEARCH_RADIUS_M), {
         onRetry: () => mine === token && setStatus(BUSY_TEXT),

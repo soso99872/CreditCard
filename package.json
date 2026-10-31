@@ -12,7 +12,8 @@
     "coverage": "node scripts/coverage.mjs",
     "build-index": "node scripts/build-index.mjs",
     "smoke:nearby": "node scripts/smoke-nearby.mjs",
-    "start": "node scripts/server.mjs"
+    "start": "node scripts/server.mjs",
+    "build:merchants": "node scripts/build-merchants-geo.mjs"
   },
   "engines": {
     "node": ">=24"

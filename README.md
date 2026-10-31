@@ -10,6 +10,16 @@
 
 按「附近商家」才載入本機的 Leaflet（`vendor/leaflet/`）、OpenStreetMap 圖磚與 Overpass API 查附近店家，全部免金鑰；頁面載入時不發任何地圖請求。
 
+台灣境內（含澎湖、金門、馬祖）先讀 `data/merchants-geo.json`（事先抓好的「商家庫有的店」位置，約 130KB gzip）查 300 公尺內的店，1 秒內出結果，狀態列會寫資料日期；範圍內查無、在國外、檔案載入失敗才退回 Overpass 輪替。清單底部「查更多店家（含小店）」按了才走 Overpass。
+
+### 更新商家位置檔
+
+```bash
+npm run build:merchants   # 約 1～3 分鐘（一次向 Overpass 抓全台約 10 萬筆店家，再只留對得到商家庫的）
+```
+
+什麼時候跑：`data/merchants.json` 新增商家或別名後、以及每週一次（店家開關會變）。overpass-api.de 常 502，腳本會依序換下一台；全部失敗會印出各台錯誤並不寫檔。跑完會印筆數、各商家前 10 名與檔案大小（目標 gzip ≤ 300KB），把更新後的檔案一起 commit。
+
 ## 資料格式
 
 見 `data/SCHEMA.md`。
@@ -25,6 +35,7 @@ npm run validate    # 驗證 data/ 下的資料（必填欄位、網域白名單
 npm run precheck    # 資料疑點預檢（可能違反資料整理檢查清單的規則），交主管檢核前先跑
 npm run freshness   # 列出檢核日期過舊（>90 天）或即將到期（14 天內）的規則
 npm run coverage    # 印出涵蓋清單彙總（銀行數、收錄／未收錄卡數與原因）
+npm run build:merchants  # 重抓 OSM 產生 data/merchants-geo.json（見「附近商家」）
 ```
 
 `validate`、`freshness`、`coverage` 都可以加參數指定資料目錄，方便對 fixture 測試：

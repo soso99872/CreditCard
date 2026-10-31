@@ -17,7 +17,7 @@ nwr["name"]["tourism"="hotel"]${around};
 );out center qt 200;`;
 }
 
-function haversineM(lat1, lng1, lat2, lng2) {
+export function haversineM(lat1, lng1, lat2, lng2) {
   const rad = (d) => (d * Math.PI) / 180;
   const a = Math.sin(rad(lat2 - lat1) / 2) ** 2 +
     Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(rad(lng2 - lng1) / 2) ** 2;
@@ -29,7 +29,8 @@ function stripBranch(normalized) {
   return normalized.replace(/[(（][^)）]*[)）]$/, "").replace(/(門市|分店|店)$/, "");
 }
 
-function matchByName(tags, merchantIndex) {
+/** 以 OSM tags 的 brand／name 比對商家庫（parseNearby 與 build:merchants 共用）。 */
+export function matchByName(tags, merchantIndex) {
   const names = [tags.brand, tags["brand:zh"], tags["name:zh"], tags.name]
     .filter(Boolean).map(normalize);
   for (const n of names) if (merchantIndex.has(n)) return merchantIndex.get(n);
@@ -84,4 +85,40 @@ export function parseNearby(overpassJson, origin, { merchantIndex, osmCategories
     results.push({ name: tags.name, distanceM: haversineM(origin.lat, origin.lng, lat, lng), lat, lng, match });
   }
   return results.sort((a, b) => a.distanceM - b.distanceM).slice(0, MAX_RESULTS);
+}
+
+// ---- 靜態商家檔（data/merchants-geo.json，npm run build:merchants 產生）----
+// 格式：{generated, osmBase, merchants:[商家 id], places:[latE5 與前一筆的差, lngE5, 商家索引, ...（三個一組，依緯度排序）]}
+
+/** 台灣外框（含澎湖、金門、馬祖）；框內才用靜態檔，其餘退回 Overpass。 */
+const TAIWAN_BOXES = [[21.7, 25.4, 119.3, 122.1], [24.15, 24.6, 118.1, 118.55], [25.9, 26.4, 119.9, 120.6]];
+export const inTaiwan = ({ lat, lng }) => TAIWAN_BOXES.some(([s, n, w, e]) => lat >= s && lat <= n && lng >= w && lng <= e);
+
+/** 把商家檔展開成 [{lat, lng, merchantId}]（座標還原成度）。 */
+export function decodeGeo(geo) {
+  const out = [];
+  let latE5 = 0;
+  for (let i = 0; i < geo.places.length; i += 3) {
+    latE5 += geo.places[i];
+    out.push({ lat: latE5 / 1e5, lng: geo.places[i + 1] / 1e5, merchantId: geo.merchants[geo.places[i + 2]] });
+  }
+  return out;
+}
+
+/**
+ * 用商家檔查附近：回傳同 parseNearby 格式的清單（match 一律 merchant）；
+ * 不在台灣外框或半徑內沒有店回 null，呼叫端改走 Overpass。
+ * @param {Array<{lat: number, lng: number, merchantId: string}>} places decodeGeo 的結果
+ * @param {Map<string, object>} merchantsById
+ */
+export function nearbyFromGeo(places, origin, radiusM, merchantsById) {
+  if (!inTaiwan(origin)) return null;
+  const results = [];
+  for (const p of places) {
+    const merchant = merchantsById.get(p.merchantId);
+    if (!merchant) continue;
+    const distanceM = haversineM(origin.lat, origin.lng, p.lat, p.lng);
+    if (distanceM <= radiusM) results.push({ name: merchant.name, distanceM, lat: p.lat, lng: p.lng, match: { type: "merchant", merchant } });
+  }
+  return results.length ? results.sort((a, b) => a.distanceM - b.distanceM).slice(0, MAX_RESULTS) : null;
 }
