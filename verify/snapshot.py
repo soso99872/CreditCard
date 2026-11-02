@@ -14,6 +14,12 @@ for f in glob.glob("data/banks/*.json"):
                 if r.get(k): U.add(r[k])
 U.discard(None)
 idx = {}
+RETRY = os.environ.get("RETRY")      # 只重抓上次被擋或內容太短的頁，放慢速度
+if RETRY:
+    old = json.load(open(f"{OUT}/index.json", encoding="utf-8"))["pages"]
+    idx = dict(old)
+    U = {u for u, r in old.items() if r.get("status") != 200 or (r.get("chars") or 0) < 300}
+    U = {u for u in U if not any(d in u for d in ("creditcards.com.tw", "rich01.com"))}
 JS = """() => { const c = document.body.cloneNode(true);
   c.querySelectorAll('script,style,noscript,svg').forEach(e => e.remove());
   return c.textContent.replace(/[ \\t\\u00a0]+/g,' ').replace(/\\s*\\n\\s*/g,'\\n'); }"""
@@ -28,7 +34,7 @@ with sync_playwright() as p:
                 open("/tmp/x.pdf", "wb").write(r.body())
                 txt = subprocess.run(["pdftotext", "-layout", "/tmp/x.pdf", "-"], capture_output=True, text=True).stdout
             else:
-                pg = ctx.new_page(); resp = pg.goto(u, timeout=60000, wait_until="domcontentloaded")
+                pg = ctx.new_page(); resp = pg.goto(u, timeout=90000, wait_until="domcontentloaded")
                 try: pg.wait_for_load_state("networkidle", timeout=20000)
                 except Exception: pass
                 rec["status"] = resp.status if resp else None; rec["title"] = pg.title(); rec["final"] = pg.url
@@ -37,6 +43,6 @@ with sync_playwright() as p:
             rec["chars"] = len(txt); rec["sha"] = hashlib.sha256(txt.encode()).hexdigest()[:16]
         except Exception as e:
             rec["error"] = str(e)[:200]
-        idx[u] = rec; print(rec.get("status"), rec.get("chars"), u, flush=True); time.sleep(1)
+        idx[u] = rec; print(rec.get("status"), rec.get("chars"), u, flush=True); time.sleep(12 if RETRY else 1)
     br.close()
 json.dump({"fetchedAt": dt.datetime.utcnow().isoformat() + "Z", "pages": idx}, open(f"{OUT}/index.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
