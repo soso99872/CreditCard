@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-02T19:17:48.793801Z",
+ "fetchedAt": "2026-11-02T19:26:13.079049Z",
  "pages": {
   "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html": {
    "file": "a86c15bb5f1b.txt",
@@ -23,7 +23,7 @@
    "title": "Access Denied",
    "final": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
    "chars": 233,
-   "sha": "c61b42bfecbc8c58"
+   "sha": "08e88bab71cd02fd"
   },
   "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542": {
    "file": "a2e2d55b5bca.txt",
@@ -31,7 +31,7 @@
    "title": "Access Denied",
    "final": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
    "chars": 233,
-   "sha": "0f35c318da726541"
+   "sha": "f5f769c967670fd0"
   },
   "https://card.ubot.com.tw/CardDetail/cardDetail601": {
    "file": "f619ac9d9dbe.txt",
@@ -506,10 +506,10 @@
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html": {
    "file": "f1acda750c97.txt",
    "status": 200,
-   "title": "中國信託商業銀行 - 網路銀行",
+   "title": "加碼回饋:::中國信託ALL ME卡",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html",
-   "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "chars": 3822,
+   "sha": "838a5b3721833cc7"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html": {
    "file": "d31814d0bac5.txt",
@@ -517,7 +517,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html": {
    "file": "0a968d2561a2.txt",
@@ -525,7 +525,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html": {
    "file": "1f68eb0387c3.txt",
@@ -533,7 +533,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html": {
    "file": "66dd599351e2.txt",
@@ -541,7 +541,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html": {
    "file": "2df6c5ee467f.txt",
@@ -549,7 +549,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html": {
    "file": "6859454f3886.txt",
@@ -557,7 +557,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html": {
    "file": "6a9eb5649cd6.txt",
@@ -565,7 +565,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
    "chars": 63,
-   "sha": "b219a3abbd1807b8"
+   "sha": "fb7c417cf2e790df"
   },
   "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html": {
    "file": "d9733375b9a7.txt",
@@ -657,11 +657,11 @@
   },
   "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026": {
    "file": "4b3c28284aa9.txt",
-   "error": "Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026\", waiting until \"domcontentloaded\"\n"
+   "error": "Page.goto: Timeout 90000ms exceeded.\nCall log:\n  - navigating to \"https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026\", waiting until \"domcontentloaded\"\n"
   },
   "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping": {
    "file": "c5e2bb0fcb0b.txt",
-   "error": "Page.goto: Timeout 60000ms exceeded.\nCall log:\n  - navigating to \"https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping\", waiting until \"domcontentloaded\"\n"
+   "error": "Page.goto: Timeout 90000ms exceeded.\nCall log:\n  - navigating to \"https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping\", waiting until \"domcontentloaded\"\n"
   },
   "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/": {
    "file": "141009c54edf.txt",
@@ -842,10 +842,10 @@
   "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard": {
    "file": "ce2eb59c8b1a.txt",
    "status": 200,
-   "title": "",
+   "title": "鈦金商旅卡 : 臺灣企銀",
    "final": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
-   "chars": 219,
-   "sha": "04749d8f3a5186c3"
+   "chars": 14516,
+   "sha": "e29a4559a877341e"
   },
   "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite": {
    "file": "740472bed959.txt",
