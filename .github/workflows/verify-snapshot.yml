@@ -1,0 +1,22 @@
+name: 驗證：抓來源頁快照
+on:
+  push:
+    branches: [verify/2026-11]
+    paths: [verify/trigger.txt]
+permissions: { contents: write }
+jobs:
+  snap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with: { python-version: "3.13" }
+      - run: |
+          sudo apt-get install -y -q poppler-utils >/dev/null
+          pip install -q playwright==1.55.0 && python -m playwright install --with-deps chromium >/dev/null
+      - run: python verify/snapshot.py
+      - if: always()
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add verify/snapshots && git commit -q -m "驗證：來源頁快照 $(date -u +%F)" && git pull --rebase -q && git push
