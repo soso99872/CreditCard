@@ -1229,10 +1229,10 @@
   "raw": "通路加碼1：Pi 拍錢包／Hami Pay 掃碼指定商店總回饋 3% ALL ME 點（國內外一般消費 1% + 加碼 2%）；四大超商為本行不回饋項目，以加碼 3% 補足計 3%",
   "validTo": "2026-12-31",
   "cap": 300,
-  "pct": false,
-  "date": false,
-  "capok": false,
-  "result": "都找不到"
+  "pct": true,
+  "date": true,
+  "capok": true,
+  "result": "全部找到"
  },
  {
   "bank": "ctbc",
@@ -1245,10 +1245,10 @@
   "raw": "通路加碼2：中華電信集團、網家集團指定通路總回饋 3% ALL ME 點（國內外一般消費 1% + 加碼 2%）",
   "validTo": "2026-12-31",
   "cap": 300,
-  "pct": false,
-  "date": false,
-  "capok": false,
-  "result": "都找不到"
+  "pct": true,
+  "date": true,
+  "capok": true,
+  "result": "全部找到"
  },
  {
   "bank": "ctbc",
@@ -1807,8 +1807,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -1839,8 +1839,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -1855,8 +1855,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -2431,8 +2431,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -2463,8 +2463,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -2479,8 +2479,8 @@
   "cap": 30,
   "pct": false,
   "date": false,
-  "capok": true,
-  "result": "部分找到"
+  "capok": false,
+  "result": "都找不到"
  },
  {
   "bank": "ctbc",
@@ -5854,10 +5854,10 @@
   "raw": "使用台灣Pay透過臺企銀行動銀行APP或台灣行動支付APP（限綁定本行信用卡）信用卡掃碼交易，每筆一般消費回饋1.5%刷卡金，每戶每期上限100元；加基本0.4%",
   "validTo": "2026-12-31",
   "cap": 100,
-  "pct": false,
-  "date": false,
-  "capok": false,
-  "result": "都找不到"
+  "pct": true,
+  "date": true,
+  "capok": true,
+  "result": "全部找到"
  },
  {
   "bank": "tbb",
