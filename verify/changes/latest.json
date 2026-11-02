@@ -1,0 +1,2235 @@
+{
+ "date": "2026-11-02",
+ "compared": null,
+ "changed": [],
+ "blocked": [
+  {
+   "url": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
+   "status": 403,
+   "chars": 233,
+   "rules": 0
+  },
+  {
+   "url": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
+   "status": 403,
+   "chars": 233,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 7
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 1
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-eco-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-pchome-prime/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-cashback-signature-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-diamond-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/",
+   "status": 403,
+   "chars": 57,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/ileo-credit-card-cashback-firstbank-digital-account/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/kgibank-mobile-payment/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/megabank-ehappy-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/momo-cobranding-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/pi-wallet-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 7
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 8
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/taishin-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 13
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://rich01.com/apple-pay-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/dbs-eco-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 4
+  },
+  {
+   "url": "https://rich01.com/e-commerce-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/esunbank-unicard-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/fcb-ileocard-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 5
+  },
+  {
+   "url": "https://rich01.com/fubon-j-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 1
+  },
+  {
+   "url": "https://rich01.com/fubon-momo-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 4
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-creditcards/",
+   "status": 403,
+   "chars": 147,
+   "rules": 2
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-titanium-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/hsbc-live-cash-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/sinopac-dawho-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/taishin-jkos-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 2
+  },
+  {
+   "url": "https://www.bot.com.tw/tw/personal-banking/credit-card/card-friends-benefits/cash-bonus",
+   "status": 200,
+   "chars": 0,
+   "rules": 2
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 2
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 4
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 24
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 13
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 18
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 4
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 11
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026",
+   "status": null,
+   "chars": null,
+   "rules": 12
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping",
+   "status": null,
+   "chars": null,
+   "rules": 2
+  }
+ ],
+ "expiring": [
+  {
+   "rule": "kgi-eslite-general",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-eslite-autodebit",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-eslite-store-gold",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-eslite-store-black",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-eslite-store-gold-autodebit",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-eslite-store-black-autodebit",
+   "card": "kgi-eslite",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/"
+  },
+  {
+   "rule": "kgi-more-buy-general",
+   "card": "kgi-more-buy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-mobile-payment/"
+  },
+  {
+   "rule": "kgi-more-buy-overseas",
+   "card": "kgi-more-buy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-mobile-payment/"
+  },
+  {
+   "rule": "kgi-more-buy-mobile-payment",
+   "card": "kgi-more-buy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/kgibank-mobile-payment/"
+  },
+  {
+   "rule": "kgi-cash-back-general",
+   "card": "kgi-cash-back",
+   "validTo": "2026-12-31",
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card"
+  },
+  {
+   "rule": "kgi-cash-back-overseas",
+   "card": "kgi-cash-back",
+   "validTo": "2026-12-31",
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card"
+  },
+  {
+   "rule": "fubon-jcard-jp-kr-th",
+   "card": "fubon-jcard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1"
+  },
+  {
+   "rule": "fubon-momo-general",
+   "card": "fubon-momo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fubon-momo-card-review/"
+  },
+  {
+   "rule": "fubon-momo-overseas",
+   "card": "fubon-momo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fubon-momo-card-review/"
+  },
+  {
+   "rule": "fubon-momo-store",
+   "card": "fubon-momo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fubon-momo-card-review/"
+  },
+  {
+   "rule": "fubon-momo-ipass",
+   "card": "fubon-momo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fubon-momo-card-review/"
+  },
+  {
+   "rule": "sunnybank-visa-yaojing-general",
+   "card": "sunnybank-visa-yaojing",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/"
+  },
+  {
+   "rule": "sunnybank-visa-yaojing-overseas",
+   "card": "sunnybank-visa-yaojing",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/"
+  },
+  {
+   "rule": "sunnybank-sunnylife-general",
+   "card": "sunnybank-sunnylife",
+   "validTo": "2026-12-31",
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/543"
+  },
+  {
+   "rule": "sunnybank-sunnylife-overseas",
+   "card": "sunnybank-sunnylife",
+   "validTo": "2026-12-31",
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/543"
+  },
+  {
+   "rule": "sunnybank-sunnylife-mall",
+   "card": "sunnybank-sunnylife",
+   "validTo": "2026-12-31",
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/543"
+  },
+  {
+   "rule": "feib-hwcard-general",
+   "card": "feib-hwcard",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/"
+  },
+  {
+   "rule": "feib-hwcard-overseas",
+   "card": "feib-hwcard",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/"
+  },
+  {
+   "rule": "feib-hwcard-gas",
+   "card": "feib-hwcard",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/"
+  },
+  {
+   "rule": "feib-hwcard-transport",
+   "card": "feib-hwcard",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/"
+  },
+  {
+   "rule": "feib-hwcard-travel",
+   "card": "feib-hwcard",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/"
+  },
+  {
+   "rule": "hncb-bearq-general",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-general-bonus",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-overseas",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-overseas-bonus",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-jk",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-jk-bonus",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-dept",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-dining",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-travel",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-gas",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-shopping",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-bearq-twpay",
+   "card": "hncb-bearq",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026"
+  },
+  {
+   "rule": "hncb-ishopping-general",
+   "card": "hncb-ishopping",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping"
+  },
+  {
+   "rule": "hncb-ishopping-online",
+   "card": "hncb-ishopping",
+   "validTo": "2026-12-31",
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping"
+  },
+  {
+   "rule": "bot-greengo-general",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-overseas",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-green-merchants",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-low-carbon",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-ipass-topup",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-mobile-pay",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-greengo-mission",
+   "card": "bot-greengo",
+   "validTo": "2026-12-31",
+   "url": "https://wwwap.bot.com.tw/greengocard/"
+  },
+  {
+   "rule": "bot-ikatong-general",
+   "card": "bot-ikatong",
+   "validTo": "2026-12-31",
+   "url": "https://www.bot.com.tw/tw/personal-banking/credit-card/card-friends-benefits/cash-bonus"
+  },
+  {
+   "rule": "bot-ikatong-overseas",
+   "card": "bot-ikatong",
+   "validTo": "2026-12-31",
+   "url": "https://www.bot.com.tw/tw/personal-banking/credit-card/card-friends-benefits/cash-bonus"
+  },
+  {
+   "rule": "scsb-minions-usj",
+   "card": "scsb-minions",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/"
+  },
+  {
+   "rule": "scsb-minions-cinema",
+   "card": "scsb-minions",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/"
+  },
+  {
+   "rule": "scsb-minions-applepay-japan-korea",
+   "card": "scsb-minions",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/"
+  },
+  {
+   "rule": "scsb-minions-applepay-transport",
+   "card": "scsb-minions",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/"
+  },
+  {
+   "rule": "scsb-minions-cvs-pay",
+   "card": "scsb-minions",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-general",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-overseas",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-japan-korea",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-applepay-japan-korea",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-applepay-transport",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "scsb-visa-simple-cvs-pay",
+   "card": "scsb-visa-simple",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/"
+  },
+  {
+   "rule": "hwatai-visa-gold-general",
+   "card": "hwatai-visa-gold",
+   "validTo": "2026-12-31",
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-01/"
+  },
+  {
+   "rule": "hwatai-jcb-general",
+   "card": "hwatai-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-01/"
+  },
+  {
+   "rule": "firstbank-ileo-designated-merchants",
+   "card": "firstbank-ileo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fcb-ileocard-review/"
+  },
+  {
+   "rule": "firstbank-ileo-pay-1000",
+   "card": "firstbank-ileo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fcb-ileocard-review/"
+  },
+  {
+   "rule": "firstbank-ileo-taiwanpay",
+   "card": "firstbank-ileo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fcb-ileocard-review/"
+  },
+  {
+   "rule": "firstbank-ileo-overseas",
+   "card": "firstbank-ileo",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/fcb-ileocard-review/"
+  },
+  {
+   "rule": "rakuten-panda-j-general",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-overseas",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-mobilepay",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-airline",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-gas",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-travel-agency",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-panda-j-jkt",
+   "card": "rakuten-panda-j",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml"
+  },
+  {
+   "rule": "rakuten-tiger-general",
+   "card": "rakuten-tiger",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml"
+  },
+  {
+   "rule": "rakuten-tiger-designated",
+   "card": "rakuten-tiger",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml"
+  },
+  {
+   "rule": "rakuten-tiger-jk",
+   "card": "rakuten-tiger",
+   "validTo": "2026-12-31",
+   "url": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml"
+  },
+  {
+   "rule": "chb-mygo-general",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-mygo-online-shopping",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-mygo-weekend-domestic-ec",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-mygo-overseas-ec-travel",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-mygo-video",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-mygo-game",
+   "card": "chb-mygo",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/"
+  },
+  {
+   "rule": "chb-myle-overseas",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "chb-myle-supermarket",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "chb-myle-dining",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "chb-myle-department-store",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "chb-myle-telecom",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "chb-myle-wallet",
+   "card": "chb-myle",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/"
+  },
+  {
+   "rule": "yuanta-diamond-wealth-general",
+   "card": "yuanta-diamond-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/"
+  },
+  {
+   "rule": "yuanta-diamond-wealth-overseas",
+   "card": "yuanta-diamond-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/"
+  },
+  {
+   "rule": "yuanta-diamond-wealth-travel-dining-diamond",
+   "card": "yuanta-diamond-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/"
+  },
+  {
+   "rule": "yuanta-diamond-wealth-travel-dining-emerald",
+   "card": "yuanta-diamond-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/"
+  },
+  {
+   "rule": "yuanta-diamond-wealth-travel-dining-titanium",
+   "card": "yuanta-diamond-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/"
+  },
+  {
+   "rule": "yuanta-diamond-icash-wealth-general",
+   "card": "yuanta-diamond-icash-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/"
+  },
+  {
+   "rule": "yuanta-diamond-icash-wealth-overseas",
+   "card": "yuanta-diamond-icash-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/"
+  },
+  {
+   "rule": "yuanta-diamond-icash-wealth-travel-dining-diamond",
+   "card": "yuanta-diamond-icash-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/"
+  },
+  {
+   "rule": "yuanta-diamond-icash-wealth-travel-dining-emerald",
+   "card": "yuanta-diamond-icash-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/"
+  },
+  {
+   "rule": "yuanta-diamond-icash-wealth-travel-dining-titanium",
+   "card": "yuanta-diamond-icash-wealth",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/"
+  },
+  {
+   "rule": "yuanta-hellokitty-diamond-general",
+   "card": "yuanta-hellokitty-diamond",
+   "validTo": "2026-12-31",
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12"
+  },
+  {
+   "rule": "yuanta-hellokitty-diamond-overseas",
+   "card": "yuanta-hellokitty-diamond",
+   "validTo": "2026-12-31",
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12"
+  },
+  {
+   "rule": "sc-signature-general",
+   "card": "sc-signature",
+   "validTo": "2026-12-31",
+   "url": "https://icard.ai/card/detail/5e15aed55c386d001d389a96"
+  },
+  {
+   "rule": "sc-signature-overseas",
+   "card": "sc-signature",
+   "validTo": "2026-12-31",
+   "url": "https://icard.ai/card/detail/5e15aed55c386d001d389a96"
+  },
+  {
+   "rule": "hsbc-cashback-signature-general",
+   "card": "hsbc-cashback-signature",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/hsbc-cashback-creditcards/"
+  },
+  {
+   "rule": "hsbc-cashback-signature-overseas",
+   "card": "hsbc-cashback-signature",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/hsbc-cashback-creditcards/"
+  },
+  {
+   "rule": "hsbc-liveplus-general",
+   "card": "hsbc-liveplus",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/"
+  },
+  {
+   "rule": "hsbc-liveplus-general-autopay",
+   "card": "hsbc-liveplus",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/"
+  },
+  {
+   "rule": "hsbc-liveplus-triple-channels",
+   "card": "hsbc-liveplus",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/"
+  },
+  {
+   "rule": "hsbc-liveplus-triple-channels-autopay",
+   "card": "hsbc-liveplus",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/"
+  },
+  {
+   "rule": "cathay-cube-digital-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-digital-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-digital-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-merchant-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-category-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-merchant-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-category-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-merchant-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-dining-category-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-merchant-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-hotel-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-overseas-l1",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-merchant-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-hotel-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-overseas-l2",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-merchant-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-hotel-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-travel-overseas-l3",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-select",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-formosa",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-fixed-general",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-fixed-overseas",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-allpay",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-birthday-10",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-birthday-5",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-birthday-3-5",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-kids-school",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-kids-5",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-kids-10",
+   "card": "cathay-cube",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-japan",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-3-5",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-3",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-4",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-5",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-8",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cash-rebate-signature-domestic",
+   "card": "cathay-cash-rebate-signature",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature"
+  },
+  {
+   "rule": "cathay-cash-rebate-signature-overseas",
+   "card": "cathay-cash-rebate-signature",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature"
+  },
+  {
+   "rule": "cathay-shopee-general",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "cathay-shopee-shopee-low",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "cathay-shopee-shopee-high",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "cathay-shopee-shopee-own-all",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "cathay-shopee-shopee-own-mall",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "cathay-shopee-shopee-direct-bonus",
+   "card": "cathay-shopee",
+   "validTo": "2026-12-31",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/"
+  },
+  {
+   "rule": "coop-ipass-japan",
+   "card": "coop-ipass",
+   "validTo": "2026-12-31",
+   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro"
+  },
+  {
+   "rule": "coop-ipass-overseas-bonus",
+   "card": "coop-ipass",
+   "validTo": "2026-12-31",
+   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro"
+  },
+  {
+   "rule": "ctbc-allme-general",
+   "card": "ctbc-allme",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html"
+  },
+  {
+   "rule": "ctbc-allme-overseas-store",
+   "card": "ctbc-allme",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html"
+  },
+  {
+   "rule": "ctbc-allme-channel-pi-hami",
+   "card": "ctbc-allme",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html"
+  },
+  {
+   "rule": "ctbc-allme-channel-telecom-ecommerce",
+   "card": "ctbc-allme",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html"
+  },
+  {
+   "rule": "ctbc-uniopen-general-domestic",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-7-eleven",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-overseas-general",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-overseas-store",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-overseas-store-bonus",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-bonus",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-stamp-2",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-stamp-3",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-stamp-4",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-stamp-5",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-group-icash",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-blackcat-freight",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-uniopen-unisoku-freight",
+   "card": "ctbc-uniopen",
+   "validTo": "2026-12-31",
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-general",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-overseas-store",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-ipass-transit",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-nutrition-light",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-pinkoi",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-watsons-sunday",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-vacanza",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-perfect-trip",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-sisley",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-estee",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-lamer",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-mid5-150",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-mid6-150",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-fressia",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-mid6-100",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-sulwhasoo",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-hearth",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-kafen",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-beauty-under-armour",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-pet-park",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-maohai",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-chaoning",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-wangmiao",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-monster",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-heromama",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-pad-cat-litter",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-fish-in-fish",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-good-dog-life",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-casetify",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-kobo-nordic",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-studio-a",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-dyson",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-xiaobei-thursday",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-taiwan-driver",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-uspace-ugo",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-npc-gas",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-tejidian",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-daishu-pharmacy",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-visa-kaisou-rental",
+   "card": "ctbc-linepay-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-general",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-overseas-store",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-ipass-transit",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-nutrition-light",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-pinkoi",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-watsons-sunday",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-vacanza",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-perfect-trip",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-sisley",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-estee",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-lamer",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-mid5-150",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-mid6-150",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-fressia",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-mid6-100",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-sulwhasoo",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-hearth",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-kafen",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-beauty-under-armour",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-pet-park",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-maohai",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-chaoning",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-wangmiao",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-monster",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-heromama",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-pad-cat-litter",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-fish-in-fish",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-good-dog-life",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-casetify",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-kobo-nordic",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-studio-a",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-dyson",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-xiaobei-thursday",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-taiwan-driver",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-uspace-ugo",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-npc-gas",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "ctbc-linepay-jcb-tejidian",
+   "card": "ctbc-linepay-jcb",
+   "validTo": "2026-12-31",
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html"
+  },
+  {
+   "rule": "sinopac-dawho-base-domestic",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-base-overseas",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-dahu-domestic",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-dahu-overseas",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-plus-domestic",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-plus-overseas",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-dahu-easycard",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-dawho-plus-easycard",
+   "card": "sinopac-dawho",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/"
+  },
+  {
+   "rule": "sinopac-green-general",
+   "card": "sinopac-green",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/"
+  },
+  {
+   "rule": "sinopac-green-overseas",
+   "card": "sinopac-green",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/"
+  },
+  {
+   "rule": "sinopac-green-green-channels",
+   "card": "sinopac-green",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/"
+  },
+  {
+   "rule": "sinopac-green-green-no-base",
+   "card": "sinopac-green",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/"
+  },
+  {
+   "rule": "sinopac-green-easycard-autoload",
+   "card": "sinopac-green",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/"
+  },
+  {
+   "rule": "dbs-eco-general",
+   "card": "dbs-eco",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/dbs-eco-card-review/"
+  },
+  {
+   "rule": "dbs-eco-overseas-5",
+   "card": "dbs-eco",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/dbs-eco-card-review/"
+  },
+  {
+   "rule": "dbs-eco-green",
+   "card": "dbs-eco",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/dbs-eco-card-review/"
+  },
+  {
+   "rule": "dbs-eco-multi-purchase",
+   "card": "dbs-eco",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/dbs-eco-card-review/"
+  },
+  {
+   "rule": "dbs-pchomeprime-general",
+   "card": "dbs-pchomeprime",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/dbs-pchome-prime/"
+  },
+  {
+   "rule": "dbs-pchomeprime-pchome",
+   "card": "dbs-pchomeprime",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/dbs-pchome-prime/"
+  },
+  {
+   "rule": "dbs-pchomeprime-thursday",
+   "card": "dbs-pchomeprime",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/dbs-credit-card-recommend/"
+  },
+  {
+   "rule": "dbs-pchomeprime-overseas-3",
+   "card": "dbs-pchomeprime",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/dbs-pchome-prime/"
+  },
+  {
+   "rule": "dbs-funlife-general",
+   "card": "dbs-funlife",
+   "validTo": "2026-12-31",
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html"
+  },
+  {
+   "rule": "dbs-funlife-dining-cinema",
+   "card": "dbs-funlife",
+   "validTo": "2026-12-31",
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html"
+  },
+  {
+   "rule": "entie-visa-general",
+   "card": "entie-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm"
+  },
+  {
+   "rule": "entie-visa-overseas",
+   "card": "entie-visa",
+   "validTo": "2026-12-31",
+   "url": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm"
+  },
+  {
+   "rule": "esun-unicard-general-ebill",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-general-full",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-easy-merchants",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-easy-overseas",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-free-merchants",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-free-overseas",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-up-merchants",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-unicard-up-overseas",
+   "card": "esun-unicard",
+   "validTo": "2026-12-31",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90"
+  },
+  {
+   "rule": "esun-kumamon-domestic-general",
+   "card": "esun-kumamon",
+   "validTo": "2026-12-30",
+   "url": "https://pokem.tw/esun-kumamoncard/"
+  },
+  {
+   "rule": "esun-kumamon-japan-general",
+   "card": "esun-kumamon",
+   "validTo": "2026-12-31",
+   "url": "https://pokem.tw/esun-kumamoncard/"
+  },
+  {
+   "rule": "esun-kumamon-japan-designated",
+   "card": "esun-kumamon",
+   "validTo": "2026-12-31",
+   "url": "https://pokem.tw/esun-kumamoncard/"
+  },
+  {
+   "rule": "esun-kumamon-japan-paypay",
+   "card": "esun-kumamon",
+   "validTo": "2026-12-31",
+   "url": "https://pokem.tw/esun-kumamoncard/"
+  },
+  {
+   "rule": "taishin-richart-chill-10-l1",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-10-l2",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-10-new-l1",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-10-new-l2",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-5-l1",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-5-l2",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-5-new-l1",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-5-new-l2",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-33-l1",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-richart-chill-33-l2",
+   "card": "taishin-richart",
+   "validTo": "2026-12-31",
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+  },
+  {
+   "rule": "taishin-jkopay-general",
+   "card": "taishin-jkopay",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/taishin-jkos-card-review/"
+  },
+  {
+   "rule": "taishin-jkopay-select",
+   "card": "taishin-jkopay",
+   "validTo": "2026-12-31",
+   "url": "https://rich01.com/taishin-jkos-card-review/"
+  },
+  {
+   "rule": "bok-gold-general",
+   "card": "bok-gold",
+   "validTo": "2026-12-31",
+   "url": "https://www.bok.com.tw/card-rights-and-benefits-1"
+  },
+  {
+   "rule": "bok-gold-big-ticket",
+   "card": "bok-gold",
+   "validTo": "2026-12-31",
+   "url": "https://www.bok.com.tw/card-rights-and-benefits-1"
+  },
+  {
+   "rule": "bok-titanium-general",
+   "card": "bok-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://www.bok.com.tw/card-rights-and-benefits-1"
+  },
+  {
+   "rule": "tbb-titanium-general",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-travel-base",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-overseas",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-department",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-gas-promo",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-hsr",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-gomaji",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-titanium-taiwanpay",
+   "card": "tbb-titanium",
+   "validTo": "2026-12-31",
+   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard"
+  },
+  {
+   "rule": "tbb-greenlife-easy-general",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-greenlife-easy-overseas",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-greenlife-easy-health-outdoor",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-greenlife-easy-green-restaurant",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-greenlife-easy-hsr",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "tbb-greenlife-easy-gomaji",
+   "card": "tbb-greenlife-easy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/"
+  },
+  {
+   "rule": "megabank-young-general",
+   "card": "megabank-young",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/"
+  },
+  {
+   "rule": "megabank-young-online-shopping",
+   "card": "megabank-young",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/"
+  },
+  {
+   "rule": "megabank-young-online-shopping-ebill",
+   "card": "megabank-young",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/"
+  },
+  {
+   "rule": "megabank-young-mobile-payment-new",
+   "card": "megabank-young",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/"
+  },
+  {
+   "rule": "megabank-happy-general",
+   "card": "megabank-happy",
+   "validTo": "2026-12-31",
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy"
+  },
+  {
+   "rule": "megabank-happy-overseas",
+   "card": "megabank-happy",
+   "validTo": "2026-12-31",
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy"
+  },
+  {
+   "rule": "megabank-happy-online-shopping",
+   "card": "megabank-happy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ehappy-credit-card/"
+  },
+  {
+   "rule": "megabank-happy-travel-platform",
+   "card": "megabank-happy",
+   "validTo": "2026-12-31",
+   "url": "https://creditcards.com.tw/creditcard/megabank-ehappy-credit-card/"
+  }
+ ],
+ "summary": {
+  "pages": 113,
+  "changed": 0,
+  "blocked": 50,
+  "expiringRules": 320
+ }
+}

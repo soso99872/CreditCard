@@ -12,8 +12,14 @@ for f in glob.glob("data/banks/*.json"):
         for r in c["rules"]:
             for k in ("sourceUrl", "secondSourceUrl"):
                 if r.get(k): U.add(r[k])
+for i in json.load(open("data/issuers.json", encoding="utf-8")):   # 信用卡列表頁：偵測新卡、停卡
+    if i.get("cardListUrl"): U.add(i["cardListUrl"])
 U.discard(None)
 idx = {}
+if os.path.exists(f"{OUT}/index.json") and not os.environ.get("RETRY"):     # 舊索引留一份，給變動偵測比對
+    os.makedirs(f"{OUT}/history", exist_ok=True)
+    old = json.load(open(f"{OUT}/index.json", encoding="utf-8"))
+    json.dump(old, open(f"{OUT}/history/{old['fetchedAt'][:19].replace(':', '')}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 RETRY = os.environ.get("RETRY")      # 只重抓上次被擋或內容太短的頁，放慢速度
 if RETRY:
     old = json.load(open(f"{OUT}/index.json", encoding="utf-8"))["pages"]
