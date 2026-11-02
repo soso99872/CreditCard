@@ -5,6 +5,7 @@
 ## 1. 抓頁面、偵測變動
 - 雲端：在 `verify/2026-11` 分支把目前時間寫進 `verify/trigger.txt`，commit、push，等 GitHub Actions「驗證：抓來源頁快照與變動偵測」跑完（`gh run watch`），再 pull。
 - 台灣網路（Soso 的電腦）：`python verify/snapshot.py` 後 `python verify/pipeline/detect.py 30`。中信、華南、第一銀行、臺銀和第三方網站擋國外 IP，只有這條路抓得到。
+- 變動用「指紋」判斷：只比跟回饋有關的句子（有 %、元、點、日期的行），倒數計時、輪播、cookie 提示不算。只改了文字沒動數字的（例如商家名單）記在 `minor`，每週一把這週有 minor 的官方頁全部重抽一次。
 - 結果在 `verify/changes/latest.json`：`changed`（內容變了的頁和用到它的規則）、`blocked`（抓不到）、`expiring`（30 天內到期的規則）。
 
 ## 2. 要重抽的頁

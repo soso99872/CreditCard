@@ -16,12 +16,14 @@ for f in glob.glob("data/banks/*.json"):
         if not c.get("verified"): continue
         for r in c["rules"]:
             uses.setdefault(r.get("sourceUrl"), []).append(r["id"])
-changed, blocked, expiring = [], [], []
+changed, blocked, expiring, minor = [], [], [], []
 for u, r in cur["pages"].items():
     p = prev.get(u)
     if not ok(r): blocked.append({"url": u, "status": r.get("status"), "chars": r.get("chars"), "rules": len(uses.get(u, []))})
+    elif p and ok(p) and (p.get("fp") or p.get("sha")) != (r.get("fp") or r.get("sha")):   # 有指紋就比指紋（只看跟回饋有關的句子）
+        changed.append({"url": u, "file": r["file"], "uses": uses.get(u, []), "kind": "回饋相關句子變了" if r.get("fp") and p.get("fp") else "整頁內容變了"})
     elif p and ok(p) and p.get("sha") != r.get("sha"):
-        changed.append({"url": u, "file": r["file"], "before": p.get("file"), "uses": uses.get(u, [])})
+        minor.append({"url": u, "uses": len(uses.get(u, []))})
 for f in glob.glob("data/banks/*.json"):
     b = json.load(open(f, encoding="utf-8"))
     for c in b["cards"]:
@@ -30,8 +32,8 @@ for f in glob.glob("data/banks/*.json"):
             v = r.get("validTo")
             if v and 0 <= (dt.date.fromisoformat(v) - today).days <= DAYS:
                 expiring.append({"rule": r["id"], "card": c["id"], "validTo": v, "url": r.get("sourceUrl")})
-out = {"date": str(today), "compared": hist[-1] if hist else None, "changed": changed, "blocked": blocked, "expiring": expiring,
-       "summary": {"pages": len(cur["pages"]), "changed": len(changed), "blocked": len(blocked), "expiringRules": len(expiring)}}
+out = {"date": str(today), "compared": hist[-1] if hist else None, "changed": changed, "blocked": blocked, "expiring": expiring, "minor": minor,
+       "summary": {"pages": len(cur["pages"]), "changed": len(changed), "blocked": len(blocked), "expiringRules": len(expiring), "minor": len(minor)}}
 os.makedirs("verify/changes", exist_ok=True)
 json.dump(out, open(f"verify/changes/{today}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 json.dump(out, open("verify/changes/latest.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
