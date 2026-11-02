@@ -1,10 +1,15 @@
 """變動偵測：跟上一次快照比，列出內容變了的頁、抓不到的頁、快到期的規則。只輸出清單，不改資料。
 用法：python verify/pipeline/detect.py [到期提醒天數，預設 30]"""
 import json, glob, os, sys, datetime as dt
+sys.path.insert(0, "verify/pipeline")
+from snapindex import load
 S = "verify/snapshots"; DAYS = int(sys.argv[1]) if len(sys.argv) > 1 else 30
-cur = json.load(open(f"{S}/index.json", encoding="utf-8"))
+cur = {"fetchedAt": json.load(open(f"{S}/index.json", encoding="utf-8"))["fetchedAt"], "pages": load()}
 hist = sorted(glob.glob(f"{S}/history/*.json"))
 prev = json.load(open(hist[-1], encoding="utf-8"))["pages"] if hist else {}
+for h in sorted(glob.glob("verify/snapshots-tw/history/*.json"))[-1:]:   # 台灣那份的上一次
+    for u, r in json.load(open(h, encoding="utf-8"))["pages"].items():
+        if not (prev.get(u, {}).get("status") == 200): prev[u] = r
 today = dt.date.fromisoformat(cur["fetchedAt"][:10])
 ok = lambda r: r and r.get("status") == 200 and (r.get("chars") or 0) >= 300
 uses = {}                                           # 網址 → 用到它的卡與規則
@@ -21,7 +26,7 @@ for u, r in cur["pages"].items():
     p = prev.get(u)
     if not ok(r): blocked.append({"url": u, "status": r.get("status"), "chars": r.get("chars"), "rules": len(uses.get(u, []))})
     elif p and ok(p) and (p.get("fp") or p.get("sha")) != (r.get("fp") or r.get("sha")):   # 有指紋就比指紋（只看跟回饋有關的句子）
-        changed.append({"url": u, "file": r["file"], "uses": uses.get(u, []), "kind": "回饋相關句子變了" if r.get("fp") and p.get("fp") else "整頁內容變了"})
+        changed.append({"url": u, "file": r["path"], "uses": uses.get(u, []), "kind": "回饋相關句子變了" if r.get("fp") and p.get("fp") else "整頁內容變了"})
     elif p and ok(p) and p.get("sha") != r.get("sha"):
         minor.append({"url": u, "uses": len(uses.get(u, []))})
 for f in glob.glob("data/banks/*.json"):

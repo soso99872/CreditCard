@@ -15,11 +15,13 @@ args = [a for a in sys.argv[1:] if not a.startswith("--")]
 TODAY = next((sys.argv[i + 1] for i, a in enumerate(sys.argv) if a == "--today"), str(dt.date.today()))
 A, B = (json.load(open(p, encoding="utf-8")) for p in args[:2])
 page = A["page"]
-idx = json.load(open("verify/snapshots/index.json", encoding="utf-8"))["pages"]
+sys.path.insert(0, "verify/pipeline")
+from snapindex import load
+idx = load()
 norm = lambda s: re.sub(r"\s+", "", unicodedata.normalize("NFKC", s or "")).replace(",", "")
 def snaptext(u):
     r = idx.get(u) or {}
-    return norm(open("verify/snapshots/" + r["file"], encoding="utf-8").read()) if r.get("status") == 200 and (r.get("chars") or 0) >= 300 else None
+    return norm(open(r["path"], encoding="utf-8").read()) if r.get("status") == 200 and (r.get("chars") or 0) >= 300 else None
 extra = sorted(set(A.get("extraPages", [])) | set(B.get("extraPages", [])))   # 例如點數兌換頁
 TEXT = snaptext(page)
 issuers = json.load(open("data/issuers.json", encoding="utf-8"))

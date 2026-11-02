@@ -4,7 +4,8 @@ import json, glob, hashlib, os, re, subprocess, sys, time, datetime as dt
 from playwright.sync_api import sync_playwright
 sys.path.insert(0, "verify/pipeline")
 from fingerprint import fingerprint
-OUT = "verify/snapshots"; os.makedirs(OUT, exist_ok=True)
+TW = bool(os.environ.get("TW"))      # 台灣網路模式（Soso 的電腦）：只抓雲端抓不到的頁，存到 snapshots-tw
+OUT = "verify/snapshots-tw" if TW else "verify/snapshots"; os.makedirs(OUT, exist_ok=True)
 U = set()
 for f in glob.glob("data/banks/*.json"):
     b = json.load(open(f, encoding="utf-8"))
@@ -22,6 +23,9 @@ if os.path.exists(f"{OUT}/index.json") and not os.environ.get("RETRY"):     # �
     os.makedirs(f"{OUT}/history", exist_ok=True)
     old = json.load(open(f"{OUT}/index.json", encoding="utf-8"))
     json.dump(old, open(f"{OUT}/history/{old['fetchedAt'][:19].replace(':', '')}.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+if TW:
+    cloud = json.load(open("verify/snapshots/index.json", encoding="utf-8"))["pages"]
+    U = {u for u in U if not (cloud.get(u, {}).get("status") == 200 and (cloud.get(u, {}).get("chars") or 0) >= 300)}
 RETRY = os.environ.get("RETRY")      # 只重抓上次被擋或內容太短的頁，放慢速度
 if RETRY:
     old = json.load(open(f"{OUT}/index.json", encoding="utf-8"))["pages"]
