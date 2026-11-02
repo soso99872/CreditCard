@@ -1,0 +1,19 @@
+{
+  "extractor": "B",
+  "page": "https://www.hwataibank.com.tw/personal/card01-01-01/",
+  "cards": [
+    {
+      "cardId": "hwatai-visa-gold",
+      "rules": []
+    },
+    {
+      "cardId": "hwatai-jcb",
+      "rules": []
+    }
+  ],
+  "notes": [
+    "本頁只有共通的紅利積點規則「當期新增消費20元，即可累積一點」，沒有點數換算新台幣的比例（兌換在另一頁「點數兌換」），無法換算 rate，依規則 6 不寫規則；兩張卡都缺 general 規則。",
+    "本頁未區分 Visa 金卡與 JCB 卡，也未出現兩張卡的卡名。",
+    "需另取「點數兌換」頁的換算比例才能補上 general 規則（例如 rateFormula 1/20*N*100）。"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "extractor": "B",
+  "page": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+  "cards": [
+    {
+      "cardId": "cathay-cash-rebate-signature",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.5,
+          "rawReward": "國內消費享0.5%現金回饋，無回饋上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {
+            "rate": "國外消費享2%現金回饋、國內消費享0.5%現金回饋",
+            "validTo": null,
+            "validFrom": null,
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ]
+          },
+          "rate": 2,
+          "rawReward": "國外消費享2%現金回饋，無回饋上限",
+          "cap": null,
+          "conditions": [],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {
+            "rate": "國外消費享2%現金回饋、國內消費享0.5%現金回饋",
+            "validTo": null,
+            "validFrom": null,
+            "cap": null
+          },
+          "rateFormula": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "原文「無通路限制、無回饋上限」，cap 填 null；頁面沒有寫起訖日，validFrom/validTo 皆為 null。",
+    "國外 2% 原文未寫以 MCC 判定，scope 未加 basis。"
+  ]
+}

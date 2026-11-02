@@ -8,7 +8,7 @@ for f in glob.glob("data/banks/*.json"):
     b = json.load(open(f, encoding="utf-8"))
     for c in b["cards"]:
         if not c.get("verified"): continue
-        U.add(c.get("sourceUrl"))
+        U.add(c.get("sourceUrl")); U.add((c.get("pointValue") or {}).get("sourceUrl"))
         for r in c["rules"]:
             for k in ("sourceUrl", "secondSourceUrl"):
                 if r.get(k): U.add(r[k])

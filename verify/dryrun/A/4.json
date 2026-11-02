@@ -1,0 +1,19 @@
+{
+  "extractor": "A",
+  "page": "https://www.hwataibank.com.tw/personal/card01-01-01/",
+  "cards": [
+    {
+      "cardId": "hwatai-visa-gold",
+      "rules": []
+    },
+    {
+      "cardId": "hwatai-jcb",
+      "rules": []
+    }
+  ],
+  "notes": [
+    "這頁是華泰銀行「紅利積點」通用說明，不是個別卡片頁，沒有提到 Visa 金卡或 JCB 卡的名稱。",
+    "原文只寫「當期新增消費20元，即可累積一點」，沒有寫點數換算新台幣的比例（兌換比例應在「點數兌換」頁），無法換算 rate，所以兩張卡都沒寫規則（含 general）。",
+    "不計點數項目包含中華電信電信費用、市水、稅款代繳、全聯福利中心消費等；紅利點數自100年7月3日關帳日起為2年有效。"
+  ]
+}

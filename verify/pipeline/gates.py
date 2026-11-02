@@ -17,8 +17,11 @@ A, B = (json.load(open(p, encoding="utf-8")) for p in args[:2])
 page = A["page"]
 idx = json.load(open("verify/snapshots/index.json", encoding="utf-8"))["pages"]
 norm = lambda s: re.sub(r"\s+", "", unicodedata.normalize("NFKC", s or "")).replace(",", "")
-snap = idx.get(page) or {}
-TEXT = norm(open("verify/snapshots/" + snap["file"], encoding="utf-8").read()) if snap.get("status") == 200 and (snap.get("chars") or 0) >= 300 else None
+def snaptext(u):
+    r = idx.get(u) or {}
+    return norm(open("verify/snapshots/" + r["file"], encoding="utf-8").read()) if r.get("status") == 200 and (r.get("chars") or 0) >= 300 else None
+extra = sorted(set(A.get("extraPages", [])) | set(B.get("extraPages", [])))   # 例如點數兌換頁
+TEXT = snaptext(page)
 issuers = json.load(open("data/issuers.json", encoding="utf-8"))
 res = {"page": page, "today": TODAY, "gates": {}, "problems": []}
 def fail(g, msg): res["problems"].append(f"[{g}] {msg}")
@@ -29,6 +32,14 @@ owner = [i["id"] for i in issuers if any(host == d or host.endswith("." + d) for
 if not owner: fail("官方來源", f"{host} 不在任何銀行的官方網域白名單")
 if TEXT is None: fail("官方來源", "沒有可用的頁面快照（被擋或內容太短）")
 if A.get("page") != B.get("page"): fail("一致", "A、B 讀的不是同一頁")
+for u in extra:
+    h = urlparse(u).hostname or ""
+    if not any(h == d or h.endswith("." + d) for i in issuers for d in i.get("officialDomains", [])): fail("官方來源", f"附加頁 {h} 不是官方網域")
+    t = snaptext(u)
+    if t is None: fail("官方來源", f"附加頁沒有快照：{u}")
+    elif TEXT is not None: TEXT += t
+for c in A["cards"]:
+    if not c["rules"]: fail("格式", f"{c['cardId']} 這頁抽不到規則，保留舊資料，要補附加頁（例如點數兌換頁）")
 
 # ① 兩份抽取完全一致（比關鍵欄位，條件文字不比）
 def key(cardId, r):
@@ -64,7 +75,7 @@ for c in A["cards"]:
                 if abs(v - float(r["rate"])) > 0.01: fail("原文", f"{rid} 換算式 {f}={v:.3f} ≠ rate {r['rate']}")
                 allq = "".join(quotes.values())
                 for n in re.findall(r"\d+(?:\.\d+)?", f):
-                    if n not in ("100",) and n not in allq: fail("原文", f"{rid} 換算式的 {n} 在引用句裡找不到")
+                    if n not in ("10", "100", "1000") and n not in allq: fail("原文", f"{rid} 換算式的 {n} 在引用句裡找不到")
         elif num(r["rate"]) + "%" not in rq: fail("原文", f"{rid} 回饋率 {num(r['rate'])}% 不在引用句裡")
         for fld in ("validTo", "validFrom"):
             if r.get(fld):
