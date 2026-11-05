@@ -3,33 +3,27 @@
   {
    "date": "2026-11-05",
    "pagesExtracted": 2,
-   "pagesPassed": 1,
-   "rulesPassed": 4,
+   "pagesPassed": 2,
+   "rulesPassed": 31,
    "suspected": 0,
+   "countNote": "條數用保守算法：每頁取 A、B、C 裡寫得最少的那份（Richart：A 75 列、B 27 列、C 73 列，取 27；兆豐 4）",
    "passedPages": [
-    "https://www.megabank.com.tw/personal/credit-card/card/overview/happy"
+    "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+    "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
    ],
-   "blockedPages": [
-    {
-     "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
-     "reasons": [
-      "一致：A/B Pay著刷 scope 不同（merchant vs category）、好饗刷商家名寫法不同、Hotels.com 已過期 A 收 B 不收",
-      "格式：商家名對不上 merchants.json（臺虎精釀、台新Pay）",
-      "第 2、3 輪（EXTRACT 補第 11～15 條後重抽）：條數 22→73 條，跟現有 63 條同量級；剩 4 組排除商家判讀不同、水巷茶弄對不上商家庫"
-     ]
-    }
-   ],
-   "caveats": [
-    "megabank-happy 旅遊平台 cap：現有資料 400（基本+加碼各 200），提案只能放 200",
-    "megabank-happy validTo：現有 2026-12-31，原文只寫 115年12月帳單結帳日 → 提案 null",
-    "megabank-happy 網購/旅遊舊規則 sourceUrl 是別頁，gates 套用會留舊規則＋加新規則，可能重複"
+   "notes": [
+    "Richart 重抽 5 輪：每輪不一致都改 EXTRACT.md 或 gates.py 的通則（第 8、11～17 條、商家分組合併比對），沒有手改任何一份抽取結果",
+    "兆豐 cap 照第 17 條填加碼段 200（現有資料 400 來自第三方 creditcards.com.tw）；套用時兩條第三方規則會被官方規則取代",
+    "兆豐 validTo：原文「115年12月帳單結帳日」沒日期 → null（現有 2026-12-31）",
+    "Richart 假日刷 LEVEL 1 填 1.3%：A、B、C 都寫了這是推測（原文只寫「最高1.3%」）"
    ]
   }
  ],
  "total": {
-  "rulesPassed": 4,
+  "rulesPassed": 31,
   "suspected": 0,
   "confirmedErrors": 0,
-  "targetForLive": 50
+  "targetForLive": 50,
+  "remaining": 19
  }
 }
