@@ -1,0 +1,34 @@
+{
+ "runs": [
+  {
+   "date": "2026-11-05",
+   "pagesExtracted": 2,
+   "pagesPassed": 1,
+   "rulesPassed": 4,
+   "suspected": 0,
+   "passedPages": [
+    "https://www.megabank.com.tw/personal/credit-card/card/overview/happy"
+   ],
+   "blockedPages": [
+    {
+     "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+     "reasons": [
+      "一致：A/B Pay著刷 scope 不同（merchant vs category）、好饗刷商家名寫法不同、Hotels.com 已過期 A 收 B 不收",
+      "格式：商家名對不上 merchants.json（臺虎精釀、台新Pay）"
+     ]
+    }
+   ],
+   "caveats": [
+    "megabank-happy 旅遊平台 cap：現有資料 400（基本+加碼各 200），提案只能放 200",
+    "megabank-happy validTo：現有 2026-12-31，原文只寫 115年12月帳單結帳日 → 提案 null",
+    "megabank-happy 網購/旅遊舊規則 sourceUrl 是別頁，gates 套用會留舊規則＋加新規則，可能重複"
+   ]
+  }
+ ],
+ "total": {
+  "rulesPassed": 4,
+  "suspected": 0,
+  "confirmedErrors": 0,
+  "targetForLive": 50
+ }
+}

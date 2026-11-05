@@ -1,0 +1,54 @@
+{
+ "date": "2026-11-05",
+ "mode": "trial",
+ "pages": [
+  {
+   "n": 1,
+   "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+   "today": "2026-11-05",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('taishin-richart', 'Pay著刷', 'merchant', (), ('LINE Pay', '全盈+Pay'), (), 2.3, None, None, None, '2026-07-01', '2027-12-31')",
+    "[一致] 只有 A 有：('taishin-richart', 'Pay著刷', 'merchant', (), ('台新Pay', '台新Pay+'), (), 3.8, None, None, None, '2026-07-01', '2027-12-31')",
+    "[一致] 只有 A 有：('taishin-richart', '好饗刷', 'merchant', (), ('Foodpanda', 'FunNow', 'KKTIX', 'ONCOR', 'OPENTIX兩廳院文化生活', 'Uber Eats', 'sing!go', '享溫馨', '台北君悅酒店', '台灣萬豪國際集團', '好樂迪', '寬宏售票', '年代售票', '拓元售票', '晶華國際酒店集團', '漢來飯店事業群', '煙波國際觀光集團', '王品瘋Pay', '礁溪寒沐酒店', '福華集團', '老爺酒店集團', '臺中勤美洲際酒店', '錢櫃', '雲朗觀光', '高雄洲際酒店'), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+    "[一致] 只有 A 有：('taishin-richart', '玩旅刷', 'merchant', (), ('Hotels.com',), (), 8.3, None, None, None, '2026-07-01', '2026-09-30')",
+    "[一致] 只有 B 有：('taishin-richart', 'Pay著刷', 'category', ('mobile-payment',), (), (), 2.3, None, None, None, '2026-07-01', '2027-12-31')",
+    "[一致] 只有 B 有：('taishin-richart', 'Pay著刷', 'category', ('mobile-payment',), (), (), 3.8, None, None, None, '2026-07-01', '2027-12-31')",
+    "[一致] 只有 B 有：('taishin-richart', '好饗刷', 'merchant', (), ('Foodpanda', 'FunNow', 'KKTIX', 'ONCOR', 'OPENTIX兩廳院文化生活', 'Uber Eats', 'sing!go', '享溫馨', '台北君悅酒店', '台灣萬豪國際集團旗下飯店', '好樂迪', '寬宏售票', '年代售票', '拓元售票', '晶華國際酒店集團', '漢來飯店事業群', '煙波國際觀光集團', '王品瘋Pay', '礁溪寒沐酒店', '福華集團', '老爺酒店集團', '臺中勤美洲際酒店', '錢櫃', '雲朗觀光', '高雄洲際酒店'), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+    "[格式] validate 沒過：）：\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-2：商家「臺虎精釀」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-12：商家「台新Pay」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-12：商家「台新Pay+」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-17：商家「台灣萬豪國際集團」對不上 merchants.json"
+   ],
+   "pass": false
+  },
+  {
+   "n": 2,
+   "page": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+   "today": "2026-11-05",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [],
+   "pass": true,
+   "cCheck": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   }
+  }
+ ],
+ "note": "latest.json 列 93 頁變動，其中 65 頁全文雜湊完全相同、其餘多為雜訊：上次快照沒有指紋（fp），detect.py 拿新 fp 比舊 sha，導致誤報。用舊快照補算指紋後，有規則且回饋相關句子真的變了的官方頁只有 2 頁，本輪只抽這 2 頁。下次比對基準已有指紋，誤報應會消失。"
+}

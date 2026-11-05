@@ -1,0 +1,74 @@
+{
+  "extractor": "B",
+  "page": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+  "cards": [
+    {
+      "cardId": "megabank-happy",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 0.4,
+          "rawReward": "非網購國內一般新增消費享0.4%現金回饋，回饋無上限",
+          "cap": null,
+          "conditions": ["限非網購國內一般消費"],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {"rate": "非網購國內一般新增消費享0.4%現金回饋，回饋無上限", "validTo": null, "validFrom": null, "cap": null},
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {"type": "category", "categories": ["overseas"], "basis": "mcc"},
+          "rate": 1.5,
+          "rawReward": "非網購國外一般新增消費享1.5%現金回饋，回饋無上限",
+          "cap": null,
+          "conditions": ["限非網購", "交易地點於國外且交易幣別為非新臺幣"],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {"rate": "非網購國外一般新增消費享1.5%現金回饋，回饋無上限", "validTo": null, "validFrom": null, "cap": null},
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {"type": "category", "categories": ["online-shopping"], "basis": "mcc"},
+          "rate": 2.5,
+          "rawReward": "網路購物之不限購物金額享2.5%現金回饋，每期最高回饋NT$200",
+          "cap": {"amount": 200, "unit": "TWD", "period": "billing-cycle"},
+          "conditions": ["國內外網購皆適用", "不含電話、傳真、授權自動扣款、面對面交易及第三方支付"],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {"rate": "網路購物之不限購物金額享2.5%現金回饋，每期最高回饋NT$200。", "validTo": null, "validFrom": null, "cap": "網路購物之不限購物金額享2.5%現金回饋，每期最高回饋NT$200。"},
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {"type": "merchant", "merchants": ["Agoda", "Hotels.com", "Expedia", "Booking.com", "雄獅旅遊", "東南旅遊", "易遊網", "可樂旅遊", "Klook", "KKday", "Trip.com"], "basis": "merchant-list"},
+          "rate": 5,
+          "rawReward": "網購2.5%＋指定旅遊平台網購再加碼回饋2.5%（各每期最高回饋NT$200），最高5%現金回饋",
+          "cap": {"amount": 200, "unit": "TWD", "period": "billing-cycle"},
+          "conditions": ["需申辦電子帳單(不含行動帳單)且無紙本帳單", "需辦理帳戶自動扣繳卡費成功", "限指定通路官網與App之線上交易"],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {
+            "rate": "申辦電子帳單(不含行動帳單)且無紙本帳單並辦理帳戶自動扣繳卡費成功(至少扣足最低應繳金額)，指定旅遊平台網購再加碼回饋2.5%，每期最高回饋NT$200。",
+            "base": "網路購物之不限購物金額享2.5%現金回饋，每期最高回饋NT$200。",
+            "validTo": null,
+            "validFrom": null,
+            "cap": "申辦電子帳單(不含行動帳單)且無紙本帳單並辦理帳戶自動扣繳卡費成功(至少扣足最低應繳金額)，指定旅遊平台網購再加碼回饋2.5%，每期最高回饋NT$200。"
+          },
+          "rateFormula": "2.5+2.5"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "期限：原文寫「※上述權益適用期間115年12月帳單結帳日。」，結帳日因人而異、不是具體日期，依規則4 validTo 填 null；起日原文未寫，validFrom 填 null。",
+    "旅遊平台規則的 cap 填加碼部分的每期 NT$200；原文的基本網購 2.5% 另有自己的每期 NT$200 上限，兩個上限分開計算，合計 5% 時上限結構無法用單一 cap 完整表達。",
+    "網購與海外的 scope.basis 填 mcc 是近似：原文網購是「限以本行系統判定為網路購物為準」，海外是「交易地點於國外且交易幣別為非新臺幣」，都不是列出商家名單。",
+    "海外 1.5% 回饋另須注意原文寫國外交易手續費「目前為交易金額之1.5%」，實質回饋會被抵銷，僅供參考，不影響 rate。",
+    "未收錄：非網購國內一般消費提撥 0.1% 捐贈野灣（不是回饋給持卡人）；消費自動分 3 期 0 利率（不是回饋，且原文寫自113年1月10日起不提供現金回饋）；新戶首刷禮／新戶好禮（規則8）；優惠通路列表的活動（台灣Pay 1.5%、悠遊付最高10%、精選網購滿額5%、地價稅等）快照只有標題與日期、沒有細則，且多為需登錄或滿額活動，不收。",
+    "頁面卡名是「e秒Happy悠遊聯名卡」，注意事項另提到「e秒Happy悠遊鈦金卡或e秒Happy金融信用卡皆合併計算」，cardId 照指派用 megabank-happy。",
+    "快照裡沒有看到要抽取員做事的指令句。"
+  ]
+}

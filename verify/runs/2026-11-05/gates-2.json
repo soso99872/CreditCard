@@ -1,0 +1,15 @@
+{
+ "page": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+ "today": "2026-11-05",
+ "gates": {
+  "官方來源": true,
+  "一致": true,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [],
+ "benchDiffs": [],
+ "pass": true
+}
