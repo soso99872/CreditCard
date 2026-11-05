@@ -50,8 +50,18 @@ def key(cardId, r):
     return (cardId, r.get("plan", ""), s.get("type"), tuple(sorted(s.get("categories", []))), tuple(sorted(s.get("merchants", []))),
             tuple(sorted(s.get("excludeMerchants", []))), round(float(r["rate"]), 3), cap.get("amount"), cap.get("unit"), cap.get("period"),
             r.get("validFrom"), r.get("validTo"))
-KA = {key(c["cardId"], r) for c in A["cards"] for r in c["rules"]}
-KB = {key(c["cardId"], r) for c in B["cards"] for r in c["rules"]}
+def merged(cards):
+    # 商家規則怎麼分組是寫法不同，不是內容不同：同卡、同方案、同回饋率、同上限、同期間的商家規則，合併成一組商家再比
+    out = set()
+    for c in cards:
+        groups = {}
+        for r in c["rules"]:
+            k = key(c["cardId"], r)
+            if k[2] == "merchant": groups.setdefault(k[:4] + k[5:], set()).update(k[4])
+            else: out.add(k)
+        for g, ms in groups.items(): out.add(g[:4] + (tuple(sorted(ms)),) + g[4:])
+    return out
+KA, KB = merged(A["cards"]), merged(B["cards"])
 for k in sorted(KA - KB, key=str): fail("一致", f"只有 A 有：{k}")
 for k in sorted(KB - KA, key=str): fail("一致", f"只有 B 有：{k}")
 
@@ -101,6 +111,12 @@ for c in A["cards"]:
     b = json.load(open(files[0], encoding="utf-8"))
     card = next(x for x in b["cards"] if x["id"] == c["cardId"]); touched.add(c["cardId"])
     keep = [r for r in card["rules"] if r.get("sourceUrl") != page]
+    # 官方提案涵蓋的範圍，同卡同範圍的第三方規則就換掉，不然會舊新兩條並存
+    sk = lambda r: (r.get("scope", {}).get("type"), tuple(sorted(r.get("scope", {}).get("categories", []))), tuple(sorted(r.get("scope", {}).get("merchants", []))))
+    newk = {sk(r) for r in c["rules"]}
+    dropped = [r["id"] for r in keep if r.get("sourceType") == "third-party" and sk(r) in newk]
+    if dropped: res.setdefault("replacedThirdParty", []).extend(dropped)
+    keep = [r for r in keep if r["id"] not in dropped]
     oldn = len(card["rules"]) - len(keep)
     if oldn and len(c["rules"]) < oldn / 2: fail("格式", f"{c['cardId']} 這頁現有 {oldn} 條、提案只有 {len(c['rules'])} 條，少一半以上，可能抽漏")
     new = []
