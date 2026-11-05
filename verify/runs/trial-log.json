@@ -14,7 +14,8 @@
      "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
      "reasons": [
       "一致：A/B Pay著刷 scope 不同（merchant vs category）、好饗刷商家名寫法不同、Hotels.com 已過期 A 收 B 不收",
-      "格式：商家名對不上 merchants.json（臺虎精釀、台新Pay）"
+      "格式：商家名對不上 merchants.json（臺虎精釀、台新Pay）",
+      "第 2、3 輪（EXTRACT 補第 11～15 條後重抽）：條數 22→73 條，跟現有 63 條同量級；剩 4 組排除商家判讀不同、水巷茶弄對不上商家庫"
      ]
     }
    ],

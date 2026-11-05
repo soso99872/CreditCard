@@ -1,0 +1,2509 @@
+{
+ "extractor": "B",
+ "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+ "cards": [
+  {
+   "cardId": "taishin-richart",
+   "rules": [
+    {
+     "plan": "",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "全家便利商店",
+       "7-11"
+      ]
+     },
+     "rate": 0.3,
+     "rawReward": "一般消費 0.3% 台新Point(信用卡)回饋無上限",
+     "cap": null,
+     "conditions": [
+      "不受卡友身分限制",
+      "不回饋項目詳專屬網頁"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "一般消費享 0.3% 台新Piont(信用卡)回饋無上限，不回饋項目詳注意事項。",
+      "validFrom": "一、 活動期間：2026/7/1 – 2027/12/31之消費適用本活動辦法。",
+      "validTo": "一、 活動期間：2026/7/1 – 2027/12/31之消費適用本活動辦法。",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "詹記麻辣火鍋",
+       "萬客什鍋",
+       "海底撈",
+       "屋馬燒肉",
+       "茶六燒肉堂",
+       "新村站著吃",
+       "燒肉政宗",
+       "碳佐麻里",
+       "雞湯大叔",
+       "gonna共樂遊",
+       "BRUN 不然",
+       "CAFE ACME",
+       "The Antipodean",
+       "貳樓",
+       "樂子 the Diner",
+       "Fake Sober",
+       "Draft Land",
+       "臺虎精釀(含啜飲室)",
+       "ABV系列",
+       "Bar TCRC",
+       "Bar Home",
+       "Phowa",
+       "MOONROCK",
+       "台灣代駕",
+       "Motodomo 愛車管家"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：瘋聚會 歡樂微醺",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%",
+      "台灣代駕：10/1起新增",
+      "Motodomo 愛車管家：10/1起新增"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "詹記麻辣火鍋",
+       "萬客什鍋",
+       "海底撈",
+       "屋馬燒肉",
+       "茶六燒肉堂",
+       "新村站著吃",
+       "燒肉政宗",
+       "碳佐麻里",
+       "雞湯大叔",
+       "gonna共樂遊",
+       "BRUN 不然",
+       "CAFE ACME",
+       "The Antipodean",
+       "貳樓",
+       "樂子 the Diner",
+       "Fake Sober",
+       "Draft Land",
+       "臺虎精釀(含啜飲室)",
+       "ABV系列",
+       "Bar TCRC",
+       "Bar Home",
+       "Phowa",
+       "MOONROCK",
+       "台灣代駕",
+       "Motodomo 愛車管家"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 10,
+     "rawReward": "瘋聚會 歡樂微醺 最高10% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：瘋聚會 歡樂微醺",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%",
+      "台灣代駕：10/1起新增",
+      "Motodomo 愛車管家：10/1起新增"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "歡樂微醺 最高 10%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "50嵐",
+       "得正",
+       "五桐號",
+       "龜記",
+       "UG TEA",
+       "叮哥茶飲",
+       "CAFE!N",
+       "%Arabica",
+       "COMPOSE COFFEE"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：瘋聚會 日常續命",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "50嵐",
+       "得正",
+       "五桐號",
+       "龜記",
+       "UG TEA",
+       "叮哥茶飲",
+       "CAFE!N",
+       "%Arabica",
+       "COMPOSE COFFEE"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 10,
+     "rawReward": "瘋聚會 日常續命 最高10% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：瘋聚會 日常續命",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "日常續命 最高 10%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "饗饗 INPARADISE",
+       "NAGOMI"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：瘋聚會 約會犒賞",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "饗饗 INPARADISE",
+       "NAGOMI"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "瘋聚會 約會犒賞 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：瘋聚會 約會犒賞",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "約會犒賞 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "WEVERSE",
+       "K-MONSTAR",
+       "微樂客",
+       "五大唱片",
+       "仙女樹",
+       "FANME",
+       "NOL"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：沉浸娛樂 應援追星",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "WEVERSE",
+       "K-MONSTAR",
+       "微樂客",
+       "五大唱片",
+       "仙女樹",
+       "FANME",
+       "NOL"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "沉浸娛樂 應援追星 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：沉浸娛樂 應援追星",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "應援追星 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "巴哈姆特",
+       "BOOK WALKER",
+       "Animate",
+       "樂天KOBO",
+       "Readmoo讀墨",
+       "Netflix",
+       "Disney+",
+       "愛爾達"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：沉浸娛樂 熬夜追更",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "巴哈姆特",
+       "BOOK WALKER",
+       "Animate",
+       "樂天KOBO",
+       "Readmoo讀墨",
+       "Netflix",
+       "Disney+",
+       "愛爾達"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "沉浸娛樂 熬夜追更 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：沉浸娛樂 熬夜追更",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "熬夜追更 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Pinkoi"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：沉浸娛樂 數位外掛",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%",
+      "Pinkoi：10/1起新增"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Pinkoi"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "沉浸娛樂 數位外掛 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：沉浸娛樂 數位外掛",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%",
+      "Pinkoi：10/1起新增"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "數位外掛 最高 5% Pinkoi (10/1起新增)",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Apple 直營(含官網)",
+       "Studio A(含Straight A)",
+       "DJI",
+       "Insta360",
+       "GoPro",
+       "蝦皮",
+       "淘寶",
+       "酷澎",
+       "Uber Eats"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：沉浸娛樂 數位外掛",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Apple 直營(含官網)",
+       "Studio A(含Straight A)",
+       "DJI",
+       "Insta360",
+       "GoPro",
+       "蝦皮",
+       "淘寶",
+       "酷澎",
+       "Uber Eats"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "沉浸娛樂 數位外掛 最高3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：沉浸娛樂 數位外掛",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "數位外掛 最高 3.3%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "好好生醫",
+       "POPCARE好在乎",
+       "營養師輕食",
+       "VITABOX",
+       "MYPROTEIN",
+       "UrMart優馬選品"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：獨自升級 營養補給",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "好好生醫",
+       "POPCARE好在乎",
+       "營養師輕食",
+       "VITABOX",
+       "MYPROTEIN",
+       "UrMart優馬選品"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "獨自升級 營養補給 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：獨自升級 營養補給",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "營養補給 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Anytime Fitness",
+       "健身工廠",
+       "World Gym",
+       "超核心 Hypercore",
+       "KX PILATES",
+       "虎鐵健身 X 器械皮拉提斯",
+       "17FIT"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：獨自升級 體態養成",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Anytime Fitness",
+       "健身工廠",
+       "World Gym",
+       "超核心 Hypercore",
+       "KX PILATES",
+       "虎鐵健身 X 器械皮拉提斯",
+       "17FIT"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "獨自升級 體態養成 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：獨自升級 體態養成",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "體態養成 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Adidas",
+       "New Balance",
+       "PUMA",
+       "Onitsuka Tiger",
+       "Nike",
+       "HOKA",
+       "Salomon",
+       "lululemon"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：獨自升級 運動品牌",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Chill刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Adidas",
+       "New Balance",
+       "PUMA",
+       "Onitsuka Tiger",
+       "Nike",
+       "HOKA",
+       "Salomon",
+       "lululemon"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 5,
+     "rawReward": "獨自升級 運動品牌 最高5% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Chill刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：獨自升級 運動品牌",
+      "限獨立店或線上官網；透過Uber Eats或指定網購平台(如蝦皮)最高3.3%"
+     ],
+     "validFrom": "2026-07-08",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "運動品牌 最高 5%",
+      "validFrom": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "validTo": "2026/7/8 11:00AM – 12/31 於Richart Life App開放切換 ♥ 懂你的快樂人格 ♥",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Pay著刷 LEVEL 1",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ],
+      "excludeMerchants": [
+       "大全聯",
+       "全聯福利中心"
+      ]
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Pay著刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "支付工具：台新Pay、台新Pay+",
+      "超商使用台新Pay綁定支付單筆限額最高NT3,000元",
+      "超商代收/售、禮物卡、儲值交易不予回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Pay著刷 LEVEL 2",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ],
+      "excludeMerchants": [
+       "大全聯",
+       "全聯福利中心"
+      ]
+     },
+     "rate": 3.8,
+     "rawReward": "台新Pay 及 台新Pay+ 綁定支付享 3.8% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Pay著刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "支付工具：台新Pay、台新Pay+",
+      "超商使用台新Pay綁定支付單筆限額最高NT3,000元",
+      "超商代收/售、禮物卡、儲值交易不予回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "台新Pay 及 台新Pay+ 綁定支付享 3.8%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Pay著刷 LEVEL 1",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ],
+      "excludeMerchants": [
+       "7-11"
+      ]
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Pay著刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "支付工具：LINE Pay、全盈+Pay",
+      "全盈+Pay：7/8起新增",
+      "限交易地為臺灣且交易幣別為新臺幣",
+      "不回饋項目如四大超商、繳稅費等"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "Pay著刷 LEVEL 2",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ],
+      "excludeMerchants": [
+       "7-11"
+      ]
+     },
+     "rate": 2.3,
+     "rawReward": "LINE Pay 及 全盈+Pay 綁定支付享2.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「Pay著刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "支付工具：LINE Pay、全盈+Pay",
+      "全盈+Pay：7/8起新增",
+      "限交易地為臺灣且交易幣別為新臺幣",
+      "不回饋項目如四大超商、繳稅費等"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "LINE Pay 及 全盈+Pay(7/8起新增) 綁定支付享2.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "全家",
+       "7-11",
+       "萬家福",
+       "樂家康",
+       "大買家",
+       "唐吉訶德",
+       "LOPIA",
+       "智生活"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：日常採買",
+      "兩大超商限台新Pay",
+      "智生活：7/8起新增"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "全家",
+       "7-11",
+       "萬家福",
+       "樂家康",
+       "大買家",
+       "唐吉訶德",
+       "LOPIA",
+       "智生活"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "日常採買 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：日常採買",
+      "兩大超商限台新Pay",
+      "智生活：7/8起新增"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "天天刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "臺鐵",
+       "高鐵",
+       "台灣大車隊",
+       "LINEGO",
+       "Yoxi",
+       "Uber",
+       "台灣Bolt"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：通勤交通",
+      "Uber/台灣Bolt限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "臺鐵",
+       "高鐵",
+       "台灣大車隊",
+       "LINEGO",
+       "Yoxi",
+       "Uber",
+       "台灣Bolt"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "通勤交通 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：通勤交通",
+      "Uber/台灣Bolt限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "天天刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "中油直營",
+       "全國加油",
+       "全國特急電",
+       "源點EVOASIS",
+       "華城電能EVALUE",
+       "USPACE",
+       "Autopass(車麻吉)"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：加油充電"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "中油直營",
+       "全國加油",
+       "全國特急電",
+       "源點EVOASIS",
+       "華城電能EVALUE",
+       "USPACE",
+       "Autopass(車麻吉)"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "加油充電 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：加油充電"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "天天刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "寶雅",
+       "康是美",
+       "屈臣氏",
+       "杏一醫療",
+       "大樹藥局",
+       "丁丁藥局",
+       "佑全保健藥妝",
+       "健康人生藥局"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：藥妝藥局"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "天天刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "寶雅",
+       "康是美",
+       "屈臣氏",
+       "杏一醫療",
+       "大樹藥局",
+       "丁丁藥局",
+       "佑全保健藥妝",
+       "健康人生藥局"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "藥妝藥局 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「天天刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：藥妝藥局"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "天天刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "新光三越(含skm pay)",
+       "遠東百貨",
+       "遠東SOGO",
+       "漢神巨蛋",
+       "漢神百貨",
+       "漢神洲際",
+       "微風",
+       "台北101",
+       "遠東巨城",
+       "廣三SOGO",
+       "南紡購物中心",
+       "誠品生活(含誠品線上)",
+       "京站",
+       "三創生活",
+       "夢時代",
+       "統一時代(含DREAM PLAZA)",
+       "中友百貨",
+       "Mitsui Shopping Park LaLaport(南港/台中)"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：指定百貨",
+      "百貨店中店不予加碼回饋",
+      "新光三越台北車站不予加碼回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "新光三越(含skm pay)",
+       "遠東百貨",
+       "遠東SOGO",
+       "漢神巨蛋",
+       "漢神百貨",
+       "漢神洲際",
+       "微風",
+       "台北101",
+       "遠東巨城",
+       "廣三SOGO",
+       "南紡購物中心",
+       "誠品生活(含誠品線上)",
+       "京站",
+       "三創生活",
+       "夢時代",
+       "統一時代(含DREAM PLAZA)",
+       "中友百貨",
+       "Mitsui Shopping Park LaLaport(南港/台中)"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "指定百貨 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：指定百貨",
+      "百貨店中店不予加碼回饋",
+      "新光三越台北車站不予加碼回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "大筆刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "MITSUI OUTLET PARK (林口、台中港、台南)",
+       "華泰名品城",
+       "SKM Park Outlets"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：指定Outlet"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "MITSUI OUTLET PARK (林口、台中港、台南)",
+       "華泰名品城",
+       "SKM Park Outlets"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "指定Outlet 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：指定Outlet"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "大筆刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "IKEA",
+       "特力屋",
+       "HOLA",
+       "宜得利",
+       "瑪黑家居"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：居家裝修",
+      "含線上購物官網，不含蝦皮等電商平台"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "IKEA",
+       "特力屋",
+       "HOLA",
+       "宜得利",
+       "瑪黑家居"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "居家裝修 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：居家裝修",
+      "含線上購物官網，不含蝦皮等電商平台"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "大筆刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "UNIQLO",
+       "GU",
+       "ZARA",
+       "NET",
+       "lululemon"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：時尚品味",
+      "線上限臺灣官方網站"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "大筆刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "UNIQLO",
+       "GU",
+       "ZARA",
+       "NET",
+       "lululemon"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "時尚品味 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「大筆刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：時尚品味",
+      "線上限臺灣官方網站"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "大筆刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "dining"
+      ],
+      "basis": "mcc",
+      "excludeMerchants": [
+       "水巷茶弄",
+       "麥當勞",
+       "肯德基"
+      ]
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：全臺餐飲",
+      "不含餐券",
+      "限交易地為臺灣且收單行業類別為餐廳(MCC 5811、5812、5813、5814)"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "dining"
+      ],
+      "basis": "mcc",
+      "excludeMerchants": [
+       "水巷茶弄",
+       "麥當勞",
+       "肯德基"
+      ]
+     },
+     "rate": 3.3,
+     "rawReward": "全臺餐飲 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：全臺餐飲",
+      "不含餐券",
+      "限交易地為臺灣且收單行業類別為餐廳(MCC 5811、5812、5813、5814)"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "王品瘋Pay"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：王品瘋Pay"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "王品瘋Pay"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "王品瘋Pay 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：王品瘋Pay"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Uber Eats",
+       "Foodpanda"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：外送平台",
+      "限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Uber Eats",
+       "Foodpanda"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "外送平台 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：外送平台",
+      "限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "拓元售票",
+       "KKTIX",
+       "年代售票",
+       "寬宏售票",
+       "OPENTIX兩廳院文化生活",
+       "FunNow"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：購票娛樂",
+      "限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "拓元售票",
+       "KKTIX",
+       "年代售票",
+       "寬宏售票",
+       "OPENTIX兩廳院文化生活",
+       "FunNow"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "購票娛樂 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：購票娛樂",
+      "限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "晶華國際酒店集團",
+       "雲朗觀光",
+       "台灣萬豪國際集團旗下飯店",
+       "煙波國際觀光集團",
+       "老爺酒店集團",
+       "福華集團",
+       "漢來飯店事業群",
+       "台北君悅酒店",
+       "高雄洲際酒店",
+       "臺中勤美洲際酒店",
+       "礁溪寒沐酒店"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：指定飯店",
+      "不含餐券、住宿券等票券"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "晶華國際酒店集團",
+       "雲朗觀光",
+       "台灣萬豪國際集團旗下飯店",
+       "煙波國際觀光集團",
+       "老爺酒店集團",
+       "福華集團",
+       "漢來飯店事業群",
+       "台北君悅酒店",
+       "高雄洲際酒店",
+       "臺中勤美洲際酒店",
+       "礁溪寒沐酒店"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "指定飯店 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：指定飯店",
+      "不含餐券、住宿券等票券"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "錢櫃",
+       "好樂迪",
+       "ONCOR",
+       "sing!go",
+       "享溫馨"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：指定KTV"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "好饗刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "錢櫃",
+       "好樂迪",
+       "ONCOR",
+       "sing!go",
+       "享溫馨"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "指定KTV 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「好饗刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：指定KTV"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "好饗刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "蝦皮",
+       "momo",
+       "酷澎(Coupang)",
+       "PChome",
+       "淘寶",
+       "Amazon",
+       "東森",
+       "博客來",
+       "Richart Mart",
+       "PayEasy",
+       "iHerb",
+       "SHEIN",
+       "Farfetch",
+       "Olive Young"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：網購平台",
+      "蝦皮限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "蝦皮",
+       "momo",
+       "酷澎(Coupang)",
+       "PChome",
+       "淘寶",
+       "Amazon",
+       "東森",
+       "博客來",
+       "Richart Mart",
+       "PayEasy",
+       "iHerb",
+       "SHEIN",
+       "Farfetch",
+       "Olive Young"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "網購平台 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：網購平台",
+      "蝦皮限交易地為臺灣且交易幣別為新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "數趣刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "知識衛星",
+       "Amazing Talker",
+       "Tutor ABC",
+       "Hahow",
+       "PressPlay"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：線上課程"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "知識衛星",
+       "Amazing Talker",
+       "Tutor ABC",
+       "Hahow",
+       "PressPlay"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "線上課程 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：線上課程"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "數趣刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "MyCard",
+       "遊戲橘子",
+       "Steam",
+       "PlayStation",
+       "Nintendo",
+       "Netflix",
+       "Disney+"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：遊戲影音"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "MyCard",
+       "遊戲橘子",
+       "Steam",
+       "PlayStation",
+       "Nintendo",
+       "Netflix",
+       "Disney+"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "遊戲影音 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：遊戲影音"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "數趣刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "ChatGPT",
+       "Notion",
+       "Canva",
+       "Perplexity",
+       "Claude"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：AI服務"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "數趣刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "ChatGPT",
+       "Notion",
+       "Canva",
+       "Perplexity",
+       "Claude"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "AI服務 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「數趣刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：AI服務"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "數趣刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 1",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas"
+      ]
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：海外消費",
+      "含實體及線上、歐洲國家交易",
+      "海外消費指交易幣別為外幣，或交易國別非臺灣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 2",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas"
+      ]
+     },
+     "rate": 3.3,
+     "rawReward": "海外消費 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：海外消費",
+      "含實體及線上、歐洲國家交易",
+      "海外消費指交易幣別為外幣，或交易國別非臺灣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玩旅刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Uber",
+       "Grab",
+       "SUICA",
+       "ICOCA",
+       "PASMO",
+       "WOWPASS",
+       "AIRSIM"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：海外交通/網路",
+      "Uber限交易地非臺灣或交易幣別非新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Uber",
+       "Grab",
+       "SUICA",
+       "ICOCA",
+       "PASMO",
+       "WOWPASS",
+       "AIRSIM"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "海外交通/網路 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：海外交通/網路",
+      "Uber限交易地非臺灣或交易幣別非新臺幣"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玩旅刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "中華航空",
+       "長榮航空",
+       "星宇航空",
+       "台灣虎航",
+       "國泰航空",
+       "華信航空",
+       "立榮航空",
+       "樂桃航空",
+       "阿聯酋航空",
+       "亞洲航空",
+       "酷航",
+       "捷星航空",
+       "新加坡航空",
+       "日本航空",
+       "越捷航空"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：航空公司",
+      "限航空公司實體或官網購買機票"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "中華航空",
+       "長榮航空",
+       "星宇航空",
+       "台灣虎航",
+       "國泰航空",
+       "華信航空",
+       "立榮航空",
+       "樂桃航空",
+       "阿聯酋航空",
+       "亞洲航空",
+       "酷航",
+       "捷星航空",
+       "新加坡航空",
+       "日本航空",
+       "越捷航空"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "航空公司 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：航空公司",
+      "限航空公司實體或官網購買機票"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玩旅刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Klook",
+       "KKday",
+       "Agoda",
+       "Booking.com",
+       "Trip.com",
+       "Airbnb",
+       "Hotels.com",
+       "Expedia"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：訂房平台"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "Klook",
+       "KKday",
+       "Agoda",
+       "Booking.com",
+       "Trip.com",
+       "Airbnb",
+       "Hotels.com",
+       "Expedia"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "訂房平台 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：訂房平台"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玩旅刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 1",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "雄獅旅遊",
+       "易遊網",
+       "東南旅遊",
+       "可樂旅遊",
+       "長汎假期",
+       "五福旅遊",
+       "喜鴻假期",
+       "易飛旅遊",
+       "燦星旅遊",
+       "加利利旅行社",
+       "鳳凰國際旅行社",
+       "山富旅遊",
+       "行健旅遊"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "通路：旅行社",
+      "限指定旅行社直營通路(含官網)"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "玩旅刷 LEVEL 2",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "雄獅旅遊",
+       "易遊網",
+       "東南旅遊",
+       "可樂旅遊",
+       "長汎假期",
+       "五福旅遊",
+       "喜鴻假期",
+       "易飛旅遊",
+       "燦星旅遊",
+       "加利利旅行社",
+       "鳳凰國際旅行社",
+       "山富旅遊",
+       "行健旅遊"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.3,
+     "rawReward": "旅行社 3.3% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「玩旅刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "通路：旅行社",
+      "限指定旅行社直營通路(含官網)"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玩旅刷 3.3%",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "假日刷 LEVEL 1",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "全家便利商店",
+       "7-11"
+      ]
+     },
+     "rate": 1.3,
+     "rawReward": "LEVEL 1 切換刷加碼通路最高1.3%台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「假日刷」方案",
+      "未設定台新帳戶自動扣繳台新信用卡帳款（LEVEL 1）",
+      "國內節假日（依行政院人事行政總處公告之國定例假日，不含天災假）",
+      "含保費（線上投保、手動刷卡繳保費）",
+      "含LINE Pay及全盈+Pay綁定",
+      "臺北捷運感應支付不提供加碼回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "未完成設定者，享切換刷加碼通路最高1.3%台新Point(信用卡)回饋。",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "假日刷 LEVEL 2",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "全家便利商店",
+       "7-11"
+      ]
+     },
+     "rate": 2,
+     "rawReward": "節假日不限通路(含保費)消費享2% 台新Point(信用卡)",
+     "cap": null,
+     "conditions": [
+      "需切換至「假日刷」方案",
+      "需設定台新帳戶自動扣繳台新信用卡帳款，次期帳單結帳後適用（LEVEL 2）",
+      "國內節假日（依行政院人事行政總處公告之國定例假日，不含天災假）",
+      "含保費（線上投保、手動刷卡繳保費）",
+      "含LINE Pay及全盈+Pay綁定",
+      "臺北捷運感應支付不提供加碼回饋"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "節假日不限通路(含保費)消費享2% (含LINE Pay及全盈+Pay綁定)",
+      "validFrom": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "validTo": "活動期間：2026/7/1 – 2027/12/31之消費適用",
+      "cap": null
+     },
+     "rateFormula": null
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "等級：依第11條，LEVEL 1（未設定台新帳戶自動扣繳）每條用原文「切換刷加碼通路最高1.3%」，LEVEL 2 照逐通路回饋率；表格 LEVEL 1 欄只出現一次 1.3%（疑為合併儲存格），依「卡友身分升級」段落套用到所有切換方案含假日刷。",
+  "Chill刷日期取自「2026/7/8 11:00AM – 12/31 於Richart Life App開放切換」（切換開放期間，判斷為該方案起訖）；其他方案用「活動期間：2026/7/1 – 2027/12/31」。「(10/1起新增)」「(7/8起新增)」依第13條拿掉括號寫進 conditions，未另拆規則、未改 validFrom。",
+  "「全家及7-11(兩大超商限台新Pay)」拆成「全家」「7-11」兩個商家，括號限制寫進 conditions。",
+  "excludeMerchants：一般消費與假日刷依原文舉例「全家便利商店」「7-11」為一般消費排除回饋項目；Pay著刷台新Pay排除「大全聯」「全聯福利中心」；Pay著刷LINE Pay排除「7-11」（舉例3）；好饗刷全臺餐飲排除原文舉例之「水巷茶弄」「麥當勞」「肯德基」。「四大超商」非商家名，未填。",
+  "cap：原文為「每期帳單適用加碼回饋之消費金額，以持卡人之永久信用額度加計NT$30萬為限」，額度因人而異，無法填固定金額，cap 留 null。一般消費原文明寫無上限。",
+  "未收：保費免切換1.3%（無對應類別 id）；Richart卡領券加碼（LINE Pay券每月限量250,000張、保費新戶券，屬限量領券／新戶）；台新Pay+新戶最高19%（新戶限定）；新申辦60天LEVEL2試用（新戶）；推薦好友、消費達檻eSIM／機場接送、悠遊卡自動加值10%（須登錄、每月限量）、兌哩程回饋、Mastercard／JCB／Visa 國際組織優惠（滿額定額回饋或折抵）。",
+  "已結束未收（第14條）：Hotels.com加碼5%（訂房期間2026/7/1-2026/9/30）、2026/7-9月機車停車禮遇、保費滿額贈行李箱（2026/7/1-10/31）。",
+  "點數價值：原文未寫台新Point換算新台幣比例，回饋率照原文百分比填。快照內未發現要求抽取員做事的句子。"
+ ]
+}

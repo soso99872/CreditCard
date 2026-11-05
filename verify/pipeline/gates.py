@@ -101,6 +101,8 @@ for c in A["cards"]:
     b = json.load(open(files[0], encoding="utf-8"))
     card = next(x for x in b["cards"] if x["id"] == c["cardId"]); touched.add(c["cardId"])
     keep = [r for r in card["rules"] if r.get("sourceUrl") != page]
+    oldn = len(card["rules"]) - len(keep)
+    if oldn and len(c["rules"]) < oldn / 2: fail("格式", f"{c['cardId']} 這頁現有 {oldn} 條、提案只有 {len(c['rules'])} 條，少一半以上，可能抽漏")
     new = []
     for r in c["rules"]:
         r = {k: v for k, v in r.items() if k not in ("evidence", "rateFormula")}

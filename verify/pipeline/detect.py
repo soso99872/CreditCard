@@ -25,7 +25,8 @@ changed, blocked, expiring, minor = [], [], [], []
 for u, r in cur["pages"].items():
     p = prev.get(u)
     if not ok(r): blocked.append({"url": u, "status": r.get("status"), "chars": r.get("chars"), "rules": len(uses.get(u, []))})
-    elif p and ok(p) and (p.get("fp") or p.get("sha")) != (r.get("fp") or r.get("sha")):   # 有指紋就比指紋（只看跟回饋有關的句子）
+    elif p and ok(p) and ((p["fp"] != r["fp"]) if p.get("fp") and r.get("fp") else (p.get("sha") != r.get("sha"))):
+        # 兩邊都有指紋才比指紋（只看跟回饋有關的句子）；舊快照沒指紋就退回比全文雜湊，不拿指紋去比雜湊（2026-11-05 誤報 93 頁的原因）
         changed.append({"url": u, "file": r["path"], "uses": uses.get(u, []), "kind": "回饋相關句子變了" if r.get("fp") and p.get("fp") else "整頁內容變了"})
     elif p and ok(p) and p.get("sha") != r.get("sha"):
         minor.append({"url": u, "uses": len(uses.get(u, []))})

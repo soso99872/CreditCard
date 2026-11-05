@@ -24,7 +24,39 @@
     "[一致] 只有 B 有：('taishin-richart', '好饗刷', 'merchant', (), ('Foodpanda', 'FunNow', 'KKTIX', 'ONCOR', 'OPENTIX兩廳院文化生活', 'Uber Eats', 'sing!go', '享溫馨', '台北君悅酒店', '台灣萬豪國際集團旗下飯店', '好樂迪', '寬宏售票', '年代售票', '拓元售票', '晶華國際酒店集團', '漢來飯店事業群', '煙波國際觀光集團', '王品瘋Pay', '礁溪寒沐酒店', '福華集團', '老爺酒店集團', '臺中勤美洲際酒店', '錢櫃', '雲朗觀光', '高雄洲際酒店'), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
     "[格式] validate 沒過：）：\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-2：商家「臺虎精釀」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-12：商家「台新Pay」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-12：商家「台新Pay+」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-17：商家「台灣萬豪國際集團」對不上 merchants.json"
    ],
-   "pass": false
+   "pass": false,
+   "rounds": {
+    "r2": [
+     "[一致] 只有 A 有：('taishin-richart', 'Chill刷 LEVEL 1', 'merchant', (), ('Pinkoi',), (), 1.3, None, None, None, '2026-07-08', '2026-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', 'Chill刷 LEVEL 2', 'merchant', (), ('Pinkoi',), (), 5.0, None, None, None, '2026-07-08', '2026-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', 'Pay著刷 LEVEL 2', 'category', ('mobile-payment',), (), (), 3.8, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 1', 'category', ('dining',), (), (), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 1', 'merchant', (), ('王品瘋Pay',), (), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 2', 'category', ('dining',), (), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 2', 'merchant', (), ('王品瘋Pay',), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Chill刷 LEVEL 1', 'merchant', (), ('Pinkoi (10/1起新增)',), (), 1.3, None, None, None, '2026-07-08', '2026-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Chill刷 LEVEL 2', 'merchant', (), ('Pinkoi (10/1起新增)',), (), 5.0, None, None, None, '2026-07-08', '2026-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Pay著刷 LEVEL 1', 'category', ('mobile-payment',), (), ('全聯福利中心', '大全聯'), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Pay著刷 LEVEL 2', 'category', ('mobile-payment',), (), ('全聯福利中心', '大全聯'), 3.8, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 1', 'category', ('dining',), (), ('水巷茶弄', '肯德基', '麥當勞'), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 1', 'category', ('mobile-payment',), (), (), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 2', 'category', ('dining',), (), ('水巷茶弄', '肯德基', '麥當勞'), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 2', 'category', ('mobile-payment',), (), (), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[格式] validate 沒過：aishin-richart 規則 taishin-richart-auto-25：商家「7-11(兩大超商限台新Pay)」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-25：商家「智生活(7/8起新增)」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-26：商家「7-11(兩大超商限台新Pay)」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-26：商家「智生活(7/8起新增)」對不上 merchants.json"
+    ],
+    "r3": [
+     "[一致] 只有 A 有：('taishin-richart', 'Pay著刷 LEVEL 1', 'category', ('mobile-payment',), (), (), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', 'Pay著刷 LEVEL 2', 'category', ('mobile-payment',), (), (), 2.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 1', 'category', ('dining',), (), ('大全聯', '水巷茶弄', '肯德基', '麥當勞'), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 A 有：('taishin-richart', '好饗刷 LEVEL 2', 'category', ('dining',), (), ('大全聯', '水巷茶弄', '肯德基', '麥當勞'), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Pay著刷 LEVEL 1', 'category', ('mobile-payment',), (), ('7-11',), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', 'Pay著刷 LEVEL 2', 'category', ('mobile-payment',), (), ('7-11',), 2.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 1', 'category', ('dining',), (), ('水巷茶弄', '肯德基', '麥當勞'), 1.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[一致] 只有 B 有：('taishin-richart', '好饗刷 LEVEL 2', 'category', ('dining',), (), ('水巷茶弄', '肯德基', '麥當勞'), 3.3, None, None, None, '2026-07-01', '2027-12-31')",
+     "[格式] validate 沒過：驗證失敗，共 2 個問題（資料目錄：/tmp/tmpzrur1pd_/data）：\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-22：excludeMerchants 商家「水巷茶弄」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-richart 規則 taishin-richart-auto-58：excludeMerchants 商家「水巷茶弄」對不上 merchants.json"
+    ]
+   },
+   "status": "第 3 輪仍沒過：73 條裡 69 條 A、B 一致；剩排除商家判讀不同（4 組）＋水巷茶弄不在 merchants.json。停在這裡等 Soso 決定，見 HANDOFF.md"
   },
   {
    "n": 2,
