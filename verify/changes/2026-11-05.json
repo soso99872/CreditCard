@@ -1,0 +1,1227 @@
+{
+ "date": "2026-11-05",
+ "compared": "verify/snapshots/history/2026-11-02T200927.json",
+ "changed": [
+  {
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card.html",
+   "file": "verify/snapshots/8e2fae6a9d1a.txt",
+   "uses": [
+    "sinopac:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
+   "file": "verify/snapshots/a86c15bb5f1b.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
+   "file": "verify/snapshots/4bce7b3999b8.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://card.ubot.com.tw/Card",
+   "file": "verify/snapshots/5e400eb5b694.txt",
+   "uses": [
+    "ubot:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://card.ubot.com.tw/CardDetail/cardDetail601",
+   "file": "verify/snapshots/f619ac9d9dbe.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://ecard.bot.com.tw/Pages/Cards/P10.html",
+   "file": "verify/snapshots/d9771da55e7d.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://icard.ai/card/detail/5e15aec35c386d001d389822",
+   "file": "verify/snapshots/f0c0a6003add.txt",
+   "uses": [
+    "esun-pi-wallet-general-base",
+    "esun-pi-wallet-general-ebill",
+    "esun-pi-wallet-tier-10k",
+    "esun-pi-wallet-tier-30k",
+    "esun-pi-wallet-pi-wallet-499"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://icard.ai/card/detail/5e15aed55c386d001d389a96",
+   "file": "verify/snapshots/4ff3144dfc77.txt",
+   "uses": [
+    "sc-signature-general",
+    "sc-signature-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://icard.ai/card/detail/64d1ea1071fefcfdc17c9915",
+   "file": "verify/snapshots/526850a52884.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
+   "file": "verify/snapshots/e77dc5c6bd4c.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+   "file": "verify/snapshots/ad182a4ddcbd.txt",
+   "uses": [
+    "ctbc-uniopen-general-domestic",
+    "ctbc-uniopen-7-eleven",
+    "ctbc-uniopen-overseas-general",
+    "ctbc-uniopen-overseas-store",
+    "ctbc-uniopen-overseas-store-bonus",
+    "ctbc-uniopen-group-bonus",
+    "ctbc-uniopen-group-stamp-2",
+    "ctbc-uniopen-group-stamp-3",
+    "ctbc-uniopen-group-stamp-4",
+    "ctbc-uniopen-group-stamp-5",
+    "ctbc-uniopen-group-icash",
+    "ctbc-uniopen-blackcat-freight",
+    "ctbc-uniopen-unisoku-freight"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://pokem.tw/esun-kumamoncard/",
+   "file": "verify/snapshots/e1154e5576ce.txt",
+   "uses": [
+    "esun-kumamon-domestic-general",
+    "esun-kumamon-japan-general",
+    "esun-kumamon-japan-designated",
+    "esun-kumamon-japan-paypay"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+   "file": "verify/snapshots/fbf3f5db262d.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+   "file": "verify/snapshots/bd2299f9235b.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.bankchb.com/frontend/subarea.jsp?funcId=f1f12f6d15",
+   "file": "verify/snapshots/5687684b6afd.txt",
+   "uses": [
+    "bankchb:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.bok.com.tw/card-rights-and-benefits-1",
+   "file": "verify/snapshots/1b2eed6c8b2d.txt",
+   "uses": [
+    "bok-gold-general",
+    "bok-gold-big-ticket",
+    "bok-titanium-general"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.bok.com.tw/credit-card",
+   "file": "verify/snapshots/7fe7d1cbf1ef.txt",
+   "uses": [
+    "bok:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.card.rakuten.com.tw/",
+   "file": "verify/snapshots/f806feb111ee.txt",
+   "uses": [
+    "rakuten-card:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml",
+   "file": "verify/snapshots/27aa66e26a27.txt",
+   "uses": [
+    "rakuten-panda-j-general",
+    "rakuten-panda-j-overseas",
+    "rakuten-panda-j-mobilepay",
+    "rakuten-panda-j-airline",
+    "rakuten-panda-j-gas",
+    "rakuten-panda-j-travel-agency",
+    "rakuten-panda-j-jkt"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml",
+   "file": "verify/snapshots/1117550d16ac.txt",
+   "uses": [
+    "rakuten-tiger-general",
+    "rakuten-tiger-designated",
+    "rakuten-tiger-jk"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards",
+   "file": "verify/snapshots/ee4dd40cc809.txt",
+   "uses": [
+    "cathay:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+   "file": "verify/snapshots/a65df34d3262.txt",
+   "uses": [
+    "cathay-cash-rebate-signature-domestic",
+    "cathay-cash-rebate-signature-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+   "file": "verify/snapshots/1efff7680a32.txt",
+   "uses": [
+    "cathay-cube-digital-l1",
+    "cathay-cube-digital-l2",
+    "cathay-cube-digital-l3",
+    "cathay-cube-dining-merchant-l1",
+    "cathay-cube-dining-category-l1",
+    "cathay-cube-dining-merchant-l2",
+    "cathay-cube-dining-category-l2",
+    "cathay-cube-dining-merchant-l3",
+    "cathay-cube-dining-category-l3",
+    "cathay-cube-travel-merchant-l1",
+    "cathay-cube-travel-hotel-l1",
+    "cathay-cube-travel-overseas-l1",
+    "cathay-cube-travel-merchant-l2",
+    "cathay-cube-travel-hotel-l2",
+    "cathay-cube-travel-overseas-l2",
+    "cathay-cube-travel-merchant-l3",
+    "cathay-cube-travel-hotel-l3",
+    "cathay-cube-travel-overseas-l3",
+    "cathay-cube-select",
+    "cathay-cube-formosa",
+    "cathay-cube-fixed-general",
+    "cathay-cube-fixed-overseas",
+    "cathay-cube-allpay",
+    "cathay-cube-birthday-10",
+    "cathay-cube-birthday-5",
+    "cathay-cube-birthday-3-5",
+    "cathay-cube-kids-school",
+    "cathay-cube-kids-5",
+    "cathay-cube-kids-10",
+    "cathay-cube-autumn-japan",
+    "cathay-cube-autumn-3-5",
+    "cathay-cube-autumn-3",
+    "cathay-cube-autumn-4",
+    "cathay-cube-autumn-5",
+    "cathay-cube-autumn-8"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube/",
+   "file": "verify/snapshots/fc2fa565bfac.txt",
+   "uses": [
+    "cathay-cube-general"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
+   "file": "verify/snapshots/1ba57195707a.txt",
+   "uses": [
+    "cathay-shopee-general",
+    "cathay-shopee-shopee-low",
+    "cathay-shopee-shopee-high",
+    "cathay-shopee-shopee-own-all",
+    "cathay-shopee-shopee-own-mall",
+    "cathay-shopee-shopee-direct-bonus"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
+   "file": "verify/snapshots/cf83c30d681e.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cotabank.com.tw/card/",
+   "file": "verify/snapshots/5cbc19ae3c77.txt",
+   "uses": [
+    "cotabank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
+   "file": "verify/snapshots/fb165ac5ab21.txt",
+   "uses": [
+    "cotabank-general-general",
+    "cotabank-lohas-general"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html",
+   "file": "verify/snapshots/9542e133fd28.txt",
+   "uses": [
+    "ctbc-allme-general",
+    "ctbc-allme-overseas-store"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.dbs.com.tw/personal-zh/cards/credit-cards/overview.page",
+   "file": "verify/snapshots/2a5d6187fc7b.txt",
+   "uses": [
+    "dbs:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
+   "file": "verify/snapshots/d9733375b9a7.txt",
+   "uses": [
+    "dbs-funlife-general",
+    "dbs-funlife-dining-cinema"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+   "file": "verify/snapshots/d7b82c97379c.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+   "file": "verify/snapshots/7f38d6655d08.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back",
+   "file": "verify/snapshots/ee86f5424031.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
+   "file": "verify/snapshots/7da3e25cde36.txt",
+   "uses": [
+    "entie-easycard-titanium-general",
+    "entie-easycard-titanium-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
+   "file": "verify/snapshots/86842dc75671.txt",
+   "uses": [
+    "entie-visa-general",
+    "entie-visa-overseas",
+    "entie-visa-installment-platinum-general",
+    "entie-visa-installment-platinum-googlepay"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.entiebank.com.tw/entie/1_3_1_2",
+   "file": "verify/snapshots/b819e022d98a.txt",
+   "uses": [
+    "entiebank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro",
+   "file": "verify/snapshots/28c648ac593c.txt",
+   "uses": [
+    "esun:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+   "file": "verify/snapshots/92fbb70db0c8.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+   "file": "verify/snapshots/9d02de258ef7.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+   "file": "verify/snapshots/7f581040bb7e.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.feib.com.tw/introduce/cardInfo?type=1",
+   "file": "verify/snapshots/e6b56991383c.txt",
+   "uses": [
+    "feib:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+   "file": "verify/snapshots/690a09d007d6.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.fubon.com/banking/personal/credit_card/",
+   "file": "verify/snapshots/d540a7e31313.txt",
+   "uses": [
+    "fubon:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
+   "file": "verify/snapshots/2138570260c1.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
+   "file": "verify/snapshots/f1de98490556.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/bonus_feedback_card/card_gourmet_bonus",
+   "file": "verify/snapshots/fe8db90af883.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/BearQcard2026",
+   "file": "verify/snapshots/4b3c28284aa9.txt",
+   "uses": [
+    "hncb-bearq-general",
+    "hncb-bearq-general-bonus",
+    "hncb-bearq-overseas",
+    "hncb-bearq-overseas-bonus",
+    "hncb-bearq-jk",
+    "hncb-bearq-jk-bonus",
+    "hncb-bearq-dept",
+    "hncb-bearq-dining",
+    "hncb-bearq-travel",
+    "hncb-bearq-gas",
+    "hncb-bearq-shopping",
+    "hncb-bearq-twpay"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/card/introduce/cash_feedback_card/card_i_shopping",
+   "file": "verify/snapshots/c5e2bb0fcb0b.txt",
+   "uses": [
+    "hncb-ishopping-general",
+    "hncb-ishopping-online"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hncb.com.tw/wps/portal/HNCB/personal/creditcard",
+   "file": "verify/snapshots/3d749daf8c52.txt",
+   "uses": [
+    "hncb:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hsbc.com.tw/credit-cards/",
+   "file": "verify/snapshots/72435ea7a089.txt",
+   "uses": [
+    "hsbc:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/",
+   "file": "verify/snapshots/141009c54edf.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/",
+   "file": "verify/snapshots/5ee666d81392.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hsbc.com.tw/credit-cards/products/liveplus/",
+   "file": "verify/snapshots/627c16419fcd.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-01/",
+   "file": "verify/snapshots/d2d0af6e761b.txt",
+   "uses": [
+    "hwatai:卡片列表",
+    "hwatai-visa-gold-general",
+    "hwatai-jcb-general"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+   "file": "verify/snapshots/5747448a0133.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-02-01/",
+   "file": "verify/snapshots/1beac30fb194.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
+   "file": "verify/snapshots/a29fce725165.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list",
+   "file": "verify/snapshots/14a0618815aa.txt",
+   "uses": [
+    "kgi:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+   "file": "verify/snapshots/7a0cca5af751.txt",
+   "uses": [
+    "kgi-cash-back-general",
+    "kgi-cash-back-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+   "file": "verify/snapshots/cf97236ba185.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+   "file": "verify/snapshots/eb444509eda2.txt",
+   "uses": [
+    "landbank-icash-general"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.landbank.com.tw/Category/Items/信用卡專區",
+   "file": "verify/snapshots/c18c680fc45b.txt",
+   "uses": [
+    "landbank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.megabank.com.tw/personal/credit-card",
+   "file": "verify/snapshots/f8f2908bc3b1.txt",
+   "uses": [
+    "megabank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+   "file": "verify/snapshots/67832c5f9532.txt",
+   "uses": [
+    "megabank-happy-general",
+    "megabank-happy-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
+   "file": "verify/snapshots/921ff282f944.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1",
+   "file": "verify/snapshots/5773a5611d2a.txt",
+   "uses": [
+    "fubon-jcard-general",
+    "fubon-jcard-jp-kr-th",
+    "fubon-jcard-overseas-other"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90",
+   "file": "verify/snapshots/076ddc3489b9.txt",
+   "uses": [
+    "esun-unicard-general-ebill",
+    "esun-unicard-general-full",
+    "esun-unicard-easy-merchants",
+    "esun-unicard-easy-overseas",
+    "esun-unicard-free-merchants",
+    "esun-unicard-free-overseas",
+    "esun-unicard-up-merchants",
+    "esun-unicard-up-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sc.com/tw/credit-cards/",
+   "file": "verify/snapshots/f8edb136c865.txt",
+   "uses": [
+    "sc:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sc.com/tw/credit-cards/signature-card/",
+   "file": "verify/snapshots/c255c29243f3.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.scsb.com.tw/content/card/card03_h1.html",
+   "file": "verify/snapshots/33080acb7df7.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.scsb.com.tw/content/card/card_1110222.html",
+   "file": "verify/snapshots/bf34c64f3ddb.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.scsb.com.tw/content/detailList/creditcard",
+   "file": "verify/snapshots/a101a3402f4f.txt",
+   "uses": [
+    "scsb:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.skbank.com.tw/CC-CreditcardHome",
+   "file": "verify/snapshots/96588f50b251.txt",
+   "uses": [
+    "skbank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sunnybank.com.tw/net/Main/Page/6",
+   "file": "verify/snapshots/437a6346f54d.txt",
+   "uses": [
+    "sunnybank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/503",
+   "file": "verify/snapshots/211d3fbd4720.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/541",
+   "file": "verify/snapshots/b07d335d50ba.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.sunnybank.com.tw/net/Page/Tmenu/543",
+   "file": "verify/snapshots/26ded779cad7.txt",
+   "uses": [
+    "sunnybank-sunnylife-general",
+    "sunnybank-sunnylife-overseas",
+    "sunnybank-sunnylife-mall"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/",
+   "file": "verify/snapshots/4b024e72d596.txt",
+   "uses": [
+    "taishin:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+   "file": "verify/snapshots/9ae2efc41b9c.txt",
+   "uses": [
+    "taishin-rose-general",
+    "taishin-rose-dept",
+    "taishin-rose-dining"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
+   "file": "verify/snapshots/d5ac7500e550.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+   "file": "verify/snapshots/27be9049ff04.txt",
+   "uses": [
+    "taishin-richart-general",
+    "taishin-richart-chill-10-l1",
+    "taishin-richart-chill-10-l2",
+    "taishin-richart-chill-10-new-l1",
+    "taishin-richart-chill-10-new-l2",
+    "taishin-richart-chill-5-l1",
+    "taishin-richart-chill-5-l2",
+    "taishin-richart-chill-5-new-l1",
+    "taishin-richart-chill-5-new-l2",
+    "taishin-richart-chill-33-l1",
+    "taishin-richart-chill-33-l2",
+    "taishin-richart-payset-l1",
+    "taishin-richart-payset-taishinpay-l2",
+    "taishin-richart-payset-linepay-l2",
+    "taishin-richart-payset-quanying-l2",
+    "taishin-richart-daily-shop-l1",
+    "taishin-richart-daily-shop-l2",
+    "taishin-richart-daily-smart-l1",
+    "taishin-richart-daily-smart-l2",
+    "taishin-richart-daily-transport-l1",
+    "taishin-richart-daily-transport-l2",
+    "taishin-richart-daily-gas-l1",
+    "taishin-richart-daily-gas-l2",
+    "taishin-richart-daily-pharmacy-l1",
+    "taishin-richart-daily-pharmacy-l2",
+    "taishin-richart-big-dept-l1",
+    "taishin-richart-big-dept-l2",
+    "taishin-richart-big-outlet-l1",
+    "taishin-richart-big-outlet-l2",
+    "taishin-richart-big-home-l1",
+    "taishin-richart-big-home-l2",
+    "taishin-richart-big-fashion-l1",
+    "taishin-richart-big-fashion-l2",
+    "taishin-richart-feast-dining-l1",
+    "taishin-richart-feast-dining-l2",
+    "taishin-richart-feast-wangpin-l1",
+    "taishin-richart-feast-wangpin-l2",
+    "taishin-richart-feast-delivery-ticket-l1",
+    "taishin-richart-feast-delivery-ticket-l2",
+    "taishin-richart-feast-hotel-l1",
+    "taishin-richart-feast-hotel-l2",
+    "taishin-richart-feast-ktv-l1",
+    "taishin-richart-feast-ktv-l2",
+    "taishin-richart-digital-shop-l1",
+    "taishin-richart-digital-shop-l2",
+    "taishin-richart-digital-course-l1",
+    "taishin-richart-digital-course-l2",
+    "taishin-richart-digital-game-l1",
+    "taishin-richart-digital-game-l2",
+    "taishin-richart-digital-ai-l1",
+    "taishin-richart-digital-ai-l2",
+    "taishin-richart-travel-overseas-l1",
+    "taishin-richart-travel-overseas-l2",
+    "taishin-richart-travel-transport-l1",
+    "taishin-richart-travel-transport-l2",
+    "taishin-richart-travel-airline-l1",
+    "taishin-richart-travel-airline-l2",
+    "taishin-richart-travel-booking-l1",
+    "taishin-richart-travel-booking-l2",
+    "taishin-richart-travel-agency-l1",
+    "taishin-richart-travel-agency-l2",
+    "taishin-richart-holiday-l1",
+    "taishin-richart-holiday-l2"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview",
+   "file": "verify/snapshots/fc2ebc0d6cef.txt",
+   "uses": [
+    "tbb:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+   "file": "verify/snapshots/88331648db8d.txt",
+   "uses": [
+    "tbb-greenlife-easy-hokii-domestic",
+    "tbb-greenlife-easy-hokii-overseas",
+    "tbb-greenlife-easy-taiwanpay"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview",
+   "file": "verify/snapshots/05f213813b9d.txt",
+   "uses": [
+    "coop:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/infinite",
+   "file": "verify/snapshots/740472bed959.txt",
+   "uses": [
+    "coop-infinite-diamond-general",
+    "coop-infinite-diamond-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
+   "file": "verify/snapshots/a712316569fb.txt",
+   "uses": [
+    "coop-ipass-general",
+    "coop-ipass-overseas",
+    "coop-ipass-japan",
+    "coop-ipass-overseas-bonus"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.tcbbank.com.tw/",
+   "file": "verify/snapshots/4e16b2c2d951.txt",
+   "uses": [
+    "tcbbank:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12",
+   "file": "verify/snapshots/dbc1a5d51d65.txt",
+   "uses": [
+    "yuanta-hellokitty-diamond-general",
+    "yuanta-hellokitty-diamond-overseas"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
+   "file": "verify/snapshots/f1e05ed00507.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+   "file": "verify/snapshots/52e2d5939c37.txt",
+   "uses": [],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/list.do",
+   "file": "verify/snapshots/e8d9a295b283.txt",
+   "uses": [
+    "yuanta:卡片列表"
+   ],
+   "kind": "整頁內容變了"
+  },
+  {
+   "url": "https://wwwap.bot.com.tw/greengocard/",
+   "file": "verify/snapshots/d413d5d0bbe5.txt",
+   "uses": [
+    "bot-greengo-general",
+    "bot-greengo-overseas",
+    "bot-greengo-green-merchants",
+    "bot-greengo-low-carbon",
+    "bot-greengo-ipass-topup",
+    "bot-greengo-mobile-pay",
+    "bot-greengo-mission"
+   ],
+   "kind": "整頁內容變了"
+  }
+ ],
+ "blocked": [
+  {
+   "url": "https://card.firstbank.com.tw/sites/card/CardIndex",
+   "status": 403,
+   "chars": 221,
+   "rules": 1
+  },
+  {
+   "url": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
+   "status": 403,
+   "chars": 231,
+   "rules": 0
+  },
+  {
+   "url": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
+   "status": 403,
+   "chars": 231,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 7
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/chbbank-mygo-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 1
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-eco-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/dbs-pchome-prime/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/feib-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-cashback-signature-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-diamond-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/",
+   "status": 403,
+   "chars": 57,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/ileo-credit-card-cashback-firstbank-digital-account/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/kgibank-eslite-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/kgibank-mobile-payment/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/megabank-ecard-online-shopping-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 4
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/megabank-ehappy-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/momo-cobranding-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/pi-wallet-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/scsb-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 7
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/scsb-minionscard/",
+   "status": 403,
+   "chars": 57,
+   "rules": 6
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sinopac-cashback-green-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sinopac-dawho-credit-card-cashback/",
+   "status": 403,
+   "chars": 57,
+   "rules": 8
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/sunnybank-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 2
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/taishin-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 0
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/tbb-bank-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 13
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+   "status": 403,
+   "chars": 57,
+   "rules": 3
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/yuantabank-icash-credit-card/",
+   "status": 403,
+   "chars": 57,
+   "rules": 5
+  },
+  {
+   "url": "https://rich01.com/apple-pay-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/dbs-eco-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 4
+  },
+  {
+   "url": "https://rich01.com/e-commerce-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/esunbank-unicard-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/fcb-ileocard-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 5
+  },
+  {
+   "url": "https://rich01.com/fubon-j-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 1
+  },
+  {
+   "url": "https://rich01.com/fubon-momo-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 4
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-creditcards/",
+   "status": 403,
+   "chars": 147,
+   "rules": 2
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-titanium-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/hsbc-live-cash-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/sinopac-dawho-credit-card/",
+   "status": 403,
+   "chars": 147,
+   "rules": 0
+  },
+  {
+   "url": "https://rich01.com/taishin-jkos-card-review/",
+   "status": 403,
+   "chars": 147,
+   "rules": 2
+  },
+  {
+   "url": "https://www.bot.com.tw/tw/personal-banking/credit-card",
+   "status": 200,
+   "chars": 0,
+   "rules": 1
+  },
+  {
+   "url": "https://www.bot.com.tw/tw/personal-banking/credit-card/card-friends-benefits/cash-bonus",
+   "status": 200,
+   "chars": 0,
+   "rules": 2
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 2
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 2
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 4
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 24
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 13
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 18
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 4
+  },
+  {
+   "url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 11
+  },
+  {
+   "url": "https://www.ctbcbank.com/twrbo/zh_tw/personal/creditcard.html",
+   "status": 200,
+   "chars": 63,
+   "rules": 1
+  },
+  {
+   "url": "https://www.o-bank.com/zh-tw/retail/credit-card",
+   "status": 301,
+   "chars": 84,
+   "rules": 1
+  }
+ ],
+ "expiring": [
+  {
+   "rule": "cathay-cube-autumn-japan",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-3-5",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-3",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-4",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-5",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  },
+  {
+   "rule": "cathay-cube-autumn-8",
+   "card": "cathay-cube",
+   "validTo": "2026-11-30",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/"
+  }
+ ],
+ "minor": [],
+ "summary": {
+  "pages": 147,
+  "changed": 93,
+  "blocked": 53,
+  "expiringRules": 6,
+  "minor": 0
+ }
+}
