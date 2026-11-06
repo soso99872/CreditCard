@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="zh-Hant" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>風格提案 D：錢包｜刷哪張</title>
+    <link rel="icon" href="data:," />
+    <meta name="theme-color" content="#f2f1ee" />
+    <style>
+      :root {
+        /* 介面本身是安靜的中性色，顏色只留給「卡」這個實體 */
+        --bg: #f2f1ee;
+        --surface: #ffffff;
+        --sunken: #e8e6e1;
+        --text: #1b1b1a;
+        --text-2: #57554f;
+        --text-3: #8b887f;
+        --hairline: rgba(27, 27, 26, 0.08);
+        --focus: #1b1b1a;
+        --gain: #1d7a48;
+
+        --shadow-surface: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.06),
+          0 2px 6px rgba(0, 0, 0, 0.04);
+        --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.08), 0 12px 28px -10px rgba(0, 0, 0, 0.45);
+
+        /* 字級：1.25 比例，16px 基準 */
+        --fs-caption: 0.75rem;
+        --fs-small: 0.875rem;
+        --fs-body: 1rem;
+        --fs-h3: 1.25rem;
+        --fs-h2: 1.5625rem;
+        --fs-display: 3rem;
+
+        --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC",
+          "Microsoft JhengHei", sans-serif;
+        --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+        /* 讓 details 展開可以從 0 過渡到 auto 高度（不支援的瀏覽器直接開合） */
+        interpolate-size: allow-keywords;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        font-size: var(--fs-body);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .num {
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.01em;
+      }
+
+      .app {
+        max-width: 440px;
+        margin: 0 auto;
+        padding: 20px 16px 48px;
+      }
+
+      /* ---------- 頁首 ---------- */
+      .app-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .app-header h1 {
+        margin: 0;
+        font-size: var(--fs-h3);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .app-header p {
+        margin: 0;
+        font-size: var(--fs-caption);
+        color: var(--text-3);
+      }
+
+      /* ---------- 查詢 ---------- */
+      .query {
+        display: grid;
+        gap: 10px;
+      }
+
+      .search {
+        position: relative;
+      }
+
+      .search label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      .search svg {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        transform: translateY(-50%);
+        color: var(--text-3);
+        pointer-events: none;
+      }
+
+      .search input {
+        width: 100%;
+        height: 56px;
+        padding: 0 16px 0 46px;
+        border: 0;
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: var(--shadow-surface);
+        font: inherit;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+      }
+
+      .segmented {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0;
+        padding: 3px;
+        border: 0;
+        border-radius: 12px;
+        background: var(--sunken);
+        min-width: 0;
+      }
+
+      .segmented legend {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      .segmented input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .segmented label {
+        display: grid;
+        place-items: center;
+        min-height: 38px;
+        border-radius: 9px;
+        font-size: var(--fs-small);
+        font-weight: 500;
+        color: var(--text-2);
+        cursor: pointer;
+        touch-action: manipulation;
+        transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+      }
+
+      .segmented input:checked + label {
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 600;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+      }
+
+      .segmented input:focus-visible + label {
+        outline: 2px solid var(--focus);
+        outline-offset: 1px;
+      }
+
+      .amount {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        width: 128px;
+        padding: 0 12px;
+        border-radius: 12px;
+        background: var(--surface);
+        box-shadow: var(--shadow-surface);
+      }
+
+      .amount span {
+        font-size: var(--fs-caption);
+        font-weight: 600;
+        color: var(--text-3);
+      }
+
+      .amount input {
+        width: 100%;
+        min-width: 0;
+        height: 44px;
+        border: 0;
+        background: none;
+        font: inherit;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+        text-align: right;
+      }
+
+      input:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      .amount input:focus-visible {
+        outline: none;
+      }
+
+      .amount:focus-within {
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      /* ---------- 結果 ---------- */
+      .result-title {
+        margin: 28px 0 12px;
+        font-size: var(--fs-small);
+        font-weight: 500;
+        color: var(--text-2);
+      }
+
+      .result-title strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      /* 實體卡：信用卡比例，銀行代表色，只放卡上本來就有的東西 */
+      .card {
+        --c: #333;
+        position: relative;
+        aspect-ratio: 1.586;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: 18px 20px;
+        border-radius: 16px;
+        background-color: var(--c);
+        background-image: linear-gradient(
+            155deg,
+            rgba(255, 255, 255, 0.16) 0%,
+            rgba(255, 255, 255, 0) 42%
+          ),
+          radial-gradient(120% 90% at 100% 100%, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0) 60%);
+        color: #fff;
+        box-shadow: var(--shadow-card);
+        overflow: hidden;
+      }
+
+      .card::after {
+        /* 卡面邊緣的一圈微光，讓色塊讀起來像塑膠卡而不是方塊 */
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+        pointer-events: none;
+      }
+
+      .card-bank {
+        font-size: var(--fs-small);
+        font-weight: 600;
+        opacity: 0.9;
+        letter-spacing: 0.04em;
+      }
+
+      .chip {
+        align-self: center;
+        width: 42px;
+        height: 32px;
+        border-radius: 7px;
+        background: linear-gradient(135deg, #e9d9a8, #bfa565);
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .chip::before {
+        content: "";
+        position: absolute;
+        inset: 8px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.18);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+      }
+
+      .chip::after {
+        content: "";
+        position: absolute;
+        inset: 0 14px;
+        border-left: 1px solid rgba(0, 0, 0, 0.18);
+        border-right: 1px solid rgba(0, 0, 0, 0.18);
+      }
+
+      .card-name {
+        font-size: var(--fs-h3);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+        text-wrap: balance;
+      }
+
+      /* 卡片下方的「收據」：回饋是全頁最大的數字 */
+      #top-card {
+        position: relative;
+        z-index: 1;
+        margin: 0 8px;
+      }
+
+      .receipt {
+        margin-top: -28px;
+        padding: 48px 20px 20px;
+        border-radius: 16px;
+        background: var(--surface);
+        box-shadow: var(--shadow-surface);
+      }
+
+      .receipt-main {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .rate {
+        margin: 0;
+        font-size: var(--fs-display);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+
+      .rate small {
+        display: block;
+        margin-bottom: 6px;
+        font-size: var(--fs-caption);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--text-3);
+      }
+
+      .gain {
+        margin: 0;
+        text-align: right;
+        font-size: var(--fs-caption);
+        color: var(--text-3);
+      }
+
+      .gain strong {
+        display: block;
+        font-size: var(--fs-h3);
+        font-weight: 700;
+        color: var(--gain);
+      }
+
+      .facts {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 16px 0 0;
+        border-top: 1px dashed var(--hairline);
+        font-size: var(--fs-small);
+      }
+
+      .facts div {
+        display: grid;
+        grid-template-columns: 4.5em 1fr;
+        gap: 12px;
+      }
+
+      .facts dt {
+        color: var(--text-3);
+      }
+
+      .facts dd {
+        margin: 0;
+        color: var(--text);
+        min-width: 0;
+      }
+
+      .facts ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 4px;
+      }
+
+      .facts li {
+        position: relative;
+        padding-left: 12px;
+      }
+
+      .facts li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.68em;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--text-3);
+      }
+
+      .source {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+        font-size: var(--fs-caption);
+        color: var(--text-3);
+      }
+
+      .source a {
+        color: var(--text-2);
+        font-weight: 600;
+        text-underline-offset: 3px;
+      }
+
+      /* ---------- 其餘名次：錢包裡疊起來的卡 ---------- */
+      .rest-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin: 32px 0 12px;
+        font-size: var(--fs-small);
+        font-weight: 600;
+        color: var(--text-2);
+      }
+
+      .rest-title span {
+        font-weight: 400;
+        color: var(--text-3);
+        font-size: var(--fs-caption);
+      }
+
+      .stack {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .stack li {
+        --c: #333;
+        position: relative;
+        border-radius: 14px;
+        background-color: var(--c);
+        background-image: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.12) 0%,
+          rgba(255, 255, 255, 0) 30px
+        );
+        color: #fff;
+        box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        /* 進場用 translate、滑過用 transform，兩個屬性分開，進場動畫停在終點也不會吃掉 hover */
+        transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out);
+      }
+
+      .stack li + li {
+        margin-top: -14px;
+      }
+
+      /* 進場：卡片一張張從錢包裡滑上來，捲到畫面內才發牌 */
+      .stack:not(.is-in) li {
+        opacity: 0;
+      }
+
+      .stack.is-in li {
+        /* 淡入比滑動快：半透明的卡互相疊著顏色會混髒，先變實心再滑到定位 */
+        animation: deal-fade 200ms linear both, deal-slide 560ms var(--ease-out) both;
+        animation-delay: calc(var(--i, 0) * 55ms);
+      }
+
+      /* 兜底：時間到就拿掉動畫直接到終點，電腦忙、掉幀時也不會停在半透明或半路 */
+      .stack.dealt li {
+        animation: none;
+      }
+
+      @keyframes deal-fade {
+        from {
+          opacity: 0;
+        }
+      }
+
+      @keyframes deal-slide {
+        from {
+          translate: 0 28px;
+        }
+      }
+
+      /* 滑過：往上抽出一點，像要從錢包裡拿出來 */
+      @media (hover: hover) {
+        .stack li:hover {
+          transform: translateY(-6px);
+        }
+      }
+
+      /* 展開中的卡：抽出來、影子加深 */
+      .stack li:has(details[open]) {
+        transform: translateY(-4px);
+        box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.45), 0 14px 28px -12px rgba(0, 0, 0, 0.5),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+      }
+
+      /* 展開：高度平滑長出來，後面的卡被往下推 */
+      .stack details::details-content {
+        block-size: 0;
+        overflow: clip;
+        transition: block-size 340ms var(--ease-out), content-visibility 340ms allow-discrete;
+      }
+
+      .stack details[open]::details-content {
+        block-size: auto;
+      }
+
+      .row-body {
+        opacity: 0;
+        translate: 0 -4px;
+        transition: opacity 220ms var(--ease-out), translate 260ms var(--ease-out);
+      }
+
+      .stack details[open] .row-body {
+        opacity: 1;
+        translate: none;
+        transition-delay: 80ms;
+      }
+
+      .stack details {
+        padding-bottom: 14px;
+      }
+
+      .stack li:last-child details {
+        padding-bottom: 0;
+      }
+
+      .stack summary {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+        min-height: 60px;
+        padding: 10px 18px;
+        cursor: pointer;
+        list-style: none;
+        touch-action: manipulation;
+      }
+
+      .stack summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .stack summary:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: -4px;
+        border-radius: 12px;
+      }
+
+      .row-name {
+        min-width: 0;
+      }
+
+      .row-name b {
+        display: block;
+        font-size: var(--fs-body);
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .row-name span {
+        display: block;
+        font-size: var(--fs-caption);
+        opacity: 0.75;
+      }
+
+      .row-rate {
+        font-size: var(--fs-h3);
+        font-weight: 700;
+      }
+
+      .row-body {
+        display: grid;
+        gap: 6px;
+        padding: 2px 18px 16px;
+        font-size: var(--fs-small);
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .row-body p {
+        margin: 0;
+      }
+
+      .row-body a {
+        color: #fff;
+        font-weight: 600;
+        text-underline-offset: 3px;
+      }
+
+      .row-body .muted {
+        font-size: var(--fs-caption);
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      /* ---------- 頁尾 ---------- */
+      .app-footer {
+        margin-top: 40px;
+        font-size: var(--fs-caption);
+        color: var(--text-3);
+        line-height: 1.6;
+      }
+
+      .app-footer p {
+        margin: 0 0 6px;
+        text-wrap: pretty;
+      }
+
+      /* ---------- 桌機：左邊查詢＋第 1 名，右邊卡片疊 ---------- */
+      @media (min-width: 960px) {
+        .app {
+          max-width: 960px;
+          padding: 40px 32px 64px;
+          display: grid;
+          grid-template-columns: 420px 1fr;
+          column-gap: 56px;
+          align-items: start;
+        }
+
+        .app-header,
+        .query,
+        .top {
+          grid-column: 1;
+        }
+
+        .rest {
+          grid-column: 2;
+          grid-row: 1 / span 4;
+        }
+
+        .rest-title {
+          margin-top: 6px;
+        }
+
+        .app-footer {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::details-content {
+          transition: none !important;
+          animation: none !important;
+        }
+
+        .stack:not(.is-in) li {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>刷哪張</h1>
+        <p id="checked-at" class="num"></p>
+      </header>
+
+      <form class="query" aria-label="查詢條件">
+        <div class="search">
+          <label for="merchant-input">在哪裡消費</label>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" stroke-linecap="round" />
+          </svg>
+          <input id="merchant-input" type="search" value="全聯" autocomplete="off" placeholder="例：全聯、蝦皮、星巴克" />
+        </div>
+        <div class="controls">
+          <fieldset class="segmented">
+            <legend>查詢範圍</legend>
+            <input type="radio" name="scope" id="scope-mine" />
+            <label for="scope-mine">我的卡片</label>
+            <input type="radio" name="scope" id="scope-all" checked />
+            <label for="scope-all">全部卡別</label>
+          </fieldset>
+          <label class="amount">
+            <span>NT$</span>
+            <input type="text" inputmode="numeric" value="1,000" aria-label="金額（選填）" class="num" />
+          </label>
+        </div>
+      </form>
+
+      <section class="top" aria-labelledby="result-title">
+        <h2 id="result-title" class="result-title"></h2>
+        <div id="top-card"></div>
+        <div id="receipt" class="receipt"></div>
+      </section>
+
+      <section class="rest" aria-labelledby="rest-title">
+        <h2 id="rest-title" class="rest-title">其他選擇 <span>點卡片看條件</span></h2>
+        <ol id="stack" class="stack"></ol>
+      </section>
+
+      <footer class="app-footer">
+        <p>排序只看這筆消費能拿到的回饋率，不收業配。</p>
+        <p>資料僅供參考，實際回饋、活動期間與上限以各銀行官方公告為準。</p>
+      </footer>
+    </main>
+
+    <script type="module">
+      import { query, recommendations, footerCheckedAt } from "./data.mjs";
+
+      // 每家銀行一個色相，但飽和度、明度全部一樣：有變化，色調又統一，不會像拼色塊。
+      // 依這次結果裡銀行出現的順序配色，同一次查詢裡不同銀行一定不同色、同一家同色。
+      // 色相順序刻意讓相鄰的顏色差很多；白字對比都在 6 以上
+      const CARD_HUES = [178, 212, 335, 150, 248, 24, 290, 5];
+      const bankOrder = [...new Set(recommendations.map((rec) => rec.bankName))];
+      const bankColor = (bankName) =>
+        `hsl(${CARD_HUES[bankOrder.indexOf(bankName) % CARD_HUES.length]} 36% 30%)`;
+
+      const shortBank = (name) =>
+        name
+          .replace("(台灣)", "")
+          .replace(/(國際)?商業(儲蓄)?銀行$/, "")
+          .replace(/銀行$/, "") || name;
+
+      const el = (tag, props = {}, children = []) => {
+        const node = document.createElement(tag);
+        Object.assign(node, props);
+        for (const child of [].concat(children)) {
+          node.append(child);
+        }
+        return node;
+      };
+
+      const fmtAmount = new Intl.NumberFormat("zh-TW");
+
+      document.getElementById("checked-at").textContent = `資料核對 ${footerCheckedAt}`;
+
+      const [top, ...rest] = recommendations;
+
+      const title = document.getElementById("result-title");
+      title.append("在", el("strong", { textContent: query.merchantName }), "，刷這張");
+
+      // 第 1 名：實體卡
+      const card = el("div", { className: "card" }, [
+        el("span", { className: "card-bank", textContent: shortBank(top.bankName) }),
+        el("span", { className: "chip" }),
+        el("span", { className: "card-name", textContent: top.cardName }),
+      ]);
+      card.style.setProperty("--c", bankColor(top.bankName));
+      card.setAttribute("role", "img");
+      card.setAttribute("aria-label", `${top.bankName} ${top.cardName}`);
+      document.getElementById("top-card").append(card);
+
+      // 第 1 名：收據
+      const receipt = document.getElementById("receipt");
+      const rate = el("p", { className: "rate num" }, [
+        el("small", { textContent: "這筆回饋" }),
+        top.rateText,
+      ]);
+      const gain = el("p", { className: "gain" }, [
+        `NT$${fmtAmount.format(query.amount)} 約可拿回`,
+        el("strong", { className: "num", textContent: `${top.estimatedAmount} 元` }),
+      ]);
+      receipt.append(el("div", { className: "receipt-main" }, [rate, gain]));
+
+      const facts = el("dl", { className: "facts" });
+      const fact = (label, value) =>
+        facts.append(el("div", {}, [el("dt", { textContent: label }), el("dd", {}, value)]));
+      // 回饋率上面已經是最大的數字，理由裡就不再重複
+      const reasonText = (rec) => rec.reason.replace(/，?(以|回饋)[^，]*\d[\d.]*%$/, "").replace("無指定", "沒有指定") + (/指定通路/.test(rec.reason) ? "" : "，套用一般消費回饋");
+      fact("為什麼", reasonText(top));
+      fact("上限", top.capText);
+      const needs = [...(top.plan ? [`方案：${top.plan}`] : []), ...top.conditions];
+      if (needs.length) {
+        fact(
+          "要注意",
+          el(
+            "ul",
+            {},
+            needs.map((text) => el("li", { textContent: text }))
+          )
+        );
+      }
+      receipt.append(facts);
+
+      receipt.append(
+        el("div", { className: "source" }, [
+          el("span", { className: "num", textContent: `核對於 ${top.checkedAt}` }),
+          el("a", { href: top.sourceUrl, target: "_blank", rel: "noopener", textContent: "看銀行原文" }),
+        ])
+      );
+
+      // 其餘名次：卡片疊
+      const stack = document.getElementById("stack");
+      rest.forEach((rec, index) => {
+        const li = el("li");
+        li.style.setProperty("--c", bankColor(rec.bankName));
+        li.style.setProperty("--i", index);
+
+        const summary = el("summary", {}, [
+          el("span", { className: "row-name" }, [
+            el("b", { textContent: rec.cardName }),
+            el("span", { textContent: `${index + 2}．${shortBank(rec.bankName)}` }),
+          ]),
+          el("span", { className: "row-rate num", textContent: rec.rateText }),
+        ]);
+
+        const body = el("div", { className: "row-body" }, [
+          el("p", { textContent: `${rec.capText}・約可拿回 ${rec.estimatedAmount} 元` }),
+          ...(rec.plan ? [el("p", { textContent: `方案：${rec.plan}` })] : []),
+          ...rec.conditions.map((text) => el("p", { textContent: `要注意：${text}` })),
+          el("p", { className: "muted" }, [
+            `核對於 ${rec.checkedAt}・`,
+            el("a", { href: rec.sourceUrl, target: "_blank", rel: "noopener", textContent: "看銀行原文" }),
+          ]),
+        ]);
+
+        li.append(el("details", {}, [summary, body]));
+        stack.append(li);
+      });
+
+      // 手機上卡片疊在第一屏下面，等捲到才發牌，不然動畫在看不到的地方就播完了
+      const dealIn = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            stack.classList.add("is-in");
+            dealIn.disconnect();
+            // 最後一張的延遲＋滑動時間再多留一點
+            setTimeout(() => stack.classList.add("dealt"), rest.length * 55 + 700);
+          }
+        },
+        { threshold: 0.1 }
+      );
+      dealIn.observe(stack);
+    </script>
+  </body>
+</html>

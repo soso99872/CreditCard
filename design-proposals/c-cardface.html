@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh-Hant" style="color-scheme: light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>風格提案 C：卡面實感｜刷哪張</title>
+    <link rel="icon" href="data:," />
+    <meta name="theme-color" content="#faf6f0" />
+    <style>
+      :root {
+        --bg: #faf6f0;
+        --panel: #ffffff;
+        --line: #e7decf;
+        --ink: #17201e;
+        --ink-soft: #5c6660;
+        --accent: #e8542f;
+        --accent-ink: #ffffff;
+        --accent-2: #16433d;
+        --gain: #1f7a4a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+        line-height: 1.55;
+      }
+
+      h1,
+      h2 {
+        font-family: "Arial Black", "Helvetica Neue", "Noto Sans TC", sans-serif;
+        font-weight: 800;
+        margin: 0;
+      }
+
+      .app {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      @media (min-width: 480px) {
+        .app {
+          padding: 24px;
+        }
+      }
+
+      .app-header h1 {
+        font-size: 1.6rem;
+      }
+
+      .app-header .tagline {
+        margin: 4px 0 0;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        font-weight: 400;
+      }
+
+      .query-panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 14px;
+      }
+
+      .query-row {
+        display: flex;
+        gap: 8px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      label {
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+      }
+
+      input {
+        font: inherit;
+        font-size: 1rem;
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--ink);
+        min-width: 0;
+      }
+
+      input:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--accent-2);
+        outline-offset: 1px;
+      }
+
+      button {
+        touch-action: manipulation;
+      }
+
+      .query-row button {
+        flex: 0 0 auto;
+        background: var(--accent);
+        color: var(--accent-ink);
+        border: none;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        cursor: pointer;
+        min-height: 44px;
+      }
+
+      .toolbar {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        font-size: 0.85rem;
+      }
+
+      .toolbar .field {
+        flex: 0 1 140px;
+      }
+
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      fieldset legend {
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        padding: 0;
+      }
+
+      fieldset label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        min-height: 44px;
+      }
+
+      /* 第 1 名：實體信用卡比例卡面 */
+      .top-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card-face {
+        position: relative;
+        aspect-ratio: 1.586 / 1;
+        width: 100%;
+        max-width: 360px;
+        background: var(--accent);
+        border-radius: 16px;
+        color: var(--accent-ink);
+        padding: 16px 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .card-face .stripe {
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        width: 120px;
+        height: 120px;
+        background: var(--accent-2);
+        border-radius: 16px;
+        transform: rotate(20deg);
+      }
+
+      .card-face .top-badge {
+        position: relative;
+        align-self: flex-start;
+        background: var(--accent-2);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 999px;
+      }
+
+      .card-face .top-rate {
+        position: relative;
+        font-size: 2.6rem;
+        font-weight: 800;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .card-face .top-name {
+        position: relative;
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .card-face .top-name-card {
+        font-size: 1.05rem;
+        letter-spacing: 0.01em;
+      }
+
+      .top-below {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .top-heading {
+        font-size: 1.05rem;
+        line-height: 1.3;
+      }
+
+      .top-cap {
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+
+      .top-reason {
+        margin: 0;
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .section-title {
+        margin: 2px 0 0;
+        font-size: 1rem;
+        font-weight: 800;
+      }
+
+      .rec-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .rec-row {
+        display: grid;
+        grid-template-columns: 1.6rem 1fr auto;
+        gap: 6px 10px;
+        align-items: baseline;
+        background: var(--panel);
+        border-left: 4px solid var(--accent-2);
+        border-radius: 8px;
+        padding: 10px 12px;
+      }
+
+      .rec-row .rank {
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      .rec-row .rec-name {
+        min-width: 0;
+      }
+
+      .rec-row .rec-name .bank {
+        font-size: 0.75rem;
+        color: var(--ink-soft);
+        display: block;
+      }
+
+      .rec-row .rec-name .card {
+        font-weight: 700;
+        font-size: 0.92rem;
+        overflow-wrap: break-word;
+      }
+
+      .rec-row .rec-rate {
+        font-weight: 800;
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .rec-detail {
+        grid-column: 1 / -1;
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        align-items: center;
+      }
+
+      .tag {
+        background: #eef4f1;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 2px 8px;
+        font-size: 0.75rem;
+        color: var(--accent-2);
+      }
+
+      .rec-detail a {
+        color: var(--accent-2);
+        font-weight: 700;
+      }
+
+      .rec-gain {
+        color: var(--gain);
+      }
+
+      .app-footer {
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+
+      .app-footer p {
+        margin: 2px 0;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>刷哪張</h1>
+        <p class="tagline">輸入消費商家，依官方回饋規則排出這筆該刷哪張卡</p>
+      </header>
+
+      <section class="query-panel" aria-label="查詢條件">
+        <form id="query-form">
+          <div class="query-row">
+            <div class="field">
+              <label for="merchant-input">消費商家</label>
+              <input id="merchant-input" type="text" value="全聯" autocomplete="off" />
+            </div>
+            <button type="button">查詢</button>
+          </div>
+          <div class="toolbar">
+            <div class="field">
+              <label for="amount-input">金額（選填）</label>
+              <input id="amount-input" type="number" inputmode="numeric" value="1000" />
+            </div>
+            <fieldset>
+              <legend>查詢範圍</legend>
+              <label><input type="radio" name="scope" /> 我的卡片</label>
+              <label><input type="radio" name="scope" checked /> 全部卡別</label>
+            </fieldset>
+          </div>
+        </form>
+      </section>
+
+      <section class="top-wrap" aria-label="第 1 名推薦">
+        <div id="card-face" class="card-face">
+          <span class="stripe" aria-hidden="true"></span>
+        </div>
+        <div id="top-below" class="top-below"></div>
+      </section>
+
+      <section aria-labelledby="rest-title">
+        <h2 id="rest-title" class="section-title">其餘名次</h2>
+        <ol id="rec-list" class="rec-list"></ol>
+      </section>
+
+      <footer class="app-footer">
+        <p id="footer-checked-at"></p>
+        <p>排序規則：只依這筆消費可得的回饋率由高到低排序，不收業配、不影響排序。</p>
+        <p>本站資料僅供參考，實際回饋規則、活動期間與上限請以各銀行官方公告為準；如有疑義，請點擊「官方來源」核對原文。</p>
+      </footer>
+    </main>
+
+    <script type="module">
+      import { recommendations, footerCheckedAt } from "./data.mjs";
+
+      function recMeta(rec, { includeReason = true, includeCap = false } = {}) {
+        const p = document.createElement("p");
+        p.className = "rec-detail";
+
+        if (includeCap) {
+          const cap = document.createElement("span");
+          cap.textContent = rec.capText;
+          p.appendChild(cap);
+        }
+
+        if (includeReason) {
+          const reason = document.createElement("span");
+          reason.textContent = rec.reason;
+          p.appendChild(reason);
+        }
+
+        for (const condition of rec.conditions) {
+          const tag = document.createElement("span");
+          tag.className = "tag";
+          tag.textContent = condition;
+          p.appendChild(tag);
+        }
+
+        if (typeof rec.estimatedAmount === "number") {
+          const gain = document.createElement("span");
+          gain.className = "rec-gain";
+          gain.textContent = rec.capped
+            ? `預估回饋約 ${rec.estimatedAmount} 元（已達上限）`
+            : `預估回饋約 ${rec.estimatedAmount} 元`;
+          p.appendChild(gain);
+        }
+
+        const link = document.createElement("a");
+        link.href = rec.sourceUrl;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = "官方來源";
+        p.appendChild(link);
+
+        const checkedAt = document.createElement("span");
+        checkedAt.textContent = `檢核日期：${rec.checkedAt}`;
+        p.appendChild(checkedAt);
+
+        return p;
+      }
+
+      function renderTop(rec) {
+        const face = document.getElementById("card-face");
+
+        const badge = document.createElement("span");
+        badge.className = "top-badge";
+        badge.textContent = "本次最推薦";
+        face.appendChild(badge);
+
+        const rate = document.createElement("p");
+        rate.className = "top-rate";
+        rate.textContent = rec.rateText;
+        face.appendChild(rate);
+
+        const name = document.createElement("p");
+        name.className = "top-name";
+        name.textContent = rec.bankName;
+        face.appendChild(name);
+
+        const cardLine = document.createElement("p");
+        cardLine.className = "top-name top-name-card";
+        cardLine.textContent = rec.cardName;
+        face.appendChild(cardLine);
+
+        const below = document.getElementById("top-below");
+        const heading = document.createElement("h2");
+        heading.className = "top-heading";
+        heading.textContent = rec.plan
+          ? `${rec.bankName}　${rec.cardName}（${rec.plan}）`
+          : `${rec.bankName}　${rec.cardName}`;
+        below.appendChild(heading);
+
+        const cap = document.createElement("p");
+        cap.className = "top-cap";
+        cap.textContent = rec.capText;
+        below.appendChild(cap);
+
+        const reason = document.createElement("p");
+        reason.className = "top-reason";
+        reason.textContent = rec.reason;
+        below.appendChild(reason);
+
+        below.appendChild(recMeta(rec, { includeReason: false }));
+      }
+
+      function renderRow(rec, rank) {
+        const li = document.createElement("li");
+        li.className = "rec-row";
+
+        const rankEl = document.createElement("span");
+        rankEl.className = "rank";
+        rankEl.textContent = String(rank);
+        li.appendChild(rankEl);
+
+        const name = document.createElement("div");
+        name.className = "rec-name";
+        const bank = document.createElement("span");
+        bank.className = "bank";
+        bank.textContent = rec.bankName;
+        const card = document.createElement("span");
+        card.className = "card";
+        card.textContent = rec.plan ? `${rec.cardName}（${rec.plan}）` : rec.cardName;
+        name.appendChild(bank);
+        name.appendChild(card);
+        li.appendChild(name);
+
+        const rate = document.createElement("span");
+        rate.className = "rec-rate";
+        rate.textContent = rec.rateText;
+        li.appendChild(rate);
+
+        li.appendChild(recMeta(rec, { includeCap: true }));
+        return li;
+      }
+
+      const [top, ...rest] = recommendations;
+      renderTop(top);
+
+      const list = document.getElementById("rec-list");
+      rest.forEach((rec, i) => list.appendChild(renderRow(rec, i + 2)));
+
+      document.getElementById("footer-checked-at").textContent = `資料最後檢核日期：${footerCheckedAt}`;
+    </script>
+  </body>
+</html>
