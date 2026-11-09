@@ -1,0 +1,18 @@
+{
+ "page": "https://www.sc.com/tw/credit-cards/signature-card/",
+ "today": "2026-11-09",
+ "gates": {
+  "官方來源": true,
+  "一致": true,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [],
+ "replacedThirdParty": [
+  "sc-signature-general"
+ ],
+ "benchDiffs": [],
+ "pass": true
+}

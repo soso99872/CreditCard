@@ -1,0 +1,15 @@
+{
+ "page": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+ "today": "2026-11-09",
+ "gates": {
+  "官方來源": true,
+  "一致": true,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [],
+ "benchDiffs": [],
+ "pass": true
+}

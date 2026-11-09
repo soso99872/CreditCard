@@ -1,0 +1,803 @@
+{
+ "extractor": "A",
+ "page": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+ "cards": [
+  {
+   "cardId": "esun-unicard",
+   "rules": [
+    {
+     "plan": "",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "四大超商",
+       "全聯"
+      ]
+     },
+     "rate": 0.3,
+     "rawReward": "一般消費享0.3% 玉山e point回饋",
+     "cap": null,
+     "conditions": [
+      "需申辦帳單e化",
+      "一般消費不含百大指定消費特店分期及歐盟實體交易、繳稅費、綁定行動支付於本行公告之非一般消費通路消費"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "一般消費享0.3% 玉山e point回饋，需申辦帳單e化 (Email電子帳單或簡訊帳單) 。",
+      "validTo": "活動期間：2026/7/1~2026/12/31",
+      "validFrom": "活動期間：2026/7/1~2026/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "四大超商",
+       "全聯"
+      ]
+     },
+     "rate": 1,
+     "rawReward": "一般消費享1% 玉山e point回饋",
+     "cap": null,
+     "conditions": [
+      "需同時申辦帳單e化及玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費",
+      "一般消費不含百大指定消費特店分期及歐盟實體交易、繳稅費、綁定行動支付於本行公告之非一般消費通路消費"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。",
+      "validTo": "活動期間：2026/7/1~2026/12/31",
+      "validFrom": "活動期間：2026/7/1~2026/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "簡單選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ]
+     },
+     "rate": 3,
+     "rawReward": "一般消費最高1%＋百大指定消費+2%，最高回饋3%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "限綁定指定行動支付：玉山Wallet電子支付、LINE Pay、全支付、街口支付、悠遊付、全盈+PAY、iPASS MONEY、icash Pay、支付寶",
+      "超商、全聯、大全聯交易、全聯全電商平台付款、繳納各項稅費等非一般消費不列入"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2"
+    },
+    {
+     "plan": "簡單選",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "momo購物網",
+       "蝦皮購物",
+       "淘寶網",
+       "Coupang酷澎",
+       "新光三越百貨(含SKM Park Outlets高雄草衙)",
+       "遠東SOGO",
+       "遠東Garden City",
+       "遠東百貨",
+       "Big City遠東巨城購物中心",
+       "漢神百貨",
+       "台中漢神洲際購物廣場",
+       "微風百貨",
+       "台北101",
+       "華泰名品城",
+       "三井OUTLET",
+       "誠品生活(含誠品書店與誠品線上)",
+       "秀泰生活",
+       "LaLaport",
+       "統一時代百貨台北店/DREAM PLAZA",
+       "昇恆昌",
+       "Global Mall環球購物中心",
+       "萬家福/樂家康",
+       "屈臣氏",
+       "康是美",
+       "特力屋",
+       "HOLA",
+       "hoi好好生活",
+       "UNIQLO",
+       "NET",
+       "杏一藥局",
+       "卡多摩",
+       "Uber Eats",
+       "foodpanda",
+       "王品瘋Pay",
+       "台灣中油",
+       "台塑石油PAY",
+       "55688",
+       "台鐵",
+       "高鐵",
+       "Uber",
+       "中華航空",
+       "長榮航空",
+       "日本航空",
+       "台灣虎航",
+       "樂桃航空",
+       "酷航",
+       "Trip.com",
+       "Booking.com",
+       "Hotels.com",
+       "Expedia",
+       "KKday",
+       "Klook",
+       "雄獅旅遊",
+       "可樂旅遊",
+       "東南旅遊",
+       "Agoda",
+       "五福旅遊",
+       "加利利旅行社",
+       "找到了旅行社",
+       "喜鴻假期",
+       "鳳凰旅遊",
+       "Apple直營店",
+       "小米台灣",
+       "全國電子",
+       "燦坤",
+       "拓元售票",
+       "威秀影城",
+       "國賓影城",
+       "新光影城",
+       "錢櫃KTV",
+       "玉山Wallet愛心捐款-單筆捐款",
+       "玉山Wallet愛心捐款-定期定額",
+       "特斯拉"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3,
+     "rawReward": "一般消費最高1%＋百大指定消費+2%，最高回饋3%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "遠東Garden City為大巨蛋",
+      "漢神百貨不含漢神巨蛋",
+      "台灣中油限直營店",
+      "55688限台灣大車隊、機場接送",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2"
+    },
+    {
+     "plan": "簡單選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas",
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ],
+      "onlyRegions": [
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ]
+     },
+     "rate": 3,
+     "rawReward": "一般消費最高1%＋百大指定消費+2%，最高回饋3%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "限指定國別實體線下交易：日本、韓國、泰國、越南、新加坡、馬來西亞、菲律賓、中國、香港、澳門、美國、加拿大、英國、法國、德國、義大利、澳洲、紐西蘭",
+      "網路交易不列入",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2"
+    },
+    {
+     "plan": "任意選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ]
+     },
+     "rate": 3.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+2.5%，最高回饋3.5%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "於百大指定消費中任選最多8家，需於玉山Wallet設定",
+      "限綁定指定行動支付：玉山Wallet電子支付、LINE Pay、全支付、街口支付、悠遊付、全盈+PAY、iPASS MONEY、icash Pay、支付寶",
+      "超商、全聯、大全聯交易、全聯全電商平台付款、繳納各項稅費等非一般消費不列入"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2.5"
+    },
+    {
+     "plan": "任意選",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "momo購物網",
+       "蝦皮購物",
+       "淘寶網",
+       "Coupang酷澎",
+       "新光三越百貨(含SKM Park Outlets高雄草衙)",
+       "遠東SOGO",
+       "遠東Garden City",
+       "遠東百貨",
+       "Big City遠東巨城購物中心",
+       "漢神百貨",
+       "台中漢神洲際購物廣場",
+       "微風百貨",
+       "台北101",
+       "華泰名品城",
+       "三井OUTLET",
+       "誠品生活(含誠品書店與誠品線上)",
+       "秀泰生活",
+       "LaLaport",
+       "統一時代百貨台北店/DREAM PLAZA",
+       "昇恆昌",
+       "Global Mall環球購物中心",
+       "萬家福/樂家康",
+       "屈臣氏",
+       "康是美",
+       "特力屋",
+       "HOLA",
+       "hoi好好生活",
+       "UNIQLO",
+       "NET",
+       "杏一藥局",
+       "卡多摩",
+       "Uber Eats",
+       "foodpanda",
+       "王品瘋Pay",
+       "台灣中油",
+       "台塑石油PAY",
+       "55688",
+       "台鐵",
+       "高鐵",
+       "Uber",
+       "中華航空",
+       "長榮航空",
+       "日本航空",
+       "台灣虎航",
+       "樂桃航空",
+       "酷航",
+       "Trip.com",
+       "Booking.com",
+       "Hotels.com",
+       "Expedia",
+       "KKday",
+       "Klook",
+       "雄獅旅遊",
+       "可樂旅遊",
+       "東南旅遊",
+       "Agoda",
+       "五福旅遊",
+       "加利利旅行社",
+       "找到了旅行社",
+       "喜鴻假期",
+       "鳳凰旅遊",
+       "Apple直營店",
+       "小米台灣",
+       "全國電子",
+       "燦坤",
+       "拓元售票",
+       "威秀影城",
+       "國賓影城",
+       "新光影城",
+       "錢櫃KTV",
+       "玉山Wallet愛心捐款-單筆捐款",
+       "玉山Wallet愛心捐款-定期定額",
+       "特斯拉"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 3.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+2.5%，最高回饋3.5%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "於百大指定消費中任選最多8家，需於玉山Wallet設定",
+      "遠東Garden City為大巨蛋",
+      "漢神百貨不含漢神巨蛋",
+      "台灣中油限直營店",
+      "55688限台灣大車隊、機場接送",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2.5"
+    },
+    {
+     "plan": "任意選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas",
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ],
+      "onlyRegions": [
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ]
+     },
+     "rate": 3.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+2.5%，最高回饋3.5%",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "於百大指定消費中任選最多8家，需於玉山Wallet設定",
+      "限指定國別實體線下交易：日本、韓國、泰國、越南、新加坡、馬來西亞、菲律賓、中國、香港、澳門、美國、加拿大、英國、法國、德國、義大利、澳洲、紐西蘭",
+      "網路交易不列入",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限1,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+2.5"
+    },
+    {
+     "plan": "UP選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ]
+     },
+     "rate": 4.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+3.5%，最高回饋4.5%",
+     "cap": {
+      "amount": 5000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "需訂閱UP選：同時完成任務一(上月玉山Unicard刷卡金額>=3萬元)及任務二(上月玉山平均資產金額>=30萬元)，或以149點e point訂閱",
+      "限綁定指定行動支付：玉山Wallet電子支付、LINE Pay、全支付、街口支付、悠遊付、全盈+PAY、iPASS MONEY、icash Pay、支付寶",
+      "超商、全聯、大全聯交易、全聯全電商平台付款、繳納各項稅費等非一般消費不列入"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限5,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+3.5"
+    },
+    {
+     "plan": "UP選",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "momo購物網",
+       "蝦皮購物",
+       "淘寶網",
+       "Coupang酷澎",
+       "新光三越百貨(含SKM Park Outlets高雄草衙)",
+       "遠東SOGO",
+       "遠東Garden City",
+       "遠東百貨",
+       "Big City遠東巨城購物中心",
+       "漢神百貨",
+       "台中漢神洲際購物廣場",
+       "微風百貨",
+       "台北101",
+       "華泰名品城",
+       "三井OUTLET",
+       "誠品生活(含誠品書店與誠品線上)",
+       "秀泰生活",
+       "LaLaport",
+       "統一時代百貨台北店/DREAM PLAZA",
+       "昇恆昌",
+       "Global Mall環球購物中心",
+       "萬家福/樂家康",
+       "屈臣氏",
+       "康是美",
+       "特力屋",
+       "HOLA",
+       "hoi好好生活",
+       "UNIQLO",
+       "NET",
+       "杏一藥局",
+       "卡多摩",
+       "Uber Eats",
+       "foodpanda",
+       "王品瘋Pay",
+       "台灣中油",
+       "台塑石油PAY",
+       "55688",
+       "台鐵",
+       "高鐵",
+       "Uber",
+       "中華航空",
+       "長榮航空",
+       "日本航空",
+       "台灣虎航",
+       "樂桃航空",
+       "酷航",
+       "Trip.com",
+       "Booking.com",
+       "Hotels.com",
+       "Expedia",
+       "KKday",
+       "Klook",
+       "雄獅旅遊",
+       "可樂旅遊",
+       "東南旅遊",
+       "Agoda",
+       "五福旅遊",
+       "加利利旅行社",
+       "找到了旅行社",
+       "喜鴻假期",
+       "鳳凰旅遊",
+       "Apple直營店",
+       "小米台灣",
+       "全國電子",
+       "燦坤",
+       "拓元售票",
+       "威秀影城",
+       "國賓影城",
+       "新光影城",
+       "錢櫃KTV",
+       "玉山Wallet愛心捐款-單筆捐款",
+       "玉山Wallet愛心捐款-定期定額",
+       "特斯拉"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 4.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+3.5%，最高回饋4.5%",
+     "cap": {
+      "amount": 5000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "需訂閱UP選：同時完成任務一(上月玉山Unicard刷卡金額>=3萬元)及任務二(上月玉山平均資產金額>=30萬元)，或以149點e point訂閱",
+      "遠東Garden City為大巨蛋",
+      "漢神百貨不含漢神巨蛋",
+      "台灣中油限直營店",
+      "55688限台灣大車隊、機場接送",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限5,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+3.5"
+    },
+    {
+     "plan": "UP選",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas",
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ],
+      "onlyRegions": [
+       "japan",
+       "korea",
+       "thailand",
+       "singapore"
+      ]
+     },
+     "rate": 4.5,
+     "rawReward": "一般消費最高1%＋百大指定消費+3.5%，最高回饋4.5%",
+     "cap": {
+      "amount": 5000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "需訂閱UP選：同時完成任務一(上月玉山Unicard刷卡金額>=3萬元)及任務二(上月玉山平均資產金額>=30萬元)，或以149點e point訂閱",
+      "限指定國別實體線下交易：日本、韓國、泰國、越南、新加坡、馬來西亞、菲律賓、中國、香港、澳門、美國、加拿大、英國、法國、德國、義大利、澳洲、紐西蘭",
+      "網路交易不列入",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)，第三方支付及電子支付錢包不認列"
+     ],
+     "validFrom": "2026-07-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "百大指定消費加碼回饋以分期交易總金額計算1次(簡單選2%、任意選2.5%、UP選3.5%)。",
+      "validTo": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "validFrom": "2026/7/1~2026/12/31適用百大指定消費列表如下：",
+      "cap": "(歸戶月上限5,000點)",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+3.5"
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "三商美邦人壽"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.2,
+     "rawReward": "最高1.2%玉山e point回饋",
+     "cap": null,
+     "conditions": [
+      "限扣繳傳統型保單保費",
+      "投資型保單、躉繳保費、產險及已登錄參加分期0利率活動者不適用",
+      "需同時申辦帳單e化及玉山銀行臺幣帳戶自動扣繳卡費"
+     ],
+     "validFrom": "2026-11-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玉山Unicard繳三商美邦人壽「傳統型保單」保費不限金額，享最高1.2%玉山e point回饋，回饋無上限！",
+      "validTo": "活動期間：2026/11/1~2027/12/31",
+      "validFrom": "活動期間：2026/11/1~2027/12/31",
+      "cap": null,
+      "base": "※ 本活動最高1.2%回饋包含：玉山Unicard申辦帳單e化及玉山銀行臺幣帳戶自動扣繳卡費享最高1%回饋無上限(如僅申請帳單e化享0.3%回饋)及扣繳三商美邦傳統型保費再加碼0.2%回饋無上限。"
+     },
+     "rateFormula": "1+0.2"
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "三商美邦人壽"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 1.5,
+     "rawReward": "最高享1.5%回饋",
+     "cap": {
+      "amount": 1000,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "限扣繳傳統型保單保費",
+      "需於玉山Wallet領取專屬優惠",
+      "需同時申辦帳單e化及玉山銀行臺幣帳戶自動扣繳卡費",
+      "投資型保單、躉繳保費、產險及已登錄參加分期0利率活動者不適用"
+     ],
+     "validFrom": "2026-11-01",
+     "validTo": "2027-12-31",
+     "evidence": {
+      "rate": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard扣繳三商美邦人壽傳統型保費，再享加碼0.3%玉山e point回饋(活動期間內每歸戶每月回饋上限1,000點)。",
+      "validTo": "活動期間：2026/11/1~2027/12/31",
+      "validFrom": "活動期間：2026/11/1~2027/12/31",
+      "cap": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard扣繳三商美邦人壽傳統型保費，再享加碼0.3%玉山e point回饋(活動期間內每歸戶每月回饋上限1,000點)。",
+      "base": "※ 本活動最高1.2%回饋包含：玉山Unicard申辦帳單e化及玉山銀行臺幣帳戶自動扣繳卡費享最高1%回饋無上限(如僅申請帳單e化享0.3%回饋)及扣繳三商美邦傳統型保費再加碼0.2%回饋無上限。"
+     },
+     "rateFormula": "1+0.2+0.3"
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "dining"
+      ],
+      "basis": "mcc"
+     },
+     "rate": 4,
+     "rawReward": "加碼3%玉山e point回饋",
+     "cap": {
+      "amount": 300,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "需於玉山Wallet領取專屬優惠",
+      "當月累計國內餐飲消費滿5,000元",
+      "MCC 5811、5812、5813、5814的國內餐飲消費",
+      "不含透過聯合信用卡中心小額支付平台收費之餐廳(如麥當勞、肯德基等)以及菸酒交易、酒吧、KTV、酒店、飯店、百貨、商場(如大全聯)、外送平台產生之餐廳消費",
+      "同時符合百大指定消費時優先適用百大指定消費"
+     ],
+     "validFrom": "2026-11-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard至國內餐飲消費，當月累計消費滿5,000元享加碼3%玉山e point回饋(每歸戶每月回饋上限300點)。",
+      "validTo": "活動時間：2026/11/1~2026/12/31",
+      "validFrom": "活動時間：2026/11/1~2026/12/31",
+      "cap": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard至國內餐飲消費，當月累計消費滿5,000元享加碼3%玉山e point回饋(每歸戶每月回饋上限300點)。",
+      "base": "則顧客可獲得基本回饋最高1%及百大指定消費最高3.5%回饋"
+     },
+     "rateFormula": "1+3"
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "全聯福利中心",
+       "大全聯"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 10,
+     "rawReward": "享10%回饋；單筆滿1,000元享100點",
+     "cap": {
+      "amount": 100,
+      "unit": "point",
+      "period": "per-transaction"
+     },
+     "conditions": [
+      "每週三",
+      "需於玉山Wallet領取專屬優惠",
+      "需綁定全支付(PXPay Plus)或PX Pay",
+      "單筆消費滿1,000元",
+      "每歸戶每週三回饋上限100點",
+      "限實體門市，PX GO!全聯線上購、「PX Pay購物」箱購、小時達、全電商、分批取、外送平台不適用"
+     ],
+     "validFrom": "2026-09-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "享10%回饋",
+      "validTo": "活動期間：2026/9/1~2026/12/31 每週三",
+      "validFrom": "活動期間：2026/9/1~2026/12/31 每週三",
+      "cap": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard綁定全支付(PXPay Plus)或PX Pay於全聯福利中心/大全聯單筆消費滿1,000元，享100點玉山e point回饋！(每歸戶每週三回饋上限100點)"
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "U-POWER"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 4,
+     "rawReward": "加碼3%玉山e point回饋",
+     "cap": {
+      "amount": 300,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "需於玉山Wallet領取專屬優惠",
+      "當月消費滿3筆",
+      "限實體卡(含綁定Apple Pay、Google Pay、Samsung Pay)"
+     ],
+     "validFrom": "2026-10-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard至U-POWER當月消費滿3筆，享加碼3%玉山e point回饋（每月每歸戶回饋上限300點）。",
+      "validTo": "活動時間：2026/10/1~2026/12/31",
+      "validFrom": "活動時間：2026/10/1~2026/12/31",
+      "cap": "玉山Unicard正卡持卡人於活動期間內至玉山Wallet「我的>玉山Unicard-我的方案」領取專屬優惠，並使用玉山Unicard至U-POWER當月消費滿3筆，享加碼3%玉山e point回饋（每月每歸戶回饋上限300點）。",
+      "base": "一般消費享1% 玉山e point回饋，需同時申辦帳單e化及申辦玉山銀行臺幣帳戶自動扣繳，且成功扣繳卡費。"
+     },
+     "rateFormula": "1+3"
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "merchant",
+      "merchants": [
+       "悠遊自動加值"
+      ],
+      "basis": "merchant-list"
+     },
+     "rate": 10,
+     "rawReward": "自動加值10%現金回饋",
+     "cap": null,
+     "conditions": [
+      "限玉山Unicard(JCB卡)",
+      "每卡每月須完成登錄",
+      "自動加值新臺幣500元或其倍數"
+     ],
+     "validFrom": "2026-01-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "使用玉山Unicard(JCB卡)於活動專屬網頁登錄成功後，即可享有「自動加值10%現金回饋」活動參加資格。持當月登錄成功的卡片於當月使用自動加值新臺幣500元或其倍數，可獲得10%現金回饋；每卡每月須完成登錄以取得當月活動參加資格。",
+      "validTo": "活動期間：2026/1/1~2026/12/31",
+      "validFrom": "活動期間：2026/1/1~2026/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "已結束不寫（rule 14）：咖啡加碼3%（至2026/10/31）、Hotels.com/Expedia抽獎、10月UP選贈Agoda、推薦新戶iPhone、期間限定新申辦20%、AsiaYo星野現折。",
+  "依 rule 8 不收：數位帳戶新戶加碼10%（限額4,000人）、申辦自扣加碼5%（限新申辦）、中油直營滿額登錄3%（每月限量20,000名）、台塑石油PAY首綁50點（限量）、秋楓冬雪滿額禮（限量）、玉山LINE問卷抽獎、永續消費抽獎。",
+  "壽險保費最高1.1%（2026/1/1~12/31）未寫規則：適用國內任一壽險公司，非單一商家，categories.json 無保險類別。",
+  "三商美邦分12期活動的最高1%回饋未另寫：與最高1.2%/1.5%活動擇一，且需登錄0利率分期。",
+  "永續特店實體卡5%（每月上限50元）未寫：頁面未列指定永續特店名單。",
+  "台北捷運最高4.5%未寫：頁面未拆分方案，視為百大/UP選的組合；台灣中油最高4.5%同。",
+  "未收定額/折扣型：Visa日本精品最高10%（滿額回饋、品牌清單為舉例）、三越伊勢丹日圓滿額回饋、Mastercard海外平台外幣定額、Trip.com/AsiaYo/Klook 折扣、全家購物金、AmpGO折價券。",
+  "三商美邦、呷飽飽、U-POWER 的合計 rate 用原卡最高1%作基礎；僅帳單e化時原卡為0.3%，頁面未逐項分列該情境的活動合計。",
+  "全聯週三活動上限為每歸戶每週三100點，SCHEMA 無 week 週期，暫填 per-transaction 並寫入 conditions；單筆滿1,000元享100點故實際比率隨金額下降，rate 採原文標題10%。",
+  "百大列表中括號處理：大巨蛋、不含漢神巨蛋、直營店、台灣大車隊/機場接送移入 conditions；SKM Park Outlets、誠品書店與誠品線上視為商家名稱一部分保留。國外實體以 overseas＋有專屬類別的國家表示，其餘國家見 conditions；美國/加拿大等僅部分涵蓋地區未列 onlyRegions。",
+  "一般消費 excludeMerchants 依原文明列的四大超商、全聯填入，'四大超商'可能對不上商家庫；原文另有『詳見官網公告』未列項目。",
+  "快照中未見要求抽取員執行動作的句子。"
+ ]
+}

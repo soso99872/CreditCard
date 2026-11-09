@@ -1,0 +1,159 @@
+{
+ "extractor": "B",
+ "page": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
+ "cards": [
+  {
+   "cardId": "fubon-jcard",
+   "rules": [
+    {
+     "plan": "",
+     "scope": {
+      "type": "general",
+      "excludeMerchants": [
+       "YouTube",
+       "Spotify",
+       "TikTok",
+       "Apple媒體服務",
+       "Google產品或服務",
+       "台灣Costco"
+      ]
+     },
+     "rate": 1,
+     "rawReward": "國內一般消費最高1%回饋無上限（現金回饋或LINE POINTS）",
+     "cap": null,
+     "conditions": [
+      "需設定本行帳戶自動扣繳富邦信用卡費或申請電子帳單(且取消實體帳單)，未符合則享0.5%回饋",
+      "J Cash為現金回饋；J Points為LINE POINTS回饋，須綁定LINE Pay",
+      "一般消費不含便利商店消費(含綁定該便利商店各行動支付，如 icash Pay、全盈+Pay及LINE PAY等)",
+      "一般消費不含全聯實業旗下品牌通路(如全聯福利中心、大全聯消費，包含線上購物和各種支付方式，如Px pay、全支付等)"
+     ],
+     "validFrom": "2026-04-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "國內及其他海外地區一般消費享最高1%",
+      "validTo": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "validFrom": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "japan",
+       "korea",
+       "thailand"
+      ],
+      "basis": "mcc",
+      "excludeMerchants": [
+       "YouTube",
+       "Spotify",
+       "TikTok",
+       "Apple媒體服務",
+       "Google產品或服務",
+       "台灣Costco"
+      ]
+     },
+     "rate": 3,
+     "rawReward": "日本/韓國/泰國地區一般消費最高3%無上限（現金回饋或LINE POINTS）",
+     "cap": null,
+     "conditions": [
+      "需設定本行帳戶自動扣繳富邦信用卡費或申請電子帳單(且取消實體帳單)，未符合則享0.5%回饋",
+      "J Cash為現金回饋；J Points為LINE POINTS回饋，須綁定LINE Pay",
+      "一般消費不含便利商店消費(含綁定該便利商店各行動支付，如 icash Pay、全盈+Pay及LINE PAY等)",
+      "一般消費不含全聯實業旗下品牌通路(如全聯福利中心、大全聯消費，包含線上購物和各種支付方式，如Px pay、全支付等)",
+      "消費幣別為日圓、韓圜、泰銖或消費國別為日本、韓國、泰國"
+     ],
+     "validFrom": "2026-04-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "日本/韓國/泰國地區一般消費享最高3%",
+      "validTo": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "validFrom": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas"
+      ],
+      "basis": "mcc",
+      "excludeMerchants": [
+       "YouTube",
+       "Spotify",
+       "TikTok",
+       "Apple媒體服務",
+       "Google產品或服務",
+       "台灣Costco"
+      ]
+     },
+     "rate": 1,
+     "rawReward": "其他海外地區一般消費最高1%（現金回饋或LINE POINTS）",
+     "cap": null,
+     "conditions": [
+      "需設定本行帳戶自動扣繳富邦信用卡費或申請電子帳單(且取消實體帳單)，未符合則享0.5%回饋",
+      "J Cash為現金回饋；J Points為LINE POINTS回饋，須綁定LINE Pay",
+      "一般消費不含便利商店消費(含綁定該便利商店各行動支付，如 icash Pay、全盈+Pay及LINE PAY等)",
+      "一般消費不含全聯實業旗下品牌通路(如全聯福利中心、大全聯消費，包含線上購物和各種支付方式，如Px pay、全支付等)",
+      "不含歐洲經濟區實體商店交易；歐盟地區網站消費回饋維持不變",
+      "日本、韓國、泰國以外的其他海外地區，經系統辨識收取海外手續費之交易"
+     ],
+     "validFrom": "2026-04-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "國內及其他海外地區一般消費享最高1%",
+      "validTo": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "validFrom": "基本回饋 優惠期間自 2026/4/1 至 2026/12/31 止",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "transport"
+      ],
+      "basis": "mcc"
+     },
+     "rate": 2,
+     "rawReward": "全台大眾交通嗶J卡一卡通功能扣款享2%回饋",
+     "cap": null,
+     "conditions": [
+      "以J卡一卡通功能扣款",
+      "限全台捷運、輕軌、台鐵、公車客運、公共自行車、渡輪",
+      "每月累積消費滿100元始享回饋"
+     ],
+     "validFrom": "2026-01-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "全台大眾交通嗶J卡一卡通功能扣款享2%回饋",
+      "validTo": "2026/1/1至2026/12/31",
+      "validFrom": "2026/1/1至2026/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "快照內未發現要求抽取員做事的句子。",
+  "回饋率看條件：設定本行帳戶自扣或電子帳單(且取消實體帳單)才享最高1%/3%，否則0.5%；原文未分 LEVEL，故未拆等級，以 conditions 記錄。需要拆成兩條請裁定。",
+  "J Cash／J Points 回饋率相同，只有回饋形式不同，合併為 plan 空字串。",
+  "依第8條不收（限量登錄）：日韓泰實體單筆滿千加碼3%（合計6%，每季限量60,000名）、日本三大交通卡加碼7%（合計10%，每季限量30,000名）、亞洲精選滿6,000贈300即享券（每月限量10,000名）、悠遊卡自動加值10%（限量需登錄）。",
+  "依第8條不收（新戶／首刷）：新戶行李箱、新戶分期免息、揪友辦卡推薦禮。",
+  "依第14條不收（已結束）：J卡精選通路最高6%（2026/4/1~2026/6/30）、精選通路滿額最高900元（2026/7/1~2026/9/30）；第三季新戶禮與揪友活動。",
+  "未收：保費0.5%回饋或分期0利率二選一（2026/1/1~2026/12/31，回饋無上限），categories.json 無保費類別。",
+  "未收：DHC 92折、君悅88折、KKday／Klook 折扣碼、王品贈餐等屬折扣或贈品，不是回饋率，且部分限量。",
+  "一卡通2%以大眾運輸行業判定，歸 transport，未歸 mobile-payment；一卡通寫進 conditions。頁面此列未寫需登錄（同表悠遊卡列有寫）。",
+  "excludeMerchants 取自一般消費定義明列項目；便利商店與全聯原文用「如」舉例，依第16條寫進 conditions。歐洲經濟區實體交易只涵蓋部分歐洲且網站消費不受影響，寫進 overseas 的 conditions，未填 excludeRegions。"
+ ]
+}

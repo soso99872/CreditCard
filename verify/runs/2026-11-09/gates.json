@@ -1,0 +1,553 @@
+{
+ "date": "2026-11-09",
+ "mode": "trial",
+ "pages": [
+  {
+   "page": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('sinopac-green', '', 'category', ('mobile-payment',), (), (), 5.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('sinopac-green', '', 'category', ('overseas',), (), (), 2.0, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('sinopac-green', '', 'merchant', (), ('10/10 hope', 'AESOP', 'Anytime Fitness', 'App Store', 'BEGIN', 'ChargeSPOT', 'Curves', 'DAZN', 'EVOASIS充電費用', 'GAP', 'GU', 'GoShare', 'GoSmart', 'Gogoro Network', 'Google Play商店應用程式', 'Green & Safe', 'H&M', 'KKTIX', 'LINE GO', 'NET', 'Nintendo', 'Nuli女力APP', 'O’right歐萊德', 'PlayStation', 'STUDIO A', 'SharkParking蝦趴', 'Steam', 'Straight A', 'TESLA充電費', 'UNIQLO', 'Welltivity數位大健康生活平台', 'Wemo Scooter', 'World Gym', 'ZARA', 'ZOCHA', 'eMoving', 'eMoving電池資費', 'iRent', 'miacucina', '一之軒', '三個傻瓜印度蔬食餐廳', '健康食彩', '健身工廠', '兆品酒店', '全國特急電', '全國電子', '凱撒大飯店', '北投/礁溪晶泉丰旅', '原素食府', '台北市運動中心', '台北晶華酒店', '台灣主婦聯盟', '喜樂時代影城', '喬山健康科技', '國賓大飯店', '圓山大飯店', '城市商旅', '大研生醫', '威秀影城', '安永鮮物', '宏碁智通', '家樂福(萬家福、樂家康)', '寬宏售票', '小小樹食', '屋馬餐廳', '山海樓', '希爾頓酒店', '年代售票', '愛買', '承億酒店/文旅', '拓元售票', '捷絲旅', '摩斯漢堡', '摩曼頓', '新光影城', '新北市運動中心', '新北捷運', '新驛旅店', '星巴克', '暴雪娛樂(Blizzard Entertainment)', '東風新意餐廳', '桃園捷運', '棉花田生機園地', '無毒的家', '無毒農', '煙波大飯店', '熱浪島南洋蔬食茶堂', '營養師輕食', '特爾電力', '直接跟農夫買', '社團法人臺灣寶島淨鄉團', '福容大飯店', '築間幸福鍋物', '統一生機', '綠藤生機', '義美生機', '義美食品', '翰品酒店', '老爺酒店', '聖德科斯', '臺中捷運', '臺北捷運', '艾瑪絲 AROMASE', '茶籽堂', '草蔬宴義式蔬食', '荒野保護協會', '華城EVALUE', '藏壽司', '蘭城/台南/太魯閣晶英酒店', '裕電俥電(YES! 來電)', '財團法人臺灣海洋保育與漁業永續基金會', '超核心健身中心', '路易莎咖啡', '農人餐桌', '遠雄悅來大飯店', '里仁', '野菜村有機生活館', '長庚生技', '陽明春天', '養心茶樓', '馬可先生麵包坊', '高雄捷運'), (), 5.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('sinopac-green', '', 'merchant', (), ('Q burger', '麥味登'), (), 4.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('sinopac-green', '', 'category', ('overseas',), (), ('三商美邦人壽', '全聯福利中心', '大全聯', '富邦人壽'), 2.0, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('sinopac-green', '精選國內綠色通路', 'category', ('mobile-payment',), (), (), 5.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('sinopac-green', '精選國內綠色通路', 'merchant', (), ('10/10 hope', 'AESOP', 'BEGIN', 'ChargeSPOT', 'EVOASIS充電費用', 'GAP', 'GU', 'GoShare', 'GoSmart', 'Gogoro Network', 'Green & Safe', 'H&M', 'KKTIX', 'LINE GO', 'NET', 'O’right歐萊德', 'STUDIO A', 'SharkParking蝦趴', 'Straight A', 'TESLA充電費', 'UNIQLO', 'Wemo Scooter', 'ZARA', 'ZOCHA', 'eMoving', 'eMoving電池資費', 'iRent', 'miacucina', '一之軒', '三個傻瓜印度蔬食餐廳', '健康食彩', '兆品酒店', '全國特急電', '全國電子', '凱撒大飯店', '北投/礁溪晶泉丰旅', '原素食府', '台北晶華酒店', '台灣主婦聯盟', '喜樂時代影城', '國賓大飯店', '圓山大飯店', '城市商旅', '大研生醫', '威秀影城', '安永鮮物', '宏碁智通', '家樂福(萬家福、樂家康)', '寬宏售票', '小小樹食', '屋馬餐廳', '山海樓', '希爾頓酒店', '年代售票', '愛買', '承億酒店/文旅', '拓元售票', '捷絲旅', '摩斯漢堡', '新光影城', '新北捷運', '新驛旅店', '星巴克', '東風新意餐廳', '桃園捷運', '棉花田生機園地', '無毒的家', '無毒農', '煙波大飯店', '熱浪島南洋蔬食茶堂', '營養師輕食', '特爾電力', '直接跟農夫買', '社團法人臺灣寶島淨鄉團', '福容大飯店', '築間幸福鍋物', '統一生機', '綠藤生機', '義美生機', '義美食品', '翰品酒店', '老爺酒店', '聖德科斯', '臺中捷運', '臺北捷運', '艾瑪絲 AROMASE', '茶籽堂', '草蔬宴義式蔬食', '荒野保護協會', '華城EVALUE', '藏壽司', '蘭城/台南/太魯閣晶英酒店', '裕電俥電(YES! 來電)', '財團法人臺灣海洋保育與漁業永續基金會', '路易莎咖啡', '農人餐桌', '遠雄悅來大飯店', '里仁', '野菜村有機生活館', '長庚生技', '陽明春天', '養心茶樓', '馬可先生麵包坊', '高雄捷運'), (), 5.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('sinopac-green', '精選國內綠色通路', 'merchant', (), ('Anytime Fitness', 'App Store', 'Curves', 'DAZN', 'Google Play商店應用程式', 'Nintendo', 'Nuli女力APP', 'PlayStation', 'Steam', 'Welltivity數位大健康生活平台', 'World Gym', '健身工廠', '台北市運動中心', '喬山健康科技', '摩曼頓', '新北市運動中心', '暴雪娛樂(Blizzard Entertainment)', '超核心健身中心'), (), 5.0, 300, 'TWD', 'billing-cycle', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 B 有：('sinopac-green', '精選國內綠色通路', 'merchant', (), ('Q burger', '麥味登'), (), 4.0, 300, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[格式] validate 沒過： - [banks/sinopac.json] 卡片 sinopac-green 規則 sinopac-green-auto-3：商家「裕電俥電(YES! 來電)」對不上 merchants.json\n  - [banks/sinopac.json] 卡片 sinopac-green 規則 sinopac-green-auto-3：商家「臺中捷運」對不上 merchants.json\n  - [banks/sinopac.json] 卡片 sinopac-green 規則 sinopac-green-auto-3：商家「社團法人臺灣寶島淨鄉團」對不上 merchants.json\n  - [banks/sinopac.json] 卡片 sinopac-green 規則 sinopac-green-auto-3：商家「財團法人臺灣海洋保育與漁業永續基金會」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "sinopac-green-general",
+    "sinopac-green-overseas",
+    "sinopac-green-green-no-base"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 1,
+   "kind": "changed",
+   "cardIds": [
+    "sinopac-green"
+   ],
+   "rulesA": 5,
+   "rulesB": 6
+  },
+  {
+   "page": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('esun-kumamon', '', 'category', ('japan',), (), (), 2.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-kumamon', '', 'category', ('mobile-payment',), (), (), 3.5, 100, 'TWD', 'quarter', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-kumamon', '', 'general', (), (), (), 0.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-kumamon', '', 'merchant', (), ('AMU PLAZA', 'JR博多City'), (), 5.0, None, None, None, '2026-08-20', '2027-08-31')",
+    "[一致] 只有 A 有：('esun-kumamon', '', 'merchant', (), ('Alpen', 'BicCamera', 'Budget租車', 'DOUTOR Coffee', 'Fuglen', 'GU', 'ICOCA', 'JR鐵路公司', 'LaLaport購物園區', 'Montbell', 'NIPPON RENT-A-CAR', 'ORIX租車', 'OTS租車', 'PASMO', 'Prince Hotel', 'SUICA', 'SUKIYA', 'TOYOTA Rent a Car', 'Times Car Rental', 'UNIQLO', 'Yodobashi', 'shake shack', '一蘭拉麵', '九州非洲獅樂園', '人形町今半', '六歌仙燒肉', '力丸燒肉', '勝烈亭', '吉伊卡哇樂園', '名古屋樂高樂園', '唐吉軻德', '壽司郎', '大國藥妝', '敘敘苑', '日本MITSUI', '日本環球影城', '日本航空', '星野集團', '東京華納兄弟哈利波特影城', '東京迪士尼樂園', '東橫INN', '松屋', '松本清', '樂天旅遊', '無印良品', '牛角', '藏壽司', '豪斯登堡', '鳥貴族'), (), 8.5, 500, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-kumamon', 'AMU PLAZA限定優惠', 'merchant', (), ('AMU PLAZA', 'JR博多City'), (), 7.5, None, None, None, '2026-08-20', '2027-08-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '名古屋優惠', 'merchant', (), ('KABURAYA', '世界的山將', '名古屋電視塔', '名鐵商店', '客美多', '山本屋', '矢場豬排', '金鯱橫丁'), (), 10.0, None, None, None, '2026-09-18', '2027-03-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '日本三越伊勢丹滿額回饋', 'merchant', (), ('伊勢丹新宿店', '日本橋三越總店', '銀座三越店'), (), 5.0, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '熊本熊綁PayPay', 'category', ('mobile-payment',), (), (), 3.5, 100, 'TWD', 'quarter', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '熊本熊遊台灣', 'general', (), (), (), 0.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '熊本熊遊日本 指定日本商店', 'merchant', (), ('Alpen', 'BicCamera', 'Budget租車', 'DOUTOR Coffee', 'Fuglen', 'GU', 'ICOCA', 'JR鐵路公司', 'LaLaport購物園區', 'Montbell', 'NIPPON RENT-A-CAR', 'ORIX租車', 'OTS租車', 'PASMO', 'Prince Hotel', 'SUICA', 'SUKIYA', 'TOYOTA Rent a Car', 'Times Car Rental', 'UNIQLO', 'Yodobashi', 'shake shack', '一蘭拉麵', '九州非洲獅樂園', '人形町今半', '六歌仙燒肉', '力丸燒肉', '勝烈亭', '吉伊卡哇樂園', '名古屋樂高樂園', '唐吉軻德', '壽司郎', '大國藥妝', '敘敘苑', '日本MITSUI', '日本環球影城', '日本航空', '星野集團', '東京華納兄弟哈利波特影城', '東京迪士尼樂園', '東橫INN', '松屋', '松本清', '樂天旅遊', '無印良品', '牛角', '藏壽司', '豪斯登堡', '鳥貴族'), (), 8.5, 500, 'TWD', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-kumamon', '熊本熊遊日本', 'category', ('japan',), (), (), 2.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[格式] validate 沒過：家「JR鐵路公司」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-kumamon 規則 esun-kumamon-auto-3：商家「日本MITSUI」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-kumamon 規則 esun-kumamon-auto-3：商家「LaLaport購物園區」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-kumamon 規則 esun-kumamon-auto-5：商家「JR博多City」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-kumamon 規則 esun-kumamon-auto-5：商家「AMU PLAZA」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "esun-kumamon-domestic-general",
+    "esun-kumamon-japan-general"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 2,
+   "kind": "changed",
+   "cardIds": [
+    "esun-kumamon"
+   ],
+   "rulesA": 5,
+   "rulesB": 7
+  },
+  {
+   "page": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('esun-unicard', 'UP選', 'category', ('japan', 'korea', 'overseas', 'singapore', 'thailand'), (), (), 4.5, 5000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-unicard', '任意選', 'category', ('japan', 'korea', 'overseas', 'singapore', 'thailand'), (), (), 3.5, 1000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-unicard', '簡單選', 'category', ('japan', 'korea', 'overseas', 'singapore', 'thailand'), (), (), 3.0, 1000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-unicard', 'UP選', 'category', ('japan', 'korea', 'singapore', 'thailand'), (), (), 4.5, 5000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-unicard', '任意選', 'category', ('japan', 'korea', 'singapore', 'thailand'), (), (), 3.5, 1000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-unicard', '簡單選', 'category', ('japan', 'korea', 'singapore', 'thailand'), (), (), 3.0, 1000, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[格式] validate 沒過：與誠品線上)」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-unicard 規則 esun-unicard-auto-10：商家「Global Mall環球購物中心」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-unicard 規則 esun-unicard-auto-12：商家「三商美邦人壽」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-unicard 規則 esun-unicard-auto-13：商家「三商美邦人壽」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-unicard 規則 esun-unicard-auto-17：商家「悠遊自動加值」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "esun-unicard-general-ebill",
+    "esun-unicard-general-full"
+   ],
+   "benchDiffs": [
+    {
+     "query": "全聯",
+     "before": {
+      "card": "sinopac-dawho",
+      "rate": 5
+     },
+     "after": {
+      "card": "esun-unicard",
+      "rate": 10
+     }
+    }
+   ],
+   "pass": false,
+   "n": 3,
+   "kind": "changed",
+   "cardIds": [
+    "esun-unicard"
+   ],
+   "rulesA": 17,
+   "rulesB": 38
+  },
+  {
+   "page": "https://www.fubon.com/banking/personal/credit_card/all_card/omiyage/omiyage.htm",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('fubon-jcard', '', 'category', ('japan', 'korea', 'thailand'), (), (), 3.0, None, None, None, '2026-04-01', '2026-12-31')",
+    "[一致] 只有 A 有：('fubon-jcard', '', 'category', ('overseas',), (), (), 1.0, None, None, None, '2026-04-01', '2026-12-31')",
+    "[一致] 只有 B 有：('fubon-jcard', '', 'category', ('japan', 'korea', 'thailand'), (), ('Apple媒體服務', 'Google產品或服務', 'Spotify', 'TikTok', 'YouTube', '台灣Costco'), 3.0, None, None, None, '2026-04-01', '2026-12-31')",
+    "[一致] 只有 B 有：('fubon-jcard', '', 'category', ('overseas',), (), ('Apple媒體服務', 'Google產品或服務', 'Spotify', 'TikTok', 'YouTube', '台灣Costco'), 1.0, None, None, None, '2026-04-01', '2026-12-31')",
+    "[格式] validate 沒過：驗證失敗，共 3 個問題（資料目錄：/tmp/tmplvyelcxb/data）：\n  - [banks/fubon.json] 卡片 fubon-jcard 規則 fubon-jcard-auto-1：excludeMerchants 商家「TikTok」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-jcard 規則 fubon-jcard-auto-1：excludeMerchants 商家「Google產品或服務」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-jcard 規則 fubon-jcard-auto-1：excludeMerchants 商家「台灣Costco」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "fubon-jcard-general",
+    "fubon-jcard-jp-kr-th",
+    "fubon-jcard-overseas-other"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 4,
+   "kind": "changed",
+   "cardIds": [
+    "fubon-jcard"
+   ],
+   "rulesA": 4,
+   "rulesB": 4
+  },
+  {
+   "page": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [],
+   "benchDiffs": [],
+   "pass": true,
+   "n": 5,
+   "kind": "changed",
+   "cardIds": [
+    "landbank-icash"
+   ],
+   "rulesA": 2,
+   "rulesB": 2
+  },
+  {
+   "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('yuanta-diamond-icash-wealth', '翡翠會員', 'category', ('dining', 'travel'), (), (), 7.2, 8000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('yuanta-diamond-icash-wealth', '鈦金會員', 'category', ('dining', 'travel'), (), (), 5.2, 3000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('yuanta-diamond-icash-wealth', '鑽石會員', 'category', ('dining', 'travel'), (), (), 12.2, 30000, 'TWD', 'year', '2026-01-01', '2026-12-31')"
+   ],
+   "replacedThirdParty": [
+    "yuanta-diamond-icash-wealth-general",
+    "yuanta-diamond-icash-wealth-overseas",
+    "yuanta-diamond-icash-wealth-travel-dining-diamond",
+    "yuanta-diamond-icash-wealth-travel-dining-emerald",
+    "yuanta-diamond-icash-wealth-travel-dining-titanium"
+   ],
+   "benchDiffs": [
+    {
+     "query": "麥當勞",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "Agoda",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "Booking.com",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "類別:dining",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "類別:travel",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 12.2
+     }
+    }
+   ],
+   "pass": false,
+   "n": 6,
+   "kind": "changed",
+   "cardIds": [
+    "yuanta-diamond-icash-wealth"
+   ],
+   "rulesA": 8,
+   "rulesB": 5
+  },
+  {
+   "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('yuanta-diamond-wealth', '翡翠會員', 'category', ('dining', 'travel'), (), (), 7.2, 8000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('yuanta-diamond-wealth', '鈦金會員', 'category', ('dining', 'travel'), (), (), 5.2, 3000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('yuanta-diamond-wealth', '鑽石會員', 'category', ('dining', 'travel'), (), (), 12.2, 30000, 'TWD', 'year', '2026-01-01', '2026-12-31')"
+   ],
+   "replacedThirdParty": [
+    "yuanta-diamond-wealth-general",
+    "yuanta-diamond-wealth-overseas",
+    "yuanta-diamond-wealth-travel-dining-diamond",
+    "yuanta-diamond-wealth-travel-dining-emerald",
+    "yuanta-diamond-wealth-travel-dining-titanium"
+   ],
+   "benchDiffs": [
+    {
+     "query": "麥當勞",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "Agoda",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "Booking.com",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "類別:dining",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-wealth",
+      "rate": 12.2
+     }
+    },
+    {
+     "query": "類別:travel",
+     "before": {
+      "card": "yuanta-diamond-icash-wealth",
+      "rate": 11.2
+     },
+     "after": {
+      "card": "yuanta-diamond-wealth",
+      "rate": 12.2
+     }
+    }
+   ],
+   "pass": false,
+   "n": 7,
+   "kind": "changed",
+   "cardIds": [
+    "yuanta-diamond-wealth"
+   ],
+   "rulesA": 8,
+   "rulesB": 5
+  },
+  {
+   "page": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('ctbc-uniopen', '', 'category', ('mobile-payment',), (), (), 5.0, 150, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 A 有：('ctbc-uniopen', '', 'category', ('overseas',), (), (), 11.0, 500, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 A 有：('ctbc-uniopen', '', 'category', ('overseas',), (), (), 3.0, None, None, None, '2026-09-01', '2026-12-31')",
+    "[一致] 只有 A 有：('ctbc-uniopen', '', 'merchant', (), ('21Plus/21風味館', 'BEING spa', 'COLD STONE酷聖石冰淇淋', 'CupiCho', 'DREAM PLAZA', 'DUSKIN', \"Mia C'bon\", 'Mister Donut', 'Semeur聖娜', 'UNIKCY', 'Yahoo購物', 'foodomo', 'ibon售票系統', '博客來', '台北W飯店', '台北時代寓所', '夢時代購物中心(含統一時代百貨高雄店)', '太子建設指定專案', '太子文旅', '康是美(含康是美網購eShop)', '星巴克', '樂家康', '玲廊滿藝', '統一友友旅行社', '統一夢公園', '統一時代百貨台北店', '統一渡假村', '統一生機', '統一精工速邁樂加油站', '統一行動牛奶車', '統一超商', '統一超商商場', '聖德科斯', '萬家福', '黑貓宅急便'), (), 3.0, 500, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 B 有：('ctbc-uniopen', '', 'merchant', (), ('icash2.0自動加值',), (), 10.0, 50, 'point', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('ctbc-uniopen', '國外實體商店消費', 'category', ('overseas',), (), (), 3.0, None, None, None, '2026-09-01', '2026-12-31')",
+    "[一致] 只有 B 有：('ctbc-uniopen', '國外實體商店消費加碼', 'category', ('overseas',), (), (), 11.0, 500, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 B 有：('ctbc-uniopen', '統一企業集團', 'merchant', (), ('21Plus/21風味館', 'BEING spa', 'COLD STONE酷聖石冰淇淋', 'CupiCho', 'DREAM PLAZA', 'DUSKIN', \"Mia C'bon\", 'Mister Donut', 'Semeur聖娜', 'UNIKCY', 'Yahoo購物', 'foodomo', 'ibon售票系統', '博客來', '台北W飯店', '台北時代寓所', '夢時代購物中心(含統一時代百貨高雄店)', '太子建設指定專案', '太子文旅', '康是美(含康是美網購eShop)', '星巴克', '樂家康', '玲廊滿藝', '統一友友旅行社', '統一夢公園', '統一時代百貨台北店', '統一渡假村', '統一生機', '統一精工速邁樂加油站', '統一行動牛奶車', '統一超商', '統一超商商場', '聖德科斯', '萬家福', '黑貓宅急便'), (), 3.0, 500, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[一致] 只有 B 有：('ctbc-uniopen', '綁定icash Pay', 'category', ('mobile-payment',), (), (), 5.0, 150, 'point', 'month', '2026-09-01', '2026-12-31')",
+    "[格式] validate 沒過：.json\n  - [banks/ctbc.json] 卡片 ctbc-uniopen 規則 ctbc-uniopen-auto-6：商家「21Plus/21風味館」對不上 merchants.json\n  - [banks/ctbc.json] 卡片 ctbc-uniopen 規則 ctbc-uniopen-auto-7：商家「康是美(含康是美網購eShop)」對不上 merchants.json\n  - [banks/ctbc.json] 卡片 ctbc-uniopen 規則 ctbc-uniopen-auto-7：商家「夢時代購物中心(含統一時代百貨高雄店)」對不上 merchants.json\n  - [banks/ctbc.json] 卡片 ctbc-uniopen 規則 ctbc-uniopen-auto-7：商家「21Plus/21風味館」對不上 merchants.json"
+   ],
+   "benchDiffs": [
+    {
+     "query": "星巴克",
+     "before": {
+      "card": "ctbc-uniopen",
+      "rate": 7
+     },
+     "after": {
+      "card": "sinopac-dawho",
+      "rate": 5
+     }
+    },
+    {
+     "query": "康是美",
+     "before": {
+      "card": "ctbc-uniopen",
+      "rate": 7
+     },
+     "after": {
+      "card": "sinopac-dawho",
+      "rate": 5
+     }
+    }
+   ],
+   "pass": false,
+   "n": 8,
+   "kind": "minor",
+   "cardIds": [
+    "ctbc-uniopen"
+   ],
+   "rulesA": 10,
+   "rulesB": 11
+  },
+  {
+   "page": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[格式] validate 沒過：驗證失敗，共 1 個問題（資料目錄：/tmp/tmppsfdoy4s/data）：\n  - [banks/bankchb.json] 卡片 chb-mygo 規則 chb-mygo-auto-5：商家「YouTube Premium & YouTube Music」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "chb-mygo-general",
+    "chb-mygo-online-shopping"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 9,
+   "kind": "minor",
+   "cardIds": [
+    "chb-mygo"
+   ],
+   "rulesA": 5,
+   "rulesB": 5
+  },
+  {
+   "page": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('chb-myle', '指定通路加碼', 'category', ('dining',), (), (), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('chb-myle', '指定通路加碼', 'category', ('overseas',), (), ('etoro', 'viagogo'), 3.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('chb-myle', '指定通路加碼', 'category', ('supermarket',), (), ('全聯福利中心', '大全聯'), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 A 有：('chb-myle', '指定通路加碼', 'merchant', (), ('BELLAVITA', 'SKM Park Outlet', 'SOGO', '中友', '中華電信', '亞太電信', '京站時尚廣場', '南紡購物中心', '台北101', '台灣之星', '台灣大哥大', '台茂購物中心', '大江國際購物中心', '大立', '大統', '大葉高島屋', '太平洋', '廣三SOGO', '微風廣場', '新光三越', '新月廣場', '明曜', '比漾廣場', '漢神', '統一時代', '美麗華百樂園', '耐斯廣場', '誠品', '遠傳電信', '遠東', '遠雄廣場'), (), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('chb-myle', '', 'category', ('dining',), (), (), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('chb-myle', '', 'category', ('overseas',), (), ('etoro', 'viagogo'), 3.5, None, None, None, '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('chb-myle', '', 'category', ('supermarket',), (), ('全聯福利中心', '大全聯'), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('chb-myle', '', 'merchant', (), ('BELLAVITA', 'SKM Park Outlet', 'SOGO', '中友', '中華電信', '亞太電信', '京站時尚廣場', '南紡購物中心', '台北101', '台灣之星', '台灣大哥大', '台茂購物中心', '大江國際購物中心', '大立', '大統', '大葉高島屋', '太平洋', '廣三SOGO', '微風廣場', '新光三越', '新月廣場', '明曜', '比漾廣場', '漢神', '統一時代', '美麗華百樂園', '耐斯廣場', '誠品', '遠傳電信', '遠東', '遠雄廣場'), (), 3.0, 500, 'TWD', 'month', '2026-07-01', '2026-12-31')",
+    "[格式] validate 沒過：nts 商家「viagogo」對不上 merchants.json\n  - [banks/bankchb.json] 卡片 chb-myle 規則 chb-myle-auto-3：excludeMerchants 商家「etoro」對不上 merchants.json\n  - [banks/bankchb.json] 卡片 chb-myle 規則 chb-myle-auto-3：excludeMerchants 商家「viagogo」對不上 merchants.json\n  - [banks/bankchb.json] 卡片 chb-myle 規則 chb-myle-auto-6：商家「遠東」對不上 merchants.json\n  - [banks/bankchb.json] 卡片 chb-myle 規則 chb-myle-auto-6：商家「太平洋」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "chb-myle-general",
+    "chb-myle-overseas",
+    "chb-myle-supermarket"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 10,
+   "kind": "minor",
+   "cardIds": [
+    "chb-myle"
+   ],
+   "rulesA": 7,
+   "rulesB": 7
+  },
+  {
+   "page": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('fubon-momo', 'momo館內精選品牌', 'merchant', (), ('momo購物網',), (), 7.0, 9999, 'point', 'per-transaction', '2026-10-01', '2026-12-31')",
+    "[一致] 只有 A 有：('fubon-momo', '一卡通聯名卡', 'category', ('transport',), (), (), 2.0, None, None, None, '2026-01-01', '2026-12-31')",
+    "[一致] 只有 B 有：('fubon-momo', 'momo館內精選品牌', 'merchant', (), ('momo館內精選品牌',), (), 7.0, 9999, 'point', 'per-transaction', '2026-10-01', '2026-12-31')",
+    "[一致] 只有 B 有：('fubon-momo', '一卡通聯名卡專屬回饋', 'category', ('transport',), (), (), 2.0, None, None, None, '2026-01-01', '2026-12-31')",
+    "[格式] validate 沒過：rchants 商家「Google產品或服務」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-momo 規則 fubon-momo-auto-1：excludeMerchants 商家「台灣Costco」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-momo 規則 fubon-momo-auto-3：商家「電視購物」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-momo 規則 fubon-momo-auto-3：商家「型錄」對不上 merchants.json\n  - [banks/fubon.json] 卡片 fubon-momo 規則 fubon-momo-auto-3：商家「跨境電商」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "fubon-momo-general",
+    "fubon-momo-overseas"
+   ],
+   "benchDiffs": [
+    {
+     "query": "momo購物網",
+     "before": {
+      "card": "sinopac-dawho",
+      "rate": 5
+     },
+     "after": {
+      "card": "fubon-momo",
+      "rate": 7
+     }
+    }
+   ],
+   "pass": false,
+   "n": 11,
+   "kind": "minor",
+   "cardIds": [
+    "fubon-momo"
+   ],
+   "rulesA": 5,
+   "rulesB": 5
+  },
+  {
+   "page": "https://www.sc.com/tw/credit-cards/signature-card/",
+   "today": "2026-11-09",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [],
+   "replacedThirdParty": [
+    "sc-signature-general"
+   ],
+   "benchDiffs": [],
+   "pass": true,
+   "n": 12,
+   "kind": "minor",
+   "cardIds": [
+    "sc-signature"
+   ],
+   "rulesA": 1,
+   "rulesB": 1
+  }
+ ]
+}
