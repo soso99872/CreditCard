@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-11-09T03:37:26.388213Z",
+ "fetchedAt": "2026-11-16T03:38:17.153818Z",
  "pages": {
   "https://bank.sinopac.com/sinopacBT/personal/credit-card.html": {
    "file": "8e2fae6a9d1a.txt",
@@ -24,9 +24,9 @@
    "status": 200,
    "title": "Green卡享精選綠色通路最高5%現金回饋",
    "final": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
-   "chars": 26268,
-   "sha": "d2f99cfc506d1700",
-   "fp": "db20a9587625d9e3"
+   "chars": 26304,
+   "sha": "491cb14d60d917fe",
+   "fp": "4876dc65aaba5dea"
   },
   "https://card.firstbank.com.tw/sites/card/CardIndex": {
    "file": "9c8a0e9aa111.txt",
@@ -34,7 +34,7 @@
    "title": "Access Denied",
    "final": "https://card.firstbank.com.tw/sites/card/CardIndex",
    "chars": 223,
-   "sha": "6cea1563ea48e295",
+   "sha": "46715d3b2bc13952",
    "fp": "e3b0c44298fc1c14"
   },
   "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937": {
@@ -43,7 +43,7 @@
    "title": "Access Denied",
    "final": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
    "chars": 233,
-   "sha": "dbc5c5bd14548224",
+   "sha": "de93bc0e6b40f03e",
    "fp": "e3b0c44298fc1c14"
   },
   "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542": {
@@ -52,7 +52,7 @@
    "title": "Access Denied",
    "final": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
    "chars": 233,
-   "sha": "31fff88848ae1231",
+   "sha": "41a61816583a54a4",
    "fp": "e3b0c44298fc1c14"
   },
   "https://card.ubot.com.tw/Card": {
@@ -322,8 +322,8 @@
    "title": "玉山 Pi 拍錢包信用卡好嗎? 優缺點? 2026年11月回饋優惠整理、評比｜iCard.AI",
    "final": "https://icard.ai/card/detail/5e15aec35c386d001d389822",
    "chars": 5451,
-   "sha": "b5917cced950cb38",
-   "fp": "53c1b8de21a4e028"
+   "sha": "7a0bcd4c6641b7d3",
+   "fp": "d7a81f3a29254786"
   },
   "https://icard.ai/card/detail/5e15aed55c386d001d389a96": {
    "file": "4ff3144dfc77.txt",
@@ -331,8 +331,8 @@
    "title": "渣打現金回饋御璽卡好嗎? 優缺點? 2026年11月回饋優惠整理、評比｜iCard.AI",
    "final": "https://icard.ai/card/detail/5e15aed55c386d001d389a96",
    "chars": 2139,
-   "sha": "2376cde89cb208ac",
-   "fp": "808ef28f652df5ec"
+   "sha": "af945f17e33eb5d1",
+   "fp": "76c32c41e254b24c"
   },
   "https://icard.ai/card/detail/64d1ea1071fefcfdc17c9915": {
    "file": "526850a52884.txt",
@@ -340,8 +340,8 @@
    "title": "玉山熊本熊卡好嗎? 優缺點? 2026年11月回饋優惠整理、評比｜iCard.AI",
    "final": "https://icard.ai/card/detail/64d1ea1071fefcfdc17c9915",
    "chars": 4690,
-   "sha": "2f1e13571ebda134",
-   "fp": "5939acb50852cc78"
+   "sha": "2db4cfacc137a788",
+   "fp": "fcd9d0af1555c79a"
   },
   "https://icard.ai/card/detail/658e384cc7f1146c85570aca": {
    "file": "e77dc5c6bd4c.txt",
@@ -349,26 +349,26 @@
    "title": "永豐現金回饋Green卡好嗎? 優缺點? 2026年11月回饋優惠整理、評比｜iCard.AI",
    "final": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
    "chars": 7320,
-   "sha": "9df2e85cb9669f68",
-   "fp": "6c677c3a8d62298e"
+   "sha": "4b3b5f12ff792595",
+   "fp": "7f0d41abdc3e0062"
   },
   "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html": {
    "file": "ad182a4ddcbd.txt",
    "status": 200,
    "title": "中國信託 uniopen 聯名卡｜免領券、最高雙享 11% 回饋｜日常國內外消費信用卡首選",
    "final": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
-   "chars": 51008,
-   "sha": "c8e9c4e13350ead9",
-   "fp": "53514f9be36d990a"
+   "chars": 51035,
+   "sha": "86adf85e0fd4f6a8",
+   "fp": "1dbffcd85d6df16e"
   },
   "https://pokem.tw/esun-kumamoncard/": {
    "file": "e1154e5576ce.txt",
    "status": 200,
    "title": "【玉山熊本熊卡】2026年下半年權益公告：日本指定通路8.5%怎麼拿最划算？「悠遊卡JCB自動加值10%」接力組合技大公開！(~2026/12/31) – 寶可孟的理財記事本",
    "final": "https://pokem.tw/esun-kumamoncard/",
-   "chars": 17184,
-   "sha": "8c6d58ab3613a422",
-   "fp": "1a81aac2429e1b11"
+   "chars": 17438,
+   "sha": "e4ff62f48d8e65b3",
+   "fp": "8e458bff38a16761"
   },
   "https://rich01.com/apple-pay-credit-card/": {
    "file": "0dcbfce8bca3.txt",
@@ -376,7 +376,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/apple-pay-credit-card/",
    "chars": 147,
-   "sha": "8f65584db06445d2",
+   "sha": "43c3c6997a33d074",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/dbs-eco-card-review/": {
@@ -385,7 +385,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/dbs-eco-card-review/",
    "chars": 147,
-   "sha": "6a40a0dfc5cf2773",
+   "sha": "3b18fa100a4f65c5",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/e-commerce-credit-card/": {
@@ -394,7 +394,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/e-commerce-credit-card/",
    "chars": 147,
-   "sha": "bd3e8bc6e04e8c23",
+   "sha": "252a42bede928f0c",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/esunbank-unicard-review/": {
@@ -403,7 +403,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/esunbank-unicard-review/",
    "chars": 147,
-   "sha": "b5a0d45d928e920f",
+   "sha": "4e2df80f2fea401f",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/fcb-ileocard-review/": {
@@ -412,7 +412,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/fcb-ileocard-review/",
    "chars": 147,
-   "sha": "065d13e39a2ad85d",
+   "sha": "9e968a59d79445df",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/fubon-j-card-review/": {
@@ -421,7 +421,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/fubon-j-card-review/",
    "chars": 147,
-   "sha": "75af8166670edd05",
+   "sha": "9cb1ae3d0a9b2398",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/fubon-momo-card-review/": {
@@ -430,7 +430,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/fubon-momo-card-review/",
    "chars": 147,
-   "sha": "cc34e3de758ca1f5",
+   "sha": "2d6e47a2bedd0502",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/hsbc-cashback-creditcards/": {
@@ -439,7 +439,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/hsbc-cashback-creditcards/",
    "chars": 147,
-   "sha": "6aee0c2af5dcfeda",
+   "sha": "cf91318a9ff0edaf",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/hsbc-cashback-titanium-review/": {
@@ -448,7 +448,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/hsbc-cashback-titanium-review/",
    "chars": 147,
-   "sha": "e5f7ef92616fae50",
+   "sha": "f7b2178527d53d64",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/hsbc-live-cash-card-review/": {
@@ -457,7 +457,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/hsbc-live-cash-card-review/",
    "chars": 147,
-   "sha": "82cc47cd4562737b",
+   "sha": "8bc8db41f7a9ac64",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/sinopac-dawho-credit-card/": {
@@ -466,7 +466,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/sinopac-dawho-credit-card/",
    "chars": 147,
-   "sha": "9786a18ec950f8da",
+   "sha": "d232ef580bb9166a",
    "fp": "e3b0c44298fc1c14"
   },
   "https://rich01.com/taishin-jkos-card-review/": {
@@ -475,7 +475,7 @@
    "title": "請稍候...",
    "final": "https://rich01.com/taishin-jkos-card-review/",
    "chars": 147,
-   "sha": "34190671e3935dfc",
+   "sha": "323d43f9d2673cf8",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16": {
@@ -546,8 +546,8 @@
    "status": 200,
    "title": "樂天信用卡－線上即可申辦",
    "final": "https://www.card.rakuten.com.tw/",
-   "chars": 5518,
-   "sha": "6f7b60cc1df81b36",
+   "chars": 5504,
+   "sha": "6aae3d8cfceddab8",
    "fp": "b3ba68c8c3fb69ca"
   },
   "https://www.card.rakuten.com.tw/corp/ads/04.xhtml": {
@@ -600,9 +600,9 @@
    "status": 200,
    "title": "CUBE信用卡",
    "final": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube",
-   "chars": 8858,
-   "sha": "24edef845ffbae7c",
-   "fp": "7c912891366c8c0c"
+   "chars": 9,
+   "sha": "0ca2bb120d953332",
+   "fp": "e3b0c44298fc1c14"
   },
   "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/": {
    "file": "1ba57195707a.txt",
@@ -653,7 +653,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/promotions.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html": {
@@ -662,7 +662,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html": {
@@ -671,7 +671,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html": {
@@ -680,7 +680,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_fashion.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html": {
@@ -689,7 +689,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_life.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html": {
@@ -698,7 +698,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_pet.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html": {
@@ -707,7 +707,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html": {
@@ -716,7 +716,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_travel.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.ctbcbank.com/twrbo/zh_tw/personal/creditcard.html": {
@@ -725,7 +725,7 @@
    "title": "中國信託商業銀行 - 網路銀行",
    "final": "https://www.ctbcbank.com/twrbo/zh_tw/personal/creditcard.html",
    "chars": 63,
-   "sha": "b3ed630146be38e3",
+   "sha": "6f142da421d13f20",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.dbs.com.tw/personal-zh/cards/credit-cards/overview.page": {
@@ -742,17 +742,17 @@
    "status": 200,
    "title": "星展饗樂生活卡 饗樂最大就要+1｜威秀信用卡優惠、KKday與王品餐飲折扣 | 星展銀行(台灣)",
    "final": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
-   "chars": 21463,
-   "sha": "d9839d5ab2183ed9",
-   "fp": "2cdf5f0f4d97f730"
+   "chars": 21334,
+   "sha": "b827e6ee211ee6ea",
+   "fp": "39f76c76448f4b71"
   },
   "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html": {
    "file": "d7b82c97379c.txt",
    "status": 200,
    "title": "星展PChome Prime聯名卡 回饋太強 好刷到家 - PChome信用卡回饋 | 星展銀行（台灣）",
    "final": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
-   "chars": 22738,
-   "sha": "e3e580b471301a55",
+   "chars": 22737,
+   "sha": "20af63d125e6bc75",
    "fp": "67b6b8d5069cbf3c"
   },
   "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html": {
@@ -761,7 +761,7 @@
    "title": "星展eco永續卡 | 國內外一般消費最高1%回饋 | 日韓泰、新美歐最高5%回饋 | 星展銀行（台灣）",
    "final": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
    "chars": 15706,
-   "sha": "9438a79399fb6913",
+   "sha": "8f66dff6b70bcce2",
    "fp": "b60de818038cc7e6"
   },
   "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back": {
@@ -814,9 +814,9 @@
    "status": 200,
    "title": "玉山熊本熊卡|2026年一起去日本旅遊吧! - 玉山銀行",
    "final": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
-   "chars": 33399,
-   "sha": "f7f081cc884c2a5f",
-   "fp": "b6e85e1003fb2ff4"
+   "chars": 34236,
+   "sha": "b14cdb7119accfe9",
+   "fp": "5579ed17bf36bb11"
   },
   "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard": {
    "file": "9d02de258ef7.txt",
@@ -832,17 +832,17 @@
    "status": 200,
    "title": "玉山 Pi 拍錢包信用卡 新戶最高享12.6%回饋，2026年日常消費首選 - 玉山銀行",
    "final": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
-   "chars": 26577,
-   "sha": "a6e746d1fc0c4f49",
-   "fp": "df96b45731400126"
+   "chars": 24383,
+   "sha": "f319d9c8bca7e657",
+   "fp": "ae6088f0c452c653"
   },
   "https://www.feib.com.tw/introduce/cardInfo?type=1": {
    "file": "e6b56991383c.txt",
    "status": 200,
    "title": "卡片介紹",
    "final": "https://www.feib.com.tw/introduce/cardInfo?type=1",
-   "chars": 3935,
-   "sha": "e44311f5223c63c1",
+   "chars": 3932,
+   "sha": "77acefe5474546fd",
    "fp": "0b77aa92a28d0441"
   },
   "https://www.feib.com.tw/upload/creditcard/HWCard/index.html": {
@@ -913,9 +913,9 @@
    "status": 200,
    "title": "個人金融：華南銀行",
    "final": "https://www.hncb.com.tw/wps/portal/HNCB/personal/creditcard",
-   "chars": 7125,
-   "sha": "e1e9b0dcfeec6014",
-   "fp": "28ae11e6c29c3488"
+   "chars": 7123,
+   "sha": "6c0e0eb6eb5a990a",
+   "fp": "42d250ea3b183807"
   },
   "https://www.hsbc.com.tw/credit-cards/": {
    "file": "72435ea7a089.txt",
@@ -958,8 +958,8 @@
    "status": 200,
    "title": "紅利積點 – 華泰銀行",
    "final": "https://www.hwataibank.com.tw/personal/card01-01-01/",
-   "chars": 3362,
-   "sha": "58a9a2947ab417c6",
+   "chars": 3359,
+   "sha": "25f3c3d39c2fb805",
    "fp": "23044cb001c1db08"
   },
   "https://www.hwataibank.com.tw/personal/card01-01-02/": {
@@ -967,8 +967,8 @@
    "status": 200,
    "title": "點數兌換 – 華泰銀行",
    "final": "https://www.hwataibank.com.tw/personal/card01-01-02/",
-   "chars": 2945,
-   "sha": "b26f212b2e6a74d2",
+   "chars": 2942,
+   "sha": "ecb4d5de4766129f",
    "fp": "1d0939f221a8bfc6"
   },
   "https://www.hwataibank.com.tw/personal/card01-02-01/": {
@@ -976,8 +976,8 @@
    "status": 200,
    "title": "申請條件 – 華泰銀行",
    "final": "https://www.hwataibank.com.tw/personal/card01-02-01/",
-   "chars": 2990,
-   "sha": "dd4d61a3878adf72",
+   "chars": 2987,
+   "sha": "ec70296237e64d40",
    "fp": "9c5f3288fbd4e1c8"
   },
   "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html": {
@@ -1021,17 +1021,17 @@
    "status": 200,
    "title": "【土銀icash2.0聯名鈦金卡】115年度刷卡優惠",
    "final": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
-   "chars": 6200,
-   "sha": "c61f23d4b6ccf2d8",
-   "fp": "898eb11ed7e923e9"
+   "chars": 6179,
+   "sha": "e905f87bd78e480f",
+   "fp": "e8a3577eed614c59"
   },
   "https://www.landbank.com.tw/Category/Items/信用卡專區": {
    "file": "c18c680fc45b.txt",
    "status": 200,
    "title": "信用卡-信用卡宣導及常見問題-信用卡專區",
    "final": "https://www.landbank.com.tw/Category/Items/%E4%BF%A1%E7%94%A8%E5%8D%A1%E5%B0%88%E5%8D%80",
-   "chars": 5252,
-   "sha": "60b2487c1d3743fc",
+   "chars": 5231,
+   "sha": "02da3608fba4ea84",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.megabank.com.tw/personal/credit-card": {
@@ -1039,8 +1039,8 @@
    "status": 200,
    "title": "信用卡/支付",
    "final": "https://www.megabank.com.tw/personal/credit-card",
-   "chars": 5515,
-   "sha": "c8ebaf28540ea207",
+   "chars": 5485,
+   "sha": "a419a42d35272a2e",
    "fp": "a89e832251560e13"
   },
   "https://www.megabank.com.tw/personal/credit-card/card/overview/happy": {
@@ -1066,18 +1066,18 @@
    "status": 200,
    "title": "2026 富邦J卡值得辦嗎？日本最高10%、日韓泰6%回饋與首刷禮",
    "final": "https://www.money101.com.tw/blog/%E5%AF%8C%E9%82%A6j%E5%8D%A1",
-   "chars": 9941,
-   "sha": "bdc6676485d3d877",
-   "fp": "51c479f7acce0501"
+   "chars": 9822,
+   "sha": "27bf1a17b18549ec",
+   "fp": "87cf1b203cb927ed"
   },
   "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90": {
    "file": "076ddc3489b9.txt",
    "status": 200,
    "title": "玉山Unicard回饋最高4.5%！2026任意選、UP選、年費與首刷禮",
    "final": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90",
-   "chars": 11996,
-   "sha": "e11fd17235d05adb",
-   "fp": "df576b89ce7fd27b"
+   "chars": 11967,
+   "sha": "79f5ca9a025d79e4",
+   "fp": "f4eee4d1ad47a126"
   },
   "https://www.o-bank.com/zh-tw/retail/credit-card": {
    "file": "fc43826af013.txt",
@@ -1085,7 +1085,7 @@
    "title": "- O-Bank 王道銀行",
    "final": "https://www.o-bank.com/zh-tw/retail/credit-card",
    "chars": 84,
-   "sha": "0f6058618e4b661b",
+   "sha": "d4f6665030cd0502",
    "fp": "81cbe6255c69c8b4"
   },
   "https://www.sc.com/tw/credit-cards/": {
@@ -1094,7 +1094,7 @@
    "title": "信用卡產品總覽 – 渣打銀行台灣",
    "final": "https://www.sc.com/tw/credit-cards/",
    "chars": 4179,
-   "sha": "d7e663b0a2e728dd",
+   "sha": "08a7a39bd3bfd70a",
    "fp": "7bf71d495cbd4e91"
   },
   "https://www.sc.com/tw/credit-cards/signature-card/": {
@@ -1138,8 +1138,8 @@
    "status": 200,
    "title": "新光銀行-聰明消費 卡友必備",
    "final": "https://www.skbank.com.tw/CC-CreditcardHome",
-   "chars": 2681,
-   "sha": "e92a026cc1a430b3",
+   "chars": 2643,
+   "sha": "2b95fa2492987359",
    "fp": "e3b0c44298fc1c14"
   },
   "https://www.sunnybank.com.tw/net/Main/Page/6": {
@@ -1147,8 +1147,8 @@
    "status": 200,
    "title": "信用卡/簽帳卡",
    "final": "https://www.sunnybank.com.tw/net/Main/Page/6",
-   "chars": 6059,
-   "sha": "3408e33ab2a556c3",
+   "chars": 6074,
+   "sha": "657207e3a9f8334a",
    "fp": "b67b4c91a139b249"
   },
   "https://www.sunnybank.com.tw/net/Page/Tmenu/503": {
@@ -1156,8 +1156,8 @@
    "status": 200,
    "title": "VISA曜晶卡",
    "final": "https://www.sunnybank.com.tw/net/Page/Tmenu/503",
-   "chars": 5348,
-   "sha": "5ddcfc3de8c0e58e",
+   "chars": 5363,
+   "sha": "cfb6fabd75334987",
    "fp": "0dd21d438db4e00b"
   },
   "https://www.sunnybank.com.tw/net/Page/Tmenu/541": {
@@ -1165,8 +1165,8 @@
    "status": 200,
    "title": "賞利點回饋說明",
    "final": "https://www.sunnybank.com.tw/net/Page/Tmenu/541",
-   "chars": 4910,
-   "sha": "219ce4f26fb0bbf1",
+   "chars": 4925,
+   "sha": "d190a5224d903e93",
    "fp": "533f3d33f40cacf1"
   },
   "https://www.sunnybank.com.tw/net/Page/Tmenu/543": {
@@ -1174,8 +1174,8 @@
    "status": 200,
    "title": "Sunny Life 賞利點卡(VISA御璽卡)",
    "final": "https://www.sunnybank.com.tw/net/Page/Tmenu/543",
-   "chars": 5155,
-   "sha": "3c1702a4e512f38c",
+   "chars": 5170,
+   "sha": "c39ffa27a0e2c688",
    "fp": "0708485b2d51cca9"
   },
   "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/": {
@@ -1183,17 +1183,17 @@
    "status": 200,
    "title": "信用卡總覽，現金回饋卡等各式信用卡回饋相關資訊 - 台新銀行",
    "final": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/",
-   "chars": 4394,
-   "sha": "faddff31ff5f0ebc",
-   "fp": "b29c606f242782c3"
+   "chars": 4382,
+   "sha": "0143a8293ceb2410",
+   "fp": "1494bcf2d4de8c03"
   },
   "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/": {
    "file": "9ae2efc41b9c.txt",
    "status": 200,
    "title": "信用卡總覽，現金回饋卡等各式信用卡回饋相關資訊 - 台新銀行",
    "final": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
-   "chars": 14475,
-   "sha": "7729c20793def51e",
+   "chars": 14480,
+   "sha": "211e96891df78ddc",
    "fp": "aa17246a5161c362"
   },
   "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/": {
@@ -1201,18 +1201,18 @@
    "status": 200,
    "title": "信用卡總覽，現金回饋卡等各式信用卡回饋相關資訊 - 台新銀行",
    "final": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
-   "chars": 32602,
-   "sha": "fa108ce25ca8b2aa",
-   "fp": "61529673d1b7b5e1"
+   "chars": 33767,
+   "sha": "9c574af7429947d9",
+   "fp": "3e3feb02b14f20b0"
   },
   "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/": {
    "file": "27be9049ff04.txt",
    "status": 200,
    "title": "信用卡總覽，現金回饋卡等各式信用卡回饋相關資訊 - 台新銀行",
    "final": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
-   "chars": 39148,
-   "sha": "f7cd978403559843",
-   "fp": "b755e2a801609e3f"
+   "chars": 38082,
+   "sha": "d07e281f77993939",
+   "fp": "7b7a51f3e3237e1f"
   },
   "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview": {
    "file": "fc2ebc0d6cef.txt",
@@ -1220,7 +1220,7 @@
    "title": "卡片一覽 : 臺灣企銀",
    "final": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview",
    "chars": 6180,
-   "sha": "a29ee2e36b811b25",
+   "sha": "e8710a7e19a69376",
    "fp": "963dc7dae02315cc"
   },
   "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard": {
@@ -1229,7 +1229,7 @@
    "title": "永續生活悠遊卡 : 臺灣企銀",
    "final": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
    "chars": 13483,
-   "sha": "5311c0cbb12d68a3",
+   "sha": "015c54bbc26e927f",
    "fp": "314797d25a5153c6"
   },
   "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard": {
@@ -1238,7 +1238,7 @@
    "title": "鈦金商旅卡 : 臺灣企銀",
    "final": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
    "chars": 14516,
-   "sha": "475489e31f3e3afd",
+   "sha": "e29a4559a877341e",
    "fp": "9f2970b8553d1de6"
   },
   "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview": {
@@ -1273,9 +1273,9 @@
    "status": 200,
    "title": "台中銀行",
    "final": "https://www.tcbbank.com.tw/",
-   "chars": 9568,
-   "sha": "e57e344a5aae79f9",
-   "fp": "29c9390285d32e2e"
+   "chars": 9515,
+   "sha": "095ee343e452ebd8",
+   "fp": "f5b25135db557b7e"
   },
   "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12": {
    "file": "dbc1a5d51d65.txt",
