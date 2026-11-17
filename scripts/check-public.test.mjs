@@ -22,10 +22,13 @@ function fakeDist(extra = []) {
 
 // miss：不在 dist 的檔怎麼回（"404"、"home"＝回首頁、"500"）；leak：照樣回 200 的檔；down：整站 404
 // spa：連 dist 的檔也回首頁；wrong：dist 的檔回 200 但內容不同；hang：首頁以外都不回；flaky：每個網址第一次回 503
-async function run({ miss = "404", leak = [], down = false, spa = false, wrong = false, hang = false, flaky = false, dist = fakeDist() } = {}) {
+// stale：邊緣快取殘留，網址一字不差（沒帶查詢參數）才回舊內容，帶了參數就照現在的部署回
+async function run({ miss = "404", leak = [], down = false, spa = false, wrong = false, hang = false, flaky = false, stale = [], dist = fakeDist() } = {}) {
   const seen = new Set();
   const server = createServer((req, res) => {
-    const p = decodeURIComponent(req.url.slice(1)) || "index.html";
+    const [path, query] = req.url.slice(1).split("?");
+    const p = decodeURIComponent(path) || "index.html";
+    if (!query && stale.includes(p)) { res.writeHead(200); return res.end("old cached file"); }
     if (down) { res.writeHead(404); return res.end("not found"); }
     if (hang && p !== "index.html") return;
     if (flaky && !seen.has(p)) { seen.add(p); res.writeHead(503); return res.end("busy"); }
@@ -61,6 +64,7 @@ test("網站卡住不回 → 2，不會一直等", async () => {
   assert.ok(Date.now() - t0 < 30000);
 });
 test("只有一次 503 會重試，不算回應不對 → 0", async () => assert.equal((await run({ flaky: true })).code, 0));
+test("只有快取殘留（不帶參數的舊網址才回舊檔）不算漏 → 0", async () => assert.equal((await run({ stale: [SECRET, "assets/app.css", "index.html"] })).code, 0));
 test("dist 裡混進敏感檔 → 1", async () => {
   const r = await run({ dist: fakeDist(["scripts/server.mjs"]) });
   assert.equal(r.code, 1);

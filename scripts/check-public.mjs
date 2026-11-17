@@ -28,7 +28,8 @@ const shipped = new Set();
 // -z：中文檔名才不會被 git 加引號轉成八進位
 const hidden = execFileSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" }).split("\0").filter((f) => f && !shipped.has(f));
 
-const url = (path) => `${base}/${path.split("/").map(encodeURIComponent).join("/")}`;
+// 每個請求都帶亂數參數：pages.dev 邊緣快取會讓以前抓過、一字不差的網址繼續回舊檔（最多 7 天），那是殘留不是這次部署漏的
+const url = (path) => `${base}/${path.split("/").map(encodeURIComponent).join("/")}?cb=${Math.random().toString(36).slice(2)}`;
 const once = async (path) => {
   try {
     const r = await fetch(url(path), { redirect: "follow", signal: AbortSignal.timeout(TIMEOUT) });
