@@ -27,7 +27,7 @@ for (const [d, exts] of Object.entries(dirs)) {
   cpSync(join(root, d), join(out, d), {
     recursive: true,
     filter: (src) => {
-      const name = src.split(/[\/]/).pop();
+      const name = src.split(/[\\/]/).pop();
       if (name.startsWith(".")) return false;
       return statSync(src).isDirectory() || exts.some((e) => name.endsWith(e));
     },
