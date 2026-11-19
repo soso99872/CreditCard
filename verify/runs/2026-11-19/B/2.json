@@ -1,0 +1,96 @@
+{
+  "extractor": "B",
+  "page": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+  "extraPages": [],
+  "cards": [
+    {
+      "cardId": "dbs-eco",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 1,
+          "rawReward": "國內／國外一般消費 1% 現金積點，無上限",
+          "cap": null,
+          "conditions": [
+            "含保險費代扣繳",
+            "不含代扣繳費用（小額支付平台如便利商店、連鎖速食店等）、公用事業費用、學雜費、醫療院所費用、停車費",
+            "不含電子票證自動加值、全支付和PX Pay各項交易及儲值、全聯實業旗下品牌通路（如全聯／大全聯等）之任何線上交易",
+            "不含稅款、政府規費、銀行相關費用、分期付款專案",
+            "現金積點1點等於新台幣1元，效期18個月"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國內／國外一般消費皆享現金積點 1% 回饋，無消費上限。",
+            "conversion": "現金積點1點等於新台幣1元，可於 DBS Card+ App 中以 300 點為單位折抵帳單。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "國外指定地區加碼",
+          "scope": {
+            "type": "category",
+            "categories": ["japan", "korea", "thailand", "singapore", "americas", "europe"],
+            "basis": "mcc"
+          },
+          "rate": 5,
+          "rawReward": "1%現金積點無上限＋加碼4%（每期帳單回饋上限600點）= 5%現金積點回饋",
+          "cap": {"amount": 600, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "限當地實體門市面對面以實體卡片或Apple Pay／Samsung Pay消費",
+            "交易商店國別為指定地區、非新臺幣交易，且帳單列收國外交易手續費",
+            "限「加碼國家及地區列舉」所列國家，美洲、歐洲並非全部國家都在列",
+            "電子票證儲值（如PASMO／SUICA）、郵輪上儲值不適用"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "1%現金積點無上限＋加碼4%（每期帳單回饋上限600點）= 5%現金積點回饋",
+            "base": "國內／國外一般消費皆享現金積點 1% 回饋，無消費上限。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": "加碼回饋依每期帳單計算，國外指定地區4%加碼回饋每期帳單回饋上限為600點。"
+          },
+          "rateFormula": "1+4"
+        },
+        {
+          "plan": "eco消費加碼",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Tesla", "Gogoro", "鮮乳坊", "茶籽堂", "nextdoorfresh", "直接跟農夫買", "玩轉學校", "甘樂文創", "禾乃川", "馳綠", "艾瑪絲", "覺亞", "EVOPURE+優織隆", "綠藤", "藍鵲茶", "銀色大門", "多扶假期", "淨毒五郎"],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "1%現金積點無上限＋加碼9%（每期帳單回饋上限500點）= 10%現金積點回饋",
+          "cap": {"amount": 500, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "Tesla限綁定本卡於Tesla APP繳納全額充電資費",
+            "Gogoro限綁定本卡於Gogoro APP繳納電池資費（含PBGN車主）",
+            "帳單明細須明確顯示列舉之交易名稱",
+            "分期交易不適用",
+            "排除轉帳匯款、電子票證、第三方支付（如街口支付、LINEPay等）"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "1%現金積點無上限＋加碼9%（每期帳單回饋上限500點）= 10%現金積點回饋",
+            "base": "國內／國外一般消費皆享現金積點 1% 回饋，無消費上限。",
+            "validFrom": "活動期間：2026/07/01～2026/12/31",
+            "validTo": "活動期間：2026/07/01～2026/12/31",
+            "cap": "加碼回饋依每期帳單計算，eco消費9%加碼回饋上限為每期帳單500點。"
+          },
+          "rateFormula": "1+9"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "現金積點1點＝1元（本頁原文），回饋率原文即百分比，rateFormula 填 null／加法式；未用到附加頁數字，extraPages 留空。",
+    "國外指定地區加碼：scope 用 japan/korea/thailand/singapore/americas/europe，basis 實為交易商店國別而非 MCC；原文附國家列舉，美洲（無哥斯大黎加、巴拿馬等）、歐洲（無塞爾維亞等）不完整，請主管決定是否改為 overseas＋onlyRegions 只列日韓泰新。",
+    "未收：LINE Pay 10%（新戶／星耀新客，且核卡期限至 2026/10/15，已結束）、北捷最高NT$2,000（新戶＋登錄）、聚餐12%（每月限量3,600名）、國旅5%（每月限量500名）、星願集刷2%（集滿5筆、總額度額滿為止）、海外餐飲最高10%（需登錄、每日限一筆、本頁無分級細則）、旅遊滿額行李箱（限量）、Mastercard Travel Rewards 各商戶回饋（Mastercard 平台優惠、期間以商戶為準）、威秀6折（折扣）、首刷禮。快照中未發現要求抽取員做事的指令句。"
+  ]
+}

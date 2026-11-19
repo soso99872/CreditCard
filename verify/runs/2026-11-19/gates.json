@@ -1,0 +1,209 @@
+{
+ "date": "2026-11-19",
+ "mode": "trial",
+ "pages": [
+  {
+   "page": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('dbs-pchomeprime', '', 'merchant', (), ('ASOS', 'Amazon', 'Coupang', 'DOKODEMO', 'Disney+', 'Gmarket', 'Mercari', 'Netflix', 'Nintendo', 'PlayStation store', 'SHEIN', 'Selfridges', 'Spotify', 'Steam Games', 'YouTube', 'ZenMarket', 'iHerb', '拼多多'), (), 2.9, 2000, 'point', 'year', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('dbs-pchomeprime', '', 'merchant', (), ('PChome 24h書店', 'PChome 24h購物'), (), 3.6, 2000, 'point', 'billing-cycle', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('dbs-pchomeprime', '', 'merchant', (), ('PChome 24h書店', 'PChome 24h購物'), (), 5.6, None, None, None, '2026-01-01', '2026-12-31')",
+    "[一致] 只有 B 有：('dbs-pchomeprime', 'PChome站內 每週四', 'merchant', (), ('PChome 24h書店', 'PChome 24h購物'), (), 5.6, None, None, None, '2026-01-01', '2026-12-31')",
+    "[一致] 只有 B 有：('dbs-pchomeprime', 'PChome站內', 'merchant', (), ('PChome 24h書店', 'PChome 24h購物'), (), 3.6, 2000, 'point', 'billing-cycle', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 B 有：('dbs-pchomeprime', '國外加碼通路', 'merchant', (), ('ASOS', 'Amazon', 'Coupang', 'DOKODEMO', 'Disney+', 'Gmarket', 'Mercari', 'Netflix', 'Nintendo', 'PlayStation store', 'SHEIN', 'Selfridges', 'Spotify', 'Steam Games', 'YouTube', 'ZenMarket', 'iHerb', '拼多多'), (), 2.9, 2000, 'point', 'year', '2026-01-01', '2026-12-31')",
+    "[格式] validate 沒過：驗證失敗，共 1 個問題（資料目錄：/tmp/tmpshlki56r/data）：\n  - [banks/dbs.json] 卡片 dbs-pchomeprime 規則 dbs-pchomeprime-auto-2：商家「Steam Games」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "dbs-pchomeprime-general",
+    "dbs-pchomeprime-thursday"
+   ],
+   "benchDiffs": [
+    {
+     "query": "PChome 24h購物",
+     "before": {
+      "card": "dbs-pchomeprime",
+      "rate": 6
+     },
+     "after": {
+      "card": "dbs-pchomeprime",
+      "rate": 5.6
+     }
+    }
+   ],
+   "pass": false,
+   "n": 1
+  },
+  {
+   "page": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('dbs-eco', '', 'category', ('americas', 'europe', 'japan', 'korea', 'singapore', 'thailand'), (), (), 5.0, 600, 'point', 'billing-cycle', '2026-01-01', '2026-12-31')",
+    "[一致] 只有 A 有：('dbs-eco', '', 'merchant', (), ('EVOPURE+優織隆', 'Gogoro', 'Tesla', 'nextdoorfresh', '多扶假期', '淨毒五郎', '玩轉學校', '甘樂文創', '直接跟農夫買', '禾乃川', '綠藤', '艾瑪絲', '茶籽堂', '藍鵲茶', '覺亞', '銀色大門', '馳綠', '鮮乳坊'), (), 10.0, 500, 'point', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('dbs-eco', 'eco消費加碼', 'merchant', (), ('EVOPURE+優織隆', 'Gogoro', 'Tesla', 'nextdoorfresh', '多扶假期', '淨毒五郎', '玩轉學校', '甘樂文創', '直接跟農夫買', '禾乃川', '綠藤', '艾瑪絲', '茶籽堂', '藍鵲茶', '覺亞', '銀色大門', '馳綠', '鮮乳坊'), (), 10.0, 500, 'point', 'billing-cycle', '2026-07-01', '2026-12-31')",
+    "[一致] 只有 B 有：('dbs-eco', '國外指定地區加碼', 'category', ('americas', 'europe', 'japan', 'korea', 'singapore', 'thailand'), (), (), 5.0, 600, 'point', 'billing-cycle', '2026-01-01', '2026-12-31')"
+   ],
+   "replacedThirdParty": [
+    "dbs-eco-general",
+    "dbs-eco-overseas-5",
+    "dbs-eco-green",
+    "dbs-eco-multi-purchase"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 2
+  },
+  {
+   "page": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('esun-pi-wallet', '', 'general', (), (), ('全聯',), 1.8, 3000, 'point', 'month', '2026-09-01', '2027-02-28')",
+    "[一致] 只有 A 有：('esun-pi-wallet', '玉山環球賞', 'merchant', (), ('Monopoly Lifesized', 'SEA LIFE Paris', '大眾點評', '大阪樂高探索中心', '尼曼馬庫斯百貨(NEIMAN MARCUS)', '布倫海姆宮(Blenheim Palace)', '布魯明岱爾百貨(BLOOMINGDALE’S)', '曼谷杜莎夫人蠟像館', '東京杜莎夫人蠟像館', '溫莎樂高樂園(LEGOLAND Windsor)', '美團', '華威城堡(Warwick Castle)', '韓國樂高樂園'), (), 5.0, None, None, None, '2026-10-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-pi-wallet', '玉山環球賞', 'merchant', (), ('東京華納兄弟哈利波特影城(Warner Bros. Studios Tour Tokyo)',), (), 4.0, None, None, None, '2026-10-01', '2026-12-31')",
+    "[一致] 只有 A 有：('esun-pi-wallet', '玉山環球賞', 'merchant', (), ('緬因餐廳(The Maine)', '肉桂俱樂部餐廳（The Cinnamon Club）'), (), 10.0, None, None, None, '2026-10-01', '2026-12-31')",
+    "[一致] 只有 B 有：('esun-pi-wallet', '加碼回饋', 'general', (), (), ('全聯',), 1.8, 3000, 'point', 'month', '2026-09-01', '2027-02-28')",
+    "[一致] 只有 B 有：('esun-pi-wallet', '未申辦帳單e化', 'general', (), (), ('全聯',), 0.3, None, None, None, None, None)",
+    "[格式] validate 沒過：anks/esun.json] 卡片 esun-pi-wallet 規則 esun-pi-wallet-auto-16：商家「美團」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-pi-wallet 規則 esun-pi-wallet-auto-16：商家「大眾點評」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-pi-wallet 規則 esun-pi-wallet-auto-17：商家「布魯明岱爾百貨(BLOOMINGDALE’S)」對不上 merchants.json\n  - [banks/esun.json] 卡片 esun-pi-wallet 規則 esun-pi-wallet-auto-18：商家「尼曼馬庫斯百貨(NEIMAN MARCUS)」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "esun-pi-wallet-general-base",
+    "esun-pi-wallet-general-ebill",
+    "esun-pi-wallet-tier-10k",
+    "esun-pi-wallet-tier-30k"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 3
+  },
+  {
+   "page": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [],
+   "benchDiffs": [],
+   "pass": true,
+   "n": 4
+  },
+  {
+   "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('taishin-rose', '指定套餐方案', 'category', ('department-store', 'dining'), (), (), 0.2, 1500, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '指定套餐方案', 'general', (), (), (), 0.2, 1500, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 A.行動生活', 'category', ('dining', 'gas'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 A.行動生活', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 B.百貨血拚', 'category', ('department-store', 'dining'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 B.百貨血拚', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 C.旅行享樂', 'category', ('dining', 'travel'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 C.旅行享樂', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 D.量販超市', 'category', ('dining', 'supermarket'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 D.量販超市', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 E.虛擬網購', 'category', ('dining', 'online-shopping'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 E.虛擬網購', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 簡單雙享', 'category', ('overseas',), (), (), 1.0, None, None, None, '2026-02-01', '2027-01-31')",
+    "[一致] 只有 A 有：('taishin-rose', '自由選方案 簡單雙享', 'general', (), (), (), 0.5, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '指定套餐', 'category', ('department-store', 'dining'), (), (), 0.2, 1500, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '指定套餐', 'general', (), (), (), 0.2, 1500, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 A.行動生活', 'category', ('dining', 'gas'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 A.行動生活', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 B.百貨血拚', 'category', ('department-store', 'dining'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 B.百貨血拚', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 C.旅行享樂', 'category', ('dining', 'travel'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 C.旅行享樂', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 D.量販超市', 'category', ('dining', 'supermarket'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 D.量販超市', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 E.虛擬網購', 'category', ('dining', 'online-shopping'), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 E.虛擬網購', 'general', (), (), (), 0.2, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 簡單雙享', 'category', ('overseas',), (), (), 1.0, None, None, None, '2026-02-01', '2027-01-31')",
+    "[一致] 只有 B 有：('taishin-rose', '自由選 簡單雙享', 'general', (), (), (), 0.5, 1200, 'point', 'billing-cycle', '2026-02-01', '2027-01-31')"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 5
+  },
+  {
+   "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": false,
+    "原文": true,
+    "合理範圍": true,
+    "格式": false,
+    "推薦比對": true
+   },
+   "problems": [
+    "[一致] 只有 A 有：('taishin-jkopay', '', 'category', ('korea',), (), (), 3.5, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 A 有：('taishin-jkopay', '', 'category', ('mobile-payment',), (), (), 0.15, None, None, None, '2026-01-01', '2027-06-30')",
+    "[一致] 只有 A 有：('taishin-jkopay', '', 'category', ('mobile-payment',), (), (), 2.0, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 A 有：('taishin-jkopay', '', 'merchant', (), ('85度C', 'Agoda', 'Airbnb', 'DJB', 'EZTABLE', 'KKday', 'Klook', 'LaLaport', 'ONCOR響艷都市會所', 'Sing Go', 'USPACE', 'Uber', 'Uber Eats', 'foodomo', 'foodpanda', '三井(MITSUI OUTLET PARK)', '三商餐飲', '享溫馨', '俥亭停車', '凱悅KTV', '叫車吧', '台灣快綫', '喜樂時代影城', '國賓影城', '好樂迪', '威秀影城', '康是美', '新光三越', '新光影城', '易遊網', '星聚點', '清心福全', '秀泰影城', '美廉社', '聖德科斯', '聯通', '遠東巨城', '遠東百貨', '酷遊卡', '錢櫃', '高鐵'), (), 3.5, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 B 有：('taishin-jkopay', '精選通路', 'category', ('korea',), (), (), 3.5, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 B 有：('taishin-jkopay', '精選通路', 'category', ('mobile-payment',), (), (), 2.0, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 B 有：('taishin-jkopay', '精選通路', 'merchant', (), ('85度C', 'Agoda', 'Airbnb', 'DJB', 'EZTABLE', 'KKday', 'Klook', 'LaLaport', 'ONCOR響艷都市會所', 'Sing Go', 'USPACE', 'Uber', 'Uber Eats', 'foodomo', 'foodpanda', '三井(MITSUI OUTLET PARK)', '三商餐飲', '享溫馨', '俥亭停車', '凱悅KTV', '叫車吧', '台灣快綫', '喜樂時代影城', '國賓影城', '好樂迪', '威秀影城', '康是美', '新光三越', '新光影城', '易遊網', '星聚點', '清心福全', '秀泰影城', '美廉社', '聖德科斯', '聯通', '遠東巨城', '遠東百貨', '酷遊卡', '錢櫃', '高鐵'), (), 3.5, 10000, 'TWD', 'month', '2026-01-01', '2027-06-30')",
+    "[一致] 只有 B 有：('taishin-jkopay', '街口APP繳費', 'category', ('mobile-payment',), (), (), 0.15, None, None, None, '2026-01-01', '2027-06-30')",
+    "[格式] validate 沒過：s/taishin.json] 卡片 taishin-jkopay 規則 taishin-jkopay-auto-5：商家「三井(MITSUI OUTLET PARK)」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-jkopay 規則 taishin-jkopay-auto-8：商家「三商餐飲」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-jkopay 規則 taishin-jkopay-auto-10：商家「Sing Go」對不上 merchants.json\n  - [banks/taishin.json] 卡片 taishin-jkopay 規則 taishin-jkopay-auto-10：商家「ONCOR響艷都市會所」對不上 merchants.json"
+   ],
+   "replacedThirdParty": [
+    "taishin-jkopay-general"
+   ],
+   "benchDiffs": [],
+   "pass": false,
+   "n": 6
+  },
+  {
+   "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+   "today": "2026-11-19",
+   "gates": {
+    "官方來源": true,
+    "一致": true,
+    "原文": true,
+    "合理範圍": true,
+    "格式": true,
+    "推薦比對": true
+   },
+   "problems": [],
+   "benchDiffs": [],
+   "pass": true,
+   "n": 7
+  }
+ ]
+}

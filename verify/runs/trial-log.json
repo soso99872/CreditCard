@@ -35,6 +35,29 @@
     "土銀 EZTABLE 10% 是現折、席次有限、至預算用罄，A、B、C 都收，但是否算第 8 條限量活動有判斷空間，要 Soso 或下一輪確認",
     "清單頁（富邦、華南、合庫、土銀信用卡專區、彰銀 subarea、樂天首頁）沒有卡片規則，未抽取"
    ]
+  },
+  {
+   "date": "2026-11-19",
+   "pagesExtracted": 7,
+   "pagesPassed": 2,
+   "rulesPassed": 0,
+   "suspected": 0,
+   "reverified": {
+    "pages": 2,
+    "rulesConservative": 42,
+    "note": "通過的 2 頁（土銀 icash、台新 Richart）11/05、11/09 已計入累計，這次是頁面改版後重驗通過、C 也一致；為了不重複計算，不加進累計。保守條數：土銀 1（A/B/C 各 1）、Richart 41（A 73、B 41、C 75）"
+   },
+   "passedPages": [
+    "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+    "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/"
+   ],
+   "notes": [
+    "5 頁沒過關。星展 PChome Prime、星展 eco、台新玫瑰、台新街口 4 頁的數字（回饋率、上限、期間、商家）A、B 完全一樣，只差 plan 欄的方案名稱寫法（一個留空、一個寫原文標題，或「指定套餐」對「指定套餐方案」）；EXTRACT.md 沒規定 plan 怎麼寫，建議補一條或讓 gates 一致比對不看 plan",
+    "玉山 Pi 拍錢包實質不一致：A 收了玉山環球賞海外商家 4%/5%/10%（15 條），B 沒收；B 把未申辦帳單 e 化 0.3% 另立一條，A 寫進 conditions",
+    "商家對不上 merchants.json：星展 PChome Prime「Steam Games」、玉山 Pi「美團」「大眾點評」「布魯明岱爾百貨(BLOOMINGDALE’S)」等、街口「三井(MITSUI OUTLET PARK)」「三商餐飲」等",
+    "Actions 第一次跑卡在安裝步驟 40 分鐘，取消重跑後 19 分鐘完成",
+    "11/16 那輪偵測到變動但沒有抽取（沒有 runs/2026-11-16）；當時變動、這次沒重抽的官方頁：永豐現金回饋卡、中信 N2025052600033（13 條規則）、星展 funlife、玉山熊本熊卡"
+   ]
   }
  ],
  "total": {
@@ -42,6 +65,7 @@
   "suspected": 0,
   "confirmedErrors": 0,
   "targetForLive": 50,
-  "remaining": 16
+  "remaining": 16,
+  "lastRun": "2026-11-19"
  }
 }

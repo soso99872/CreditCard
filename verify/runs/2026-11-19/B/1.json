@@ -1,0 +1,137 @@
+{
+  "extractor": "B",
+  "page": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+  "extraPages": ["https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back"],
+  "cards": [
+    {
+      "cardId": "dbs-pchomeprime",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 0.4,
+          "rawReward": "國內外一般消費 0.5% PChome聯名點數",
+          "cap": {"amount": 1000, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "不含歐洲地區實體商店刷卡消費",
+            "不含代扣繳費用、公用事業費用、學雜費、醫療院所費用、停車費",
+            "不含電子票證自動加值、全支付和PX Pay各項交易及儲值、全聯實業旗下品牌通路（如全聯／大全聯等）之任何線上交易",
+            "不含稅款、政府規費、銀行相關費用、分期付款專案",
+            "PChome聯名紅利點數每 100 點可兌換刷卡金 NT$80"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "【國內外一般消費均享 0.5% 聯名點數回饋 - 舉例】",
+            "conversion": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "validFrom": "活動期間：2026/01/01 ∼ 2026/12/31",
+            "validTo": "活動期間：2026/01/01 ∼ 2026/12/31",
+            "cap": "聯名點數每期帳單最高回饋 1,000 點"
+          },
+          "rateFormula": "0.5*80/100"
+        },
+        {
+          "plan": "國外加碼通路",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["Coupang", "ASOS", "Amazon", "Selfridges", "SHEIN", "iHerb", "DOKODEMO", "ZenMarket", "Gmarket", "Netflix", "Spotify", "Nintendo", "YouTube", "Disney+", "PlayStation store", "Steam Games", "拼多多", "Mercari"],
+            "basis": "merchant-list"
+          },
+          "rate": 2.9,
+          "rawReward": "最高3%（0.5% 聯名點數 + 2.5% 加碼P幣）",
+          "cap": {"amount": 2000, "unit": "point", "period": "year"},
+          "conditions": [
+            "限國外交易：交易商店國別非台灣、非以新臺幣交易，且帳單列收國外交易手續費",
+            "帳單明細須明確顯示指定通路交易名稱",
+            "排除轉帳匯款、電子票證、行動支付或第三方支付（如Apple Pay、LINE Pay、全支付等）",
+            "2.5%加碼P幣回饋至正卡綁定之PChome會員帳戶，未綁定不補發",
+            "P幣僅可於PChome 24h購物折抵，1P幣可折抵NT$1，效期180天",
+            "0.5%聯名點數受每帳單週期最高1,000點限制",
+            "加碼P幣年度上限正附卡合併計算"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "星展PChome Prime聯名卡之國外加碼通路最高 3% 回饋活動係由 國外消費0.5% PChome 聯名點數與國外指定通路加碼 2.5% P 幣所組成。",
+            "base": "【國內外一般消費均享 0.5% 聯名點數回饋 - 舉例】",
+            "conversion": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pCoinValue": "1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": "國外指定通路加碼 2.5% P 幣年度累計上限最高回饋 2,000 P 幣（正附卡合併計算，年度計算係指交易日於每年01/01-12/31間之P幣計算）。"
+          },
+          "rateFormula": "0.5*80/100+2.5"
+        },
+        {
+          "plan": "PChome站內",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["PChome 24h購物", "PChome 24h書店"],
+            "basis": "merchant-list"
+          },
+          "rate": 3.6,
+          "rawReward": "聯名點數2%（含原0.5%＋額外1.5%）＋ P幣2%",
+          "cap": {"amount": 2000, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "不適用於PChome商店街、露天拍賣",
+            "P幣2%需正卡與PChome線上購物帳號綁定",
+            "購買PChome儲值及以儲值金購買商品無P幣2%回饋",
+            "上限為每帳單週期聯名點數1,000點及P幣1,000分別計算",
+            "P幣僅可於PChome 24h購物折抵，1P幣可折抵NT$1，效期180天"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "P幣2%：於PChome站內一般消費之P幣2%回饋",
+            "base": "聯名點數2%：於PChome站內一般消費之聯名點數2%回饋（含原國內外一般消費可得之0.5%聯名點數）",
+            "conversion": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pCoinValue": "1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": "回饋上限：每帳單週期合計最高回饋2,000：分別為聯名點數1,000點及1,000 P 幣"
+          },
+          "rateFormula": "(0.5+1.5)*80/100+2"
+        },
+        {
+          "plan": "PChome站內 每週四",
+          "scope": {
+            "type": "merchant",
+            "merchants": ["PChome 24h購物", "PChome 24h書店"],
+            "basis": "merchant-list"
+          },
+          "rate": 5.6,
+          "rawReward": "最高6%（2% 聯名點數 + 2% P幣 +2% 週四加碼P幣）",
+          "cap": null,
+          "conditions": [
+            "限每週四消費",
+            "須以聯名卡或Apple Pay、LINE Pay、Samsung Pay、Pi拍錢包、悠遊付、全盈+PAY綁定聯名卡全額支付，搭配儲值、禮券不適用",
+            "不適用於PChome商店街、露天拍賣",
+            "週四加碼P幣無上限；聯名點數與P幣2%仍受每帳單週期各1,000上限",
+            "購買PChome儲值及以儲值金購買商品無P幣2%及週四加碼",
+            "P幣僅可於PChome 24h購物折抵，1P幣可折抵NT$1，效期180天"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "每週四加碼回饋P幣2%：每週四於PChome站內消費，一般消費或分期消費均享2%加碼回饋P幣（1點以下依「四捨五入」計算），不限筆數且總回饋計算無上限。",
+            "base": "聯名點數2%：於PChome站內一般消費之聯名點數2%回饋（含原國內外一般消費可得之0.5%聯名點數）",
+            "base2": "P幣2%：於PChome站內一般消費之P幣2%回饋",
+            "conversion": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pCoinValue": "1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": null
+          },
+          "rateFormula": "(0.5+1.5)*80/100+2+2"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "聯名點數換算用附加頁「PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80」（1點=0.8元）；P幣用本頁「1P幣可折抵NT$1」，但P幣只能在PChome 24h購物折抵、效期180天，等值1元是上限估計。",
+    "PChome站內 cap 填原文合計 2,000，但實際是聯名點數1,000點（值0.8元）與P幣1,000分開計算、單位不同，已寫進 conditions；週四規則依第17條加碼段無上限填 null。",
+    "未收：站內分期4% P幣（需登錄、活動期間每卡限回饋一筆分期交易，非常態回饋率）；11月登錄活動、11/24限時5%、精選品牌最高16%、抽111 P幣（限量／抽獎／條件不明）；新戶首刷禮；威秀6折、Klook、機場接送（折扣非回饋）；用星聚餐最高12%（本頁無細則）。",
+    "一般消費排除歐洲地區實體商店消費，因 excludeRegions 只能用於 overseas 規則，寫在 general 的 conditions。全聯線上交易用「如」舉例，依第16條寫 conditions 不填 excludeMerchants。",
+    "快照中未發現要求抽取員做事的指令句。"
+  ]
+}

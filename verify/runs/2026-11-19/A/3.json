@@ -1,0 +1,497 @@
+{
+  "extractor": "A",
+  "page": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
+  "cards": [
+    {
+      "cardId": "esun-pi-wallet",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {
+            "type": "general",
+            "excludeMerchants": [
+              "全聯"
+            ]
+          },
+          "rate": 1,
+          "rawReward": "1%P幣無上限（1 P幣＝1元）",
+          "cap": null,
+          "conditions": [
+            "需綁定Pi 拍錢包App",
+            "需申請帳單e化（未申辦者0.3% P幣）",
+            "一般消費不包含特店分期及歐盟實體交易、繳稅費及四大超商、全聯交易及綁定行動支付於本行公告之非一般消費通路消費"
+          ],
+          "validFrom": null,
+          "validTo": null,
+          "evidence": {
+            "rate": "1%P幣無上限",
+            "validTo": null,
+            "validFrom": null,
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "general",
+            "excludeMerchants": [
+              "全聯"
+            ]
+          },
+          "rate": 1.8,
+          "rawReward": "基本1% P幣；每月國內外一般消費累積滿10,000~29,999元加碼0.8%（最高1.8%）；滿30,000元(含)以上加碼2%（最高3%）；每月每歸戶上限3,000 P幣",
+          "cap": {
+            "amount": 3000,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "需登錄",
+            "每月國內外一般消費累積滿10,000元",
+            "需申請帳單e化",
+            "一般消費不包含特店分期及歐盟實體交易、繳稅費及四大超商、全聯交易及綁定行動支付於本行公告之非一般消費通路消費"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "evidence": {
+            "rate": "加碼0.8%P幣，最高1.8% P幣",
+            "base": "1%P幣無上限",
+            "validFrom": "活動期間：2026/9/1～2027/2/28",
+            "validTo": "活動期間：2026/9/1～2027/2/28",
+            "cap": "(每月每歸戶上限3,000 P幣)"
+          },
+          "rateFormula": "1+0.8"
+        },
+        {
+          "plan": "Pi拍錢包加碼",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "mobile-payment"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 5,
+          "rawReward": "最高5% P幣回饋(含基本回饋1% P幣)",
+          "cap": {
+            "amount": 300,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "Pi 拍錢包",
+            "於Pi拍錢包通路一般消費單筆滿499元",
+            "需登錄",
+            "需申辦玉山銀行台幣帳戶自動扣款"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2027-02-28",
+          "evidence": {
+            "rate": "活動期間持玉山Pi拍錢包信用卡綁定Pi 拍錢包APP於 Pi拍錢包通路一般消費單筆滿499元，登錄並申辦玉山銀行台幣帳戶自動扣款享最高5% P幣回饋(含基本回饋1% P幣)。",
+            "validFrom": "活動期間：2026/9/1～2027/2/28",
+            "validTo": "活動期間：2026/9/1～2027/2/28",
+            "cap": "※ 每月每歸戶上限300 P幣。"
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "東京華納兄弟哈利波特影城(Warner Bros. Studios Tour Tokyo)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "線上單筆滿 JPY 12,000享JPY 4%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "線上單筆滿JPY 12,000"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "線上單筆滿 JPY 12,000享JPY 4%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "大阪樂高探索中心"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿 JPY10,800享JPY 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿JPY 10,800"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿 JPY10,800享JPY 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "東京杜莎夫人蠟像館"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿 JPY6,500享JPY 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿JPY 6,500"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿 JPY6,500享JPY 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "韓國樂高樂園"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿KRW 280,000享5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿KRW 280,000"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿KRW 280,000享5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "肉桂俱樂部餐廳（The Cinnamon Club）"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "單筆滿GBP 300享10%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿GBP 300"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿GBP 300享10%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "緬因餐廳(The Maine)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 10,
+          "rawReward": "單筆滿GBP 100享10%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿GBP 100"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿GBP 100享10%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "溫莎樂高樂園(LEGOLAND Windsor)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "每筆消費享GBP 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "每筆消費享GBP 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "布倫海姆宮(Blenheim Palace)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "每筆消費享GBP 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "每筆消費享GBP 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "Monopoly Lifesized"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "每筆消費享GBP 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "每筆消費享GBP 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "華威城堡(Warwick Castle)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "每筆消費享GBP 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "每筆消費享GBP 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "SEA LIFE Paris"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿EUR 30享EUR 5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿EUR 30"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿EUR 30享EUR 5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "曼谷杜莎夫人蠟像館"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿THB 3,000享5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿THB 3,000"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿THB 3,000享5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "美團",
+              "大眾點評"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿CNY 50享5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿CNY 50"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿CNY 50享5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "布魯明岱爾百貨(BLOOMINGDALE’S)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿USD 350享5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿USD 350"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿USD 350享5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "玉山環球賞",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "尼曼馬庫斯百貨(NEIMAN MARCUS)"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "單筆滿USD 750享5%回饋",
+          "cap": null,
+          "conditions": [
+            "需至Mastercard海外消費回饋平台註冊與啟用優惠",
+            "單筆滿USD 750"
+          ],
+          "validFrom": "2026-10-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆滿USD 750享5%回饋",
+            "validFrom": "活動期間：2026/10/1~2026/12/31",
+            "validTo": "活動期間：2026/10/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "基本回饋1% P幣（1 P幣＝1元）：頁面在「一般消費」區塊頂端寫「活動期間：2026/9/1～2027/2/28」，但基本回饋本身（及常見問題第2題）沒寫期間，依第4條保守填 null；加碼回饋有寫期間就照填。若主管認定區塊期間也套用到基本回饋，請改 validFrom/validTo。",
+    "未申辦帳單e化者只有0.3% P幣，寫進 conditions，未另立規則。一般消費排除項（特店分期、歐盟實體交易、繳稅費、四大超商、全聯、行動支付非一般消費通路）：全聯照第15條填 excludeMerchants，四大超商是統稱，寫進 conditions。",
+    "加碼回饋為級距（10,000~29,999元加碼0.8%、30,000元以上加碼2%），照第3條取最低級距 1+0.8=1.8%，cap 為加碼段上限 3,000 P幣/月。",
+    "Pi拍錢包加碼：原文直接寫「最高5%(含基本回饋1%)」，rate 填 5、rateFormula null；Pi 拍錢包視為通用支付工具（第12條）用 mobile-payment。",
+    "玉山環球賞（Mastercard 海外消費回饋平台）只收以百分比表示的商家；固定金額回饋（例如「單筆滿JPY 30,000享JPY 2,000」）無法換成回饋率，未收。商家名把中文名和下一行括號英文名接在一起照抄。",
+    "未收：保費1.2% P幣（2026/3/1~2026/12/31，無對應類別）、申辦玉山自扣加碼5%（限活動期間新申辦自扣者，性質同新戶限定，上限250元）、新戶最高10%（新戶）、指定通路滿額贈P幣與年菜預購（固定點數且預算額滿為止）、百萬刷手挑戰賽／秋楓冬雪（滿額禮、限量）、鳳凰旅遊現折（限量100份）、Trip.com／租車／Agoda／IHG／新板希爾頓折扣（折扣碼現折，不是回饋）、上海迪士尼等單筆最高CNY 65（固定金額）、永續特店5%（特店名單未列在此頁，另有抽獎）。",
+    "快照內未發現要求抽取員做事的句子。"
+  ]
+}

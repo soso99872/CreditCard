@@ -1,0 +1,128 @@
+{
+  "extractor": "A",
+  "page": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
+  "extraPages": ["https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back"],
+  "cards": [
+    {
+      "cardId": "dbs-pchomeprime",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {"type": "general"},
+          "rate": 0.4,
+          "rawReward": "國內外一般消費 0.5% PChome聯名點數",
+          "cap": {"amount": 1000, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "不含歐洲地區實體商店刷卡消費",
+            "不含代扣繳費用、公用事業費用、學雜費、醫療院所費用、停車費",
+            "不含電子票證自動加值（如一卡通、悠遊卡）",
+            "不含全支付和PX Pay各項交易及儲值",
+            "不含全聯實業旗下品牌通路（如全聯／大全聯等）之任何線上交易",
+            "不含稅費、政府規費、分期及銀行相關費用"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "【國內外一般消費均享 0.5% 聯名點數回饋 - 舉例】",
+            "pointValue": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "validFrom": "活動期間：2026/01/01 ∼ 2026/12/31",
+            "validTo": "活動期間：2026/01/01 ∼ 2026/12/31",
+            "cap": "聯名點數每期帳單最高回饋 1,000 點"
+          },
+          "rateFormula": "0.5*80/100"
+        },
+        {
+          "plan": "",
+          "scope": {"type": "merchant", "merchants": ["Coupang", "ASOS", "Amazon", "Selfridges", "SHEIN", "iHerb", "DOKODEMO", "ZenMarket", "Gmarket", "Netflix", "Spotify", "Nintendo", "YouTube", "Disney+", "PlayStation store", "Steam Games", "拼多多", "Mercari"], "basis": "merchant-list"},
+          "rate": 2.9,
+          "rawReward": "最高3%（0.5% 聯名點數 + 2.5% 加碼P幣）",
+          "cap": {"amount": 2000, "unit": "point", "period": "year"},
+          "conditions": [
+            "交易商店國別非台灣且非新臺幣交易，帳單收取國外交易手續費",
+            "帳單明細須明確顯示指定通路交易名稱",
+            "不適用行動支付或第三方支付（如Apple Pay、Samsung Pay、Google Pay、街口支付、LINE Pay等）",
+            "2.5% P幣回饋至正卡綁定之PChome會員帳戶",
+            "2.5% P幣年度上限正附卡合併計算",
+            "0.5% 聯名點數另受每期帳單1,000點上限"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "星展PChome Prime聯名卡之國外加碼通路最高 3% 回饋活動係由 國外消費0.5% PChome 聯名點數與國外指定通路加碼 2.5% P 幣所組成。",
+            "base": "【國內外一般消費均享 0.5% 聯名點數回饋 - 舉例】",
+            "pointValue": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pcoinValue": "有效之P幣將於PChome結帳時呈現可折抵P幣。1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": "國外指定通路加碼 2.5% P 幣年度累計上限最高回饋 2,000 P 幣（正附卡合併計算，年度計算係指交易日於每年01/01-12/31間之P幣計算）。"
+          },
+          "rateFormula": "0.5*80/100+2.5"
+        },
+        {
+          "plan": "",
+          "scope": {"type": "merchant", "merchants": ["PChome 24h購物", "PChome 24h書店"], "basis": "merchant-list"},
+          "rate": 3.6,
+          "rawReward": "2% 聯名點數（含原0.5%）+ 2% P幣",
+          "cap": {"amount": 2000, "unit": "point", "period": "billing-cycle"},
+          "conditions": [
+            "不適用PChome商店街、露天拍賣",
+            "P幣須正卡與PChome線上購物帳號綁定",
+            "購買PChome儲值金及以儲值金購買商品不享P幣2%",
+            "上限為聯名點數1,000點及P幣1,000分別計算"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "- 聯名點數2%：於PChome站內一般消費之聯名點數2%回饋（含原國內外一般消費可得之0.5%聯名點數），即每期帳單新增之PChome站內一般消費金額 x",
+            "base": "【國內外一般消費均享 0.5% 聯名點數回饋 - 舉例】",
+            "bonusPoints": "聯名點數回饋比率0.5%（1點以下依「四捨五入」計算）+每期新增一般消費金額 x 額外聯名點數回饋比率1.5%（1點以下依「四捨五入」計算）。",
+            "bonusPcoin": "- P幣2%：於PChome站內一般消費之P幣2%回饋，即每筆新增之PChome站內一般消費金額 x",
+            "pointValue": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pcoinValue": "有效之P幣將於PChome結帳時呈現可折抵P幣。1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": "回饋上限：每帳單週期合計最高回饋2,000：分別為聯名點數1,000點及1,000 P 幣"
+          },
+          "rateFormula": "0.5*80/100+1.5*80/100+2"
+        },
+        {
+          "plan": "",
+          "scope": {"type": "merchant", "merchants": ["PChome 24h購物", "PChome 24h書店"], "basis": "merchant-list"},
+          "rate": 5.6,
+          "rawReward": "最高6%（2% 聯名點數 + 2% P幣 +2% 週四加碼P幣）",
+          "cap": null,
+          "conditions": [
+            "限每週四消費",
+            "須以聯名卡或綁定聯名卡之Apple Pay、LINE Pay、Samsung Pay、Pi拍錢包、悠遊付、全盈+PAY全額支付",
+            "不適用PChome商店街、露天拍賣",
+            "P幣須正卡與PChome線上購物帳號綁定",
+            "購買PChome儲值金及以儲值金購買商品不享P幣2%及週四加碼2%",
+            "週四加碼2%無上限；聯名點數1,000點、P幣2% 1,000另有每期帳單上限"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "- 每週四加碼回饋P幣2%：每週四於PChome站內消費，一般消費或分期消費均享2%加碼回饋P幣（1點以下依「四捨五入」計算），不限筆數且總回饋計算無上限。惟須以星展PChome Prime聯名卡，或Apple Pay、LINE Pay、Samsung Pay、Pi",
+            "base": "- 聯名點數2%：於PChome站內一般消費之聯名點數2%回饋（含原國內外一般消費可得之0.5%聯名點數），即每期帳單新增之PChome站內一般消費金額 x",
+            "bonusPoints": "聯名點數回饋比率0.5%（1點以下依「四捨五入」計算）+每期新增一般消費金額 x 額外聯名點數回饋比率1.5%（1點以下依「四捨五入」計算）。",
+            "bonusPcoin": "- P幣2%：於PChome站內一般消費之P幣2%回饋，即每筆新增之PChome站內一般消費金額 x",
+            "pointValue": "PChome聯名紅利點數：每 100 點可兌換刷卡金 NT$80，單筆最低兌換 100 點，須以 100 點為倍數。",
+            "pcoinValue": "有效之P幣將於PChome結帳時呈現可折抵P幣。1P幣可折抵NT$1。",
+            "validFrom": "活動期間：2026/01/01～2026/12/31",
+            "validTo": "活動期間：2026/01/01～2026/12/31",
+            "cap": null
+          },
+          "rateFormula": "0.5*80/100+1.5*80/100+2+2"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "聯名點數用附加頁「每 100 點可兌換刷卡金 NT$80」換算（0.5% 點數 = 0.4%）；P幣用「1P幣可折抵NT$1」。",
+    "PChome 站內規則 cap 原文是聯名點數1,000點與P幣1,000分開計，單位不同，這裡填合計 2,000（point），條件註明分別計算；週四規則依第17條填週四加碼那段的上限（無上限）＝null。",
+    "PChome站內分期 4% P幣不收：須登錄且活動期間每卡限回饋一筆分期交易。",
+    "不收：新戶首刷 1,000 P幣（首刷禮）；11月 Prime感加值／全卡分期活動、雙11、週日星展日、機車館、APPLE旗鑑館（限量名額或抽獎）；精選品牌最高16%（原文沒寫品牌與條件，詳見PChome）；11/24 限時加碼 5%（名額有限）；威秀6折、Klook 85折、機場接送（折扣非回饋）；用星聚餐最高12%（本頁無細則）。",
+    "國外一般消費同為 0.5%，併入 general；歐洲地區實體商店消費不回饋，已寫進 conditions（不是 overseas 規則，沒用 excludeRegions）。",
+    "頁面沒有要求抽取員做事的句子。"
+  ]
+}
