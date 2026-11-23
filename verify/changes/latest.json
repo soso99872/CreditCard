@@ -1,6 +1,6 @@
 {
- "date": "2026-11-19",
- "compared": "verify/snapshots/history/2026-11-16T033817.json",
+ "date": "2026-11-23",
+ "compared": "verify/snapshots/history/2026-11-19T041823.json",
  "changed": [
   {
    "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/",
@@ -62,6 +62,32 @@
     "feib-hwcard-gas",
     "feib-hwcard-transport",
     "feib-hwcard-travel"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-cashback-signature-credit-card/",
+   "file": "verify/snapshots-tw/e79784953fda.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-diamond-credit-card/",
+   "file": "verify/snapshots-tw/a6340c052f4a.txt",
+   "uses": [
+    "hsbc-cashback-titanium-general",
+    "hsbc-cashback-titanium-selected-channels"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://creditcards.com.tw/creditcard/hsbc-live-plus/",
+   "file": "verify/snapshots-tw/2391f4537527.txt",
+   "uses": [
+    "hsbc-liveplus-general",
+    "hsbc-liveplus-general-autopay",
+    "hsbc-liveplus-triple-channels",
+    "hsbc-liveplus-triple-channels-autopay"
    ],
    "kind": "回饋相關句子變了"
   },
@@ -216,6 +242,16 @@
    "kind": "回饋相關句子變了"
   },
   {
+   "url": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
+   "file": "verify/snapshots-tw/89b3a1099a16.txt",
+   "uses": [
+    "ubot-linebank-general",
+    "ubot-linebank-overseas",
+    "ubot-linebank-online-bonus"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
    "url": "https://creditcards.com.tw/creditcard/yuantabank-credit-card-recommend/",
    "file": "verify/snapshots-tw/d730d35290ee.txt",
    "uses": [
@@ -240,36 +276,29 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://icard.ai/card/detail/5e15aec35c386d001d389822",
-   "file": "verify/snapshots/f0c0a6003add.txt",
-   "uses": [
-    "esun-pi-wallet-general-base",
-    "esun-pi-wallet-general-ebill",
-    "esun-pi-wallet-tier-10k",
-    "esun-pi-wallet-tier-30k",
-    "esun-pi-wallet-pi-wallet-499"
-   ],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://icard.ai/card/detail/5e15aed55c386d001d389a96",
-   "file": "verify/snapshots/4ff3144dfc77.txt",
-   "uses": [
-    "sc-signature-general",
-    "sc-signature-overseas"
-   ],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://icard.ai/card/detail/64d1ea1071fefcfdc17c9915",
-   "file": "verify/snapshots/526850a52884.txt",
-   "uses": [],
-   "kind": "回饋相關句子變了"
-  },
-  {
    "url": "https://icard.ai/card/detail/658e384cc7f1146c85570aca",
    "file": "verify/snapshots/e77dc5c6bd4c.txt",
    "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+   "file": "verify/snapshots/ad182a4ddcbd.txt",
+   "uses": [
+    "ctbc-uniopen-general-domestic",
+    "ctbc-uniopen-7-eleven",
+    "ctbc-uniopen-overseas-general",
+    "ctbc-uniopen-overseas-store",
+    "ctbc-uniopen-overseas-store-bonus",
+    "ctbc-uniopen-group-bonus",
+    "ctbc-uniopen-group-stamp-2",
+    "ctbc-uniopen-group-stamp-3",
+    "ctbc-uniopen-group-stamp-4",
+    "ctbc-uniopen-group-stamp-5",
+    "ctbc-uniopen-group-icash",
+    "ctbc-uniopen-blackcat-freight",
+    "ctbc-uniopen-unisoku-freight"
+   ],
    "kind": "回饋相關句子變了"
   },
   {
@@ -284,6 +313,102 @@
    "kind": "回饋相關句子變了"
   },
   {
+   "url": "https://rich01.com/apple-pay-credit-card/",
+   "file": "verify/snapshots-tw/0dcbfce8bca3.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/dbs-eco-card-review/",
+   "file": "verify/snapshots-tw/17ac565ec067.txt",
+   "uses": [
+    "dbs-eco-general",
+    "dbs-eco-overseas-5",
+    "dbs-eco-green",
+    "dbs-eco-multi-purchase"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/e-commerce-credit-card/",
+   "file": "verify/snapshots-tw/607c043129a4.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/esunbank-unicard-review/",
+   "file": "verify/snapshots-tw/bd10d627be2c.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/fcb-ileocard-review/",
+   "file": "verify/snapshots-tw/276ffcd4801c.txt",
+   "uses": [
+    "firstbank-ileo-general",
+    "firstbank-ileo-designated-merchants",
+    "firstbank-ileo-pay-1000",
+    "firstbank-ileo-taiwanpay",
+    "firstbank-ileo-overseas"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/fubon-j-card-review/",
+   "file": "verify/snapshots-tw/70d58d746e66.txt",
+   "uses": [
+    "fubon-jcard-ipass"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/fubon-momo-card-review/",
+   "file": "verify/snapshots-tw/dbf364dfcedf.txt",
+   "uses": [
+    "fubon-momo-general",
+    "fubon-momo-overseas",
+    "fubon-momo-store",
+    "fubon-momo-ipass"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-creditcards/",
+   "file": "verify/snapshots-tw/671f312795f9.txt",
+   "uses": [
+    "hsbc-cashback-signature-general",
+    "hsbc-cashback-signature-overseas"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/hsbc-cashback-titanium-review/",
+   "file": "verify/snapshots-tw/c219ee8c96d5.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/hsbc-live-cash-card-review/",
+   "file": "verify/snapshots-tw/c6e1002bf378.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/sinopac-dawho-credit-card/",
+   "file": "verify/snapshots-tw/a901e6a7cf07.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://rich01.com/taishin-jkos-card-review/",
+   "file": "verify/snapshots-tw/58168f923e69.txt",
+   "uses": [
+    "taishin-jkopay-general",
+    "taishin-jkopay-select"
+   ],
+   "kind": "回饋相關句子變了"
+  },
+  {
    "url": "https://www.card.rakuten.com.tw/",
    "file": "verify/snapshots/f806feb111ee.txt",
    "uses": [
@@ -292,20 +417,8 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
-   "file": "verify/snapshots/d7b82c97379c.txt",
-   "uses": [],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
-   "file": "verify/snapshots/7f38d6655d08.txt",
-   "uses": [],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
-   "file": "verify/snapshots/7f581040bb7e.txt",
+   "url": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
+   "file": "verify/snapshots/2138570260c1.txt",
    "uses": [],
    "kind": "回饋相關句子變了"
   },
@@ -318,10 +431,10 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
-   "file": "verify/snapshots/eb444509eda2.txt",
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list",
+   "file": "verify/snapshots/14a0618815aa.txt",
    "uses": [
-    "landbank-icash-general"
+    "kgi:卡片列表"
    ],
    "kind": "回饋相關句子變了"
   },
@@ -333,22 +446,6 @@
     "fubon-jcard-jp-kr-th",
     "fubon-jcard-overseas-other"
    ],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
-   "file": "verify/snapshots/9ae2efc41b9c.txt",
-   "uses": [
-    "taishin-rose-general",
-    "taishin-rose-dept",
-    "taishin-rose-dining"
-   ],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
-   "file": "verify/snapshots/d5ac7500e550.txt",
-   "uses": [],
    "kind": "回饋相關句子變了"
   },
   {
@@ -427,6 +524,18 @@
    "uses": [
     "tcbbank:卡片列表"
    ],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
+   "file": "verify/snapshots/f1e05ed00507.txt",
+   "uses": [],
+   "kind": "回饋相關句子變了"
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+   "file": "verify/snapshots/52e2d5939c37.txt",
+   "uses": [],
    "kind": "回饋相關句子變了"
   }
  ],
@@ -556,62 +665,6 @@
  ],
  "minor": [
   {
-   "url": "https://creditcards.com.tw/creditcard/ubot-credit-card-recommended/",
-   "uses": 3
-  },
-  {
-   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
-   "uses": 13
-  },
-  {
-   "url": "https://rich01.com/apple-pay-credit-card/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/dbs-eco-card-review/",
-   "uses": 4
-  },
-  {
-   "url": "https://rich01.com/e-commerce-credit-card/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/esunbank-unicard-review/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/fcb-ileocard-review/",
-   "uses": 5
-  },
-  {
-   "url": "https://rich01.com/fubon-j-card-review/",
-   "uses": 1
-  },
-  {
-   "url": "https://rich01.com/fubon-momo-card-review/",
-   "uses": 4
-  },
-  {
-   "url": "https://rich01.com/hsbc-cashback-creditcards/",
-   "uses": 2
-  },
-  {
-   "url": "https://rich01.com/hsbc-cashback-titanium-review/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/hsbc-live-cash-card-review/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/sinopac-dawho-credit-card/",
-   "uses": 0
-  },
-  {
-   "url": "https://rich01.com/taishin-jkos-card-review/",
-   "uses": 2
-  },
-  {
    "url": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
    "uses": 0
   },
@@ -624,11 +677,27 @@
    "uses": 1
   },
   {
+   "url": "https://www.bok.com.tw/card-rights-and-benefits-1",
+   "uses": 3
+  },
+  {
+   "url": "https://www.bok.com.tw/credit-card",
+   "uses": 1
+  },
+  {
    "url": "https://www.feib.com.tw/introduce/cardInfo?type=1",
    "uses": 1
   },
   {
-   "url": "https://www.landbank.com.tw/Category/Items/信用卡專區",
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+   "uses": 2
+  },
+  {
+   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+   "uses": 0
+  },
+  {
+   "url": "https://www.skbank.com.tw/CC-CreditcardHome",
    "uses": 1
   },
   {
@@ -642,17 +711,13 @@
   {
    "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
    "uses": 1
-  },
-  {
-   "url": "https://www.tcb-bank.com.tw/personal-banking/credit-card/intro/overview/ipass-intro",
-   "uses": 4
   }
  ],
  "summary": {
   "pages": 147,
-  "changed": 38,
+  "changed": 50,
   "blocked": 14,
   "expiringRules": 6,
-  "minor": 23
+  "minor": 12
  }
 }

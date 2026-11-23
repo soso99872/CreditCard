@@ -1,5 +1,5 @@
 
 Access Denied
 You don't have permission to access "http://card.firstbank.com.tw/sites/card/zh_TW/1565690688542" on this server.
-Reference #18.5953d117.1795060791.3ce7902f
-https://errors.edgesuite.net/18.5953d117.1795060791.3ce7902f
+Reference #18.5953d117.1795404039.72d24c71
+https://errors.edgesuite.net/18.5953d117.1795404039.72d24c71
