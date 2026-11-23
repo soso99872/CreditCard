@@ -1,0 +1,123 @@
+[
+ {
+  "n": 1,
+  "page": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+  "snapshot": "verify/snapshots/ad182a4ddcbd.txt",
+  "cardIds": [
+   "ctbc-uniopen"
+  ],
+  "why": "changed",
+  "extraPages": []
+ },
+ {
+  "n": 2,
+  "page": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
+  "snapshot": "verify/snapshots/2138570260c1.txt",
+  "cardIds": [
+   "fubon-momo"
+  ],
+  "why": "changed",
+  "extraPages": []
+ },
+ {
+  "n": 3,
+  "page": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
+  "snapshot": "verify/snapshots/27be9049ff04.txt",
+  "cardIds": [
+   "taishin-richart"
+  ],
+  "why": "changed",
+  "extraPages": []
+ },
+ {
+  "n": 4,
+  "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
+  "snapshot": "verify/snapshots/f1e05ed00507.txt",
+  "cardIds": [
+   "yuanta-diamond-icash-wealth"
+  ],
+  "why": "changed",
+  "extraPages": []
+ },
+ {
+  "n": 5,
+  "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+  "snapshot": "verify/snapshots/52e2d5939c37.txt",
+  "cardIds": [
+   "yuanta-diamond-wealth"
+  ],
+  "why": "changed",
+  "extraPages": []
+ },
+ {
+  "n": 6,
+  "page": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+  "snapshot": "verify/snapshots/fbf3f5db262d.txt",
+  "cardIds": [
+   "chb-mygo"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 7,
+  "page": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+  "snapshot": "verify/snapshots/bd2299f9235b.txt",
+  "cardIds": [
+   "chb-myle"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 8,
+  "page": "https://www.bok.com.tw/card-rights-and-benefits-1",
+  "snapshot": "verify/snapshots/1b2eed6c8b2d.txt",
+  "cardIds": [
+   "bok-gold",
+   "bok-titanium"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 9,
+  "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+  "snapshot": "verify/snapshots/7a0cca5af751.txt",
+  "cardIds": [
+   "kgi-cash-back"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 10,
+  "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+  "snapshot": "verify/snapshots/cf97236ba185.txt",
+  "cardIds": [
+   "kgi-more-buy"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 11,
+  "page": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
+  "snapshot": "verify/snapshots/88331648db8d.txt",
+  "cardIds": [
+   "tbb-greenlife-easy"
+  ],
+  "why": "minor",
+  "extraPages": []
+ },
+ {
+  "n": 12,
+  "page": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+  "snapshot": "verify/snapshots/ce2eb59c8b1a.txt",
+  "cardIds": [
+   "tbb-titanium"
+  ],
+  "why": "minor",
+  "extraPages": []
+ }
+]

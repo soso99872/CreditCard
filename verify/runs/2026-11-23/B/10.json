@@ -1,0 +1,97 @@
+{
+ "extractor": "B",
+ "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+ "extraPages": [],
+ "cards": [
+  {
+   "cardId": "kgi-more-buy",
+   "rules": [
+    {
+     "plan": "",
+     "scope": {
+      "type": "general"
+     },
+     "rate": 0.7,
+     "rawReward": "國內一般消費回饋0.7%現金點",
+     "cap": null,
+     "conditions": [
+      "一般消費不包含之項目詳見官網公告"
+     ],
+     "validFrom": "2026-01-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "◆國內一般消費回饋0.7%現金點",
+      "validFrom": "活動時間：115/1/1~115/12/31",
+      "validTo": "活動時間：115/1/1~115/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "overseas"
+      ]
+     },
+     "rate": 2,
+     "rawReward": "國外消費(含國外網站購物)回饋2%現金點",
+     "cap": null,
+     "conditions": [
+      "國外消費係指交易地點於國外(含國外網站)或交易幣別為非新臺幣之一般消費"
+     ],
+     "validFrom": "2026-01-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "◆國外消費(含國外網站購物)回饋2%現金點",
+      "validFrom": "活動時間：115/1/1~115/12/31",
+      "validTo": "活動時間：115/1/1~115/12/31",
+      "cap": null
+     },
+     "rateFormula": null
+    },
+    {
+     "plan": "",
+     "scope": {
+      "type": "category",
+      "categories": [
+       "mobile-payment"
+      ]
+     },
+     "rate": 4,
+     "rawReward": "最高4%現金點回饋(國內基本0.7%+行動支付加碼3.3%)",
+     "cap": {
+      "amount": 300,
+      "unit": "point",
+      "period": "month"
+     },
+     "conditions": [
+      "Apple Pay、Google Pay、LINE Pay、街口、Pi拍錢包、悠遊付、OPEN錢包、橘子支付、icash Pay、歐付寶、全盈+PAY、全支付",
+      "需每月登錄活動",
+      "行動支付國內一般消費每月累積滿3,000元",
+      "限國內一般消費",
+      "加碼上限每月300點(當月1日~月底)"
+     ],
+     "validFrom": "2026-01-01",
+     "validTo": "2026-12-31",
+     "evidence": {
+      "rate": "需每月登錄活動且行動支付國內一般消費累積滿3,000元。最高4%現金點回饋：含魔BUY卡國內基本回饋0.7%+行動支付加碼3.3%合計",
+      "base": "◆國內一般消費回饋0.7%現金點",
+      "validFrom": "活動期間：115/1/1~115/12/31",
+      "validTo": "活動期間：115/1/1~115/12/31",
+      "cap": "國內一般消費、國外消費現金點每年回饋無上限，行動支付加碼3.3%回饋每月上限300點(每月係指當月 1日~月底)"
+     },
+     "rateFormula": "0.7+3.3"
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "日期為民國年：「115/1/1~115/12/31」換算為2026-01-01～2026-12-31（evidence 原文含年份115）。",
+  "現金點「1點=1元」（原文：現金點1點=1元，500點可兌換500元刷卡金），rate 直接用百分比。",
+  "行動支付加碼需「每月登錄」，原文未寫限量，故收錄；cap 300點=300元。",
+  "「新核卡現金點效期為2年」、申辦電子帳單免年費非回饋率，未收。",
+  "網頁內容未見要求抽取員做事的句子。"
+ ]
+}

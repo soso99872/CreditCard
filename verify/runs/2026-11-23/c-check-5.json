@@ -1,0 +1,32 @@
+{
+ "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+ "today": "2026-11-23",
+ "gates": {
+  "官方來源": true,
+  "一致": false,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [
+  "[一致] 只有 A 有：('yuanta-diamond-wealth', '翡翠會員', 'category', ('dining', 'travel'), (), (), 6.2, 8000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 A 有：('yuanta-diamond-wealth', '鈦金會員', 'category', ('dining', 'travel'), (), (), 4.2, 3000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 A 有：('yuanta-diamond-wealth', '鑽石會員', 'category', ('dining', 'travel'), (), (), 11.2, 30000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '翡翠會員', 'category', ('dining',), (), (), 6.2, 8000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '翡翠會員', 'category', ('travel',), (), (), 6.2, 8000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '鈦金會員', 'category', ('dining',), (), (), 4.2, 3000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '鈦金會員', 'category', ('travel',), (), (), 4.2, 3000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '鑽石會員', 'category', ('dining',), (), (), 11.2, 30000, 'TWD', 'year', '2026-01-01', '2026-12-31')",
+  "[一致] 只有 B 有：('yuanta-diamond-wealth', '鑽石會員', 'category', ('travel',), (), (), 11.2, 30000, 'TWD', 'year', '2026-01-01', '2026-12-31')"
+ ],
+ "replacedThirdParty": [
+  "yuanta-diamond-wealth-general",
+  "yuanta-diamond-wealth-overseas",
+  "yuanta-diamond-wealth-travel-dining-diamond",
+  "yuanta-diamond-wealth-travel-dining-emerald",
+  "yuanta-diamond-wealth-travel-dining-titanium"
+ ],
+ "benchDiffs": [],
+ "pass": false
+}

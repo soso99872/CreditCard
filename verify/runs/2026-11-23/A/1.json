@@ -1,0 +1,393 @@
+{
+  "extractor": "A",
+  "page": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
+  "extraPages": [],
+  "cards": [
+    {
+      "cardId": "ctbc-uniopen",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 1,
+          "rawReward": "國內一般消費 1% OPENPOINT 回饋無上限",
+          "cap": null,
+          "conditions": [
+            "限國內一般刷卡交易",
+            "不含本行不回饋交易項目"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國內一般消費\n1% 回饋無上限",
+            "validTo": "國內一般消費活動期間為2026/9/1~2026/12/31",
+            "validFrom": "國內一般消費活動期間為2026/9/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 2,
+          "rawReward": "國外一般消費 2% OPENPOINT 回饋無上限",
+          "cap": null,
+          "conditions": [
+            "交易幣別為外幣或交易國別非臺灣之實體與線上交易"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國外一般消費 2% 回饋無上限",
+            "validTo": "國外一般消費及國外實體商店消費活動期間為2026/9/1~2026/12/31",
+            "validFrom": "國外一般消費及國外實體商店消費活動期間為2026/9/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 3,
+          "rawReward": "國外實體商店消費 3% OPENPOINT 回饋無上限",
+          "cap": null,
+          "conditions": [
+            "限國外實體商店面對面交易(實體卡、Apple Pay、Google Pay、Samsung Pay)",
+            "網路交易、條碼支付或第三方支付不列入"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國外實體商店消費\n3% 回饋無上限",
+            "validTo": "國外一般消費及國外實體商店消費活動期間為2026/9/1~2026/12/31",
+            "validFrom": "國外一般消費及國外實體商店消費活動期間為2026/9/1~2026/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 11,
+          "rawReward": "國外實體商店消費 3% 回饋無上限＋國外實體商店消費加碼 8%(每月回饋上限500點)，最高11%",
+          "cap": {
+            "amount": 500,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "限國外實體商店面對面交易(實體卡、Apple Pay、Google Pay、Samsung Pay)",
+            "網路交易、條碼支付或第三方支付不列入"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國外實體商店消費加碼\n8%\n(每月回饋上限500點)",
+            "validTo": "國外實體商店消費加碼活動期間為2026/9/1~2026/12/31",
+            "validFrom": "國外實體商店消費加碼活動期間為2026/9/1~2026/12/31",
+            "cap": "國外實體商店消費加碼\n8%\n(每月回饋上限500點)",
+            "base": "國外實體商店消費\n3% 回饋無上限"
+          },
+          "rateFormula": "3+8"
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "統一超商",
+              "康是美(含康是美網購eShop)",
+              "夢時代購物中心(含統一時代百貨高雄店)",
+              "統一時代百貨台北店",
+              "DREAM PLAZA",
+              "UNIKCY",
+              "玲廊滿藝",
+              "BEING spa",
+              "星巴克",
+              "21Plus/21風味館",
+              "Mister Donut",
+              "COLD STONE酷聖石冰淇淋",
+              "Semeur聖娜",
+              "萬家福",
+              "樂家康",
+              "Mia C'bon",
+              "Yahoo購物",
+              "博客來",
+              "聖德科斯",
+              "統一生機",
+              "統一精工速邁樂加油站",
+              "foodomo",
+              "DUSKIN",
+              "黑貓宅急便",
+              "ibon售票系統",
+              "統一渡假村",
+              "台北W飯店",
+              "台北時代寓所",
+              "統一友友旅行社",
+              "CupiCho",
+              "統一夢公園",
+              "統一超商商場",
+              "統一行動牛奶車",
+              "太子建設指定專案",
+              "太子文旅"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 3,
+          "rawReward": "國內一般消費 1%＋統一企業集團加碼 2%(每月回饋上限500點)",
+          "cap": {
+            "amount": 500,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "萬家福不含萬家福線上商城",
+            "帳單明細需能完整呈現指定商店名稱",
+            "設於百貨/商場/機場/車站/飯店/旅館/賣場/美食街內無法判別之商店不列入",
+            "加碼2%正、附卡合併計算"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "統一企業集團\n2%\n(每月回饋上限500點)",
+            "validTo": "國內一般消費及統一企業集團消費加碼活動期間為2026/9/1~2026/12/31",
+            "validFrom": "國內一般消費及統一企業集團消費加碼活動期間為2026/9/1~2026/12/31",
+            "cap": "統一企業集團\n2%\n(每月回饋上限500點)",
+            "base": "國內一般消費\n1% 回饋無上限"
+          },
+          "rateFormula": "1+2"
+        },
+        {
+          "plan": "統一企業集團踩點任務",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "統一超商",
+              "康是美(含康是美網購eShop)",
+              "夢時代購物中心(含統一時代百貨高雄店)",
+              "統一時代百貨台北店",
+              "DREAM PLAZA",
+              "UNIKCY",
+              "玲廊滿藝",
+              "BEING spa",
+              "星巴克",
+              "21Plus/21風味館",
+              "Mister Donut",
+              "COLD STONE酷聖石冰淇淋",
+              "Semeur聖娜",
+              "萬家福",
+              "樂家康",
+              "Mia C'bon",
+              "Yahoo購物",
+              "博客來",
+              "聖德科斯",
+              "統一生機",
+              "統一精工速邁樂加油站",
+              "foodomo",
+              "DUSKIN",
+              "黑貓宅急便",
+              "ibon售票系統",
+              "統一渡假村",
+              "台北W飯店",
+              "台北時代寓所",
+              "統一友友旅行社",
+              "CupiCho",
+              "統一夢公園",
+              "統一超商商場",
+              "統一行動牛奶車",
+              "太子建設指定專案",
+              "太子文旅"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 4,
+          "rawReward": "國內一般消費 1%＋統一企業集團加碼 2%＋統一企業集團踩點任務：每月於統一企業集團品牌單筆消費滿199元(含)(需為不同品牌)消費2家：加碼1%、消費3家：加碼2%、消費4家：加碼3%、消費5家以上：加碼4%(每月回饋上限500點)",
+          "cap": {
+            "amount": 500,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "萬家福不含萬家福線上商城",
+            "帳單明細需能完整呈現指定商店名稱",
+            "設於百貨/商場/機場/車站/飯店/旅館/賣場/美食街內無法判別之商店不列入",
+            "踩點任務：每月於統一企業集團品牌單筆消費滿199元(含)，需為不同品牌",
+            "級距：2家加碼1%、3家加碼2%、4家加碼3%、5家以上加碼4%"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "消費2家：加碼1%",
+            "validTo": "統一企業集團踩點及icash Pay活動期間為2026/9/1～2026/12/31",
+            "validFrom": "統一企業集團踩點及icash Pay活動期間為2026/9/1～2026/12/31",
+            "cap": "加碼4%\n(每月回饋上限500點)",
+            "base": "國內一般消費\n1% 回饋無上限",
+            "base2": "統一企業集團\n2%\n(每月回饋上限500點)"
+          },
+          "rateFormula": "1+2+1"
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "mobile-payment"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 5,
+          "rawReward": "國內一般消費 1%＋綁定icash Pay指定商店消費單筆消費滿199元(含)享加碼4%(每月回饋上限150點)",
+          "cap": {
+            "amount": 150,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "icash Pay",
+            "綁定icash Pay於icash Pay指定商店消費",
+            "單筆消費滿199元(含)",
+            "店櫃需具接受icash Pay之設備",
+            "活動每月總回饋上限300萬點",
+            "不適用自動加值、儲值、繳稅/費及代收代售等"
+          ],
+          "validFrom": "2026-09-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "單筆消費滿199元(含)享加碼4%",
+            "validTo": "icash Pay活動期間為2026/9/1～2026/12/31",
+            "validFrom": "icash Pay活動期間為2026/9/1～2026/12/31",
+            "cap": "每一icash Pay用戶每月回饋上限150點",
+            "base": "國內一般消費\n1% 回饋無上限"
+          },
+          "rateFormula": "1+4"
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "台北捷運"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 7,
+          "rawReward": "搭乘北捷最高 7%回饋(加碼回饋6%+國內一般消費1%無上限)，加碼6%每戶每季最高回饋50點",
+          "cap": {
+            "amount": 50,
+            "unit": "point",
+            "period": "quarter"
+          },
+          "conditions": [
+            "限首次綁定Apple Pay、Samsung Pay、Google Pay(未曾綁定過)",
+            "台北捷運閘門感應支付車資",
+            "需每季於中信銀行App領券(不限量)"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "首次綁定 Apple Pay、Samsung Pay、Google Pay 搭乘北捷最高 7%回饋(加碼回饋6%+國內一般消費1%無上限)",
+            "validTo": "活動期間：2026/7/1～2026/12/31。",
+            "validFrom": "活動期間：2026/7/1～2026/12/31。",
+            "cap": "加碼6%活動每戶每季最高回饋50點",
+            "base": "首次綁定 Apple Pay、Samsung Pay、Google Pay 搭乘北捷最高 7%回饋(加碼回饋6%+國內一般消費1%無上限)"
+          },
+          "rateFormula": "1+6"
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "黑貓宅急便"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "刷卡支付黑貓宅急便運費，享 OPENPOINT 5%，每戶回饋上限200點/月",
+          "cap": {
+            "amount": 200,
+            "unit": "point",
+            "period": "month"
+          },
+          "conditions": [
+            "限單筆全額使用uniopen聯名卡實體卡支付運費",
+            "不適用感應式支付及行動錢包",
+            "需於中信銀APP綁定uniopen會員帳號"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "刷卡支付黑貓宅急便運費，享 OPENPOINT 5%",
+            "validTo": "活動期間：2026/07/01~2026/12/31。",
+            "validFrom": "活動期間：2026/07/01~2026/12/31。",
+            "cap": "每戶回饋上限200點/月"
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "merchant",
+            "merchants": [
+              "統一速達"
+            ],
+            "basis": "merchant-list"
+          },
+          "rate": 5,
+          "rawReward": "使用uniopen 聯名卡支付運費享 OPENPOINT 5% 回饋，單月上限200元",
+          "cap": {
+            "amount": 200,
+            "unit": "TWD",
+            "period": "month"
+          },
+          "conditions": [
+            "支付運費"
+          ],
+          "validFrom": "2026-07-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "使用uniopen 聯名卡支付支付運費享 OPENPOINT 5% 回饋",
+            "validTo": "活動期間:2026/7/1~2026/12/31止(若有各別載明活動期間，以載明公告期間為主)。",
+            "validFrom": "活動期間:2026/7/1~2026/12/31止(若有各別載明活動期間，以載明公告期間為主)。",
+            "cap": "統一速達\n使用uniopen 聯名卡支付支付運費享 OPENPOINT 5% 回饋\n*單月上限200元"
+          },
+          "rateFormula": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "OPENPOINT 每1點可折抵1元(原文「每 1點OPENPOINT 可折抵\\n1元」)，頁面回饋率以 % 寫明，直接照抄未另換算。",
+    "國內一般消費 1% 的起訖日取自注意事項「國內一般消費活動期間為2026/9/1~2026/12/31」；全頁共同注意事項另寫活動期間 2026/7/1~2026/12/31(若有各別載明以載明為主)。",
+    "統一速達 5% 區塊沒有個別活動期間，起訖日用共同注意事項「活動期間:2026/7/1~2026/12/31止」。",
+    "統一企業集團踩點任務照第3條級距取最低級(2家加碼1%)，合計 1+2+1；原文舉例說明一般1%、集團2%、踩點、icash Pay 加碼可疊加。是否該收這條請比對時確認。",
+    "台北捷運 7% 限「首次綁定」行動支付者，且需領券(不限量)；非新戶、非限量，所以收錄，請比對時確認。",
+    "黑貓宅急便 5%、統一速達 5% 原文未寫是否含一般 1%，照原文寫 5。",
+    "不收(限量登記)：Yahoo購物每週五 5%(每週限量100名需登記)、博客來 3%(每月限量登記300名)、7-ELEVEN 繳牌照稅 0.5%(限20萬份領券，且繳稅時間 2026/3/18~2026/4/30 已過)。",
+    "不收(無法換算成%)：速邁樂加油中心每公升1.9點 OPENPOINT(按公升計)。",
+    "不收(加值不是消費)：icash Pay 會員登錄後用 icash2.0 自動加值享 10% OPENPOINT(每戶每月上限50點)。",
+    "不收(折扣、折價券、買一送一、滿額禮，不是回饋率)：Agoda／Trip.com／Expedia／Hotels.com 訂房折扣、各商家折扣與抵用券、統一渡假村／太子文旅贈點(固定點數)、foodomo 滿額贈50點等。",
+    "已結束(validTo 早於 2026-11-23)：統一時代百貨台北店/DREAM PLAZA 加碼 OPENPOINT 5%(2026/1/1~2026/2/28)；萬家福/樂家康/Mia C'bon icash Pay 加碼最高10%(2026/7/29-2026/9/1)；萬事達卡國外旅遊現金回饋最優15%(2026/1/1-2026/06/30)；家樂福折價券(2026/1/1-2026/6/30)；鮮拾購物網(2026/1/1-2026/6/30)；Yahoo購物滿3,000送200(2026/1/1-2026/6/30)；Mia C'bon 生鮮日(2026/7/1-2026/7/31)；夢時代滿額禮(2026/1/29~2026/3/1)。",
+    "頁面內沒有看到要抽取員做事的指示句。"
+  ]
+}

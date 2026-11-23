@@ -1,0 +1,15 @@
+{
+ "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+ "today": "2026-11-23",
+ "gates": {
+  "官方來源": true,
+  "一致": true,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [],
+ "benchDiffs": [],
+ "pass": true
+}

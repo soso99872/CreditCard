@@ -1,0 +1,20 @@
+{
+ "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+ "today": "2026-11-23",
+ "gates": {
+  "官方來源": true,
+  "一致": true,
+  "原文": true,
+  "合理範圍": true,
+  "格式": true,
+  "推薦比對": true
+ },
+ "problems": [],
+ "replacedThirdParty": [
+  "kgi-more-buy-general",
+  "kgi-more-buy-overseas",
+  "kgi-more-buy-mobile-payment"
+ ],
+ "benchDiffs": [],
+ "pass": true
+}

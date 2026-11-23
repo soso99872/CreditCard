@@ -1,0 +1,64 @@
+{
+  "extractor": "B",
+  "page": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+  "extraPages": [],
+  "cards": [
+    {
+      "cardId": "kgi-cash-back",
+      "rules": [
+        {
+          "plan": "",
+          "scope": {
+            "type": "general"
+          },
+          "rate": 0.7,
+          "rawReward": "國內一般消費回饋0.7%刷卡金（無上限）",
+          "cap": null,
+          "conditions": [
+            "一般消費不包含之項目詳見官網公告"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國內一般消費回饋0.7%刷卡金",
+            "validTo": "活動期間：115/1/1~115/12/31",
+            "validFrom": "活動期間：115/1/1~115/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        },
+        {
+          "plan": "",
+          "scope": {
+            "type": "category",
+            "categories": [
+              "overseas"
+            ],
+            "basis": "mcc"
+          },
+          "rate": 2,
+          "rawReward": "國外消費(含國外網站購物)回饋2%刷卡金（無上限）",
+          "cap": null,
+          "conditions": [
+            "交易地點於國外(含國外網站)或交易幣別為非新臺幣之一般消費"
+          ],
+          "validFrom": "2026-01-01",
+          "validTo": "2026-12-31",
+          "evidence": {
+            "rate": "國外消費(含國外網站購物)回饋2%刷卡金",
+            "validTo": "活動期間：115/1/1~115/12/31",
+            "validFrom": "活動期間：115/1/1~115/12/31",
+            "cap": null
+          },
+          "rateFormula": null
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "期間『活動期間：115/1/1~115/12/31』在頁面出現多次（回饋、旅遊險、專屬優惠、電子帳單），民國115年＝2026年；回饋區塊與『專屬優惠』區塊（◆一般通路消費均享0.7%回饋；◆國外消費享2%回饋）數字一致。",
+    "一般消費不包含之項目原文只寫『詳見官網公告』，未列名單，未填 excludeMerchants。",
+    "卡片權益分卡別計算（現金回饋御璽卡、悠遊御璽卡、鈦金卡、悠遊鈦金卡、悠遊Combo鈦金卡），回饋率相同。",
+    "快照中未發現要求抽取員做事的指令性文字。"
+  ]
+}

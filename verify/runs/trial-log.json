@@ -58,14 +58,41 @@
     "Actions 第一次跑卡在安裝步驟 40 分鐘，取消重跑後 19 分鐘完成",
     "11/16 那輪偵測到變動但沒有抽取（沒有 runs/2026-11-16）；當時變動、這次沒重抽的官方頁：永豐現金回饋卡、中信 N2025052600033（13 條規則）、星展 funlife、玉山熊本熊卡"
    ]
+  },
+  {
+   "date": "2026-11-23",
+   "pagesExtracted": 12,
+   "pagesPassed": 3,
+   "rulesPassed": 5,
+   "suspected": 3,
+   "countNote": "條數用保守算法：每頁取 A、B、C 裡寫得最少的那份（凱基現金回饋 2、凱基魔BUY 3）；元大鑽金智富 C 跟 A 不一致，不計入通過",
+   "passedPages": [
+    "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+    "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+    "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card"
+   ],
+   "suspectedDetail": [
+    {
+     "page": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+     "rules": 3,
+     "what": "鑽石／翡翠／鈦金三級旅遊＋餐飲加碼：A、B 把旅遊和餐飲寫成同一條（共用上限 3 萬／8 千／3 千元／年），C 拆成旅遊、餐飲各一條。回饋率、上限、期間數字三份一樣，差在上限是兩類共用還是各自一份；拆開等於上限變兩倍。要看原文上限是不是兩類合計"
+    }
+   ],
+   "notes": [
+    "抽取頁：changed 的官方卡片頁 5 頁（中信 uniopen、富邦 momo、台新 Richart、元大鑽金智富 icash、元大鑽金智富）＋週一 minor 官方卡片頁 7 頁（彰銀 My購、My樂、高雄銀行、凱基現金回饋、凱基魔BUY、企銀永續生活、企銀鈦金商旅）。清單頁／首頁 8 頁（樂天、華南、凱基列表、合庫、彰銀 subarea、高銀、遠東、新光）沒有卡片規則，未抽取",
+    "抽取員分批：每位 A、B 一次讀 2～4 頁（A、B 仍互相看不到），省子代理數",
+    "沒過關 9 頁主因：中信 uniopen 北捷 7%、黑貓 5% 只有 A 收（首次綁定、是否限量判斷不同）；富邦 momo 排除商家 A、B 列的不一樣；Richart 一般 0.3% 有沒有期間、Pay著刷排除全聯；元大 icash 旅遊／餐飲拆不拆；彰銀 My購 +4% 只出現在表格、evidence 找不到 4；彰銀 My樂 加碼分級寫法不同；高雄銀行金卡 plan 名稱不同（數字一樣）；企銀永續 Hokii 國外 1.8%/2.1% 是 A 推算的、B 多收綠色通路；企銀鈦金 B 沒寫期間、A 用 2026 全年",
+    "格式關卡另有商家對不上 merchants.json：中信 uniopen（21Plus/21風味館、康是美(含康是美網購eShop) 等）、富邦 momo（台灣Costco、TikTok、電視購物）、彰銀、企銀",
+    "Actions 這次約 19 分鐘跑完，沒卡住"
+   ]
   }
  ],
  "total": {
-  "rulesPassed": 34,
-  "suspected": 0,
+  "rulesPassed": 39,
+  "suspected": 3,
   "confirmedErrors": 0,
   "targetForLive": 50,
-  "remaining": 16,
-  "lastRun": "2026-11-19"
+  "remaining": 11,
+  "lastRun": "2026-11-23"
  }
 }
