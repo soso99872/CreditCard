@@ -22,7 +22,7 @@ import {
   visibleMyCardIds,
   hasHiddenMyCards,
 } from "./view-state.mjs";
-import { latestCheckedAt } from "./footer.mjs";
+import { latestCheckedAt, checkedAtBadge } from "./footer.mjs";
 import { findSuggestions } from "./suggest.mjs";
 import { loadRecent, addRecent, clearRecent } from "./recent.mjs";
 import { resolveQuickPicks } from "./quick-picks.mjs";
@@ -134,14 +134,14 @@ function matchHintText(match) {
   if (!match || state.pickedCategory) return "";
   switch (match.type) {
     case "category-guess":
-      return `依名稱推測為「${match.categoryName}」類別。`;
+      return `看起來是「${match.categoryName}」類別。`;
     case "need-category":
       // 理論上不會再出現：recompute() 一律帶保底類別呼叫 recommend()，
       // 保留這個分支只是避免引擎行為變動時畫面整個不顯示任何提示。
-      return "資料庫中找不到這個商家，請選擇類別：";
+      return "找不到這家店，先選類別：";
     case "category-selected":
       return match.categoryId === GENERAL_CATEGORY_ID
-        ? "找不到符合的信用卡回饋商家，以一般消費回饋排序："
+        ? "沒有這家店的專屬優惠，以一般消費回饋排序："
         : `依你選擇的「${match.categoryName}」類別查詢。`;
     default:
       return "";
@@ -164,10 +164,10 @@ function resultTitleParts(match) {
     case "merchant":
       return ["在", strong(match.merchantName), "，刷這張"];
     case "category-guess":
-      return ["依名稱推測的", strong(match.categoryName), "類別，刷這張"];
+      return ["看起來是", strong(match.categoryName), "，刷這張"];
     case "category-selected":
       // 從附近商家點進來：類別是依店家類型推測的，不是使用者選的，標題要寫出店名（T18b 主管退件①）
-      if (state.via?.how === "osm-guess") return ["依店家類型推測", strong(state.via.store), "為", strong(match.categoryName), "，刷這張"];
+      if (state.via?.how === "osm-guess") return [strong(state.via.store), "看起來是", strong(match.categoryName), "，刷這張"];
       if (state.via?.how === "osm-none") return [strong(state.via.store), "對不到商家，以", strong("一般消費"), "排序"];
       return match.categoryId === GENERAL_CATEGORY_ID
         ? ["找不到符合的類別，以", strong("一般消費"), "排序"]
@@ -287,7 +287,7 @@ function buildReceipt(rec) {
       : `${fmtAmount.format(rec.estimatedAmount)} 元`;
     gain.append(`NT$${fmtAmount.format(state.amount)} 約可拿回`, strong);
   } else {
-    gain.textContent = "填金額可試算預估回饋";
+    gain.textContent = "填金額看能拿多少";
   }
 
   const main = document.createElement("div");
@@ -477,7 +477,7 @@ function renderMatchAndResults() {
     hideTopAndRest();
     showEmptyHint(
       state.checkingMode
-        ? "資料正在核對中，暫時沒有可推薦的卡片。"
+        ? "卡片資料還在核對，先沒有推薦。"
         : "找不到符合的信用卡回饋，可以試試其他商家名稱，或切換查詢範圍。"
     );
     return;
@@ -602,14 +602,15 @@ function renderMyCards() {
  */
 function emptyMyCardsText() {
   return hasHiddenMyCards(state.myCardIds, currentVisibleMyCardIds())
-    ? "你加入的卡片目前還沒通過核對、暫時看不到。"
+    ? "你加入的卡還在核對，核對完會出現。"
     : "「我的卡片」還沒有加入任何卡片。";
 }
 
 function renderCheckedAt() {
-  const latest = latestCheckedAt(state.data.cards);
-  els.checkedAt.hidden = !latest;
-  els.checkedAt.textContent = latest ? `資料核對 ${latest}` : "";
+  const badge = checkedAtBadge(latestCheckedAt(state.data.cards), localToday());
+  els.checkedAt.hidden = !badge;
+  els.checkedAt.textContent = badge ? badge.text : "";
+  els.checkedAt.dataset.level = badge ? badge.level : "";
 }
 
 function hideSuggestions() {
@@ -911,9 +912,8 @@ async function loadData() {
     state.myCardIds = loadMyCardIds(state.storage);
     state.recent = loadRecent(state.storage);
   } catch (err) {
-    state.loadError =
-      `資料載入失敗：${err.message}。請確認資料目錄「${baseUrl}」是否正確，` +
-      "或加上網址參數載入測試資料，例如：?data=test/fixtures/engine。";
+    console.error("資料載入失敗", baseUrl, err); // 細節留給開發者看，畫面不放內部路徑（product-pitfalls 第 7 條）
+    state.loadError = "資料載入失敗，請重新整理。";
   }
   render();
 }

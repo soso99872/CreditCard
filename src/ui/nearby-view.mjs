@@ -27,7 +27,7 @@ export function distanceText(meters) {
 export function matchLabel(item, categoryName) {
   const { match } = item;
   if (match.type === "merchant") return `對應商家：${match.merchant.name}`;
-  if (match.type === "category-guess") return `依店家類型推測為「${categoryName(match.categoryId)}」`;
+  if (match.type === "category-guess") return `看起來是「${categoryName(match.categoryId)}」`;
   return "查無對應，看一般消費回饋";
 }
 

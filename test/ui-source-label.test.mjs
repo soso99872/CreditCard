@@ -17,7 +17,7 @@ describe("src/ui/source-label.mjs — thirdPartyInfo（AC-05、AC-06）", () => 
       sourcePublishedAt: "2026-10-12",
       secondSourceUrl: null,
     });
-    assert.equal(info.label, "非官方來源，尚未核對官方");
+    assert.equal(info.label, "第三方整理，未核對官方");
     assert.equal(info.dateText, "文章日期 2026-10-12");
     assert.deepEqual(info.links, [{ url: "https://blog.example.net/a", text: "看第三方文章" }]);
   });

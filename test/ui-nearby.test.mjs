@@ -19,7 +19,7 @@ describe("src/ui/nearby-view.mjs — 附近商家面板（T18b）", () => {
 
   test("三種比對各有說明文字", () => {
     assert.equal(matchLabel(merchantItem, categoryName), "對應商家：星巴克");
-    assert.equal(matchLabel(guessItem, categoryName), "依店家類型推測為「咖啡」");
+    assert.equal(matchLabel(guessItem, categoryName), "看起來是「咖啡」");
     assert.match(matchLabel(generalItem, categoryName), /一般消費/);
   });
 

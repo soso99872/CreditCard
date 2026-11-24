@@ -172,7 +172,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
     lastViaOverpass = viaOverpass;
     setRetry(false);
     searchBtn.disabled = true;
-    renderEmpty("查詢中", "正在查這個位置附近有哪些店；若要向 OpenStreetMap 問，忙線時會自動換查詢伺服器，可能要多等一下。", false);
+    renderEmpty("查詢中", "正在找附近的店，可能要等幾秒。", false);
     listEl.setAttribute("aria-busy", "true");
     setStatus("查詢附近商家中…");
     try {
@@ -257,7 +257,7 @@ export function createNearbyPanel({ getData, baseUrl, generalId, onPick, onSearc
       searchBtn.classList.toggle("is-stale", map.distance(map.getCenter(), [lastOrigin.lat, lastOrigin.lng]) > STALE_DISTANCE_M);
     });
     if (here) return search(center);
-    setStatus("沒有取得你的位置，先顯示台北車站。拖動地圖、點一個位置，或按「查這裡」查附近商家。");
+    setStatus("沒拿到你的位置，先從台北車站開始。可以拖地圖、點一個位置，或按「查這裡」。");
     renderEmpty("還沒查附近商家", "點地圖上的任一處，或拖動地圖後按「查這裡」，附近的商家會列在這裡。");
     searchBtn.disabled = false;
     searchBtn.classList.add("is-stale");

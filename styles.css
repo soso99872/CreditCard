@@ -26,6 +26,8 @@
   --error: #8a1f11;
   --error-bg: #fdecea;
   --error-line: rgba(138, 31, 17, 0.28);
+  /* 頁首新鮮度燈（健檢 2026-11 R4，老闆 11-25 核准）：資料超過 14 天沒核對變橘，45 天以上用 --error */
+  --warn: #8f4700;
   --scrim: rgba(27, 27, 26, 0.32); /* 對話框後面的遮罩 */
 
   --shadow-surface: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.06),
@@ -118,6 +120,16 @@ a {
   line-height: 1.3;
   font-size: var(--fs-caption);
   color: var(--text-3);
+}
+
+#checked-at[data-level="stale"] {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+#checked-at[data-level="old"] {
+  color: var(--error);
+  font-weight: 600;
 }
 
 /* ---------- 查詢 ---------- */
@@ -1757,7 +1769,8 @@ input:focus-visible {
     grid-area: list;
     padding-top: 8px;
   }
-}@media (max-width: 767.98px) {
+}
+@media (max-width: 767.98px) {
   /* 手機改單行橫向捲動：全部類別放同一排，第 1 名的率與理由才進得了第一屏（T24）。
      不再收合，所以手機也不需要「更多類別」鈕。 */
   .category-quick-list {
