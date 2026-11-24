@@ -31,6 +31,7 @@ import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
 import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
+import { pickDemoCard } from "./demo-pick.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
@@ -58,6 +59,7 @@ const state = {
   match: null,
   recommendations: [],
   draftMode: false, // ?draft=1 時為 true：loadAllData／recommend 都帶 includeUnverified（tasks.md T17）
+  demo: undefined, // 首頁示意卡（buildDemo()）：undefined＝還沒算，null＝不顯示
   checkingMode: false, // 資料載入成功，但目前沒有任何張 verified 卡（主管 T14 建議：不要顯示開發者文案）
 };
 
@@ -83,6 +85,8 @@ function cacheEls() {
   els.recentList = document.getElementById("recent-list");
   els.recentClearBtn = document.getElementById("recent-clear-btn");
   els.quickList = document.getElementById("quick-list");
+  els.demoWrap = document.getElementById("demo-wrap");
+  els.demoBtn = document.getElementById("demo-btn");
   els.nearbyBtn = document.getElementById("nearby-btn");
   els.checkedAt = document.getElementById("checked-at");
   els.loadingHint = document.getElementById("loading-hint");
@@ -740,10 +744,77 @@ function buildChip(entry, className) {
   return button;
 }
 
+/**
+ * 首頁示意卡：用真資料查「全聯」（查詢範圍＝全部卡），挑第一張沒有門檻的卡（demo-pick.mjs）。
+ * 資料不變，算一次就留著；沒有全聯、或全都有門檻就不顯示（null）。
+ */
+function buildDemo() {
+  const entry = resolveQuickPicks(state.data).find((p) => p.kind === "merchant" && p.name === "全聯");
+  if (!entry) return null;
+  const { recommendations } = recommend({
+    query: entry.name,
+    selectedCategoryId: resolveSelectedCategoryId(null),
+    cards: state.data.cards,
+    merchants: state.data.merchants,
+    categoryKeywords: state.data.categoryKeywords,
+    categories: state.data.categories,
+    cardIds: null,
+    today: localToday(),
+    includeUnverified: state.draftMode,
+  });
+  const rec = pickDemoCard(recommendations);
+  if (!rec) return null;
+  const color = bankColor(rec.bankId, bankColorOrder(recommendations));
+  return { entry, rec, color };
+}
+
+function renderDemo(noQueryYet) {
+  if (state.demo === undefined) state.demo = buildDemo();
+  const demo = state.demo;
+  els.demoWrap.hidden = !noQueryYet || !demo;
+  if (els.demoWrap.hidden || els.demoBtn.childElementCount > 0) return;
+
+  const tag = document.createElement("span");
+  tag.className = "demo-tag";
+  tag.textContent = "示意";
+  const lead = document.createElement("span");
+  lead.className = "demo-lead";
+  lead.append(tag, `在${demo.entry.name}，刷這張`);
+
+  const face = document.createElement("span");
+  face.className = "card card--mini";
+  face.style.setProperty("--c", demo.color);
+  const bank = document.createElement("span");
+  bank.className = "card-bank";
+  bank.textContent = shortBankName(bankNameById(demo.rec.bankId));
+  const chip = document.createElement("span");
+  chip.className = "chip";
+  chip.setAttribute("aria-hidden", "true");
+  const rate = document.createElement("span");
+  rate.className = "card-rate num";
+  rate.textContent = demo.rec.rateText;
+  const mid = document.createElement("span");
+  mid.className = "card-mid";
+  mid.append(chip, rate);
+  const name = document.createElement("span");
+  name.className = "card-name";
+  name.textContent = demo.rec.cardName;
+  face.append(bank, mid, name);
+
+  els.demoBtn.append(lead, face);
+  els.demoBtn.setAttribute(
+    "aria-label",
+    `示意：在${demo.entry.name}，刷${bankNameById(demo.rec.bankId)}${demo.rec.cardName}，${demo.rec.rateText}。點一下查${demo.entry.name}`
+  );
+  els.demoBtn.addEventListener("click", () => runEntry(demo.entry));
+}
+
 /** 未輸入時的「最近查詢」與「常用」；有查詢（或有結果）時整塊收起，把第一屏留給結果。 */
 function renderQuickAndRecent() {
   const noQueryYet = !state.match || state.match.type === "empty";
   els.quickSection.hidden = !noQueryYet;
+  els.app.classList.toggle("is-home", noQueryYet); // 手機首頁把頁尾推到第一屏下面（styles.css .is-home）
+  renderDemo(noQueryYet);
   if (!noQueryYet) return;
 
   const categoryIds = new Set((state.data.categories || []).map((c) => c.id));

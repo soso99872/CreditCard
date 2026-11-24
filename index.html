@@ -61,6 +61,10 @@
       </form>
 
       <section id="query-tools" class="query-tools" aria-label="查詢條件" hidden>
+        <div id="demo-wrap" class="demo" hidden>
+          <button id="demo-btn" type="button" class="demo-btn"></button>
+          <p class="demo-note">輸入你常去的店試試</p>
+        </div>
         <div id="quick-section" class="quick-section">
           <div id="recent-group" class="quick-group" role="group" aria-labelledby="recent-label" hidden>
             <div class="quick-head">
@@ -131,12 +135,22 @@
       <p id="results-empty-hint" class="empty-hint" hidden></p>
 
       <footer class="app-footer">
-        <p>排序只看這筆消費能拿到的回饋率，不收業配、不影響排序。</p>
-        <p>部分資料暫用第三方整理（比較網站、新聞、部落格），尚未核對銀行官方，已逐筆標示。</p>
-        <p>
-          本站資料僅供參考，實際回饋、活動期間與上限請以各銀行官方公告為準；
-          如有疑義，請點擊卡片的「來源連結」核對原文。
-        </p>
+        <details class="footer-more">
+          <summary>
+            <span>排序只看回饋率，不收業配。有些資料來自第三方整理，卡片上會標。實際回饋以銀行公告為準。</span>
+            <svg class="footer-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v5M12 8h.01" />
+            </svg>
+            <span class="sr-only">完整說明</span>
+          </summary>
+          <p>排序只看這筆消費能拿到的回饋率，不收業配、不影響排序。</p>
+          <p>部分資料是第三方整理，未核對官方（比較網站、新聞、部落格），已在卡片上逐筆標示。</p>
+          <p>
+            本站資料僅供參考，實際回饋、活動期間與上限請以各銀行官方公告為準；
+            如有疑義，請點卡片上的「看銀行原文」或「第三方文章」核對原文。
+          </p>
+        </details>
       </footer>
 
       <dialog id="my-cards-dialog" class="my-cards-dialog" aria-labelledby="my-cards-dialog-title">
