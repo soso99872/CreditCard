@@ -46,7 +46,7 @@ export function formatCap(cap) {
  * 產生推薦理由（中文一句，依最佳規則的比對層級變化）：
  *   - matchLevel "merchant"：「{displayName}屬於指定通路，回饋{rate}%」
  *   - matchLevel "category"：「依{categoryName}類別回饋{rate}%」
- *   - matchLevel "general"：「{displayName}無指定優惠，以一般消費回饋{rate}%」
+ *   - matchLevel "general"：「{displayName}沒有指定優惠，以一般消費回饋{rate}%」
  *     （displayName 不存在時改用 categoryName，兩者都沒有時只顯示「以一般消費回饋{rate}%」）
  * @param {{
  *   matchLevel: "merchant" | "category" | "general",
@@ -74,10 +74,10 @@ export function formatReason({ matchLevel, displayName, categoryName, rate, viaO
 
   // matchLevel === "general"
   if (displayName) {
-    return `${displayName}無指定優惠，以一般消費回饋${rateText}`;
+    return `${displayName}沒有指定優惠，以一般消費回饋${rateText}`;
   }
   if (categoryName) {
-    return `${categoryName}無指定優惠，以一般消費回饋${rateText}`;
+    return `${categoryName}沒有指定優惠，以一般消費回饋${rateText}`;
   }
   return `以一般消費回饋${rateText}`;
 }

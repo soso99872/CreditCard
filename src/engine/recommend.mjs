@@ -5,6 +5,9 @@ import { buildMerchantIndex, matchMerchant } from "./merchant-match.mjs";
 import { selectBestRule } from "./rules.mjs";
 import { formatRate, formatCap, formatReason, estimateReward } from "./format.mjs";
 
+// 介面直接點類別（沒有打字）時傳進來的 query 佔位字元：只用來走「已選類別」分支，不能出現在理由句裡。
+export const CATEGORY_PICK_QUERY = "◎";
+
 /**
  * @typedef {{
  *   cardId: string,
@@ -114,7 +117,7 @@ export function recommend({
     }
     categoryId = selectedCategoryId;
     categoryName = categoryNameById.get(categoryId) ?? null;
-    displayName = query.trim();
+    displayName = query.trim() === CATEGORY_PICK_QUERY ? null : query.trim();
     match = {
       type: "category-selected",
       categoryId,

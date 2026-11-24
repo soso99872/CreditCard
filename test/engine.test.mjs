@@ -10,7 +10,7 @@ import { buildMerchantIndex, resolveMerchantId, matchMerchant } from "../src/eng
 import { isRuleActive, selectBestRule } from "../src/engine/rules.mjs";
 import { formatRate, formatCap, formatReason, estimateReward } from "../src/engine/format.mjs";
 import { loadAllData } from "../src/engine/data-loader.mjs";
-import { recommend } from "../src/engine/recommend.mjs";
+import { recommend, CATEGORY_PICK_QUERY } from "../src/engine/recommend.mjs";
 import { buildIndex, listBankFiles } from "../scripts/build-index.mjs";
 
 const PRODUCT_ROOT = path.resolve(import.meta.dirname, "..");
@@ -307,11 +307,11 @@ describe("src/engine/format.mjs", () => {
   test("formatReason：一般消費層級，必須標示「一般消費」（AC-05）", () => {
     assert.equal(
       formatReason({ matchLevel: "general", displayName: "全聯", categoryName: "量販超市", rate: 0.5 }),
-      "全聯無指定優惠，以一般消費回饋0.5%"
+      "全聯沒有指定優惠，以一般消費回饋0.5%"
     );
     assert.equal(
       formatReason({ matchLevel: "general", displayName: null, categoryName: "咖啡", rate: 0.5 }),
-      "咖啡無指定優惠，以一般消費回饋0.5%"
+      "咖啡沒有指定優惠，以一般消費回饋0.5%"
     );
     assert.equal(
       formatReason({ matchLevel: "general", displayName: null, categoryName: null, rate: 0.5 }),
@@ -424,7 +424,7 @@ describe("src/engine/recommend.mjs", () => {
 
     const generalEntry = recommendations.find((r) => r.cardId === "testbank-general");
     assert.equal(generalEntry.matchLevel, "general");
-    assert.equal(generalEntry.reason, "阿明咖啡無指定優惠，以一般消費回饋0.5%");
+    assert.equal(generalEntry.reason, "阿明咖啡沒有指定優惠，以一般消費回饋0.5%");
   });
 
   test("第三層：都比對不到時回傳 need-category，不產生推薦清單；選擇類別後才計算（AC-04）", () => {
@@ -457,6 +457,23 @@ describe("src/engine/recommend.mjs", () => {
       "testbank-general",
       "testbank-super",
     ]);
+  });
+
+  test("直接點類別（query 是佔位字元）時，理由句用類別名、不漏出佔位字元（健檢 R1）", () => {
+    const { match, recommendations } = recommend({
+      query: CATEGORY_PICK_QUERY,
+      selectedCategoryId: "dining",
+      cards,
+      merchants,
+      categoryKeywords,
+      categories,
+      today: TODAY,
+    });
+    assert.equal(match.type, "category-selected");
+    assert.ok(recommendations.length > 0);
+    for (const r of recommendations) assert.ok(!r.reason.includes(CATEGORY_PICK_QUERY), r.reason);
+    const general = recommendations.find((r) => r.matchLevel === "general");
+    assert.ok(general.reason.startsWith(categories.find((c) => c.id === "dining").name + "沒有指定優惠"), general.reason);
   });
 
   test("金額試算：四捨五入，超過上限時顯示上限並標記 capped（AC-10）", () => {

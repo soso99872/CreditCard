@@ -6,5 +6,5 @@ export { buildMerchantIndex, resolveMerchantId, matchMerchant } from "./merchant
 export { isRuleActive, selectBestRule } from "./rules.mjs";
 export { formatRate, formatCap, formatReason, estimateReward } from "./format.mjs";
 export { loadAllData } from "./data-loader.mjs";
-export { recommend } from "./recommend.mjs";
+export { recommend, CATEGORY_PICK_QUERY } from "./recommend.mjs";
 export { buildOverpassQuery, parseNearby, matchByName, decodeGeo, nearbyFromGeo, inTaiwan, MAX_RESULTS } from "./nearby.mjs";

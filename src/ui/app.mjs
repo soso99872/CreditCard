@@ -6,7 +6,7 @@
 // suggest.mjs、card-color.mjs、bank-name.mjs，本檔只處理 DOM，不另外寫測試
 // （見 tasks.md T03、T12-2b）。
 
-import { normalize, loadAllData, recommend } from "../engine/index.mjs";
+import { normalize, loadAllData, recommend, CATEGORY_PICK_QUERY } from "../engine/index.mjs";
 import { localToday } from "./date.mjs";
 import { getSafeLocalStorage, loadMyCardIds, addMyCardId, removeMyCardId } from "./storage.mjs";
 import { resolveDataBaseUrl, isDraftMode } from "./query-params.mjs";
@@ -33,7 +33,6 @@ import { createNearbyPanel } from "./nearby-panel.mjs";
 import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
-const CATEGORY_PICK_QUERY = "◎";
 
 const fmtAmount = new Intl.NumberFormat("zh-TW");
 
