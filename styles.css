@@ -1472,16 +1472,22 @@ input:focus-visible {
     padding: 28px 32px 64px;
   }
 
+  /* 整頁同一條左邊線：頁首、搜尋區、結果標題、兩欄、頁尾都靠容器左緣（不置中，避免 1440 出現 x=200／360 兩條線） */
   .app > :not(.app-header, .results, .result-foot) {
     width: 100%;
     max-width: 720px;
-    margin-inline: auto;
+    margin-inline: 0;
   }
 
   .results-cols {
     grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
     gap: 40px;
     align-items: start;
+  }
+
+  /* 只有一組有卡：單欄，靠左對齊同一條邊線，不留半邊空白 */
+  .results-cols:has(> #gated[hidden]) {
+    grid-template-columns: minmax(0, 460px);
   }
 
   .top {

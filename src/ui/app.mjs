@@ -443,7 +443,7 @@ function buildThirdPartyTag(text) {
 function buildStackItem(rec, rank, color, amount) {
   const li = document.createElement("li");
   li.style.setProperty("--c", color);
-  li.style.setProperty("--i", String(rank - 1));
+  li.style.setProperty("--i", String(Math.max(0, rank - 1)));
 
   const summary = document.createElement("summary");
   const nameWrap = document.createElement("span");
@@ -607,8 +607,10 @@ function renderMatchAndResults() {
     els.receipt.replaceChildren();
   }
 
+  // 有條件欄自己從 1 編號（兩欄並排時，不接在無腦刷後面從 11 起）
   const addRows = (list, ol) =>
-    list.forEach((rec) => ol.appendChild(buildStackItem(rec, visible.indexOf(rec), bankColor(rec.bankId, bankOrder), amount)));
+    list.forEach((rec, i) =>
+      ol.appendChild(buildStackItem(rec, ol === els.stackGated ? i : visible.indexOf(rec), bankColor(rec.bankId, bankOrder), amount)));
 
   const directRest = direct.slice(1);
   els.rest.hidden = directRest.length === 0;
