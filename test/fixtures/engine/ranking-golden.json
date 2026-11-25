@@ -1,6 +1,6 @@
 {
  "today": "2026-11-25",
- "note": "組長 2026-11-25 用 scratch/leader-rank.mjs 獨立算（不用組員程式），金額用類別預設；directTop 為 direct 組前幾名卡 id（順序要相同）；前 3 名邊界同分的只鎖前 2 名",
+ "note": "組長 2026-11-25 用 scratch/leader-rank.mjs 獨立算（不用組員程式），金額用類別預設；directTop 為 direct 組前幾名卡 id（順序要相同）；前 3 名邊界同分的只鎖前 2 名；2026-11-25 組長修正：蝦皮、momo 第 2、3 名 4.00 全同分，依卡名 LINE Bank聯名卡 先於 鈦金商旅卡(My購卡)（組員回報，組長原腳本漏套卡名排序）",
  "queries": [
   {
    "query": "加油",
@@ -37,8 +37,8 @@
    "expectFirstGroup": "direct",
    "directTop": [
     "hsbc-liveplus",
-    "chb-mygo",
-    "ubot-linebank"
+    "ubot-linebank",
+    "chb-mygo"
    ],
    "gatedIncludes": "sinopac-dawho"
   },
@@ -77,8 +77,8 @@
    "expectFirstGroup": "direct",
    "directTop": [
     "hsbc-liveplus",
-    "chb-mygo",
-    "ubot-linebank"
+    "ubot-linebank",
+    "chb-mygo"
    ],
    "gatedIncludes": "sinopac-dawho"
   },
