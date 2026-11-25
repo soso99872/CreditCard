@@ -124,6 +124,8 @@
 
       <section id="top" class="top" aria-labelledby="result-title" hidden>
         <h2 id="result-title" class="result-title" tabindex="-1"></h2>
+        <h3 id="top-group" class="rest-title">直接拿得到</h3>
+        <p id="top-notice" class="empty-hint" hidden>沒有直接拿得到的卡，以下都有門檻</p>
         <div id="top-card"></div>
         <div id="receipt" class="receipt"></div>
       </section>
@@ -131,8 +133,23 @@
       <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
         <h2 id="rest-title" class="rest-title">其他選擇</h2>
         <ol id="stack" class="stack"></ol>
-        <button id="show-all-btn" type="button" class="link-button" hidden>顯示全部</button>
       </section>
+
+      <section id="gated" class="rest" aria-labelledby="gated-title" hidden>
+        <h2 id="gated-title" class="rest-title">有門檻</h2>
+        <ol id="stack-gated" class="stack is-in dealt"></ol>
+      </section>
+
+      <div id="result-foot" class="result-foot" hidden>
+        <button id="show-all-btn" type="button" class="link-button" hidden>顯示全部</button>
+        <button id="nearby-result-btn" type="button" class="nearby-link" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+            <circle cx="12" cy="10" r="2.3" />
+          </svg>
+          找附近的店
+        </button>
+      </div>
 
       <p id="results-empty-hint" class="empty-hint" hidden></p>
 

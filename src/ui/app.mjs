@@ -36,6 +36,19 @@ import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 const fmtAmount = new Intl.NumberFormat("zh-TW");
 
+const TAG_TEXT = {
+  register: "登錄／綁定",
+  ebill: "電子帳單",
+  autopay: "自動扣繳",
+  plan: "切換方案",
+  asset: "資產門檻",
+  quota: "限量",
+  spend: "消費門檻",
+  newcard: "新戶",
+};
+const GATED_TAGS = ["asset", "plan", "quota", "newcard", "spend"];
+const REGION_IDS = ["japan", "korea", "thailand", "singapore", "americas", "europe"];
+
 const els = {};
 
 const state = {
@@ -112,8 +125,14 @@ function cacheEls() {
   els.topCard = document.getElementById("top-card");
   els.receipt = document.getElementById("receipt");
 
+  els.topGroup = document.getElementById("top-group");
+  els.topNotice = document.getElementById("top-notice");
   els.rest = document.getElementById("rest");
   els.stack = document.getElementById("stack");
+  els.gated = document.getElementById("gated");
+  els.stackGated = document.getElementById("stack-gated");
+  els.resultFoot = document.getElementById("result-foot");
+  els.nearbyResultBtn = document.getElementById("nearby-result-btn");
   els.showAllBtn = document.getElementById("show-all-btn");
 
   els.resultsEmptyHint = document.getElementById("results-empty-hint");
@@ -266,8 +285,32 @@ function buildCardFace(rec, color) {
   return face;
 }
 
+/** 排序用金額：使用者有填用使用者的，否則類別預設（同引擎的查找順序：類別→上位類別→海外地區→default）。 */
+function sortAmountFor(match) {
+  if (typeof state.amount === "number" && state.amount > 0) return state.amount;
+  const table = state.data.categoryDefaults?.categories || {};
+  const parentById = new Map((state.data.categories || []).map((c) => [c.id, c.parent]));
+  const ids = [];
+  for (let id = match.categoryId; id && ids.length < 6; id = parentById.get(id)) ids.push(id);
+  for (const id of ids) if (table[id]) return table[id];
+  if (REGION_IDS.includes(match.categoryId) && table.overseas) return table.overseas;
+  return state.data.categoryDefaults?.default || 1000;
+}
+
+/** 被上限截掉時的一行說明；沒截到回傳空字串。 */
+function effectiveNote(rec, amount) {
+  if (rec.effectiveRate > rec.rate - 0.01) return "";
+  return `以 NT$${fmtAmount.format(amount)} 計，實拿約 ${rec.effectiveRate.toFixed(1)}%`;
+}
+
+/** 有門檻的卡：需要哪些條件（只列門檻類標籤）；沒有回傳空字串。 */
+function needText(rec) {
+  const names = rec.conditionTags.filter((t) => GATED_TAGS.includes(t)).map((t) => TAG_TEXT[t]);
+  return names.length ? `需要：${names.join("、")}` : "";
+}
+
 /** 第 1 名：卡面下方的「收據」，回饋率是全頁最大的數字（照抄 d-wallet.html）。 */
-function buildReceipt(rec) {
+function buildReceipt(rec, amount) {
   const rate = document.createElement("p");
   rate.className = "rate num";
   const rateLabel = document.createElement("small");
@@ -293,6 +336,27 @@ function buildReceipt(rec) {
   const main = document.createElement("div");
   main.className = "receipt-main";
   main.append(rate, gain);
+
+  const extra = document.createElement("div");
+  extra.className = "receipt-extra";
+  const note = effectiveNote(rec, amount);
+  if (note) {
+    const p = document.createElement("p");
+    p.className = "rate-note";
+    p.textContent = note;
+    extra.appendChild(p);
+  }
+  if (rec.conditionTags.length) {
+    const ul = document.createElement("ul");
+    ul.className = "tag-list";
+    ul.setAttribute("aria-label", "回饋條件");
+    for (const t of rec.conditionTags) {
+      const li = document.createElement("li");
+      li.textContent = TAG_TEXT[t] ?? t;
+      ul.appendChild(li);
+    }
+    extra.appendChild(ul);
+  }
 
   const facts = document.createElement("dl");
   facts.className = "facts";
@@ -335,8 +399,10 @@ function buildReceipt(rec) {
   source.append(checkedAt, links);
 
   const fragment = document.createDocumentFragment();
-  if (third) fragment.append(main, buildThirdPartyTag(third.label), facts, source);
-  else fragment.append(main, facts, source);
+  fragment.append(main);
+  if (extra.children.length) fragment.append(extra);
+  if (third) fragment.append(buildThirdPartyTag(third.label));
+  fragment.append(facts, source);
   return fragment;
 }
 
@@ -366,7 +432,7 @@ function buildThirdPartyTag(text) {
  * @param {number} rank 0-based 總名次（0 = 第 1 名，這裡一定是 1 以上）
  * @param {string} color bankColor() 算好的顏色
  */
-function buildStackItem(rec, rank, color) {
+function buildStackItem(rec, rank, color, amount) {
   const li = document.createElement("li");
   li.style.setProperty("--c", color);
   li.style.setProperty("--i", String(rank - 1));
@@ -387,6 +453,12 @@ function buildStackItem(rec, rank, color) {
     sub.append(" ", flag);
   }
   nameWrap.append(name, sub);
+  for (const text of [rec.group === "gated" ? needText(rec) : "", effectiveNote(rec, amount)]) {
+    if (!text) continue;
+    const line = document.createElement("span");
+    line.textContent = text;
+    nameWrap.appendChild(line);
+  }
   const rate = document.createElement("span");
   rate.className = "row-rate num";
   rate.textContent = rec.rateText;
@@ -441,6 +513,8 @@ function hideTopAndRest() {
   lastTopKey = null;
   els.top.hidden = true;
   els.rest.hidden = true;
+  els.gated.hidden = true;
+  els.resultFoot.hidden = true;
   els.showAllBtn.hidden = true;
   stopDealAnimation();
 }
@@ -471,7 +545,13 @@ function renderMatchAndResults() {
     return;
   }
 
-  const { visible, hasMore } = truncateTop(state.recommendations, state.showAll, 10);
+  // 兩組各自截斷：直接組前 10 名、有門檻組前 5 名，免得有門檻的被直接組擠到看不見
+  const directAll = state.recommendations.filter((r) => r.group !== "gated");
+  const gatedAll = state.recommendations.filter((r) => r.group === "gated");
+  const d = truncateTop(directAll, state.showAll, 10);
+  const g = truncateTop(gatedAll, state.showAll, 5);
+  const visible = [...d.visible, ...g.visible];
+  const hasMore = d.hasMore || g.hasMore;
 
   if (visible.length === 0) {
     hideTopAndRest();
@@ -485,7 +565,10 @@ function renderMatchAndResults() {
 
   hideEmptyHint();
 
-  const [top, ...rest] = visible;
+  const direct = d.visible;
+  const gated = g.visible;
+  const top = direct[0] ?? null;
+  const amount = sortAmountFor(match);
   // 配色依據是「這次推薦結果」裡銀行第一次出現的順序，用完整清單（state.recommendations）
   // 而不是被「預設前 10 名」截斷後的 visible，這樣按「顯示全部」多展開幾張卡時，已經在
   // 畫面上的卡片顏色不會跟著變（tasks.md T12-2b，老闆 2026-10-15 決定）。
@@ -493,28 +576,41 @@ function renderMatchAndResults() {
 
   els.top.hidden = false;
   els.resultTitle.replaceChildren(...resultTitleParts(match));
-  const face = buildCardFace(top, bankColor(top.bankId, bankOrder));
-  const topKey = [match.type, match.merchantName || match.categoryId, top.bankId, top.cardName].join("|");
-  if (topKey !== lastTopKey) face.classList.add("is-fresh");
-  lastTopKey = topKey;
-  els.topCard.replaceChildren(face);
-  els.receipt.replaceChildren(buildReceipt(top));
-
+  els.topGroup.hidden = !top;
+  els.topNotice.hidden = !!top;
+  els.topCard.hidden = !top;
+  els.receipt.hidden = !top;
   stopDealAnimation();
   els.stack.classList.remove("is-in", "dealt");
   els.stack.replaceChildren();
+  els.stackGated.replaceChildren();
 
-  if (rest.length === 0) {
-    els.rest.hidden = true;
+  if (top) {
+    const face = buildCardFace(top, bankColor(top.bankId, bankOrder));
+    const topKey = [match.type, match.merchantName || match.categoryId, top.bankId, top.cardName].join("|");
+    if (topKey !== lastTopKey) face.classList.add("is-fresh");
+    lastTopKey = topKey;
+    els.topCard.replaceChildren(face);
+    els.receipt.replaceChildren(buildReceipt(top, amount));
   } else {
-    els.rest.hidden = false;
-    rest.forEach((rec, index) => {
-      const rank = index + 1;
-      els.stack.appendChild(buildStackItem(rec, rank, bankColor(rec.bankId, bankOrder)));
-    });
-    startDealAnimation(rest.length);
+    lastTopKey = null;
+    els.topCard.replaceChildren();
+    els.receipt.replaceChildren();
   }
 
+  const addRows = (list, ol) =>
+    list.forEach((rec) => ol.appendChild(buildStackItem(rec, visible.indexOf(rec), bankColor(rec.bankId, bankOrder), amount)));
+
+  const directRest = direct.slice(1);
+  els.rest.hidden = directRest.length === 0;
+  if (directRest.length) {
+    addRows(directRest, els.stack);
+    startDealAnimation(directRest.length);
+  }
+  els.gated.hidden = gated.length === 0;
+  addRows(gated, els.stackGated);
+
+  els.resultFoot.hidden = false;
   els.showAllBtn.hidden = !hasMore;
 }
 
@@ -872,6 +968,7 @@ function wireEvents() {
   });
 
   els.nearbyBtn.addEventListener("click", () => nearbyPanel.open());
+  els.nearbyResultBtn.addEventListener("click", () => nearbyPanel.open());
 
   // 搜尋列固定在頂端時多一條底線，跟下面捲動的內容分得開；只讀一次捲動位置，用 rAF 節流。
   let scrollTick = false;

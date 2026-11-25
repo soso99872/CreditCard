@@ -1864,3 +1864,50 @@ input:focus-visible {
     flex: none;
   }
 }
+
+/* ---------- 兩組結果（sprint 010 T03）：直接拿得到／有門檻 ---------- */
+#top-group {
+  margin: 14px 0 10px;
+}
+
+.receipt-extra {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.rate-note {
+  margin: 0;
+  font-size: var(--fs-caption);
+  color: var(--text-2);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.result-foot {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+}
+
+.is-searching .result-foot .nearby-link {
+  display: inline-flex;
+  margin: 0;
+}
