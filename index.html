@@ -122,23 +122,29 @@
         <button id="add-card-shortcut-btn" type="button" class="link-button">加入我的卡片</button>
       </section>
 
-      <section id="top" class="top" aria-labelledby="result-title" hidden>
+      <div id="results" class="results" hidden>
         <h2 id="result-title" class="result-title" tabindex="-1"></h2>
-        <h3 id="top-group" class="rest-title">直接拿得到</h3>
-        <p id="top-notice" class="empty-hint" hidden>沒有直接拿得到的卡，以下都有門檻</p>
-        <div id="top-card"></div>
-        <div id="receipt" class="receipt"></div>
-      </section>
+        <div class="results-cols">
+          <div class="col-direct">
+            <section id="top" class="top" aria-labelledby="top-group" hidden>
+              <h3 id="top-group" class="rest-title">無腦刷</h3>
+              <p id="top-notice" class="empty-hint" hidden>沒有無腦刷的卡，這幾張都要先達成條件</p>
+              <div id="top-card"></div>
+              <div id="receipt" class="receipt"></div>
+            </section>
 
-      <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
-        <h2 id="rest-title" class="rest-title">其他選擇</h2>
-        <ol id="stack" class="stack"></ol>
-      </section>
+            <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
+              <h3 id="rest-title" class="rest-title">其他選擇</h3>
+              <ol id="stack" class="stack"></ol>
+            </section>
+          </div>
 
-      <section id="gated" class="rest" aria-labelledby="gated-title" hidden>
-        <h2 id="gated-title" class="rest-title">有門檻</h2>
-        <ol id="stack-gated" class="stack is-in dealt"></ol>
-      </section>
+          <section id="gated" class="rest col-gated" aria-labelledby="gated-title" hidden>
+            <h3 id="gated-title" class="rest-title">有條件</h3>
+            <ol id="stack-gated" class="stack is-in dealt"></ol>
+          </section>
+        </div>
+      </div>
 
       <div id="result-foot" class="result-foot" hidden>
         <button id="show-all-btn" type="button" class="link-button" hidden>顯示全部</button>
@@ -156,7 +162,7 @@
       <footer class="app-footer">
         <details class="footer-more">
           <summary>
-            <span>先列直接拿得到的卡，再依可拿到的回饋率排，不收業配。實際回饋以銀行公告為準。</span>
+            <span>實際回饋以銀行公告為準。</span>
             <svg class="footer-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />
               <path d="M12 11v5M12 8h.01" />

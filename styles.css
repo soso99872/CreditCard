@@ -1427,16 +1427,38 @@ input:focus-visible {
   white-space: nowrap;
 }
 
-/* ---------- 平板與桌機：主欄置中，最寬 640px（sprint 009 T06，AC-08）。
-   原本 ≥960px 的左右雙欄（左 420px 查詢＋第 1 名、右邊卡堆）取消，改成同一條單欄置中；
-   右側面板是後續版本（PRD），這期不做。 ---------- */
+/* ---------- 平板與桌機（sprint 009 T06、sprint 010 T04）
+   768～959：單欄置中 640px，第 1 名這一塊限寬 440px（整欄寬時卡高會讓推薦理由掉出第一屏，AC-18）。
+   ≥960：主欄放寬到 1104px（左欄 460px＋右欄 1fr，左欄寬度沿用 AC-18 驗過的第 1 名寬度）（參考 lifehunter：容器約 1100px、主區 fr 欄 grid），
+   搜尋區維持 720px 置中，結果區「無腦刷（左）／有條件（右）」兩欄並排，不再是窄條擠在正中間。 ---------- */
+.results {
+  display: grid;
+  gap: 16px;
+}
+
+.results-cols {
+  display: grid;
+  gap: 20px;
+}
+
+/* 兩組標題（無腦刷／有條件）：比一般小標大一級、用主文字色，兩欄並排時一眼分得出 */
+.results .rest-title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.col-direct {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
 @media (min-width: 768px) {
   .app {
     max-width: 640px;
   }
 
-  /* 第 1 名卡面維持信用卡比例；整欄寬時高度會到 360px 以上，推薦理由掉出 1280×800 第一屏（AC-18），
-     所以第 1 名這一塊限寬 440px 並置中，其餘（搜尋、卡堆）照 640px。 */
   .top {
     width: 100%;
     max-width: 440px;
@@ -1446,8 +1468,27 @@ input:focus-visible {
 
 @media (min-width: 960px) {
   .app {
-    padding: 28px 24px 64px;
+    max-width: 1104px;
+    padding: 28px 32px 64px;
   }
+
+  .app > :not(.app-header, .results, .result-foot) {
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .results-cols {
+    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  .top {
+    max-width: none;
+    margin-inline: 0;
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1865,11 +1906,7 @@ input:focus-visible {
   }
 }
 
-/* ---------- 兩組結果（sprint 010 T03）：直接拿得到／有門檻 ---------- */
-#top-group {
-  margin: 14px 0 10px;
-}
-
+/* ---------- 兩組結果（sprint 010 T03）：無腦刷／有條件 ---------- */
 .receipt-extra {
   display: grid;
   gap: 8px;

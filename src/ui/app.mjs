@@ -121,12 +121,12 @@ function cacheEls() {
   els.emptyMyCardsText = document.getElementById("empty-my-cards-text");
   els.addCardShortcutBtn = document.getElementById("add-card-shortcut-btn");
 
+  els.results = document.getElementById("results");
   els.top = document.getElementById("top");
   els.resultTitle = document.getElementById("result-title");
   els.topCard = document.getElementById("top-card");
   els.receipt = document.getElementById("receipt");
 
-  els.topGroup = document.getElementById("top-group");
   els.topNotice = document.getElementById("top-notice");
   els.rest = document.getElementById("rest");
   els.stack = document.getElementById("stack");
@@ -173,7 +173,7 @@ function matchHintText(match) {
  */
 function resultTitleParts(match, hasTop = true) {
   const parts = titleParts(match);
-  // 直接組沒有卡時，不能再說「刷這張」，改成跟 #top-notice 一致的說法
+  // 無腦刷組沒有卡時，不能再說「刷這張」，改成跟 #top-notice 一致（無腦刷組沒卡）的說法
   return hasTop ? parts : parts.map((t) => (t === "，刷這張" ? "，看這幾張" : t === "刷這張" ? "看這幾張" : t));
 }
 
@@ -311,7 +311,7 @@ function effectiveNote(rec, amount) {
   return `以 NT$${fmtAmount.format(amount)} 計，實拿約 ${rec.effectiveRate.toFixed(1)}%`;
 }
 
-/** 有門檻的卡：需要哪些條件（只列門檻類標籤）；沒有回傳空字串。 */
+/** 有條件的卡：需要哪些條件（只列門檻類標籤）；沒有回傳空字串。 */
 function needText(rec) {
   const names = rec.conditionTags.filter((t) => GATED_TAGS.includes(t)).map((t) => TAG_TEXT[t]);
   return names.length ? `需要：${names.join("、")}` : "";
@@ -519,6 +519,7 @@ function buildStackItem(rec, rank, color, amount) {
 
 function hideTopAndRest() {
   lastTopKey = null;
+  els.results.hidden = true;
   els.top.hidden = true;
   els.rest.hidden = true;
   els.gated.hidden = true;
@@ -553,7 +554,7 @@ function renderMatchAndResults() {
     return;
   }
 
-  // 兩組各自截斷：直接組前 10 名、有門檻組前 5 名，免得有門檻的被直接組擠到看不見
+  // 兩組各自截斷：無腦刷組前 10 名、有條件組前 5 名，免得有條件的被無腦刷組擠到看不見
   const directAll = state.recommendations.filter((r) => r.group !== "gated");
   const gatedAll = state.recommendations.filter((r) => r.group === "gated");
   const d = truncateTop(directAll, state.showAll, 10);
@@ -582,9 +583,9 @@ function renderMatchAndResults() {
   // 畫面上的卡片顏色不會跟著變（tasks.md T12-2b，老闆 2026-10-15 決定）。
   const bankOrder = bankColorOrder(state.recommendations);
 
+  els.results.hidden = false;
   els.top.hidden = false;
   els.resultTitle.replaceChildren(...resultTitleParts(match, !!top));
-  els.topGroup.hidden = !top;
   els.topNotice.hidden = !!top;
   els.topCard.hidden = !top;
   els.receipt.hidden = !top;
