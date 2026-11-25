@@ -22,8 +22,8 @@ describe("src/ui/quick-picks.mjs — 常用快捷（AC-21）", () => {
     assert.deepEqual(resolveQuickPicks(data).map((p) => p.name), ["全聯", "7-11"]);
   });
 
-  test("情境入口：超商、網購、加油、出國（海外類別），類別 id 存在才顯示", () => {
-    assert.deepEqual(SCENARIOS.map((s) => s.label), ["超商", "網購", "加油", "出國"]);
+  test("情境入口：超商、網購、加油、海外，類別 id 存在才顯示", () => {
+    assert.deepEqual(SCENARIOS.map((s) => s.label), ["超商", "網購", "加油", "海外"]);
     const data = { categories: [{ id: "gas" }, { id: "overseas" }, { id: "online-shopping" }] };
     assert.deepEqual(resolveScenarios(data).map((s) => s.id), ["online-shopping", "gas", "overseas"]);
     assert.deepEqual(resolveScenarios(null), []);

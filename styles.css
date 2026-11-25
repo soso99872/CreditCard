@@ -1401,7 +1401,7 @@ input:focus-visible {
   color: var(--text);
 }
 
-/* 手機首頁（未查詢）：頁尾推到第一屏下面，第一屏留給示意卡與常用快捷（sprint 009 T06，AC-06）。
+/* 手機首頁（未查詢）：頁尾推到第一屏下面，第一屏留給大標、搜尋框、情境入口（sprint 009 T07，AC-06）。
    用 100dvh 算，不管螢幕多高頁尾都剛好在折線下。 */
 @media (max-width: 767.98px) {
   .app.is-home {

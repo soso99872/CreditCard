@@ -17,7 +17,7 @@ export const SCENARIOS = [
   { kind: "category", id: "convenience-store", name: "超商", label: "超商" },
   { kind: "category", id: "online-shopping", name: "網購", label: "網購" },
   { kind: "category", id: "gas", name: "加油", label: "加油" },
-  { kind: "category", id: "overseas", name: "海外", label: "出國" },
+  { kind: "category", id: "overseas", name: "海外", label: "海外" },
 ];
 
 /** 情境入口：類別 id 在資料裡才顯示。 */

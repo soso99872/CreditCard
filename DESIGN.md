@@ -84,7 +84,7 @@ T12-2b（2026-10-15）：老闆改選**風格提案 D「錢包」**（`design-pr
 |---|---|---|
 | 頁首（品牌列） | `.app-header`（`.app-title`：`.brand-name` + `#checked-at`；右側 `#open-my-cards-btn`） | 小品牌列（sprint 009 T07）：左「刷哪張」17px／700＋同一行小字核對日（取全部資料裡最新的 `checkedAt`，寫「M/D 核對」；超過 14 天橘色加「・可能已更新」、45 天以上紅色加「・可能過期」，見 `checkedAtBadge`）；右「我的卡片 N」降級成文字鈕（`.toolbar-mycards-btn`，無底、hover 才有凹底，44px 高）。資料載入失敗時日期與按鈕都隱藏 |
 | 第一屏大標 | `.hero-title`（`#hero-title`，`h1`） | 「這筆刷哪張最划算？」28px／700，只在空狀態露出；查詢後（`.app.is-searching`）改成視覺隱藏、螢幕閱讀器仍讀得到，讓出第一屏給結果 |
-| 情境入口 | `.scenario-row`（`#scenario-list`）、`.scenario-card` | 空狀態搜尋框下 4 張等寬小卡「超商／網購／加油／出國」（類別 `convenience-store`、`online-shopping`、`gas`、`overseas`，資料裡沒有就不顯示；清單在 `quick-picks.mjs` `SCENARIOS`）：白底＋`--shadow-surface`、14px 圓角、80px 高、26px 線條圖示（stroke SVG，`aria-hidden`）＋14px／600 字。點了＝查該類別，跟點 chip 同一條路徑。中性色，不上品牌色 |
+| 情境入口 | `.scenario-row`（`#scenario-list`）、`.scenario-card` | 空狀態搜尋框下 4 張等寬小卡「超商／網購／加油／海外（入口與結果標題用同一詞，海外也含海外網購）」（類別 `convenience-store`、`online-shopping`、`gas`、`overseas`，資料裡沒有就不顯示；清單在 `quick-picks.mjs` `SCENARIOS`）：白底＋`--shadow-surface`、14px 圓角、80px 高、26px 線條圖示（stroke SVG，`aria-hidden`）＋14px／600 字。點了＝查該類別，跟點 chip 同一條路徑。中性色，不上品牌色 |
 | 載入中提示 | `#loading-hint` | 資料還沒載入完成前顯示「載入中…」，載入成功或失敗後都會隱藏 |
 | 錯誤橫幅 | `.banner.banner-error`（`#load-error`，`role="alert"`） | 資料載入失敗時取代查詢區；唯一用紅色的狀態 |
 | 草稿提示橫幅 | `.banner.banner-neutral`（`#draft-banner`） | 網址帶 `?draft=1` 時固定顯示，中性灰黑 |
