@@ -128,6 +128,8 @@ data/
     - `unit`：`TWD` 或 `point`。
     - `period`：`month`、`quarter`、`billing-cycle`、`campaign`、`year`、`per-transaction` 之一。
   - `conditions`：中文短標籤陣列，沒有條件則為 `[]`（畫面上不顯示）。
+  - `conditionTags`（sprint 010）：字串陣列，標出這條規則要滿足哪幾類條件才拿得到。列舉 `asset`（資產、存款、大戶、特定帳戶或身分資格）、`autopay`（自動扣繳／授扣）、`ebill`（電子帳單）、`newcard`（新戶、首刷）、`plan`（切換或選擇方案）、`quota`（限量、名額）、`register`（登錄、連結會員、綁定指定 App 或支付）、`spend`（消費金額門檻或任務；單筆門檻須大於 500 元）。**依字母排序、不重複**，沒有則為 `[]`。verified 卡每條規則都必填，`validate` 會檢查。由 `scripts/tag-conditions.mjs` 產生（`--write` 寫回），關鍵字判斷不了的寫在該腳本的覆寫表。
+  - `capGroup`（選填，字串）：同一組共用上限的規則填同一個名稱。本期只定義、不填資料。
   - `validFrom`：`YYYY-MM-DD`，或 `null`（代表官方頁沒有寫明起日，引擎視為已生效）。**只有官方真的沒寫起日時才能填 `null`，不得自行編造或推算起日**；官方若有寫起日（即使只是活動公告日），一律照官方填寫。
   - `validTo`：`null` 代表官方未載明結束日；否則為 `YYYY-MM-DD`，且不得早於 `validFrom`（`validFrom` 為 `null` 時不檢查此項）。
   - `sourceUrl`：必填，網域必須在該銀行 `officialDomains` 內（含子網域）。

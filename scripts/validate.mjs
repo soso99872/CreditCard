@@ -27,6 +27,7 @@ const VALID_CAP_PERIODS = [
 const VALID_SCOPE_TYPES = ["general", "category", "merchant"];
 const VALID_BATCHES = [1, 2, 3];
 const VALID_SOURCE_TYPES = ["official", "third-party"];
+const VALID_CONDITION_TAGS = ["asset", "autopay", "ebill", "newcard", "plan", "quota", "register", "spend"];
 const THIRD_PARTY_MAX_AGE_DAYS = 90;
 const ISSUER_ID_RE = /^[a-z0-9-]+$/;
 
@@ -447,6 +448,19 @@ export async function validate(dataDir) {
 
         if (rule.conditions !== undefined && !Array.isArray(rule.conditions)) {
           errors.push(`${ruleLoc}：conditions 必須是陣列`);
+        }
+
+        // conditionTags：verified 卡每條規則必填；值在列舉內、依字母排序、不重複
+        const tags = rule.conditionTags;
+        if (tags === undefined) {
+          if (card.verified === true) errors.push(`${ruleLoc}：verified 卡的規則缺少 conditionTags（沒有條件請填 []）`);
+        } else if (!Array.isArray(tags) || tags.some((x) => !VALID_CONDITION_TAGS.includes(x))) {
+          errors.push(`${ruleLoc}：conditionTags 必須是陣列，值只能是 ${VALID_CONDITION_TAGS.join("/")}`);
+        } else if (tags.some((x, i) => i > 0 && x <= tags[i - 1])) {
+          errors.push(`${ruleLoc}：conditionTags 必須依字母排序且不重複`);
+        }
+        if (rule.capGroup !== undefined && typeof rule.capGroup !== "string") {
+          errors.push(`${ruleLoc}：capGroup 必須是字串`);
         }
 
         if (rule.validFrom !== null && !isValidDateString(rule.validFrom)) {
