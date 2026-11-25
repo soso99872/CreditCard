@@ -135,16 +135,11 @@ function matchHintText(match) {
   // 直接點類別（快捷、建議、最近查詢）不是「查不到」，標題已寫明類別，不再多一行提示
   if (!match || state.pickedCategory) return "";
   switch (match.type) {
-    case "category-guess":
-      return `看起來是「${match.categoryName}」類別。`;
+    // category-guess、category-selected 不再另寫一行：結果標題已經說了（T08）
     case "need-category":
       // 理論上不會再出現：recompute() 一律帶保底類別呼叫 recommend()，
       // 保留這個分支只是避免引擎行為變動時畫面整個不顯示任何提示。
       return "找不到這家店，先選類別：";
-    case "category-selected":
-      return match.categoryId === GENERAL_CATEGORY_ID
-        ? "沒有這家店的專屬優惠，以一般消費回饋排序："
-        : `依你選擇的「${match.categoryName}」類別查詢。`;
     default:
       return "";
   }
@@ -355,7 +350,7 @@ function buildSourceLink(url, text) {
   return link;
 }
 
-/** 第三方來源標籤（DESIGN.md「非官方來源標籤」）。 */
+/** 第三方來源標籤（DESIGN.md「第三方來源標籤」）。 */
 function buildThirdPartyTag(text) {
   const tag = document.createElement("p");
   tag.className = "source-tag";
@@ -483,7 +478,7 @@ function renderMatchAndResults() {
     showEmptyHint(
       state.checkingMode
         ? "卡片資料還在核對，先沒有推薦。"
-        : "找不到符合的信用卡回饋，可以試試其他商家名稱，或切換查詢範圍。"
+        : "找不到符合的回饋，換個商家名稱或切換查詢範圍試試。"
     );
     return;
   }
@@ -608,7 +603,7 @@ function renderMyCards() {
 function emptyMyCardsText() {
   return hasHiddenMyCards(state.myCardIds, currentVisibleMyCardIds())
     ? "你加入的卡還在核對，核對完會出現。"
-    : "「我的卡片」還沒有加入任何卡片。";
+    : "「我的卡片」還沒加卡。";
 }
 
 function renderCheckedAt() {

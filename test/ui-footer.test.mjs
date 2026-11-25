@@ -28,12 +28,13 @@ describe("src/ui/footer.mjs — latestCheckedAt（AC-15：頁尾顯示資料最�
 
 describe("src/ui/footer.mjs — checkedAtBadge（頁首新鮮度燈，健檢 R4）", () => {
   test("14 天內：只寫日期，fresh", () => {
-    assert.deepEqual(checkedAtBadge("2026-11-11", "2026-11-25"), { text: "最近核對 11/11", level: "fresh", days: 14 });
+    assert.deepEqual(checkedAtBadge("2026-11-11", "2026-11-25"), { text: "11/11 核對", level: "fresh", days: 14 });
   });
   test("超過 14 天：stale，加一句提醒", () => {
-    assert.deepEqual(checkedAtBadge("2026-10-31", "2026-11-25"), { text: "最近核對 10/31，部分資料可能已更新", level: "stale", days: 25 });
+    assert.deepEqual(checkedAtBadge("2026-10-31", "2026-11-25"), { text: "10/31 核對・可能已更新", level: "stale", days: 25 });
   });
   test("45 天以上：old；跨年也算對", () => {
+    assert.equal(checkedAtBadge("2026-11-20", "2027-01-04").text, "11/20 核對・可能過期");
     assert.equal(checkedAtBadge("2026-11-20", "2027-01-04").level, "old");
     assert.equal(checkedAtBadge("2026-11-20", "2027-01-04").days, 45);
   });

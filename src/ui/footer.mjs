@@ -22,12 +22,12 @@ export function latestCheckedAt(cards) {
   return latest;
 }
 
-// 頁首新鮮度燈（健檢 2026-11 R4、product-pitfalls 第 1、5 條）：超過 14 天變橘、45 天以上變紅。
+// 頁首新鮮度燈（健檢 2026-11 R4、product-pitfalls 第 1、5 條）：超過 14 天變橘、45 天以上變紅。文字從簡（sprint 009 T08）：「M/D 核對」。
 export const STALE_DAYS = 14;
 export const OLD_DAYS = 45;
 
 /**
- * 頁首「最近核對 M/D」與新鮮度等級。日期都是 YYYY-MM-DD，用 UTC 換算天數避免時區差一天。
+ * 頁首「M/D 核對」與新鮮度等級。日期都是 YYYY-MM-DD，用 UTC 換算天數避免時區差一天。
  * @param {string | null} latest 最新 checkedAt
  * @param {string} today 本地今天
  * @returns {{ text: string, level: "fresh" | "stale" | "old", days: number } | null}
@@ -38,6 +38,6 @@ export function checkedAtBadge(latest, today) {
   const days = Math.max(0, Math.round(toDay(today) - toDay(latest)));
   const md = `${+latest.slice(5, 7)}/${+latest.slice(8, 10)}`;
   const level = days >= OLD_DAYS ? "old" : days > STALE_DAYS ? "stale" : "fresh";
-  const note = level === "fresh" ? "" : level === "old" ? "，資料可能已過期" : "，部分資料可能已更新";
-  return { text: `最近核對 ${md}${note}`, level, days };
+  const note = level === "fresh" ? "" : level === "old" ? "・可能過期" : "・可能已更新";
+  return { text: `${md} 核對${note}`, level, days };
 }
