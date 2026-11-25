@@ -692,6 +692,7 @@ function recompute() {
     merchants: state.data.merchants,
     categoryKeywords: state.data.categoryKeywords,
     categories: state.data.categories,
+    categoryDefaults: state.data.categoryDefaults,
     cardIds: useScope === SCOPE.MY ? visibleIds : null,
     today: localToday(),
     amount: state.amount,

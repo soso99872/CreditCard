@@ -1,0 +1,11 @@
+{
+  "default": 1000,
+  "categories": {
+    "gas": 1500,
+    "convenience-store": 200,
+    "supermarket": 2000,
+    "online-shopping": 1500,
+    "dining": 800,
+    "overseas": 10000
+  }
+}

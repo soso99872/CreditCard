@@ -47,7 +47,7 @@ function regionApplies(rule, regionId) {
 }
 
 // 具體程度排名，只用來在回饋率相同時決定選哪一條（數字越大越具體）。
-const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
+export const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
 
 /**
  * 從一張卡的規則中選出最佳的一條：把該商家的 merchant 規則、該類別的 category 規則、
@@ -64,7 +64,12 @@ const SPECIFICITY_RANK = { merchant: 3, category: 2, general: 1 };
  * }} params
  * @returns {{ rule: object, matchLevel: "merchant" | "category" | "general", viaOverseas?: boolean } | null}
  */
-export function selectBestRule(card, { merchantId, categoryId, today, merchantIndex, parentIds = [], merchantOverseas = false }) {
+export function selectBestRule(card, ctx) {
+  return pickBest(collectCandidates(card, ctx));
+}
+
+/** 一張卡所有適用的規則候選（含具體程度），selectBestRule 與分組排序共用。 */
+export function collectCandidates(card, { merchantId, categoryId, today, merchantIndex, parentIds = [], merchantOverseas = false }) {
   const activeRules = (card.rules || []).filter((rule) => isRuleActive(rule, today));
   const candidates = [];
 
@@ -112,6 +117,11 @@ export function selectBestRule(card, { merchantId, categoryId, today, merchantIn
     }
   }
 
+  return candidates;
+}
+
+/** 候選中取回饋率最高者；同率時依具體程度、上下位類別決定。 */
+export function pickBest(candidates) {
   let best = null;
   for (const candidate of candidates) {
     if (

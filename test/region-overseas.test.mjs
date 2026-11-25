@@ -16,6 +16,9 @@ const data = await loadAllData({
   fetchJson: async (p) => JSON.parse(await readFile(path.join(ROOT, p), "utf8")),
 });
 const run = (query) => recommend({ ...data, query, today: TODAY });
+// sprint 010：同一張卡可能在 direct、gated 兩組各出現一次，這裡取回饋率最高的那筆
+const pickCard = (recommendations, match) =>
+  recommendations.filter(match).sort((a, b) => b.rate - a.rate)[0];
 
 const rule = (id, categories, rate) => ({ id, scope: { type: "category", categories }, rate });
 const ctx = (categoryId) => ({ merchantId: null, categoryId, today: TODAY, merchantIndex: new Map() });
@@ -24,7 +27,7 @@ describe("地區分類同時比對 overseas 規則", () => {
   for (const q of ["日本", "歐洲", "巴黎"]) {
     test(`搜「${q}」會出現 CUBE 趣旅行海外規則`, () => {
       const { recommendations } = run(q);
-      const cube = recommendations.find((r) => r.cardName.includes("CUBE"));
+      const cube = pickCard(recommendations, (r) => r.cardName.includes("CUBE"));
       assert.ok(cube, "找不到 CUBE");
       assert.ok(cube.rate >= 3);
       assert.ok(recommendations.length > 5);
@@ -100,11 +103,11 @@ describe("地區分類同時比對 overseas 規則", () => {
 
   test("真實資料：玉山 Unicard 海外加碼只含完整涵蓋的地區，歐洲（只含英法德義）不套用", () => {
     for (const q of ["El Corte Ingles", "Harrods", "歐洲", "南美洲", "Latin America", "美洲", "美國", "Walmart"]) {
-      const uni = run(q).recommendations.find((r) => r.cardName.includes("Unicard"));
+      const uni = pickCard(run(q).recommendations, (r) => r.cardName.includes("Unicard"));
       assert.ok(!uni || uni.rate < 4.5, `${q}：Unicard 不該是海外加碼 4.5%`);
     }
     for (const q of ["日本", "新加坡"]) {
-      assert.equal(run(q).recommendations.find((r) => r.cardName.includes("Unicard")).rate, 4.5, q);
+      assert.equal(pickCard(run(q).recommendations, (r) => r.cardName.includes("Unicard")).rate, 4.5, q);
     }
   });
 

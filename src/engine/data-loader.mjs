@@ -30,6 +30,7 @@ async function defaultFetchJson(url) {
  *   issuers: Array,
  *   merchants: Array,
  *   categoryKeywords: Record<string, string[]>,
+ *   categoryDefaults: {default: number, categories: Record<string, number>}, // 排序用的類別預設金額
  *   cards: Array, // 所有銀行的卡片攤平成一個陣列，每張卡多了 bankId 欄位
  * }>}
  */
@@ -38,12 +39,13 @@ export async function loadAllData({
   fetchJson = defaultFetchJson,
   includeUnverified = false,
 } = {}) {
-  const [categories, issuers, merchants, categoryKeywords, index] = await Promise.all([
+  const [categories, issuers, merchants, categoryKeywords, index, categoryDefaults] = await Promise.all([
     fetchJson(`${baseUrl}categories.json`),
     fetchJson(`${baseUrl}issuers.json`),
     fetchJson(`${baseUrl}merchants.json`),
     fetchJson(`${baseUrl}category-keywords.json`),
     fetchJson(`${baseUrl}index.json`),
+    fetchJson(`${baseUrl}category-defaults.json`),
   ]);
 
   const bankFiles = await Promise.all(
@@ -58,5 +60,5 @@ export async function loadAllData({
   // 只有明確傳 includeUnverified: true 時才會出現在這裡回傳的 cards。
   const cards = includeUnverified ? allCards : allCards.filter((card) => card.verified === true);
 
-  return { categories, issuers, merchants, categoryKeywords, cards };
+  return { categories, issuers, merchants, categoryKeywords, categoryDefaults, cards };
 }

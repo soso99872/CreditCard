@@ -1,0 +1,206 @@
+{
+ "today": "2026-11-25",
+ "note": "組長 2026-11-25 用 scratch/leader-rank.mjs 獨立算（不用組員程式），金額用類別預設；directTop 為 direct 組前幾名卡 id（順序要相同）；前 3 名邊界同分的只鎖前 2 名",
+ "queries": [
+  {
+   "query": "加油",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "全聯",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "海外",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "ctbc-uniopen",
+    "sunnybank-visa-yaojing",
+    "esun-unicard"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "蝦皮",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "chb-mygo",
+    "ubot-linebank"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "超商",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "7-ELEVEN",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "ctbc-allme",
+    "kgi-eslite",
+    "hsbc-liveplus"
+   ],
+   "gatedIncludes": "scsb-minions"
+  },
+  {
+   "query": "家樂福",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "momo",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "chb-mygo",
+    "ubot-linebank"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "麥當勞",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "kgi-eslite",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "yuanta-diamond-wealth"
+  },
+  {
+   "query": "星巴克",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "sinopac-green",
+    "hsbc-liveplus",
+    "ctbc-uniopen"
+   ],
+   "gatedIncludes": "yuanta-diamond-wealth"
+  },
+  {
+   "query": "中油",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "rakuten-panda-j",
+    "esun-unicard",
+    "kgi-eslite"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "Uber Eats",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "taishin-jkopay"
+   ],
+   "gatedIncludes": "yuanta-diamond-wealth"
+  },
+  {
+   "query": "日本",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "ctbc-uniopen",
+    "dbs-eco",
+    "firstbank-easycard"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "新光三越",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "taishin-jkopay",
+    "esun-unicard"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "屈臣氏",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "ctbc-allme",
+    "esun-unicard",
+    "kgi-eslite"
+   ],
+   "gatedIncludes": "ctbc-linepay-visa"
+  },
+  {
+   "query": "誠品",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "hsbc-liveplus",
+    "esun-unicard",
+    "kgi-eslite"
+   ],
+   "gatedIncludes": "kgi-eslite"
+  },
+  {
+   "query": "好市多",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "Netflix",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "chb-mygo",
+    "hsbc-liveplus",
+    "ubot-linebank"
+   ],
+   "gatedIncludes": "sinopac-dawho"
+  },
+  {
+   "query": "高鐵",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "scsb-minions",
+    "bot-greengo",
+    "scsb-visa-simple"
+   ],
+   "gatedIncludes": "tbb-titanium"
+  },
+  {
+   "query": "一般消費",
+   "expectFirstGroup": "direct",
+   "directTop": [
+    "kgi-eslite",
+    "hsbc-liveplus",
+    "scsb-minions"
+   ],
+   "gatedIncludes": "sinopac-dawho",
+   "selectedCategoryId": "general"
+  }
+ ]
+}

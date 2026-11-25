@@ -18,6 +18,9 @@ const data = await loadAllData({
   fetchJson: async (p) => JSON.parse(await readFile(path.join(ROOT, p), "utf8")),
 });
 const run = (query, extra = {}) => recommend({ ...data, query, today: TODAY, ...extra });
+// sprint 010：同一張卡可能在 direct、gated 兩組各出現一次，這裡取回饋率最高的那筆
+const pickCard = (recommendations, cardId) =>
+  recommendations.filter((r) => r.cardId === cardId).sort((a, b) => b.rate - a.rate)[0];
 
 describe("台灣有門市的日系品牌是境內商家", () => {
   for (const q of ["HANDS", "Loft", "ABC-MART"]) {
@@ -31,7 +34,7 @@ describe("台灣有門市的日系品牌是境內商家", () => {
 
 describe("真海外商家放開泛用海外規則", () => {
   test("Harrods 出現 CUBE 3.3%，且標 viaOverseas", () => {
-    const cube = run("Harrods").recommendations.find((r) => r.cardId === "cathay-cube");
+    const cube = pickCard(run("Harrods").recommendations, "cathay-cube");
     assert.equal(cube.rate, 3.3);
     assert.equal(cube.viaOverseas, true);
   });
@@ -68,12 +71,12 @@ describe("上位類別規則套到下位類別", () => {
   });
   test("recommend 依 categories.json 的 parent 帶入：咖啡、外送出現只標餐飲的卡（元大鑽石 11.2%）", () => {
     for (const id of ["coffee", "delivery"]) {
-      const r = run("x", { selectedCategoryId: id }).recommendations.find((x) => x.cardId === "yuanta-diamond-wealth");
+      const r = pickCard(run("x", { selectedCategoryId: id }).recommendations, "yuanta-diamond-wealth");
       assert.equal(r?.rate, 11.2, id);
     }
   });
   test("原本就含 coffee 的規則照舊（chb-myle 咖啡 3%）", () => {
-    assert.equal(run("咖啡").recommendations.find((x) => x.cardId === "chb-myle").rate, 3);
+    assert.equal(pickCard(run("咖啡").recommendations, "chb-myle").rate, 3);
   });
   test("電影院套娛樂影音規則", () => {
     const card = { rules: [rule("e", ["entertainment"], 4)] };

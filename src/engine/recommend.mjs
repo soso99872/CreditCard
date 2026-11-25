@@ -2,7 +2,7 @@
 // 見 PRD「任意商家都能查詢」「推薦清單」「金額試算」與 tasks.md T02。
 
 import { buildMerchantIndex, matchMerchant } from "./merchant-match.mjs";
-import { selectBestRule } from "./rules.mjs";
+import { collectCandidates, pickBest, REGION_CATEGORY_IDS } from "./rules.mjs";
 import { formatRate, formatCap, formatReason, estimateReward } from "./format.mjs";
 
 // 介面直接點類別（沒有打字）時傳進來的 query 佔位字元：只用來走「已選類別」分支，不能出現在理由句裡。
@@ -28,6 +28,9 @@ export const CATEGORY_PICK_QUERY = "◎";
  *   secondSourcePublishedAt: string | null,
  *   matchLevel: "merchant" | "category" | "general",
  *   reason: string,
+ *   group: "direct" | "gated", // direct＝直接拿得到；gated＝有門檻（conditionTags 含 asset、plan、quota、newcard、spend）
+ *   effectiveRate: number, // 以使用者金額（沒填用類別預設）扣掉上限後的實拿回饋率，% 單位
+ *   conditionTags: string[],
  *   estimatedAmount?: number,
  *   capped?: boolean,
  * }} Recommendation
@@ -44,6 +47,7 @@ export const CATEGORY_PICK_QUERY = "◎";
  *   categories: Array<{id: string, name: string}>, // categories.json
  *   cardIds?: string[] | null, // 只計算這些卡片 id（「我的卡片」），null／undefined 代表全部卡別
  *   today: string, // YYYY-MM-DD，用於排除過期規則
+ *   categoryDefaults?: {default: number, categories: Record<string, number>}, // 沒填金額時，排序用的類別預設金額
  *   amount?: number, // 選填，提供時會附上每張卡的金額試算
  *   includeUnverified?: boolean, // T14：預設 false，只計算 verified === true 的卡；
  *                                 // 草稿卡（verified 不是 true）須明確傳 true 才會納入計算，
@@ -56,7 +60,7 @@ export const CATEGORY_PICK_QUERY = "◎";
  *     | { type: "merchant", merchantId: string, merchantName: string, categoryId: string }
  *     | { type: "category-guess", categoryId: string, categoryName: string, query: string }
  *     | { type: "category-selected", categoryId: string, categoryName: string, query: string },
- *   recommendations: Recommendation[], // 已依回饋率由高到低排序（同率時依卡名排序）
+ *   recommendations: Recommendation[], // 先 direct 組後 gated 組；組內依 effectiveRate 由高到低（見 compareEntries）
  * }}
  */
 export function recommend({
@@ -66,6 +70,7 @@ export function recommend({
   merchants,
   categoryKeywords,
   categories,
+  categoryDefaults = null,
   cardIds = null,
   today,
   amount,
@@ -136,20 +141,37 @@ export function recommend({
   const parentIds = []; // validate 保證 parent 不成環；加上限只是保險
   for (let p = parentById.get(categoryId); p && parentIds.length < 5; p = parentById.get(p)) parentIds.push(p);
 
+  const ctx = { merchantId, categoryId, today, merchantIndex, parentIds, merchantOverseas };
+  // 排序用金額：使用者有填用使用者的；否則依類別（→上位類別→海外地區→default）取預設
+  const sortAmount = typeof amount === "number" && amount > 0 ? amount : defaultAmount(categoryId, parentIds, categoryDefaults);
+
   const recommendations = [];
   for (const card of pool) {
-    const best = selectBestRule(card, { merchantId, categoryId, today, merchantIndex, parentIds, merchantOverseas });
-    if (!best) continue;
+    // 每張卡在 direct、gated 各取 effectiveRate 最高的一條；gated 要比 direct 高才另外出現
+    const best = { direct: null, gated: null };
+    for (const candidate of collectCandidates(card, ctx)) {
+      const effectiveRate = calcEffectiveRate(candidate.rule, card, sortAmount);
+      const group = isGated(candidate.rule) ? "gated" : "direct";
+      const cur = best[group];
+      if (!cur || effectiveRate > cur.effectiveRate + EPS || (Math.abs(effectiveRate - cur.effectiveRate) <= EPS && pickBest([cur.candidate, candidate]) === candidate && candidate !== cur.candidate)) {
+        best[group] = { candidate, effectiveRate };
+      }
+    }
+    for (const group of ["direct", "gated"]) {
+      const pick = best[group];
+      if (!pick) continue;
+      if (group === "gated" && best.direct && pick.effectiveRate <= best.direct.effectiveRate + EPS) continue;
+      recommendations.push(buildEntry(card, pick, group));
+    }
+  }
 
-    const { rule, matchLevel, viaOverseas } = best;
-    const reason = formatReason({
-      matchLevel,
-      displayName,
-      categoryName,
-      rate: rule.rate,
-      viaOverseas,
-    });
+  recommendations.sort(compareEntries);
 
+  return { match, recommendations };
+
+  function buildEntry(card, { candidate, effectiveRate }, group) {
+    const { rule, matchLevel, viaOverseas } = candidate;
+    const reason = formatReason({ matchLevel, displayName, categoryName, rate: rule.rate, viaOverseas });
     const entry = {
       cardId: card.id,
       cardName: card.name,
@@ -170,26 +192,47 @@ export function recommend({
       matchLevel,
       viaOverseas: Boolean(viaOverseas),
       reason,
+      group,
+      effectiveRate,
+      conditionTags: rule.conditionTags || [],
     };
-
     if (typeof amount === "number") {
-      const estimate = estimateReward({
-        rate: rule.rate,
-        amount,
-        cap: rule.cap,
-        twdPerPoint: card.pointValue?.twdPerPoint,
-      });
+      const estimate = estimateReward({ rate: rule.rate, amount, cap: rule.cap, twdPerPoint: card.pointValue?.twdPerPoint });
       entry.estimatedAmount = estimate.amount;
       entry.capped = estimate.capped;
     }
-
-    recommendations.push(entry);
+    return entry;
   }
+}
 
-  recommendations.sort((a, b) => {
-    if (b.rate !== a.rate) return b.rate - a.rate;
-    return a.cardName < b.cardName ? -1 : a.cardName > b.cardName ? 1 : 0;
-  });
+const EPS = 1e-9;
+const GATED_TAGS = ["asset", "plan", "quota", "newcard", "spend"];
+const SPECIFICITY = { merchant: 3, category: 2, general: 1 };
 
-  return { match, recommendations };
+function isGated(rule) {
+  return (rule.conditionTags || []).some((t) => GATED_TAGS.includes(t));
+}
+
+/** 類別預設金額：該類別 → 上位類別 → 地區類別用 overseas → default。 */
+function defaultAmount(categoryId, parentIds, defaults) {
+  const table = defaults?.categories || {};
+  for (const id of [categoryId, ...parentIds]) if (table[id]) return table[id];
+  if (REGION_CATEGORY_IDS.has(categoryId) && table.overseas) return table.overseas;
+  return defaults?.default || 1000;
+}
+
+/** effectiveRate = min(rate% × A, 上限換算成元) ÷ A × 100；cap.period 本期不影響。 */
+function calcEffectiveRate(rule, card, amountTwd) {
+  const gross = (rule.rate * amountTwd) / 100;
+  const capTwd = rule.cap ? (rule.cap.unit === "point" ? rule.cap.amount * (card.pointValue?.twdPerPoint ?? 1) : rule.cap.amount) : Infinity;
+  return (Math.min(gross, capTwd) / amountTwd) * 100;
+}
+
+/** 先 direct 後 gated；組內 effectiveRate 高 → 官方先 → 具體度 → 卡名。 */
+function compareEntries(a, b) {
+  if (a.group !== b.group) return a.group === "direct" ? -1 : 1;
+  if (Math.abs(b.effectiveRate - a.effectiveRate) > EPS) return b.effectiveRate - a.effectiveRate;
+  if (a.sourceType !== b.sourceType) return a.sourceType === "official" ? -1 : 1;
+  if (a.matchLevel !== b.matchLevel) return SPECIFICITY[b.matchLevel] - SPECIFICITY[a.matchLevel];
+  return a.cardName < b.cardName ? -1 : a.cardName > b.cardName ? 1 : 0;
 }
