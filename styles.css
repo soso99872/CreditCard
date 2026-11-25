@@ -1428,7 +1428,7 @@ input:focus-visible {
 }
 
 /* ---------- 平板與桌機（sprint 009 T06、sprint 010 T04）
-   768～959：單欄置中 640px，第 1 名這一塊限寬 440px（整欄寬時卡高會讓推薦理由掉出第一屏，AC-18）。
+   768～959：單欄置中 640px，第 1 名這一塊限寬 440px（整欄寬時卡高會讓推薦理由掉出第一屏，AC-18），靠左與搜尋框同一條邊線（sprint 010 BUG-01）。
    ≥960：主欄放寬到 1104px（左欄 460px＋右欄 1fr，左欄寬度沿用 AC-18 驗過的第 1 名寬度）（參考 lifehunter：容器約 1100px、主區 fr 欄 grid），
    搜尋區維持 720px 置中，結果區「無腦刷（左）／有條件（右）」兩欄並排，不再是窄條擠在正中間。 ---------- */
 .results {
@@ -1462,7 +1462,7 @@ input:focus-visible {
   .top {
     width: 100%;
     max-width: 440px;
-    margin-inline: auto;
+    margin-inline: 0;
   }
 }
 
