@@ -13,16 +13,23 @@ export const TAGS = ["asset", "autopay", "ebill", "newcard", "plan", "quota", "r
 
 // 無法用關鍵字判斷、已逐條看過原文的規則（id → 標籤；理由寫在後面）
 export const OVERRIDES = {
-  // 兆豐 MyLe 四條：原文「須同時符合三項加碼條件：數位存款帳戶月均餘額達2萬、綁台灣Pay或Google Pay付款、電子帳單或本行帳戶自動扣繳」
+  // 彰銀 MyLe 四條：原文「須同時符合三項加碼條件：數位存款帳戶月均餘額達2萬、綁台灣Pay或Google Pay付款、電子帳單或本行帳戶自動扣繳」
   // 三項都是帳戶／綁定／帳單條件，不是消費門檻（關鍵字會把「三項」誤判成 spend）
   "chb-myle-overseas": ["asset", "autopay", "ebill", "register"],
   "chb-myle-supermarket": ["asset", "autopay", "ebill", "register"],
   "chb-myle-dining": ["asset", "autopay", "ebill", "register"],
   "chb-myle-department-store": ["asset", "autopay", "ebill", "register"],
-  // 華南熊三條：「七選一資格」（熊數位、熊有錢、熊有薪、熊好住、熊速貸…）都要先有華南帳戶或產品，屬帳戶資格，不是消費門檻
-  "hncb-bearq-general-bonus": ["asset"],
-  "hncb-bearq-overseas-bonus": ["asset"],
-  "hncb-bearq-jk-bonus": ["asset"],
+  // 華南熊加碼三條：「七選一資格」符合一項即可，其中熊愛PAY 只要在華銀支付／台灣行動支付綁定熊Q卡且當期消費一筆＝綁定
+  "hncb-bearq-general-bonus": ["register"],
+  "hncb-bearq-overseas-bonus": ["register"],
+  "hncb-bearq-jk-bonus": ["register"],
+  // 華南熊指定通路六條：「需符合2項以上資格條件」，熊愛PAY 之外至少還要一項華南帳戶或產品（熊數位、熊有錢、熊有薪…），屬帳戶資格，不是消費門檻
+  "hncb-bearq-dept": ["asset", "register"],
+  "hncb-bearq-dining": ["asset", "register"],
+  "hncb-bearq-travel": ["asset", "register"],
+  "hncb-bearq-gas": ["asset", "register"],
+  "hncb-bearq-shopping": ["asset", "register"],
+  "hncb-bearq-twpay": ["asset", "register"],
   // 凱基誠品四條：「限誠品會員金卡／黑卡」要在誠品累計消費 6,000／50,000 元才升等，屬累積消費門檻；出示會員卡另標 register
   "kgi-eslite-store-gold": ["register", "spend"],
   "kgi-eslite-store-black": ["register", "spend"],
