@@ -307,7 +307,7 @@ function sortAmountFor(match) {
 /** 被上限截掉時的一行說明；沒截到回傳空字串。 */
 function effectiveNote(rec, amount) {
   if (rec.effectiveRate > rec.rate - 0.01) return "";
-  if (capOnlyBonus(rec.conditions)) return ""; // 上限只算加碼部分時，「實拿約」公式不成立
+  if (capOnlyBonus(rec.conditions, rec.rawReward)) return ""; // 上限只算加碼部分時，「實拿約」公式不成立
   return `以 NT$${fmtAmount.format(amount)} 計，實拿約 ${rec.effectiveRate.toFixed(1)}%`;
 }
 

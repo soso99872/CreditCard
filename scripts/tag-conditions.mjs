@@ -23,7 +23,7 @@ export const OVERRIDES = {
   "hncb-bearq-general-bonus": ["register"],
   "hncb-bearq-overseas-bonus": ["register"],
   "hncb-bearq-jk-bonus": ["register"],
-  // 華南熊指定通路六條：「需符合2項以上資格條件」，熊愛PAY 之外至少還要一項華南帳戶或產品（熊數位、熊有錢、熊有薪…），屬帳戶資格，不是消費門檻
+  // 華南熊指定通路六條：「需符合2項以上資格條件」，熊愛PAY 之外至少還要一項華南帳戶或產品（熊數位、熊有錢、熊有薪…），屬帳戶資格，不是消費門檻（例外：新熊友核卡 3 個月內視同 2 項資格，本站不收新戶優惠）
   "hncb-bearq-dept": ["asset", "register"],
   "hncb-bearq-dining": ["asset", "register"],
   "hncb-bearq-travel": ["asset", "register"],

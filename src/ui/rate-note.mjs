@@ -1,9 +1,11 @@
 /**
- * 條件文字是否寫明「上限只算加碼部分」。
- * 這種規則的上限不套整個回饋率，「以 NT$X 計，實拿約 Y%」的公式（整個回饋率被上限截掉）不成立，UI 不顯示那行。
+ * 條件或原文是否看得出「回饋分好幾段」（基本＋加碼、上限只算加碼、單筆上限…）。
+ * 「以 NT$X 計，實拿約 Y%」的公式假設上限套整個回饋率，只有單一回饋率的規則才成立。
+ * 自由文字的寫法列舉不完，所以反過來：只要出現任何多段字樣就不顯示，寧可少顯示也不要顯示錯的數字。
  * @param {string[] | undefined} conditions 規則的 conditions
+ * @param {string} [rawReward] 規則的 rawReward（官方原文）
  */
-export function capOnlyBonus(conditions) {
-  // 寫法很多（「加碼2.5%部分」「額外3%部分」「上限只計加碼4%部分」「基本0.5%不計入」「另加於基本0.3%」「基本1.2%之外的加碼」「超過上限的部分改以1%計」），寧可少顯示也不要顯示錯的數字
-  return (conditions || []).some((c) => /上限(僅|只)(計|算)|僅計|(加碼|額外)[^；，。]{0,12}部分|不計入|另加於基本|基本[0-9.]+%之外|超過上限的部分/.test(c));
+export function capOnlyBonus(conditions, rawReward = "") {
+  const text = [...(conditions || []), rawReward || ""].join("；");
+  return /加碼|額外|基本|一般(消費)?\s*[0-9.]+\s*%|另加|不計入|無上限|合計|單筆最高|含原|當日|每日/.test(text);
 }
