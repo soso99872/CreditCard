@@ -19,6 +19,15 @@ export const OVERRIDES = {
   "chb-myle-supermarket": ["asset", "autopay", "ebill", "register"],
   "chb-myle-dining": ["asset", "autopay", "ebill", "register"],
   "chb-myle-department-store": ["asset", "autopay", "ebill", "register"],
+  // 華南熊三條：「七選一資格」（熊數位、熊有錢、熊有薪、熊好住、熊速貸…）都要先有華南帳戶或產品，屬帳戶資格，不是消費門檻
+  "hncb-bearq-general-bonus": ["asset"],
+  "hncb-bearq-overseas-bonus": ["asset"],
+  "hncb-bearq-jk-bonus": ["asset"],
+  // 凱基誠品四條：「限誠品會員金卡／黑卡」要在誠品累計消費 6,000／50,000 元才升等，屬累積消費門檻；出示會員卡另標 register
+  "kgi-eslite-store-gold": ["register", "spend"],
+  "kgi-eslite-store-black": ["register", "spend"],
+  "kgi-eslite-store-gold-autodebit": ["autopay", "register", "spend"],
+  "kgi-eslite-store-black-autodebit": ["autopay", "register", "spend"],
 };
 
 // 先把「放寬、否定、不是門檻」的說法拿掉，避免被關鍵字誤標
