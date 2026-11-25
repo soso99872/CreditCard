@@ -23,6 +23,7 @@ import {
   hasHiddenMyCards,
 } from "./view-state.mjs";
 import { latestCheckedAt, checkedAtBadge } from "./footer.mjs";
+import { capOnlyBonus } from "./rate-note.mjs";
 import { findSuggestions } from "./suggest.mjs";
 import { loadRecent, addRecent, clearRecent } from "./recent.mjs";
 import { resolveQuickPicks, resolveScenarios } from "./quick-picks.mjs";
@@ -170,7 +171,13 @@ function matchHintText(match) {
  * @param {object} match recommend() 回傳的 match（已確定不是 empty／need-category）
  * @returns {Array<string | HTMLElement>}
  */
-function resultTitleParts(match) {
+function resultTitleParts(match, hasTop = true) {
+  const parts = titleParts(match);
+  // 直接組沒有卡時，不能再說「刷這張」，改成跟 #top-notice 一致的說法
+  return hasTop ? parts : parts.map((t) => (t === "，刷這張" ? "，看這幾張" : t === "刷這張" ? "看這幾張" : t));
+}
+
+function titleParts(match) {
   const strong = (text) => {
     const node = document.createElement("strong");
     node.textContent = text;
@@ -300,6 +307,7 @@ function sortAmountFor(match) {
 /** 被上限截掉時的一行說明；沒截到回傳空字串。 */
 function effectiveNote(rec, amount) {
   if (rec.effectiveRate > rec.rate - 0.01) return "";
+  if (capOnlyBonus(rec.conditions)) return ""; // 上限只算加碼部分時，「實拿約」公式不成立
   return `以 NT$${fmtAmount.format(amount)} 計，實拿約 ${rec.effectiveRate.toFixed(1)}%`;
 }
 
@@ -575,7 +583,7 @@ function renderMatchAndResults() {
   const bankOrder = bankColorOrder(state.recommendations);
 
   els.top.hidden = false;
-  els.resultTitle.replaceChildren(...resultTitleParts(match));
+  els.resultTitle.replaceChildren(...resultTitleParts(match, !!top));
   els.topGroup.hidden = !top;
   els.topNotice.hidden = !!top;
   els.topCard.hidden = !top;
