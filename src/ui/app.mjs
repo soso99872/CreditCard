@@ -25,13 +25,12 @@ import {
 import { latestCheckedAt, checkedAtBadge } from "./footer.mjs";
 import { findSuggestions } from "./suggest.mjs";
 import { loadRecent, addRecent, clearRecent } from "./recent.mjs";
-import { resolveQuickPicks } from "./quick-picks.mjs";
+import { resolveQuickPicks, resolveScenarios } from "./quick-picks.mjs";
 import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
 import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
-import { pickDemoCard } from "./demo-pick.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
@@ -59,7 +58,6 @@ const state = {
   match: null,
   recommendations: [],
   draftMode: false, // ?draft=1 時為 true：loadAllData／recommend 都帶 includeUnverified（tasks.md T17）
-  demo: undefined, // 首頁示意卡（buildDemo()）：undefined＝還沒算，null＝不顯示
   checkingMode: false, // 資料載入成功，但目前沒有任何張 verified 卡（主管 T14 建議：不要顯示開發者文案）
 };
 
@@ -85,8 +83,8 @@ function cacheEls() {
   els.recentList = document.getElementById("recent-list");
   els.recentClearBtn = document.getElementById("recent-clear-btn");
   els.quickList = document.getElementById("quick-list");
-  els.demoWrap = document.getElementById("demo-wrap");
-  els.demoBtn = document.getElementById("demo-btn");
+  els.scenarioList = document.getElementById("scenario-list");
+  els.controls = document.getElementById("query-controls");
   els.nearbyBtn = document.getElementById("nearby-btn");
   els.checkedAt = document.getElementById("checked-at");
   els.loadingHint = document.getElementById("loading-hint");
@@ -278,7 +276,10 @@ function buildReceipt(rec) {
   const rate = document.createElement("p");
   rate.className = "rate num";
   const rateLabel = document.createElement("small");
-  rateLabel.textContent = "這筆回饋";
+  const best = document.createElement("span");
+  best.className = "best-tag";
+  best.textContent = "最划算";
+  rateLabel.append(best, "這筆回饋");
   rate.append(rateLabel, rec.rateText);
 
   const gain = document.createElement("p");
@@ -470,7 +471,7 @@ function renderMatchAndResults() {
   if (noQueryYet || match.type === "need-category") {
     hideTopAndRest();
     // 未輸入時有常用快捷就是最好的引導，不再多放一行說明字
-    if (noQueryYet && resolveQuickPicks(state.data).length > 0) hideEmptyHint();
+    if (noQueryYet && (resolveScenarios(state.data).length > 0 || resolveQuickPicks(state.data).length > 0)) hideEmptyHint();
     else showEmptyHint(noQueryYet ? "輸入商家或選類別，立刻看推薦。" : "請選擇類別查詢。");
     return;
   }
@@ -663,7 +664,9 @@ function render() {
 
   // 「我的卡片」是空的時候，查詢已經自動改用全部卡別計算（見 recompute()），這裡只負責
   // 顯示／隱藏上方那一行加卡提示，不影響下面推薦清單的顯示（PRD v2.2、AC-11b）。
-  els.emptyMyCards.hidden = !shouldPromptEmptyMyCards(state.scope, currentVisibleMyCardIds());
+  // 空狀態（還沒查）不放加卡提示，查詢後才以一行小字出現在結果區（sprint 009 T07）
+  els.emptyMyCards.hidden =
+    !state.match || state.match.type === "empty" || !shouldPromptEmptyMyCards(state.scope, currentVisibleMyCardIds());
   els.emptyMyCardsText.textContent = emptyMyCardsText();
 
   renderMatchAndResults();
@@ -735,6 +738,33 @@ function rememberTypedQuery() {
   if (entry) state.recent = addRecent(state.storage, state.recent, entry);
 }
 
+/** 情境入口小卡（超商、網購…）：線條圖示＋字，點了查該類別，跟點常用 chip 同一條路徑。 */
+const SCENARIO_ICONS = {
+  "convenience-store": ["M3 9.5 4.5 4h15L21 9.5", "M3 9.5a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0", "M5 12.5V20h14v-7.5"],
+  "online-shopping": ["M5 8h14l-1 12H6L5 8z", "M9 8V7a3 3 0 0 1 6 0v1"],
+  gas: ["M5 20V5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v15", "M4 20h11", "M7 8h5", "M14 9h2.5a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 0 3 0V8l-3-3"],
+  overseas: ["M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0", "M3 12h18", "M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"],
+};
+
+function buildScenario(entry) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "scenario-card";
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("aria-hidden", "true");
+  for (const d of SCENARIO_ICONS[entry.id] || []) {
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", d);
+    svg.appendChild(path);
+  }
+  const label = document.createElement("span");
+  label.textContent = entry.label;
+  button.append(svg, label);
+  button.addEventListener("click", () => runEntry(entry));
+  return button;
+}
+
 function buildChip(entry, className) {
   const button = document.createElement("button");
   button.type = "button";
@@ -744,78 +774,16 @@ function buildChip(entry, className) {
   return button;
 }
 
-/**
- * 首頁示意卡：用真資料查「全聯」（查詢範圍＝全部卡），挑第一張沒有門檻的卡（demo-pick.mjs）。
- * 資料不變，算一次就留著；沒有全聯、或全都有門檻就不顯示（null）。
- */
-function buildDemo() {
-  const entry = resolveQuickPicks(state.data).find((p) => p.kind === "merchant" && p.name === "全聯");
-  if (!entry) return null;
-  const { recommendations } = recommend({
-    query: entry.name,
-    selectedCategoryId: resolveSelectedCategoryId(null),
-    cards: state.data.cards,
-    merchants: state.data.merchants,
-    categoryKeywords: state.data.categoryKeywords,
-    categories: state.data.categories,
-    cardIds: null,
-    today: localToday(),
-    includeUnverified: state.draftMode,
-  });
-  const rec = pickDemoCard(recommendations);
-  if (!rec) return null;
-  const color = bankColor(rec.bankId, bankColorOrder(recommendations));
-  return { entry, rec, color };
-}
-
-function renderDemo(noQueryYet) {
-  if (state.demo === undefined) state.demo = buildDemo();
-  const demo = state.demo;
-  els.demoWrap.hidden = !noQueryYet || !demo;
-  if (els.demoWrap.hidden || els.demoBtn.childElementCount > 0) return;
-
-  const tag = document.createElement("span");
-  tag.className = "demo-tag";
-  tag.textContent = "示意";
-  const lead = document.createElement("span");
-  lead.className = "demo-lead";
-  lead.append(tag, `在${demo.entry.name}，刷這張`);
-
-  const face = document.createElement("span");
-  face.className = "card card--mini";
-  face.style.setProperty("--c", demo.color);
-  const bank = document.createElement("span");
-  bank.className = "card-bank";
-  bank.textContent = shortBankName(bankNameById(demo.rec.bankId));
-  const chip = document.createElement("span");
-  chip.className = "chip";
-  chip.setAttribute("aria-hidden", "true");
-  const rate = document.createElement("span");
-  rate.className = "card-rate num";
-  rate.textContent = demo.rec.rateText;
-  const mid = document.createElement("span");
-  mid.className = "card-mid";
-  mid.append(chip, rate);
-  const name = document.createElement("span");
-  name.className = "card-name";
-  name.textContent = demo.rec.cardName;
-  face.append(bank, mid, name);
-
-  els.demoBtn.append(lead, face);
-  els.demoBtn.setAttribute(
-    "aria-label",
-    `示意：在${demo.entry.name}，刷${bankNameById(demo.rec.bankId)}${demo.rec.cardName}，${demo.rec.rateText}。點一下查${demo.entry.name}`
-  );
-  els.demoBtn.addEventListener("click", () => runEntry(demo.entry));
-}
-
 /** 未輸入時的「最近查詢」與「常用」；有查詢（或有結果）時整塊收起，把第一屏留給結果。 */
 function renderQuickAndRecent() {
   const noQueryYet = !state.match || state.match.type === "empty";
   els.quickSection.hidden = !noQueryYet;
   els.app.classList.toggle("is-home", noQueryYet); // 手機首頁把頁尾推到第一屏下面（styles.css .is-home）
-  renderDemo(noQueryYet);
+  els.app.classList.toggle("is-searching", !noQueryYet); // 查詢後大標與地圖連結讓位（styles.css .is-searching）
+  els.controls.hidden = noQueryYet; // 範圍切換與金額欄：空狀態不放，查詢後才出現在結果上方（T07）
   if (!noQueryYet) return;
+
+  els.scenarioList.replaceChildren(...resolveScenarios(state.data).map(buildScenario));
 
   const categoryIds = new Set((state.data.categories || []).map((c) => c.id));
   const recent = state.recent.filter((r) => r.kind === "merchant" || categoryIds.has(r.id));

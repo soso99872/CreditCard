@@ -15,6 +15,10 @@
   --hairline: rgba(27, 27, 26, 0.08);
   --focus: #1b1b1a;
   --gain: #1d7a48;
+  /* 品牌主色（老闆 2026-11-25 參考 bubugrow 改：不再只用中性墨色）。只用在主要按鈕、第 1 名標示、搜尋框聚焦框；
+     白字在 --brand 上 6.56、--brand 字在 --bg 5.81、在 --brand-soft 5.44。色相（藍 ~220）跟 --warn（橘）、--error（紅）、--gain（綠）都分得開。 */
+  --brand: #1f55c9;
+  --brand-soft: #e3eafa;
 
   /* 卡片顏色依銀行配色（bankColor()，色相表集中在 src/ui/card-color.mjs 的 CARD_HUES，
      依這次推薦結果裡銀行第一次出現的順序分配，同一家銀行同色；之後要換色或調色盤，
@@ -41,7 +45,8 @@
   --fs-h3: 1.25rem;
   --fs-h2: 1.5625rem;
   --fs-display: 3rem;
-  --fs-title: 1.875rem; /* 頁首 h1（sprint 009 T06 層次：28～32px） */
+  --fs-title: 1.75rem; /* 第一屏大標 h1（sprint 009 T07：28px、700） */
+  --fs-brand: 1.0625rem; /* 品牌列「刷哪張」17px */
 
   --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC",
     "Microsoft JhengHei", sans-serif;
@@ -100,27 +105,33 @@ a {
   gap: 20px;
 }
 
-/* ---------- 頁首 ---------- */
+/* ---------- 頁首：小品牌列＋一句大標（sprint 009 T07，參考 bubugrow 第一屏的層次） ---------- */
 .app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: -4px;
+  margin-bottom: -8px;
 }
 
-.app-header h1 {
-  margin: 0;
-  font-size: var(--fs-title);
-  line-height: 1.2;
+.app-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 10px;
+  min-width: 0;
+}
+
+.brand-name {
+  font-size: var(--fs-brand);
+  line-height: 1.4;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-.app-header p {
-  margin: 0;
-  line-height: 1.3;
+#checked-at {
   font-size: var(--fs-caption);
+  line-height: 1.4;
   color: var(--text-3);
 }
 
@@ -132,6 +143,25 @@ a {
 #checked-at[data-level="old"] {
   color: var(--error);
   font-weight: 600;
+}
+
+.hero-title {
+  margin: 0 0 -4px;
+  font-size: var(--fs-title);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+/* 查詢後大標讓位給結果，但保留給螢幕閱讀器（頁面仍有 h1） */
+.is-searching .hero-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 /* ---------- 查詢 ---------- */
@@ -275,6 +305,10 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
+.search input:focus-visible {
+  outline-color: var(--brand);
+}
+
 .amount input:focus-visible {
   outline: none;
 }
@@ -284,22 +318,25 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
-/* 我的卡片入口（工具列裡的次要按鈕）：surface + 陰影，跟 .amount 同一種「面板」語言，
-   不另外畫邊框（整個頁面只用陰影表達層次，見 DESIGN.md 第 4 節）。 */
+/* 我的卡片入口：降級成文字鈕（sprint 009 T07），第一屏的主角留給搜尋框；44px 高保留觸控範圍 */
 .toolbar-mycards-btn {
   flex: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   height: 44px;
-  padding: 0 16px;
+  margin-right: -12px;
+  padding: 0 12px;
   border: 0;
   border-radius: 999px;
-  background: var(--surface);
-  box-shadow: var(--shadow-surface);
+  background: none;
   color: var(--text-2);
   font-size: var(--fs-small);
   font-weight: 600;
+}
+
+.toolbar-mycards-btn:hover {
+  background: var(--sunken);
 }
 
 .toolbar-mycards-btn:focus-visible {
@@ -403,8 +440,58 @@ input:focus-visible {
 /* ---------- 常用快捷與最近查詢（T19）：未輸入時點一下就出結果 ---------- */
 .quick-section {
   display: grid;
-  gap: 14px;
+  gap: 18px;
   padding-bottom: 6px;
+}
+
+/* 情境入口：4 張等寬小卡，線條圖示＋字（sprint 009 T07）；中性白底，不上品牌色 */
+.scenario-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scenario-card {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 6px;
+  min-height: 80px;
+  padding: 12px 4px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-surface);
+  color: var(--text);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  transition: background-color 150ms var(--ease-out), transform 150ms var(--ease-out);
+}
+
+.scenario-card svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scenario-card:active {
+  background: var(--sunken);
+  transform: scale(0.97);
+}
+
+.scenario-card:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .scenario-card:hover {
+    background: var(--sunken);
+  }
 }
 
 .quick-group {
@@ -590,23 +677,25 @@ input:focus-visible {
   color: var(--text-2);
 }
 
+/* 加卡提示（查詢後才出現）：一行小字，不是橫幅（sprint 009 T07） */
 .banner-inline {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 16px;
-  padding: 6px 6px 6px 16px;
-  background: var(--sunken);
+  gap: 0 8px;
+  padding: 0 2px;
+  background: none;
+  border-radius: 0;
   color: var(--text-2);
 }
 
 .banner-inline p {
   margin: 0;
-  /* flex-basis 0（而不是 auto）：auto 會先用文字的內容寬度去搶版面，
-     害旁邊的按鈕被擠到下一行；basis 0 讓瀏覽器照剩餘空間分配。 */
-  flex: 1 1 0;
-  min-width: 160px;
-  color: var(--text);
+  color: var(--text-2);
+}
+
+.banner-inline .link-button {
+  margin: -10px 0;
 }
 
 .empty-hint {
@@ -624,7 +713,7 @@ input:focus-visible {
   padding: 0 18px;
   border: 0;
   border-radius: 999px;
-  background: var(--text);
+  background: var(--brand);
   color: var(--surface);
   font-size: var(--fs-small);
   font-weight: 600;
@@ -822,6 +911,7 @@ input:focus-visible {
 
 .rate {
   margin: 0;
+  color: var(--brand);
   font-size: var(--fs-display);
   font-weight: 700;
   line-height: 1;
@@ -835,6 +925,17 @@ input:focus-visible {
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text-3);
+}
+
+/* 第 1 名標示：品牌色小標＋品牌色回饋率（只此一處，T07） */
+.best-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 700;
 }
 
 .gain {
@@ -1158,7 +1259,7 @@ input:focus-visible {
 
 .row-body .muted {
   font-size: var(--fs-caption);
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.82); /* 0.65 在綠、青卡底上對比 3.7，改 0.82（T07 contrast-check 抓到） */
 }
 
 /* ---------- 我的卡片管理：對話框（PRD 6.1「改成抽屜或對話框」） ---------- */
@@ -1262,101 +1363,6 @@ input:focus-visible {
   font-weight: 600;
 }
 
-/* ---------- 第一屏示意卡（sprint 009 T06）：空狀態時示範「查完長這樣」，點了查全聯 ---------- */
-.demo {
-  margin-top: 6px;
-  display: grid;
-  gap: 6px;
-  justify-items: start;
-}
-
-.demo-btn {
-  display: grid;
-  gap: 6px;
-  width: min(max(70%, 15rem), 17rem);
-  max-width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--text);
-  font-size: inherit;
-  text-align: left;
-}
-
-.demo-btn:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 16px;
-}
-
-.demo-lead {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: var(--fs-small);
-  font-weight: 600;
-}
-
-.demo-tag {
-  padding: 1px 8px;
-  border-radius: 999px;
-  background: var(--sunken);
-  color: var(--text-2);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
-/* 縮小的第 1 名卡面：沿用 .card 與 bankColor()，字級與內距縮到約 70% */
-.card--mini {
-  opacity: 0.92;
-  padding: 12px 14px;
-  border-radius: 12px;
-  grid-template-rows: auto 1fr auto;
-}
-
-/* 整張卡 .92 透明後左上漸層亮處的銀行名對比不足 4.5，這裡不再另外調淡 */
-.card--mini .card-bank {
-  opacity: 1;
-}
-
-.card--mini .card-name {
-  font-size: var(--fs-body);
-}
-
-.card--mini .chip {
-  width: 32px;
-  height: 24px;
-  border-radius: 5px;
-}
-
-.card--mini .chip::before {
-  inset: 6px 0;
-}
-
-.card--mini .chip::after {
-  inset: 0 10px;
-}
-
-.card-mid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.card-rate {
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  line-height: 1;
-}
-
-.demo-note {
-  margin: 0;
-  font-size: var(--fs-small);
-  color: var(--text-2);
-}
-
 /* ---------- 頁尾：一行免責＋ⓘ 展開完整版（sprint 009 T06） ---------- */
 .app-footer {
   margin: 0;
@@ -1457,57 +1463,39 @@ input:focus-visible {
 }
 
 /* ---------- 附近商家：全螢幕面板（T18b） ---------- */
-/* 地圖入口在搜尋框旁（搜尋框有沒有字都看得到）；手機寬度不夠時折到搜尋框下一行 */
-.search-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.search-row .search {
-  flex: 1 1 220px;
-  min-width: 0;
-}
-
-.map-btn {
-  flex: 0 0 auto;
+/* 地圖入口：搜尋框下一行小文字連結（sprint 009 T07），查詢後隱藏，讓 sticky 搜尋列只留搜尋框 */
+.nearby-link {
+  justify-self: start;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
-  min-height: 56px;
-  padding: 0 18px;
+  min-height: 44px;
+  margin: -6px 0 0;
+  padding: 0 2px;
   border: 0;
-  border-radius: 16px;
-  background: var(--surface);
-  box-shadow: var(--shadow-surface);
-  color: var(--text);
+  background: none;
+  color: var(--text-2);
   font: inherit;
   font-size: var(--fs-small);
-  font-weight: 700;
-  white-space: nowrap;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.map-btn:active {
-  background: var(--sunken);
+.nearby-link svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
 }
 
-.map-btn:focus-visible {
+.nearby-link:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
+  border-radius: 6px;
 }
 
-@media (hover: hover) {
-  .map-btn:hover {
-    background: var(--sunken);
-  }
-}
-
-@media (max-width: 479px) {
-  .map-btn {
-    flex: 1 1 100%;
-    min-height: 44px;
-  }
+.is-searching .nearby-link {
+  display: none;
 }
 
 .nearby-fallback-btn {
@@ -1703,7 +1691,11 @@ input:focus-visible {
   white-space: nowrap;
 }
 
-.nearby-search-btn.is-stale,
+.nearby-search-btn.is-stale {
+  background: var(--brand);
+  color: var(--surface);
+}
+
 .nearby-search-btn:focus-visible {
   background: var(--text);
   color: var(--surface);

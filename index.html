@@ -12,13 +12,15 @@
     <main class="app">
       <header class="app-header">
         <div class="app-title">
-          <h1>刷哪張</h1>
-          <p id="checked-at" class="num" hidden></p>
+          <span class="brand-name">刷哪張</span>
+          <span id="checked-at" class="num" hidden></span>
         </div>
         <button id="open-my-cards-btn" type="button" class="toolbar-mycards-btn">
           我的卡片<span id="toolbar-my-cards-count" class="num">0</span>
         </button>
       </header>
+
+      <h1 id="hero-title" class="hero-title">這筆刷哪張最划算？</h1>
 
       <p id="loading-hint" class="hint" aria-live="polite">載入中…</p>
 
@@ -31,7 +33,6 @@
       </p>
 
       <form id="query-form" class="query" aria-label="搜尋" hidden>
-        <div class="search-row">
         <div class="search suggest-field">
           <label for="query-input">在哪裡消費</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -54,18 +55,19 @@
             </svg>
           </button>
         </div>
-        <button id="nearby-btn" type="button" class="map-btn" aria-haspopup="dialog"><span aria-hidden="true">🗺</span> 地圖找商家</button>
-        </div>
-
         <ul id="merchant-suggestions" class="suggestion-list" hidden></ul>
+        <button id="nearby-btn" type="button" class="nearby-link" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" />
+            <circle cx="12" cy="10" r="2.3" />
+          </svg>
+          或用地圖找附近的店
+        </button>
       </form>
 
       <section id="query-tools" class="query-tools" aria-label="查詢條件" hidden>
-        <div id="demo-wrap" class="demo" hidden>
-          <button id="demo-btn" type="button" class="demo-btn"></button>
-          <p class="demo-note">輸入你常去的店試試</p>
-        </div>
         <div id="quick-section" class="quick-section">
+          <div id="scenario-list" class="scenario-row" role="group" aria-label="情境"></div>
           <div id="recent-group" class="quick-group" role="group" aria-labelledby="recent-label" hidden>
             <div class="quick-head">
               <p id="recent-label" class="quick-label">最近查詢</p>
@@ -74,13 +76,13 @@
             <div id="recent-list" class="chip-row"></div>
           </div>
           <div class="quick-group" role="group" aria-labelledby="quick-label">
-            <p id="quick-label" class="quick-label">常用</p>
+            <p id="quick-label" class="quick-label">常用商家</p>
             <div id="quick-list" class="chip-row">
             </div>
           </div>
         </div>
 
-        <div class="controls">
+        <div id="query-controls" class="controls">
           <fieldset class="segmented">
             <legend>查詢範圍</legend>
             <input type="radio" name="scope" id="scope-my" value="my" checked />
@@ -117,7 +119,7 @@
 
       <section id="empty-my-cards" class="banner banner-inline" hidden aria-live="polite">
         <p id="empty-my-cards-text"></p>
-        <button id="add-card-shortcut-btn" type="button" class="btn">加入我的卡片</button>
+        <button id="add-card-shortcut-btn" type="button" class="link-button">加入我的卡片</button>
       </section>
 
       <section id="top" class="top" aria-labelledby="result-title" hidden>
