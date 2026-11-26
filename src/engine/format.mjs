@@ -83,28 +83,45 @@ export function formatReason({ matchLevel, displayName, categoryName, rate, viaO
 }
 
 /**
- * 金額試算：round(金額 × rate / 100)；若 cap 存在且試算值超過上限，改回傳上限值並標記 capped。
- * cap.unit 為 "point" 時，用 twdPerPoint 換算成等值新台幣再比較。
+ * 一條規則在金額 A 下的回饋（元，未四捨五入）與是否碰到上限。
+ * 有 baseRate：回饋＝baseRate×A ＋ min((rate−baseRate−Σsub.rate)×A, cap) ＋ Σ min(sub.rate×A, sub.cap)
+ * （基本回饋與加碼並行，不是加碼滿了才算基本）；沒有 baseRate：min(rate×A, cap)，與舊算法相同。
+ * 點數上限用 twdPerPoint 換算成元；任何一段到上限即 capped。
  * @param {{
  *   rate: number,
+ *   baseRate?: number | null,
+ *   subCaps?: Array<{rate: number, cap: {amount: number, unit: string, period: string}}> | null,
  *   amount: number,
  *   cap: {amount: number, unit: "TWD" | "point", period: string} | null,
  *   twdPerPoint?: number,
  * }} params
+ * @returns {{ exact: number, capped: boolean }}
+ */
+export function calcReward({ rate, baseRate = null, subCaps = null, amount, cap, twdPerPoint }) {
+  const toTwd = (c) => (c.unit === "point" ? c.amount * (twdPerPoint ?? 1) : c.amount);
+  const piece = (r, c) => {
+    const gross = (amount * r) / 100;
+    if (!c) return { value: gross, capped: false };
+    const limit = toTwd(c);
+    return gross > limit ? { value: limit, capped: true } : { value: gross, capped: false };
+  };
+  if (baseRate === null || baseRate === undefined) {
+    const p = piece(rate, cap);
+    return { exact: p.value, capped: p.capped };
+  }
+  const subs = subCaps || [];
+  const bonusRate = Math.max(0, rate - baseRate - subs.reduce((s, x) => s + x.rate, 0));
+  const parts = [{ value: (amount * baseRate) / 100, capped: false }, piece(bonusRate, cap), ...subs.map((x) => piece(x.rate, x.cap))];
+  return { exact: parts.reduce((s, p) => s + p.value, 0), capped: parts.some((p) => p.capped) };
+}
+
+/**
+ * 金額試算：calcReward 的結果四捨五入成整數元，並帶 capped 標記。
+ * 見 PRD AC-05、AC-10。
+ * @param {Parameters<typeof calcReward>[0]} params
  * @returns {{ amount: number, capped: boolean }}
  */
-export function estimateReward({ rate, amount, cap, twdPerPoint }) {
-  const rawAmount = Math.round((amount * rate) / 100);
-
-  if (!cap) {
-    return { amount: rawAmount, capped: false };
-  }
-
-  const capInTwd = cap.unit === "point" ? cap.amount * (twdPerPoint ?? 1) : cap.amount;
-
-  if (rawAmount > capInTwd) {
-    return { amount: Math.round(capInTwd), capped: true };
-  }
-
-  return { amount: rawAmount, capped: false };
+export function estimateReward(params) {
+  const { exact, capped } = calcReward(params);
+  return { amount: Math.round(exact), capped };
 }

@@ -239,6 +239,7 @@
           "rate": 3,
           "rawReward": "momo通路（購物網、電視購物、型錄、mo店+）消費3% mo幣（1 mo幣=新台幣1元）",
           "cap": {"amount": 2000, "unit": "point", "period": "billing-cycle"},
+          "baseRate": 0,
           "conditionTags": [],
           "conditions": ["3% mo幣每期帳單回饋上限2,000 mo幣（2026年10月至2027年1月帳單期間，原1,000；精選品牌加碼不計入上限）", "需直刷，以 LINE Pay、街口支付等第三方支付僅1%", "可綁 Apple Pay、Google Pay、Samsung Pay"],
           "validFrom": null,

@@ -446,6 +446,25 @@ export async function validate(dataDir) {
           }
         }
 
+        // baseRate／subCaps（sprint 012）：基本回饋 % 與加碼裡另有上限的部分
+        if (rule.baseRate !== undefined) {
+          if (typeof rule.baseRate !== "number" || !(rule.baseRate >= 0 && rule.baseRate <= rule.rate)) {
+            errors.push(`${ruleLoc}：baseRate 必須是介於 0 和 rate 之間的數字`);
+          }
+        }
+        if (rule.subCaps !== undefined) {
+          const subs = rule.subCaps;
+          if (!Array.isArray(subs) || subs.some((s) => typeof s?.rate !== "number" || !(s.rate > 0) || !s.cap || typeof s.cap.amount !== "number" || !VALID_CAP_UNITS.includes(s.cap.unit) || !VALID_CAP_PERIODS.includes(s.cap.period))) {
+            errors.push(`${ruleLoc}：subCaps 必須是 [{ rate, cap: { amount, unit, period } }]`);
+          } else {
+            if (!rule.cap) errors.push(`${ruleLoc}：subCaps 只能出現在有 cap 的規則`);
+            if (typeof rule.baseRate !== "number") errors.push(`${ruleLoc}：有 subCaps 就必須填 baseRate`);
+            else if (rule.baseRate + subs.reduce((s, x) => s + x.rate, 0) > rule.rate + 1e-9) {
+              errors.push(`${ruleLoc}：baseRate＋subCaps 的 rate 合計不得超過 rate`);
+            }
+          }
+        }
+
         if (rule.conditions !== undefined && !Array.isArray(rule.conditions)) {
           errors.push(`${ruleLoc}：conditions 必須是陣列`);
         }

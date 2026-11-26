@@ -127,6 +127,8 @@ data/
   - `cap`：`null` 代表無上限；否則為 `{ amount, unit, period }`：
     - `unit`：`TWD` 或 `point`。
     - `period`：`month`、`quarter`、`billing-cycle`、`campaign`、`year`、`per-transaction` 之一。
+  - `baseRate`（sprint 012，選填數字）：不受上限的基本回饋 %（例：基本 1%＋加碼 3%、上限只算加碼，填 `1`）。`0`＝上限套整個回饋率；不填＝未確認（引擎照舊 min(rate×金額, cap)）。介於 0 和 `rate` 之間。回饋（元）＝ baseRate×A ＋ min((rate−baseRate−Σsub.rate)×A, cap) ＋ Σ min(sub.rate×A, sub.cap)，基本與加碼並行。原文只說「超過上限改以一般 1% 計」這類接力寫法不建模型，不填。由 `scripts/split-base-rate.mjs` 產生（`--write` 寫回），判斷不了的寫在該腳本的覆寫表。
+  - `subCaps`（sprint 012，選填）：`[{ rate, cap: { amount, unit, period } }]`，加碼裡另有自己上限的部分（例：滙豐 Live+ 通路加碼 3% 上限 888 點、自動扣繳加碼 1% 另有 200 點）。只能出現在有 `cap` 且有 `baseRate` 的規則，且 baseRate＋Σsub.rate ≤ rate。
   - `conditions`：中文短標籤陣列，沒有條件則為 `[]`（畫面上不顯示）。
   - `conditionTags`（sprint 010）：字串陣列，標出這條規則要滿足哪幾類條件才拿得到。列舉 `asset`（資產、存款、大戶、特定帳戶或身分資格）、`autopay`（自動扣繳／授扣）、`ebill`（電子帳單）、`newcard`（新戶、首刷）、`plan`（切換或選擇方案）、`quota`（限量、名額）、`register`（登錄、連結會員、綁定指定 App 或支付）、`spend`（消費金額門檻或任務；單筆門檻須大於 500 元）。**依字母排序、不重複**，沒有則為 `[]`。verified 卡每條規則都必填，`validate` 會檢查。由 `scripts/tag-conditions.mjs` 產生（`--write` 寫回），關鍵字判斷不了的寫在該腳本的覆寫表。
   - `capGroup`（選填，字串）：同一組共用上限的規則填同一個名稱。本期只定義、不填資料。

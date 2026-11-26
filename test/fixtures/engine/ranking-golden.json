@@ -126,8 +126,8 @@
    "expectFirstGroup": "direct",
    "directTop": [
     "ctbc-uniopen",
-    "dbs-eco",
-    "firstbank-easycard"
+    "scsb-visa-simple",
+    "dbs-eco"
    ],
    "gatedIncludes": "sinopac-dawho"
   },

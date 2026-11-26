@@ -3,7 +3,7 @@
 
 import { buildMerchantIndex, matchMerchant } from "./merchant-match.mjs";
 import { collectCandidates, pickBest, REGION_CATEGORY_IDS } from "./rules.mjs";
-import { formatRate, formatCap, formatReason, estimateReward } from "./format.mjs";
+import { formatRate, formatCap, formatReason, estimateReward, calcReward } from "./format.mjs";
 
 // 介面直接點類別（沒有打字）時傳進來的 query 佔位字元：只用來走「已選類別」分支，不能出現在理由句裡。
 export const CATEGORY_PICK_QUERY = "◎";
@@ -31,6 +31,7 @@ export const CATEGORY_PICK_QUERY = "◎";
  *   group: "direct" | "gated", // direct＝直接拿得到；gated＝有門檻（conditionTags 含 asset、plan、quota、newcard、spend）
  *   effectiveRate: number, // 以使用者金額（沒填用類別預設）扣掉上限後的實拿回饋率，% 單位
  *   conditionTags: string[],
+ *   baseRate: number | null, // 不受上限的基本回饋 %；null＝資料未確認
  *   estimatedAmount?: number,
  *   capped?: boolean,
  * }} Recommendation
@@ -195,9 +196,10 @@ export function recommend({
       group,
       effectiveRate,
       conditionTags: rule.conditionTags || [],
+      baseRate: rule.baseRate ?? null,
     };
     if (typeof amount === "number") {
-      const estimate = estimateReward({ rate: rule.rate, amount, cap: rule.cap, twdPerPoint: card.pointValue?.twdPerPoint });
+      const estimate = estimateReward({ ...rewardParams(rule, card), amount });
       entry.estimatedAmount = estimate.amount;
       entry.capped = estimate.capped;
     }
@@ -221,11 +223,14 @@ function defaultAmount(categoryId, parentIds, defaults) {
   return defaults?.default || 1000;
 }
 
-/** effectiveRate = min(rate% × A, 上限換算成元) ÷ A × 100；cap.period 本期不影響。 */
+/** 試算用的規則欄位；基本回饋與加碼並行算（見 format.mjs calcReward）。 */
+function rewardParams(rule, card) {
+  return { rate: rule.rate, baseRate: rule.baseRate ?? null, subCaps: rule.subCaps ?? null, cap: rule.cap, twdPerPoint: card.pointValue?.twdPerPoint };
+}
+
+/** effectiveRate = 實拿回饋（元）÷ A × 100；cap.period 本期不影響。 */
 function calcEffectiveRate(rule, card, amountTwd) {
-  const gross = (rule.rate * amountTwd) / 100;
-  const capTwd = rule.cap ? (rule.cap.unit === "point" ? rule.cap.amount * (card.pointValue?.twdPerPoint ?? 1) : rule.cap.amount) : Infinity;
-  return (Math.min(gross, capTwd) / amountTwd) * 100;
+  return (calcReward({ ...rewardParams(rule, card), amount: amountTwd }).exact / amountTwd) * 100;
 }
 
 /** 先 direct 後 gated；組內 effectiveRate 高 → 官方先 → 具體度 → 卡名。 */

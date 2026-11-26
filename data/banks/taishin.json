@@ -2176,6 +2176,7 @@
             "unit": "point",
             "period": "month"
           },
+          "baseRate": 1,
           "conditionTags": ["register"],
           "conditions": [
             "上限 10,000 街口幣／月僅計精選通路加碼 2.5%，基本 1% 不計入",
@@ -2417,6 +2418,7 @@
           "rate": 0.2,
           "rawReward": "一般消費回饋率0.2% 台新Point(信用卡)；指定加碼類別與一般消費每期回饋上限1,500點，並以指定加碼類別優先回饋",
           "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "baseRate": 0,
           "conditionTags": [],
           "conditions": [
             "與指定加碼類別共用每期回饋上限1,500點",
@@ -2437,6 +2439,7 @@
           "rate": 1.2,
           "rawReward": "指定加碼類別（百貨公司：全臺百貨公司之消費）當期帳單該卡新增指定加碼類別消費NT$30,000(含)以上，回饋1.2% 台新Point(信用卡)；NT$1~29,999為0.2%",
           "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "baseRate": 0,
           "conditionTags": ["spend"],
           "conditions": [
             "單期帳單指定加碼類別消費滿NT$30,000才享1.2%，未達為0.2%（引擎無法判斷是否達標，以最高回饋顯示）",
@@ -2458,6 +2461,7 @@
           "rate": 1.2,
           "rawReward": "指定加碼類別（餐廳：全臺一般餐廳之消費）當期帳單該卡新增指定加碼類別消費NT$30,000(含)以上，回饋1.2% 台新Point(信用卡)；NT$1~29,999為0.2%",
           "cap": { "amount": 1500, "unit": "point", "period": "billing-cycle" },
+          "baseRate": 0,
           "conditionTags": ["spend"],
           "conditions": [
             "單期帳單指定加碼類別消費滿NT$30,000才享1.2%，未達為0.2%（引擎無法判斷是否達標，以最高回饋顯示）",
