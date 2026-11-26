@@ -12,7 +12,8 @@ export function conditionKind(text) {
   const s = String(text || "").trim();
   if (REQUIRED.test(s)) return "required";
   if (OPTIONAL.test(s)) return "optional";
-  if (DOWNGRADE.test(s) && !/^無基本/.test(s)) return "downgrade";
+  if (/^無基本|實際可能/.test(s)) return "info";
+  if (DOWNGRADE.test(s)) return "downgrade";
   if (INFO.test(s)) return "info";
   return "required";
 }
@@ -28,5 +29,5 @@ const INFO = new RegExp([
 
 const OPTIONAL = /^可[綁用使]|另享|另計/;
 
-// 句子主幹是「變少的結果」：僅享、僅 X%、僅一般消費／回饋、只有基本（開頭是要做的事、或寫「才適用」時，上面 REQUIRED 先接走）
-const DOWNGRADE = /僅享|僅\s*\d|僅一般(消費|回饋|\s*\d)|只有基本/;
+// 句子主幹是「變少的結果」：僅享、僅 X%、僅一般消費／回饋、只有基本、基本只有 X%（開頭是要做的事、或寫「才適用」時，上面 REQUIRED 先接走）
+const DOWNGRADE = /僅享|僅\s*\d|僅一般(消費|回饋|\s*\d)|只有基本|只有[^，；]{0,6}\d/;

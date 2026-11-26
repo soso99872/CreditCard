@@ -33,6 +33,7 @@ describe("src/ui/condition-kind.mjs — 要注意每條是必須、可選還是�
       "臺北捷運感應支付僅0.3%",
       "TWQR 形式消費僅享一般消費 1%，不適用精選通路加碼",
       "網路交易、條碼支付、第三方支付不算國外實體商店（僅一般1%）",
+      "非實體（網路）消費基本只有海外2%，合計7%",
     ]) assert.equal(conditionKind(s), "downgrade", s);
     // 開頭是要做的事、或寫「才適用」的，仍是必須
     for (const s of [
@@ -52,6 +53,7 @@ describe("src/ui/condition-kind.mjs — 要注意每條是必須、可選還是�
       "現金回饋於次月扣抵消費款，不得退還現金",
       "官方說法不一致（待確認）",
       "LEVEL 1：未設定帳戶自動扣繳即享",
+      "無基本1%，僅4%",
     ]) assert.equal(conditionKind(s), "info", s);
   });
 
