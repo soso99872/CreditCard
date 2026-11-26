@@ -54,6 +54,15 @@ describe("estimateReward — 基本與加碼並行", () => {
     assert.deepEqual(estimateReward({ ...params, amount: 10000 }), { amount: 488, capped: false });
   });
 
+  test("subCaps 兩段：凱基誠品黑卡 0.3% 基本＋2% 上限400點＋4.7% 上限4,200點（主加碼剩 0）", () => {
+    const pt = (amount) => ({ amount, unit: "point", period: "month" });
+    const params = { rate: 7, baseRate: 0.3, subCaps: [{ rate: 2, cap: pt(400) }, { rate: 4.7, cap: pt(4200) }], cap: pt(4600), twdPerPoint: 1 };
+    // 90 ＋ min(600, 400) ＋ min(1410, 4200)
+    assert.deepEqual(estimateReward({ ...params, amount: 30000 }), { amount: 1900, capped: true });
+    // 300 ＋ 400 ＋ 4200
+    assert.deepEqual(estimateReward({ ...params, amount: 100000 }), { amount: 4900, capped: true });
+  });
+
   test("calcReward 回傳未四捨五入的元", () => {
     assert.ok(Math.abs(calcReward({ rate: 4, baseRate: 1, amount: 13334, cap: cap400 }).exact - 533.34) < 1e-9);
   });

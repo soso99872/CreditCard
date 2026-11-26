@@ -27,8 +27,8 @@ export const OVERRIDES = {
   // 基本率要用算的或兩處寫法不同
   "ctbc-uniopen-overseas-store-bonus": { baseRate: 3, why: "國外一般2%＋國外實體1%＋加碼8%＝11%，「上限僅計加碼8%部分」→ 基本 3%" },
   "tbb-titanium-gas-promo": { baseRate: 0.6, why: "原文「原0.6%＋活動3.4%」；條件寫「基本0.4%／0.6%不計入」（0.4% 是百貨那條）" },
-  "kgi-eslite-store-gold-autodebit": { baseRate: 0.3, why: "「0.3%基本＋2%自動扣繳＋3.7%金卡加碼」，上限 1,800 點是兩段加碼合計" },
-  "kgi-eslite-store-black-autodebit": { baseRate: 0.3, why: "「0.3%基本＋2%自動扣繳＋4.7%黑卡加碼」，上限 4,600 點是兩段加碼合計" },
+  "kgi-eslite-store-gold-autodebit": { baseRate: 0.3, subCaps: [{ rate: 2, cap: { amount: 400, unit: "point", period: "month" } }, { rate: 3.7, cap: { amount: 1400, unit: "point", period: "month" } }], why: "「0.3%基本＋2%自動扣繳＋3.7%金卡加碼」，兩段各有上限（400、1,400 點），主 cap 1,800 點是合計；兩段都放 subCaps，主加碼剩 0" },
+  "kgi-eslite-store-black-autodebit": { baseRate: 0.3, subCaps: [{ rate: 2, cap: { amount: 400, unit: "point", period: "month" } }, { rate: 4.7, cap: { amount: 4200, unit: "point", period: "month" } }], why: "「0.3%基本＋2%自動扣繳＋4.7%黑卡加碼」，兩段各有上限（400、4,200 點），主 cap 4,600 點是合計；兩段都放 subCaps，主加碼剩 0" },
   "megabank-young-online-shopping-ebill": { baseRate: 0.5, why: "2.5% 受每期200元上限，另加0.5%「無上限，超過後實際仍有0.5%」→ 不受上限的是 0.5%" },
   "megabank-young-mobile-payment-new": { baseRate: 0.5, why: "「0.5%＋指定支付加碼1%」，條件「加碼1%每期上限100元（cap僅計加碼部分）」" },
   // 有兩段上限
