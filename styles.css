@@ -1024,27 +1024,6 @@ input:focus-visible {
   gap: 4px 20px;
 }
 
-/* 第三方來源標籤（DESIGN.md「非官方來源標籤」）：中性膠囊，不另外上色。 */
-.source-tag {
-  display: inline-block;
-  justify-self: start;
-  margin: 12px 0 0;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--sunken);
-  color: var(--text-2);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.row-body .source-tag {
-  margin: 0;
-  /* 同 .row-flag：淺色相上白色半透明底對比不到 4.5（主管 2026-10-25 第 3 次退件） */
-  background: rgba(0, 0, 0, 0.32);
-  color: #fff;
-}
-
 .source a {
   display: inline-block;
   /* 文字本身只有 caption 字級，點擊範圍用 padding 撐大、再用等量負邊距抵消，

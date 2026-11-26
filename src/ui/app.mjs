@@ -31,7 +31,6 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
-import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
@@ -395,41 +394,34 @@ function buildReceipt(rec, amount) {
 
   const source = document.createElement("div");
   source.className = "source";
-  const third = thirdPartyInfo(rec);
   const checkedAt = document.createElement("span");
   checkedAt.className = "num";
-  checkedAt.textContent = third ? third.dateText : `核對於 ${rec.checkedAt}`;
+  checkedAt.textContent = checkedText(rec);
   const links = document.createElement("span");
   links.className = "source-links";
-  for (const l of third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }]) {
-    links.appendChild(buildSourceLink(l.url, l.text));
-  }
+  links.appendChild(buildSourceLink(rec.sourceUrl));
   source.append(checkedAt, links);
 
   const fragment = document.createDocumentFragment();
   fragment.append(main);
   if (extra.children.length) fragment.append(extra);
-  if (third) fragment.append(buildThirdPartyTag(third.label));
   fragment.append(facts, source);
   return fragment;
 }
 
-/** 來源連結：新分頁開啟。 */
-function buildSourceLink(url, text) {
+/** 每張卡一個低調的「看原文」連結（官方、第三方都連 sourceUrl），新分頁開啟。 */
+function buildSourceLink(url) {
   const link = document.createElement("a");
   link.href = url;
   link.target = "_blank";
   link.rel = "noopener";
-  link.textContent = text;
+  link.textContent = "看原文";
   return link;
 }
 
-/** 第三方來源標籤（DESIGN.md「第三方來源標籤」）。 */
-function buildThirdPartyTag(text) {
-  const tag = document.createElement("p");
-  tag.className = "source-tag";
-  tag.textContent = text;
-  return tag;
+/** 「核對於 日期」；沒有核對日期就不寫（不顯示來源種類、文章日期，老闆 2026-11-26）。 */
+function checkedText(rec) {
+  return rec.checkedAt ? `核對於 ${rec.checkedAt}` : "";
 }
 
 /**
@@ -452,14 +444,6 @@ function buildStackItem(rec, rank, color, amount) {
   name.textContent = rec.cardName;
   const sub = document.createElement("span");
   sub.textContent = `${rank + 1}．${shortBankName(bankNameById(rec.bankId))}`;
-  const thirdRow = thirdPartyInfo(rec);
-  if (thirdRow) {
-    // 收合狀態就要看得到：短標籤，完整說明在展開內容裡。
-    const flag = document.createElement("em");
-    flag.className = "row-flag";
-    flag.textContent = THIRD_PARTY_SHORT;
-    sub.append(" ", flag);
-  }
   nameWrap.append(name, sub);
   for (const text of [rec.group === "gated" ? needText(rec) : "", effectiveNote(rec, amount)]) {
     if (!text) continue;
@@ -498,17 +482,11 @@ function buildStackItem(rec, rank, color, amount) {
     body.appendChild(cond);
   }
 
-  const third = thirdPartyInfo(rec);
-  if (third) body.appendChild(buildThirdPartyTag(third.label));
-
   const meta = document.createElement("p");
   meta.className = "muted";
-  meta.append(third ? `${third.dateText}・` : `核對於 ${rec.checkedAt}・`);
-  const sourceLinks = third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }];
-  sourceLinks.forEach((l, i) => {
-    if (i) meta.append("・");
-    meta.appendChild(buildSourceLink(l.url, l.text));
-  });
+  const checked = checkedText(rec);
+  if (checked) meta.append(`${checked}・`);
+  meta.appendChild(buildSourceLink(rec.sourceUrl));
   body.appendChild(meta);
 
   const details = document.createElement("details");
