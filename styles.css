@@ -919,8 +919,12 @@ input:focus-visible {
 }
 
 .rate small {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 0;
   margin-bottom: 6px;
+  line-height: 1.5;
   font-size: var(--fs-caption);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -938,16 +942,14 @@ input:focus-visible {
   font-weight: 700;
 }
 
+.gain span {
+  white-space: nowrap;
+}
+
 .gain {
   margin: 0;
   text-align: right;
-  font-size: var(--fs-caption);
-  color: var(--text-3);
-}
-
-.gain strong {
-  display: block;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-small);
   font-weight: 700;
   color: var(--gain);
 }
@@ -1012,37 +1014,9 @@ input:focus-visible {
   color: var(--text-3);
 }
 
-/* 文章日期不斷字：320px 時連結換到下一行 */
+/* 日期不斷字：320px 時連結換到下一行 */
 .source .num {
   white-space: nowrap;
-}
-
-.source-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 4px 20px;
-}
-
-/* 第三方來源標籤（DESIGN.md「非官方來源標籤」）：中性膠囊，不另外上色。 */
-.source-tag {
-  display: inline-block;
-  justify-self: start;
-  margin: 12px 0 0;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: var(--sunken);
-  color: var(--text-2);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.row-body .source-tag {
-  margin: 0;
-  /* 同 .row-flag：淺色相上白色半透明底對比不到 4.5（主管 2026-10-25 第 3 次退件） */
-  background: rgba(0, 0, 0, 0.32);
-  color: #fff;
 }
 
 .source a {
@@ -1054,6 +1028,53 @@ input:focus-visible {
   color: var(--text-2);
   font-weight: 600;
   text-underline-offset: 3px;
+}
+
+/* 上限那行的小字（上限未確認、說明類條件）與「要注意」條列（sprint 012） */
+.cap-block {
+  display: grid;
+  gap: 2px;
+}
+
+.cap-block small {
+  font-size: var(--fs-caption);
+  color: var(--text-3);
+}
+
+.notice-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+/* 在 .facts 裡不要沿用圓點項目符號，小標籤就是每條的開頭 */
+.facts .notice-list li {
+  padding-left: 0;
+}
+
+.facts .notice-list li::before {
+  display: none;
+}
+
+.kind-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* 可選＝空心，必須＝實心，不靠顏色分 */
+.kind-tag[data-kind="optional"] {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--text-3);
 }
 
 /* ---------- 其餘名次：錢包裡疊起來的卡 ---------- */
@@ -1079,7 +1100,7 @@ input:focus-visible {
   list-style: none;
 }
 
-.stack li {
+.stack > li {
   --c: #333;
   position: relative;
   border-radius: 14px;
@@ -1091,16 +1112,16 @@ input:focus-visible {
   transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out);
 }
 
-.stack li + li {
+.stack > li + li {
   margin-top: -14px;
 }
 
 /* 進場：卡片一張張從錢包裡滑上來，捲到畫面內才發牌 */
-.stack:not(.is-in) li {
+.stack:not(.is-in) > li {
   opacity: 0;
 }
 
-.stack.is-in li {
+.stack.is-in > li {
   /* 淡入比滑動快：半透明的卡互相疊著顏色會混髒，先變實心再滑到定位 */
   animation: deal-fade 200ms linear both, deal-slide 560ms var(--ease-out) both;
   /* 延遲上限 20 張：d-wallet.html 的示範資料只有幾張卡，沒遇過這個問題；正式清單按
@@ -1111,7 +1132,7 @@ input:focus-visible {
 }
 
 /* 兜底：時間到就拿掉動畫直接到終點，電腦忙、掉幀時也不會停在半透明或半路 */
-.stack.dealt li {
+.stack.dealt > li {
   animation: none;
 }
 
@@ -1129,13 +1150,13 @@ input:focus-visible {
 
 /* 滑過：往上抽出一點，像要從錢包裡拿出來 */
 @media (hover: hover) {
-  .stack li:hover {
+  .stack > li:hover {
     transform: translateY(-6px);
   }
 }
 
 /* 展開中的卡：抽出來、影子加深 */
-.stack li:has(details[open]) {
+.stack > li:has(details[open]) {
   transform: translateY(-4px);
   box-shadow: 0 -6px 14px -8px rgba(0, 0, 0, 0.45), 0 14px 28px -12px rgba(0, 0, 0, 0.5),
     inset 0 0 0 1px rgba(255, 255, 255, 0.14);
@@ -1168,7 +1189,7 @@ input:focus-visible {
   padding-bottom: 14px;
 }
 
-.stack li:last-child details {
+.stack > li:last-child details {
   padding-bottom: 0;
 }
 
@@ -1255,6 +1276,27 @@ input:focus-visible {
   color: #fff;
   font-weight: 600;
   text-underline-offset: 3px;
+}
+
+.row-body .cap-block small {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.row-body .notice-title {
+  margin-top: 4px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 卡堆是動態深色底：標籤同 .row-flag 用半透明黑底配白字 */
+.row-body .kind-tag {
+  background: rgba(0, 0, 0, 0.32);
+  color: #fff;
+}
+
+.row-body .kind-tag[data-kind="optional"] {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
 .row-body .muted {
@@ -1436,22 +1478,75 @@ input:focus-visible {
   gap: 16px;
 }
 
-.results-cols {
+.results-body {
   display: grid;
   gap: 20px;
+  align-content: start;
 }
 
-/* 兩組標題（無腦刷／有條件）：比一般小標大一級、用主文字色，兩欄並排時一眼分得出 */
+/* 兩組標題換成一條清單後只剩「其他選擇」：維持比一般小標大一級 */
 .results .rest-title {
   font-size: var(--fs-body);
   font-weight: 700;
   color: var(--text);
 }
 
-.col-direct {
-  display: grid;
-  gap: 20px;
-  align-content: start;
+/* 「只看無腦刷」開關（sprint 012）：整列可點、44px 高，關＝空心軌道，開＝實心深色軌道，不靠顏色以外的品牌色 */
+.switch {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.switch-track {
+  position: relative;
+  flex: none;
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 2px var(--text-3);
+  transition: background-color 150ms var(--ease-out), box-shadow 150ms var(--ease-out);
+}
+
+.switch-track::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-3);
+  transition: translate 150ms var(--ease-out), background-color 150ms var(--ease-out);
+}
+
+.switch input:checked + .switch-track {
+  background: var(--text);
+  box-shadow: none;
+}
+
+.switch input:checked + .switch-track::after {
+  translate: 18px 0;
+  background: var(--surface);
+}
+
+.switch input:focus-visible + .switch-track {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }
 
 @media (min-width: 768px) {
@@ -1479,22 +1574,15 @@ input:focus-visible {
     margin-inline: 0;
   }
 
-  .results-cols {
-    grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
-    gap: 40px;
-    align-items: start;
-  }
-
-  /* 只有一組有卡：單欄，靠左對齊同一條邊線，不留半邊空白 */
-  .results-cols:has(> #gated[hidden]) {
-    grid-template-columns: minmax(0, 460px);
-  }
-
+  /* 一條清單：第 1 名卡限寬 460px（維持卡面比例），其餘名次跟搜尋區同寬 720px，都靠左同一條邊線 */
   .top {
-    max-width: none;
+    max-width: 460px;
     margin-inline: 0;
   }
 
+  .results-body {
+    max-width: 720px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1504,7 +1592,7 @@ input:focus-visible {
     animation: none !important;
   }
 
-  .stack:not(.is-in) li {
+  .stack:not(.is-in) > li {
     opacity: 1;
   }
 }
@@ -1912,7 +2000,7 @@ input:focus-visible {
   }
 }
 
-/* ---------- 兩組結果（sprint 010 T03）：無腦刷／有條件 ---------- */
+/* ---------- 結果補充（sprint 010 T03、sprint 012）：收據補充、結果底部 ---------- */
 .receipt-extra {
   display: grid;
   gap: 8px;
@@ -1953,4 +2041,17 @@ input:focus-visible {
 .is-searching .result-foot .nearby-link {
   display: inline-flex;
   margin: 0;
+}
+
+/* 第 1 名收據上的「有條件」小標籤（卡堆裡的同名標籤在 .row-name .row-flag） */
+.rate .row-flag {
+  display: inline-block;
+  margin-left: 2px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--sunken);
+  color: var(--text-2);
+  font-size: var(--fs-caption);
+  font-style: normal;
+  font-weight: 600;
 }

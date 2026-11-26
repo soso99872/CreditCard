@@ -124,24 +124,21 @@
 
       <div id="results" class="results" hidden>
         <h2 id="result-title" class="result-title" tabindex="-1"></h2>
-        <div class="results-cols">
-          <div class="col-direct">
-            <section id="top" class="top" aria-labelledby="top-group" hidden>
-              <h3 id="top-group" class="rest-title">無腦刷</h3>
-              <p id="top-notice" class="empty-hint" hidden>沒有無腦刷的卡，都要先達成條件</p>
-              <div id="top-card"></div>
-              <div id="receipt" class="receipt"></div>
-            </section>
+        <label class="switch">
+          <input id="only-direct" type="checkbox" role="switch" />
+          <span class="switch-track" aria-hidden="true"></span>
+          <span>只看無腦刷</span>
+        </label>
+        <div class="results-body">
+          <section id="top" class="top" aria-label="最划算" hidden>
+            <p id="top-notice" class="empty-hint" hidden>沒有無腦刷的卡，都要先達成條件</p>
+            <div id="top-card"></div>
+            <div id="receipt" class="receipt"></div>
+          </section>
 
-            <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
-              <h3 id="rest-title" class="rest-title">其他選擇</h3>
-              <ol id="stack" class="stack"></ol>
-            </section>
-          </div>
-
-          <section id="gated" class="rest col-gated" aria-labelledby="gated-title" hidden>
-            <h3 id="gated-title" class="rest-title">有條件</h3>
-            <ol id="stack-gated" class="stack is-in dealt"></ol>
+          <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
+            <h3 id="rest-title" class="rest-title">其他選擇</h3>
+            <ol id="stack" class="stack"></ol>
           </section>
         </div>
       </div>
@@ -169,11 +166,7 @@
             </svg>
             <span class="sr-only">完整說明</span>
           </summary>
-          <p>部分資料是「第三方整理，未核對官方」（比較網站、新聞、部落格），卡片上逐筆標示。</p>
-          <p>
-            回饋、活動期間與上限以各銀行官方公告為準；
-            有疑義請點卡片上的「看銀行原文」或「第三方文章」核對。
-          </p>
+          <p>回饋、活動期間與上限以各銀行官方公告為準；有疑義請點卡片上的「看原文」核對。</p>
         </details>
       </footer>
 

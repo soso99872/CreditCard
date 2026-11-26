@@ -3,12 +3,12 @@
 // 畫面照風格提案 D「錢包」（design-proposals/d-wallet.html，老闆 2026-10-15 選定）：
 // 第 1 名是信用卡比例的實體卡＋下方收據，其餘名次是錢包裡疊起來的卡（<details>）。
 // 可測的純邏輯已抽到同目錄的 date.mjs、storage.mjs、query-params.mjs、view-state.mjs、footer.mjs、
-// suggest.mjs、card-color.mjs、bank-name.mjs，本檔只處理 DOM，不另外寫測試
+// suggest.mjs、card-color.mjs、bank-name.mjs、result-list.mjs、condition-kind.mjs，本檔只處理 DOM，不另外寫測試
 // （見 tasks.md T03、T12-2b）。
 
 import { normalize, loadAllData, recommend, CATEGORY_PICK_QUERY } from "../engine/index.mjs";
 import { localToday } from "./date.mjs";
-import { getSafeLocalStorage, loadMyCardIds, addMyCardId, removeMyCardId } from "./storage.mjs";
+import { getSafeLocalStorage, loadMyCardIds, addMyCardId, removeMyCardId, loadOnlyDirect, saveOnlyDirect } from "./storage.mjs";
 import { resolveDataBaseUrl, isDraftMode } from "./query-params.mjs";
 import {
   SCOPE,
@@ -31,7 +31,8 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
-import { thirdPartyInfo, THIRD_PARTY_SHORT } from "./source-label.mjs";
+import { buildResultList } from "./result-list.mjs";
+import { conditionKind } from "./condition-kind.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
@@ -50,6 +51,9 @@ const TAG_TEXT = {
 const GATED_TAGS = ["asset", "plan", "quota", "newcard", "spend"];
 const REGION_IDS = ["japan", "korea", "thailand", "singapore", "americas", "europe"];
 
+/** 開關預設值（沒記過使用者的選擇時用）。 */
+const DEFAULT_ONLY_DIRECT = true;
+
 const els = {};
 
 const state = {
@@ -61,9 +65,11 @@ const state = {
   pickedCategory: null, // 從快捷、建議或最近查詢直接點類別：{ id, name }；打字會清掉
   via: null, // 從附近商家點進來、類別是系統推測的：{ store, how }（nearby-view.mjs entryForItem）；打字會清掉
   recent: [], // 最近查詢（最多 5 筆，見 recent.mjs）
-  amount: undefined,
+  amount: undefined, // 使用者填的
+  amountUsed: undefined, // 這次畫面實際用的：使用者填的，沒填用類別預設
   scope: defaultScope(),
   showAll: false,
+  onlyDirect: true, // 「只看無腦刷」開關；預設開，使用者切換後記在 localStorage（loadData 讀出）
   // 「我的卡片」存在 storage 的完整清單，含目前看不到的 id（例如未開 ?draft=1 時的
   // 草稿卡）；畫面顯示與查詢範圍一律用 currentVisibleMyCardIds() 篩出的子集，
   // 新增或移除時才操作這個完整清單，避免看不到的 id 被覆寫掉（tasks.md T17）。
@@ -130,8 +136,7 @@ function cacheEls() {
   els.topNotice = document.getElementById("top-notice");
   els.rest = document.getElementById("rest");
   els.stack = document.getElementById("stack");
-  els.gated = document.getElementById("gated");
-  els.stackGated = document.getElementById("stack-gated");
+  els.onlyDirect = document.getElementById("only-direct");
   els.resultFoot = document.getElementById("result-foot");
   els.nearbyResultBtn = document.getElementById("nearby-result-btn");
   els.showAllBtn = document.getElementById("show-all-btn");
@@ -304,21 +309,80 @@ function sortAmountFor(match) {
   return state.data.categoryDefaults?.default || 1000;
 }
 
-/** 被上限截掉時的一行說明；沒截到回傳空字串。 */
-function effectiveNote(rec, amount) {
-  if (rec.effectiveRate > rec.rate - 0.01) return "";
-  if (capOnlyBonus(rec.conditions, rec.rawReward)) return ""; // 上限只算加碼部分時，「實拿約」公式不成立
-  return `以 NT$${fmtAmount.format(amount)} 計，實拿約 ${rec.effectiveRate.toFixed(1)}%`;
-}
-
 /** 有條件的卡：需要哪些條件（只列門檻類標籤）；沒有回傳空字串。 */
 function needText(rec) {
   const names = rec.conditionTags.filter((t) => GATED_TAGS.includes(t)).map((t) => TAG_TEXT[t]);
   return names.length ? `需要：${names.join("、")}` : "";
 }
 
+/** 試算行：刷 NT$X 回饋約 NT$Y。X 是畫面這次用的金額（使用者填的，沒填用類別預設），Y 是引擎並行公式算的。 */
+function rewardLine(rec) {
+  if (typeof rec.estimatedAmount !== "number") return "";
+  return `刷 NT$${fmtAmount.format(state.amountUsed)} 回饋約 NT$${fmtAmount.format(rec.estimatedAmount)}${rec.capped ? "（已達上限）" : ""}`;
+}
+
+/** 有上限、沒有基本回饋資料、條文又看得出分段：上限是否含基本回饋不確定，照實講。 */
+function capUnsure(rec) {
+  return rec.cap && rec.baseRate == null && capOnlyBonus(rec.conditions, rec.rawReward);
+}
+
+/** 上限那行：上限文字＋（有的話）不確定註記＋說明類條件（上限、計算方式、回饋時間…）的小字。 */
+function buildCapBlock(rec) {
+  const block = document.createElement("span");
+  block.className = "cap-block";
+  const main = document.createElement("span");
+  main.textContent = rec.capText;
+  block.appendChild(main);
+  const notes = [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
+  for (const text of notes) {
+    const small = document.createElement("small");
+    small.textContent = text;
+    block.appendChild(small);
+  }
+  return block;
+}
+
+/** 要注意：方案與「必須／可選」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
+function buildNotice(rec) {
+  const items = [
+    ...(rec.plan ? [{ kind: "required", text: `方案：${rec.plan}` }] : []),
+    ...rec.conditions.map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info"),
+  ];
+  if (!items.length) return null;
+  const ul = document.createElement("ul");
+  ul.className = "notice-list";
+  for (const { kind, text } of items) {
+    const li = document.createElement("li");
+    const tag = document.createElement("span");
+    tag.className = "kind-tag";
+    tag.dataset.kind = kind;
+    tag.textContent = kind === "optional" ? "可選" : "必須";
+    li.append(tag, text);
+    ul.appendChild(li);
+  }
+  return ul;
+}
+
+/** 每張卡一個低調的「看原文」連結（官方、第三方都連 sourceUrl）。 */
+function buildSourceLink(rec) {
+  const link = document.createElement("a");
+  link.href = rec.sourceUrl;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.textContent = "看原文";
+  return link;
+}
+
+/** 「有條件」小標籤：清單裡取最高實拿的那列是有門檻的規則時才有。 */
+function buildGatedTag() {
+  const tag = document.createElement("em");
+  tag.className = "row-flag";
+  tag.textContent = "有條件";
+  return tag;
+}
+
 /** 第 1 名：卡面下方的「收據」，回饋率是全頁最大的數字（照抄 d-wallet.html）。 */
-function buildReceipt(rec, amount) {
+function buildReceipt(rec) {
   const rate = document.createElement("p");
   rate.className = "rate num";
   const rateLabel = document.createElement("small");
@@ -326,19 +390,18 @@ function buildReceipt(rec, amount) {
   best.className = "best-tag";
   best.textContent = "最划算";
   rateLabel.append(best, "這筆回饋");
+  if (rec.group === "gated") rateLabel.append(" ", buildGatedTag());
   rate.append(rateLabel, rec.rateText);
 
   const gain = document.createElement("p");
-  gain.className = "gain";
-  if (typeof rec.estimatedAmount === "number") {
-    const strong = document.createElement("strong");
-    strong.className = "num";
-    strong.textContent = rec.capped
-      ? `${fmtAmount.format(rec.estimatedAmount)} 元（已達上限）`
-      : `${fmtAmount.format(rec.estimatedAmount)} 元`;
-    gain.append(`NT$${fmtAmount.format(state.amount)} 約可拿回`, strong);
-  } else {
-    gain.textContent = "填金額看能拿多少";
+  gain.className = "gain num";
+  // 分成兩段不斷字，窄螢幕只在「刷 NT$X」與「回饋約 NT$Y」之間換行
+  const line = rewardLine(rec);
+  const cut = line.indexOf(" 回饋約");
+  for (const [i, text] of [line.slice(0, cut), line.slice(cut + 1)].entries()) {
+    const part = document.createElement("span");
+    part.textContent = text;
+    gain.append(...(i ? [" "] : []), part);
   }
 
   const main = document.createElement("div");
@@ -347,13 +410,6 @@ function buildReceipt(rec, amount) {
 
   const extra = document.createElement("div");
   extra.className = "receipt-extra";
-  const note = effectiveNote(rec, amount);
-  if (note) {
-    const p = document.createElement("p");
-    p.className = "rate-note";
-    p.textContent = note;
-    extra.appendChild(p);
-  }
   if (rec.conditionTags.length) {
     const ul = document.createElement("ul");
     ul.className = "tag-list";
@@ -380,56 +436,22 @@ function buildReceipt(rec, amount) {
   };
 
   addFact("為什麼", rec.reason);
-  addFact("上限", rec.capText);
-
-  const needs = [...(rec.plan ? [`方案：${rec.plan}`] : []), ...rec.conditions];
-  if (needs.length) {
-    const ul = document.createElement("ul");
-    for (const text of needs) {
-      const li = document.createElement("li");
-      li.textContent = text;
-      ul.appendChild(li);
-    }
-    addFact("要注意", ul);
-  }
+  addFact("上限", buildCapBlock(rec));
+  const notice = buildNotice(rec);
+  if (notice) addFact("要注意", notice);
 
   const source = document.createElement("div");
   source.className = "source";
-  const third = thirdPartyInfo(rec);
   const checkedAt = document.createElement("span");
   checkedAt.className = "num";
-  checkedAt.textContent = third ? third.dateText : `核對於 ${rec.checkedAt}`;
-  const links = document.createElement("span");
-  links.className = "source-links";
-  for (const l of third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }]) {
-    links.appendChild(buildSourceLink(l.url, l.text));
-  }
-  source.append(checkedAt, links);
+  checkedAt.textContent = `核對於 ${rec.checkedAt}`;
+  source.append(checkedAt, buildSourceLink(rec));
 
   const fragment = document.createDocumentFragment();
   fragment.append(main);
   if (extra.children.length) fragment.append(extra);
-  if (third) fragment.append(buildThirdPartyTag(third.label));
   fragment.append(facts, source);
   return fragment;
-}
-
-/** 來源連結：新分頁開啟。 */
-function buildSourceLink(url, text) {
-  const link = document.createElement("a");
-  link.href = url;
-  link.target = "_blank";
-  link.rel = "noopener";
-  link.textContent = text;
-  return link;
-}
-
-/** 第三方來源標籤（DESIGN.md「第三方來源標籤」）。 */
-function buildThirdPartyTag(text) {
-  const tag = document.createElement("p");
-  tag.className = "source-tag";
-  tag.textContent = text;
-  return tag;
 }
 
 /**
@@ -440,7 +462,7 @@ function buildThirdPartyTag(text) {
  * @param {number} rank 0-based 總名次（0 = 第 1 名，這裡一定是 1 以上）
  * @param {string} color bankColor() 算好的顏色
  */
-function buildStackItem(rec, rank, color, amount) {
+function buildStackItem(rec, rank, color) {
   const li = document.createElement("li");
   li.style.setProperty("--c", color);
   li.style.setProperty("--i", String(Math.max(0, rank - 1)));
@@ -452,16 +474,9 @@ function buildStackItem(rec, rank, color, amount) {
   name.textContent = rec.cardName;
   const sub = document.createElement("span");
   sub.textContent = `${rank + 1}．${shortBankName(bankNameById(rec.bankId))}`;
-  const thirdRow = thirdPartyInfo(rec);
-  if (thirdRow) {
-    // 收合狀態就要看得到：短標籤，完整說明在展開內容裡。
-    const flag = document.createElement("em");
-    flag.className = "row-flag";
-    flag.textContent = THIRD_PARTY_SHORT;
-    sub.append(" ", flag);
-  }
+  if (rec.group === "gated") sub.append(" ", buildGatedTag());
   nameWrap.append(name, sub);
-  for (const text of [rec.group === "gated" ? needText(rec) : "", effectiveNote(rec, amount)]) {
+  for (const text of [rec.group === "gated" ? needText(rec) : "", rewardLine(rec)]) {
     if (!text) continue;
     const line = document.createElement("span");
     line.textContent = text;
@@ -479,36 +494,19 @@ function buildStackItem(rec, rank, color, amount) {
   reason.textContent = rec.reason;
   body.appendChild(reason);
 
-  const capLine = document.createElement("p");
-  capLine.textContent =
-    typeof rec.estimatedAmount === "number"
-      ? `${rec.capText}・約可拿回 ${fmtAmount.format(rec.estimatedAmount)} 元${rec.capped ? "（已達上限）" : ""}`
-      : rec.capText;
-  body.appendChild(capLine);
+  body.appendChild(buildCapBlock(rec));
 
-  if (rec.plan) {
-    const plan = document.createElement("p");
-    plan.textContent = `方案：${rec.plan}`;
-    body.appendChild(plan);
+  const notice = buildNotice(rec);
+  if (notice) {
+    const title = document.createElement("p");
+    title.className = "notice-title";
+    title.textContent = "要注意";
+    body.append(title, notice);
   }
-
-  for (const condition of rec.conditions) {
-    const cond = document.createElement("p");
-    cond.textContent = `要注意：${condition}`;
-    body.appendChild(cond);
-  }
-
-  const third = thirdPartyInfo(rec);
-  if (third) body.appendChild(buildThirdPartyTag(third.label));
 
   const meta = document.createElement("p");
   meta.className = "muted";
-  meta.append(third ? `${third.dateText}・` : `核對於 ${rec.checkedAt}・`);
-  const sourceLinks = third ? third.links : [{ url: rec.sourceUrl, text: "看銀行原文" }];
-  sourceLinks.forEach((l, i) => {
-    if (i) meta.append("・");
-    meta.appendChild(buildSourceLink(l.url, l.text));
-  });
+  meta.append(`核對於 ${rec.checkedAt}・`, buildSourceLink(rec));
   body.appendChild(meta);
 
   const details = document.createElement("details");
@@ -522,7 +520,6 @@ function hideTopAndRest() {
   els.results.hidden = true;
   els.top.hidden = true;
   els.rest.hidden = true;
-  els.gated.hidden = true;
   els.resultFoot.hidden = true;
   els.showAllBtn.hidden = true;
   stopDealAnimation();
@@ -554,15 +551,13 @@ function renderMatchAndResults() {
     return;
   }
 
-  // 兩組各自截斷：無腦刷組前 10 名、有條件組前 5 名，免得有條件的被無腦刷組擠到看不見
-  const directAll = state.recommendations.filter((r) => r.group !== "gated");
-  const gatedAll = state.recommendations.filter((r) => r.group === "gated");
-  const d = truncateTop(directAll, state.showAll, 10);
-  const g = truncateTop(gatedAll, state.showAll, 5);
-  const visible = [...d.visible, ...g.visible];
-  const hasMore = d.hasMore || g.hasMore;
+  // 一條清單：開關決定只留無腦刷，或每張卡取實拿最高那列；前 10 名，「顯示全部」展開
+  const list = buildResultList(state.recommendations, state.onlyDirect);
+  const { visible, hasMore } = truncateTop(list, state.showAll, 10);
 
-  if (visible.length === 0) {
+  els.onlyDirect.checked = state.onlyDirect;
+
+  if (state.recommendations.length === 0) {
     hideTopAndRest();
     showEmptyHint(
       state.checkingMode
@@ -574,10 +569,7 @@ function renderMatchAndResults() {
 
   hideEmptyHint();
 
-  const direct = d.visible;
-  const gated = g.visible;
-  const top = direct[0] ?? null;
-  const amount = sortAmountFor(match);
+  const top = visible[0] ?? null;
   // 配色依據是「這次推薦結果」裡銀行第一次出現的順序，用完整清單（state.recommendations）
   // 而不是被「預設前 10 名」截斷後的 visible，這樣按「顯示全部」多展開幾張卡時，已經在
   // 畫面上的卡片顏色不會跟著變（tasks.md T12-2b，老闆 2026-10-15 決定）。
@@ -592,7 +584,6 @@ function renderMatchAndResults() {
   stopDealAnimation();
   els.stack.classList.remove("is-in", "dealt");
   els.stack.replaceChildren();
-  els.stackGated.replaceChildren();
 
   if (top) {
     const face = buildCardFace(top, bankColor(top.bankId, bankOrder));
@@ -600,26 +591,19 @@ function renderMatchAndResults() {
     if (topKey !== lastTopKey) face.classList.add("is-fresh");
     lastTopKey = topKey;
     els.topCard.replaceChildren(face);
-    els.receipt.replaceChildren(buildReceipt(top, amount));
+    els.receipt.replaceChildren(buildReceipt(top));
   } else {
     lastTopKey = null;
     els.topCard.replaceChildren();
     els.receipt.replaceChildren();
   }
 
-  // 有條件欄自己從 1 編號（兩欄並排時，不接在無腦刷後面從 11 起）
-  const addRows = (list, ol) =>
-    list.forEach((rec, i) =>
-      ol.appendChild(buildStackItem(rec, ol === els.stackGated ? i : visible.indexOf(rec), bankColor(rec.bankId, bankOrder), amount)));
-
-  const directRest = direct.slice(1);
-  els.rest.hidden = directRest.length === 0;
-  if (directRest.length) {
-    addRows(directRest, els.stack);
-    startDealAnimation(directRest.length);
+  const rest = visible.slice(1);
+  els.rest.hidden = rest.length === 0;
+  if (rest.length) {
+    rest.forEach((rec, i) => els.stack.appendChild(buildStackItem(rec, i + 1, bankColor(rec.bankId, bankOrder))));
+    startDealAnimation(rest.length);
   }
-  els.gated.hidden = gated.length === 0;
-  addRows(gated, els.stackGated);
 
   els.resultFoot.hidden = false;
   els.showAllBtn.hidden = !hasMore;
@@ -789,7 +773,7 @@ function recompute() {
   const visibleIds = currentVisibleMyCardIds();
   const useScope = effectiveScope(state.scope, visibleIds);
 
-  const result = recommend({
+  const args = {
     query: state.pickedCategory ? CATEGORY_PICK_QUERY : state.query,
     // 查無商家、也推測不出類別時，一律帶保底的「一般消費」類別，直接顯示一般消費排行，
     // 不用等使用者先選類別（AC-04）；「merchant」「category-guess」兩種比對結果本來就
@@ -804,7 +788,16 @@ function recompute() {
     today: localToday(),
     amount: state.amount,
     includeUnverified: state.draftMode, // ?draft=1 時納入草稿卡（tasks.md T17）
-  });
+  };
+  let result = recommend(args);
+
+  // 沒填金額時，用排序同一個類別預設金額再算一次，讓每張卡都有試算行（排序不變，引擎排序本來就用這個金額）
+  if (!(typeof state.amount === "number" && state.amount > 0) && result.recommendations.length) {
+    state.amountUsed = sortAmountFor(result.match);
+    result = recommend({ ...args, amount: state.amountUsed });
+  } else {
+    state.amountUsed = state.amount;
+  }
 
   state.match = result.match;
   state.recommendations = result.recommendations;
@@ -1016,6 +1009,13 @@ function wireEvents() {
     });
   }
 
+  els.onlyDirect.addEventListener("change", (event) => {
+    state.onlyDirect = event.target.checked;
+    saveOnlyDirect(state.storage, state.onlyDirect);
+    state.showAll = false;
+    renderMatchAndResults(); // 第 1 名跟著清單重算
+  });
+
   els.showAllBtn.addEventListener("click", () => {
     state.showAll = true;
     renderMatchAndResults();
@@ -1054,6 +1054,7 @@ async function loadData() {
     // 否則新增或移除卡片時會把看不到的 id 一起覆寫掉，永久從 storage 消失（tasks.md T17）。
     state.myCardIds = loadMyCardIds(state.storage);
     state.recent = loadRecent(state.storage);
+    state.onlyDirect = loadOnlyDirect(state.storage) ?? DEFAULT_ONLY_DIRECT;
   } catch (err) {
     console.error("資料載入失敗", baseUrl, err); // 細節留給開發者看，畫面不放內部路徑（product-pitfalls 第 7 條）
     state.loadError = "資料載入失敗，請重新整理。";

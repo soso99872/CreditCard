@@ -77,3 +77,24 @@ export function removeMyCardId(storage, ids, cardId) {
   saveMyCardIds(storage, next);
   return next;
 }
+
+const ONLY_DIRECT_KEY = "cardpick:only-direct";
+
+/** 讀「只看無腦刷」開關；沒存過或讀不到回傳 null（由呼叫端用預設值）。 */
+export function loadOnlyDirect(storage) {
+  try {
+    const raw = storage?.getItem(ONLY_DIRECT_KEY);
+    return raw === "1" ? true : raw === "0" ? false : null;
+  } catch {
+    return null;
+  }
+}
+
+/** 存「只看無腦刷」開關；失敗靜默（畫面仍可用，只是不會記住）。 */
+export function saveOnlyDirect(storage, value) {
+  try {
+    storage?.setItem(ONLY_DIRECT_KEY, value ? "1" : "0");
+  } catch {
+    // 同 saveMyCardIds
+  }
+}

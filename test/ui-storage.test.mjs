@@ -129,3 +129,25 @@ describe("src/ui/storage.mjs — addMyCardId／removeMyCardId", () => {
     assert.deepEqual(ids, ["card-a"]);
   });
 });
+
+describe("只看無腦刷開關的記憶", async () => {
+  const { loadOnlyDirect, saveOnlyDirect } = await import("../src/ui/storage.mjs");
+  const fake = () => {
+    const m = new Map();
+    return { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => m.set(k, v) };
+  };
+
+  test("沒存過回傳 null；存了讀得回來", () => {
+    const s = fake();
+    assert.equal(loadOnlyDirect(s), null);
+    saveOnlyDirect(s, true);
+    assert.equal(loadOnlyDirect(s), true);
+    saveOnlyDirect(s, false);
+    assert.equal(loadOnlyDirect(s), false);
+  });
+
+  test("storage 不可用或丟錯不會壞", () => {
+    assert.equal(loadOnlyDirect(null), null);
+    assert.doesNotThrow(() => saveOnlyDirect({ setItem() { throw new Error("full"); } }, true));
+  });
+});
