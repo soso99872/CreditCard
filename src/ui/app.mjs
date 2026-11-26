@@ -342,7 +342,7 @@ function buildCapBlock(rec) {
   return block;
 }
 
-/** 要注意：方案與「必須／可選」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
+/** 要注意：方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
 function buildNotice(rec) {
   const items = [
     ...(rec.plan ? [{ kind: "required", text: `方案：${rec.plan}` }] : []),
@@ -356,7 +356,7 @@ function buildNotice(rec) {
     const tag = document.createElement("span");
     tag.className = "kind-tag";
     tag.dataset.kind = kind;
-    tag.textContent = kind === "optional" ? "可選" : "必須";
+    tag.textContent = { optional: "可選", downgrade: "會變少" }[kind] || "必須";
     li.append(tag, text);
     ul.appendChild(li);
   }

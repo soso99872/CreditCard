@@ -1071,8 +1071,9 @@ input:focus-visible {
   white-space: nowrap;
 }
 
-/* 可選＝空心，必須＝實心，不靠顏色分 */
-.kind-tag[data-kind="optional"] {
+/* 可選、會變少＝空心，必須＝實心，不靠顏色分 */
+.kind-tag[data-kind="optional"],
+.kind-tag[data-kind="downgrade"] {
   background: transparent;
   box-shadow: inset 0 0 0 1px var(--text-3);
 }
@@ -1294,7 +1295,8 @@ input:focus-visible {
   color: #fff;
 }
 
-.row-body .kind-tag[data-kind="optional"] {
+.row-body .kind-tag[data-kind="optional"],
+.row-body .kind-tag[data-kind="downgrade"] {
   background: transparent;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 }

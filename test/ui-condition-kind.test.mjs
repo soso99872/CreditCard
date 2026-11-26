@@ -27,6 +27,22 @@ describe("src/ui/condition-kind.mjs — 要注意每條是必須、可選還是�
     ]) assert.equal(conditionKind(s), "optional", s);
   });
 
+  test("講「怎樣會變少」的句子 → downgrade（不標必須，免得讀成要去做）", () => {
+    for (const s of [
+      "綁定第三方行動支付（如LINE Pay、街口支付）結帳僅享0.88%",
+      "臺北捷運感應支付僅0.3%",
+      "TWQR 形式消費僅享一般消費 1%，不適用精選通路加碼",
+      "網路交易、條碼支付、第三方支付不算國外實體商店（僅一般1%）",
+    ]) assert.equal(conditionKind(s), "downgrade", s);
+    // 開頭是要做的事、或寫「才適用」的，仍是必須
+    for (const s of [
+      "需設定富邦帳戶自動扣繳信用卡費或申請電子帳單，否則僅0.5%回饋",
+      "直接刷卡，或以LINE Pay、街口支付綁定iLEO付款才適用；綁其他電子支付（如悠遊付）帳單商家名稱不符，只有基本0.5%",
+      "藥局僅一般實體門市（便利商店/量販店複合門市/機場店除外）；大樹藥局限全臺大樹實體門市、大樹健康購物網及官方APP；杏一醫療限全臺杏一實體門市（非開立杏一發票之門市不加碼）",
+      "帳單通路名稱須符合樂天系統（LINE Pay 顯示連加*、連支*、LINE PAY*等），不符僅享一般回饋",
+    ]) assert.equal(conditionKind(s), "required", s);
+  });
+
   test("上限、計算、回饋時間、資料註記 → info", () => {
     for (const s of [
       "上限只計額外2.5%加碼部分",
