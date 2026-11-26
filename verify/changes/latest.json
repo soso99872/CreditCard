@@ -1,6 +1,6 @@
 {
- "date": "2026-11-23",
- "compared": "verify/snapshots/history/2026-11-19T041823.json",
+ "date": "2026-11-26",
+ "compared": "verify/snapshots/history/2026-11-23T033811.json",
  "changed": [
   {
    "url": "https://creditcards.com.tw/creditcard/bankchb-mylove-credit-card-cashback/",
@@ -282,26 +282,6 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
-   "file": "verify/snapshots/ad182a4ddcbd.txt",
-   "uses": [
-    "ctbc-uniopen-general-domestic",
-    "ctbc-uniopen-7-eleven",
-    "ctbc-uniopen-overseas-general",
-    "ctbc-uniopen-overseas-store",
-    "ctbc-uniopen-overseas-store-bonus",
-    "ctbc-uniopen-group-bonus",
-    "ctbc-uniopen-group-stamp-2",
-    "ctbc-uniopen-group-stamp-3",
-    "ctbc-uniopen-group-stamp-4",
-    "ctbc-uniopen-group-stamp-5",
-    "ctbc-uniopen-group-icash",
-    "ctbc-uniopen-blackcat-freight",
-    "ctbc-uniopen-unisoku-freight"
-   ],
-   "kind": "回饋相關句子變了"
-  },
-  {
    "url": "https://pokem.tw/esun-kumamoncard/",
    "file": "verify/snapshots/e1154e5576ce.txt",
    "uses": [
@@ -409,16 +389,50 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.card.rakuten.com.tw/",
-   "file": "verify/snapshots/f806feb111ee.txt",
+   "url": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube-list/",
+   "file": "verify/snapshots/1efff7680a32.txt",
    "uses": [
-    "rakuten-card:卡片列表"
+    "cathay-cube-digital-l1",
+    "cathay-cube-digital-l2",
+    "cathay-cube-digital-l3",
+    "cathay-cube-dining-merchant-l1",
+    "cathay-cube-dining-category-l1",
+    "cathay-cube-dining-merchant-l2",
+    "cathay-cube-dining-category-l2",
+    "cathay-cube-dining-merchant-l3",
+    "cathay-cube-dining-category-l3",
+    "cathay-cube-travel-merchant-l1",
+    "cathay-cube-travel-hotel-l1",
+    "cathay-cube-travel-overseas-l1",
+    "cathay-cube-travel-merchant-l2",
+    "cathay-cube-travel-hotel-l2",
+    "cathay-cube-travel-overseas-l2",
+    "cathay-cube-travel-merchant-l3",
+    "cathay-cube-travel-hotel-l3",
+    "cathay-cube-travel-overseas-l3",
+    "cathay-cube-select",
+    "cathay-cube-formosa",
+    "cathay-cube-fixed-general",
+    "cathay-cube-fixed-overseas",
+    "cathay-cube-allpay",
+    "cathay-cube-birthday-10",
+    "cathay-cube-birthday-5",
+    "cathay-cube-birthday-3-5",
+    "cathay-cube-kids-school",
+    "cathay-cube-kids-5",
+    "cathay-cube-kids-10",
+    "cathay-cube-autumn-japan",
+    "cathay-cube-autumn-3-5",
+    "cathay-cube-autumn-3",
+    "cathay-cube-autumn-4",
+    "cathay-cube-autumn-5",
+    "cathay-cube-autumn-8"
    ],
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
-   "file": "verify/snapshots/2138570260c1.txt",
+   "url": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
+   "file": "verify/snapshots/92fbb70db0c8.txt",
    "uses": [],
    "kind": "回饋相關句子變了"
   },
@@ -431,10 +445,10 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list",
-   "file": "verify/snapshots/14a0618815aa.txt",
+   "url": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
+   "file": "verify/snapshots/eb444509eda2.txt",
    "uses": [
-    "kgi:卡片列表"
+    "landbank-icash-general"
    ],
    "kind": "回饋相關句子變了"
   },
@@ -449,72 +463,17 @@
    "kind": "回饋相關句子變了"
   },
   {
-   "url": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
-   "file": "verify/snapshots/27be9049ff04.txt",
+   "url": "https://www.money101.com.tw/blog/%E7%8E%89%E5%B1%B1unicard%E5%85%A8%E8%A7%A3%E6%9E%90",
+   "file": "verify/snapshots/076ddc3489b9.txt",
    "uses": [
-    "taishin-richart-general",
-    "taishin-richart-chill-10-l1",
-    "taishin-richart-chill-10-l2",
-    "taishin-richart-chill-10-new-l1",
-    "taishin-richart-chill-10-new-l2",
-    "taishin-richart-chill-5-l1",
-    "taishin-richart-chill-5-l2",
-    "taishin-richart-chill-5-new-l1",
-    "taishin-richart-chill-5-new-l2",
-    "taishin-richart-chill-33-l1",
-    "taishin-richart-chill-33-l2",
-    "taishin-richart-payset-l1",
-    "taishin-richart-payset-taishinpay-l2",
-    "taishin-richart-payset-linepay-l2",
-    "taishin-richart-payset-quanying-l2",
-    "taishin-richart-daily-shop-l1",
-    "taishin-richart-daily-shop-l2",
-    "taishin-richart-daily-smart-l1",
-    "taishin-richart-daily-smart-l2",
-    "taishin-richart-daily-transport-l1",
-    "taishin-richart-daily-transport-l2",
-    "taishin-richart-daily-gas-l1",
-    "taishin-richart-daily-gas-l2",
-    "taishin-richart-daily-pharmacy-l1",
-    "taishin-richart-daily-pharmacy-l2",
-    "taishin-richart-big-dept-l1",
-    "taishin-richart-big-dept-l2",
-    "taishin-richart-big-outlet-l1",
-    "taishin-richart-big-outlet-l2",
-    "taishin-richart-big-home-l1",
-    "taishin-richart-big-home-l2",
-    "taishin-richart-big-fashion-l1",
-    "taishin-richart-big-fashion-l2",
-    "taishin-richart-feast-dining-l1",
-    "taishin-richart-feast-dining-l2",
-    "taishin-richart-feast-wangpin-l1",
-    "taishin-richart-feast-wangpin-l2",
-    "taishin-richart-feast-delivery-ticket-l1",
-    "taishin-richart-feast-delivery-ticket-l2",
-    "taishin-richart-feast-hotel-l1",
-    "taishin-richart-feast-hotel-l2",
-    "taishin-richart-feast-ktv-l1",
-    "taishin-richart-feast-ktv-l2",
-    "taishin-richart-digital-shop-l1",
-    "taishin-richart-digital-shop-l2",
-    "taishin-richart-digital-course-l1",
-    "taishin-richart-digital-course-l2",
-    "taishin-richart-digital-game-l1",
-    "taishin-richart-digital-game-l2",
-    "taishin-richart-digital-ai-l1",
-    "taishin-richart-digital-ai-l2",
-    "taishin-richart-travel-overseas-l1",
-    "taishin-richart-travel-overseas-l2",
-    "taishin-richart-travel-transport-l1",
-    "taishin-richart-travel-transport-l2",
-    "taishin-richart-travel-airline-l1",
-    "taishin-richart-travel-airline-l2",
-    "taishin-richart-travel-booking-l1",
-    "taishin-richart-travel-booking-l2",
-    "taishin-richart-travel-agency-l1",
-    "taishin-richart-travel-agency-l2",
-    "taishin-richart-holiday-l1",
-    "taishin-richart-holiday-l2"
+    "esun-unicard-general-ebill",
+    "esun-unicard-general-full",
+    "esun-unicard-easy-merchants",
+    "esun-unicard-easy-overseas",
+    "esun-unicard-free-merchants",
+    "esun-unicard-free-overseas",
+    "esun-unicard-up-merchants",
+    "esun-unicard-up-overseas"
    ],
    "kind": "回饋相關句子變了"
   },
@@ -524,18 +483,6 @@
    "uses": [
     "tcbbank:卡片列表"
    ],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
-   "file": "verify/snapshots/f1e05ed00507.txt",
-   "uses": [],
-   "kind": "回饋相關句子變了"
-  },
-  {
-   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
-   "file": "verify/snapshots/52e2d5939c37.txt",
-   "uses": [],
    "kind": "回饋相關句子變了"
   }
  ],
@@ -619,9 +566,21 @@
    "rules": 1
   },
   {
+   "url": "https://www.feib.com.tw/introduce/cardInfo?type=1",
+   "status": null,
+   "chars": null,
+   "rules": 1
+  },
+  {
+   "url": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
+   "status": null,
+   "chars": null,
+   "rules": 0
+  },
+  {
    "url": "https://www.o-bank.com/zh-tw/retail/credit-card",
    "status": 301,
-   "chars": 84,
+   "chars": 7830,
    "rules": 1
   }
  ],
@@ -665,59 +624,83 @@
  ],
  "minor": [
   {
-   "url": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card.html",
+   "uses": 1
+  },
+  {
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
    "uses": 0
   },
   {
-   "url": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
+   "url": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
    "uses": 0
   },
   {
-   "url": "https://www.bankchb.com/frontend/subarea.jsp?funcId=f1f12f6d15",
-   "uses": 1
-  },
-  {
-   "url": "https://www.bok.com.tw/card-rights-and-benefits-1",
-   "uses": 3
-  },
-  {
-   "url": "https://www.bok.com.tw/credit-card",
-   "uses": 1
-  },
-  {
-   "url": "https://www.feib.com.tw/introduce/cardInfo?type=1",
-   "uses": 1
-  },
-  {
-   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
    "uses": 2
   },
   {
-   "url": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
+   "url": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
    "uses": 0
+  },
+  {
+   "url": "https://www.entiebank.com.tw/entie/1_3_1_2",
+   "uses": 1
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-01/",
+   "uses": 3
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-01-02/",
+   "uses": 0
+  },
+  {
+   "url": "https://www.hwataibank.com.tw/personal/card01-02-01/",
+   "uses": 0
+  },
+  {
+   "url": "https://www.landbank.com.tw/Category/Items/信用卡專區",
+   "uses": 1
+  },
+  {
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
+   "uses": 2
+  },
+  {
+   "url": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
+   "uses": 0
+  },
+  {
+   "url": "https://www.sc.com/tw/credit-cards/",
+   "uses": 1
   },
   {
    "url": "https://www.skbank.com.tw/CC-CreditcardHome",
    "uses": 1
   },
   {
-   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview",
-   "uses": 1
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12",
+   "uses": 2
   },
   {
-   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
-   "uses": 3
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
+   "uses": 0
   },
   {
-   "url": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
+   "uses": 0
+  },
+  {
+   "url": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/list.do",
    "uses": 1
   }
  ],
  "summary": {
   "pages": 147,
-  "changed": 50,
-  "blocked": 14,
+  "changed": 47,
+  "blocked": 16,
   "expiringRules": 6,
-  "minor": 12
+  "minor": 18
  }
 }

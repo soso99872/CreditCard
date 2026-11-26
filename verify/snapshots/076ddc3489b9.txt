@@ -10,7 +10,7 @@ close
 電影及影音平台回饋
 分期零利率優惠
 信用卡繳保費優惠
-網購優惠
+網購刷卡回饋
 行動支付優惠
 旅遊訂房優惠
 美食餐廳優惠
@@ -151,7 +151,7 @@ JCB日本機場貴賓室
 毛孩家庭刷卡省錢術
 常見問題
 活動禮贈品兌換問題
-會員相關問題
+會員相關常見問題
 person
 登入
 貸款方案比較
@@ -503,15 +503,14 @@ Back to Blog
 10月
 15,
 2026
-信用卡權益
-2026 JCB 信用卡推薦，晶緻卡優惠、日本回饋、星巴克與機場權益
-11月
-4,
-2026
 線上消費
 2026售票網信用卡推薦，遠大、KKTIX、拓元、寬宏刷卡回饋
 10月
 27,
+2026
+永豐幣倍卡好用嗎？海外最高 8%、首刷禮與機場權益試算
+10月
+14,
 2026
 FINANCIAL TIP:
 Use a personal loan to consolidate your outstanding debt at a lower interest rate!
@@ -521,14 +520,13 @@ Use a personal loan to consolidate your outstanding debt at a lower interest rat
 所有信用卡
 精選推薦
 國內外現金回饋
-繳稅優惠
 航空哩程回饋
 加油優惠
 分期零利率優惠
 首刷禮優惠
 信用卡繳保費優惠
 電影優惠
-網購優惠
+網購刷卡回饋
 行動支付優惠
 旅遊訂房優惠
 美食餐廳優惠
@@ -537,27 +535,23 @@ Use a personal loan to consolidate your outstanding debt at a lower interest rat
 貸款方案比較
 快速線上貸款推薦
 最完整貸款資訊一次看
-繳稅貸款
 貸款計算機
 車貸計算機
 精選貸款推薦
 信貸利率比較
 一般個人貸款
-優質客戶貸款
-既有客戶貸款
-低手續費貸款
+低總費用年百分率貸款
 小額借款
 循環貸款
 汽機車貸款比較
 房貸利率比較
-信用貸款銀行列表
 債務整合
 24小時內入帳貸款
+信用貸款銀行列表
 證券開戶比較
 台股證券戶
 美股證券戶
 投資產品比較
-機器人投資
 加密貨幣
 外幣定存
 保險比較
@@ -570,7 +564,6 @@ Use a personal loan to consolidate your outstanding debt at a lower interest rat
 數位存款帳戶
 美元定存
 台灣銀行列表
-銀行與合作機構列表
 銀行客服電話
 暸解更多
 加入我們
