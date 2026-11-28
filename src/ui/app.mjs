@@ -314,7 +314,7 @@ function buildCapBlock(rec) {
   return block;
 }
 
-/** 要注意：要切換的方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。 */
+/** 要注意：要切換的方案與「必須／可選／會變少／不含」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。 */
 function buildNotice(rec) {
   const plan = planItem(rec);
   const items = [
@@ -325,7 +325,7 @@ function buildNotice(rec) {
   const ul = make("ul", "notice-list");
   for (const { kind, text } of items) {
     const li = document.createElement("li");
-    const tag = make("span", "kind-tag", { optional: "可選", downgrade: "會變少" }[kind] || "必須");
+    const tag = make("span", "kind-tag", { optional: "可選", downgrade: "會變少", exclude: "不含" }[kind] || "必須");
     tag.dataset.kind = kind;
     li.append(tag, make("span", null, text));
     ul.appendChild(li);
