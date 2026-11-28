@@ -31,24 +31,13 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
-import { buildResultList } from "./result-list.mjs";
+import { buildResultList, needText, planItem, TAG_TEXT } from "./result-list.mjs";
 import { conditionKind } from "./condition-kind.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
 const fmtAmount = new Intl.NumberFormat("zh-TW");
 
-const TAG_TEXT = {
-  register: "登錄／綁定",
-  ebill: "電子帳單",
-  autopay: "自動扣繳",
-  plan: "切換方案",
-  asset: "資產門檻",
-  quota: "限量",
-  spend: "消費門檻",
-  newcard: "新戶",
-};
-const GATED_TAGS = ["asset", "plan", "quota", "newcard", "spend"];
 const REGION_IDS = ["japan", "korea", "thailand", "singapore", "americas", "europe"];
 
 /** 開關預設值（沒記過使用者的選擇時用）。 */
@@ -309,12 +298,6 @@ function sortAmountFor(match) {
   return state.data.categoryDefaults?.default || 1000;
 }
 
-/** 有條件的卡：需要哪些條件（只列門檻類標籤）；沒有回傳空字串。 */
-function needText(rec) {
-  const names = rec.conditionTags.filter((t) => GATED_TAGS.includes(t)).map((t) => TAG_TEXT[t]);
-  return names.length ? `需要：${names.join("、")}` : "";
-}
-
 /** 試算行：刷 NT$X 回饋約 NT$Y。X 是畫面這次用的金額（使用者填的，沒填用類別預設），Y 是引擎並行公式算的。 */
 function rewardLine(rec) {
   if (typeof rec.estimatedAmount !== "number") return "";
@@ -333,7 +316,8 @@ function buildCapBlock(rec) {
   const main = document.createElement("span");
   main.textContent = rec.capText;
   block.appendChild(main);
-  const notes = [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
+  const plan = planItem(rec);
+  const notes = [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...(plan?.kind === "info" ? [plan.text] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
   for (const text of notes) {
     const small = document.createElement("small");
     small.textContent = text;
@@ -342,10 +326,11 @@ function buildCapBlock(rec) {
   return block;
 }
 
-/** 要注意：方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
+/** 要注意：要切換的方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
 function buildNotice(rec) {
+  const plan = planItem(rec);
   const items = [
-    ...(rec.plan ? [{ kind: "required", text: `方案：${rec.plan}` }] : []),
+    ...(plan?.kind === "required" ? [plan] : []),
     ...rec.conditions.map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info"),
   ];
   if (!items.length) return null;
