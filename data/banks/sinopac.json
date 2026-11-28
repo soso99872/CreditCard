@@ -32,6 +32,7 @@
     {
       "id": "sinopac-dawho",
       "name": "DAWHO現金回饋信用卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/DAWHO.html",
       "rules": [
         {
@@ -206,6 +207,7 @@
     {
       "id": "sinopac-green",
       "name": "現金回饋Green卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/cashcard.html",
       "rules": [
         {
@@ -325,6 +327,7 @@
     {
       "id": "sinopac-vogue",
       "name": "VOGUE卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/vogue-card.html",
       "rules": [
         {
@@ -345,6 +348,7 @@
     {
       "id": "sinopac-melaleuca",
       "name": "美樂家生活卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/melaleuca-card.html",
       "rules": [
         {
@@ -365,6 +369,7 @@
     {
       "id": "sinopac-mitsui",
       "name": "MITSUI OUTLET PARK卡",
+      "rewardUnit": "豐點",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html",
       "pointValue": {"unit": "豐點", "twdPerPoint": 1, "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/mitsui-outlet-park-card.html", "checkedAt": "2026-10-10"},
       "rules": [
@@ -403,6 +408,7 @@
     {
       "id": "sinopac-taxicard",
       "name": "永豐55688聯名卡",
+      "rewardUnit": "T Points",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/co-brand/taxicard.html",
       "rules": [
         {
@@ -423,6 +429,7 @@
     {
       "id": "sinopac-dual-currency",
       "name": "幣倍卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://bank.sinopac.com/sinopacBT/personal/credit-card/introduction/bankcard/dual-currency-card.html",
       "rules": [
         {

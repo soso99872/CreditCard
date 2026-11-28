@@ -14,6 +14,7 @@
     {
       "id": "rakuten-panda-j",
       "name": "樂天Panda J卡",
+      "rewardUnit": "刷卡金",
       "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml",
       "rules": [
         {"id": "rakuten-panda-j-general", "plan": "", "scope": {"type": "general", "excludeMerchants": ["全聯", "中華電信", "台灣大哥大", "遠傳電信"]}, "rate": 0.5, "rawReward": "國內一般消費均享0.5%刷卡金無上限", "cap": null, "conditionTags": [], "conditions": ["刷卡金，僅可折抵次期帳單", "限台澎金馬地區消費", "不含官方排除項目（年費、預借現金、各項代繳、醫療院所、小額支付平台之超商／速食／餐飲／手搖飲／停車、電信資費、稅金等）", "全聯／大全聯不適用"], "validFrom": "2026-07-01", "validTo": "2026-12-31", "sourceType": "official", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/04.xhtml", "checkedAt": "2026-10-30"},
@@ -29,10 +30,11 @@
     {
       "id": "rakuten-tiger",
       "name": "樂虎卡",
+      "rewardUnit": "刷卡金",
       "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml",
       "rules": [
         {"id": "rakuten-tiger-general", "plan": "", "scope": {"type": "general", "excludeMerchants": ["全聯", "中華電信", "台灣大哥大", "遠傳電信"]}, "rate": 0.5, "rawReward": "國內消費享0.5%刷卡金回饋無上限", "cap": null, "conditionTags": [], "conditions": ["刷卡金，僅可折抵次期帳單", "限台澎金馬地區消費", "不含官方排除項目（年費、預借現金、各項代繳、醫療院所、小額支付平台之超商／速食／餐飲／手搖飲／停車、電信資費、稅金等）", "全聯／大全聯不適用"], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceType": "official", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "checkedAt": "2026-10-30"},
-        {"id": "rakuten-tiger-designated", "plan": "", "scope": {"type": "merchant", "merchants": ["LINE Pay", "街口支付", "台灣虎航"], "basis": "merchant-list"}, "rate": 3, "rawReward": "指定通路（LINE Pay、街口支付、台灣虎航官網／APP／機上購物）再加碼2.5% tigerpoints（最高500 tigerpoints/每期帳單），合計3%", "cap": {"amount": 500, "unit": "point", "period": "billing-cycle"}, "baseRate": 0.5, "conditionTags": ["register"], "conditions": ["國內指定通路加碼2.5% tigerpoints 部分最高500 tigerpoints／每期帳單（指定通路共用），基本0.5%不計入", "加碼為 tigerpoints，需綁定台灣虎航 tigerclub 會員，未綁定無法獲得", "台灣虎航限官網、APP及機上購物", "LINE Pay／街口帳單通路名稱須符合樂天系統，不符僅享一般回饋"], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceType": "official", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "sourceNote": "tigerpoints 以 1 點＝NT$1 計（虎航稱回饋金等同現金、限虎航機票與附加服務折抵；樂天頁未載換算率）", "checkedAt": "2026-10-30"},
+        {"id": "rakuten-tiger-designated", "rewardUnit": "tigerpoints", "plan": "", "scope": {"type": "merchant", "merchants": ["LINE Pay", "街口支付", "台灣虎航"], "basis": "merchant-list"}, "rate": 3, "rawReward": "指定通路（LINE Pay、街口支付、台灣虎航官網／APP／機上購物）再加碼2.5% tigerpoints（最高500 tigerpoints/每期帳單），合計3%", "cap": {"amount": 500, "unit": "point", "period": "billing-cycle"}, "baseRate": 0.5, "conditionTags": ["register"], "conditions": ["國內指定通路加碼2.5% tigerpoints 部分最高500 tigerpoints／每期帳單（指定通路共用），基本0.5%不計入", "加碼為 tigerpoints，需綁定台灣虎航 tigerclub 會員，未綁定無法獲得", "台灣虎航限官網、APP及機上購物", "LINE Pay／街口帳單通路名稱須符合樂天系統，不符僅享一般回饋"], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceType": "official", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "sourceNote": "tigerpoints 以 1 點＝NT$1 計（虎航稱回饋金等同現金、限虎航機票與附加服務折抵；樂天頁未載換算率）", "checkedAt": "2026-10-30"},
         {"id": "rakuten-tiger-jk", "plan": "", "scope": {"type": "category", "categories": ["japan", "korea"], "basis": "mcc"}, "rate": 2, "rawReward": "指定海外（日本、韓國）實體消費享2%刷卡金回饋無上限", "cap": null, "conditionTags": [], "conditions": ["限日本、韓國當地實體交易且刷當地幣別（日幣／韓圜）", "刷卡金，僅可折抵次期帳單", "不含官方排除項目（年費、預借現金、各項代繳、醫療院所、小額支付平台之超商／速食／餐飲／手搖飲／停車、電信資費、稅金等）"], "validFrom": "2026-01-07", "validTo": "2026-12-31", "sourceType": "official", "sourceUrl": "https://www.card.rakuten.com.tw/corp/ads/16.xhtml", "checkedAt": "2026-10-30"}
       ],
       "verified": true

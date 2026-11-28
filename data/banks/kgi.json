@@ -21,6 +21,7 @@
     {
       "id": "kgi-visa-infinite",
       "name": "凱基銀行無限卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/visa-infinite-card",
       "rules": [
         {
@@ -54,6 +55,7 @@
     {
       "id": "kgi-crypto",
       "name": "幣享悠遊鈦金卡",
+      "rewardUnit": "幣享點",
       "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html",
       "pointValue": { "unit": "幣享點", "twdPerPoint": 1, "sourceUrl": "https://www.kgibank.com.tw/webpages/crypto-currency-credit-card/index.html", "checkedAt": "2026-10-14" },
       "rules": [
@@ -114,6 +116,7 @@
     {
       "id": "kgi-eslite",
       "name": "誠品悠遊御璽卡",
+      "rewardUnit": "現金點",
       "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html",
       "pointValue": { "unit": "現金點", "twdPerPoint": 1, "sourceUrl": "https://www.kgibank.com.tw/webpages/eslite-credit-card/index.html", "checkedAt": "2026-10-14" },
       "verified": true,
@@ -228,6 +231,7 @@
     {
       "id": "kgi-more-buy",
       "name": "魔BUY卡",
+      "rewardUnit": "現金點",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card",
       "pointValue": { "unit": "現金點", "twdPerPoint": 1, "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-buy-credit-card", "checkedAt": "2026-10-14" },
       "verified": true,
@@ -290,6 +294,7 @@
     {
       "id": "kgi-cash-back",
       "name": "現金回饋卡",
+      "rewardUnit": "刷卡金",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/cash-back-card",
       "verified": true,
       "rules": [
@@ -328,6 +333,7 @@
     {
       "id": "kgi-life-infinite",
       "name": "凱基人壽無限卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-infinite-card",
       "rules": [
         {
@@ -348,6 +354,7 @@
     {
       "id": "kgi-life-signature",
       "name": "凱基人壽御璽卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/kgi-life-insurance-visa-signature-card",
       "rules": [
         {
@@ -368,6 +375,7 @@
     {
       "id": "kgi-more-fun",
       "name": "魔FUN悠遊御璽卡",
+      "rewardUnit": "現金點",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card",
       "pointValue": { "unit": "現金點", "twdPerPoint": 1, "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/more-fun-visa-signature-card", "checkedAt": "2026-10-14" },
       "rules": [
@@ -415,6 +423,7 @@
     {
       "id": "kgi-morerich",
       "name": "魔利悠遊御璽卡",
+      "rewardUnit": "現金點",
       "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card",
       "pointValue": { "unit": "現金點", "twdPerPoint": 1, "sourceUrl": "https://www.kgibank.com.tw/zh-tw/personal/credit-card/list/morerich_card", "checkedAt": "2026-10-14" },
       "rules": [

@@ -23,6 +23,7 @@
     {
       "id": "chb-mygo",
       "name": "鈦金商旅卡(My購卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=62aed72f16",
       "rules": [
         {
@@ -138,6 +139,7 @@
     {
       "id": "chb-myle",
       "name": "鈦金商旅卡(My樂現金回饋卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.bankchb.com/frontend/mashup.jsp?funcId=cdf27f7215",
       "rules": [
         {

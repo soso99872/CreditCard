@@ -34,6 +34,7 @@
     {
       "id": "dbs-aov",
       "name": "星展傳說對決聯名卡",
+      "rewardUnit": "現金積點",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-aov/index.html",
       "rules": [
         {
@@ -54,6 +55,7 @@
     {
       "id": "dbs-eco",
       "name": "星展eco永續卡",
+      "rewardUnit": "現金積點",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_eco/index.html",
       "pointValue": { "unit": "現金積點", "twdPerPoint": 1, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -137,6 +139,7 @@
     {
       "id": "dbs-pchomeprime",
       "name": "星展PChome Prime聯名卡",
+      "rewardUnit": "P幣",
       "verified": true,
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-pchomeprime/index.html",
       "pointValue": { "unit": "P幣", "twdPerPoint": 1, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
@@ -215,6 +218,7 @@
     {
       "id": "dbs-yours-signature-business",
       "name": "星展優仕商務卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/yours_signature_business_card",
       "rules": [
         {
@@ -261,6 +265,7 @@
     {
       "id": "dbs-livefresh",
       "name": "星展炫晶御璽卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/livefresh",
       "rules": [
         {
@@ -294,6 +299,7 @@
     {
       "id": "dbs-everyday-signature",
       "name": "星展everyday威士御璽卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -328,6 +334,7 @@
     {
       "id": "dbs-everyday-platinum",
       "name": "星展everyday威士白金卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/everyday_2023/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -349,6 +356,7 @@
     {
       "id": "dbs-everyday-titanium",
       "name": "星展everyday鈦金卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-credit-cards/everyday_titanium",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -370,6 +378,7 @@
     {
       "id": "dbs-insignia",
       "name": "星展極耀無限卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Insignia/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -391,6 +400,7 @@
     {
       "id": "dbs-vantage",
       "name": "星展晶耀無限卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs_Vantage/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -412,6 +422,7 @@
     {
       "id": "dbs-funlife",
       "name": "星展饗樂生活卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-funlife/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [
@@ -453,6 +464,7 @@
     {
       "id": "dbs-cru",
       "name": "星展喜憨兒認同卡",
+      "rewardUnit": "活利積分",
       "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/dbs-cru/index.html",
       "pointValue": { "unit": "活利積分", "twdPerPoint": 0.04, "sourceUrl": "https://www.dbs.com.tw/personal-zh/cards/rewards/bonus_redeem_creditcard_cash_back", "checkedAt": "2026-10-14" },
       "rules": [

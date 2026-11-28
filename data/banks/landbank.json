@@ -53,6 +53,7 @@
     {
       "id": "landbank-icash",
       "name": "土銀icash2.0聯名鈦金卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.landbank.com.tw/Bulletin/Detail/3c01a21b-e857-481a-afa5-adf800984a6f?code=C100",
       "rules": [
         {

@@ -23,6 +23,7 @@
     {
       "id": "yuanta-diamond-easycard",
       "name": "鑽金智富悠遊聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=68a7acff90000000d16c",
       "rules": [
         { "id": "yuanta-diamond-easycard-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋（鑽金紅利1點=現金回饋1元），無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=68a7acff90000000d16c", "checkedAt": "2026-10-10" },
@@ -32,6 +33,7 @@
     {
       "id": "yuanta-share-blackbear",
       "name": "分享黑啤悠遊聯名卡",
+      "rewardUnit": "鑽金紅利",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=68a79aa15f0000076ba9",
       "rules": [
         { "id": "yuanta-share-blackbear-general", "plan": "", "scope": { "type": "general" }, "rate": 0.5, "rawReward": "無消費門檻，國內一般消費0.5%鑽金紅利回饋無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=68a79aa15f0000076ba9", "checkedAt": "2026-10-10" },
@@ -41,6 +43,7 @@
     {
       "id": "yuanta-diamond-easycard-basic",
       "name": "鑽金悠遊聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=6851bfce6700000373e2",
       "rules": [
         { "id": "yuanta-diamond-easycard-basic-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=6851bfce6700000373e2", "checkedAt": "2026-10-10" },
@@ -50,6 +53,7 @@
     {
       "id": "yuanta-diamond-ipass",
       "name": "鑽金智富iPASS聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=47bfb5ba85000006ef03",
       "rules": [
         { "id": "yuanta-diamond-ipass-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋（鑽金紅利1點=現金回饋1元），無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=47bfb5ba85000006ef03", "checkedAt": "2026-10-10" },
@@ -59,6 +63,7 @@
     {
       "id": "yuanta-diamond-wealth",
       "name": "鑽金智富卡",
+      "rewardUnit": "鑽金紅利",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf",
       "pointValue": { "unit": "鑽金紅利", "twdPerPoint": 1, "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=5bedd3fe1d000000cadf", "checkedAt": "2026-10-30" },
       "verified": true,
@@ -73,6 +78,7 @@
     {
       "id": "yuanta-diamond-icash-wealth",
       "name": "鑽金智富icash聯名卡",
+      "rewardUnit": "鑽金紅利",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa",
       "pointValue": { "unit": "鑽金紅利", "twdPerPoint": 1, "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=470c0634cd0000059efa", "checkedAt": "2026-10-30" },
       "verified": true,
@@ -87,6 +93,7 @@
     {
       "id": "yuanta-diamond-wealth-invite",
       "name": "鑽金智富卡<邀請制>",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=473f33ce38000002e0e9",
       "rules": [
         { "id": "yuanta-diamond-wealth-invite-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋（鑽金紅利1點=現金回饋1元），無上限", "cap": null, "conditions": ["邀請制，須受邀才能申請"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=473f33ce38000002e0e9", "checkedAt": "2026-10-10" },
@@ -96,6 +103,7 @@
     {
       "id": "yuanta-securities",
       "name": "元大證券聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=461462f877000006fa39",
       "rules": [
         { "id": "yuanta-securities-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "無消費門檻，國內消費1.2%現金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=461462f877000006fa39", "checkedAt": "2026-10-10" },
@@ -105,6 +113,7 @@
     {
       "id": "yuanta-securities-invite",
       "name": "元大證券聯名卡<邀請制>",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=475cc91b9800000322db",
       "rules": [
         { "id": "yuanta-securities-invite-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋，無上限", "cap": null, "conditions": ["邀請制，須受邀才能申請"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=475cc91b9800000322db", "checkedAt": "2026-10-10" },
@@ -114,6 +123,7 @@
     {
       "id": "yuanta-hellokitty-diamond",
       "name": "Hello Kitty鑽金聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b4611f000004dd12",
       "verified": true,
       "rules": [
@@ -124,6 +134,7 @@
     {
       "id": "yuanta-hellokitty-share",
       "name": "Hello Kitty分享聯名卡",
+      "rewardUnit": "鑽金紅利",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b8b0fd00000123c4",
       "rules": [
         { "id": "yuanta-hellokitty-share-general", "plan": "", "scope": { "type": "general" }, "rate": 0.5, "rawReward": "國內消費0.5%鑽金紅利回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=31c2b8b0fd00000123c4", "checkedAt": "2026-10-10" },
@@ -133,6 +144,7 @@
     {
       "id": "yuanta-diamond-icash-basic",
       "name": "鑽金icash聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2752af9d700000004912",
       "rules": [
         { "id": "yuanta-diamond-icash-basic-general", "plan": "", "scope": { "type": "general" }, "rate": 1.2, "rawReward": "國內消費1.2%現金回饋，無上限", "cap": null, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2752af9d700000004912", "checkedAt": "2026-10-10" },
@@ -142,6 +154,7 @@
     {
       "id": "yuanta-icash-aixian",
       "name": "icash愛現晶緻/鈦金卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2c1210076e000001c44f",
       "rules": [
         { "id": "yuanta-icash-aixian-general", "plan": "", "scope": { "type": "general" }, "rate": 0.6, "rawReward": "平日（週一～週五）消費0.6%現金回饋；假日（週六～週日）最高1%現金回饋，每期帳單回饋上限NT$1,000", "cap": { "amount": 1000, "unit": "TWD", "period": "billing-cycle" }, "conditions": [], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2c1210076e000001c44f", "checkedAt": "2026-10-10" }
@@ -150,6 +163,7 @@
     {
       "id": "yuanta-lexiang",
       "name": "樂享晶緻/icash樂享卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2c1670b98f000005d1e2",
       "rules": [
         { "id": "yuanta-lexiang-general", "plan": "", "scope": { "type": "general" }, "rate": 0.3, "rawReward": "一般通路：當期新增一般消費滿NT$3,000以上，現金回饋0.3%，每期上限NT$500", "cap": { "amount": 500, "unit": "TWD", "period": "billing-cycle" }, "conditions": ["當期該類消費達NT$3,000以上才符合回饋資格"], "validFrom": "2026-01-01", "validTo": "2026-12-31", "sourceUrl": "https://www.yuantabank.com.tw/bank/creditCard/creditCard/in.do?id=2c1670b98f000005d1e2", "checkedAt": "2026-10-10" },

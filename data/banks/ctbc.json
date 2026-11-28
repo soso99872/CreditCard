@@ -13,6 +13,7 @@
     {
       "id": "ctbc-allme",
       "name": "中國信託 ALL ME 卡",
+      "rewardUnit": "ALL ME 點",
       "verified": true,
       "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/ALLME/index.html",
       "rules": [
@@ -90,6 +91,7 @@
     {
       "id": "ctbc-uniopen",
       "name": "中國信託 uniopen 聯名卡",
+      "rewardUnit": "OPENPOINT",
       "verified": true,
       "sourceUrl": "https://mkt.ctbcbank.com/long/creditcard/N2025052600033_01/index.html",
       "rules": [
@@ -326,6 +328,7 @@
     {
       "id": "ctbc-linepay-visa",
       "name": "中國信託 LINE Pay 卡（Visa）",
+      "rewardUnit": "LINE POINTS",
       "verified": true,
       "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
       "rules": [
@@ -1038,6 +1041,7 @@
     {
       "id": "ctbc-linepay-jcb",
       "name": "中國信託 LINE Pay 卡（JCB）",
+      "rewardUnit": "LINE POINTS",
       "verified": true,
       "sourceUrl": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/index.html",
       "rules": [

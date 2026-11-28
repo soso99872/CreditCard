@@ -38,6 +38,7 @@
     {
       "id": "cathay-cube",
       "name": "CUBE信用卡",
+      "rewardUnit": "小樹點",
       "verified": true,
       "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/cube/",
       "rules": [
@@ -681,6 +682,7 @@
     {
       "id": "cathay-cash-rebate-signature",
       "name": "現金回饋御璽卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/cash-rebate-signature",
       "rules": [
@@ -720,6 +722,7 @@
     {
       "id": "cathay-shopee",
       "name": "蝦皮購物聯名卡",
+      "rewardUnit": "蝦幣",
       "verified": true,
       "sourceUrl": "https://www.cathay-cube.com.tw/cathaybk/personal/product/credit-card/cards/shopee/",
       "rules": [
@@ -832,6 +835,7 @@
     {
       "id": "cathay-world",
       "name": "世界卡",
+      "rewardUnit": "小樹點",
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world",
       "pointValue": {"unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/world", "checkedAt": "2026-10-10"},
       "rules": [
@@ -869,6 +873,7 @@
     {
       "id": "cathay-dual-currency",
       "name": "雙幣卡",
+      "rewardUnit": "小樹點",
       "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency",
       "pointValue": {"unit": "小樹點", "twdPerPoint": 1, "sourceUrl": "https://www.cathaybk.com.tw/cathaybk/personal/product/credit-card/cards/dual-currency", "checkedAt": "2026-10-10"},
       "rules": [

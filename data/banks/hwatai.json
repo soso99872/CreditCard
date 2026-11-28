@@ -10,6 +10,7 @@
     {
       "id": "hwatai-visa-gold",
       "name": "VISA金卡",
+      "rewardUnit": "紅利點數",
       "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-02-01/",
       "pointValue": { "unit": "紅利點數", "twdPerPoint": 0.1, "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/", "checkedAt": "2026-10-30" },
       "rules": [
@@ -34,6 +35,7 @@
     {
       "id": "hwatai-jcb",
       "name": "JCB晶緻卡",
+      "rewardUnit": "紅利點數",
       "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-02-01/",
       "pointValue": { "unit": "紅利點數", "twdPerPoint": 0.1, "sourceUrl": "https://www.hwataibank.com.tw/personal/card01-01-02/", "checkedAt": "2026-10-30" },
       "rules": [

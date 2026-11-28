@@ -114,6 +114,8 @@ data/
 - `cards[].verified`：布林，標記這張卡的資料是否已完整核對過官方頁（主管通過 T15 第二步後設為 `true`）。**沒有這個欄位視為 `false`**（草稿卡，尚未逐項核對）；有填時必須是布林值。推薦引擎（`recommend()`）與 `loadAllData()` **預設只使用 `verified === true` 的卡**，草稿卡仍保留在檔案中、會通過 `validate`，但不會出現在推薦清單裡。需要讓預覽頁或測試看到草稿卡時，呼叫端要明確加上 `includeUnverified: true` 選項（見下方「字串正規化規則」前的「`verified` 與草稿卡」一節），不會自動顯示。
 - `cards[].sourceUrl`：卡片官方介紹頁，網域必須在該銀行 `officialDomains` 內。
 - `cards[].pointValue`：若回饋為點數，填點數換算新台幣的規則；現金回饋可省略此欄位。
+- `cards[].rewardUnit`（選填，字串）：這張卡回饋的單位。現金回饋類填「現金回饋」、刷卡金填「刷卡金」、點數填點數名稱（有 `pointValue` 時必須與 `pointValue.unit` 一致；原文錯字照正確寫法，例：台新Point）。原文只寫「回饋」、使用者自選單位等判斷不了的不填。由 `node scripts/reward-unit.mjs --write` 產生。
+  - 規則層可另填 `rules[].rewardUnit`，只在該條規則單位跟卡不同時用（例：樂虎卡指定通路回 tigerpoints）。
 - `cards[].rules`：每張卡至少一條 `scope.type === "general"` 的規則。
   - `id`：全站唯一，建議 `<卡片 id>-<說明>`。
   - `plan`：方案或等級名稱，單一方案的卡可填空字串 `""`。

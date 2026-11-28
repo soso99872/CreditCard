@@ -135,6 +135,7 @@
     {
       "id": "fubon-costco",
       "name": "富邦Costco聯名卡",
+      "rewardUnit": "好多金",
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/costco/costco.htm",
       "rules": [
         {
@@ -189,6 +190,7 @@
     {
       "id": "fubon-momo",
       "name": "富邦momo卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/momo/momo.htm",
       "rules": [
@@ -230,6 +232,7 @@
         },
         {
           "id": "fubon-momo-store",
+          "rewardUnit": "mo幣",
           "plan": "",
           "scope": {
             "type": "merchant",
@@ -277,6 +280,7 @@
     {
       "id": "fubon-op",
       "name": "台灣大哥大Open Possible聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/openpossible/openpossible.htm",
       "rules": [
         {
@@ -347,6 +351,7 @@
     {
       "id": "fubon-fortune",
       "name": "富邦財神卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/fortune/fortune.htm",
       "rules": [
         {
@@ -367,6 +372,7 @@
     {
       "id": "fubon-lifestyle",
       "name": "富邦富利生活系列卡",
+      "rewardUnit": "紅利點數",
       "sourceUrl": "https://www.fubon.com/banking/personal/credit_card/all_card/lifestyle/lifestyle.htm",
       "pointValue": {"unit": "紅利點數", "twdPerPoint": 0.03, "sourceUrl": "https://www.fubon.com/banking/creditcard/jsp/fubo.htm", "checkedAt": "2026-10-10"},
       "rules": [

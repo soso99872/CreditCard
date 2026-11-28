@@ -13,6 +13,7 @@
     {
       "id": "cotabank-general",
       "name": "一般晶片卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
       "rules": [
         {
@@ -36,6 +37,7 @@
     {
       "id": "cotabank-lohas",
       "name": "樂活卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.cotabank.com.tw/card/doc/card_pdf_feedback.pdf",
       "rules": [
         {

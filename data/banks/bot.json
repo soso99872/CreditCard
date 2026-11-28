@@ -141,6 +141,7 @@
     {
       "id": "bot-ikatong",
       "name": "一卡通鈦金商旅卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://ecard.bot.com.tw/Pages/Cards/P10.html",
       "verified": true,
       "rules": [

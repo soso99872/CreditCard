@@ -18,6 +18,7 @@
     {
       "id": "megabank-bt21",
       "name": "宇宙明星BT21信用卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/bt21creditcard",
       "rules": [
         {
@@ -38,6 +39,7 @@
     {
       "id": "megabank-mega-one",
       "name": "Mega One一卡通聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/mega-one",
       "rules": [
         {
@@ -71,6 +73,7 @@
     {
       "id": "megabank-young",
       "name": "e秒刷悠遊/一卡通聯名卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/young",
       "rules": [
@@ -156,6 +159,7 @@
     {
       "id": "megabank-cash-rebate-biz",
       "name": "利多御璽卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/cash-rebate-biz",
       "rules": [
         {
@@ -202,6 +206,7 @@
     {
       "id": "megabank-next-bank",
       "name": "將來銀行聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/next-bank",
       "rules": [
         {
@@ -222,6 +227,7 @@
     {
       "id": "megabank-happy",
       "name": "e秒Happy悠遊聯名卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.megabank.com.tw/personal/credit-card/card/overview/happy",
       "rules": [

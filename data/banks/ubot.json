@@ -350,6 +350,7 @@
     {
       "id": "ubot-linebank",
       "name": "LINE Bank聯名卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail601",
       "rules": [
@@ -470,6 +471,7 @@
     {
       "id": "ubot-sunfar",
       "name": "順發聯名卡",
+      "rewardUnit": "銀行點",
       "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail407",
       "rules": [
         {
@@ -503,6 +505,7 @@
     {
       "id": "ubot-taoyuan-citizen",
       "name": "桃園市市民卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://card.ubot.com.tw/CardDetail/cardDetail504",
       "rules": [
         {

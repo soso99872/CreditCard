@@ -28,6 +28,7 @@
     {
       "id": "scsb-minions",
       "name": "小小兵回饋卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.scsb.com.tw/content/card/card_1110222.html",
       "verified": true,
       "rules": [
@@ -155,6 +156,7 @@
     {
       "id": "scsb-visa-simple",
       "name": "VISA簡單卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.scsb.com.tw/content/card/card03_h1.html",
       "verified": true,
       "rules": [

@@ -19,6 +19,7 @@
     {
       "id": "sunnybank-fcu-ipass",
       "name": "逢甲人一卡通鈦金認同卡",
+      "rewardUnit": "現金紅利點數",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496",
       "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/496", "checkedAt": "2026-10-14" },
       "rules": [
@@ -31,6 +32,7 @@
     {
       "id": "sunnybank-pondafamily",
       "name": "彭大家族聯名晶緻卡",
+      "rewardUnit": "現金紅利點數",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498",
       "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/498", "checkedAt": "2026-10-14" },
       "rules": [
@@ -43,6 +45,7 @@
     {
       "id": "sunnybank-jcb-premium",
       "name": "陽信JCB晶緻卡(原JCB哆啦A夢晶緻卡)",
+      "rewardUnit": "現金紅利點數",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500",
       "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/500", "checkedAt": "2026-10-14" },
       "rules": [
@@ -55,6 +58,7 @@
     {
       "id": "sunnybank-ipass-titanium",
       "name": "一卡通聯名鈦金卡",
+      "rewardUnit": "現金紅利點數",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501",
       "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/501", "checkedAt": "2026-10-14" },
       "rules": [
@@ -67,6 +71,7 @@
     {
       "id": "sunnybank-visa-yaojing",
       "name": "VISA曜晶卡",
+      "rewardUnit": "曜晶紅利",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503",
       "verified": true,
       "pointValue": { "unit": "曜晶紅利", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/503", "checkedAt": "2026-10-30" },
@@ -78,6 +83,7 @@
     {
       "id": "sunnybank-sunnylife",
       "name": "Sunny Life 賞利點卡(VISA御璽卡)",
+      "rewardUnit": "賞利點",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/543",
       "verified": true,
       "pointValue": { "unit": "賞利點", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/541", "checkedAt": "2026-10-14" },
@@ -90,6 +96,7 @@
     {
       "id": "sunnybank-xworld-business",
       "name": "陽信鑫世界商務卡(邀請制)",
+      "rewardUnit": "現金紅利點數",
       "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597",
       "pointValue": { "unit": "現金紅利點數", "twdPerPoint": 1, "sourceUrl": "https://www.sunnybank.com.tw/net/Page/Tmenu/597", "checkedAt": "2026-10-10" },
       "rules": [

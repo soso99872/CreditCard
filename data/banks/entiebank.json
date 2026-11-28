@@ -18,6 +18,7 @@
     {
       "id": "entie-visa",
       "name": "VISA御璽卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
       "verified": true,
       "rules": [
@@ -56,6 +57,7 @@
     {
       "id": "entie-visa-installment-platinum",
       "name": "VISA分期白金卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1120813/1120813.htm",
       "verified": true,
       "rules": [
@@ -94,6 +96,7 @@
     {
       "id": "entie-easycard-titanium",
       "name": "悠遊鈦金卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.entiebank.com.tw/EntieWebMigrateFiles/1090280/1090280.htm",
       "verified": true,
       "rules": [

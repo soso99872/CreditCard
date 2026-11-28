@@ -34,6 +34,7 @@
     {
       "id": "feib-hwcard",
       "name": "遠東樂行卡",
+      "rewardUnit": "刷卡金",
       "sourceUrl": "https://www.feib.com.tw/upload/creditcard/HWCard/index.html",
       "rules": [
         {

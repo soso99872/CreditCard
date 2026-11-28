@@ -369,6 +369,18 @@ export async function validate(dataDir) {
         errors.push(`${cardLoc}：sourceUrl（${card.sourceUrl}）網域不在 ${bankId} 的官方網域白名單內`);
       }
 
+      if (card.rewardUnit !== undefined && (typeof card.rewardUnit !== "string" || !card.rewardUnit.trim())) {
+        errors.push(`${cardLoc}：rewardUnit 必須是非空字串（現金回饋、刷卡金或點數名稱）`);
+      }
+      if (card.rewardUnit && card.pointValue?.unit && card.rewardUnit !== card.pointValue.unit) {
+        errors.push(`${cardLoc}：rewardUnit（${card.rewardUnit}）與 pointValue.unit（${card.pointValue.unit}）不一致`);
+      }
+      for (const rule of card.rules || []) {
+        if (rule.rewardUnit !== undefined && (typeof rule.rewardUnit !== "string" || !rule.rewardUnit.trim())) {
+          errors.push(`${cardLoc}：規則 ${rule.id} 的 rewardUnit 必須是非空字串`);
+        }
+      }
+
       if (card.pointValue) {
         const pv = card.pointValue;
         if (typeof pv.twdPerPoint !== "number" || !Number.isFinite(pv.twdPerPoint)) {

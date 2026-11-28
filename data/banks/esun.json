@@ -58,6 +58,7 @@
     {
       "id": "esun-unicard",
       "name": "玉山Unicard",
+      "rewardUnit": "玉山e point",
       "verified": true,
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/unicard",
       "rules": [
@@ -216,6 +217,7 @@
     {
       "id": "esun-ubear",
       "name": "玉山ＵBear信用卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/u-bear",
       "rules": [
         {
@@ -262,6 +264,7 @@
     {
       "id": "esun-kumamon",
       "name": "玉山熊本熊卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/kumamon_card",
       "rules": [
@@ -345,6 +348,7 @@
     {
       "id": "esun-pi-wallet",
       "name": "玉山Pi 拍錢包信用卡",
+      "rewardUnit": "P幣",
       "verified": true,
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/pi-card",
       "rules": [
@@ -444,6 +448,7 @@
     {
       "id": "esun-dualcurrency",
       "name": "玉山雙幣信用卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/dualcurrency-card",
       "rules": [
         {
@@ -477,6 +482,7 @@
     {
       "id": "esun-ecard",
       "name": "玉山數位e卡",
+      "rewardUnit": "玉山e point",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/e-card",
       "pointValue": { "unit": "玉山e point", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/e-card", "checkedAt": "2026-10-10" },
       "rules": [
@@ -498,6 +504,7 @@
     {
       "id": "esun-icash",
       "name": "玉山icash聯名卡",
+      "rewardUnit": "OPENPOINT",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card",
       "pointValue": { "unit": "OPENPOINT", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/bank-card/icash-card", "checkedAt": "2026-10-10" },
       "rules": [
@@ -545,6 +552,7 @@
     {
       "id": "esun-eztravel",
       "name": "玉山易遊卡",
+      "rewardUnit": "eMoney",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel",
       "pointValue": { "unit": "eMoney", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/co-branded-card/eztravel", "checkedAt": "2026-10-10" },
       "rules": [
@@ -579,6 +587,7 @@
     {
       "id": "esun-world",
       "name": "玉山世界卡",
+      "rewardUnit": "玉山e point",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD",
       "pointValue": { "unit": "玉山e point", "twdPerPoint": 1, "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/WORLD", "checkedAt": "2026-10-10" },
       "rules": [
@@ -613,6 +622,7 @@
     {
       "id": "esun-infinite",
       "name": "玉山無限卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.esunbank.com/zh-tw/personal/credit-card/intro/world-card/infinite-card",
       "rules": [
         {

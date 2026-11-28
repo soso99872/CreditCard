@@ -22,6 +22,7 @@
     {
       "id": "sc-beyond",
       "name": "渣打 Beyond 世界之極卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.sc.com/tw/credit-cards/beyond-card/",
       "rules": [
         {
@@ -68,6 +69,7 @@
     {
       "id": "sc-signature",
       "name": "渣打現金回饋御璽卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.sc.com/tw/credit-cards/signature-card/",
       "rules": [
         {
@@ -110,6 +112,7 @@
     {
       "id": "sc-visa-infinite",
       "name": "渣打優先理財無限卡",
+      "rewardUnit": "紅利積點",
       "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/",
       "pointValue": { "unit": "紅利積點", "twdPerPoint": 0.025, "sourceUrl": "https://www.sc.com/tw/credit-cards/visa-infinite-card/", "checkedAt": "2026-10-10" },
       "rules": [

@@ -16,6 +16,7 @@
     {
       "id": "firstbank-ileo",
       "name": "iLEO信用卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690685937",
       "verified": true,
       "rules": [
@@ -120,6 +121,7 @@
     {
       "id": "firstbank-easycard",
       "name": "一卡通聯名卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690688542",
       "verified": true,
       "rules": [
@@ -188,6 +190,7 @@
     {
       "id": "firstbank-wonderful",
       "name": "Wonderful星璨卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://card.firstbank.com.tw/sites/card/zh_TW/1565690686302",
       "rules": [
         {

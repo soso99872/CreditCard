@@ -28,6 +28,7 @@
     {
       "id": "tbb-visa-infinite",
       "name": "福企無限卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/visa-infinite-creditcard",
       "rules": [
         {
@@ -61,6 +62,7 @@
     {
       "id": "tbb-eldercaring",
       "name": "銀色之愛(Mastercard鈦金商旅卡、VISA商務御璽卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/eldercaring-creditcard",
       "rules": [
         {
@@ -107,6 +109,7 @@
     {
       "id": "tbb-titanium",
       "name": "鈦金商旅卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/titanium-creditcard",
       "rules": [
         {
@@ -254,6 +257,7 @@
     {
       "id": "tbb-greenlife-easy",
       "name": "永續生活悠遊卡(鈦金卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-easy-creditcard",
       "rules": [
         {
@@ -418,6 +422,7 @@
     {
       "id": "tbb-greenlife-ipass",
       "name": "永續生活一卡通(普卡、鈦金卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/greenlife-ipass-creditcard",
       "rules": [
         {
@@ -451,6 +456,7 @@
     {
       "id": "tbb-artfun-easy",
       "name": "藝FUN悠遊御璽卡(御璽卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/artfun-easy-creditcard",
       "rules": [
         {
@@ -484,6 +490,7 @@
     {
       "id": "tbb-chaotiangong",
       "name": "北港朝天宮認同卡(普卡、鈦金卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/chaotiangong-creditcard",
       "rules": [
         {
@@ -550,6 +557,7 @@
     {
       "id": "tbb-smeg-business",
       "name": "信保基金111關懷商務卡(商務御璽卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-business-creditcard",
       "rules": [
         {
@@ -596,6 +604,7 @@
     {
       "id": "tbb-smeg",
       "name": "信保基金111關懷認同卡(鈦金商旅卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/smeg-creditcard",
       "rules": [
         {
@@ -642,6 +651,7 @@
     {
       "id": "tbb-temple",
       "name": "宮廟認同卡(鈦金卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/temple-creditcard",
       "rules": [
         {
@@ -688,6 +698,7 @@
     {
       "id": "tbb-lionsclub",
       "name": "國際獅子會台灣總會認同卡(鈦金商旅卡)",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.tbb.com.tw/zh-tw/personal/cards/products/overview/lionsclub-creditcard",
       "rules": [
         {

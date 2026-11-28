@@ -15,6 +15,7 @@
     {
       "id": "hsbc-cashback-signature",
       "name": "現金回饋御璽卡",
+      "rewardUnit": "現金回饋",
       "verified": true,
       "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-signature/",
       "rules": [
@@ -59,6 +60,7 @@
     {
       "id": "hsbc-cashback-titanium",
       "name": "滙豐匯鑽卡",
+      "rewardUnit": "現金積點",
       "verified": true,
       "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/cashback-titanium/",
       "rules": [
@@ -105,6 +107,7 @@
     {
       "id": "hsbc-liveplus",
       "name": "滙豐Live+現金回饋卡",
+      "rewardUnit": "現金積點",
       "verified": true,
       "sourceUrl": "https://www.hsbc.com.tw/credit-cards/products/liveplus/",
       "rules": [

@@ -24,6 +24,7 @@
     {
       "id": "taishin-richart",
       "name": "台新Richart卡",
+      "rewardUnit": "台新Point",
       "verified": true,
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg047/card001/",
       "rules": [
@@ -2049,6 +2050,7 @@
     {
       "id": "taishin-pxmart",
       "name": "大全聯信用卡",
+      "rewardUnit": "福利點",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/",
       "pointValue": { "unit": "福利點", "twdPerPoint": 0.1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg010/card001/", "checkedAt": "2026-10-10" },
       "rules": [
@@ -2096,6 +2098,7 @@
     {
       "id": "taishin-jkopay",
       "name": "街口聯名卡",
+      "rewardUnit": "街口幣",
       "verified": true,
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg038/card001/",
       "rules": [
@@ -2202,6 +2205,7 @@
     {
       "id": "taishin-dutyfree",
       "name": "昇恆昌御璽/白金/普卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg009/card001/",
       "rules": [
         {
@@ -2248,6 +2252,7 @@
     {
       "id": "taishin-skm",
       "name": "新光三越御璽/鈦金/白金卡",
+      "rewardUnit": "台新Point",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg008/card001/",
       "rules": [
         {
@@ -2281,6 +2286,7 @@
     {
       "id": "taishin-skm-infinite",
       "name": "新光三越無限/世界卡",
+      "rewardUnit": "台新Point",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg014/card0001/",
       "rules": [
         {
@@ -2301,6 +2307,7 @@
     {
       "id": "taishin-friday",
       "name": "遠傳friDay聯名卡",
+      "rewardUnit": "遠傳幣",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/",
       "pointValue": { "unit": "遠傳幣", "twdPerPoint": 1, "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg019/card001/", "checkedAt": "2026-10-10" },
       "rules": [
@@ -2335,6 +2342,7 @@
     {
       "id": "taishin-gogoro",
       "name": "Gogoro Rewards 聯名卡",
+      "rewardUnit": "Gogoro Smart Points",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg042/card001/",
       "rules": [
         {
@@ -2355,6 +2363,7 @@
     {
       "id": "taishin-dual-currency",
       "name": "台新雙幣卡",
+      "rewardUnit": "現金回饋",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg039/card001/",
       "rules": [
         {
@@ -2388,6 +2397,7 @@
     {
       "id": "taishin-tsf",
       "name": "燦坤聯名卡",
+      "rewardUnit": "台新K幣",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg023/card002/",
       "rules": [
         {
@@ -2408,6 +2418,7 @@
     {
       "id": "taishin-rose",
       "name": "玫瑰卡",
+      "rewardUnit": "台新Point",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg013/card0001/",
       "verified": true,
       "rules": [
@@ -2481,6 +2492,7 @@
     {
       "id": "taishin-sun",
       "name": "太陽卡",
+      "rewardUnit": "台新Point",
       "sourceUrl": "https://www.taishinbank.com.tw/TSB/personal/credit/intro/overview/cg012/card0001/",
       "rules": [
         {
