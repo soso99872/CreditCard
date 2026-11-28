@@ -1,7 +1,7 @@
 // 網頁介面的進入點：負責載入資料、綁定畫面事件、呼叫推薦引擎並重新渲染。
 // 只從 src/engine/index.mjs 匯入引擎 API（見 src/engine/README.md），不直接 import 引擎內部模組。
 // 結果版面照 sprint 012 方向 B（design-proposals/012/B.html）：第 1 名卡名大字當答案＋試算金額，
-// 要注意在旁邊白框；其他選擇是比較表，每列是 <details>，點開看條件與看原文。
+// 要注意在旁邊白框；其他選擇是比較表，每列是 <details>，點開看上限與要注意。
 // 可測的純邏輯已抽到同目錄的 date.mjs、storage.mjs、query-params.mjs、view-state.mjs、footer.mjs、
 // suggest.mjs、card-color.mjs、bank-name.mjs、result-list.mjs、condition-kind.mjs，本檔只處理 DOM，不另外寫測試
 // （見 tasks.md T03、T12-2b）。
@@ -23,7 +23,7 @@ import {
   hasHiddenMyCards,
 } from "./view-state.mjs";
 import { latestCheckedAt, checkedAtBadge } from "./footer.mjs";
-import { capOnlyBonus } from "./rate-note.mjs";
+import { rewardUnitOf, rateUnitText, gainText } from "./reward-text.mjs";
 import { findSuggestions } from "./suggest.mjs";
 import { loadRecent, addRecent, clearRecent } from "./recent.mjs";
 import { resolveQuickPicks, resolveScenarios } from "./quick-picks.mjs";
@@ -32,7 +32,7 @@ import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
 import { buildResultList, betterGatedCount, isPlanDup, needText, planItem, TAG_TEXT } from "./result-list.mjs";
-import { conditionKind } from "./condition-kind.mjs";
+import { conditionKind, visibleCondition } from "./condition-kind.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
 
@@ -282,21 +282,15 @@ function sortAmountFor(match) {
 
 const money = (n) => `NT$${fmtAmount.format(n)}`;
 
-/** 試算行兩段：「刷 NT$X」與「回饋約 NT$Y」。X 是畫面這次用的金額（使用者填的，沒填用類別預設），Y 是引擎並行公式算的。 */
+/** 這筆推薦的回饋單位（規則層 rewardUnit 優先，其次卡層，見 reward-text.mjs）。 */
+function unitOf(rec) {
+  return rewardUnitOf(rec, state.data.cards.find((c) => c.id === rec.cardId));
+}
+
+/** 試算行兩段：「刷 NT$X」與「回饋約 …」。X 是畫面這次用的金額（使用者填的，沒填用類別預設），回饋是引擎並行公式算的等值新台幣，照單位寫（gainText）。 */
 function rewardParts(rec) {
   if (typeof rec.estimatedAmount !== "number") return null;
-  return [`刷 ${money(state.amountUsed)}`, `回饋約 ${money(rec.estimatedAmount)}${rec.capped ? "（已達上限）" : ""}`];
-}
-
-/** 有上限、沒有基本回饋資料、條文又看得出分段：上限是否含基本回饋不確定，照實講。 */
-function capUnsure(rec) {
-  return rec.cap && rec.baseRate == null && capOnlyBonus(rec.conditions, rec.rawReward);
-}
-
-/** 說明類小字：上限未確認、卡別或級距名、上限／計算方式／回饋時間等說明類條件（講來源的 source 類不顯示）。 */
-function capNotes(rec) {
-  const plan = planItem(rec);
-  return [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...(plan?.kind === "info" ? [plan.text] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
+  return [`刷 ${money(state.amountUsed)}`, gainText(rec.estimatedAmount, unitOf(rec), rec.capped)];
 }
 
 function make(tag, className, text) {
@@ -306,20 +300,18 @@ function make(tag, className, text) {
   return node;
 }
 
-/** 上限那格：上限文字＋說明類小字。 */
-function buildCapBlock(rec) {
-  const block = make("span", "cap-block");
-  block.appendChild(make("span", null, rec.capText));
-  for (const text of capNotes(rec)) block.appendChild(make("small", null, text));
-  return block;
-}
+const NOTICE_SHOWN = 3; // 手機上要注意先露幾條，其餘收起（styles.css .notice-list.is-clamped）
 
-/** 要注意：要切換的方案與「必須／可選／會變少／不含」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。 */
+/**
+ * 要注意：要切換的方案與「必須／可選／會變少／不含」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。
+ * 講來源、本站怎麼算的半句先拿掉（visibleCondition），說明類（info）不上畫面（老闆 2026-11-26：使用者不需要知道怎麼算）。
+ * 超過 3 條時手機先收起，下面一顆「再看 N 條」。回傳要放進畫面的節點陣列。
+ */
 function buildNotice(rec) {
   const plan = planItem(rec);
   const items = [
     ...(plan?.kind === "required" ? [plan] : []),
-    ...rec.conditions.filter((text) => !isPlanDup(rec, text)).map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info" && x.kind !== "source"),
+    ...rec.conditions.filter((text) => !isPlanDup(rec, text)).map(visibleCondition).filter(Boolean).map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info" && x.kind !== "source"),
   ];
   if (!items.length) return null;
   const ul = make("ul", "notice-list");
@@ -330,16 +322,18 @@ function buildNotice(rec) {
     li.append(tag, make("span", null, text));
     ul.appendChild(li);
   }
-  return ul;
-}
-
-/** 每張卡一個低調的「看原文」連結（官方、第三方都連 sourceUrl）。 */
-function buildSourceLink(rec) {
-  const link = make("a", "source-link", "看原文");
-  link.href = rec.sourceUrl;
-  link.target = "_blank";
-  link.rel = "noopener";
-  return link;
+  if (items.length <= NOTICE_SHOWN) return [ul];
+  ul.classList.add("is-clamped");
+  const more = make("button", "link-button notice-more", `再看 ${items.length - NOTICE_SHOWN} 條`);
+  more.type = "button";
+  more.addEventListener("click", () => {
+    ul.classList.remove("is-clamped");
+    more.remove();
+    const next = ul.children[NOTICE_SHOWN];
+    next.tabIndex = -1;
+    next.focus();
+  });
+  return [ul, more];
 }
 
 /** 「有條件」小標籤：清單裡取最高實拿的那列是有門檻的規則時才有。 */
@@ -355,7 +349,7 @@ function buildDot(color) {
   return dot;
 }
 
-/** 第 1 名答案：卡名大字、試算金額、銀行・回饋率・上限、條件標籤、說明小字、理由與看原文。 */
+/** 第 1 名答案：卡名大字、試算金額、銀行・回饋率＋單位・上限、條件標籤。 */
 function buildAnswer(rec, color) {
   const box = make("div", "answer-main");
 
@@ -371,7 +365,8 @@ function buildAnswer(rec, color) {
   }
 
   const meta = make("p", "answer-meta");
-  meta.append(shortBankName(bankNameById(rec.bankId)), "・", make("span", "answer-rate num", rec.rateText), "・", rec.capText);
+  const unit = rateUnitText(unitOf(rec));
+  meta.append(shortBankName(bankNameById(rec.bankId)), "・", make("span", "answer-rate num", rec.rateText), unit ? ` ${unit}` : "", "・", rec.capText);
   if (rec.group === "gated") meta.append(" ", buildGatedTag(), ` ${needText(rec)}`);
   box.append(meta);
 
@@ -381,22 +376,11 @@ function buildAnswer(rec, color) {
     for (const t of rec.conditionTags) ul.appendChild(make("li", null, TAG_TEXT[t] ?? t));
     box.appendChild(ul);
   }
-
-  const notes = capNotes(rec);
-  if (notes.length) {
-    const ul = make("ul", "answer-notes");
-    for (const text of notes) ul.appendChild(make("li", null, text));
-    box.appendChild(ul);
-  }
-
-  const why = make("p", "answer-why");
-  why.append(make("span", null, rec.reason), make("span", "num", `核對於 ${rec.checkedAt}`), buildSourceLink(rec));
-  box.appendChild(why);
   return box;
 }
 
 /**
- * 其他選擇：比較表的一列（<details>，點開看理由、上限說明、要注意、看原文）。
+ * 其他選擇：比較表的一列（<details>，點開看上限、要注意）。
  * 收合時一列＝名次、卡名（銀行、有條件、需要什麼）、回饋率、試算、上限。
  * @param {object} rec
  * @param {number} rank 0-based 總名次（這裡一定是 1 以上）
@@ -425,15 +409,16 @@ function buildStackItem(rec, rank, color) {
   chevron.appendChild(path);
 
   const summary = document.createElement("summary");
-  summary.append(make("span", "row-rank num", String(rank + 1)), card, make("span", "row-rate num", rec.rateText), amount, make("span", "row-cap", rec.capText), chevron);
+  const rate = make("span", "row-rate num", rec.rateText);
+  const unit = rateUnitText(unitOf(rec));
+  if (unit) rate.append(" ", make("small", "row-unit", unit));
+  summary.append(make("span", "row-rank num", String(rank + 1)), card, rate, amount, make("span", "row-cap", rec.capText), chevron);
 
+  // 上限：手機收合列沒有上限欄，展開才看得到；≥ 960 收合列已有上限欄，展開不再重複（styles.css .row-body .cap-line）
   const body = make("div", "row-body");
-  body.append(make("p", null, rec.reason), buildCapBlock(rec));
+  body.append(make("p", "cap-line", rec.capText));
   const notice = buildNotice(rec);
-  if (notice) body.append(make("p", "notice-title", "要注意"), notice);
-  const meta = make("p", "muted");
-  meta.append(make("span", "num", `核對於 ${rec.checkedAt}`), buildSourceLink(rec));
-  body.appendChild(meta);
+  if (notice) body.append(make("p", "notice-title", "要注意"), ...notice);
 
   const details = document.createElement("details");
   details.append(summary, body);
@@ -517,8 +502,8 @@ function renderMatchAndResults() {
 
   const notice = top && buildNotice(top);
   els.answerNotice.hidden = !notice;
-  els.answerNotice.querySelector(".notice-list")?.remove();
-  if (notice) els.answerNotice.appendChild(notice);
+  els.answerNotice.querySelectorAll(".notice-list, .notice-more").forEach((n) => n.remove());
+  if (notice) els.answerNotice.append(...notice);
 
   if (top) {
     const answer = buildAnswer(top, bankColor(top.bankId, bankOrder));
@@ -953,9 +938,11 @@ function wireEvents() {
     renderMatchAndResults(); // 第 1 名跟著清單重算
   });
 
+  // 按鈕點完會被藏起來，焦點交給新的結果標題，鍵盤與螢幕閱讀器才知道清單換了（主管 T08 建議③）
   els.gatedHintBtn.addEventListener("click", () => {
     els.onlyDirect.checked = false;
     els.onlyDirect.dispatchEvent(new Event("change"));
+    els.resultTitle.focus();
   });
 
   els.showAllBtn.addEventListener("click", () => {

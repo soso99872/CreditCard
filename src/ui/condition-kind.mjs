@@ -36,6 +36,19 @@ const INFO = new RegExp([
 // 只認「第三方」後面接講來源的字；「第三方支付」「第三方行動支付」「第三方訂票平台」是付款方式或通路，不是來源
 const SOURCE = /第三方(稱|整理|資料|文章|來源|表格|說法)/;
 
+/**
+ * 畫面上要露出的那段（sprint 012 T11）：拿掉講來源的括號（「（第三方稱合計最高5.5%）」）與講本站怎麼算的尾句（「，本條保守以…計」），
+ * 前半句還是使用者要知道的（「外幣交易另計國外2.5%」）就留下；整句都在講來源時回傳空字串。分類照舊用 conditionKind 判斷留下的那段。
+ * @param {string} text 規則 conditions 的一條
+ */
+export function visibleCondition(text) {
+  const s = String(text || "")
+    .replace(/（第三方(稱|整理|資料|文章|來源|表格|說法)[^）]*）/g, "")
+    .replace(/[，；]本條[^，；]*$/, "")
+    .trim();
+  return SOURCE.test(s) ? "" : s;
+}
+
 const EXCLUDE = /^(不含|排除|不適用|不回饋)|^[^，；]{1,6}排除/;
 const OPTIONAL = /^可[綁用使]|另享|另計/;
 

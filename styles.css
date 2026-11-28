@@ -605,6 +605,11 @@ input:focus-visible {
     transition: box-shadow 150ms var(--ease-out);
   }
 
+  /* 搜尋列固定在頂端時，鍵盤焦點捲動不要停在搜尋列底下（主管 T08 建議②） */
+  html:has(.has-result) {
+    scroll-padding-top: 88px;
+  }
+
   .has-result .query.is-stuck {
     box-shadow: 0 1px 0 var(--hairline), 0 6px 12px -8px rgba(0, 0, 0, 0.18);
   }
@@ -886,9 +891,10 @@ input:focus-visible {
   color: var(--gain);
 }
 
-/* 分兩段不斷字，窄螢幕只在「刷 NT$X」與「回饋約 NT$Y」之間換行 */
+/* 分兩段各自成塊，窄螢幕先在「刷 NT$X」與「回饋約 …」之間換行；回饋那段帶了單位（等值現金積點）比螢幕寬時才在段內換行，不撐出橫向捲動 */
 .answer-gain span {
-  white-space: nowrap;
+  display: inline-block;
+  word-break: keep-all;
 }
 
 .answer-meta {
@@ -904,44 +910,6 @@ input:focus-visible {
 
 .answer .tag-list {
   margin-top: 10px;
-}
-
-.answer-notes {
-  display: grid;
-  gap: 2px;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: var(--fs-caption);
-  color: var(--text-3);
-}
-
-.answer-why {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 14px;
-  margin: 10px 0 0;
-  font-size: var(--fs-small);
-  color: var(--text-2);
-}
-
-.answer-why .num,
-.row-body .muted .num {
-  font-size: var(--fs-caption);
-  color: var(--text-3);
-  white-space: nowrap;
-}
-
-/* 看原文：字只有 caption 大小，點擊範圍用 padding 撐到 44px 高、再用等量負邊距抵消，不影響排版 */
-.source-link {
-  display: inline-block;
-  padding: 13px 8px;
-  margin: -13px -8px;
-  color: var(--text-2);
-  font-size: var(--fs-caption);
-  font-weight: 600;
-  text-underline-offset: 3px;
 }
 
 .row-flag {
@@ -988,6 +956,23 @@ input:focus-visible {
   display: grid;
   grid-template-columns: 4.3em minmax(0, 1fr);
   align-items: baseline;
+}
+
+/* 手機上超過 3 條先收起，下面「再看 N 條」（app.mjs NOTICE_SHOWN）；≥ 768 版面夠，全部列出、按鈕不出現 */
+@media (max-width: 767.98px) {
+  .notice-list.is-clamped li:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .notice-list.is-clamped + .notice-more {
+    display: none;
+  }
+}
+
+.notice-more {
+  justify-self: start;
 }
 
 .kind-tag {
@@ -1148,6 +1133,15 @@ input:focus-visible {
 }
 
 /* 手機：試算放在卡名下面一整行（跟卡名對齊），卡名才不會被擠成兩三行 */
+/* 回饋率後面的單位（現金回饋／小樹點…）：小一號、次要色，放在回饋率下一行，欄寬才不會被長單位撐開 */
+.row-unit {
+  display: block;
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--text-2);
+  text-align: right;
+}
+
 .row-amt {
   grid-area: amt;
   justify-self: start;
@@ -1214,22 +1208,8 @@ input:focus-visible {
   color: var(--text);
 }
 
-.row-body .muted {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 4px 14px;
-}
-
-.cap-block {
-  display: grid;
-  gap: 2px;
+.row-body .cap-line {
   color: var(--text);
-}
-
-.cap-block small {
-  font-size: var(--fs-caption);
-  color: var(--text-3);
 }
 
 /* 進場：清單換了（查詢、開關、金額）就一列列滑上來，看得出順序重排了；
@@ -1561,10 +1541,35 @@ input:focus-visible {
     padding: 28px 32px 64px;
   }
 
-  /* 首頁：搜尋區 720px 靠容器左緣，跟頁首同一條邊線 */
+  /* 首頁（還沒查詢）：頁首照舊撐滿 1120 容器（品牌靠左、我的卡片靠右），大標、搜尋、情境入口、快捷、頁尾收成 720px 一欄置中，
+     上方留一段空，整塊落在視窗視覺中段，不再窄窄一條貼左邊、右邊空一大片（sprint 012 T11） */
   .app.is-home > :not(.app-header) {
     width: 100%;
     max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .app.is-home .hero-title {
+    margin-top: clamp(24px, 9vh, 96px);
+    text-align: center;
+  }
+
+  .app.is-home .chip-row,
+  .app.is-home .quick-head,
+  .app.is-home .footer-more summary {
+    justify-content: center;
+  }
+
+  .app.is-home .nearby-link {
+    justify-self: center;
+  }
+
+  .app.is-home .quick-head {
+    gap: 12px;
+  }
+
+  .app.is-home .quick-label {
+    text-align: center;
   }
 
   /* 查詢後：頂端工具列＋滿寬結果 */
@@ -1628,7 +1633,7 @@ input:focus-visible {
   }
 
   .rest {
-    --cols: 40px minmax(0, 1fr) 96px 220px 200px 16px;
+    --cols: 40px minmax(0, 1fr) 96px 280px 170px 16px; /* 試算欄 280：點數要寫「回饋約 800 現金積點（約 NT$800，已達上限）」（T11） */
   }
 
   .stack summary,
@@ -1668,6 +1673,11 @@ input:focus-visible {
   .row-body {
     max-width: 760px;
     padding-left: 58px;
+  }
+
+  /* 收合列已有上限欄，展開不再重複寫一次 */
+  .row-body .cap-line {
+    display: none;
   }
 }
 
