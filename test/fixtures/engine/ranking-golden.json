@@ -127,7 +127,7 @@
    "directTop": [
     "ctbc-uniopen",
     "scsb-visa-simple",
-    "dbs-eco"
+    "scsb-minions"
    ],
    "gatedIncludes": "sinopac-dawho"
   },

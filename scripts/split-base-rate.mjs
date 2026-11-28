@@ -52,6 +52,22 @@ export const OVERRIDES = {
   // 回饋 = min(r×A, C) + 超出部分×g，等於 g×A ＋ min((r−g)×A, C×(1−g/r))
   "hsbc-cashback-titanium-selected-channels": { baseRate: 1, subCaps: [{ rate: 2, cap: { amount: 1333.33, unit: "point", period: "month" } }], why: "原文「3%部分最高2,000點/月，超過部分以一般消費1%計」→ 1%×A＋min(2%×A, 2000×2/3=1333.33)，A 超過約66,667 後每多刷1元拿1%" },
   "hncb-ishopping-online": { baseRate: 0.2, subCaps: [{ rate: 1.8, cap: { amount: 180, unit: "TWD", period: "billing-cycle" } }], why: "原文「現金回饋上限200元…超過後之網購消費改按每25元1點（1點NT$0.05＝0.2%）」→ 0.2%×A＋min(1.8%×A, 200×(1−0.2/2)=180)" },
+  // ---- sprint 012 T13（後半批）：landbank～yuanta 逐張驗算後補的覆寫。未 verified 的卡不在 --write 掃描範圍，這幾條 baseRate 用一次性腳本（呼叫 insertBase）照本表寫入 ----
+  "sc-beyond-dining": { baseRate: 1, why: "原文「國內餐飲消費額外加碼4%，加計基本1%合計5%」，上限「每季加碼回饋合計NT$10,000」只計加碼" },
+  "sc-beyond-overseas": { baseRate: 1, why: "原文「國外一般消費額外加碼2%，加計基本1%合計3%」，上限只計加碼（與餐飲共用，各條獨立算會略高估合計）" },
+  "scsb-minions-applepay-japan-korea": { baseRate: 0, subCaps: [{ rate: 2.234, cap: { amount: 1000, unit: "TWD", period: "billing-cycle" } }], why: "加碼5%每月上限300；「基本2.234%部分計入每期帳單NT$1,000共用上限」→ 2.234% 放 subCaps（上限1,000），主加碼剩5%（上限300）" },
+  "scsb-minions-applepay-transport": { baseRate: 0, subCaps: [{ rate: 1.234, cap: { amount: 1000, unit: "TWD", period: "billing-cycle" } }], why: "加碼5%每月上限200；原國內1.234%計入每期帳單NT$1,000共用上限 → 放 subCaps" },
+  "scsb-minions-cvs-pay": { baseRate: 0, subCaps: [{ rate: 1.234, cap: { amount: 1000, unit: "TWD", period: "billing-cycle" } }], why: "加碼5%每月上限200；原國內1.234%計入每期帳單NT$1,000共用上限 → 放 subCaps" },
+  "sunnybank-fcu-ipass-gas": { baseRate: 1.1, why: "原文「5%回饋＝基本回饋0.5%(無上限)＋加碼回饋0.6%(無上限)＋指定通路合計加碼3.9%（每月歸戶上限300點）」→ 不受限 1.1%" },
+  "sunnybank-fcu-ipass-lifestyle": { baseRate: 1.1, why: "同 sunnybank-fcu-ipass-gas：0.5%＋0.6% 無上限，3.9% 上限300點（七大通路共用）" },
+  "sunnybank-ipass-titanium-gas": { baseRate: 1.1, why: "同 sunnybank-fcu-ipass-gas" },
+  "sunnybank-ipass-titanium-lifestyle": { baseRate: 1.1, why: "同 sunnybank-fcu-ipass-gas" },
+  "sunnybank-pondafamily-daikoku": { baseRate: 3, why: "原文「最高10%＝基本1%無上限＋日本消費2%無上限＋指定藥妝合計加碼7%（活動期間回饋上限200點）」→ 不受限 3%" },
+  "sunnybank-jcb-premium-daikoku": { baseRate: 3, why: "同 sunnybank-pondafamily-daikoku" },
+  "sunnybank-pondafamily-mobile-delivery": { baseRate: 1, why: "原文「5%回饋＝基本回饋1%(無上限)＋四大行動支付及外送合計加碼4%（每月歸戶上限300點）」" },
+  "sunnybank-jcb-premium-mobile-delivery": { baseRate: 1, why: "同 sunnybank-pondafamily-mobile-delivery" },
+  "tbb-chaotiangong-lifestyle": { baseRate: 0.3, why: "原文「基本回饋0.3%不受上限限制＋加碼部分4.7個百分比，加碼部分每戶每期上限500元」" },
+  "tbb-temple-lifestyle": { baseRate: 0.3, why: "同 tbb-chaotiangong-lifestyle" },
 };
 
 const N = "([\\d.]+)";
@@ -139,13 +155,13 @@ function scanKeys(text, from) {
 }
 
 // 在 conditionTags 前面插入 baseRate（與 subCaps），不動其他內容
-function insertBase(text, id, result) {
+export function insertBase(text, id, result) {
   const m = new RegExp(`"id":\\s*"${id}"`).exec(text);
   if (!m) throw new Error(`找不到規則 ${id}`);
   const keys = scanKeys(text, m.index + m[0].length);
   if (keys.baseRate !== undefined) throw new Error(`規則 ${id} 已有 baseRate`);
-  const at = keys.conditionTags;
-  if (at === undefined) throw new Error(`規則 ${id} 沒有 conditionTags`);
+  const at = keys.conditionTags ?? keys.validFrom; // 未標註 conditionTags 的草稿卡改插在 validFrom 前
+  if (at === undefined) throw new Error(`規則 ${id} 沒有 conditionTags／validFrom`);
   const items = [`"baseRate": ${result.baseRate}`];
   if (result.subCaps) items.push(`"subCaps": ${JSON.stringify(result.subCaps).replace(/"([a-z]+)":/g, '"$1": ').replace(/,"/g, ', "')}`);
   const inline = !text.slice(m.index, at).includes("\n");
