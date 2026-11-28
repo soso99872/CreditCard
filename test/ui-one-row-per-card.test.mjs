@@ -6,7 +6,7 @@ import path from "node:path";
 
 import { recommend } from "../src/engine/recommend.mjs";
 import { loadAllData } from "../src/engine/data-loader.mjs";
-import { buildResultList, needText, planItem } from "../src/ui/result-list.mjs";
+import { buildResultList, isPlanDup, needText, planItem } from "../src/ui/result-list.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const readJson = async (p) => JSON.parse(await readFile(path.join(ROOT, p), "utf8"));
@@ -61,5 +61,16 @@ describe("needText／planItem", () => {
 
   test("沒有 plan 標籤的方案名（卡別、級距）歸說明，不當限制", () => {
     assert.deepEqual(planItem(rec({ group: "direct", plan: "大大（基本）" })), { kind: "info", text: "方案：大大（基本）" });
+  });
+});
+
+describe("isPlanDup（要注意不重複列方案）", () => {
+  const cube = { plan: "固定回饋", conditionTags: ["plan"] };
+  test("已列「需切換：固定回饋」時，原文「需切換至固定回饋方案」算重複", () => {
+    assert.equal(isPlanDup(cube, "需切換至固定回饋方案"), true);
+  });
+  test("其他條件、或方案只是卡別名（沒有 plan 標籤）時不算重複", () => {
+    assert.equal(isPlanDup(cube, "需登錄"), false);
+    assert.equal(isPlanDup({ plan: "固定回饋", conditionTags: [] }, "需切換至固定回饋方案"), false);
   });
 });

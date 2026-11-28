@@ -31,7 +31,7 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
-import { buildResultList, betterGatedCount, needText, planItem, TAG_TEXT } from "./result-list.mjs";
+import { buildResultList, betterGatedCount, isPlanDup, needText, planItem, TAG_TEXT } from "./result-list.mjs";
 import { conditionKind } from "./condition-kind.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
@@ -319,7 +319,7 @@ function buildNotice(rec) {
   const plan = planItem(rec);
   const items = [
     ...(plan?.kind === "required" ? [plan] : []),
-    ...rec.conditions.map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info" && x.kind !== "source"),
+    ...rec.conditions.filter((text) => !isPlanDup(rec, text)).map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info" && x.kind !== "source"),
   ];
   if (!items.length) return null;
   const ul = make("ul", "notice-list");

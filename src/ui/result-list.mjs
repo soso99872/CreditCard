@@ -47,6 +47,11 @@ export function planItem(rec) {
   return (rec.conditionTags || []).includes("plan") ? { kind: "required", text: `需切換：${rec.plan}` } : { kind: "info", text: `方案：${rec.plan}` };
 }
 
+/** 已經列了「需切換：方案名」時，原文裡講同一件事的那句（「需切換至固定回饋方案」）重複，不再列。 */
+export function isPlanDup(rec, text) {
+  return planItem(rec)?.kind === "required" && /切換/.test(text) && text.includes(rec.plan);
+}
+
 /**
  * 開關開著時，關掉會多看到幾張「有條件、實拿比目前第 1 名高」的卡（同一張卡只算一次）；沒有第 1 名時全部有條件的卡都算。
  * @param {Array} recs recommend() 的 recommendations

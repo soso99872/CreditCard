@@ -90,3 +90,7 @@ describe("src/ui/condition-kind.mjs — 要注意每條是必須、可選還是�
     ]);
   });
 });
+
+test("「免登錄」是說明，不是要做的事（不標必須）", () => {
+  assert.equal(conditionKind("免登錄"), "info");
+});
