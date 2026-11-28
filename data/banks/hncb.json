@@ -306,6 +306,8 @@
           "rate": 2,
           "rawReward": "申請信用卡電子帳單及綁定華南銀行LINE官方帳號個人化通知服務，當期帳單網購消費單筆達300元（含）以上，每筆最高享2%現金回饋，當期帳單現金回饋上限200元",
           "cap": { "amount": 200, "unit": "TWD", "period": "billing-cycle" },
+          "baseRate": 0.2,
+          "subCaps": [{"rate": 1.8, "cap": {"amount": 180, "unit": "TWD", "period": "billing-cycle"}}],
           "conditionTags": ["ebill", "register"],
           "conditions": ["需申請信用卡電子帳單並綁定華南銀行LINE官方帳號個人化通知服務", "單筆網購消費需達NT$300以上", "限透過線上刷卡即時取得授權的一般消費（以銀行系統判定為準），不含台灣Pay（含華銀支付）、電話、傳真及授權自動扣帳", "超過當期現金回饋上限後之網購消費改按每25元1點紅利點數計算"],
           "validFrom": "2026-01-01",

@@ -37,6 +37,21 @@ export const OVERRIDES = {
     subCaps: [{ rate: 1, cap: { amount: 200, unit: "point", period: "month" } }],
     why: "一般0.88%無上限；通路加碼3%上限888點（主 cap）；自動扣繳加碼1%另有上限200點/月",
   },
+  // ---- sprint 012 T10（前半批）新增：bankchb～kgi 逐張驗算後補的覆寫 ----
+  "bot-greengo-green-merchants": { baseRate: 1, why: "「國內一般消費基本1%＋加碼5%」，共用上限只計加碼；原文基本1%是否計入官方未明載，採對照集（bot-greengo-low-carbon 600）的算法" },
+  "bot-greengo-low-carbon": { baseRate: 1, why: "同 bot-greengo-green-merchants：基本1%＋加碼5%上限300（舊戶）" },
+  "bot-greengo-mobile-pay": { baseRate: 1, why: "同 bot-greengo-green-merchants：基本1%＋加碼1%" },
+  "ctbc-allme-channel-pi-hami": { baseRate: 1, why: "「上限僅計加碼部分：每戶每月300點…（基本1%無上限）」，同 telecom-ecommerce 那條" },
+  "fubon-costco-gas": { baseRate: 2, why: "原文「基本2%無上限，加碼1%部分每期帳單上限200元」" },
+  "fubon-op-telecom-5g": { baseRate: 1, why: "原文「3.5%（1%無上限+2.5%加碼）」" },
+  "fubon-op-telecom-4g": { baseRate: 1, why: "原文「2%（1%無上限+1%加碼）」" },
+  "fubon-op-category-bonus": { baseRate: 1, why: "原文「最高2%（1%無上限+1%加碼）」，加碼上限與店內消費加碼合併" },
+  "kgi-crypto-dining-gas": { baseRate: 1, why: "原文「基本回饋1%+指定通路加碼2%合計」「指定通路加碼每期帳單上限300點」" },
+  "kgi-crypto-game-platform": { baseRate: 1, why: "原文「基本回饋1%+指定通路加碼2%合計」「指定通路加碼每期帳單上限200點」" },
+  // 接力式「超過上限改以一般回饋計」用 baseRate＋subCaps 湊出同一個算式（數學等價，不改 calcReward）：
+  // 回饋 = min(r×A, C) + 超出部分×g，等於 g×A ＋ min((r−g)×A, C×(1−g/r))
+  "hsbc-cashback-titanium-selected-channels": { baseRate: 1, subCaps: [{ rate: 2, cap: { amount: 1333.33, unit: "point", period: "month" } }], why: "原文「3%部分最高2,000點/月，超過部分以一般消費1%計」→ 1%×A＋min(2%×A, 2000×2/3=1333.33)，A 超過約66,667 後每多刷1元拿1%" },
+  "hncb-ishopping-online": { baseRate: 0.2, subCaps: [{ rate: 1.8, cap: { amount: 180, unit: "TWD", period: "billing-cycle" } }], why: "原文「現金回饋上限200元…超過後之網購消費改按每25元1點（1點NT$0.05＝0.2%）」→ 0.2%×A＋min(1.8%×A, 200×(1−0.2/2)=180)" },
 };
 
 const N = "([\\d.]+)";
@@ -152,7 +167,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     }
   } else if (mode === "--write") {
     const byFile = new Map();
-    for (const x of all) if (x.res.baseRate !== null) byFile.set(x.file, [...(byFile.get(x.file) || []), x]);
+    for (const x of all) if (x.res.baseRate !== null && x.rule.baseRate === undefined) byFile.set(x.file, [...(byFile.get(x.file) || []), x]);
     const out = [];
     for (const [file, items] of byFile) {
       let text = fs.readFileSync(file, "utf8");
@@ -160,7 +175,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       out.push([file, text]);
     }
     for (const [file, text] of out) fs.writeFileSync(file, text); // 全部算好才寫，中途出錯不留半套
-    console.log(`已寫入 ${all.filter((x) => x.res.baseRate !== null).length} 條規則的 baseRate`);
+    console.log(`已寫入 ${all.filter((x) => x.res.baseRate !== null && x.rule.baseRate === undefined).length} 條規則的 baseRate`);
   } else {
     const filled = all.filter((x) => x.res.baseRate !== null).length;
     console.log(`有上限的 verified 規則 ${all.length} 條：填 baseRate ${filled} 條，沒填 ${all.length - filled} 條，覆寫 ${Object.keys(OVERRIDES).length} 條`);

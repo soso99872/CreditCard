@@ -90,6 +90,8 @@
           "rate": 3,
           "rawReward": "超過20家指定通路（行動支付、國內網購/外送、國外網購、線上訂房、影音娛樂）享3%現金積點回饋，3%部分最高2,000點/月，超過部分以一般消費1%計",
           "cap": { "amount": 2000, "unit": "point", "period": "month" },
+          "baseRate": 1,
+          "subCaps": [{"rate": 2, "cap": {"amount": 1333.33, "unit": "point", "period": "month"}}],
           "conditionTags": [],
           "conditions": ["超過上限的部分改以一般消費1%計"],
           "validFrom": "2026-07-01",
