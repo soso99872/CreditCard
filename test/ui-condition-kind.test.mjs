@@ -1,5 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
+import { readdirSync, readFileSync } from "node:fs";
 
 import { conditionKind } from "../src/ui/condition-kind.mjs";
 
@@ -61,5 +62,31 @@ describe("src/ui/condition-kind.mjs — 要注意每條是必須、可選還是�
     assert.equal(conditionKind("依收單機構MCC碼認定之特約商店"), "required");
     assert.equal(conditionKind(""), "required");
     assert.equal(conditionKind(undefined), "required");
+  });
+
+  test("講資料來源的句子 → source（畫面不顯示）；第三方支付是付款方式，不能誤判", () => {
+    for (const s of ["外幣交易另計國外2.5%（第三方稱合計最高5.5%），本條保守以國內1%＋3%計", "第三方整理", "依第三方資料"]) {
+      assert.equal(conditionKind(s), "source", s);
+    }
+    for (const s of [
+      "限面對面交易，不含第三方支付",
+      "綁定第三方行動支付（如LINE Pay、街口支付）結帳僅享0.88%",
+      "限透過航空公司實體或官網購買機票；第三方訂票平台不認列",
+      "限實體店面或官方網站交易，排除百貨、店中櫃、複合店、商場直營門市及第三方串接商城；刷卡明細須顯示該商店名稱",
+    ]) assert.notEqual(conditionKind(s), "source", s);
+  });
+
+  test("真資料：verified 卡的條件裡被判成 source 的全部條目（新增資料時要看一眼這份清單）", () => {
+    const dir = new URL("../data/banks/", import.meta.url);
+    const conds = new Set();
+    for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
+      for (const card of JSON.parse(readFileSync(new URL(f, dir), "utf8")).cards || []) {
+        if (card.verified === true) for (const rule of card.rules || []) for (const c of rule.conditions || []) conds.add(c);
+      }
+    }
+    assert.ok(conds.size >= 600, `條件數 ${conds.size}`);
+    assert.deepEqual([...conds].filter((c) => conditionKind(c) === "source"), [
+      "外幣交易另計國外2.5%（第三方稱合計最高5.5%），本條保守以國內1%＋3%計",
+    ]);
   });
 });

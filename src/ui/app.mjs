@@ -1,7 +1,7 @@
 // 網頁介面的進入點：負責載入資料、綁定畫面事件、呼叫推薦引擎並重新渲染。
 // 只從 src/engine/index.mjs 匯入引擎 API（見 src/engine/README.md），不直接 import 引擎內部模組。
-// 畫面照風格提案 D「錢包」（design-proposals/d-wallet.html，老闆 2026-10-15 選定）：
-// 第 1 名是信用卡比例的實體卡＋下方收據，其餘名次是錢包裡疊起來的卡（<details>）。
+// 結果版面照 sprint 012 方向 B（design-proposals/012/B.html）：第 1 名卡名大字當答案＋試算金額，
+// 要注意在旁邊白框；其他選擇是比較表，每列是 <details>，點開看條件與看原文。
 // 可測的純邏輯已抽到同目錄的 date.mjs、storage.mjs、query-params.mjs、view-state.mjs、footer.mjs、
 // suggest.mjs、card-color.mjs、bank-name.mjs、result-list.mjs、condition-kind.mjs，本檔只處理 DOM，不另外寫測試
 // （見 tasks.md T03、T12-2b）。
@@ -31,7 +31,7 @@ import { showsCategoryFallback, typedQueryEntry } from "./entry.mjs";
 import { bankColor, bankColorOrder } from "./card-color.mjs";
 import { shortBankName } from "./bank-name.mjs";
 import { createNearbyPanel } from "./nearby-panel.mjs";
-import { buildResultList, needText, planItem, TAG_TEXT } from "./result-list.mjs";
+import { buildResultList, betterGatedCount, needText, planItem, TAG_TEXT } from "./result-list.mjs";
 import { conditionKind } from "./condition-kind.mjs";
 
 /** 直接依類別查詢時餵給引擎的查詢字串：不會對到任何商家或類別關鍵字，引擎就會走「使用者選類別」那條路。 */
@@ -119,8 +119,13 @@ function cacheEls() {
   els.results = document.getElementById("results");
   els.top = document.getElementById("top");
   els.resultTitle = document.getElementById("result-title");
-  els.topCard = document.getElementById("top-card");
-  els.receipt = document.getElementById("receipt");
+  els.bestTag = document.getElementById("best-tag");
+  els.answerBody = document.getElementById("answer-body");
+  els.answerNotice = document.getElementById("answer-notice");
+  els.gatedHint = document.getElementById("gated-hint");
+  els.gatedHintBtn = document.getElementById("gated-hint-btn");
+  els.restCount = document.getElementById("rest-count");
+  els.restColAmount = document.getElementById("rest-col-amount");
 
   els.topNotice = document.getElementById("top-notice");
   els.rest = document.getElementById("rest");
@@ -209,6 +214,7 @@ function renderCategoryQuickPicker(match) {
   const categories = (state.data.categories || []).filter((c) => c.id !== GENERAL_CATEGORY_ID);
 
   for (const category of categories) {
+    // ui-lint-allow touch-action: 本檔建立的按鈕都吃 styles.css 開頭的全域 button 規則（已設好雙擊不放大），單獨檢查這支 JS 時看不到那份 CSS
     const button = document.createElement("button");
     button.type = "button";
     button.className = "category-quick-btn";
@@ -237,14 +243,14 @@ function stopDealAnimation() {
   }
 }
 
-/** 跟 styles.css 的 `min(var(--i, 0), 20)` 對應：延遲最多算到第 20 張，見那裡的註解。 */
-const DEAL_STAGGER_CAP = 20;
+/** 跟 styles.css 的 `min(var(--i, 0), 8)` 對應：延遲最多算到第 8 列，見那裡的註解。 */
+const DEAL_STAGGER_CAP = 8;
 
 /**
- * 卡片疊的進場動畫：捲到畫面內才依序滑上來，最後補一個兜底，時間到就拿掉動畫直接
- * 停在終點（電腦忙、掉幀時也不會卡在半路）。照抄 d-wallet.html；尊重
- * prefers-reduced-motion 的部分交給 CSS（styles.css 的對應 media query），這裡不用另外判斷。
- * @param {number} count 卡堆張數，用來算兜底的等待時間
+ * 比較表的進場動畫：捲到畫面內才一列列滑上來（說明「清單換了、順序重排了」），最後補一個兜底，
+ * 時間到就拿掉動畫直接停在終點（電腦忙、掉幀時也不會卡在半路）。
+ * prefers-reduced-motion 交給 CSS（styles.css 的對應 media query）。
+ * @param {number} count 列數，用來算兜底的等待時間
  */
 function startDealAnimation(count) {
   stopDealAnimation();
@@ -254,36 +260,12 @@ function startDealAnimation(count) {
         els.stack.classList.add("is-in");
         stopDealAnimation();
         const staggerCount = Math.min(count, DEAL_STAGGER_CAP);
-        setTimeout(() => els.stack.classList.add("dealt"), staggerCount * 55 + 700);
+        setTimeout(() => els.stack.classList.add("dealt"), staggerCount * 30 + 400);
       }
     },
     { threshold: 0.1 }
   );
   dealInObserver.observe(els.stack);
-}
-
-/** 第 1 名：信用卡比例的實體卡面（role="img"，卡面本身只是裝飾，內容由 aria-label 提供）。 */
-function buildCardFace(rec, color) {
-  const face = document.createElement("div");
-  face.className = "card";
-  face.style.setProperty("--c", color);
-  face.setAttribute("role", "img");
-  face.setAttribute("aria-label", `${bankNameById(rec.bankId)} ${rec.cardName}`);
-
-  const bank = document.createElement("span");
-  bank.className = "card-bank";
-  bank.textContent = shortBankName(bankNameById(rec.bankId));
-
-  const chip = document.createElement("span");
-  chip.className = "chip";
-  chip.setAttribute("aria-hidden", "true");
-
-  const name = document.createElement("span");
-  name.className = "card-name";
-  name.textContent = rec.cardName;
-
-  face.append(bank, chip, name);
-  return face;
 }
 
 /** 排序用金額：使用者有填用使用者的，否則類別預設（同引擎的查找順序：類別→上位類別→海外地區→default）。 */
@@ -298,10 +280,12 @@ function sortAmountFor(match) {
   return state.data.categoryDefaults?.default || 1000;
 }
 
-/** 試算行：刷 NT$X 回饋約 NT$Y。X 是畫面這次用的金額（使用者填的，沒填用類別預設），Y 是引擎並行公式算的。 */
-function rewardLine(rec) {
-  if (typeof rec.estimatedAmount !== "number") return "";
-  return `刷 NT$${fmtAmount.format(state.amountUsed)} 回饋約 NT$${fmtAmount.format(rec.estimatedAmount)}${rec.capped ? "（已達上限）" : ""}`;
+const money = (n) => `NT$${fmtAmount.format(n)}`;
+
+/** 試算行兩段：「刷 NT$X」與「回饋約 NT$Y」。X 是畫面這次用的金額（使用者填的，沒填用類別預設），Y 是引擎並行公式算的。 */
+function rewardParts(rec) {
+  if (typeof rec.estimatedAmount !== "number") return null;
+  return [`刷 ${money(state.amountUsed)}`, `回饋約 ${money(rec.estimatedAmount)}${rec.capped ? "（已達上限）" : ""}`];
 }
 
 /** 有上限、沒有基本回饋資料、條文又看得出分段：上限是否含基本回饋不確定，照實講。 */
@@ -309,40 +293,41 @@ function capUnsure(rec) {
   return rec.cap && rec.baseRate == null && capOnlyBonus(rec.conditions, rec.rawReward);
 }
 
-/** 上限那行：上限文字＋（有的話）不確定註記＋說明類條件（上限、計算方式、回饋時間…）的小字。 */
-function buildCapBlock(rec) {
-  const block = document.createElement("span");
-  block.className = "cap-block";
-  const main = document.createElement("span");
-  main.textContent = rec.capText;
-  block.appendChild(main);
+/** 說明類小字：上限未確認、卡別或級距名、上限／計算方式／回饋時間等說明類條件（講來源的 source 類不顯示）。 */
+function capNotes(rec) {
   const plan = planItem(rec);
-  const notes = [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...(plan?.kind === "info" ? [plan.text] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
-  for (const text of notes) {
-    const small = document.createElement("small");
-    small.textContent = text;
-    block.appendChild(small);
-  }
+  return [...(capUnsure(rec) ? ["上限是否含基本回饋未確認"] : []), ...(plan?.kind === "info" ? [plan.text] : []), ...rec.conditions.filter((c) => conditionKind(c) === "info")];
+}
+
+function make(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text != null) node.textContent = text;
+  return node;
+}
+
+/** 上限那格：上限文字＋說明類小字。 */
+function buildCapBlock(rec) {
+  const block = make("span", "cap-block");
+  block.appendChild(make("span", null, rec.capText));
+  for (const text of capNotes(rec)) block.appendChild(make("small", null, text));
   return block;
 }
 
-/** 要注意：要切換的方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。說明類條件在 buildCapBlock。 */
+/** 要注意：要切換的方案與「必須／可選／會變少」類條件，每條前面一個小標籤；沒有條目回傳 null（整塊不出現）。 */
 function buildNotice(rec) {
   const plan = planItem(rec);
   const items = [
     ...(plan?.kind === "required" ? [plan] : []),
-    ...rec.conditions.map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info"),
+    ...rec.conditions.map((text) => ({ kind: conditionKind(text), text })).filter((x) => x.kind !== "info" && x.kind !== "source"),
   ];
   if (!items.length) return null;
-  const ul = document.createElement("ul");
-  ul.className = "notice-list";
+  const ul = make("ul", "notice-list");
   for (const { kind, text } of items) {
     const li = document.createElement("li");
-    const tag = document.createElement("span");
-    tag.className = "kind-tag";
+    const tag = make("span", "kind-tag", { optional: "可選", downgrade: "會變少" }[kind] || "必須");
     tag.dataset.kind = kind;
-    tag.textContent = { optional: "可選", downgrade: "會變少" }[kind] || "必須";
-    li.append(tag, text);
+    li.append(tag, make("span", null, text));
     ul.appendChild(li);
   }
   return ul;
@@ -350,148 +335,104 @@ function buildNotice(rec) {
 
 /** 每張卡一個低調的「看原文」連結（官方、第三方都連 sourceUrl）。 */
 function buildSourceLink(rec) {
-  const link = document.createElement("a");
+  const link = make("a", "source-link", "看原文");
   link.href = rec.sourceUrl;
   link.target = "_blank";
   link.rel = "noopener";
-  link.textContent = "看原文";
   return link;
 }
 
 /** 「有條件」小標籤：清單裡取最高實拿的那列是有門檻的規則時才有。 */
 function buildGatedTag() {
-  const tag = document.createElement("em");
-  tag.className = "row-flag";
-  tag.textContent = "有條件";
-  return tag;
+  return make("em", "row-flag", "有條件");
 }
 
-/** 第 1 名：卡面下方的「收據」，回饋率是全頁最大的數字（照抄 d-wallet.html）。 */
-function buildReceipt(rec) {
-  const rate = document.createElement("p");
-  rate.className = "rate num";
-  const rateLabel = document.createElement("small");
-  const best = document.createElement("span");
-  best.className = "best-tag";
-  best.textContent = "最划算";
-  rateLabel.append(best, "這筆回饋");
-  if (rec.group === "gated") rateLabel.append(" ", buildGatedTag());
-  rate.append(rateLabel, rec.rateText);
+/** 銀行色小方塊：顏色只留給「卡」（DESIGN.md 第 2 節），這裡是卡的代表色。 */
+function buildDot(color) {
+  const dot = make("span", "card-dot");
+  dot.setAttribute("aria-hidden", "true");
+  dot.style.setProperty("--c", color);
+  return dot;
+}
 
-  const gain = document.createElement("p");
-  gain.className = "gain num";
-  // 分成兩段不斷字，窄螢幕只在「刷 NT$X」與「回饋約 NT$Y」之間換行
-  const line = rewardLine(rec);
-  const cut = line.indexOf(" 回饋約");
-  for (const [i, text] of [line.slice(0, cut), line.slice(cut + 1)].entries()) {
-    const part = document.createElement("span");
-    part.textContent = text;
-    gain.append(...(i ? [" "] : []), part);
+/** 第 1 名答案：卡名大字、試算金額、銀行・回饋率・上限、條件標籤、說明小字、理由與看原文。 */
+function buildAnswer(rec, color) {
+  const box = make("div", "answer-main");
+
+  const name = make("p", "answer-name");
+  name.append(buildDot(color), make("span", null, rec.cardName));
+  box.append(name);
+
+  const parts = rewardParts(rec);
+  if (parts) {
+    const gain = make("p", "answer-gain num");
+    parts.forEach((text, i) => gain.append(...(i ? [" "] : []), make("span", null, text)));
+    box.append(gain);
   }
 
-  const main = document.createElement("div");
-  main.className = "receipt-main";
-  main.append(rate, gain);
+  const meta = make("p", "answer-meta");
+  meta.append(shortBankName(bankNameById(rec.bankId)), "・", make("span", "answer-rate num", rec.rateText), "・", rec.capText);
+  if (rec.group === "gated") meta.append(" ", buildGatedTag(), ` ${needText(rec)}`);
+  box.append(meta);
 
-  const extra = document.createElement("div");
-  extra.className = "receipt-extra";
   if (rec.conditionTags.length) {
-    const ul = document.createElement("ul");
-    ul.className = "tag-list";
+    const ul = make("ul", "tag-list");
     ul.setAttribute("aria-label", "回饋條件");
-    for (const t of rec.conditionTags) {
-      const li = document.createElement("li");
-      li.textContent = TAG_TEXT[t] ?? t;
-      ul.appendChild(li);
-    }
-    extra.appendChild(ul);
+    for (const t of rec.conditionTags) ul.appendChild(make("li", null, TAG_TEXT[t] ?? t));
+    box.appendChild(ul);
   }
 
-  const facts = document.createElement("dl");
-  facts.className = "facts";
-  const addFact = (label, value) => {
-    const row = document.createElement("div");
-    const dt = document.createElement("dt");
-    dt.textContent = label;
-    const dd = document.createElement("dd");
-    if (typeof value === "string") dd.textContent = value;
-    else dd.appendChild(value);
-    row.append(dt, dd);
-    facts.appendChild(row);
-  };
+  const notes = capNotes(rec);
+  if (notes.length) {
+    const ul = make("ul", "answer-notes");
+    for (const text of notes) ul.appendChild(make("li", null, text));
+    box.appendChild(ul);
+  }
 
-  addFact("為什麼", rec.reason);
-  addFact("上限", buildCapBlock(rec));
-  const notice = buildNotice(rec);
-  if (notice) addFact("要注意", notice);
-
-  const source = document.createElement("div");
-  source.className = "source";
-  const checkedAt = document.createElement("span");
-  checkedAt.className = "num";
-  checkedAt.textContent = `核對於 ${rec.checkedAt}`;
-  source.append(checkedAt, buildSourceLink(rec));
-
-  const fragment = document.createDocumentFragment();
-  fragment.append(main);
-  if (extra.children.length) fragment.append(extra);
-  fragment.append(facts, source);
-  return fragment;
+  const why = make("p", "answer-why");
+  why.append(make("span", null, rec.reason), make("span", "num", `核對於 ${rec.checkedAt}`), buildSourceLink(rec));
+  box.appendChild(why);
+  return box;
 }
 
 /**
- * 其餘名次：錢包裡疊起來的一張卡（<details>，點開看條件）。跟第 1 名不同，這裡直接顯示
- * 完整的 rec.reason（含百分比），滿足 AC-05「每張卡都要有推薦理由」——D 的示範資料只做了
- * 第 1 名，沒有處理這塊，是這次要補的正式功能。
+ * 其他選擇：比較表的一列（<details>，點開看理由、上限說明、要注意、看原文）。
+ * 收合時一列＝名次、卡名（銀行、有條件、需要什麼）、回饋率、試算、上限。
  * @param {object} rec
- * @param {number} rank 0-based 總名次（0 = 第 1 名，這裡一定是 1 以上）
+ * @param {number} rank 0-based 總名次（這裡一定是 1 以上）
  * @param {string} color bankColor() 算好的顏色
  */
 function buildStackItem(rec, rank, color) {
   const li = document.createElement("li");
-  li.style.setProperty("--c", color);
   li.style.setProperty("--i", String(Math.max(0, rank - 1)));
 
+  const card = make("span", "row-card");
+  const sub = make("small", null, shortBankName(bankNameById(rec.bankId)));
+  if (rec.group === "gated") sub.append(" ", buildGatedTag(), " ", make("span", "row-need", needText(rec)));
+  card.append(buildDot(color), make("b", null, rec.cardName), sub);
+
+  // 電腦版欄名寫「刷 NT$X」，手機版標題列寫，每列只露「回饋約 NT$Y」；螢幕閱讀器每列都讀完整一句
+  const amount = make("span", "row-amt num");
+  const parts = rewardParts(rec);
+  if (parts) amount.append(make("span", "sr-only", `${parts[0]} `), parts[1]);
+
+  const chevron = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  chevron.setAttribute("viewBox", "0 0 24 24");
+  chevron.setAttribute("aria-hidden", "true");
+  chevron.classList.add("row-chevron");
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "m6 9 6 6 6-6");
+  chevron.appendChild(path);
+
   const summary = document.createElement("summary");
-  const nameWrap = document.createElement("span");
-  nameWrap.className = "row-name";
-  const name = document.createElement("b");
-  name.textContent = rec.cardName;
-  const sub = document.createElement("span");
-  sub.textContent = `${rank + 1}．${shortBankName(bankNameById(rec.bankId))}`;
-  if (rec.group === "gated") sub.append(" ", buildGatedTag());
-  nameWrap.append(name, sub);
-  for (const text of [rec.group === "gated" ? needText(rec) : "", rewardLine(rec)]) {
-    if (!text) continue;
-    const line = document.createElement("span");
-    line.textContent = text;
-    nameWrap.appendChild(line);
-  }
-  const rate = document.createElement("span");
-  rate.className = "row-rate num";
-  rate.textContent = rec.rateText;
-  summary.append(nameWrap, rate);
+  summary.append(make("span", "row-rank num", String(rank + 1)), card, make("span", "row-rate num", rec.rateText), amount, make("span", "row-cap", rec.capText), chevron);
 
-  const body = document.createElement("div");
-  body.className = "row-body";
-
-  const reason = document.createElement("p");
-  reason.textContent = rec.reason;
-  body.appendChild(reason);
-
-  body.appendChild(buildCapBlock(rec));
-
+  const body = make("div", "row-body");
+  body.append(make("p", null, rec.reason), buildCapBlock(rec));
   const notice = buildNotice(rec);
-  if (notice) {
-    const title = document.createElement("p");
-    title.className = "notice-title";
-    title.textContent = "要注意";
-    body.append(title, notice);
-  }
-
-  const meta = document.createElement("p");
-  meta.className = "muted";
-  meta.append(`核對於 ${rec.checkedAt}・`, buildSourceLink(rec));
+  if (notice) body.append(make("p", "notice-title", "要注意"), notice);
+  const meta = make("p", "muted");
+  meta.append(make("span", "num", `核對於 ${rec.checkedAt}`), buildSourceLink(rec));
   body.appendChild(meta);
 
   const details = document.createElement("details");
@@ -560,32 +501,43 @@ function renderMatchAndResults() {
   // 畫面上的卡片顏色不會跟著變（tasks.md T12-2b，老闆 2026-10-15 決定）。
   const bankOrder = bankColorOrder(state.recommendations);
 
+  // 開關開、而且有有條件的卡比第 1 名高：提示一句，點了直接關掉開關（主管第 1 輪問題 4）
+  const better = state.onlyDirect ? betterGatedCount(state.recommendations, top) : 0;
+  els.gatedHint.hidden = better === 0;
+  els.gatedHintBtn.textContent = `關掉「只看無腦刷」可看 ${better} 張有條件、回饋更高的卡`;
+
   els.results.hidden = false;
   els.top.hidden = false;
   els.resultTitle.replaceChildren(...resultTitleParts(match, !!top));
+  els.bestTag.hidden = !top;
   els.topNotice.hidden = !!top;
-  els.topCard.hidden = !top;
-  els.receipt.hidden = !top;
   stopDealAnimation();
   els.stack.classList.remove("is-in", "dealt");
   els.stack.replaceChildren();
 
+  const notice = top && buildNotice(top);
+  els.answerNotice.hidden = !notice;
+  els.answerNotice.querySelector(".notice-list")?.remove();
+  if (notice) els.answerNotice.appendChild(notice);
+
   if (top) {
-    const face = buildCardFace(top, bankColor(top.bankId, bankOrder));
+    const answer = buildAnswer(top, bankColor(top.bankId, bankOrder));
+    // 換了查詢或第 1 名才播進場（說明「答案換了」），輸入金額重算同一張卡不重播
     const topKey = [match.type, match.merchantName || match.categoryId, top.bankId, top.cardName].join("|");
-    if (topKey !== lastTopKey) face.classList.add("is-fresh");
+    if (topKey !== lastTopKey) answer.classList.add("is-fresh");
     lastTopKey = topKey;
-    els.topCard.replaceChildren(face);
-    els.receipt.replaceChildren(buildReceipt(top));
+    els.answerBody.replaceChildren(answer);
   } else {
     lastTopKey = null;
-    els.topCard.replaceChildren();
-    els.receipt.replaceChildren();
+    els.answerBody.replaceChildren();
   }
 
   const rest = visible.slice(1);
   els.rest.hidden = rest.length === 0;
   if (rest.length) {
+    const spend = state.amountUsed ? `刷 ${money(state.amountUsed)}` : "";
+    els.restCount.textContent = `${list.length - 1} 張・依${spend ? `${spend} ` : ""}實拿排序`;
+    els.restColAmount.textContent = spend;
     rest.forEach((rec, i) => els.stack.appendChild(buildStackItem(rec, i + 1, bankColor(rec.bankId, bankOrder))));
     startDealAnimation(rest.length);
   }
@@ -999,6 +951,11 @@ function wireEvents() {
     saveOnlyDirect(state.storage, state.onlyDirect);
     state.showAll = false;
     renderMatchAndResults(); // 第 1 名跟著清單重算
+  });
+
+  els.gatedHintBtn.addEventListener("click", () => {
+    els.onlyDirect.checked = false;
+    els.onlyDirect.dispatchEvent(new Event("change"));
   });
 
   els.showAllBtn.addEventListener("click", () => {

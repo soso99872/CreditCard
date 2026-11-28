@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { buildResultList } from "../src/ui/result-list.mjs";
+import { buildResultList, betterGatedCount } from "../src/ui/result-list.mjs";
 
 const r = (cardId, group, effectiveRate) => ({ cardId, group, effectiveRate });
 
@@ -24,5 +24,12 @@ describe("src/ui/result-list.mjs — buildResultList", () => {
   test("空清單、undefined 不會丟錯", () => {
     assert.deepEqual(buildResultList([], false), []);
     assert.deepEqual(buildResultList(undefined, true), []);
+  });
+
+  test("betterGatedCount：關掉開關會多出幾張有條件、比第 1 名高的卡（同卡只算一次）", () => {
+    assert.equal(betterGatedCount(recs, recs[0]), 2); // a 有條件 5%、d 4% 都高過無腦刷第 1 名 a 3%
+    assert.equal(betterGatedCount(recs, r("x", "direct", 9)), 0);
+    assert.equal(betterGatedCount(recs, null), 2);
+    assert.equal(betterGatedCount([], null), 0);
   });
 });

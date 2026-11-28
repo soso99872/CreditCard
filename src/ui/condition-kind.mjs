@@ -4,12 +4,14 @@
  *   optional＝做了另有加碼、可選的支付方式、未計入本回饋率的另享
  *   downgrade＝講「怎樣會變少」的句子（「綁第三方支付僅享0.88%」），標「必須」會讀成要去做（主管第 1 輪問題 2）
  *   info＝上限、計算方式、回饋時間、有效期、資料註記，不是要使用者做的事
+ *   source＝講資料來源的句子（「第三方稱合計最高5.5%」），畫面不顯示（老闆 2026-11-26 來源不用講）
  * 自由文字列舉不完，判斷不了一律 required（寧可多提醒）。
  * @param {string} text 規則 conditions 的一條
- * @returns {"required" | "optional" | "downgrade" | "info"}
+ * @returns {"required" | "optional" | "downgrade" | "info" | "source"}
  */
 export function conditionKind(text) {
   const s = String(text || "").trim();
+  if (SOURCE.test(s)) return "source";
   if (REQUIRED.test(s)) return "required";
   if (OPTIONAL.test(s)) return "optional";
   if (/^無基本|實際可能/.test(s)) return "info";
@@ -26,6 +28,9 @@ const INFO = new RegExp([
   "待確認", "不一致", "未收錄", "取自", "原文", "文章", "不再享", "預設排序", "^國外消費指",
   "發放", "扣抵", "折抵次期", "兌換", "活動至", "一覽頁", "鎖定至", "[以依][^，；]*計算",
 ].join("|"), "i");
+
+// 只認「第三方」後面接講來源的字；「第三方支付」「第三方行動支付」「第三方訂票平台」是付款方式或通路，不是來源
+const SOURCE = /第三方(稱|整理|資料|文章|來源|表格|說法)/;
 
 const OPTIONAL = /^可[綁用使]|另享|另計/;
 

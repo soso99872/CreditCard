@@ -83,14 +83,6 @@
         </div>
 
         <div id="query-controls" class="controls">
-          <fieldset class="segmented">
-            <legend>查詢範圍</legend>
-            <input type="radio" name="scope" id="scope-my" value="my" checked />
-            <label for="scope-my">我的卡片</label>
-            <input type="radio" name="scope" id="scope-all" value="all" />
-            <label for="scope-all">全部卡別</label>
-          </fieldset>
-
           <label class="amount">
             <span>NT$</span>
             <input
@@ -101,6 +93,20 @@
               placeholder="例：1,000"
               aria-label="金額（選填，試算回饋金額）"
             />
+          </label>
+
+          <fieldset class="segmented">
+            <legend>查詢範圍</legend>
+            <input type="radio" name="scope" id="scope-my" value="my" checked />
+            <label for="scope-my">我的卡片</label>
+            <input type="radio" name="scope" id="scope-all" value="all" />
+            <label for="scope-all">全部卡別</label>
+          </fieldset>
+
+          <label class="switch">
+            <input id="only-direct" type="checkbox" role="switch" />
+            <span class="switch-track" aria-hidden="true"></span>
+            <span>只看無腦刷</span>
           </label>
         </div>
 
@@ -123,24 +129,30 @@
       </section>
 
       <div id="results" class="results" hidden>
-        <h2 id="result-title" class="result-title" tabindex="-1"></h2>
-        <label class="switch">
-          <input id="only-direct" type="checkbox" role="switch" />
-          <span class="switch-track" aria-hidden="true"></span>
-          <span>只看無腦刷</span>
-        </label>
-        <div class="results-body">
-          <section id="top" class="top" aria-label="最划算" hidden>
+        <section id="top" class="answer" aria-labelledby="result-title" hidden>
+          <div class="answer-lead">
+            <div class="answer-kicker">
+              <span id="best-tag" class="best-tag">最划算</span>
+              <h2 id="result-title" class="result-title" tabindex="-1"></h2>
+            </div>
             <p id="top-notice" class="empty-hint" hidden>沒有無腦刷的卡，都要先達成條件</p>
-            <div id="top-card"></div>
-            <div id="receipt" class="receipt"></div>
-          </section>
+            <div id="answer-body"></div>
+            <p id="gated-hint" class="gated-hint" hidden>
+              <button id="gated-hint-btn" type="button" class="link-button"></button>
+            </p>
+          </div>
+          <aside id="answer-notice" class="answer-notice" aria-labelledby="answer-notice-title" hidden>
+            <h3 id="answer-notice-title" class="notice-head">要注意</h3>
+          </aside>
+        </section>
 
-          <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
-            <h3 id="rest-title" class="rest-title">其他選擇</h3>
-            <ol id="stack" class="stack"></ol>
-          </section>
-        </div>
+        <section id="rest" class="rest" aria-labelledby="rest-title" hidden>
+          <h3 id="rest-title" class="rest-title">其他選擇<span id="rest-count" class="num"></span></h3>
+          <div class="rest-cols" aria-hidden="true">
+            <span></span><span>卡片</span><span>回饋率</span><span id="rest-col-amount" class="num"></span><span>上限</span>
+          </div>
+          <ol id="stack" class="stack"></ol>
+        </section>
       </div>
 
       <div id="result-foot" class="result-foot" hidden>
